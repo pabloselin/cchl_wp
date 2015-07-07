@@ -29,7 +29,9 @@ Template Name: Colaboradores Filsa 2015
                                 foreach($invita as $inv): ?>
                                     
                                     <li>
-                                        <?php echo get_image('invita_logo_invita', $inv);?>
+                                        <?php 
+                                        $otros = array("h" => 150, "w" => 150, "zc" => 1, "q" => 100);
+                                        echo get_image('invita_logo_invita', $inv, 1, 1, null, $otros);?>
                                         <h3><?php echo get('invita_nombre', $inv);?></h3>
                                         <?php 
                                             if(get('invita_url_invita', $inv)):
