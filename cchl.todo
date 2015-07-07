@@ -1,0 +1,29 @@
+
+Redireccionamiento.
+
+Branch master
+
+-- Interfaz agenda
+-- Mejorar botonera
+
+Branch optcdl
+
+Desarrollo
+- Añadir grunt a flujo de trabajo
++- Añadir control de versiones
+
+Optimización
+- Reducir / combinar css
+- Reducir / combinar js
+
+Cosas que andan mal
+-- Jquery UI solo para TABS del home
+--- Múltiples llamados a jquery, distintas versiones
+-- 2 plugins js de rotadores que hacen básicamente lo mismo
+- Código repetido y excesiva cantidad de plantillas
+-- Scripts de jquery metidos entre medio del contenido
+-- 9 archivos CSS que pueden ser combinados en 1
++--- Llamado a 2? tipografías distintas de Google Fonts que no se usan
++-- Rutas incorrectas a archivos de compatibilidad para internet explorer
+
+

@@ -1,0 +1,177 @@
+#contenedor_slide_home {
+	height: 300px;
+	width: 940px;
+	margin: 0 auto;
+}
+
+#slide_home, #slide_home2, #slide_socios2 {
+    margin: 0 auto;
+    width: 940px;
+    height: 300px;
+}
+ul#slide_home li, ul#slide_home2 li, ul#slide_socios_2 {
+	position: relative;
+}
+ul#slide_home li .caja_text,
+ul#slide_home2 li .caja_text,
+ul#slide_socios2 li .caja_text 
+ {
+	top:50px;
+    font-size: 14px;
+    left: -10px;
+    min-height: 60px;
+    padding: 20px;
+    position: absolute;
+    width: 400px;
+    font-weight: 300;
+}
+
+ul#slide_home li .caja_text .text,
+ul#slide_home2 li .caja_text .text2,
+ul#slide_socios2 li .caja_text .text2
+{
+	background-color: #FFFFFF;
+	padding:10px;
+	margin:5px 0;
+
+}
+
+ul#slide_home li .caja_text .text p,
+ul#slide_home2 li .caja_text .text2 p,
+ul#slide_socios2 li .caja_text .text2 p
+{
+color: #6D6E71;
+}
+
+ul#slide_home li .caja_text h2 a,
+ul#slide_home2 li .caja_text h2 a,
+ul#slide_socios2 li .caja_text h2 a
+{
+	font-size: 20px;
+	color:#fff;
+}
+
+ul#slide_socios2 li .caja_text h2 {
+  background-color:#47A3F5;
+  box-shadow:4px 5px 12px #2e2e2e;
+  padding: 5px;
+  margin-bottom:12px;
+}
+
+
+#contenedor_slide {
+  clear:both;
+  float:left;
+  height:250px;
+  margin:17px auto 15px;
+  position:relative;
+  width:670px;
+}
+#contenedor_slide #nav {
+  left:50%;
+  position:absolute;
+  top:240px;
+  width:100px;
+  z-index:100;
+}
+
+#contenedor_slide #nav a {
+  background-image:url(http://www.desarrollo.lacreatika.com/horcones/wp-content/themes/horcones/img/auxi/slide_nav_off.png);
+  background-repeat:no-repeat !important;
+  display:block;
+  float:left;
+  height:8px !important;
+  margin:0 4px;
+  text-indent:-9999px;
+  width:8px;
+}
+#contenedor_slide #nav a.activeSlide {
+  background-image:url(http://www.desarrollo.lacreatika.com/horcones/wp-content/themes/horcones/img/auxi/slide_nav_on.png);
+  background-repeat:no-repeat !important;
+}
+ul#slide {
+  margin:0 auto;
+  width: 670px;
+  height: 250px;
+  overflow: hidden;
+}
+#contenedor_slide .caja_text {
+  left:35px;
+  position:absolute;
+  top:95px;
+  width: 250px;
+}
+
+/* Tabs */
+ul.tabNavigation {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	clear:both;
+}
+ul.tabNavigation p{
+	float:left;
+	margin: 10px 10px 0;
+}
+ul.tabNavigation li {
+	list-style: none; position: relative; padding: 0; white-space: nowrap; border:none; background:#fff; line-height:30px !important; height:30px; float:left; margin:0 0 13px 0;
+}
+
+ul.tabNavigation li a {
+	float: left; padding: .5em 1em; text-decoration: none; color:#A7A9AB; margin-top:5px; font-size:14px; text-transform:uppercase; line-height:30px !important
+}
+
+ul.tabNavigation li a.selected,
+ul.tabNavigation li a:hover {
+	color:#EA6430; font-size:14px; text-transform:uppercase; margin-top:5px;
+	background:#E5E6E7; border:none; margin-bottom: 0; padding: .5em 1em;
+}
+
+ul.tabNavigation li a:focus {
+		outline: 0;
+}
+
+div.tabs2 > div {
+	padding: 5px;
+	margin-top: 3px;
+}
+
+div.tabs2 > div .caja_text h2 {
+    margin-top: 0;
+    padding:10px;
+    position: relative;
+    top: -10px;
+	background:#47A3F5;
+	color:#fff !important;
+	-moz-box-shadow: 4px 5px 12px #2e2e2e;
+    -webkit-box-shadow: 4px 5px 12px #2e2e2e;
+    box-shadow: 4px 5px 12px #2e2e2e;
+	padding:5px;
+}
+
+#first, #second {
+	clear:both;
+	margin:0px;
+	padding:0px;
+}
+
+.waste {
+}
+#nav-1, #nav-2{	
+	border:none; 
+	clear:both;
+	position:relative;
+	float:right;
+	z-index:120;
+	top:4px;
+}
+#nav-1 a, #nav-2 a{
+	color:#A7A9AB;
+	padding:0 5px;
+	background:#E5E6E7;
+	margin:4px;
+}
+#nav-1 a.activeSlide, #nav-2 a.activeSlide{
+	background:#EA6430;
+	color:#fff;
+}

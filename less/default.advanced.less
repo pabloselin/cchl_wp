@@ -1,0 +1,52 @@
+ul.dropdown li a {
+ display: block;
+ padding: 7px 29.3px;
+ line-height:30px;
+ height:30px;
+}
+
+
+/* ------------- Override default */
+
+	ul.dropdown li {
+	 padding: 0;
+	}
+
+
+/* ------------- Custom */
+
+	ul.dropdown li {
+
+	}
+
+	ul.dropdown ul a {
+	 padding: 4px 5px 4px 14px;
+	 width: 151px; /* Especially for IE */
+	}
+
+	ul.dropdown ul a:hover {
+	 background-color: #1B75BC;
+	}
+
+	ul.dropdown a.open {
+	 background-color: #2e2e2e;
+	 color: #76b900;
+	}
+
+	ul.dropdown ul a.open {
+	 background-color: #76b900;
+	 color: #fff;
+	}
+
+
+	/* CSS 2.1 */
+
+	ul.dropdown li:hover > a.dir {
+	 background-color:#1B75BC;
+	 color: #fff;
+	}
+
+	ul.dropdown ul li:hover > a.dir {
+	 background-color: #76b900;
+	 color: #fff;
+	}

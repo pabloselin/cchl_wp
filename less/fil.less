@@ -1,0 +1,161 @@
+//Filij 2014
+@celestefil: #4A93E1;
+@naranjofil: #E6633D;
+
+.page-id-33775, .parent-pageid-33775 {
+	//Todo lo de filij va aquí	
+	#sidebar_interior ul > li#menu-item-23211 > a {
+			background-image:none;
+			background-color:@celestefil;
+		}
+	}
+
+.filij-day-content {
+	padding:12px;
+	background-color:#f0f0f0;
+}
+
+#navfilsa.navfilij {
+	a.activeSlide, a:hover {
+		background-color: @celestefil;
+	}
+}
+
+//Contenidos
+body#fil #content {
+	h1 {
+		color:darken(@celestefil, 15%);
+		text-transform:uppercase;
+		clear:both;
+	}
+	h2, strong {
+		color:darken(@celestefil, 15%);
+	}
+}
+
+#sidebar_fil {
+	margin-top:60px;
+	#menu-item-53962 {
+		> a {
+			font-size:18px;
+			text-transform: uppercase;
+		}
+		margin-bottom:24px;
+	}
+	ul.sub-menu {
+		display:none;
+		li {
+			a {
+				background-color:#FFBAA5;
+				color:#333;
+				padding:6px 6px 6px 24px;		
+			}
+		}
+		ul.sub-menu {
+			li {
+				a {
+					background-color:#FFBAA5;
+					padding:6px 6px 6px 24px;
+					&:before {
+						content: '-';
+					}
+					&:hover {
+						background-color:lighten(#FFBAA5, 10%);
+					}
+				}
+			}
+		}
+		
+	}
+	li.current-menu-ancestor > ul.sub-menu,
+	li.current-menu-item > ul.sub-menu
+	 {
+			display:block;
+				li.current-menu-item > a {
+						background-color:lighten(@naranjofil, 10%);
+						}
+			}
+	ul {
+		li {
+			> a {
+				padding:12px 6px;
+				display:block;
+				background-color:transparent;
+				color:#333;
+				border-bottom:1px solid white;
+				font-size:16px;
+				&:hover {
+					background-color:@naranjofil;
+					color:#fff;
+				}
+			}
+			&.current-menu-item, &.current_page_ancestor {
+				> a {
+					background-color:@naranjofil;
+					color:white;	
+				}
+				
+				
+			}
+			&.first  {
+				font-size:24px;
+				font-weight:bold;
+				background-color:@naranjofil;
+				color:#333;
+			}
+		}
+
+	} 
+}
+
+.page-id-53976 #content {
+	ul.mediapartner-fil {
+		margin-left:21px;
+	}
+
+	ul.patrocina-fil {
+		margin-left:123px;
+	}
+
+	ul.auspicia-fil {
+		margin-left:236px;
+	}
+}
+
+#content div.the-content .filij-day-content h3 {
+	font-weight:normal;
+}
+
+.page-id-53972 #content ul.calendario-filsa {
+	li {
+		width:676px;
+	}
+}
+
+#content #navfilsa.navfil {
+
+	.otrodia.activeSlide, .hoy.activeSlide {
+		background-color:#E66C47;
+		color:white;
+	}
+
+	a.hoy {
+		border-top:2px solid darken(#E66C47, 10%);	
+	}
+
+	a.otrodia, a.hoy {
+		background-color:#FADACF;
+	}
+}
+
+//Not current FIL
+// #sidebar_fil ul li#menu-item-53963 a,
+// #sidebar_fil ul li#menu-item-53966 a
+//  {
+// 	background-color: white;
+// 	color:#333;
+// 		&:hover {
+// 			background-color: #41A7FF;
+// 			color:white;
+// 		}
+// }

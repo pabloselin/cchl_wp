@@ -1,0 +1,95 @@
+//Filij 2014
+@verdefilij: #C8D418;
+
+.page-id-33775, .parent-pageid-33775 {
+	//Todo lo de filij va aquí	
+	#sidebar_interior ul > li#menu-item-23211 > a {
+			background-image:none;
+			background-color:@verdefilij;
+		}
+	}
+
+.filij-day-content {
+	padding:12px;
+	background-color:#f0f0f0;
+}
+
+#navfilsa.navfilij {
+	a.activeSlide, a:hover {
+		background-color: @verdefilij;
+	}
+}
+
+//Contenidos
+body#filij-2014 #content {
+	h1 {
+		color:darken(@verdefilij, 15%);
+		text-transform:uppercase;
+		clear:both;
+	}
+	h2, strong {
+		color:darken(@verdefilij, 15%);
+	}
+}
+
+#sidebar_filij {
+	ul.sub-menu {
+		display:none;
+		li {
+			a {
+				background-color:lighten(@verdefilij, 30%);
+				color:#333;
+				padding:6px 6px 6px 24px;		
+			}
+		}
+		ul.sub-menu {
+			li {
+				a {
+					background-color:lighten(@verdefilij, 50%);
+					padding:6px 6px 6px 24px;
+					&:before {
+						content: '-';
+					}
+					&:hover {
+						background-color:lighten(@verdefilij, 10%);
+					}
+				}
+			}
+		}
+		
+	}
+	li.current-menu-ancestor > ul.sub-menu,
+	li.current-menu-item > ul.sub-menu
+	 {
+			display:block;
+				li.current-menu-item > a {
+						background-color:lighten(@verdefilij, 10%);
+						}
+			}
+	ul {
+		li {
+			a {
+				padding:12px 6px;
+				display:block;
+				background-color:#555;
+				color:white;
+				border-bottom:1px solid @verdefilij;
+				&:hover {
+					background-color:@verdefilij;
+					color:#333;
+				}
+			}
+			&.current-menu-item {
+				background-color:@verdefilij;
+				color:#333;
+			}
+			&.first  {
+				font-size:24px;
+				font-weight:bold;
+				background-color:@verdefilij;
+				color:#333;
+			}
+		}
+
+	} 
+}
