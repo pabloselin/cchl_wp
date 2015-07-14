@@ -20,6 +20,7 @@ Template Name: FILSA 2015
             <div class="cf"></div>
             <?php the_post_thumbnail('imagen_single'); ?>
             <div class="the-content">
+            <br><br>
                 <?php if(get('link_link')):?>
                     <div class="custompostlink">
                         <p><i class="fa fa-external-link"></i> Fuente: <a href="<?php echo get('link_link');?>"><?php echo get('link_descripcion');?></a></p>
