@@ -11,12 +11,8 @@ Template Name: FILSA 2015
 
     
     <div id="content" class="grid_12">
-        <div id="bread">
-            Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
-        </div>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <h1><?php the_title(); ?></h1>
-
+<br>
             <?php get_template_part('parts/addthis');?>
 
             
