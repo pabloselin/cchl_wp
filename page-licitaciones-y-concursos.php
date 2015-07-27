@@ -21,8 +21,14 @@ Template Name: Licitaciones y Concursos
             $miembros = getGroupOrder('titulo');
             foreach($miembros as $miembro){
 				echo "<li class='licitaciones'>
-				<h4>".get('titulo',$miembro)."</h3>
-				<p>".get('texto',$miembro)."</p>";
+				<h4>".get('titulo',$miembro)."</h3>";
+                if(get('fecha_desde', $miembro)):
+                    echo "<p class='fechadesde'><strong>Desde:</strong> ".get('fecha_desde', $miembro)."</p>";
+                endif;
+                if(get('fecha_hasta', $miembro)):
+                    echo "<p class='fechahasta'><strong>Hasta:</strong> ".get('fecha_hasta', $miembro)."</p>";
+                endif;
+				echo "<p>".get('texto',$miembro)."</p>";
 				if(get('descargar', $miembro)):
                     echo "<a href='".get('descargar',$miembro)."' class='descargar'>Descargar »</a>";
                 endif;
