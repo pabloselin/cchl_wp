@@ -1,3 +1,8 @@
+<?php 
+/*
+Template Name: Licitaciones y Concursos
+*/
+?>
 <?php get_header(); ?>
 <div id="main-page" class="container_16 cf">
     <div id="content" class=" grid_16">
