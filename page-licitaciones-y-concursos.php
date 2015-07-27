@@ -17,9 +17,11 @@
             foreach($miembros as $miembro){
 				echo "<li class='licitaciones'>
 				<h4>".get('titulo',$miembro)."</h3>
-				<p>".get('texto',$miembro)."</p>
-				<a href='".get('descargar',$miembro)."' class='descargar'>Descargar »</a>
-				</li>";
+				<p>".get('texto',$miembro)."</p>";
+				if(get('descargar', $miembro)):
+                    echo "<a href='".get('descargar',$miembro)."' class='descargar'>Descargar »</a>";
+                endif;
+                echo "</li>";
 			}
             ?>
             </ul>
