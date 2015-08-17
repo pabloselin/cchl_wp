@@ -15,7 +15,7 @@
              <?php the_post_thumbnail('imagen_single'); ?>
             <div class="the-content"><?php the_content();?></div>
              
-        	<div id="presidentes">
+        	<div class="listado">
         	<ul class="cf">
 			<?php
             $miembros = getGroupOrder('comite_imagen');

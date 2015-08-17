@@ -17,7 +17,7 @@
         
         
         
-        <div id="presidentes" class="invitados-filsa">
+        <div class="invitados-filsa">
         <ul class="cf">
             <?php
             $miembros = getGroupOrder('imagen');

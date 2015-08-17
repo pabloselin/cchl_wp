@@ -1,4 +1,4 @@
-<div id="presidentes">
+<div class="listado">
         <ul class="cf">
             <?php
             $miembros = getGroupOrder('imagen');

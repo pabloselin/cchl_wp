@@ -18,7 +18,7 @@
         
         
         
-        <div id="presidentes2">
+        <div class="listado-historia">
         <ul class="cf">
             <?php
             $miembros = getGroupOrder('presidentes_imagen');

@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Sala de Prensa */
+/* Template Name: Directorio */
 ?>
 <?php get_header(); ?>
 
@@ -21,7 +21,7 @@
         
         
         
-        <div id="presidentes" class="directorio">
+        <div class="listado-horizontal">
         <ul class="cf">
 		<?php
         $miembros = getGroupOrder('imagen');
@@ -31,7 +31,7 @@
             echo get_image('imagen',$miembro,1,1,NULL,$otros);
             echo "<div class='info'>
             <h3>".get('nombre',$miembro)."</h3>
-            <span>".get('cargo',$miembro)."</span>
+            <span class='cargo'>".get('cargo',$miembro)."</span>
             <p>".get('texto',$miembro)."</p>
             </div>
             </li>";

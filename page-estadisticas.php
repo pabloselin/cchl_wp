@@ -20,7 +20,7 @@
         
         
         
-        <div id="presidentes">
+        <div class="listado">
         <ul class="mini cf">
             <?php
             $miembros = getGroupOrder('estadisticas_imagen');

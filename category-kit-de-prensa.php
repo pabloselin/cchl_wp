@@ -11,7 +11,7 @@
         <?php get_template_part('parts/addthis');?>
         <div class="cf"></div>
 <h4 class="category_description"><?php echo category_description(); ?></h4>
-            <div id="presidentes">
+            <div class="listado">
                 <ul class="cf">
 					<?php foreach (get_categories('child_of=19') as $cat) : ?>
                     <li>

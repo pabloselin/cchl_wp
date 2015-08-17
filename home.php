@@ -50,7 +50,6 @@
                 $recent = get_post($menuitem->object_id);?>
                 <div class="caja grid_5">
                   <h3><?php echo $recent->post_title;?></h3>
-                  <!-- <small>Publicado el <?php the_time('l j, F  Y') ?></small> -->
                   <?php custom_excerpt($recent->ID, 65);?>
                   <span class="fecha"><?php echo tribe_get_start_date($recent->ID, true, 'l j \d\e F - G:i');?></span>
                   <a href="<?php echo get_permalink( $recent->ID);?>" class="leyendo">Siga Leyendo</a>
@@ -72,7 +71,7 @@
             while($recent->have_posts()) : $recent->the_post();?>
                 <div class="caja grid_5">
                 <h3><?php the_title(); ?></h3>
-                <small>Publicado el <?php the_time('l j, F  Y') ?> </small>
+                <span class="sm-date">Publicado el <?php the_time('l j, F  Y') ?> </span>
                 <?php excerpt2(65); ?>
                 <a href="<?php the_permalink() ?>" class="leyendo">Siga Leyendo »</a>
                 </div>
@@ -90,7 +89,7 @@
           <div class="image">  <?php the_post_thumbnail('imagen-270'); ?></div>  
           <h3 class="title"><a href="<?php the_permalink() ?>" class="leyendo" id="h3columna"><?php the_title(); ?></a></h3>
          
-           <small>Publicado el <?php the_time('l j, F  Y') ?> </small>
+           <span class="sm-date">Publicado el <?php the_time('l j, F  Y') ?> </span>
           <?php excerpt2(65); ?>
           <a href="<?php the_permalink() ?>" class="leyendo">Siga Leyendo »</a>
           </div>
@@ -104,7 +103,7 @@
            <h2><a href="/categoria/sala-de-prensa/">Noticias</a></h2>
               <div class="image">  <?php the_post_thumbnail('imagen-270'); ?></div>  
            <h3 class="title"><a href="<?php the_permalink() ?>" class="leyendo" id="h3noticias"><?php the_title(); ?></a></h3>
-           <small>Publicado el <?php the_time('l j, F  Y') ?> </small>
+           <span class="sm-date">Publicado el <?php the_time('l j, F  Y') ?> </span>
           <?php excerpt2(65); ?>
           <a href="<?php the_permalink() ?>" class="leyendo">Siga Leyendo »</a>
           </div>

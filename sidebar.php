@@ -340,11 +340,11 @@ if ($children) { ?>
 if(is_page(41) || get_topmost_parent($post->ID) ==41 || is_category('events') || is_category('prensa-filsa')){
 }else{
 query_posts('cat=13&showposts=3');
-echo "<div id='content'><br><h4>Noticias destacadas</h4><ul>";
-if (have_posts()) : while (have_posts()) : the_post();
-echo "<div class='noticia-destacada'><a href='".get_permalink()."'><h5>".get_the_title()."</h5></a>";
-echo "<p>".excerpt2(10)."<a id='ver-mas' href='".get_permalink()."'>Siga leyendo »</a></p></div>";
-endwhile;endif;wp_reset_query();
-echo "</ul></div>";
+echo "<div class='aside-content'><br><h4>Noticias destacadas</h4>";
+	if (have_posts()) : while (have_posts()) : the_post();
+		echo "<div class='noticia-destacada'><a href='".get_permalink()."'><h5>".get_the_title()."</h5></a>";
+		echo "<p>".excerpt2(10)."<a id='ver-mas' href='".get_permalink()."'>Siga leyendo »</a></p></div>";
+	endwhile;endif;wp_reset_query();
+echo "</div>";
 }
 ?>
