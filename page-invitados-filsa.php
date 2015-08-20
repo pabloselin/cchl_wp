@@ -18,7 +18,7 @@
         
         
         <div class="invitados-filsa">
-        <ul class="cf">
+        <ul class="cf listado">
             <?php
             $miembros = getGroupOrder('imagen');
             foreach($miembros as $miembro){
