@@ -1851,7 +1851,7 @@ text-align: center;
 	color: white;
 	font-family: 'Signika', sans-serif;
 	font-size: 13px ;
-	height: 30px ;
+	line-height: 36px ;
 	text-transform: none;
 	width: 100%;
 	float: left;
@@ -1893,11 +1893,6 @@ text-align: center;
   
   /* los submenús */
 #menu-principal ul {
-    -moz-transition: opacity .25s ease .1s;
-    -webkit-transition: opacity .25s ease .1s;
-    -o-transition: opacity .25s ease .1s;
-    -ms-transition: opacity .25s ease .1s;
-    transition: opacity .25s ease .1s;
 	background:#1B75BC;
 	display: none;
     left: 0;
@@ -1907,6 +1902,7 @@ text-align: center;
     top: 36px;
 	width:190px ;
 	z-index:999;
+	//transition: all .2s ease-in;
 }
 /*son visibes al poner el cursor encima */
   #menu-principal li:hover > ul { 
@@ -1915,10 +1911,6 @@ text-align: center;
 
    /* cada uno de los items de los submenús */
 #menu-principal ul li {
-    -moz-transition-delay: 0.1s;
-    -moz-transition-duration: 0.25s;
-    -moz-transition-property: height;
-    -moz-transition-timing-function: ease;
 	background-color: #1B75BC;
 	clear: both;
 	margin: 0px 0px ;
