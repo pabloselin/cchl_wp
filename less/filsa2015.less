@@ -83,22 +83,53 @@ body#filsa-2015 {
 						padding:0;
 						a {
 							display:block;
-							padding:12px 12px 12px 32px;
+							padding:12px 12px 12px 24px;
 							font-size:14px;
 							border-bottom:1px solid #7CC9D5;
 							transition:all ease-in 0.1s;
 							text-transform:uppercase;
 							&:hover {
 								background-color:#7CC9D5;
-								padding:12px 12px 12px 36px;
+								padding:12px 12px 12px 32px;
 							}
 						}
-						&.current-menu-item {
+						&.current-menu-item, &.current-menu-ancestor {
 							background-color:#7CC9D5;
 							a {
 								color:#000;
 							}
-						}
+							ul.sub-menu {
+								li a {
+									background-color:lighten(#7CC9D5, 20%);
+									border-bottom:1px solid darken(#7CC9D5, 25%);
+								}
+							}
+						}  
+						ul.sub-menu {
+							display:block;
+								li a {
+									padding:12px 12px 12px 32px;
+									text-transform:none;
+									margin:0;
+									background-color:lighten(#F1F2DC, 5%);
+									border-bottom:1px solid darken(#F1F2DC, 25%);
+									line-height:16px;
+									&:hover {
+										padding-left:36px;
+									}
+								}
+								li.current-menu-item a:before {
+									content:'\f0da';
+									color: darken(#7CC9D5, 35%);
+									font-family:'FontAwesome';
+									font-size:14px;
+									display:inline-block;
+									//line-height:32px;
+									margin-left:-8px;
+									margin-right:4px;
+									vertical-align:middle;
+								}
+							}
 					}
 				}
 			}
