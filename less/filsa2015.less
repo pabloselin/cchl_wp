@@ -67,6 +67,15 @@ body.page-id-55977 {
 }
 
 body#filsa-2015 {
+	.wrapredes {
+		top:auto;
+		bottom:70px;
+		.redes-sociales {
+			border-radius:5px 5px 0 0;
+			background-color:#BEC2E1
+		}
+	}
+
 	#content {
 		h1 {
 			color:#3B1E6A;
@@ -82,9 +91,10 @@ body#filsa-2015 {
 			 {
 				> a {
 					background-image:none;
-					background-color:#D7DF5F;
-					color:#000;
-					border-top:6px solid #6B3A98;
+					//background-color:#D7DF5F;
+					background-color:#5266AD;
+					color:white;
+					border-top:6px solid #BEC2E1;
 					font-size:24px;
 					padding-bottom:13px;
 				}
@@ -93,7 +103,7 @@ body#filsa-2015 {
 			li#menu-item-54759 {
 				margin-bottom:32px;
 				ul.sub-menu {
-					background-color:#F1F2DC;
+					background-color:#BEC2E1;
 					padding:0;
 					margin:0;
 					li {
@@ -102,24 +112,28 @@ body#filsa-2015 {
 							display:block;
 							padding:12px 12px 12px 24px;
 							font-size:14px;
-							border-bottom:1px solid #7CC9D5;
+							border-bottom:1px solid #5266AD;
 							transition:all ease-in 0.1s;
 							text-transform:uppercase;
 							color:#505151;
 							&:hover {
-								background-color:#7CC9D5;
+								background-color:lighten(#BEC2E1, 10%);
 								padding:12px 12px 12px 32px;
 							}
 						}
 						&.current-menu-item, &.current-menu-ancestor {
-							background-color:#7CC9D5;
+							background-color:#5266AD;
 							a {
-								color:#000;
+								color:white;
+								&:hover {
+									background-color:#5266AD;
+								}
 							}
 							ul.sub-menu {
 								li a {
-									background-color:lighten(#7CC9D5, 20%);
-									border-bottom:1px solid darken(#7CC9D5, 25%);
+									background-color:lighten(#BEC2E1, 10%);
+									border-bottom:1px solid darken(#BEC2E1, 10%);
+									color:#000;
 								}
 							}
 						}  
@@ -129,8 +143,8 @@ body#filsa-2015 {
 									padding:12px 12px 12px 32px;
 									text-transform:none;
 									margin:0;
-									background-color:lighten(#F1F2DC, 5%);
-									border-bottom:1px solid darken(#F1F2DC, 25%);
+									background-color:lighten(#BEC2E1, 15%);
+									border-bottom:1px solid #BEC2E1;
 									line-height:16px;
 									&:hover {
 										padding-left:36px;
@@ -138,7 +152,7 @@ body#filsa-2015 {
 								}
 								li.current-menu-item a:before {
 									content:'\f0da';
-									color: darken(#7CC9D5, 35%);
+									color: darken(#BEC2E1, 35%);
 									font-family:'FontAwesome';
 									font-size:14px;
 									display:inline-block;
@@ -158,8 +172,9 @@ body#filsa-2015 {
 		width:95px;
 		a {
 			font-size:24px;
+			color:#5266AD;
 			&:hover {
-				color:#D7DF5F;
+				color:lighten(#5266AD, 5%);
 			}
 		}
 	}
