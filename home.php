@@ -33,7 +33,7 @@
 
             <div class="grid_16 banner_home_filsa">
               <p>
-                <a href="<?php echo get_permalink(CCHL_PAGEFILSA);?>"><img src="<?php bloginfo('template_url');?>/img/filsa2015/banner_filsa2015_4.png" alt="FILSA 2015"></a>
+                <a href="<?php echo get_permalink(CCHL_PAGEFILSA);?>"><img src="<?php bloginfo('template_url');?>/img/filsa2015/cabecera-filsa-2015.jpg" alt="FILSA 2015"></a>
               </p>
             </div>
             <div id="content-home" class="grid_11">
