@@ -1,5 +1,13 @@
 // Filsa 2015
 
+//colores principales
+@rojo: #E92141;
+@naranjo: #EFAC50;
+@azul: #0074B5;
+@amarillo: #F9EC87;
+@verde: #00A674;
+
+
 body.page-id-108 {
 	
 }
@@ -91,8 +99,8 @@ body#filsa-2015 {
 				> a {
 					background-image:none;
 					//background-color:#D7DF5F;
-					background-color:#2FA76F;
-					color:white;
+					background-color:@naranjo;
+					color:black;
 					//border-top:6px solid #F4DBA4;
 					font-size:24px;
 					padding-bottom:13px;
@@ -103,7 +111,7 @@ body#filsa-2015 {
 			li#menu-item-54759 {
 				margin-bottom:32px;
 				ul.sub-menu {
-					background-color:#F4DBA4;
+					background-color:fade(@azul, 20%);
 					padding:0;
 					margin:0;
 					li {
@@ -112,12 +120,12 @@ body#filsa-2015 {
 							display:block;
 							padding:12px 12px 12px 24px;
 							font-size:14px;
-							border-bottom:1px solid darken(#F4DBA4, 10%);
+							border-bottom:1px solid fade(@azul, 10%);
 							transition:all ease-in 0.1s;
 							text-transform:uppercase;
 							color:darken(#505151, 10%);
 							&:hover {
-								background-color:#2FA76F;
+								background-color:@naranjo;
 								padding:12px 12px 12px 32px;
 								color:white;
 							}
