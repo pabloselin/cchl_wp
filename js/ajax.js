@@ -327,17 +327,15 @@ $j('body.page-id-108 #menu-item-54759').addClass('current_page_item current-menu
 //Activo el calendario para el día de hoy
 $j('#navfilsa a.hoy').trigger('click');
 
-// $j('body#filsa-2014.page-id-31817 #content .the-content').readmore({
-//     maxHeight:434,
-//     moreLink: '<a class="js-readmore" href="#"><i class="fa fa-plus"></i> Leer más</a>',
-//     lessLink: '<a class="js-readmore" href="#"><i class="class fa fa-minus-circle"></i> Cerrar</a>'
-//     });
-
-// $j('body#filsa-2014.page-id-108 #content .the-content').readmore({
-//     maxHeight:434,
-//     moreLink: '<a class="js-readmore" href="#"><i class="fa fa-plus"></i> Leer más</a>',
-//     lessLink: '<a class="js-readmore" href="#"><i class="class fa fa-minus-circle"></i> Cerrar</a>'
-//     });
+//Menú móvil FILSA 2015
+$j('.filsa-header-mobile a.triggernav').on('click', function() {
+    var nav = $j('nav.mobile-menu-filsa');
+    if( nav.hasClass('inactive') ) {
+        nav.removeClass('inactive').addClass('active');
+    } else {
+        nav.removeClass('active').addClass('inactive');
+    }
+});
 
 }); 
 

@@ -109,7 +109,7 @@ body#filsa-2015 {
 				}
 			}
 
-			li#menu-item-54759 {
+			li.menu-item-54759 {
 				margin-bottom:32px;
 				ul.sub-menu {
 					background-color:fade(@azul, 20%);
@@ -191,5 +191,136 @@ body#filsa-2015 {
 		}
 	}
 
-}
+	//responsive stuff
+	@scrbr: 768px;
+	
+	.filsa-header-mobile {
+		display:none;
+	}
+
+	@media screen and (max-width:@scrbr) {
+		//body
+		min-width:320px;
+		padding-top:85px;
+		
+		.filsa-header-mobile {
+			display:block;
+			background-color:#00A675;
+			position: fixed;
+			top:0;
+		}
+
+		//overflow-x: hidden;
+		.camara-header-filsa,
+		#bread,
+		.filsa-header,
+		#sidebar_interior,
+		.addthis_toolbox,
+		#footer,
+		.wrapredes,
+		img.wp-image-54806
+		 {
+			display:none;
+		}
+
+		#main-page {
+			width:100%;
+		}
+
+		#content.grid_12 {
+			width:96%;
+			margin:0;
+			padding:2%;
+			
+			img {
+				max-width:100%;
+			}
+		}
+
+		.alignleft,
+		.alignright
+		 {
+			float:none;
+			margin:12px 0;
+		}
+
+		a.triggernav {
+			position: absolute;
+			display: block;
+			right:8px;
+			top:19px;
+			color:white;
+			font-size:24px;
+			padding:2px 4px;
+			border-radius:5px;
+			border:2px solid white;
+			text-align:center;
+			span {
+				display:block;
+				font-size:10px;
+				text-align:center;
+				text-transform:uppercase;
+			}
+		}
+
+		div.invitados-filsa {
+			ul.cf {
+				padding:12px;
+				li {
+					img {
+						float:none;
+						margin-bottom:12px;
+					}
+
+					.info {
+						float:none;
+						width:auto;
+						margin:0;
+					}
+				}
+			}
+		}
+
+		.mobile-menu-filsa {
+			
+			transition:max-height 0.5s ease-out;
+			overflow:hidden;
+			
+			&.inactive {
+				max-height:0;
+			}
+
+			&.active {
+				max-height:400px;
+				height:auto;
+				overflow:scroll;	
+			}
+
+			ul {
+				li {
+					a {
+						display:block;
+						padding:12px;
+						color:white;
+						font-size:15px;
+						border-bottom:1px solid white;
+					}
+				}
+			}
+			
+			li#menu-item-54759 {
+				ul.sub-menu {
+					display:block;
+				}	
+			}
+
+			ul.sub-menu {
+				display:none;
+			}
+		}
+	}
+
+} // fin del contenedor para filsa 2015
+
+
 
