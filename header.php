@@ -6,6 +6,10 @@
 <title><?php wp_title();?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php if(checkferia($post->ID, CCHL_FILSA2015)) {?>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<?php
+	}?>
 <script type="text/javascript">
 
 var _gaq = _gaq || [];
