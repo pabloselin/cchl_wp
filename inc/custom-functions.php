@@ -92,7 +92,7 @@ function checkfilij($postid = NULL) {
   }
 }
 
-function checkferia($postid = NULL, $motherpage) {
+function checkferia($postid = NULL, $motherpage, $cats = NULL) {
   global $post;
   if($postid) {
     $pid = $postid;
@@ -106,6 +106,19 @@ function checkferia($postid = NULL, $motherpage) {
   } else {
       return false;
   }
+}
+
+function cchl_checkevent($ancestor, $postid, $cats) {
+  /**
+   * Comprueba dentro de una serie de eventos cual corresponde y devuelve el tipo de evento si es que se aplica, o falso
+   */
+
+  //Feria del Libro
+  //2014
+  //2015
+
+  //Feria del Libro Infantil y Juvenil
+
 }
 
 function dataterms_for_event($id, $tax) {
