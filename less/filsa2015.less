@@ -132,6 +132,7 @@ body#filsa-2015 {
 								color:white;
 							}
 						}
+				
 						&.current-menu-item, &.current-menu-ancestor {
 							background-color:#0175C0;
 							a {
@@ -147,7 +148,17 @@ body#filsa-2015 {
 									color:#000;
 								}
 							}
-						}  
+						}
+
+						&.menu-item-type-custom  {
+							a {
+								&:hover {
+									background-color:fade(@azul, 20%);
+									color:darken(@azul, 10%);
+								}
+							}	
+						}
+
 						ul.sub-menu {
 							display:block;
 								li a {
@@ -293,6 +304,8 @@ body#filsa-2015 {
 			
 			transition:max-height 0.5s ease-out;
 			overflow:hidden;
+			margin-top:70px;
+			border-top:1px solid darken(#F0C016, 25%);
 			
 			&.inactive {
 				max-height:0;
@@ -309,9 +322,10 @@ body#filsa-2015 {
 					a {
 						display:block;
 						padding:12px;
-						color:white;
+						color:darken(#F0C016, 35%);
 						font-size:15px;
-						border-bottom:1px solid white;
+						border-bottom:1px solid darken(#F0C016, 25%);
+						background-color:#F0C016;
 					}
 				}
 			}
