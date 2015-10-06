@@ -24,7 +24,7 @@
 		</div>
 	</div>
 	<header class="filsa-header">
-		<a href="<?php echo get_permalink(CCHL_FILSA2015);?>"><img src="<?php bloginfo('template_url');?>/img/filsa2015/cabecera-filsa-2015.jpg" alt="FILSA 2015"></a>
+		<a href="<?php echo get_permalink(CCHL_FILSA2015);?>"><img src="<?php bloginfo('template_url');?>/img/filsa2015/banner_filsa_2015_5.jpg" alt="FILSA 2015"></a>
 		
 	</header>
 	<div class="filsa-header-mobile">
