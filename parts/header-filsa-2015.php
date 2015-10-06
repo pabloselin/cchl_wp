@@ -28,7 +28,7 @@
 		
 	</header>
 	<div class="filsa-header-mobile">
-		<img src="<?php bloginfo('template_url');?>/img/filsa2015/cabeceramovil.png" alt="FILSA 2015">
+		<img src="<?php bloginfo('template_url');?>/img/filsa2015/cabeceramovil_d.png" alt="FILSA 2015">
 		<a href="#" class="triggernav"><i class="fa fa-bars"></i><span>menú</span></a>
 		<nav class="mobile-menu-filsa inactive">
 			<?php wp_nav_menu( array('menu'=> 178));?>
