@@ -14,9 +14,6 @@
             
         <?php get_template_part('parts/addthis');?>
             
-            
-            
-            <div class="cf"></div>
              <?php the_post_thumbnail('imagen_single'); ?>
             <div class="the-content"><?php the_content();?></div>
 		<?php endwhile;endif;wp_reset_query(); ?>
