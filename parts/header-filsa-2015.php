@@ -28,9 +28,15 @@
 		
 	</header>
 	<div class="filsa-header-mobile">
-		<img src="<?php bloginfo('template_url');?>/img/filsa2015/cabeceramovil_e.png" alt="FILSA 2015">
+		<a href="<?php echo get_permalink(CCHL_FILSA2015);?>" title="Volver a portada FILSA 2015"><img src="<?php bloginfo('template_url');?>/img/filsa2015/cabeceramovil_e.png" alt="FILSA 2015"></a>
 		<a href="#" class="triggernav"><i class="fa fa-bars"></i><span>menú</span></a>
 		<nav class="mobile-menu-filsa inactive">
 			<?php wp_nav_menu( array('menu'=> 178));?>
+			<div class="mobile__redes">
+				<span>Síguenos en:</span>
+				<a href="https://www.facebook.com/filsachile" target="_blank"><i class="fa fa-facebook-square"></i></a>
+			    <a class="middle" href="http://twitter.com/CamaradelLibro" target="_blank"><i class="fa fa-twitter"></i></a>
+			    <a href="http://instagram.com/filsachile" target="_blank"><i class="fa fa-instagram"></i></a>
+			</div>
 		</nav>
 	</div>

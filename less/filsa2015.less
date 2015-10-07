@@ -17,6 +17,14 @@ body.page-id-108 {
 	margin:12px 10px;
 }
 
+.header__logofilsa {
+	position: absolute;
+	top:10px;
+	left:260px;
+	background-color: #F0C016;
+	padding: 6px;
+}
+
 body.page-id-55977 {
 	#content .colabs {
 		li {
@@ -94,6 +102,7 @@ body#filsa-2015 {
 		}
 		h1 {
 			color:#0175C0;
+			text-transform:uppercase;
 		}
 	}
 	#sidebar_interior {
@@ -362,6 +371,25 @@ body#filsa-2015 {
 			margin-top:70px;
 			border-top:1px solid darken(#CDE3F1, 25%);
 			
+			div.mobile__redes {
+				background-color:#F2F3F9;
+				overflow:hidden;
+				padding:12px;
+				border-bottom: 1px solid darken(#CDE3F1, 25%);
+				span {
+					color:#005382;
+					display: inline-block;
+					margin-right:6px;
+					vertical-align:30%;
+				}
+				a {
+					color:#005382;
+					display: inline-block;
+					margin-right:12px;
+					font-size:32px;
+				}
+			}
+
 			&.inactive {
 				max-height:0;
 			}
@@ -462,6 +490,32 @@ body#filsa-2015 {
 		}
 	}
 
+
+	//Contenido móvil filsa
+	@media screen and (max-width:@scrbr) {
+		#content {
+			h1 {
+				font-size:24px;
+			}
+			.the-content {
+				h1 {
+					font-size:22px;
+				}
+
+				h2 {
+					font-size:20px;
+				}
+
+				h3 {
+					font-size:18px;
+				}
+
+				h4 {
+					font-size:17px;
+				}
+			}
+		}
+	}
 } // fin del contenedor para filsa 2015
 
 
