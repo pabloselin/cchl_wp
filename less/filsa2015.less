@@ -162,7 +162,7 @@ body#filsa-2015 {
 								&:after {
 									content:'\f0d7';
 									font-family:'FontAwesome';
-									font-size:14px;
+									font-size:16px;
 									display:inline-block;
 									//line-height:32px;
 									margin-left:8px;
@@ -290,21 +290,24 @@ body#filsa-2015 {
 		}
 
 		a.triggernav {
+			@trigcolor: #0174C0;
 			position: absolute;
 			display: block;
 			right:8px;
-			top:10px;
+			top:11px;
 			color:white;
 			font-size:26px;
-			padding:2px 14px;
+			padding:4px 14px;
 			border-radius:5px;
-			border:2px solid white;
+			//border:2px solid @trigcolor;
 			text-align:center;
+			background-color:@trigcolor;
 			span {
 				display:block;
 				font-size:11px;
 				text-align:center;
 				text-transform:uppercase;
+				font-weight:500;
 			}
 		}
 
@@ -331,7 +334,7 @@ body#filsa-2015 {
 			transition:max-height 0.5s ease-out;
 			overflow:hidden;
 			margin-top:70px;
-			border-top:1px solid darken(#F0C016, 25%);
+			border-top:1px solid darken(#CDE3F1, 25%);
 			
 			&.inactive {
 				max-height:0;
@@ -348,14 +351,16 @@ body#filsa-2015 {
 					a {
 						display:block;
 						padding:12px;
-						color:darken(#F0C016, 35%);
+						color:#005382;
 						font-size:15px;
-						border-bottom:1px solid darken(#F0C016, 25%);
-						background-color:#F0C016;
+						border-bottom:1px solid darken(#CDE3F1, 25%);
+						background-color:darken(#CDE3F1, 5%);
 						font-weight:500;
 					}
 				}
 			}
+
+			
 			
 			li#menu-item-54759 {
 				ul.sub-menu {
@@ -364,12 +369,44 @@ body#filsa-2015 {
 						ul.sub-menu {
 							li {
 								a {
-									background-color:darken(#F0C016, 5%);
+									background-color:#CDE3F1;
 									padding-left:24px;
 								}
+								ul.sub-menu {
+									li {
+										a {
+											background-color:lighten(#CDE3F1, 3%);
+											padding-left:32px;
+											&:before {
+												content:'\f0da';
+												color: darken(#BEC2E1, 35%);
+												font-family:'FontAwesome';
+												font-size:14px;
+												display:inline-block;
+												//line-height:32px;
+												margin-left:-8px;
+												margin-right:4px;
+												vertical-align:middle;
+											}
+										}
+									}
+								}
 							}
+
 						}
 					}
+					li.menu-item-has-children {
+								> a:after {
+									content:'\f0d7';
+									font-family:'FontAwesome';
+									font-size:16px;
+									display:inline-block;
+									//line-height:32px;
+									margin-left:8px;
+									//margin-right:4px;
+									vertical-align:middle;	
+								}
+							}
 				}	
 			}
 
