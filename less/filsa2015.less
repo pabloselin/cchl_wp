@@ -290,12 +290,12 @@ body#filsa-2015 {
 		}
 
 		a.triggernav {
-			@trigcolor: #0174C0;
+			@trigcolor: #B9D8EB;
 			position: absolute;
 			display: block;
 			right:8px;
 			top:11px;
-			color:white;
+			color:darken(@trigcolor, 40%);
 			font-size:26px;
 			padding:4px 14px;
 			border-radius:5px;
@@ -363,20 +363,38 @@ body#filsa-2015 {
 			
 			
 			li#menu-item-54759 {
+				> a {
+					padding-left:16px;
+				}
+				> a:before {
+					content:'\f015';
+					color: #005382;
+					font-family:'FontAwesome';
+					font-size:14px;
+					display:inline-block;					
+					margin-left:-4px;
+					margin-right:4px;
+					vertical-align:middle;
+				}
 				ul.sub-menu {
 					display:block;
+					> li > a {
+						text-transform:uppercase;
+					}
 					li {
 						ul.sub-menu {
 							li {
 								a {
 									background-color:#CDE3F1;
 									padding-left:24px;
+									text-transform:none;
 								}
 								ul.sub-menu {
 									li {
 										a {
 											background-color:lighten(#CDE3F1, 3%);
 											padding-left:32px;
+											
 											&:before {
 												content:'\f0da';
 												color: darken(#BEC2E1, 35%);
