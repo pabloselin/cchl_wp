@@ -1,11 +1,17 @@
- <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style ">
-            <ul>
-            <li><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a></li>
-            <li><a class="addthis_button_tweet" tw:via="@CamaradelLibro" ></a></li>
-            <li><a class="addthis_button_google_plusone" g:plusone:size="medium" g:plusone:annotation="bubble"></a></li>
-            </ul>
+            <div class="sharer">
+                  
+                  <div class="sharer__facebook">
+                        <div class="fb-share-button" data-href="<?php echo get_permalink();?>" data-layout="button_count"></div>
+                  </div>
+
+                  <div class="sharer__twitter">
+                        <a href="http://twitter.com/share" class="twitter-share-button" data-text="<?php the_title();?>" data-url="<?php echo get_permalink();?>" data-via="uchileradio" data-lang="es" data-show-screen-name="false" data-show-count="true" rel="nofollow" target="_blank"></a>
+                  </div>
+
+                  <div class="sharer__google">
+                        <script src="https://apis.google.com/js/platform.js" data-annotation="none" data-width="120" async defer></script>
+                        <g:plus action="share"></g:plus>
+                  </div>
             </div>
-            <script type="text/javascript">var addthis_config = {"data_track_addressbar":false}</script>
-            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f0331e02d8a3e19"></script>
-            <!-- AddThis Button END -->
+
+            <div class="cf"></div>
