@@ -117,7 +117,7 @@ body#filsa-2015 {
 					margin:0;
 					li {
 						padding:0;
-						a {
+						> a {
 							display:block;
 							padding:12px 12px 12px 24px;
 							font-size:14px;
@@ -142,21 +142,40 @@ body#filsa-2015 {
 								}
 							}
 							ul.sub-menu {
-								li a {
-									background-color:lighten(#BEC2E1, 10%);
-									border-bottom:1px solid darken(#BEC2E1, 10%);
-									color:#000;
+								> li > a {
+									&:hover {
+										background-color:lighten(#BEC2E1, 15%);
+										border-bottom:1px solid #BEC2E1;
+									}
 								}
 							}
 						}
 
 						&.menu-item-type-custom  {
-							a {
+							> a {
 								&:hover {
 									background-color:#CDE3F1;
 									color:darken(@azul, 10%);
 									padding:12px 12px 12px 24px;
 									cursor:default;
+									color:white;
+								}
+								&:after {
+									content:'\f0d7';
+									font-family:'FontAwesome';
+									font-size:14px;
+									display:inline-block;
+									//line-height:32px;
+									margin-left:8px;
+									//margin-right:4px;
+									vertical-align:middle;
+								}
+
+							}
+							&.current-menu-parent {
+								> a:hover {
+									background-color:#0175C0;
+									color:white;
 								}
 							}	
 						}
@@ -171,10 +190,16 @@ body#filsa-2015 {
 									border-bottom:1px solid #BEC2E1;
 									line-height:16px;
 									color:#0175C0;
+									font-weight:300;
 									&:hover {
 										padding-left:36px;
 									}
 								}
+								
+								li.current-menu-item a {
+									font-weight:300;
+								}
+
 								li.current-menu-item a:before {
 									content:'\f0da';
 									color: darken(#BEC2E1, 35%);
@@ -328,6 +353,7 @@ body#filsa-2015 {
 						font-size:15px;
 						border-bottom:1px solid darken(#F0C016, 25%);
 						background-color:#F0C016;
+						font-weight:500;
 					}
 				}
 			}
