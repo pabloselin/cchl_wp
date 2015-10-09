@@ -13,7 +13,7 @@
         <div class="cf"></div>
 <h4 class="category_description"><?php echo category_description(); ?></h4>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-          <div id="pastillaNoticias">  
+          <div class="pastillaNoticias">  
             <div class="foto-noticias-mini">
 				    <?php the_post_thumbnail('imagen-95'); ?>
             </div><!-- fin img mini-->
@@ -25,7 +25,7 @@
                 <h3 class="nolink"><?php the_title(); ?></h3>
             <?php endif;?>
                 <p class="fecha"><?php echo mysql2date( 'j \\d\\e F \\d\\e Y', $post->post_date, true );?></p>
-				<?php custom_excerpt($post->post_excerpt, 32);?>
+				<?php custom_excerpt($post->post_content, 32);?>
                 
 			</div><!-- fin info-->
         
