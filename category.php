@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 <div id="main-page" class="container_16 cf">
-    <div id="sidebar_interior" class="grid_4">
-        <?php get_sidebar(); ?>
-    </div>
+    <?php get_template_part( 'parts/clean-sidebar' );?>
     <div id="content" class="grid_12">
          <div id="bread">
             Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
@@ -17,17 +15,17 @@
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
           <div id="pastillaNoticias">  
             <div class="foto-noticias-mini">
-				<?php the_post_thumbnail('imagen-95'); ?>
+				    <?php the_post_thumbnail('imagen-95'); ?>
             </div><!-- fin img mini-->
             
 			<div class="info">
             <?php if($post->post_content):?>
-				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+				    <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
             <?php else:?>
                 <h3 class="nolink"><?php the_title(); ?></h3>
             <?php endif;?>
                 <p class="fecha"><?php echo mysql2date( 'j \\d\\e F \\d\\e Y', $post->post_date, true );?></p>
-				<p><?php the_excerpt(); ?></p>
+				        <p><?php the_excerpt(); ?></p>
                 
 			</div><!-- fin info-->
         

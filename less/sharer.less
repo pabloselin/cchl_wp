@@ -5,13 +5,38 @@
 	margin-bottom:6px;
 	clear:both;
 	margin-top:12px;
-		div {
+		a {
 			float:left;
 			margin:0 6px 12px 0;
-			width:120px;
-			&.sharer__google {
-				overflow:hidden;
-				width:220px;
+			width:60px;
+			display: block;
+			border-radius:5px;
+			color:white;
+			padding:6px;
+			font-size:14px;
+			i {
+				font-size:18px;
+				margin-right:3px;
+			}
+			&.sharer__facebook {
+				background-color:#3b5998;
+				&:hover {
+					background-color:lighten(#3b5998, 10%);
+				}
+			}
+
+			&.sharer__twitter {
+				background-color:#00aced;
+				&:hover {
+					background-color:lighten(#00aced, 10%);
+				}
+			}
+
+			&.sharer__gplus {
+				background-color:#B34234;
+				&:hover {
+					background-color:lighten(#B34234, 10%);
+				}	
 			}
 		}
 }

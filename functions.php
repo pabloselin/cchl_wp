@@ -6,6 +6,7 @@ add_post_type_support('page', 'excerpt');
 //CONSTANTS
 define('CCHL_PAGEFILSA', 54798);
 define('CCHL_FILSA2015', 54646);
+define('CCHL_CATSFILSA', '184, 183');
 
 include( TEMPLATEPATH . '/inc/oldfunctions.php');
 include( TEMPLATEPATH . '/inc/custom-functions.php');

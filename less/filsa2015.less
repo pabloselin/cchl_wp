@@ -19,10 +19,10 @@ body.page-id-108 {
 
 .header__logofilsa {
 	position: absolute;
-	top:10px;
+	top:18px;
 	left:260px;
-	background-color: #F0C016;
-	padding: 6px;
+	//background-color: #F0C016;
+	//padding: 6px;
 }
 
 body.page-id-55977 {
@@ -99,19 +99,44 @@ body#filsa-2015 {
 			p {
 				font-size:16px;
 			}
+
+			h1 {
+				font-size:23px;
+				margin-bottom:12px;
+			}
+
+			h2 {
+				font-size:22px;
+				margin-bottom:16px;
+			}
+
+			h3 {
+				font-size:20px;
+				margin-bottom:12px;
+			}
+
+			table {
+				tr {
+					td {
+						border-bottom:1px solid #ccc;
+						padding:3px 0 6px 0;
+							}
+				}
+			}
 		}
 		h1 {
 			color:#0175C0;
 			text-transform:uppercase;
 		}
 	}
-	#sidebar_interior {
+	#sidebar_interior.filsa-2015 {
 		margin-top:24px;
 		ul.menu {
 			> li.current_page_ancestor,
 			> li.current_page_item,
 			> li.current_cat,
-			> li.current-cat-parent
+			> li.current-cat-parent,
+			> li.menu-item-54759
 			 {
 				> a {
 					background-image:none;
@@ -143,6 +168,7 @@ body#filsa-2015 {
 					background-color:fade(@azul, 20%);
 					padding:0;
 					margin:0;
+					display:block;
 					li {
 						padding:0;
 						> a {
@@ -246,7 +272,7 @@ body#filsa-2015 {
 	}
 
 	.redes-sociales {
-		width:95px;
+		width:100px;
 		a {
 			font-size:24px;
 			color:white;
@@ -501,18 +527,33 @@ body#filsa-2015 {
 			.the-content {
 				h1 {
 					font-size:22px;
+					
 				}
 
 				h2 {
 					font-size:20px;
+					margin-bottom:12px;
 				}
 
 				h3 {
 					font-size:18px;
+					margin-bottom:12px;
 				}
 
 				h4 {
 					font-size:17px;
+					margin-bottom:12px;
+				}
+
+				table {
+					max-width:100%;
+					overflow:scroll;
+						tr {
+							td {
+								border-bottom:1px solid #ccc;
+								padding:3px 0 6px 0;
+							}
+						}
 				}
 			}
 		}

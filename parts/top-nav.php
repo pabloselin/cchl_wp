@@ -28,7 +28,7 @@
 		<h1 id="mainlogo testclass">
     		<a href="<?php bloginfo( 'url' ); ?>">Cámara Chilena del Libro 60 años trabajando por el libro y la lectura</a>
         </h1>
-        <a class="header__logofilsa" href="<?php echo get_permalink(CCHL_FILSA2015);?>"><img src="<?php bloginfo('template_url');?>/img/filsa2015/cabeceramovil_e.png" alt="FILSA 2015"></a>
+        <a class="header__logofilsa" href="<?php echo get_permalink(CCHL_FILSA2015);?>"><img src="<?php bloginfo('template_url');?>/img/filsa2015/cabeceramovil_h.png" alt="FILSA 2015"></a>
         <ul id="topmenu-principal">
         	<?php wp_nav_menu( array('menu' => 'Principal' )); ?>
         </ul>

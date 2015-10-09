@@ -51,6 +51,22 @@ $j('.noticias-filsa').cycle({
     }
 });
 
+//Toma contador Facebook y twitter
+        var sharer = $j('.sharer');
+        var durl = sharer.data('url');
+        var fbshares = 0;
+        var twts = 0;
+
+        $j.getJSON('http://graph.facebook.com/?id=' + durl, function(json) {
+            fbshares = +json.shares || 0;
+            $j('.sharer__facebook', sharer).append('<span>' + parseInt(fbshares) + '</span>');
+        });
+
+        $j.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url=' + durl + '&callback=?', function(json) {
+            twts = +json.count || 0;
+            $j('.sharer__twitter', sharer).append('<span>' + parseInt(twts) + '</span>');
+        });
+
 
 $j('.calendario-filsa').cycle({
     fx: 'fade',

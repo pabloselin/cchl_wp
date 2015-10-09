@@ -94,18 +94,36 @@ function checkfilij($postid = NULL) {
 
 function checkferia($postid = NULL, $motherpage, $cats = NULL) {
   global $post;
-  if($postid) {
-    $pid = $postid;
-  } else {
-    $pid = $post->ID;
+  
+  $inferia = false;
+  $arrcats = explode(', ', $cats);
+
+  if(!is_front_page()) {
+    
+    if($postid) {
+      $pid = $postid;
+    } else {
+      $pid = $post->ID;
+    }
+
+    $ancestors = get_post_ancestors($pid);
+    $pagfilij = $motherpage;
+    
+    if($pid == $pagfilij || in_array($pagfilij, $ancestors)) {
+        $inferia =  true;
+    } else {
+        $inferia = false;
+    }
+
+    if(is_category($arrcats, $pid) || in_category($arrcats, $pid) ) {
+      $inferia = true;
+    }
   }
-  $ancestors = get_post_ancestors($pid);
-  $pagfilij = $motherpage;
-  if($pid == $pagfilij || in_array($pagfilij, $ancestors)) {
-      return true;
-  } else {
-      return false;
-  }
+    
+
+
+
+  return $inferia;
 }
 
 function cchl_checkevent($ancestor, $postid, $cats) {

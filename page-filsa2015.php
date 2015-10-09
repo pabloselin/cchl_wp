@@ -5,9 +5,8 @@ Template Name: FILSA 2015
 ?>
 <?php get_header(); ?>
 <div id="main-page" class="container_16 cf post-<?php echo $post->ID;?>">
-    <div id="sidebar_interior" class="grid_4 filsa-2015">
-        <?php get_template_part('parts/clean-sidebar');?>
-    </div>
+    
+    <?php get_template_part('parts/clean-sidebar');?>
 
     
     <div id="content" class="grid_12">

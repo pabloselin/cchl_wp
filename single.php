@@ -6,9 +6,9 @@
 
 <?php if(in_category(17)){ ?>
 <div id="main-page" class="container_16 cf">
-    <div id="sidebar_interior" class="grid_4">
-        <?php get_sidebar(); ?>
-    </div>
+    
+    <?php get_template_part('parts/clean-sidebar');?>
+    
     <div id="content" class="grid_12">
         <div id="bread">
         
@@ -85,9 +85,9 @@
 </div>
 <?php }else { ?>
 <div id="main-page" class="container_16 cf">
-    <div id="sidebar_interior" class="grid_4">
-       <?php get_sidebar(); ?>
-    </div>
+    
+    <?php get_template_part('parts/clean-sidebar'); ?>
+    
     <div id="content" class="grid_12">
         <div id="bread">
         <?php $ptype = get_post_type();
