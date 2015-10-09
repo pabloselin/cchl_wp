@@ -20,12 +20,12 @@
             
 			<div class="info">
             <?php if($post->post_content):?>
-				    <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+				    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <?php else:?>
                 <h3 class="nolink"><?php the_title(); ?></h3>
             <?php endif;?>
                 <p class="fecha"><?php echo mysql2date( 'j \\d\\e F \\d\\e Y', $post->post_date, true );?></p>
-				        <p><?php the_excerpt(); ?></p>
+				<?php custom_excerpt($post->post_excerpt, 32);?>
                 
 			</div><!-- fin info-->
         

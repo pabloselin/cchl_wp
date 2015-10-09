@@ -2,9 +2,9 @@
 
 .sharer {
 	height:36px;
-	margin-bottom:6px;
+	margin-bottom:12px;
 	clear:both;
-	margin-top:12px;
+	margin-top:0;
 		a {
 			float:left;
 			margin:0 6px 12px 0;
@@ -13,11 +13,22 @@
 			border-radius:5px;
 			color:white;
 			padding:6px;
-			font-size:14px;
 			height:18px;
+			-webkit-transition:background ease-in 0.3s;
+			transition:background ease-in 0.3s;
+			
+			span {
+				vertical-align:middle;
+				line-height:18px;	
+				font-size:13px;
+				font-weight:bold;
+			}
+
 			i {
 				font-size:18px;
 				margin-right:3px;
+				line-height:18px;
+				vertical-align:middle;
 			}
 			&.sharer__facebook {
 				background-color:#3b5998;
