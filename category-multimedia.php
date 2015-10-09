@@ -15,7 +15,7 @@
         <div class="cf"></div>
 <h4 class="category_description"><?php echo category_description(); ?></h4>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-          <div id="pastillaNoticias">  
+          <div class="pastillaNoticias">  
             <div class="foto-noticias-mini">
         <?php 
         $miembros = getGroupOrder('galeria_video_video');

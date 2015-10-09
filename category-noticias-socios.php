@@ -12,7 +12,7 @@
         <div class="cf"></div>
 <h4 class="category_description"><?php echo category_description(); ?></h4>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-          <div id="pastillaNoticias" class="pastillaNoticiasSocios">  
+          <div class="pastillaNoticias" class="pastillaNoticiasSocios">  
             <div class="foto-noticias-mini">
 				<?php the_post_thumbnail('imagen-95'); ?>
             </div><!-- fin img mini-->

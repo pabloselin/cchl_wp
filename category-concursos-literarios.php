@@ -17,7 +17,7 @@
 <h4 class="category_description"><?php echo category_description(); ?></h4>
        <?php query_posts(array('category_name' =>'concursos-literarios','showposts' =>-1));
         if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div id="pastillaNoticias">
+        <div class="pastillaNoticias">
 		  		 <div class="foto-noticias-mini">
 				<?php the_post_thumbnail('imagen-95'); ?>
             </div><!-- fin img mini-->

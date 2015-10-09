@@ -16,7 +16,7 @@
      	  <?php
 		  query_posts(array('category_name' =>'noticias-de-la-camara','showposts' =>2));
 		  if (have_posts()) : while (have_posts()) : the_post(); ?> 
-          	<div id="pastillaNoticias">
+          	<div class="pastillaNoticias">
 		  		 <div class="foto-noticias-mini">
 				<?php the_post_thumbnail('imagen-95'); ?>
             </div><!-- fin img mini-->
@@ -34,7 +34,7 @@
           <?php
 		  query_posts(array('category_name' =>'columnas-de-opinion-sala-de-prensa','showposts' =>1));
 		  if (have_posts()) : while (have_posts()) : the_post(); ?> 
-          	<div id="pastillaNoticias">
+          	<div class="pastillaNoticias">
 		  		 <div class="foto-noticias-mini">
 				<?php the_post_thumbnail('imagen-95'); ?>
             </div><!-- fin img mini-->
@@ -52,7 +52,7 @@
           <?php
 		  query_posts(array('category_name' =>'noticias-del-sector','showposts' =>2));
 		  if (have_posts()) : while (have_posts()) : the_post(); ?> 
-          	<div id="pastillaNoticias">
+          	<div class="pastillaNoticias">
 		  		 <div class="foto-noticias-mini">
 				<?php the_post_thumbnail('imagen-95'); ?>
             </div><!-- fin img mini-->
@@ -73,7 +73,7 @@
       $articlelink = get_post_meta($post->ID, 'link_link', true);
       $articlelinkdesc = get_post_meta($post->ID, 'link_descripcion', true);
        ?> 
-          	<div id="pastillaNoticias">
+          	<div class="pastillaNoticias">
 		  		 <div class="foto-noticias-mini">
 				<?php the_post_thumbnail('imagen-95'); ?>
             </div><!-- fin img mini-->
@@ -93,7 +93,7 @@
           <?php
 		  query_posts(array('category_name' =>'concursos-literarios','showposts' =>2));
 		  if (have_posts()) : while (have_posts()) : the_post(); ?> 
-          	<div id="pastillaNoticias">
+          	<div class="pastillaNoticias">
 		  		 <div class="foto-noticias-mini">
 				<?php the_post_thumbnail('imagen-95'); ?>
             </div><!-- fin img mini-->
