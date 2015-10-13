@@ -10,7 +10,7 @@
        <div id="bread">
             Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
         </div>
-        <h1 class="post-title">FILSA en los Medios</h1>
+        <h1 class="post-title"><?php single_cat_title( );?></h1>
       	<?php get_template_part('parts/addthis');?>
         <div class="cf"></div>
         
