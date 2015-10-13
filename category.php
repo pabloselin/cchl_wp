@@ -30,11 +30,13 @@
 			</div><!-- fin info-->
         
          </div><!--fin pastilla noticias-->  		 
-       	 <?php endwhile;endif; ?>
+       	<?php endwhile;?> 
+            
+            <div class="paginador">
+                <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+            </div>
 
-         <div class="paginador">
-		  	<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
-          </div>
+        <?php endif; ?>
         
     </div>
 </div>

@@ -14,8 +14,8 @@
       	<?php get_template_part('parts/addthis');?>
         <div class="cf"></div>
         
-        <?php query_posts(array('category_name' =>'prensa-filsa/filsa-en-los-medios/','showposts' =>'99'));
-        if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <?php
+            if (have_posts()) : while (have_posts()) : the_post(); ?>
         
         <div class="linksInteres">
 			<?php $miembros = getGroupOrder('link_link');
@@ -28,7 +28,13 @@
             <?php } ?>   
         </div> 
         
-         <?php endwhile;endif;wp_reset_query(); ?>   
+        <?php endwhile;?>
+
+         <div class="paginador">
+                <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+            </div>
+
+        <?php endif; ?>   
             
         </div> 
       
