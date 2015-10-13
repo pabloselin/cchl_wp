@@ -115,7 +115,7 @@ function checkferia($postid = NULL, $motherpage, $cats = NULL) {
         $inferia = false;
     }
 
-    if(is_category($arrcats, $pid) || in_category($arrcats, $pid) ) {
+    if(is_category($arrcats, $pid) || is_single() && in_category($arrcats, $pid) ) {
       $inferia = true;
     }
   }
