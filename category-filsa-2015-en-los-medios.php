@@ -14,7 +14,7 @@
       	<?php get_template_part('parts/addthis');?>
         <div class="cf"></div>
         
-        <?php query_posts(array('category_slug' =>'filsa-2015-en-los-medios','posts_per_page' =>-1));
+        <?php query_posts(array('category_name' =>'filsa-2015-en-los-medios','posts_per_page' =>-1));
         if (have_posts()) : while (have_posts()) : the_post(); ?>
         
         <div class="linksInteres">
@@ -22,7 +22,7 @@
             foreach($miembros as $miembro){ ?> 
                 <h1>
                 <a href="<?php echo get('link_link',$miembro); ?>" target="_blank">
-                <?php the_title(); ?></a>
+                <?php the_title(); ?> <i class="fa fa-external-link"></i></a>
                 </h1>
              <p><?php echo get('link_descripcion',$miembro); ?></p>
             <?php } ?>   
