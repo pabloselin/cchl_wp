@@ -29,7 +29,9 @@
         </div> 
         
          <?php endwhile;endif; ?>   
-            
+            <div class="paginador">
+                <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+            </div>
         </div> 
       
     </div>
