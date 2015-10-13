@@ -14,8 +14,8 @@
       	<?php get_template_part('parts/addthis');?>
         <div class="cf"></div>
         
-        <?php query_posts(array('category_name' =>'filsa-2015-en-los-medios','posts_per_page' =>-1));
-        if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <?php 
+            if (have_posts()) : while (have_posts()) : the_post(); ?>
         
         <div class="linksInteres">
 			<?php $miembros = getGroupOrder('link_link');
@@ -28,7 +28,7 @@
             <?php } ?>   
         </div> 
         
-         <?php endwhile;endif;wp_reset_query(); ?>   
+         <?php endwhile;endif; ?>   
             
         </div> 
       
