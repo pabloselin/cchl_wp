@@ -10,7 +10,7 @@
        <div id="bread">
             Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
         </div>
-        <h1>FILSA en los Medios</h1>
+        <h1 class="post-title">FILSA en los Medios</h1>
       	<?php get_template_part('parts/addthis');?>
         <div class="cf"></div>
         
@@ -20,7 +20,10 @@
         <div class="linksInteres">
 			<?php $miembros = getGroupOrder('link_link');
             foreach($miembros as $miembro){ ?> 
-                <a href="<?php echo get('link_link',$miembro); ?>" target="_blank"><h1><?php the_title(); ?></h1></a>
+                <h1>
+                <a href="<?php echo get('link_link',$miembro); ?>" target="_blank">
+                <?php the_title(); ?></a>
+                </h1>
              <p><?php echo get('link_descripcion',$miembro); ?></p>
             <?php } ?>   
         </div> 

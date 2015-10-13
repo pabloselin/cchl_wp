@@ -14,7 +14,7 @@
             $filsa2015id = 54646;
             $filsa2015 = get_page($filsa2015id);
             ?>
-              <h1><?php echo $filsa2014->post_title; ?></h1>
+              <h1 class="post-title"><?php echo $filsa2014->post_title; ?></h1>
            <?php get_template_part('parts/addthis');?>
             <div class="cf"></div>
             <?php echo get_the_post_thumbnail($filsa2014->ID, 'imagen_single'); ?>
@@ -23,7 +23,7 @@
             </div>
           <?php else:
          ?>
-            <h1><?php the_title(); ?></h1>
+            <h1 class="post-title"><?php the_title(); ?></h1>
            <?php get_template_part('parts/addthis');?>
             <?php the_post_thumbnail('imagen_single'); ?>
             <div class="the-content">
