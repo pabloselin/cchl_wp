@@ -12,7 +12,7 @@ Template Name: Colaboradores Filsa 2015
             Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
         </div>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <h1><?php the_title(); ?></h1>
+            <h1 class="post-title"><?php the_title(); ?></h1>
             <?php get_template_part('parts/addthis');?>
             <div class="cf"></div>
             <div class="the-content"><?php the_content();?></div>
