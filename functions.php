@@ -10,5 +10,6 @@ define('CCHL_CATSFILSA', '184, 183');
 
 include( TEMPLATEPATH . '/inc/oldfunctions.php');
 include( TEMPLATEPATH . '/inc/custom-functions.php');
+include( TEMPLATEPATH . '/inc/event-functions.php');
 include( TEMPLATEPATH . '/inc/scripts.php');
 include( TEMPLATEPATH . '/inc/custom-tax.php');

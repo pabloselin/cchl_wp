@@ -68,92 +68,92 @@ $j('.noticias-filsa').cycle({
         });
 
 
-$j('.calendario-filsa').cycle({
-    fx: 'fade',
-    speed: 'fast',
-    timeout: 0,
-    pager: '#navfilsa',
-    pagerAnchorBuilder: function( index, element) {
-        var dia = $j(element).data('dia');
-        var ndia = $j(element).data('ndia');
-        var mes = $j(element).data('mes');
-        var hoy = 'otrodia';
-        if($j(element).hasClass('hoy')) {
-            hoy = 'hoy';
-        };
-        return '<a href="#" class="' + hoy + '"><span class="dia">' + dia + ' </span><span class="ndia">' + ndia + '</span><span class="mes"> ' + mes + ' </span></a>';
-    },
-    onPagerEvent: function( index, element) {
-        var eventos = $j('div.evento', element);
-        //reseteo las ocultaciones previas
-        eventos.show();
+// $j('.calendario-filsa').cycle({
+//     fx: 'fade',
+//     speed: 'fast',
+//     timeout: 0,
+//     pager: '#navfilsa',
+//     // pagerAnchorBuilder: function( index, element) {
+//     //     var dia = $j(element).data('dia');
+//     //     var ndia = $j(element).data('ndia');
+//     //     var mes = $j(element).data('mes');
+//     //     var hoy = 'otrodia';
+//     //     if($j(element).hasClass('hoy')) {
+//     //         hoy = 'hoy';
+//     //     };
+//     //     return '<a href="#" class="' + hoy + '"><span class="dia">' + dia + ' </span><span class="ndia">' + ndia + '</span><span class="mes"> ' + mes + ' </span></a>';
+//     // },
+//     onPagerEvent: function( index, element) {
+//         var eventos = $j('div.evento', element);
+//         //reseteo las ocultaciones previas
+//         eventos.show();
 
-        var avevs = [];
-        var evsarr = [];
-        //Filtro para tema de evento
-        var temevs = [];
-        var temsarr = [];
-        //Escaneo todos los tipos de eventos disponibles
-        eventos.each(function() {
-            var evs = $j(this).data('cchl_tipoevento');
-            var tems = $j(this).data('cchl_temaevento');
-            if(evs != undefined) {
-            evsarr = evs.split(' ');
-            //console.log(evsarr);
-            for(var i = 0, l = evsarr.length; i < l; i++) {
-                if($j.inArray(evsarr[i], avevs) == -1) {
-                    avevs.push(evsarr[i]);
-                    }
-                }
-            }
-            //Temas
-            if(tems != undefined) {
-            temsarr = tems.split(' ');
-            //console.log(temsarr);
-            for(var i = 0, l = temsarr.length; i < l; i++) {
-                if($j.inArray(temsarr[i], temevs) == -1) {
-                    temevs.push(temsarr[i]);
-                    }
-                }
-            }
-        });
-        //Construyo menu de navegación
-        var filtro = $j('div.filtro');
-        var filtrotema = $j('div.filtrotema');
-        //ordeno por nombre
-        avevs.sort();
-        temevs.sort();
-        filtro.empty();
-        filtrotema.empty();
-        for(var i = 0, l = avevs.length; i < l; i++) {
-            filtro.append('<a href="#" data-tiposw="'+avevs[i]+'">'+ cchl.evtipos[avevs[i]] + '</a>');
-        }
-        for(var i = 0, l = temevs.length; i < l; i++) {
-            filtrotema.append('<a href="#" data-tiposw="'+temevs[i]+'">'+ cchl.evtemas[temevs[i]] + '</a>');
-        }
-        //Tabs
-        $j('div.filtrotab', element).hide();
-        $j('div.filtrotab.active', element).show();
-        //Tabs filtro
-        $j('.filtronav a', element).on('click', function(event) {
-            event.preventDefault();
-            //Reseteo el filtro
-            eventos.show();
-            //Saco las clases activas
-            $j('div.filtrotema a, div.filtro a', element).removeClass('on')
-            var active = $j('.filtronav a.active', element);
-            var activetab = $j('.filtrotab.active', element);
-            activetab.hide().removeClass('active');
-            active.removeClass('active');
-            thisdatafilter = $j(this).attr('data-relfilter');
-            $j('.filtrotab[data-filter="' + thisdatafilter + '"]', element).show().addClass('active');
-            $j(this).addClass('active');
-        });
-        //Ajusto altura para elemento
-        var lidiaaltura = $j(element).height();
-        $j('ul.calendario-filsa').height(lidiaaltura);
-    }
-});
+//         var avevs = [];
+//         var evsarr = [];
+//         //Filtro para tema de evento
+//         var temevs = [];
+//         var temsarr = [];
+//         //Escaneo todos los tipos de eventos disponibles
+//         eventos.each(function() {
+//             var evs = $j(this).data('cchl_tipoevento');
+//             var tems = $j(this).data('cchl_temaevento');
+//             if(evs != undefined) {
+//             evsarr = evs.split(' ');
+//             //console.log(evsarr);
+//             for(var i = 0, l = evsarr.length; i < l; i++) {
+//                 if($j.inArray(evsarr[i], avevs) == -1) {
+//                     avevs.push(evsarr[i]);
+//                     }
+//                 }
+//             }
+//             //Temas
+//             if(tems != undefined) {
+//             temsarr = tems.split(' ');
+//             //console.log(temsarr);
+//             for(var i = 0, l = temsarr.length; i < l; i++) {
+//                 if($j.inArray(temsarr[i], temevs) == -1) {
+//                     temevs.push(temsarr[i]);
+//                     }
+//                 }
+//             }
+//         });
+//         //Construyo menu de navegación
+//         var filtro = $j('div.filtro');
+//         var filtrotema = $j('div.filtrotema');
+//         //ordeno por nombre
+//         avevs.sort();
+//         temevs.sort();
+//         filtro.empty();
+//         filtrotema.empty();
+//         for(var i = 0, l = avevs.length; i < l; i++) {
+//             filtro.append('<a href="#" data-tiposw="'+avevs[i]+'">'+ cchl.evtipos[avevs[i]] + '</a>');
+//         }
+//         for(var i = 0, l = temevs.length; i < l; i++) {
+//             filtrotema.append('<a href="#" data-tiposw="'+temevs[i]+'">'+ cchl.evtemas[temevs[i]] + '</a>');
+//         }
+//         //Tabs
+//         $j('div.filtrotab', element).hide();
+//         $j('div.filtrotab.active', element).show();
+//         //Tabs filtro
+//         $j('.filtronav a', element).on('click', function(event) {
+//             event.preventDefault();
+//             //Reseteo el filtro
+//             eventos.show();
+//             //Saco las clases activas
+//             $j('div.filtrotema a, div.filtro a', element).removeClass('on')
+//             var active = $j('.filtronav a.active', element);
+//             var activetab = $j('.filtrotab.active', element);
+//             activetab.hide().removeClass('active');
+//             active.removeClass('active');
+//             thisdatafilter = $j(this).attr('data-relfilter');
+//             $j('.filtrotab[data-filter="' + thisdatafilter + '"]', element).show().addClass('active');
+//             $j(this).addClass('active');
+//         });
+//         //Ajusto altura para elemento
+//         var lidiaaltura = $j(element).height();
+//         $j('ul.calendario-filsa').height(lidiaaltura);
+//     }
+// });
 
 //Agregar filtro al primer día
 $j('ul.calendario-filsa li:first').append(function() {

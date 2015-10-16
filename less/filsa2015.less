@@ -641,3 +641,77 @@ body#filsa-2015 {
 	}
 }
 
+//Navegador eventos
+body#filsa-2015 {
+	#content {
+		.the-content {
+			.navprincipaleventos {
+				a.active,
+				a:hover {
+					background-color:#1075C0;
+					color:white;
+					strong {
+						font-weight:bold;
+						color:white;
+					}
+				}
+			}		
+		}
+
+		ul#navfilsa {
+			li {
+				list-style:none;
+				margin:0;
+				padding:0;
+				&:before {
+					content: '';
+				}
+				display:block;
+				width:70px;
+				margin-right:6px;
+				float:left;
+			}
+			a {
+				color:#0175C0;
+				background-color:#F2F3FA;
+				span {
+					line-height:14px;
+				}
+			}
+			a.activeSlide,
+			a:hover {
+				background-color:#ECB400;
+				color:#000;
+				border-bottom:1px solid #000;
+			}
+		}
+
+		.filtronav {
+			a {
+				background-color:#F2F3FA;
+				color:#0175C0;
+				strong {
+					color:#0175C0;
+				}
+			}
+
+			a.active,
+			a:hover {
+				background-color:#ECB400;
+				color:#000;
+				strong {
+					color:#000;
+				}
+			}
+		}
+
+		.filtro {
+			a:hover {
+				background-color:#1075C0;
+				color:white;
+			}
+		}
+	}
+}
+
+
