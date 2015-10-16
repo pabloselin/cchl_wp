@@ -14,8 +14,9 @@
              <?php the_post_thumbnail('imagen_single'); ?>
             <div class="the-content"><?php the_content();?></div>
             
-		<?php endwhile;
-        endif;wp_reset_query(); ?>
+		<?php 
+            endwhile;
+            endif; ?>
         </div>        
     </div>
 </div>
