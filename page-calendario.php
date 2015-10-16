@@ -31,8 +31,6 @@ if($isfilsa):?>
    
             <h1><?php the_title(); ?></h1>
             
-            <?php get_template_part('parts/addthis');?>
-            
             
             <div class="cf"></div>
             <h4 class="category_description"><?php echo category_description(); ?></h4>

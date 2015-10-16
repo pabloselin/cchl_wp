@@ -28,6 +28,9 @@ $event_id = get_the_ID();
 	<?php the_title( '<h2 class="tribe-events-single-event-title summary entry-title">', '</h2>' ); ?>
 	
 	<?php while ( have_posts() ) :  the_post(); ?>
+
+		<?php get_template_part('parts/addthis');?>
+		
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<!-- Event featured image, but exclude link -->
 			<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>

@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Page Ferias - Información General */
+/* Template Name: Actividades gratuitas */
 ?>
 <?php get_header(); ?>
 <div id="main-page" class="container_16 cf">
@@ -9,11 +9,14 @@
             Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
         </div>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <h1 class="post-title"><?php the_title(); ?></h1>
+            <h1><?php the_title(); ?></h1>
             <?php get_template_part('parts/addthis');?>
              <?php the_post_thumbnail('imagen_single'); ?>
             <div class="the-content"><?php the_content();?></div>
             
+            <div class="actividades">
+                <?php get_template_part('parts/filsa/eventos-gratis' );?>
+            </div>
 		<?php 
             endwhile;
             endif; ?>
