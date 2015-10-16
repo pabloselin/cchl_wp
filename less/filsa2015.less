@@ -8,6 +8,8 @@
 @amarillo: #F9EC87;
 @verde: #00A674;
 
+//Breakpoint
+@scrbr: 768px;
 
 body.page-id-108 {
 	
@@ -252,6 +254,15 @@ body#filsa-2015 {
 						}
 
 						&.menu-item-type-custom  {
+							&.ancla {
+								&:after {
+									content:'';
+								}
+								&:hover {
+									cursor:pointer;
+									background-color:#F2F3FA;
+								}
+							}
 							> a {
 								&:hover {
 									background-color:#CDE3F1;
@@ -329,7 +340,6 @@ body#filsa-2015 {
 	}
 
 	//responsive stuff
-	@scrbr: 768px;
 	
 	.filsa-header-mobile {
 		display:none;
@@ -640,4 +650,90 @@ body#filsa-2015 {
 
 	}
 }
+
+
+//Navegador eventos
+body#filsa-2015 {
+	#content {
+			.navprincipaleventos {	
+				a {
+					background-color:#f0f0f0;
+					color:#333;
+				}
+				a.active,
+				a:hover {
+					background-color:#1075C0;
+					color:white;
+					strong {
+						font-weight:bold;
+						color:white;
+					}
+				}
+			}		
+
+		ul#navfilsa {
+			li {
+				list-style:none;
+				margin:0;
+				padding:0;
+				&:before {
+					content: '';
+				}
+				display:block;
+				width:70px;
+				margin-right:6px;
+				float:left;
+			}
+			a {
+				color:#333;
+				background-color:#f0f0f0;
+				span {
+					line-height:14px;
+				}
+			}
+			a.activeSlide,
+			a:hover {
+				background-color:#ECB400;
+				color:#000;
+				//border-bottom:1px solid #000;
+			}
+		}
+
+		.filtronav {
+			a {
+				background-color:#f0f0f0;
+				color:#333;
+				strong {
+					color:#000;
+				}
+			}
+
+			a.active,
+			a:hover {
+				background-color:#ECB400;
+				color:#000;
+				strong {
+					color:#000;
+				}
+			}
+		}
+
+		.filtro {
+			a:hover, a.on {
+				background-color:#1075C0;
+				color:white;
+			}
+		}
+	}
+}
+
+@media screen and(max-width:@scrbr) {
+	ul.calendario-filsa {
+		width:100%;
+		li {
+			width:100%;
+		}
+	}
+}
+
 
