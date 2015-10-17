@@ -254,17 +254,6 @@ body#filsa-2015 {
 						}
 
 						&.menu-item-type-custom  {
-							&.ancla {
-								> a {
-										&:after {
-											content:'';
-										}
-										&:hover {
-											cursor:pointer;
-											background-color:#F2F3FA;
-										}
-								}
-							}
 							> a {
 								&:hover {
 									background-color:#CDE3F1;
@@ -288,6 +277,17 @@ body#filsa-2015 {
 								> a:hover {
 									background-color:#0175C0;
 									color:white;
+								}
+							}
+							&.ancla {
+								> a {
+										&:after {
+											content:'';
+										}
+										&:hover {
+											cursor:pointer;
+											background-color:#F2F3FA;
+										}
 								}
 							}	
 						}
@@ -730,6 +730,15 @@ body#filsa-2015 {
 }
 
 @media screen and(max-width:@scrbr) {
+	
+	a.link-ancla {
+			position: relative;
+			display: block;
+			top:-100px;
+			visibility:hidden;
+		}
+
+
 	ul.calendario-filsa {
 		width:100%;
 		li {
@@ -737,5 +746,4 @@ body#filsa-2015 {
 		}
 	}
 }
-
 
