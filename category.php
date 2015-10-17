@@ -5,7 +5,7 @@
          <div id="bread">
             Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
         </div>
-        <h1>
+        <h1 class="post-title">
 			<?php single_cat_title(); ?>
         </h1>
         

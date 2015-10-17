@@ -353,6 +353,11 @@ $j('.filsa-header-mobile a.triggernav').on('click', function() {
     }
 });
 
+$j('nav.mobile-menu-filsa a').on('click', function() {
+    console.log('inclick');
+    $j('nav.mobile-menu-filsa').removeClass('active').addClass('inactive');
+});
+
 }); 
 
 
