@@ -770,13 +770,24 @@ body.page-id-54646 {
 			font-weight:normal;
 			text-align:center;
 			padding:8px 10px;
-			border-radius:8px;
+			border-radius:0;
 			font-size:14px;
-			margin:12px 12px 0 0;
+			margin:0;
 			height:32px;
+			
 			&:hover {
-				background-color:darken(#31B65B, 5%);
+				background-color:darken(#31B65B, 15%);
 			}
+		}
+		&:nth-child(odd) {
+			a {
+				background-color:desaturate(#31B65B, 20%);
+				
+				&:hover {
+					background-color:darken(#31B65B, 15%);
+				}
+			}
+
 		}
 	}
 }
