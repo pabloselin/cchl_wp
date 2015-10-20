@@ -20,7 +20,7 @@
 	</header>
 	<div class="filsa-header-mobile">
 		<a href="<?php echo get_permalink(CCHL_FILSA2015);?>" title="Volver a portada FILSA 2015"><img src="<?php bloginfo('template_url');?>/img/filsa2015/cabeceramovil_e.png" alt="FILSA 2015"></a>
-		<a href="#" class="triggernav"><i class="fa fa-bars"></i><span>menú</span></a>
+		<a href="javascript:void(0);" class="triggernav"><i class="fa fa-bars"></i><span>menú</span></a>
 		<nav class="mobile-menu-filsa inactive">
 			<?php wp_nav_menu( array('menu'=> 178));?>
 			<div class="mobile__redes">

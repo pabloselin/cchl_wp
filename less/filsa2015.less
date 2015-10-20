@@ -8,6 +8,8 @@
 @amarillo: #F9EC87;
 @verde: #00A674;
 
+//Breakpoint
+@scrbr: 768px;
 
 body.page-id-108 {
 	
@@ -123,12 +125,12 @@ body#filsa-2015 {
 			}
 
 			h2 {
-				font-size:22px;
+				font-size:20px;
 				margin-bottom:16px;
 			}
 
 			h3 {
-				font-size:20px;
+				font-size:18px;
 				margin-bottom:12px;
 			}
 
@@ -276,6 +278,17 @@ body#filsa-2015 {
 									background-color:#0175C0;
 									color:white;
 								}
+							}
+							&.ancla {
+								> a {
+										&:after {
+											content:'';
+										}
+										&:hover {
+											cursor:pointer;
+											background-color:#F2F3FA;
+										}
+								}
 							}	
 						}
 
@@ -329,7 +342,6 @@ body#filsa-2015 {
 	}
 
 	//responsive stuff
-	@scrbr: 768px;
 	
 	.filsa-header-mobile {
 		display:none;
@@ -442,7 +454,7 @@ body#filsa-2015 {
 			transition:max-height 0.5s ease-out;
 			overflow:hidden;
 			margin-top:70px;
-			border-top:1px solid darken(#CDE3F1, 25%);
+			border-top:1px solid #F0C016;
 			
 			div.mobile__redes {
 				background-color:#F2F3F9;
@@ -641,11 +653,15 @@ body#filsa-2015 {
 	}
 }
 
+
 //Navegador eventos
 body#filsa-2015 {
 	#content {
-		.the-content {
-			.navprincipaleventos {
+			.navprincipaleventos {	
+				a {
+					background-color:#f0f0f0;
+					color:#333;
+				}
 				a.active,
 				a:hover {
 					background-color:#1075C0;
@@ -656,8 +672,6 @@ body#filsa-2015 {
 					}
 				}
 			}		
-		}
-
 		ul#navfilsa {
 			li {
 				list-style:none;
@@ -672,8 +686,8 @@ body#filsa-2015 {
 				float:left;
 			}
 			a {
-				color:#0175C0;
-				background-color:#F2F3FA;
+				color:#333;
+				background-color:#f0f0f0;
 				span {
 					line-height:14px;
 				}
@@ -682,16 +696,16 @@ body#filsa-2015 {
 			a:hover {
 				background-color:#ECB400;
 				color:#000;
-				border-bottom:1px solid #000;
+				//border-bottom:1px solid #000;
 			}
 		}
 
 		.filtronav {
 			a {
-				background-color:#F2F3FA;
-				color:#0175C0;
+				background-color:#f0f0f0;
+				color:#333;
 				strong {
-					color:#0175C0;
+					color:#000;
 				}
 			}
 
@@ -706,7 +720,7 @@ body#filsa-2015 {
 		}
 
 		.filtro {
-			a:hover {
+			a:hover, a.on {
 				background-color:#1075C0;
 				color:white;
 			}
@@ -714,4 +728,109 @@ body#filsa-2015 {
 	}
 }
 
+@media screen and(max-width:@scrbr) {
+	
+	a.link-ancla {
+			position: relative;
+			display: block;
+			top:-60px;
+			visibility:hidden;
+		}
+
+
+	ul.calendario-filsa {
+		width:100%;
+		li {
+			width:100%;
+		}
+	}
+}
+
+body.page-id-54646 {
+	#content {
+		margin-top:24px;
+	}
+}
+
+.accesos-rapidos {
+	overflow:hidden;
+	margin-bottom:12px;
+	
+	ul li {
+		list-style:none;
+		a {
+			display:block;
+			width:130px;
+			float:left;
+			text-transform:uppercase;
+			background-color:desaturate(#31B65B, 10%);
+			color:white;
+			font-family:sans-serif;
+			font-weight:normal;
+			text-align:center;
+			padding:14px 16px;
+			border-radius:0;
+			font-size:14px;
+			margin:0 1px 1px 0;
+			height:32px;
+			
+			&:hover {
+				background-color:darken(#31B65B, 15%);
+			}
+		}
+
+		&:nth-child(2),
+		&:nth-child(4),
+		&:nth-child(5),
+		&:nth-child(7)
+		 {
+			a {
+				background-color:darken(desaturate(#31B65B, 10%), 8%);
+				
+				&:hover {
+					background-color:darken(#31B65B, 15%);
+				}
+			
+			}
+		}
+	}
+}
+
+@media screen and (max-width:@scrbr) {
+	.accesos-rapidos {
+		ul li {
+		
+		&:nth-child(2),
+		&:nth-child(4),
+		&:nth-child(5),
+		&:nth-child(7)
+		 {
+			a {
+				background-color:desaturate(#31B65B, 10%);
+				
+				&:hover {
+					background-color:darken(#31B65B, 15%);
+				}
+			
+			}
+		}
+
+
+		&:nth-child(1),
+		&:nth-child(4),
+		&:nth-child(5),
+		&:nth-child(8)
+		 {
+			a {
+				background-color:darken(desaturate(#31B65B, 10%), 8%);
+				
+				&:hover {
+					background-color:darken(#31B65B, 15%);
+				}
+			
+			}
+		}
+		}
+	}
+}
 

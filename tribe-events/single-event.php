@@ -68,8 +68,8 @@ $event_id = get_the_ID();
 	<!-- Event footer -->
 	<div id="tribe-events-footer">
 	<?php 
-		if(is_object_in_term( $event_id, 'tribe_events_cat', 128 )):?>
-			<a class="centerprog" href="<?php echo get_permalink(31825);?>">Ir a Programa FILSA 2014</a>
+		if(is_object_in_term( $event_id, 'tribe_events_cat', 180 )):?>
+			<a class="centerprog" href="<?php echo get_permalink(57212);?>">Ir a Programa FILSA 2015</a>
 		<?php 
 		endif;
 	?>
