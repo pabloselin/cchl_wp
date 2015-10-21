@@ -143,6 +143,7 @@ $('.calendario-filsa').cycle({
     speed: 'fast',
     timeout: 0,
     pager: '#navfilsa',
+    width: '100%',
     pagerAnchorBuilder: function( index, element) {
         var dia = $(element).data('dia');
         var ndia = $(element).data('ndia');
