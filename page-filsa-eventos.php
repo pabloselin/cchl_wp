@@ -13,6 +13,8 @@ Template Name: FILSA 2015 Eventos
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <?php get_template_part('parts/addthis');?>
             <div class="the-content">
+            	<?php the_content();?>
+            	
                 <?php get_template_part( 'parts/filsa/eventos-ajax' );?>
             </div> 
         <?php endwhile;endif; ?>
