@@ -661,11 +661,13 @@ body#filsa-2015 {
 				a {
 					background-color:#f0f0f0;
 					color:#333;
+					border-bottom:0;
 				}
 				a.active,
 				a:hover {
 					background-color:#1075C0;
 					color:white;
+					border-bottom:0;
 					strong {
 						font-weight:bold;
 						color:white;
@@ -716,7 +718,8 @@ body#filsa-2015 {
 			}
 
 			a.activeSlide,
-			a:hover {
+			a:hover,
+			a.active {
 				background-color:#ECB400;
 				color:#000;
 				//border-bottom:1px solid #000;
@@ -741,11 +744,17 @@ body#filsa-2015 {
 				}
 			}
 		}
-
-		.filtro {
-			a:hover, a.on {
-				background-color:#1075C0;
-				color:white;
+	
+	.the-content {
+			.filtro, .filtrotema {
+				a {
+					border-bottom:0;
+				}
+				a:hover, a.on {
+					background-color:#1075C0;
+					color:white;
+					border-bottom:0;
+				}
 			}
 		}
 	}
@@ -859,17 +868,42 @@ body.page-id-54646 {
 
 
 //Ajax eventos 
-
-.eventos-load {
-	clear:both;
-	padding-top:12px;
-	.evento {
+body#filsa-2015 #content .the-content {
+	.eventos-load, .evtodos-load {
+		clear:both;
 		padding:12px;
-		background-color:#f0f0f0;
-		margin-bottom:12px;
-		a {
-			text-decoration:none;
+		.aviso-load {
+			padding:12px;
+			background-color:#F2F3FA;
+			border-radius:5px;
+			text-align:center;
 		}
+		.eventos-loading {
+			padding:12px;
+			background-color:#ECB400;
+			color:#000;
+			border-radius:5px;
+			text-align:center;
+		}
+		.evento {
+			padding:12px;
+			background-color:#f0f0f0;
+			margin-bottom:12px;
+				p {
+					margin-bottom:0;
+					padding-bottom:0;
+				}
+				a {
+					text-decoration:none;
+				}
+			}
+		}	
+}
+
+@media screen and(max-width:@scrbr) {
+	li.dia.coneventos.normal {
+		max-width:100%;
+		height:auto;
 	}
 }
 

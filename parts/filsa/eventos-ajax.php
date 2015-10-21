@@ -12,7 +12,6 @@
 <div class="navprincipaleventos">
 	<a href="#" class="active" data-tab="diaseventos">Ver los eventos por día</a>
 	<a href="#" data-tab="todoseventos">Ver todos los eventos</a>
-	<a href="#" data-tab="gratis">Ver eventos <strong>gratuitos</strong></a>
 </div>
 
 <div class="tabdias tabgen active" id="diaseventos">
@@ -37,29 +36,10 @@
 			<?php }?>
 	</ul>
 
-	<div class="filtrowrap">
-			<div class="filtronav">
-				<a href="#" class="active" data-relfilter="portipo">Filtrar eventos <strong>por tipo</strong></a>
-				<a href="#" data-relfilter="portema">Filtrar eventos <strong>por tema</strong></a>
-			</div>
-			<div class="filtrotab active" data-filter="portipo">
-				
-	
-				<div class="filtro" data-id="<?php echo $day->format('U');?>">
-					
-				</div>
-			</div>
-			<div class="filtrotab" data-filter="portema">
-				
-				<div class="filtrotema" data-id="<?php echo $day->format('U');?>">
-					
-				</div>
-			</div>
-</div>
-
-
 	<div class="eventos-load">
-		<p>Escoge un día</p>	
+		<div class="aviso-load">
+			<p>Escoge un día para ver los eventos correspondientes.</p>
+		</div>
 	</div>
 
 </div>
@@ -73,26 +53,36 @@
 
 	<div class="selectwrap filtrotab active" data-filter="portipo">
 		<h3>Todos los eventos por tipo</h3>
-		<select name="todos-eventos-tipos" id="todos-eventos-tipos" data-filter="cchl_tipoevento">
+		
+		<?php 
+			$tipos = get_terms('cchl_tipoevento');
+		?>
+
+		<select name="todos-eventos-tipos-ajax" id="todos-eventos-tipos-ajax" data-filter="cchl_tipoevento">
 			<option value="0" default>Escoge tipo de evento</option>
+			<?php foreach($tipos as $tipo) {?>
+				<option value="<?php echo $tipo->term_id;?>"><?php echo $tipo->name;?></option>
+				<?php }?>
 		</select>
 	</div>
 	<div class="selectwrap filtrotab" data-filter="portema">
 		<h3>Todos los eventos por tema</h3>
-		<select name="todos-eventos-temas" id="todos-eventos-temas" data-filter="cchl_temaevento">
+		<?php 
+			$temas = get_terms('cchl_temaevento');
+		?>
+
+
+		<select name="todos-eventos-temas-ajax" id="todos-eventos-temas-ajax" data-filter="cchl_temaevento">
 			<option value="0">Escoge tema de evento</option>
+			<?php foreach($temas as $tema) {?>
+				<option value="<?php echo $tema->term_id;?>"><?php echo $tema->name;?></option>
+				<?php }?>
 		</select>
 	</div>
 
-	<div class="wraptodos">
-		<h2>Escoge un filtro</h2>
-		<ul class="calendario-filsa">
-			<li></li>
-		</ul>
+	<div class="evtodos-load">
+		<div class="aviso-load">
+			<p>Escoge un filtro para ver los eventos correspondientes.</p>
+		</div>
 	</div>
-</div>
-
-<div class="tabgen tabgratis" id="gratis">
-	<h3>Eventos gratuitos</h3>
-	<?php echo cchl_free_events();?>
 </div>

@@ -42,10 +42,10 @@ function cchl_enableFilters(element) {
         filtro.empty();
         filtrotema.empty();
         for(var i = 0, l = avevs.length; i < l; i++) {
-            filtro.append('<a href="#" data-tiposw="'+avevs[i]+'">'+ cchl.evtipos[avevs[i]] + '</a>');
+            filtro.append('<a class="fltip" href="javascript:void(0);" data-tiposw="'+avevs[i]+'">'+ cchl.evtipos[avevs[i]] + '</a>');
         }
         for(var i = 0, l = temevs.length; i < l; i++) {
-            filtrotema.append('<a href="#" data-tiposw="'+temevs[i]+'">'+ cchl.evtemas[temevs[i]] + '</a>');
+            filtrotema.append('<a class="fltem" href="javascript:void(0);" data-tiposw="'+temevs[i]+'">'+ cchl.evtemas[temevs[i]] + '</a>');
         }
         //Tabs
         jQuery('div.filtrotab', element).hide();
@@ -208,8 +208,9 @@ $('ul.calendario-filsa li:first').append(function() {
 });
 
 
-$('div.filtro').on('click','a', function(event) {
+$('div.filtro, .eventos-load').on('click','a.fltip', function(event) {
     $('div.filtro a').removeClass('on');
+    console.log('clickfiltro');
     event.preventDefault();
     //console.log($(this).parent());
     //Escojo todos los que corresponden al evento dentro de mi día
@@ -223,7 +224,7 @@ $('div.filtro').on('click','a', function(event) {
     $(this).addClass('on');
 });
 
-$('div.filtrotema').on('click','a', function(event) {
+$('div.filtrotema, .eventos-load').on('click','a.fltem', function(event) {
     $('div.filtrotema a').removeClass('on');
     event.preventDefault();
     //console.log($(this).parent());
@@ -264,13 +265,13 @@ var filtodos = $('select#todos-eventos-tipos, select#todos-eventos-temas');
 
     for(var i in tipos) {
            if(tipos.hasOwnProperty(i)) {
-                $('select[data-filter="cchl_tipoevento"]').append('<option value="' + i + '">' + tipos[i] + '</option>'); 
+                $('select#todos-eventos-tipos[data-filter="cchl_tipoevento"]').append('<option value="' + i + '">' + tipos[i] + '</option>'); 
            }
     }
 
     for(var i in temas) {
            if(temas.hasOwnProperty(i)) {
-                $('select[data-filter="cchl_temaevento"]').append('<option value="' + i + '">' + temas[i] + '</option>'); 
+                $('select#todos-eventos-temas[data-filter="cchl_temaevento"]').append('<option value="' + i + '">' + temas[i] + '</option>'); 
            }
     }
 
@@ -319,8 +320,12 @@ filtodos.on('change', function(event) {
 //Tabs general y filtro
 var tabdias = $('.tabdias');
 var tabtodos = $('.tabtodos');
+var tabgratis = $('.tabgratis');
 
 tabtodos.hide();
+tabgratis.hide();
+
+
 $('.navprincipaleventos a').on('click', function(event) {
     event.preventDefault();
     var datathis = $(this).data('tab');
