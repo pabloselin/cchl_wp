@@ -131,6 +131,9 @@ function cchl_event_template($postid, $dayid = 'any') {
 	$startday = tribe_get_start_date( $event->ID, false, 'l j F');
 	$startdate = tribe_get_start_date($event->ID, false, 'G:i');
 	$enddate = tribe_get_end_date($event->ID, false, 'G:i');
+	if(tribe_event_is_all_day( $event->ID) ):
+		$startdate = 'Todo el día';
+	endif;
 	$tipoevs = get_the_terms($event->ID, 'cchl_tipoevento');
 	$temaevs = get_the_terms($event->ID, 'cchl_temaevento');
 	$ntevs = array();
@@ -164,13 +167,15 @@ function cchl_event_template($postid, $dayid = 'any') {
 
 	$html .= '<p><span class="hora"><i class="fa fa-clock-o fa-fw"></i>' . $startdate . '</span>';
 	
-	if($startdate != $enddate):
+	if($startdate != $enddate && !tribe_event_is_all_day($event->ID) ):
 		$html .= '- ' . $enddate;
 	endif;
 	
-	$html .= ' hrs. </p>';
+	if(!tribe_event_is_all_day($event->ID) ):
+		$html .= ' hrs. </p>';
+	endif;
 	$html .= '<p><span class="lugar"><i class="fa fa-map-marker fa-fw"></i> Lugar: ' . tribe_get_venue($event->ID) .'</span></p>';
-	$html .= '<p><span class="tipo">TIPO: ' . $nomtipoevs . '</span></p>';
+	$html .= '<br><p><span class="tipo">TIPO: ' . $nomtipoevs . '</span></p>';
 	$html .= '<p><span class="tema">TEMA: ' . $nomtemaevs . '</span></p>';
 	$html .= '<p class="evplus"><a href="' . get_permalink($event->ID) . '" class="masinfo"><i class="fa fa-plus"></i> Más información</a> </p>';
 	$html .= '</div>';
