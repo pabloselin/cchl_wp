@@ -12,6 +12,7 @@
 <div class="navprincipaleventos">
 	<a href="#" class="active" data-tab="diaseventos">Ver los eventos por día</a>
 	<a href="#" data-tab="todoseventos">Ver todos los eventos</a>
+	<a data-tab="link" href="<?php echo CCHL_LINKGRATIS;?>">Actividades gratuitas</a>
 </div>
 
 <div class="tabdias tabgen active" id="diaseventos">

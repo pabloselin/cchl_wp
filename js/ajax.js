@@ -338,18 +338,22 @@ tabtodos.hide();
 tabgratis.hide();
 
 
-$('.navprincipaleventos a').on('click', function(event) {
-    event.preventDefault();
+$('.navprincipaleventos a').on('click', function(event) {    
     var datathis = $(this).data('tab');
-    console.log(datathis);
     var activetab = $('.navprincipaleventos a.active');
-    activetab.removeClass('active');
-    $('.tabgen.active').hide().removeClass('active');
-    $(this).addClass('active');
-    $('#' + datathis).show().addClass('active');
-    //Reseteo los filtros
-    $('.wraptodos ul.calendario-filsa li').empty();
-    $('.selectwrap select').val(0);
+    if(datathis == 'link') {
+        window.location($(this).attr('href'));
+    } else {
+        event.preventDefault();
+        activetab.removeClass('active');
+        $('.tabgen.active').hide().removeClass('active');
+        $(this).addClass('active');
+        $('#' + datathis).show().addClass('active');
+        //Reseteo los filtros
+        $('.wraptodos ul.calendario-filsa li').empty();
+        $('.selectwrap select').val(0);    
+    }
+    
 });
 
 $('body.page-id-108 #menu-item-54759').addClass('current_page_item current-menu-item');

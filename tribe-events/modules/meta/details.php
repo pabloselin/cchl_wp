@@ -94,7 +94,12 @@
 		if ( ! empty( $cost ) ):
 			?>
 			<dt> <?php _e( 'Valor:', 'tribe-events-calendar' ) ?> </dt>
-			<dd class="tribe-events-event-cost"> <?php esc_html_e( tribe_get_formatted_cost() ) ?> </dd>
+			<dd class="tribe-events-event-cost"> <?php esc_html_e( tribe_get_formatted_cost() ) ?> 
+				<?php if(is_object_in_term( $post->ID, 'cchl_tipoevento', '188' )):?> 
+				<p>
+					<a class="linkgratis" href="<?php echo CCHL_LINKGRATIS;?>">Infórmate acá como asistir</a>
+				</p>
+				<?php endif;?></dd>
 		<?php endif ?>
 
 		

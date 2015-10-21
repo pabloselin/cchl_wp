@@ -183,6 +183,9 @@ function cchl_event_template($postid, $dayid = 'any') {
 	if($nomtemaevs):
 		$html .= '<p><span class="tema">TEMA: ' . $nomtemaevs . '</span></p>';
 	endif;
+	if(is_object_in_term( $event->ID, 'cchl_tipoevento', 188 )):
+		$html .= '<p class="actgratis"><a href="'. CCHL_LINKGRATIS.'"><i class="fa fa-thumbs-o-up"></i> Actividad gratuita: infórmate como asistir acá</a></p>';
+	endif;
 	$html .= '<p class="evplus"><a href="' . get_permalink($event->ID) . '" class="masinfo"><i class="fa fa-plus"></i> Más información</a> </p>';
 	$html .= '</div>';
 
