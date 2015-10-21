@@ -44,9 +44,15 @@ function cchl_enableFilters(element) {
         for(var i = 0, l = avevs.length; i < l; i++) {
             filtro.append('<a class="fltip" href="javascript:void(0);" data-tiposw="'+avevs[i]+'">'+ cchl.evtipos[avevs[i]] + '</a>');
         }
+        
         for(var i = 0, l = temevs.length; i < l; i++) {
-            filtrotema.append('<a class="fltem" href="javascript:void(0);" data-tiposw="'+temevs[i]+'">'+ cchl.evtemas[temevs[i]] + '</a>');
-        }
+            if(cchl.evtemas[temevs[i]] != undefined) {
+                filtrotema.append('<a class="fltem" href="javascript:void(0);" data-tiposw="'+temevs[i]+'">'+ cchl.evtemas[temevs[i]] + '</a>');    
+            }            
+        }        
+        
+        
+        
         //Tabs
         jQuery('div.filtrotab', element).hide();
         jQuery('div.filtrotab.active', element).show();
@@ -193,12 +199,18 @@ $('ul.calendario-filsa li:first').append(function() {
         //ordeno por nombre
         avevs.sort();
         filtro.empty();
+
+
         for(var i = 0, l = avevs.length; i < l; i++) {
             filtro.append('<a href="#" data-tiposw="'+avevs[i]+'">'+ cchl.evtipos[avevs[i]] + '</a>');
         }
-         for(var i = 0, l = temevs.length; i < l; i++) {
+
+        
+        for(var i = 0, l = temevs.length; i < l; i++) {
             filtrotema.append('<a href="#" data-tiposw="'+temevs[i]+'">'+ cchl.evtemas[temevs[i]] + '</a>');
-        }
+        }   
+        
+         
         //Tabs
         $('div.filtrotab', this).hide();
         $('div.filtrotab.active', this).show();

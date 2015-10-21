@@ -168,15 +168,21 @@ function cchl_event_template($postid, $dayid = 'any') {
 	$html .= '<p><span class="hora"><i class="fa fa-clock-o fa-fw"></i>' . $startdate . '</span>';
 	
 	if($startdate != $enddate && !tribe_event_is_all_day($event->ID) ):
-		$html .= '- ' . $enddate;
+		$html .= ' - ' . $enddate;
 	endif;
 	
 	if(!tribe_event_is_all_day($event->ID) ):
 		$html .= ' hrs. </p>';
 	endif;
 	$html .= '<p><span class="lugar"><i class="fa fa-map-marker fa-fw"></i> Lugar: ' . tribe_get_venue($event->ID) .'</span></p>';
-	$html .= '<br><p><span class="tipo">TIPO: ' . $nomtipoevs . '</span></p>';
-	$html .= '<p><span class="tema">TEMA: ' . $nomtemaevs . '</span></p>';
+	
+	if($nomtipoevs):
+		$html .= '<br><p><span class="tipo">TIPO: ' . $nomtipoevs . '</span></p>';
+	endif;
+
+	if($nomtemaevs):
+		$html .= '<p><span class="tema">TEMA: ' . $nomtemaevs . '</span></p>';
+	endif;
 	$html .= '<p class="evplus"><a href="' . get_permalink($event->ID) . '" class="masinfo"><i class="fa fa-plus"></i> Más información</a> </p>';
 	$html .= '</div>';
 
