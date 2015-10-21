@@ -677,30 +677,30 @@ body#filsa-2015 {
 		ul#navfilsa,
 		ul.diasfilsa
 		 {
+		 	margin:0;
+		 	padding:0;
 			li {
 				list-style:none;
 				margin:0;
 				padding:0;
+				display:inline;
 				&:before {
 					content: '';
 				}
-				display:block;
-				width:70px;
-				margin-right:6px;
-				float:left;
 			}
 			a {
 				display:block;
 				float:left;
 				width:58px;
-				margin-right:8px;
+				margin-right:6px;
 				font-size:12px;
 				text-align:center;
 				padding:4px;
-				margin-bottom:8px;
+				margin-bottom:6px;
 				color:#333;
 				background-color:#f0f0f0;
-				border-bottom:1px solid #555;
+				border-top:1px solid lighten(#555, 35%);
+				border-bottom:0;
 				
 				span {
 					line-height:14px;
@@ -722,7 +722,8 @@ body#filsa-2015 {
 			a.active {
 				background-color:#ECB400;
 				color:#000;
-				//border-bottom:1px solid #000;
+				border-bottom:0;
+				border-top:1px solid lighten(#555, 35%);
 			}
 		}
 
@@ -871,7 +872,7 @@ body.page-id-54646 {
 body#filsa-2015 #content .the-content {
 	.eventos-load, .evtodos-load {
 		clear:both;
-		padding:12px;
+		padding:12px 0 0 0;
 		.aviso-load {
 			padding:12px;
 			background-color:#F2F3FA;
