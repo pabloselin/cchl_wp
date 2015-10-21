@@ -11,10 +11,15 @@ Template Name: FILSA 2015 Eventos
     
     <div id="content" class="grid_12">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        	<h1 class="post-title"><?php the_title();?></h1>
+
             <?php get_template_part('parts/addthis');?>
+            
             <div class="the-content">
-            	<?php the_content();?>
             	
+            	<?php the_content();?>
+
                 <?php get_template_part( 'parts/filsa/eventos-ajax' );?>
             </div> 
         <?php endwhile;endif; ?>
