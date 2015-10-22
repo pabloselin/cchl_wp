@@ -5,16 +5,10 @@
 	get_header();
 	?>
 <div id="main-page" class="container_16 cf">
-<?php 
-$isfilsa = checkfilsa();
-if($isfilsa):?>
-	<div id="sidebar_interior" class="grid_4 filsa-2014">
-		<?php get_sidebar('filsa2014');?>
-	</div>
-<?php else:?>
+
     
-   		<?php get_template_part('parts/clean-sidebar');?>
-    <?php endif;?>
+    <?php get_template_part('parts/clean-sidebar');?>
+
     
     <div id="content" class="grid_12">
 

@@ -1,6 +1,8 @@
 //sharer
 
-.sharer {
+.sharer,
+body#filsa-2015 #content .the-content .sharer
+ {
 	height:36px;
 	margin-bottom:12px;
 	clear:both;
@@ -11,6 +13,7 @@
 			width:60px;
 			display: block;
 			border-radius:5px;
+			border:0;
 			color:white;
 			padding:6px;
 			height:18px;
@@ -30,6 +33,11 @@
 				line-height:18px;
 				vertical-align:middle;
 			}
+
+			&:hover {
+				border:0;
+			}
+
 			&.sharer__facebook {
 				background-color:#3b5998;
 				&:hover {

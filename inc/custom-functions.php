@@ -92,8 +92,8 @@ function checkfilij($postid = NULL) {
   }
 }
 
-function checkferia($postid = NULL, $motherpage, $cats = NULL) {
-  global $post;
+function checkferia($postid = NULL, $motherpage, $cats = NULL, $evterms = NULL ) {
+  global $post, $wp_query;
   
   $inferia = false;
   $arrcats = explode(', ', $cats);
@@ -117,6 +117,13 @@ function checkferia($postid = NULL, $motherpage, $cats = NULL) {
 
     if(is_category($arrcats, $pid) || is_single() && in_category($arrcats, $pid) ) {
       $inferia = true;
+    }
+
+    if($evterms) {
+      $event_id = get_queried_object_id();
+      if( is_single() && tribe_event_in_category('filsa-2015', $event_id ) ) {
+        $inferia = true;
+      }
     }
   }
     
