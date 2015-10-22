@@ -360,7 +360,7 @@ $('.navprincipaleventos a').on('click', function(event) {
 $('body.page-id-108 #menu-item-54759').addClass('current_page_item current-menu-item');
 
 //Activo el calendario para el día de hoy
-$('#navfilsa a.hoy').trigger('click');
+$('#navfilsa a.hoy, #diaseventos ul li a.hoy').trigger('click');
 
 //Menú móvil FILSA 2015
 $('.filsa-header-mobile a.triggernav').on('click', function() {
