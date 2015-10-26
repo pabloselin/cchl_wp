@@ -9,6 +9,8 @@ define('CCHL_FILSA2015', 54646);
 define('CCHL_CATSFILSA', '184, 183');
 define('CCHL_LINKGRATIS', 'http://camaradellibro.cl/ferias/filsa/filsa-2015/entradas-liberadas-a-filsa-2015/');
 
+define('CCHL_TWITTER', 'FILSA2015');
+
 register_nav_menu( 'accesos-rapidos-filsa-2015', 'Accesos Rápidos Filsa 2015' );
 
 include( TEMPLATEPATH . '/inc/oldfunctions.php');
