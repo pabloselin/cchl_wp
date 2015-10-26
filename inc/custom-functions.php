@@ -64,7 +64,7 @@ function checkfilsa() {
       //condition 2
       in_array(31817, $ancestors) ||
       //condition 3
-      (is_single($post->ID) && in_category(103, $post->ID) ||
+      (is_single($post->ID) && in_category(129, $post->ID) ||
       $param == 'filsa2014')
       //condition 4
       //is_singular( ) && is_object_in_term( $post->ID, 'tribe_events_cat', 128 ) 
