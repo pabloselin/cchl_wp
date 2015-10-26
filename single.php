@@ -103,6 +103,17 @@
             <div class="cf"></div>
             <?php /* the_post_thumbnail('imagen_single'); */ ?>
             <div class="the-content"><?php the_content();?></div> 
+
+                  
+                        <?php $miembros = getGroupOrder('link_link');
+                        if($miembros):
+                        foreach($miembros as $miembro){ ?> 
+                            <p>Fuente:  <a href="<?php echo get('link_link',$miembro); ?>" target="_blank"> <?php echo get('link_descripcion',$miembro); ?> <i class="fa fa-external-link"></i></a></p>
+                        <?php }
+                        endif;
+                         ?>   
+                     
+
 		<?php endwhile;endif; ?>
         
     </div>
