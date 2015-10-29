@@ -20,40 +20,16 @@
             <?php get_template_part('parts/addthis');?>
             <div class="cf"></div>
             <?php the_post_thumbnail('imagen_single'); ?>
+            
             <div class="the-content"><?php the_content();?></div>
-            <link type="text/css" href="<?php bloginfo( 'template_directory' ); ?>/js/css/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
-			<script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/js/jquery-1.8.0.min.js"></script>
-            <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/js/jquery-ui-1.8.23.custom.min.js"></script>
-            <script>
-            $(function() {
-                $( "#tabs" ).tabs();
-            });
-            </script>
-            <link rel="stylesheet" href="<?php bloginfo( 'template_directory' ); ?>/js/fancybox/source/jquery.fancybox.css?v=2.1.0" type="text/css" media="screen" />
-            <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/fancybox/source/jquery.fancybox.pack.js?v=2.1.0"></script>
-            <script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.3"></script>
-			<script type="text/javascript">
-				$(document).ready(function() {
-					$(".fancybox").fancybox({
-						openEffect	: 'none',
-						closeEffect	: 'none'
-					});
-					$('.fancybox-media').fancybox({
-						openEffect  : 'none',
-						closeEffect : 'none',
-						helpers : {
-							media : {}
-						}
-					});
-				});
-			</script>
+
             <div id="tabs">
-                <ul>
-                    <li><a href="#tabs-1">Galería de fotos</a></li>
+                <ul class="tab-nav">
+                    <li class="active"><a href="#tabs-1">Galería de fotos</a></li>
                     <li><a href="#tabs-2">Videos</a></li>
                 </ul>
-                <div id="tabs-1">
-                    <div class="feria-galeria">
+                <div class="tab-panel active" id="tabs-1">
+                    <div class="feria-galeria imagenes">
                     <?php
                     $miembros = getGroupOrder('galeria_imagen_imagen');
                     foreach($miembros as $miembro){
@@ -66,15 +42,19 @@
                     </div>
                 </div>
                 
-                <div id="tabs-2">
-                    <div class="feria-galeria">
+                <div class="tab-panel" id="tabs-2">
+                    <div class="feria-galeria videos">
                     <?php
                     $miembros = getGroupOrder('galeria_video_video');
-                    foreach($miembros as $miembro){
+                    foreach($miembros as $key=>$miembro){
+                        
+                        $id = uniqid('yt');
                         $otros = get("galeria_video_video",$miembro); ?>
-                        <a class="fancybox-media" href="<?php echo get("galeria_video_video",$miembro); ?>">
+                        <a class="fl-media" data-featherlight="#ytvid-<?php echo $id;?>">
                         <img src="http://img.youtube.com/vi/<?php echo getYoutubeID($otros); ?>/0.jpg" width="150" height="115" />
                         </a>
+
+                        <iframe id="ytvid-<?php echo $id;?>" class="fl-lightbox" width="560" height="315" src="//youtube.com/embed/<?php echo getYoutubeID($otros); ?>" frameborder="0" allowfullscreen></iframe>
                     <?php } ?>
                     </div>
                 </div>

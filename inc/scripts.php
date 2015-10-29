@@ -1,16 +1,15 @@
 <?php 
 function cchl_styles() {
 	if(!is_admin()) {
-	wp_register_style( 'maincss', get_bloginfo('template_url') . '/css/main.css', array(), '0.1', 'screen' );
-	wp_register_style( 'reset', get_bloginfo('template_url') . '/css/reset.css', array(), '0.1', 'screen' );
-	wp_register_style( 'menu', get_bloginfo('template_url') . '/css/menu.css', array(), '0.1', 'screen' );
-	wp_register_style( 'ferias', get_bloginfo('template_url') . '/css/ferias.css', array(), '0.1', 'screen' );
-	wp_register_style( '960grid', get_bloginfo('template_url') . '/css/960.css' , array(), '0.1', 'screen' );
-	wp_register_style( 'slide', get_bloginfo('template_url') . '/css/slide.css' , array(), '0.1', 'screen' );
-	wp_register_style( 'dropdown', get_bloginfo('template_url') . '/css/dropdown.css' , array(), '0.1', 'screen' );
-	wp_register_style( 'default-adv', get_bloginfo('template_url') . '/css/default.advanced.css' , array(), '0.1', 'screen' );
-	wp_register_style( 'default', get_bloginfo('template_url') . '/css/default.css' , array(), '0.1', 'screen' );
-	//mailchimp
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	wp_register_style( 'mailchimp', '//cdn-images.mailchimp.com/embedcode/classic-081711.css' , array(), '0.1', 'screen' );
 	//gfonts
 	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Signika:400,300,600,700' , array(), '0.1', 'screen' );
@@ -41,14 +40,20 @@ if(!is_admin()) {
 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
 }
 
-  wp_register_script( 'cchl_ajax', get_bloginfo('template_url') . '/js/ajax.js', array('jquery'));
-  wp_register_script( 'cchl_events', get_bloginfo('template_url') . '/js/events.js', array('jquery'));
+  wp_register_script( 'cchl_main', get_bloginfo('template_url') . '/js/cchl-main.js', array('jquery', 'featherlight'));
+  wp_register_script( 'cchl_ajax', get_bloginfo('template_url') . '/js/cchl-ajax.js', array('jquery'));
+  wp_register_script( 'cchl_filsa', get_bloginfo('template_url') . '/js/cchl-filsa.js', array('jquery', 'cchl_ajax'));
   wp_register_script( 'cycle', get_bloginfo('template_url') . '/js/jquery.cycle.all.js', array('jquery'));
   wp_register_script( 'readmore', get_bloginfo('template_url') . '/js/readmore.min.js', array('jquery'));
 
+  wp_register_script( 'featherlight', get_bloginfo('template_url') . '/js/featherlight/featherlight.min.js', array('jquery'));
+
   wp_enqueue_script( 'jquery' );
+  wp_enqueue_script( 'featherlight' );
   wp_enqueue_script( 'cchl_events' );
   wp_enqueue_script( 'cchl_ajax' );
+  wp_enqueue_script( 'cchl_main' );
+  wp_enqueue_script( 'cchl_filsa' );
   wp_enqueue_script( 'cycle' );
   wp_enqueue_script( 'readmore' );
 

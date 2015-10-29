@@ -1,0 +1,28 @@
+#tabs {
+	.tab-nav {
+		li {
+			list-style:none;
+			display:inline;
+			a {
+				display:block;
+				padding:12px;
+				background-color:#00549E;
+				color:white;
+				margin-right:6px;
+				float:left;
+				font-size:18px;
+				width:120px;
+				border-radius:5px 5px 0 0;
+				&:hover {
+					background-color:lighten(#00549E, 20%);
+				}
+			}
+		}
+
+		li.active {
+			a {
+				background-color:lighten(#00549E, 20%);
+			}
+		}
+	} 
+}
