@@ -31,11 +31,11 @@
             </div><!--fin contenedor slide-->	
     		<!-- FIN SLIDER VIEJO -->
 
-            <div class="grid_16 banner_home_filsa">
+            <!-- <div class="grid_16 banner_home_filsa">
               <p>
                 <a href="<?php echo get_permalink(CCHL_PAGEFILSA);?>"><img src="<?php bloginfo('template_url');?>/img/filsa2015/banner_2_filsa_2015_3_home.jpg" alt="FILSA 2015"></a>
               </p>
-            </div>
+            </div> -->
             <div id="content-home" class="grid_11">
             <div class="agenda cf">
             <h2>Agenda <a href="<?php bloginfo('url');?>/eventos/categoria/agenda" class="ver-agenda">ver agenda completa »</a></h2>			 
