@@ -117,13 +117,15 @@ body{
 /* Header */
 
 #header {
-	h1 {
+	h1#mainlogo {
+		padding-top:12px;
+		width:238px;
 		a {
 			background: url("../img/logos/camara-chilena-del-libro.png") no-repeat scroll 0 0 transparent;
     		display: block;
     		height: 80px;
     		margin-bottom: 40px;
-    		margin-top: 20px;
+    		margin-top:0;
     		text-indent: -9999px;
     		width: 238px;
 		}
@@ -950,18 +952,8 @@ background: linear-gradient(to bottom,  rgba(55,119,196,1) 0%,rgba(29,58,97,1) 1
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 }
-.buscador {
-    float:right;
-	margin:27px 0 0;
-	width:282px;
-}
-.buscador h3{
-	font-size: 18px;
-	text-transform: uppercase;
-	width: 150px;
-	float: left;
-	margin: 0 ;
-}
+
+
 .buscador input[type="text"]{
 	border:1px solid #CCCCCC;
 	padding:5px;

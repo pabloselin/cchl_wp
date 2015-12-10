@@ -25,10 +25,10 @@
 					<input type="submit" id="searchsubmit" value="" class="btn" />
 				</form>
 			</div>
-		<h1 id="mainlogo testclass">
+		<h1 id="mainlogo">
     		<a href="<?php bloginfo( 'url' ); ?>">Cámara Chilena del Libro 60 años trabajando por el libro y la lectura</a>
         </h1>
-        <!-- <a class="header__logofilsa" href="<?php echo get_permalink(CCHL_FILSA2015);?>"><img src="<?php bloginfo('template_url');?>/img/filsa2015/cabeceramovil_h.png" alt="FILSA 2015"></a> -->
+        <a class="header__logofil2016" href="<?php echo get_permalink(CCHL_FILVINA2016);?>"><img src="<?php bloginfo('template_url');?>/img/filvina-2016/hm_filvina2016.jpg" alt="FIL VIÑA 2016"></a>
         <ul id="topmenu-principal">
         	<?php wp_nav_menu( array('menu' => 'Principal' )); ?>
         </ul>
