@@ -11,6 +11,10 @@ if(checkfilij($post->ID)):?>
 <div id="sidebar_interior" class="grid_4 filsa-2015">
 		<?php wp_nav_menu( array('menu'=> 178));?>
 </div>
+<?php elseif(checkferia($post->ID, CCHL_FILVINA2016)):?>
+	<div id="sidebar_interior" class="grid_4 filvina-2016">
+			<?php wp_nav_menu( array('menu'=> 196));?>
+	</div>
 <?php else:?>
 <div id="sidebar_interior" class="grid_4">
         <?php get_sidebar('ugly');?>

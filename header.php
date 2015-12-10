@@ -53,6 +53,8 @@ elseif(checkferia($post->ID, 53771)):
 	get_template_part('parts/header', 'fil' );
 elseif(checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180)):
 	get_template_part('parts/header', 'filsa-2015' );
+elseif(checkferia($post->ID, CCHL_FILVINA2016)):
+  get_template_part('parts/header', 'filvina-2016');
 else:
 	get_template_part('parts/header', 'standard');
 endif;
