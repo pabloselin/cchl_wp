@@ -75,7 +75,7 @@ Template Name: Colaboradores Fil 2015
                 if($patrocinadores):
                 ?>
                 <h3 class="colabheading">Patrocina</h3>
-                    <ul class="colabs">
+                    <ul class="colabs aups">
                             <?php 
                                 foreach($auspicia as $ausp): ?>
                                     
@@ -95,46 +95,7 @@ Template Name: Colaboradores Fil 2015
                     </ul>
                 <?php endif;?>
 
-                <?php $colabs = getGroupOrder('info_socioes_logo_colaborador');
-                if($colabs):?>
-                <h3 class="colabheading">Colaboradores</h3>
-                    
-                            <?php 
-                            
-                                foreach($colabs as $key=>$colab): 
-                                    if($key == 0):?>
-                                        <ul class="colabs aups">
-                                            <li class="colab-<?php echo $key;?>">
-                                                <?php echo get_image('info_socioes_logo_colaborador', $colab);?>
-                                                <h3 style="text-transform:uppercase;"><?php echo get('info_socioes_nombre', $colab);?></h3>
-                                                <?php 
-                                                    if(get('info_socioes_url_colaborador', $colab)):
-                                                        echo '<a target="_blank" href="'.get('info_socioes_url_colaborador', $colab).'"><i class="fa fa-external-link"></i> </a>';
-                                                    endif;
-                                                ?>
-                                            </li> 
-                                        </ul>
-                                        <ul class="colabs">
-                                    <?php
-                                        else: 
-                                        ?>
-                                                    
-                                    <li class="colab-<?php echo $key;?>">
-                                        <?php echo get_image('info_socioes_logo_colaborador', $colab);?>
-                                        <h3><?php echo get('info_socioes_nombre', $colab);?></h3>
-                                        <?php 
-                                            if(get('info_socioes_url_colaborador', $colab)):
-                                                echo '<a target="_blank" href="'.get('info_socioes_url_colaborador', $colab).'"><i class="fa fa-external-link"></i> </a>';
-                                            endif;
-                                        ?>
-                                    </li>
-
-                                <?php 
-                                    endif;
-                                endforeach;
-                            ?>                
-                    </ul>
-                    <?php endif;?>
+                
 
                     <?php $mediaps = getGroupOrder('mediapartners_logo_mediapartner');
                     if($mediaps):?>
@@ -150,7 +111,7 @@ Template Name: Colaboradores Fil 2015
                                         <h3><?php echo get('mediapartners_nombre_mediapartner', $mediap);?></h3>
                                         <?php 
                                             if(get('mediapartners_url_mediapartner', $mediap)):
-                                                echo '<a target="_blank" href="'.get('mediapartners_url_mediapartner', $mediap).'">Web</a>';
+                                                echo '<a target="_blank" href="'.get('mediapartners_url_mediapartner', $mediap).'"><i class="fa fa-external-link"></i></a>';
                                             endif;
                                         ?>
                                     </li>
