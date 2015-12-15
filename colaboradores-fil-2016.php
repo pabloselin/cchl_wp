@@ -100,7 +100,7 @@ Template Name: Colaboradores Fil 2015
                 if($patrocinadores):
                 ?>
                 <h3 class="colabheading">Patrocina</h3>
-                    <ul class="colabs aups">
+                    <ul class="colabs">
                             <?php 
                                 foreach($auspicia as $ausp): ?>
                                     
@@ -165,12 +165,12 @@ Template Name: Colaboradores Fil 2015
                     if($mediaps):?>
                     <h3 class="colabheading">Mediapartners</h3>
 
-                    <ul class="colabs aups media-partner-fil">
+                    <ul class="colabs media-partner-fil">
                             <?php 
                                 
-                                foreach($mediaps as $mediap): ?>
+                                foreach($mediaps as $key=>$mediap): ?>
                                     
-                                    <li>
+                                    <li class="colab-<?php echo $key;?>">
                                         <?php echo get_image('mediapartners_logo_mediapartner', $mediap);?>
                                         <h3><?php echo get('mediapartners_nombre_mediapartner', $mediap);?></h3>
                                         <?php 
