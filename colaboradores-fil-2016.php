@@ -25,16 +25,16 @@ Template Name: Colaboradores Filsa 2015
                     <ul class="colabs invs">
 
                             <?php 
-                                foreach($invita as $inv): ?>
+                                foreach($organiza as $org): ?>
                                     
                                     <li>
                                         <?php 
                                         $otros = array("h" => 150, "w" => 150, "zc" => 1, "q" => 100);
-                                        echo get_image('organiza_logo_organiza', $inv, 1, 1, null, $otros);?>
-                                        <h3><?php echo get('organiza_nombre_organiza', $inv);?></h3>
+                                        echo get_image('organiza_logo_organiza', $org, 1, 1, null, $otros);?>
+                                        <h3><?php echo get('organiza_nombre_organiza', $org);?></h3>
                                         <?php 
-                                            if(get('organiza_url_organiza', $inv)):
-                                                echo '<a target="_blank" href="'.get('invita_url_invita', $inv).'"><i class="fa fa-external-link"></i></a>';
+                                            if(get('organiza_url_organiza', $org)):
+                                                echo '<a target="_blank" href="'.get('invita_url_invita', $org).'"><i class="fa fa-external-link"></i></a>';
                                             endif;
                                         ?>
                                     </li>
@@ -95,10 +95,37 @@ Template Name: Colaboradores Filsa 2015
                     </ul>
                 <?php endif;?>
 
+                <?php 
+                $patrocinadores = getGroupOrder('auspiciadores_logo_auspiciador');
+                if($patrocinadores):
+                ?>
+                <h3 class="colabheading">Patrocina</h3>
+                    <ul class="colabs aups">
+                            <?php 
+                                foreach($auspicia as $ausp): ?>
+                                    
+                                    <li>
+                                        <?php echo get_image('auspiciadores_logo_auspiciador', $ausp);?>
+                                        <h3><?php echo get('auspiciadores_nombre', $ausp);?></h3>
+                                        <?php 
+                                            if(get('auspiciador_url_auspiciador', $ausp)):
+                                                echo '<a target="_blank" href="'.get('auspiciador_url_auspiciador', $ausp).'"><i class="fa fa-external-link"></i></a>';
+                                            endif;
+                                        ?>
+                                    </li>
+
+                                <?php 
+                                endforeach;
+                            ?>                
+                    </ul>
+                <?php endif;?>
+
+                <?php $colabs = getGroupOrder('info_socioes_logo_colaborador');
+                if($colabs):?>
                 <h3 class="colabheading">Colaboradores</h3>
                     
                             <?php 
-                                $colabs = getGroupOrder('info_socioes_logo_colaborador');
+                            
                                 foreach($colabs as $key=>$colab): 
                                     if($key == 0):?>
                                         <ul class="colabs aups">
@@ -132,12 +159,15 @@ Template Name: Colaboradores Filsa 2015
                                 endforeach;
                             ?>                
                     </ul>
+                    <?php endif;?>
 
+                    <?php $mediaps = getGroupOrder('mediapartners_logo_mediapartner');
+                    if($mediaps):?>
                     <h3 class="colabheading">Mediapartners</h3>
 
                     <ul class="colabs aups media-partner-fil">
                             <?php 
-                                $mediaps = getGroupOrder('mediapartners_logo_mediapartner');
+                                
                                 foreach($mediaps as $mediap): ?>
                                     
                                     <li>
@@ -154,6 +184,7 @@ Template Name: Colaboradores Filsa 2015
                                 endforeach;
                             ?>                
                     </ul>
+                    <?php endif;?>
                 </div>
             
     </div>
