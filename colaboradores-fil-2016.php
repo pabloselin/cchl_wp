@@ -19,6 +19,31 @@ Template Name: Colaboradores Filsa 2015
             
             
             <?php endwhile; endif; ?>
+
+                <?php if($organiza):?>
+                <h3 class="colabheading">Organiza</h3>
+                    <ul class="colabs invs">
+
+                            <?php 
+                                foreach($invita as $inv): ?>
+                                    
+                                    <li>
+                                        <?php 
+                                        $otros = array("h" => 150, "w" => 150, "zc" => 1, "q" => 100);
+                                        echo get_image('organiza_logo_organiza', $inv, 1, 1, null, $otros);?>
+                                        <h3><?php echo get('organiza_nombre_organiza', $inv);?></h3>
+                                        <?php 
+                                            if(get('organiza_url_organiza', $inv)):
+                                                echo '<a target="_blank" href="'.get('invita_url_invita', $inv).'"><i class="fa fa-external-link"></i></a>';
+                                            endif;
+                                        ?>
+                                    </li>
+
+                                <?php 
+                                endforeach;
+                            ?>                
+                    </ul>
+                <?php endif;?>
                 <?php 
                 $invita = getGroupOrder('invita_logo_invita');
                 if($invita):
