@@ -1,6 +1,6 @@
 <?php
 /* 
-Template Name: Colaboradores Fil 2016
+Template Name: Colaboradores Filsa 2016
 */
 ?>
 <?php get_header(); ?>
