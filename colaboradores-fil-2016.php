@@ -22,7 +22,7 @@ Template Name: Colaboradores Fil 2015
     
                 <?php 
 
-                $size = array("h" => 150, "w" => 150, "q" => 100);
+                $size = array();
                 if($organiza):?>
                 <h3 class="colabheading">Organiza</h3>
                     <ul class="colabs invs">
