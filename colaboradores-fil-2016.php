@@ -19,8 +19,11 @@ Template Name: Colaboradores Fil 2015
             
             
             <?php endwhile; endif; ?>
+    
+                <?php 
 
-                <?php if($organiza):?>
+                $size = array("h" => 150, "w" => 150, "q" => 100);
+                if($organiza):?>
                 <h3 class="colabheading">Organiza</h3>
                     <ul class="colabs invs">
 
@@ -29,8 +32,8 @@ Template Name: Colaboradores Fil 2015
                                     
                                     <li>
                                         <?php 
-                                        $otros = array("h" => 150, "w" => 150, "zc" => 1, "q" => 100);
-                                        echo get_image('organiza_logo_organiza', $org, 1, 1, null, $otros);?>
+                                        
+                                        echo get_image('organiza_logo_organiza', $org, 1, 1, null, $size);?>
                                         <h3><?php echo get('organiza_nombre_organiza', $org);?></h3>
                                         <?php 
                                             if(get('organiza_url_organiza', $org)):
@@ -55,7 +58,7 @@ Template Name: Colaboradores Fil 2015
                                 foreach($auspicia as $ausp): ?>
                                     
                                     <li>
-                                        <?php echo get_image('auspicia_logo_auspicia', $ausp);?>
+                                        <?php echo get_image('auspicia_logo_auspicia', $ausp, 1, 1, null, $size);?>
                                         <h3><?php echo get('auspicia_nombre_auspicia', $ausp);?></h3>
                                         <?php 
                                             if(get('auspicia_url_auspicia', $ausp)):
@@ -75,12 +78,12 @@ Template Name: Colaboradores Fil 2015
                 if($patrocinadores):
                 ?>
                 <h3 class="colabheading">Patrocina</h3>
-                    <ul class="colabs aups">
+                    <ul class="colabs">
                             <?php 
                                 foreach($auspicia as $ausp): ?>
                                     
                                     <li>
-                                        <?php echo get_image('auspiciadores_logo_auspiciador', $ausp);?>
+                                        <?php echo get_image('auspiciadores_logo_auspiciador', $ausp, 1, 1, null, $size);?>
                                         <h3><?php echo get('auspiciadores_nombre', $ausp);?></h3>
                                         <?php 
                                             if(get('auspiciador_url_auspiciador', $ausp)):
@@ -107,7 +110,7 @@ Template Name: Colaboradores Fil 2015
                                 foreach($mediaps as $key=>$mediap): ?>
                                     
                                     <li class="colab-<?php echo $key;?>">
-                                        <?php echo get_image('mediapartners_logo_mediapartner', $mediap);?>
+                                        <?php echo get_image('mediapartners_logo_mediapartner', $mediap, 1, 1, null, $size);?>
                                         <h3><?php echo get('mediapartners_nombre_mediapartner', $mediap);?></h3>
                                         <?php 
                                             if(get('mediapartners_url_mediapartner', $mediap)):
