@@ -11,131 +11,132 @@
 	//Array por dias
 	$pagsfilij = array(
 					array(
-						'id' => 59531,
+						'id' => 59593,
 						'ndia' => 7,
 						'mes' => 'Enero',
 						'dia' => 'Jueves',
 						'dcode' => '2016-01'
 						),
 					array(
-						'id' => 59552,
-						'ndia' => 9,
+						'id' => 59595,
+						'ndia' => 8,
 						'mes' => 'Enero',
 						'dia' => 'Viernes',
-						'dcode' => '2015-01'
+						'dcode' => '2016-01'
 						),
-					// array(
-					// 	'id' => 54242,
-					// 	'ndia' => 10,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Sábado',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54244,
-					// 	'ndia' => 11,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Domingo',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54248,
-					// 	'ndia' => 12,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Lunes',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54251,
-					// 	'ndia' => 13,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Martes',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54253,
-					// 	'ndia' => 14,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Miércoles',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54255,
-					// 	'ndia' => 15,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Jueves',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54257,
-					// 	'ndia' => 16,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Viernes',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54259,
-					// 	'ndia' => 17,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Sábado',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54261,
-					// 	'ndia' => 18,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Domingo',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54263,
-					// 	'ndia' => 19,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Lunes',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54268,
-					// 	'ndia' => 20,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Martes',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54270,
-					// 	'ndia' => 21,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Miércoles',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54272,
-					// 	'ndia' => 22,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Jueves',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54274,
-					// 	'ndia' => 23,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Viernes',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54276,
-					// 	'ndia' => 24,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Sábado',
-					// 	'dcode' => '2015-01'
-					// 	),
-					// array(
-					// 	'id' => 54278,
-					// 	'ndia' => 25,
-					// 	'mes' => 'Enero',
-					// 	'dia' => 'Domingo',
-					// 	'dcode' => '2015-01'
-					// 	),
+					array(
+						'id' => 59597,
+						'ndia' => 9,
+						'mes' => 'Enero',
+						'dia' => 'Sábado',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59601,
+						'ndia' => 10,
+						'mes' => 'Enero',
+						'dia' => 'Domingo',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59603,
+						'ndia' => 11,
+						'mes' => 'Enero',
+						'dia' => 'Lunes',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59605,
+						'ndia' => 12,
+						'mes' => 'Enero',
+						'dia' => 'Martes',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59607,
+						'ndia' => 13,
+						'mes' => 'Enero',
+						'dia' => 'Miércoles',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59609,
+						'ndia' => 14,
+						'mes' => 'Enero',
+						'dia' => 'Jueves',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59611,
+						'ndia' => 15,
+						'mes' => 'Enero',
+						'dia' => 'Viernes',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59613,
+						'ndia' => 16,
+						'mes' => 'Enero',
+						'dia' => 'Sábado',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59615,
+						'ndia' => 17,
+						'mes' => 'Enero',
+						'dia' => 'Domingo',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59618,
+						'ndia' => 18,
+						'mes' => 'Enero',
+						'dia' => 'Lunes',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59621,
+						'ndia' => 19,
+						'mes' => 'Enero',
+						'dia' => 'Martes',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59623,
+						'ndia' => 20,
+						'mes' => 'Enero',
+						'dia' => 'Miércoles',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59625,
+						'ndia' => 21,
+						'mes' => 'Enero',
+						'dia' => 'Jueves',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59627,
+						'ndia' => 22,
+						'mes' => 'Enero',
+						'dia' => 'Viernes',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59629,
+						'ndia' => 23,
+						'mes' => 'Enero',
+						'dia' => 'Sábado',
+						'dcode' => '2016-01'
+						),
+					array(
+						'id' => 59631,
+						'ndia' => 24,
+						'mes' => 'Enero',
+						'dia' => 'Domingo',
+						'dcode' => '2016-01'
+						),
+					
 					 );
 	foreach($pagsfilij as $day) {
 		$page = get_post($day['id']);
