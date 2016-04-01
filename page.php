@@ -1,12 +1,7 @@
 <?php
 /* Template Name: Page Interior */
 ?>
-<?php 
-
-if($post->ID == 108) {
-    wp_redirect( 'http://camaradellibro.cl/ferias/filsa/filsa-2015/', 301 );
-    exit;
-}
+<?php
 
 get_header(); ?>
 <div id="main-page" class="container_16 cf">
