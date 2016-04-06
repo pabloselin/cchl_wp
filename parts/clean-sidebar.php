@@ -15,6 +15,12 @@ if(checkfilij($post->ID)):?>
 	<div id="sidebar_interior" class="grid_4 filvina-2016">
 			<?php wp_nav_menu( array('menu'=> 196));?>
 	</div>
+<?php 
+//Para otros tipos de ferias menos específicos
+elseif(checkferia($post->ID, CCHL_FERIASCOMUNALES) || checkferia($post->ID, CCHL_FERIASREGIONALES) || checkferia($post->ID, CCHL_FERIASEXTRANJERO)):?>
+	<div id="sidebar_interior" class="grid_4">
+			<?php get_template_part('parts/automenu-ferias');?>
+	</div>
 <?php else:?>
 <div id="sidebar_interior" class="grid_4">
         <?php get_sidebar('ugly');?>

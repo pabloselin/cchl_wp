@@ -2,72 +2,84 @@
 /* Template Name: Page Feria Portada */
 ?>
 <?php get_header(); ?>
-<!-- jCarousel -->
-<script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/carousel/jquery-1.8.0.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo( 'template_directory' ); ?>/js/carousel/jquery.jcarousel.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php bloginfo( 'template_directory' ); ?>/js/carousel/skin.css" />
-<script type="text/javascript">
-jQuery(document).ready(function() {
-    jQuery('#mycarousel').jcarousel();
-});
-</script>
-
 <div id="main-page" class="container_16 cf">
-    <div id="sidebar_interior" class="grid_4">
-        <?php get_sidebar(); ?>
-    </div>
-    <div id="content" class="grid_12">
+    <div id="content" class="grid_16">
         <div id="bread">
             Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
         </div>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            
             <h1><?php the_title(); ?></h1>
-           <?php get_template_part('parts/addthis');?>
+           	
+           	<?php get_template_part('parts/addthis');?>
+
             <div class="cf"></div>
-		<?php endwhile;endif;wp_reset_query(); ?>
-        <?php
-		$parent = $post->ID;
-		$i==0;
-		query_posts(array('post__not_in'=>array(119),'post_type'=>page,'order'=>ASC,'posts_per_page'=>-1,post_parent=>$parent,'showposts'=>5, 'orderby'=> 'menu_order'));
-		if ( have_posts() ) : while ( have_posts() ) : the_post();
-		if($i==0){
-			/* $miembros = getGroupOrder('feria_activa');
-			if(!$miembros[0]==""){
-				foreach($miembros as $miembro){
-				  if(get('feria_activa',$miembro)=="Activada"){ */
-				    $titulo = get_the_title();
-					echo '<div class="feria-destacado-c"><div class="feria-destacado"><a href="'.get_permalink().'"><h2>'.$titulo.'</h2></a>';
-					echo excerpt2(200).'</div>';
-					echo '<a href="'.get_permalink().'">'.the_post_thumbnail(array(320,230)).'</a></div>';
-				  /* }
-				}
-			 } */
-		}else{
-			/* $miembros = getGroupOrder('feria_activa');
-			if(!$miembros[0]==""){
-				foreach($miembros as $miembro){
-				  if(get('feria_activa',$miembro)=="Activada"){*/
-				    $titulo = get_the_title();
-					echo '<div class="feria-destacado2"><a href="'.get_permalink().'"><h5>'.$titulo.'</h5></a>';
-					the_excerpt(); echo '</div>'; 
-				  /*}
-				}
-			}*/
-		}
-		$i++;
-		endwhile;endif;wp_reset_query();
-		?>  
-        <div class="cf"></div>
-	<h4> Galería de afiches </h4>
-        <ul id="mycarousel" class="jcarousel-skin-tango">
-        <?php query_posts(array('post__not_in'=>array(119),'post_type'=>page,'order'=>ASC,'posts_per_page'=>-1,post_parent=>$parent,'showposts'=>5)); ?>
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(array(170,220)); ?></a></li>
-        <?php endwhile;endif;wp_reset_query(); ?>
-        </ul>
-        <br />
-        <?php /* get_search_form(); */ ?>
-        <br />
+
+		<?php endwhile;
+			endif;?>
+
+        <?php 
+        //Ferias del Libro
+        $args = array(
+        	'post_parent' => $post->ID,
+        	'numberposts' => -1,
+        	'post_type' => 'page'
+        	);
+        $ferias = get_posts($args);
+        foreach($ferias as $key=>$feria) {
+
+        	if($key == 0) {
+        		$args = array(
+        			'post_parent' => $feria->ID,
+        			'post_type' => 'page',
+        			'numberposts' => 10,
+        			'orderby' => 'menu_order',
+        			'order' => 'ASC'
+        			);
+        		$children = '';
+        		$childs = get_posts($args);
+        		if($childs) {
+        			$children .= '<ul class="ferialinks">';
+        			foreach($childs as $child) {
+        				$children .= '<li><a href="' . get_permalink( $child->ID ) . '">' . $child->post_title . '</a></li>';
+        			}
+        			$children .= '</ul>';
+        		}
+
+        		//Feria principal, destacada
+        		$imageid = get_post_thumbnail_id( $feria->ID );
+        		$imagesrc = wp_get_attachment_image_src( $imageid, 'afiche');
+ 				$output = '<div class="feria-destacada">';
+ 				$output .= '<div class="txt">';
+ 				$output .= '<h2><a href="' . get_permalink($feria->ID) . '">' . $feria->post_title . '</a></h2>';
+ 				$output .= apply_filters('the_excerpt', $feria->post_excerpt);
+ 				$output .= $children;
+ 				$output .= '</div>';
+ 				$output .= '<img src="' . $imagesrc[0] . '" alt="' . $feria->post_title . '">';
+ 				$output .= '</div>';
+
+ 				echo $output;
+
+        	} else {
+
+        		//otras ferias
+        		$imageid = get_post_thumbnail_id( $feria->ID );
+        		$imagesrc = wp_get_attachment_image_src( $imageid, 'media-kit');
+ 				$output = '<div class="feria-normal">';
+ 				$output .= '<div class="txt">';
+ 				$output .= '<a href="' . get_permalink($feria->ID) . '">';
+ 				$output .= '<img src="' . $imagesrc[0] . '" alt="' . $feria->post_title . '">';
+ 				$output .= '<h3>' . $feria->post_title . '</h3>';
+ 				//$output .= apply_filters('the_excerpt', $feria->post_excerpt);
+ 				$output .= '</a>';
+ 				$output .= '</div>';
+ 				$output .= '</div>';
+
+ 				echo $output;
+
+        	}
+        }
+        ?>
         </div>        
     </div>
 </div>
