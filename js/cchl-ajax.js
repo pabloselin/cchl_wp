@@ -47,7 +47,8 @@ jQuery(document).ready(function($) {
 
 	var ferias = $('.ferias-normales').masonry({
    					 	itemSelector: '.feria-normal',
-   						columnWidth: 300
+   						columnWidth: 300,
+   						gutter: 12
 					});
 
 	ferias.imagesLoaded().progress( function() {
