@@ -45,8 +45,13 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-	$('.ferias-normales').masonry({
-    itemSelector: '.feria-normal',
-    columnWidth: 300
-});
+	var ferias = $('.ferias-normales').masonry({
+   					 	itemSelector: '.feria-normal',
+   						columnWidth: 300
+					});
+
+	ferias.imagesLoaded().progress( function() {
+		ferias.masonry('layout');
+	});
+
 });

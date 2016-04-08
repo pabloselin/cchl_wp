@@ -45,6 +45,7 @@ if(!is_admin()) {
   wp_register_script( 'cchl_filsa', get_bloginfo('template_url') . '/js/cchl-filsa.js', array('jquery', 'cchl_ajax'));
   wp_register_script( 'cycle', get_bloginfo('template_url') . '/js/jquery.cycle.all.js', array('jquery'));
   wp_register_script( 'readmore', get_bloginfo('template_url') . '/js/readmore.min.js', array('jquery'));
+  wp_register_script( 'imagesloaded', get_bloginfo('template_url') . '/js/imagesloaded.min.js', array('jquery'));
   wp_register_script( 'masonry', get_bloginfo('template_url') . '/js/masonry.min.js', array('jquery'));
 
   wp_register_script( 'featherlight', get_bloginfo('template_url') . '/js/featherlight/featherlight.min.js', array('jquery'));
@@ -58,6 +59,7 @@ if(!is_admin()) {
   wp_enqueue_script( 'cycle' );
   wp_enqueue_script( 'masonry' );
   wp_enqueue_script( 'readmore' );
+  wp_enqueue_script( 'imagesloaded' );
 
   $args = array(
     'hide_empty' => true
