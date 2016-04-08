@@ -66,7 +66,8 @@
 
         		//otras ferias
         		$imageid = get_post_thumbnail_id( $feria->ID );
-        		$imagesrc = wp_get_attachment_image_src( $imageid, 'media-kit');
+        		$imagesrc = wp_get_attachment_image_src( $imageid, 'afiche');
+
  				$output = '<div class="feria-normal">';
  				$output .= '<div class="txt">';
  				$output .= '<a href="' . get_permalink($feria->ID) . '">';
