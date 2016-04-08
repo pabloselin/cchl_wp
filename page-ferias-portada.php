@@ -23,7 +23,9 @@
         $args = array(
         	'post_parent' => $post->ID,
         	'numberposts' => -1,
-        	'post_type' => 'page'
+        	'post_type' => 'page',
+            'orderby' => 'date',
+            'order' =>'DESC'
         	);
         $ferias = get_posts($args);
         foreach($ferias as $key=>$feria) {
