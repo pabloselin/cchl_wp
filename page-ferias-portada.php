@@ -59,7 +59,7 @@
  				$output .= '</div>';
  				$output .= '<img src="' . $imagesrc[0] . '" alt="' . $feria->post_title . '">';
  				$output .= '</div>';
-
+                $output .= '<div class="ferias-normales">';
  				echo $output;
 
         	} else {
@@ -82,6 +82,8 @@
 
         	}
         }
+
+        echo '</div><!--Fin ferias normales-->';
         ?>
         </div>        
     </div>

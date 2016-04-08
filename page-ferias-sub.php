@@ -48,22 +48,24 @@
             </div>
 
             <?php 
-            $miembros = getGroupOrder('imagen');
-            if($miembros):
+            $auspiciadores = getGroupOrder('imagen');
+            if($auspiciadores):
             ?>
             
             <div id="auspiciadores">
             <ul class="cf">
                 <?php
                 
-                foreach($miembros as $miembro){
+                foreach($auspiciadores as $auspiciador){
                     echo "<li>";
-                    $otros = array("h" => 100, "w" => 100, "zc" => 1, "q" => 100);
-                    echo get_image('imagen',$miembro,1,1,NULL);
+                    $image = get_image('imagen',$auspiciador,1,1,NULL);
+                    if($image):
+                        echo $image;
+                    endif;
                     echo "<div class='info'>
-                    <h3>".get('nombre',$miembro)."</h3>
+                    <h3>".get('nombre',$auspiciador)."</h3>
                 
-                    <p>".get('texto',$miembro)."</p>
+                    <p>".get('texto',$auspiciador)."</p>
                     </div>
                     </li>";
                 }

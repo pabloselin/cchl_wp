@@ -45,4 +45,8 @@ jQuery(document).ready(function($) {
 		});
 	});
 
+	$('.ferias-normales').masonry({
+    itemSelector: '.feria-normal',
+    columnWidth: 300
+});
 });
