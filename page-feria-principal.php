@@ -32,8 +32,6 @@ get_header(); ?>
             <?php the_post_thumbnail('imagen_single'); ?>
             <div class="the-content">
                 <?php the_content();?>
-
-                <?php get_template_part('parts/eventos-flpa-2016');?>
             </div>
           <?php endif;?>
 		<?php endwhile;endif; ?>

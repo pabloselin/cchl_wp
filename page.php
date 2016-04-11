@@ -30,6 +30,10 @@ get_header(); ?>
             <?php the_post_thumbnail('imagen_single'); ?>
             <div class="the-content">
                 <?php the_content();?>
+
+                <?php if($post->ID == 60136):?>
+                    <?php get_template_part('parts/eventos-flpa-2016');?>
+                <?php endif;?>
             </div>
           <?php endif;?>
 		<?php endwhile;endif; ?>
