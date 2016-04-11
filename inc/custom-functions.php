@@ -201,6 +201,50 @@ function eventos_filij_shortcode($atts) {
 
 add_shortcode('eventos_filij', 'eventos_filij_shortcode');
 
-function checksocios($postid) {
-  
+
+function checkferiatemplate($postid) {
+  /**
+   * chequea si un pariente está usando la plantilla de temas personalizados para ferias y devuelve el ID de la Feria
+   */
+  $ancestors = get_post_ancestors( $postid );
+  $using_feria_template = false;
+  $feriaid = null;
+  if($ancestors) {
+  foreach($ancestors as $ancestor):
+    if(get_page_template_slug( $ancestor ) == 'page-feria-principal.php'):
+      $feriaid = $ancestor;
+    endif;
+  endforeach;
+  }
+
+  if(get_page_template_slug( $postid) == 'page-feria-principal.php'):
+    $using_feria_template = true;
+    $feriaid = $postid;
+  endif;
+
+  return $feriaid;
+}
+
+
+function adjustBrightness($hex, $steps) {
+    // Steps should be between -255 and 255. Negative = darker, positive = lighter
+    $steps = max(-255, min(255, $steps));
+
+    // Normalize into a six character long hex string
+    $hex = str_replace('#', '', $hex);
+    if (strlen($hex) == 3) {
+        $hex = str_repeat(substr($hex,0,1), 2).str_repeat(substr($hex,1,1), 2).str_repeat(substr($hex,2,1), 2);
+    }
+
+    // Split into three parts: R, G and B
+    $color_parts = str_split($hex, 2);
+    $return = '#';
+
+    foreach ($color_parts as $color) {
+        $color   = hexdec($color); // Convert to decimal
+        $color   = max(0,min(255,$color + $steps)); // Adjust color
+        $return .= str_pad(dechex($color), 2, '0', STR_PAD_LEFT); // Make two char hex code
+    }
+
+    return $return;
 }

@@ -39,12 +39,49 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 })();
 
 </script>
+<?php 
+  //Chequea si algún parent está usando un template de feria
+  $using_feria_template = checkferiatemplate($post->ID);
+  if($using_feria_template) {
+    $color_1 = get('color_1', 1, 1, 1, $using_feria_template);
+    $color_2 = get('color_2', 1, 1, 1, $using_feria_template);
+    ?>
+    <style>
+        body#feria #sidebar_interior.menu-feria-especial div>ul>li:first-of-type > a {
+          background-color: <?php echo $color_1;?> !important;
+          color:<?php echo $color_2;?> !important;
+        }
+
+        body#feria a.triggernav {
+          color:<?php echo $color_1;?> !important;
+        }
+
+        body#feria .mobile-menu-filsa {
+          border-top:1px solid <?php echo $color_1;?> !important;
+        }
+
+        body#feria .mobile-menu-filsa ul > li > a {
+          background-color:<?php echo $color_1;?> !important;
+          color:white !important;
+          text-transform:uppercase;
+          font-size:22px;
+        }
+
+        body#feria .mobile-menu-filsa ul li ul.sub-menu li a {
+          background-color:<?php echo adjustBrightness($color_1, 190);?> !important;
+          color:<?php echo $color_2;?> !important;
+        }
+    </style>
+    <?php
+  }
+?>
 <?php wp_head();?>
 </head>
 <?php 
 //Cambiador de headers para distintas situaciones
 $isfilsa = checkfilsa();
 $isfilij = checkfilij();
+
 if($isfilsa):
 	get_template_part('parts/header', 'filsa-2014' );
 elseif($isfilij):
@@ -55,6 +92,8 @@ elseif(checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180)):
 	get_template_part('parts/header', 'filsa-2015' );
 elseif(checkferia($post->ID, CCHL_FILVINA2016)):
   get_template_part('parts/header', 'filvina-2016');
+elseif(is_page_template('page-feria-principal.php') || $using_feria_template):
+  get_template_part('parts/header', 'feria');
 else:
 	get_template_part('parts/header', 'standard');
 endif;

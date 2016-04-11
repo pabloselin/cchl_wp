@@ -15,6 +15,8 @@ define('CCHL_FERIASCOMUNALES', 146);
 define('CCHL_FERIASREGIONALES', 148);
 define('CCHL_FERIASEXTRANJERO', 150);
 
+define('CCHL_FERIAPLAZADEARMAS', 60131);
+
 define('CCHL_TWITTER', 'CamaradelLibro');
 
 register_nav_menu( 'accesos-rapidos-filsa-2015', 'Accesos Rápidos Filsa 2015' );

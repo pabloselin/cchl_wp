@@ -1,4 +1,9 @@
 <?php 
+
+//para los que usan plantillas de feria
+	$checkferiatemplate = checkferiatemplate($post->ID);
+
+
 if(checkfilij($post->ID)):?>
 <div id="sidebar_filij" class="grid_4">
         <?php wp_nav_menu( array('menu'=> 176));?>
@@ -15,6 +20,16 @@ if(checkfilij($post->ID)):?>
 	<div id="sidebar_interior" class="grid_4 filvina-2016">
 			<?php wp_nav_menu( array('menu'=> 196));?>
 	</div>
+
+<?php 
+	elseif($checkferiatemplate):
+		$menu = get('id_menu', 1, 1, 1, $checkferiatemplate);
+?>
+<div id="sidebar_interior" class="grid_4 menu-feria-especial">
+
+	<?php wp_nav_menu( array('menu'=> $menu ) );?>
+</div>
+
 <?php 
 //Para otros tipos de ferias menos específicos
 elseif(checkferia($post->ID, CCHL_FERIASCOMUNALES) || checkferia($post->ID, CCHL_FERIASREGIONALES) || checkferia($post->ID, CCHL_FERIASEXTRANJERO)):?>
