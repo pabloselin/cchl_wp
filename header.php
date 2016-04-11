@@ -71,6 +71,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
           background-color:<?php echo adjustBrightness($color_1, 190);?> !important;
           color:<?php echo $color_2;?> !important;
         }
+
+        body#feria #content #navfilsa.navfil.fil2016variant a.activeSlide.otrodia {
+          background-color:<?php echo $color_1;?> !important;
+          color:<?php echo $color_2;?> !important;  
+        }
+
+        body#feria #content #navfilsa.navfil.fil2016variant a.otrodia {
+          background-color:#f0f0f0;
+        }
+
     </style>
     <?php
   }
