@@ -79,7 +79,7 @@ Template Name: Colaboradores Fil 2015
                 if($patrocinadores && get('auspiciadores_logo_auspiciador')):
                 ?>
                 <h3 class="colabheading">Patrocina</h3>
-                    <ul class="colabs">
+                    <ul class="colabs invs">
                             <?php 
                                 foreach($patrocinadores as $patrocina): ?>
                                     
