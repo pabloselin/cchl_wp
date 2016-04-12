@@ -76,7 +76,7 @@ Template Name: Colaboradores Fil 2015
 
                 <?php 
                 $patrocinadores = getGroupOrder('auspiciadores_logo_auspiciador');
-                if($patrocinadores):
+                if($patrocinadores && get('auspiciadores_logo_auspiciador')):
                 ?>
                 <h3 class="colabheading">Patrocina</h3>
                     <ul class="colabs">
@@ -102,7 +102,7 @@ Template Name: Colaboradores Fil 2015
                 
 
                     <?php $mediaps = getGroupOrder('mediapartners_logo_mediapartner');
-                    if($mediaps):?>
+                    if($mediaps && get('mediapartners_logo_mediapartner')):?>
                     <h3 class="colabheading">Mediapartners</h3>
 
                     <ul class="colabs media-partner-fil">
