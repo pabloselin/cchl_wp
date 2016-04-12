@@ -24,7 +24,7 @@ Template Name: Colaboradores Fil 2015
 
                 $size = array("h" => 150, "w" => 150, "q" => 100);
                 $organiza = getGroupOrder('organiza_logo_organiza');
-                if($organiza):?>
+                if($organiza && get('organiza_logo_organiza')):?>
                 <h3 class="colabheading">Organiza</h3>
                     <ul class="colabs invs">
 
@@ -51,7 +51,7 @@ Template Name: Colaboradores Fil 2015
                
                 <?php 
                 $auspicia = getGroupOrder('auspicia_logo_auspicia');
-                if($auspicia):
+                if($auspicia && get('auspicia_logo_auspicia')):
                 ?>
                 <h3 class="colabheading">Auspicia</h3>
                     <ul class="colabs aups">
