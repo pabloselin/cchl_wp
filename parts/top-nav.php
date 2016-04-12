@@ -28,7 +28,7 @@
 		<h1 id="mainlogo">
     		<a href="<?php bloginfo( 'url' ); ?>">Cámara Chilena del Libro 60 años trabajando por el libro y la lectura</a>
         </h1>
-        <!-- <a class="header__logofil2016" href="<?php echo get_permalink(CCHL_FILVINA2016);?>"><img src="<?php bloginfo('template_url');?>/img/filvina-2016/hm_filvina2016.jpg" alt="FIL VIÑA 2016"></a> -->
+        <a class="header__logofil2016" href="<?php echo get_permalink(60131);?>"><img src="<?php echo get_bloginfo('template_url');?>/img/banner_flpa2016_movil.png" alt="<?php echo get_the_title(60131);?>"></a>
         <ul id="topmenu-principal">
         	<?php wp_nav_menu( array('menu' => 'Principal' )); ?>
         </ul>
