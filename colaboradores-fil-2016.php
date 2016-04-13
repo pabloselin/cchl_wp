@@ -87,8 +87,8 @@ Template Name: Colaboradores Fil 2015
                                         <?php echo get_image('auspiciadores_logo_auspiciador', $patrocina, 1, 1, null, $size);?>
                                         <h3><?php echo get('auspiciadores_nombre', $patrocina);?></h3>
                                         <?php 
-                                            if(get('auspiciador_url_auspiciador', $patrocina)):
-                                                echo '<a target="_blank" href="'.get('auspiciador_url_auspiciador', $patrocina).'"><i class="fa fa-external-link"></i></a>';
+                                            if(get('auspiciadores_url_auspiciador', $patrocina)):
+                                                echo '<a target="_blank" href="'.get('auspiciadores_url_auspiciador', $patrocina).'"><i class="fa fa-external-link"></i></a>';
                                             endif;
                                         ?>
                                     </li>
