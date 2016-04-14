@@ -85,7 +85,11 @@
 		  query_posts("cat=15&showposts=1");
 		  if (have_posts()) : while (have_posts()) : the_post(); ?> 
            <div class="columna-opinion grid_5">
-           <h2><a href="/categoria/sala-de-prensa/columnas-de-opinion-sala-de-prensa/">Columna de opinión</a></h2>
+            <h2>
+              <a href="<?php echo get_category_link(15);?>">
+                <?php echo get_cat_name(15);?>
+              </a>
+            </h2>
           <div class="image">  <?php the_post_thumbnail('imagen-270'); ?></div>  
           <h3 class="title"><a href="<?php the_permalink() ?>" class="leyendo" id="h3columna"><?php the_title(); ?></a></h3>
          
