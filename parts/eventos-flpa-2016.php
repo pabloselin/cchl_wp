@@ -11,20 +11,6 @@
 	//Array por dias
 	$pagsfilij = array(
 					array(
-						'id' => 60160,
-						'ndia' => 21,
-						'mes' => 'Abril',
-						'dia' => 'Jueves',
-						'dcode' => '2016-04'
-						),
-					array(
-						'id' => 60164,
-						'ndia' => 22,
-						'mes' => 'Abril',
-						'dia' => 'Viernes',
-						'dcode' => '2016-04'
-						),
-					array(
 						'id' => 55091,
 						'ndia' => 23,
 						'mes' => 'Abril',
@@ -86,7 +72,22 @@
 						'mes' => 'Mayo',
 						'dia' => 'Domingo',
 						'dcode' => '2016-05'
+						),
+					array(
+						'id' => 60333,
+						'ndia' => 2,
+						'mes' => 'Mayo',
+						'dia' => 'Lunes',
+						'dcode' => '2016-05'
+						),
+					array(
+						'id' => 60335,
+						'ndia' => 3,
+						'mes' => 'Mayo',
+						'dia' => 'Martes',
+						'dcode' => '2016-05'
 						)
+
 					 );
 	foreach($pagsfilij as $day) {
 		$page = get_post($day['id']);
