@@ -27,7 +27,7 @@
 	</header>
 	<div class="filsa-header-mobile fil-variant">
 		<img src="<?php echo $mobileheader;?>" alt="FILSA 2015">
-		<a href="javascript:void(0);" class="triggernav"><i class="fa fa-bars"></i><span>menú</span></a>
+		<a href="javascript:void(0);" class="triggernav confondo"><i class="fa fa-bars"></i><span>menú</span></a>
 		<nav class="mobile-menu-filsa inactive">
 			<?php wp_nav_menu( array('menu'=> $menu));?>
 			<!-- <div class="mobile__redes">
