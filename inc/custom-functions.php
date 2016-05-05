@@ -250,14 +250,22 @@ function adjustBrightness($hex, $steps) {
 }
 
 function cchl_button($atts) {
+  /**
+   * Devuelve un botón con iconito link y texto
+   * PARAMETROS: [boton url="http://ejemplo.com" text="Clic Aquí" color="blue" icon="fa-angle-double-right" target="_blank"]
+   * Los Iconos toman la clase de FontAwesome correspondiente
+   * http://fontawesome.io/icons/
+   */
   $button = shortcode_atts( 
     array(
       'url' => '#',
-      'color' => 'red',
-      'text' => 'Clic aquí'
+      'color' => 'blue',
+      'text' => 'Clic aquí',
+      'icon' => 'fa-angle-double-right',
+      'target' => '_blank'
     ), $atts );
 
-  return '<a href="' . $button['url'] . '" class="cchl-button ' . $button['color']. '">' . $button['text'] . '</a>';
+  return '<a target="' .$button['target']. '" title="' . $button['text'] . '" href="' . $button['url'] . '" class="cchl-button ' . $button['color']. '"><i class="fa ' . $button['icon']. '"></i> ' . $button['text'] . '</a>';
 }
 
 add_shortcode( 'boton', 'cchl_button' );
