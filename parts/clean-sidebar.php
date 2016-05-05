@@ -4,7 +4,7 @@
 	$checkferiatemplate = checkferiatemplate($post->ID);
 
 
-if(checkfilij($post->ID)):?>
+if(checkfilij($post->ID) || get_page_template_slug( $post->ID) == 'page-filij2014'):?>
 <div id="sidebar_filij" class="grid_4">
         <?php wp_nav_menu( array('menu'=> 176));?>
 </div>

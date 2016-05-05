@@ -5,17 +5,8 @@ Template Name: FILIJ 2014
 ?>
 <?php get_header(); ?>
 <div id="main-page" class="container_16 cf post-<?php echo $post->ID;?>">
-<?php 
-$isfilsa = checkfilsa();
-if($isfilsa):?>
-    <div id="sidebar_interior" class="grid_4 filij-2014">
-        <?php get_sidebar('filsa2014'); ?>
-    </div>
-<?php else:?>
-    <div id="sidebar_interior" class="grid_4">
-        <?php get_sidebar('ugly');?>
-    </div>
-<?php endif;?>
+
+<?php get_template_part('parts/clean-sidebar');?>
     
     <div id="content" class="grid_12">
          <?php if(!is_page(31817) && !is_page(108)):?>

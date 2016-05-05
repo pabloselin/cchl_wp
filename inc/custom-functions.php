@@ -248,3 +248,16 @@ function adjustBrightness($hex, $steps) {
 
     return $return;
 }
+
+function cchl_button($atts) {
+  $button = shortcode_atts( 
+    array(
+      'url' => '#',
+      'color' => 'red',
+      'text' => 'Clic aquí'
+    ), $atts );
+
+  return '<a href="' . $button['url'] . '" class="cchl-button ' . $button['color']. '">' . $button['text'] . '</a>';
+}
+
+add_shortcode( 'boton', 'cchl_button' );
