@@ -42,3 +42,4 @@ include( TEMPLATEPATH . '/inc/custom-functions.php');
 include( TEMPLATEPATH . '/inc/event-functions.php');
 include( TEMPLATEPATH . '/inc/scripts.php');
 include( TEMPLATEPATH . '/inc/custom-tax.php');
+include( TEMPLATEPATH . '/inc/function-ferias.php');
