@@ -99,6 +99,31 @@ Template Name: Colaboradores Fil 2015
                     </ul>
                 <?php endif;?>
 
+                <?php 
+                $colaboradores = getGroupOrder('info_socioes_logo_colaborador');
+                if($colaboradores && get('info_socioes_logo_colaborador')):
+                ?>
+                <h3 class="colabheading">Colabora</h3>
+                    <ul class="colabs invs">
+                            <?php 
+                                foreach($colaboradores as $colaborador): ?>
+                                    
+                                    <li>
+                                        <?php echo get_image('info_socioes_logo_colaborador', $colaborador, 1, 1, null, $size);?>
+                                        <h3><?php echo get('info_socioes_nombre', $colaborador);?></h3>
+                                        <?php 
+                                            if(get('info_socioes_url_colaborador', $colaborador)):
+                                                echo '<a target="_blank" href="'.get('info_socioes_url_colaborador', $colaborador).'"><i class="fa fa-external-link"></i></a>';
+                                            endif;
+                                        ?>
+                                    </li>
+
+                                <?php 
+                                endforeach;
+                            ?>                
+                    </ul>
+                <?php endif;?>
+
                 
 
                     <?php $mediaps = getGroupOrder('mediapartners_logo_mediapartner');
