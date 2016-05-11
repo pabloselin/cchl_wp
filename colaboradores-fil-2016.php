@@ -23,6 +23,36 @@ Template Name: Colaboradores Fil 2015
                 <?php 
 
                 $size = array("h" => 150, "w" => 150, "q" => 100);
+
+                $invita = getGroupOrder('invita_logo_invita');
+                
+                if($invita):
+                ?>
+                <h3 class="colabheading">Invita</h3>
+                    <ul class="colabs invs">
+                            <?php 
+                                foreach($invita as $inv): ?>
+                                    
+                                    <li>
+                                        <?php 
+                                        $otros = array("h" => 150, "w" => 150, "zc" => 1, "q" => 100);
+                                        echo get_image('invita_logo_invita', $inv, 1, 1, null, $otros);?>
+                                        <h3><?php echo get('invita_nombre', $inv);?></h3>
+                                        <?php 
+                                            if(get('invita_url_invita', $inv)):
+                                                echo '<a target="_blank" href="'.get('invita_url_invita', $inv).'"><i class="fa fa-external-link"></i></a>';
+                                            endif;
+                                        ?>
+                                    </li>
+
+                                <?php 
+                                endforeach;
+                            ?>                
+                    </ul>
+                <?php endif;?>
+                
+                <?php
+
                 $organiza = getGroupOrder('organiza_logo_organiza');
                 if($organiza && get('organiza_logo_organiza')):?>
                 <h3 class="colabheading">Organiza</h3>
