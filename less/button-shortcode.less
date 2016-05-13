@@ -1,0 +1,27 @@
+//CSS para shortcode de botón usado en the content
+
+.the-content a.cchl-button {
+	display:block;
+	padding:12px;
+	border-radius:5px;
+	text-decoration:none;
+	border:none;
+	font-size:24px;
+	text-align:center;
+	transition:all linear 0.2s;
+}
+
+.the-content a.cchl-button.blue {
+	background-color:#41ADC4;
+	color:white;
+	max-width:250px;
+	margin:0 auto 12px auto;
+	border:1px solid darken(#41ADC4, 6%);
+	
+	&:hover {
+		background-color:darken(#41adc4, 5%);
+		box-shadow:0 2px 6px #ccc;
+		transform:translateY(-3px);
+		text-decoration:none;
+	}
+}
