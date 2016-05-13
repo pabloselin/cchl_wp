@@ -26,7 +26,7 @@ Template Name: Colaboradores Fil 2015
 
                 $invita = getGroupOrder('invita_logo_invita');
                 
-                if($invita):
+                if($invita && get_image('invita_logo_invita') != ''):
                 ?>
                 <h3 class="colabheading">Invita</h3>
                     <ul class="colabs invs">
