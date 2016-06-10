@@ -28,7 +28,7 @@
 		<h1 id="mainlogo">
     		<a href="<?php bloginfo( 'url' ); ?>">Cámara Chilena del Libro 60 años trabajando por el libro y la lectura</a>
         </h1>
-        <a class="header__logofil2016" href="<?php echo get_permalink(60494);?>"><img src="<?php echo get_bloginfo('template_url');?>/img/filij-2016/banner_header_filij_2016.png" alt="<?php echo get_the_title(60494);?>"></a>
+        <!-- <a class="header__logofil2016" href="<?php echo get_permalink(60494);?>"><img src="<?php echo get_bloginfo('template_url');?>/img/filij-2016/banner_header_filij_2016.png" alt="<?php echo get_the_title(60494);?>"></a> -->
         <ul id="topmenu-principal">
         	<?php wp_nav_menu( array('menu' => 'Principal' )); ?>
         </ul>
