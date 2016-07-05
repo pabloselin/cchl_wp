@@ -23,7 +23,7 @@ if(checkfilij($post->ID) || get_page_template_slug( $post->ID) == 'page-filij201
 <div id="sidebar_interior" class="grid_4 filsa-2015">
 
 	<?php wp_nav_menu( array( 'theme_location' => 'historico-filsa') );?>
-	
+
 </div>
 
 
@@ -33,9 +33,26 @@ if(checkfilij($post->ID) || get_page_template_slug( $post->ID) == 'page-filij201
 	</div>
 
 <?php 
-	elseif($checkferiatemplate):
+	elseif($checkferiatemplate ):
 		$menu = get('id_menu', 1, 1, 1, $checkferiatemplate);
+
+	//Chequeador para singles multimedia
+	elseif( is_single() && in_category( array( CCHL_FLPA2016, CCHL_FILIJ2016 ), $post->ID ) ):
+
+		if(in_category(CCHL_FLPA2016)):
+
+				$feriaid = CCHL_PAGEFLPA2016;
+
+			elseif(in_category(CCHL_FILIJ2016)):
+
+				$feriaid = CCHL_PAGEFILIJ2016;
+
+		endif;
+
+		$menu = get('id_menu', 1, 1, 1, $feriaid);
+
 ?>
+
 <div id="sidebar_interior" class="grid_4 menu-feria-especial">
 
 	<?php wp_nav_menu( array('menu'=> $menu ) );?>

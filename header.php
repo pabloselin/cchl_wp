@@ -92,6 +92,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 $isfilsa = checkfilsa();
 $isfilij = checkfilij();
 
+//Categorías extra para page-ferias
+
+$feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );
+
 if($isfilsa):
 	get_template_part('parts/header', 'filsa-2014' );
 elseif($isfilij):
@@ -102,7 +106,7 @@ elseif(checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180)):
 	get_template_part('parts/header', 'filsa-2015' );
 elseif(checkferia($post->ID, CCHL_FILVINA2016)):
   get_template_part('parts/header', 'filvina-2016');
-elseif(is_page_template('page-feria-principal.php') || $using_feria_template):
+elseif(is_page_template('page-feria-principal.php') || $using_feria_template || in_category( $feriasmultimediacats, $post->ID )):
   get_template_part('parts/header', 'feria');
 else:
 	get_template_part('parts/header', 'standard');

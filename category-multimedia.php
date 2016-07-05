@@ -27,6 +27,7 @@
                         $otros = get("galeria_video_video",$miembro); ?>
                         
                         <img src="http://img.youtube.com/vi/<?php echo getYoutubeID($otros); ?>/0.jpg" width="95" height="80" />
+
                     <?php }?> 
         <?php endif;?>
             </div><!-- fin img mini-->
@@ -34,7 +35,9 @@
 			<div class="info">
             
 				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+
                 <p class="fecha"><?php echo mysql2date( 'j \\d\\e F \\d\\e Y', $post->post_date, true );?></p>
+                
 				<p><?php the_excerpt(); ?></p>
                 
 			</div><!-- fin info-->

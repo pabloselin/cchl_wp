@@ -15,6 +15,14 @@ define('CCHL_FERIASCOMUNALES', 146);
 define('CCHL_FERIASREGIONALES', 148);
 define('CCHL_FERIASEXTRANJERO', 150);
 
+//Categorías multimedias ferias
+define('CCHL_MULTIMEDIA', 17);
+define('CCHL_FLPA2016', 201);
+define('CCHL_FILIJ2016', 200);
+
+define('CCHL_PAGEFLPA2016', 60131);
+define('CCHL_PAGEFILIJ2016', 60494);
+
 define('CCHL_FERIAPLAZADEARMAS', 60131);
 
 define('CCHL_TWITTER', 'CamaradelLibro');

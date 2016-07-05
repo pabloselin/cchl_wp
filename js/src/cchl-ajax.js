@@ -68,10 +68,18 @@ jQuery(document).ready(function($) {
                 }).filter(':first').click();
 
     if(Galleria) {
-    	console.log('Galleria Works');
-
+    
     	Galleria.loadTheme( cchl.templateurl + '/js/galleria-classic-theme/galleria.classic.js');
-    	Galleria.run('.gallery');
+
+    	var galleryCont = $('.gallery');
+
+    	if(galleryCont) {
+
+    		Galleria.run('.gallery');
+
+    	}
+
+    	
     }
 
 });

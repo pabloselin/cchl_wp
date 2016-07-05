@@ -26,7 +26,11 @@
             <div id="tabs">
                 <ul class="tab-nav">
                     <li class="active"><a href="#tabs-1">Galería de fotos</a></li>
-                    <li><a href="#tabs-2">Videos</a></li>
+                    <?php if(get_post_meta($post->ID, 'galeria_video_video', true)): ?>
+                        
+                        <li><a href="#tabs-2">Videos</a></li>
+                        
+                    <?php endif;?>
                 </ul>
                 <div class="tab-panel active" id="tabs-1">
                     <div class="feria-galeria imagenes">
@@ -46,6 +50,9 @@
                     <div class="feria-galeria videos">
                     <?php
                     $miembros = getGroupOrder('galeria_video_video');
+                    
+                    if(get_post_meta($post->ID, 'galeria_video_video', true)):
+
                     foreach($miembros as $key=>$miembro){
                         
                         $id = uniqid('yt');
@@ -56,6 +63,8 @@
 
                         <iframe id="ytvid-<?php echo $id;?>" class="fl-lightbox" width="560" height="315" src="//youtube.com/embed/<?php echo getYoutubeID($otros); ?>" frameborder="0" allowfullscreen></iframe>
                     <?php } ?>
+
+                    <?php endif;?>
                     </div>
                 </div>
 			</div>
