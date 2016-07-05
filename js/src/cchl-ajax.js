@@ -55,4 +55,23 @@ jQuery(document).ready(function($) {
 		ferias.masonry('layout');
 	});
 
+
+	var tabContainers = $('div.tabs2 > div');
+                tabContainers.hide().filter(':first').show();
+                
+                $('div.tabs2 ul.tabNavigation a').click(function () {
+                    tabContainers.hide();
+                    tabContainers.filter(this.hash).show();
+                    $('div.tabs2 ul.tabNavigation a').removeClass('selected');
+                    $(this).addClass('selected');
+                    return false;
+                }).filter(':first').click();
+
+    if(Galleria) {
+    	console.log('Galleria Works');
+
+    	Galleria.loadTheme( cchl.templateurl + '/js/galleria-classic-theme/galleria.classic.js');
+    	Galleria.run('.gallery');
+    }
+
 });

@@ -4,7 +4,7 @@
 <?php get_header(); ?>
 <div id="main-page" class="container_16 cf">
     <div id="sidebar_interior" class="grid_4">
-        <?php get_sidebar(); ?>
+        <?php get_sidebar('clean'); ?>
     </div>
     <div id="content" class="grid_12">
          <div id="bread">

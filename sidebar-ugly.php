@@ -33,13 +33,3 @@
 		}else{ 
         	wp_nav_menu( array('menu' => 'menu-ferias' )); 
         } ?>
-        
-        <?php
-		query_posts('cat=13&showposts=3');
-		echo "<div class='aside-content'><br><h4>Noticias destacadas</h4><ul>";
-		if (have_posts()) : while (have_posts()) : the_post();
-		echo "<div class='noticia-destacada'><a href='".get_permalink()."'><h5>".get_the_title()."</h5></a>";
-		echo "<p>".excerpt2(10)."<a id='ver-mas' href='".get_permalink()."'>Siga Leyendo »</a></p></div>";
-		endwhile;endif;wp_reset_query();
-		echo "</ul></div>";
-		?>

@@ -21,6 +21,12 @@ define('CCHL_TWITTER', 'CamaradelLibro');
 
 register_nav_menu( 'accesos-rapidos-filsa-2015', 'Accesos Rápidos Filsa 2015' );
 
+register_nav_menus( array(
+	'accesos-rapidos-filsa-2015' => 'Accesos Rápidos Filsa 2015',
+	'historico-filsa'			 => 'Históricos Filsa'
+	) 
+);
+
 //Image sizes
 
 add_theme_support( 'post-thumbnails' );
@@ -42,4 +48,5 @@ include( TEMPLATEPATH . '/inc/custom-functions.php');
 include( TEMPLATEPATH . '/inc/event-functions.php');
 include( TEMPLATEPATH . '/inc/scripts.php');
 include( TEMPLATEPATH . '/inc/custom-tax.php');
+include( TEMPLATEPATH . '/inc/gallery-custom.php');
 include( TEMPLATEPATH . '/inc/function-ferias.php');

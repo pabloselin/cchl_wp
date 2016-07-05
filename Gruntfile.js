@@ -17,7 +17,12 @@ module.exports = function(grunt) {
 			less: {
 				files: ['less/*.less'],
 				tasks: ['clean','concat', 'less', 'version']
+			},
+			scripts: {
+				files: ['js/src/*.js'],
+				tasks: ['clean', 'less', 'concat', 'version']
 			}
+
 		},
 		version: {
       assets: {
@@ -41,6 +46,8 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				src: [
+					'bower_components/galleria/src/galleria.js',
+					'js/galleria-classic-theme/galleria.classic.js',
 					'js/src/cchl-ajax.js',
 					'js/src/cchl-main.js',
 					'js/src/cchl-filsa.js'

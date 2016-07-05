@@ -1,0 +1,22 @@
+{
+  "name": "cchl",
+  "description": "Tema para cámara del libro",
+  "main": "style.css",
+  "authors": [
+    "Pablo Selín <pablo@apie.cl>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "wordpress",
+    "template"
+  ],
+  "homepage": "http://camaradellibro.cl",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

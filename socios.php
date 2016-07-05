@@ -14,64 +14,6 @@
 			<div class="cf"></div>
             <div class="the-content"><?php the_content();?></div>
             
-            <script src="<?php bloginfo('template_directory'); ?>/js/jquery.js" type="text/javascript"></script>
-			<script type="text/javascript" charset="utf-8">
-            $(function () {
-                var tabContainers = $('div.tabs2 > div');
-                tabContainers.hide().filter(':first').show();
-                
-                $('div.tabs2 ul.tabNavigation a').click(function () {
-                    tabContainers.hide();
-                    tabContainers.filter(this.hash).show();
-                    $('div.tabs2 ul.tabNavigation a').removeClass('selected');
-                    $(this).addClass('selected');
-                    return false;
-                }).filter(':first').click();
-            });
-            </script>
-			<style>
-			ul.tabnavigation li {
-				list-style-type:none !important;
-				float:left;
-			}
-			
-			ul.tabnavigation {
-				list-style: none;
-				margin: 0;
-				padding: 23px 0;
-				clear: both;
-				text-align: center;
-				list-style-type:none !important;
-			}
-			ul.tabnavigation li a {
-				float: left;
-				padding: .5em 1em;
-				text-decoration: none;
-				color: #A7A9AB;
-				margin-top: 5px;
-				font-size: 14px;
-				text-transform: uppercase;
-				background: #E5E6E7;
-				margin-left: 7px;
-				list-style-type: none !important;
-				margin-right: 7px;
-				margin-top: 0px;
-				height:25px;
-				width:auto;
-			}
-			ul.tabnavigation li a.selected, ul.tabnavigation li a:hover {
-				color: white;
-				font-size: 14px;
-				text-transform: uppercase;
-				margin-top: 5px;
-				background: #EA6430;
-				border: none;
-				margin-bottom: 0;
-				padding: .5em 1em;
-				list-style-type:none !important;
-				margin-top: 0px;
-			}
-			</style>
             <?php endwhile; endif; wp_reset_query(); ?>
             <div class="tabs2 cf">
                 <ul class="tabNavigation">
