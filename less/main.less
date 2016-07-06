@@ -105,3 +105,37 @@
 		border-color:#444;
 	}
 }
+
+
+#sidebar_interior .menu-historico-filsa-container {
+	
+	border: 2px solid #999;
+	border-radius: 3px;
+
+	li {
+		border-bottom: 2px solid #999
+	} 
+
+	li:last-child {
+		border-bottom: 0;
+	}
+
+	li a {
+		color: #444;
+		font-weight:400;
+		font-size:16px;
+		
+		&:before {
+			content:'\f097';
+			font-family: 'FontAwesome';
+			font-size: 16px;
+			margin-right: 12px;
+		}
+		
+		&:hover {
+			background-image:none;
+			background-color: #444;
+			color:white;
+		}
+	}
+}
