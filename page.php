@@ -1,9 +1,9 @@
 <?php
 /* Template Name: Page Interior */
 ?>
-<?php
 
-get_header(); ?>
+<?php get_header(); ?>
+
 <div id="main-page" class="container_16 cf">
     <?php get_template_part('parts/clean-sidebar');?>
 

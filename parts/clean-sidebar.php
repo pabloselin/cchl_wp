@@ -1,21 +1,32 @@
 <?php 
 
+
 //para los que usan plantillas de feria
-	$checkferiatemplate = checkferiatemplate($post->ID);
 
+$checkferiatemplate = checkferiatemplate($post->ID);
 
-if(checkfilij($post->ID) || get_page_template_slug( $post->ID) == 'page-filij2014'):?>
+if(checkfilij($post->ID) || get_page_template_slug( $post->ID) == 'page-filij2014'): ?>
+
 <div id="sidebar_filij" class="grid_4">
+
         <?php wp_nav_menu( array('menu'=> 176));?>
+
 </div>
+
 <?php elseif(checkferia($post->ID, 53771)):?>
+
 <div id="sidebar_fil" class="grid_4">
+
 		<?php wp_nav_menu( array('menu'=> 177));?>
+
 </div>
+
 <?php elseif(checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ):?>
 
 <div id="sidebar_interior" class="grid_4 filsa-2015">
+
 		<?php wp_nav_menu( array('menu'=> 178));?>
+
 </div>
 
 <?php elseif(checkferia($post->ID, 108)):?>
@@ -33,8 +44,17 @@ if(checkfilij($post->ID) || get_page_template_slug( $post->ID) == 'page-filij201
 	</div>
 
 <?php 
-	elseif($checkferiatemplate ):
-		$menu = get('id_menu', 1, 1, 1, $checkferiatemplate);
+	elseif($checkferiatemplate):
+	
+		$menu = get('id_menu', 1, 1, 1, $checkferiatemplate);?>
+
+	<div id="sidebar_interior" class="grid_4 menu-feria-especial">
+
+		<?php wp_nav_menu( array('menu'=> $menu ) );?>
+	
+	</div>
+
+	<?php
 
 	//Chequeador para singles multimedia
 	elseif( is_single() && in_category( array( CCHL_FLPA2016, CCHL_FILIJ2016 ), $post->ID ) ):
@@ -50,7 +70,6 @@ if(checkfilij($post->ID) || get_page_template_slug( $post->ID) == 'page-filij201
 		endif;
 
 		$menu = get('id_menu', 1, 1, 1, $feriaid);
-
 ?>
 
 <div id="sidebar_interior" class="grid_4 menu-feria-especial">

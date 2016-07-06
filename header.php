@@ -42,9 +42,12 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <?php 
   //Chequea si algún parent está usando un template de feria
   $using_feria_template = checkferiatemplate($post->ID);
+
   if($using_feria_template) {
+
     $color_1 = get('color_1', 1, 1, 1, $using_feria_template);
     $color_2 = get('color_2', 1, 1, 1, $using_feria_template);
+    
     ?>
     <style>
         body#feria #sidebar_interior.menu-feria-especial div>ul>li:first-of-type > a {
@@ -106,7 +109,7 @@ elseif(checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180)):
 	get_template_part('parts/header', 'filsa-2015' );
 elseif(checkferia($post->ID, CCHL_FILVINA2016)):
   get_template_part('parts/header', 'filvina-2016');
-elseif(is_page_template('page-feria-principal.php') || $using_feria_template || in_category( $feriasmultimediacats, $post->ID )):
+elseif(is_page_template('page-feria-principal.php') || $using_feria_template || is_single() && in_category( $feriasmultimediacats, $post->ID )):
   get_template_part('parts/header', 'feria');
 else:
 	get_template_part('parts/header', 'standard');

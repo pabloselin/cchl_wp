@@ -72,7 +72,7 @@
         </div>        
     </div>
 </div>
-<?php }else { ?>
+<?php } else { ?>
 <div id="main-page" class="container_16 cf">
     
     <?php get_template_part('parts/clean-sidebar'); ?>
@@ -107,5 +107,7 @@
         
     </div>
 </div>
+
 <?php }  ?>
+
 <?php get_footer(); ?>

@@ -57,7 +57,7 @@ function filsa_template($template) {
 function checkfilsa() {
   global $post;
   $ancestors = get_post_ancestors($post->ID);
-  $param = $_GET['ref'];
+  $param = isset($_GET['ref']) ? $_GET['ref'] : '';
    if(
       //condition 1
       $post->ID == 31817 ||
@@ -203,9 +203,11 @@ add_shortcode('eventos_filij', 'eventos_filij_shortcode');
 
 
 function checkferiatemplate($postid) {
+  
   /**
    * chequea si un pariente está usando la plantilla de temas personalizados para ferias y devuelve el ID de la Feria
    */
+  
   $ancestors = get_post_ancestors( $postid );
   $using_feria_template = false;
   $feriaid = null;
@@ -217,9 +219,25 @@ function checkferiatemplate($postid) {
   endforeach;
   }
 
-  if(get_page_template_slug( $postid) == 'page-feria-principal.php'):
+  if(get_page_template_slug( $postid ) == 'page-feria-principal.php'):
     $using_feria_template = true;
     $feriaid = $postid;
+  endif;
+
+  //añadidos chungos para categorías de ferias específicas
+  
+  if(is_single($postid) && in_category( CCHL_FLPA2016, $postid )):
+
+    $using_feria_template = true;
+    $feriaid = CCHL_PAGEFLPA2016;
+
+  endif;
+
+  if(is_single($postid) && in_category( CCHL_FILIJ2016, $postid)):
+
+    $using_feria_template = true;
+    $feriaid = CCHL_PAGEFILIJ2016;
+
   endif;
 
   return $feriaid;

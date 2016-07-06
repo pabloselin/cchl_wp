@@ -67,11 +67,13 @@ jQuery(document).ready(function($) {
                     return false;
                 }).filter(':first').click();
 
-    if(Galleria) {
-    
-    	Galleria.loadTheme( cchl.templateurl + '/js/galleria-classic-theme/galleria.classic.js');
+	var galleryCont = $('.gallery');
+	console.log(galleryCont);
 
-    	var galleryCont = $('.gallery');
+	Galleria.loadTheme( cchl.templateurl + '/js/galleria-classic-theme/galleria.classic.js');
+
+    if(Galleria && galleryCont.length > 0 ) {
+    	
 
     	if(galleryCont) {
 
