@@ -26,7 +26,9 @@ if(checkfilij($post->ID) || get_page_template_slug( $post->ID) == 'page-filij201
 <div id="sidebar_interior" class="grid_4 filsa-2015">
 
 		<?php wp_nav_menu( array('menu'=> 178));?>
-
+	
+		<?php get_template_part('parts/botonportadafilsa');?>
+		
 </div>
 
 <?php elseif(checkferia($post->ID, 108)):?>
