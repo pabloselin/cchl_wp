@@ -5,6 +5,7 @@
 <?php get_header(); ?>
 
 <div id="main-page" class="container_16 cf">
+    
     <?php get_template_part('parts/clean-sidebar');?>
 
     <div id="content" class="grid_12">

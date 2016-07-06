@@ -3,12 +3,17 @@
 
 add_post_type_support('page', 'excerpt');
 
-//CONSTANTS
+//CONSTANTS FILSA
 define( 'CCHL_PAGEFILSA', 54798 );
 define( 'CCHL_FILSAHOME', 108 );
 define( 'CCHL_FILSA2015', 54646 );
-define( 'CCHL_FILVINA2016', 59355 );
 define( 'CCHL_CATSFILSA', '184, 183' );
+
+define( 'CCHL_FILSA2013', 24556 );
+define( 'CCHL_FILSA2012', 24568 );
+
+define( 'CCHL_FILVINA2016', 59355 );
+
 define('CCHL_LINKGRATIS', 'http://camaradellibro.cl/ferias/filsa/filsa-2015/entradas-liberadas-a-filsa-2015/');
 
 //IDS de Ferias

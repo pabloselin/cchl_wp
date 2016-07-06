@@ -3,9 +3,9 @@
 ?>
 <?php get_header(); ?>
 <div id="main-page" class="container_16 cf">
-    <div id="sidebar_interior" class="grid_4">
-        <?php get_sidebar('clean'); ?>
-    </div>
+
+    <?php get_template_part('parts/clean-sidebar');?>
+
     <div id="content" class="grid_12">
          <div id="bread">
             Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
