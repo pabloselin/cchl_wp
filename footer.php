@@ -10,7 +10,7 @@
         	<li><strong>Ferias</strong></li>
             <li><a href="/ferias/historia-de-las-ferias/">Historia de las ferias</a></li>
             <li><a href="/ferias/filsa/">FILSA</a></li>
-            <li><a href="/ferias/feria-del-libro-infantil-y-juvenil/">Feria del Libro Infantil y Juvenil </a></li>
+            <li><a href="/ferias/feria-del-libro-infantil-juvenil/">Feria del Libro Infantil y Juvenil </a></li>
             <li><a href="/ferias/feria-del-libro-comunales/">Ferias del Libro comunales</a></li>
             <li><a href="/ferias/feria-del-libro-regionales/">Ferias del Libro regionales</a></li>
             <li><a href="/ferias/ferias-en-el-extranjero/">Ferias en el extranjero</a></li>
