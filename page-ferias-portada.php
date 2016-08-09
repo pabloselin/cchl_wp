@@ -15,8 +15,13 @@
 
             <div class="cf"></div>
 
-		<?php endwhile;
-			endif;?>
+		<?php 
+
+            endwhile;
+
+			endif;
+
+            ?>
 
         <?php 
         //Ferias del Libro

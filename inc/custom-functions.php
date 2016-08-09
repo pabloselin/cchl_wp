@@ -213,15 +213,20 @@ function checkferiatemplate($postid) {
   $feriaid = null;
   if($ancestors) {
   foreach($ancestors as $ancestor):
-    if(get_page_template_slug( $ancestor ) == 'page-feria-principal.php'):
+    if(get_page_template_slug( $ancestor ) == 'page-feria-principal.php' || get_page_template_slug( $ancestor ) == 'page-filsa2016.php' ):
+
       $feriaid = $ancestor;
+
     endif;
   endforeach;
   }
 
-  if(get_page_template_slug( $postid ) == 'page-feria-principal.php'):
+  if( get_page_template_slug( $postid ) == 'page-feria-principal.php' || 
+      get_page_template_slug( $postid ) == 'page-filsa2016.php' ):
+
     $using_feria_template = true;
     $feriaid = $postid;
+
   endif;
 
   //añadidos chungos para categorías de ferias específicas

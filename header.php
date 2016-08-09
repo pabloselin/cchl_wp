@@ -99,19 +99,36 @@ $isfilij = checkfilij();
 
 $feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );
 
-if($isfilsa):
+if( $isfilsa ):
+
 	get_template_part('parts/header', 'filsa-2014' );
-elseif($isfilij):
+
+elseif( $isfilij ):
+
 	get_template_part('parts/header', 'filij-2014' );
-elseif(checkferia($post->ID, 53771)):
+
+elseif( checkferia($post->ID, 53771) ):
+
 	get_template_part('parts/header', 'fil' );
-elseif(checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180)):
+
+elseif( checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ):
+
 	get_template_part('parts/header', 'filsa-2015' );
-elseif(checkferia($post->ID, CCHL_FILVINA2016)):
+
+elseif( checkferia($post->ID, CCHL_FILVINA2016) ):
+
   get_template_part('parts/header', 'filvina-2016');
-elseif(is_page_template('page-feria-principal.php') || $using_feria_template || is_single() && in_category( $feriasmultimediacats, $post->ID )):
+
+elseif( is_page_template('page-feria-principal.php') || $using_feria_template || is_single() && in_category( $feriasmultimediacats, $post->ID ) ):
+
   get_template_part('parts/header', 'feria');
+
 else:
+
 	get_template_part('parts/header', 'standard');
+
 endif;
+
+
+
 ?>
