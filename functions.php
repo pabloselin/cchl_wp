@@ -6,9 +6,11 @@ add_post_type_support('page', 'excerpt');
 //CONSTANTS FILSA
 define( 'CCHL_PAGEFILSA', 54798 );
 define( 'CCHL_FILSAHOME', 108 );
-define( 'CCHL_FILSA2015', 54646 );
+
 define( 'CCHL_CATSFILSA', '184, 183' );
 
+define( 'CCHL_FILSA2016', 60799 );
+define( 'CCHL_FILSA2015', 54646 );
 define( 'CCHL_FILSA2013', 24556 );
 define( 'CCHL_FILSA2012', 24568 );
 

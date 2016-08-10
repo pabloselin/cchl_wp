@@ -1,6 +1,14 @@
 //Estilos para filsa 2016
 
-body#feria.page-id-60799 #sidebar_interior.menu-feria-especial div > ul > li:first-of-type > a {
+body#filsa-2016 #sidebar_interior {
+	margin-top:35px;
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial > div.menu-filsa-2016-container {
+	border:1px solid #ccc;
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div > ul > li:first-of-type > a {
 	
 	background-image: none;
 	color: black;
@@ -8,7 +16,61 @@ body#feria.page-id-60799 #sidebar_interior.menu-feria-especial div > ul > li:fir
 	padding-bottom: 13px;
 	font-weight: 600;
 	padding-left: 16px;
+	background-color:#f0f0f0;
+	border-bottom:1px solid #ccc;
 	
+	&:before {
+		content:'\f015';
+		color: #000;
+		font-family:'FontAwesome';
+		font-size:17px;
+		display:inline-block;					
+		margin-left:-4px;
+		margin-right:4px;
+		vertical-align:middle;
+		font-weight:normal;
+	}
+	
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.sub-menu,
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.sub-menu li
+ {
+	padding:0;
+	margin:0;
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.sub-menu li a {
+	padding:10px 6px 10px 24px;
+}
+
+
+body#filsa-2016 .wrapredes {
+	top:0;
+}
+
+body#filsa-2016 .wrapredes div.redes-sociales {
+	background-color:rgba(0, 0, 0, 0.2);
+	width:90px;
+}
+
+body#filsa-2016 .wrapredes a {
+	font-size:22px;
+}
+
+body#filsa-2016 .wrapredes a:hover {
+	color:#FE3B82;
+}
+
+body#feria.page-id-60799 .filsa-header-mobile img {
+	bottom:0;
+	top:none;
+}
+
+body#feria.page-id-60799 .filsa-header-mobile {
+	background-color:#3C3C3C;
+	height: 122px;
+	overflow:hidden;
 }
 
 .accesos-rapidos.filsa-2016 {
@@ -30,11 +92,12 @@ body#feria.page-id-60799 #sidebar_interior.menu-feria-especial div > ul > li:fir
 		&:hover {
 			background-color: #FE3B82;
 			color:white;
+			box-shadow:0 0 4px #333;
 		}
 
 		@media screen and (max-width: @screen-sm ) {
 			
-			width:40%;
+			width:44%;
 			margin:1%;
 			padding:2%;
 
@@ -44,3 +107,51 @@ body#feria.page-id-60799 #sidebar_interior.menu-feria-especial div > ul > li:fir
 
 }
 
+//Cabecera móvil
+
+body#filsa-2016 .mobile-menu-filsa div > ul > li:first-of-type > a {
+	font-size:24px;
+	font-weight:600;
+	&:before {
+		content:'\f015';
+		color: #000;
+		font-family:'FontAwesome';
+		font-size:17px;
+		display:inline-block;					
+		margin-left:-4px;
+		margin-right:4px;
+		vertical-align:middle;
+		font-weight:normal;
+	}
+}
+
+body#filsa-2016 .filsa-header-mobile {
+	background-color: #3C3C3C;
+	height:72px;
+}
+
+body#filsa-2016 .filsa-header-mobile img {
+	right:24px;
+	top:12px;
+}
+
+body#filsa-2016 a.triggernav {
+	color:white;
+	left:12px;
+}
+
+body#filsa-2016 .mobile-menu-filsa {
+	margin-top:72px;
+}
+
+body#filsa-2016 .mobile-menu-filsa ul li a {
+	background-color:#f0f0f0;
+}
+
+body#filsa-2016 .mobile-menu-filsa .mobile__redes {
+	background-color: #ccc;
+}
+
+body#filsa-2016 .mobile-menu-filsa .mobile__redes a i {
+	color:#FE3B82;
+}

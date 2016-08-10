@@ -1,0 +1,167 @@
+//Responsive minimums
+
+
+@screen-sm: 480px;
+
+//Breakpoint
+@scrbr: 768px;
+
+.filsa-header-mobile {
+	display:none;
+}
+
+.filsa-header {
+	z-index:0;
+}
+
+background-image:none;
+
+
+//Basic stuff
+@media screen and (max-width:@scrbr) {
+	
+	
+	min-width:320px;
+	//padding-top:125px;
+	
+
+	#wpadminbar {
+		display:none;
+	}
+
+	#sidebar_interior {
+		display:none;
+	}
+
+	table {
+		max-width:100%;
+		overflow:scroll;
+		}
+
+		.camara-header-filsa,
+		#bread,
+		.filsa-header,
+		#sidebar_interior,
+		.addthis_toolbox,
+		#footer,
+		.wrapredes,
+		img.wp-image-54806
+		 {
+			display:none;
+		}
+
+	#main-page {
+			width:100%;
+		}
+
+		#content.grid_12 {
+			width:96%;
+			margin:0;
+			padding:2%;
+			
+			img {
+				max-width:100%;
+				height:auto;
+			}
+		}
+
+		.alignleft,
+		.alignright
+		 {
+			float:none;
+			margin:12px 0;
+		}
+
+}
+
+
+//Cosas para la botonera de ferias móvil
+@media screen and (max-width:@scrbr) {
+	
+	.filsa-header-mobile {
+			display:block;
+			background-color:white;
+			position: fixed;
+			top:0;
+			width:100%;
+			height:120px;
+			z-index:100;
+			img {
+				position: absolute;
+				top:0px;
+				right:0px;
+			}
+		}
+
+	a.triggernav {
+			position: absolute;
+			display: block;
+			left:1px;
+			bottom:6px;
+			color:#005382;
+			font-size:24px;
+			padding:4px;
+			border-radius:5px;
+			//border:2px solid @trigcolor;
+			text-align:center;
+			background-color:transparent;
+			span {
+				display:block;
+				font-size:11px;
+				text-align:center;
+				text-transform:uppercase;
+				font-weight:500;
+			}
+		}
+
+	.mobile-menu-filsa {
+		transition:max-height 0.5s ease-out;
+			overflow:hidden;
+			margin-top:120px;
+			border-top:1px solid #F96085;
+			
+			div.mobile__redes {
+				background-color:#F2F3F9;
+				overflow:hidden;
+				padding:12px;
+				border-bottom: 1px solid darken(#CDE3F1, 25%);
+				span {
+					color:#333;
+					display: inline-block;
+					margin-right:6px;
+					vertical-align:30%;
+				}
+				a {
+					color:fade(#F8547E, 20%);
+					display: inline-block;
+					margin-right:12px;
+					font-size:32px;
+				}
+			}
+
+			&.inactive {
+				max-height:0;
+			}
+
+			&.active {
+				max-height:400px;
+				height:auto;
+				overflow:scroll;	
+			}
+
+			ul {
+				li {
+					a {
+						display:block;
+						padding:12px;
+						color:#333;
+						font-size:15px;
+						border-bottom:1px solid rgba(0, 116, 181, 0.1);
+						background-color:#FEE5EC;
+						font-weight:500;
+					}
+				}
+			}
+	}
+
+}

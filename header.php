@@ -115,6 +115,10 @@ elseif( checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ):
 
 	get_template_part('parts/header', 'filsa-2015' );
 
+elseif( checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 180) ):
+
+  get_template_part('parts/header', 'filsa-2016');
+
 elseif( checkferia($post->ID, CCHL_FILVINA2016) ):
 
   get_template_part('parts/header', 'filvina-2016');

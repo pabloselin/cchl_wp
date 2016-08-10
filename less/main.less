@@ -2,6 +2,9 @@
 
 @screen-sm: 480px;
 
+//Breakpoint
+@scrbr: 768px;
+
 //Multiple less stuff:..
 @import "reset.less";
 @import "960.less";
@@ -53,6 +56,11 @@
 
 //button shortcode
 @import "button-shortcode.less";
+
+//responsive base para sitios con clase "responsive" en el body
+body.responsive {
+	@import "responsive.less";	
+}
 
 
 //Gallery galleria
