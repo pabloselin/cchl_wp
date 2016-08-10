@@ -52,6 +52,8 @@ elseif($checkferiatemplate):
 	<div id="sidebar_interior" class="grid_4 menu-feria-especial">
 
 		<?php wp_nav_menu( array('menu'=> $menu ) );?>
+
+		<?php get_template_part('parts/botonportadafilsa');?>
 	
 	</div>
 
