@@ -10,9 +10,13 @@ Template Name: FILSA 2016
 
     
     <div id="content" class="grid_12">
+        <?php if(has_nav_menu( 'accesos-rapidos-filsa-2016') ):?>
+        
         <div class="accesos-rapidos filsa-2016">
             <?php wp_nav_menu( array('theme_location'=> 'accesos-rapidos-filsa-2016') );?>
         </div>
+
+        <?php endif;?>
 
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <?php get_template_part('parts/addthis');?>
