@@ -34,6 +34,20 @@ elseif(checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ):?>
 
 </div>
 
+<?php
+//para FILSA 2016
+elseif(checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016)):?>
+
+<div id="sidebar_interior" class="grid_4 menu-feria-especial">
+	
+		<?php 
+		$menu = get('id_menu', 1, 1, 1, CCHL_FILSA2016);
+		wp_nav_menu( array('menu'=> $menu));?>
+	
+		<?php get_template_part('parts/botonportadafilsa');?>
+
+</div>
+
 
 <?php 
 //para FIL VIÑA 2016

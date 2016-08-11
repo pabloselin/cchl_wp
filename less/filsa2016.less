@@ -2,6 +2,9 @@
 
 body#filsa-2016 {
 	background-image:none;
+	#sidebar_interior ul li ul.sub-menu {
+		display:block;
+	}
 }
 
 body#filsa-2016 #sidebar_interior {
@@ -186,4 +189,49 @@ body#filsa-2016 .mobile-menu-filsa .mobile__redes {
 
 body#filsa-2016 .mobile-menu-filsa .mobile__redes a i {
 	color:#FE3B82;
+}
+
+//Categoría noticias
+
+body#filsa-2016 {
+	background-image:none;
+	#bread {
+		margin-bottom:0;
+	}
+
+	.paginador {
+		margin:0 auto;
+		max-width:100%;
+	}
+
+	.pastillaNoticias {
+		overflow:hidden;
+		margin-bottom:12px;
+		width:100%;
+		height:auto;
+		
+		.foto-noticias-mini {
+			margin-top:0;
+			margin-right:12px;	
+		}
+
+		.info {
+			width:570px;
+			h3 {
+				font-size:20px;
+				line-height:1.3em;
+				font-weight:500;
+				a {
+					&:hover {
+						text-decoration:underline;
+					}
+				}
+			}	
+		}
+		
+		p.fecha {
+			font-size:14px;
+		}	
+
+	}
 }
