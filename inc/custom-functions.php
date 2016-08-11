@@ -1,5 +1,7 @@
 <?php
+ 
  function compararFechas($primera, $segunda)
+ 
  {
   $valoresPrimera = explode ("/", $primera);   
   $valoresSegunda = explode ("/", $segunda); 
@@ -292,3 +294,113 @@ function cchl_button($atts) {
 }
 
 add_shortcode( 'boton', 'cchl_button' );
+
+
+function excerpt2($num) {
+  $limit = $num+1;
+  $excerpt = explode(' ', get_the_excerpt(), $limit);
+  array_pop($excerpt);
+  $excerpt = implode(" ",$excerpt);
+  echo '<p>'.$excerpt.' &hellip;</p>';
+}
+
+function limitar_palabras( $str, $num, $append_str='' ) {
+  $palabras = preg_split( '/[\s]+/', $str, -1, PREG_SPLIT_OFFSET_CAPTURE );
+  if( isset($palabras[$num][1]) ){
+    $str = substr( $str, 0, $palabras[$num][1] ) . $append_str;
+  }
+  unset( $palabras, $num );
+  return trim( $str );
+}
+
+function getYoutubeID($url) {
+    $tube = parse_url($url);
+    if ($tube["path"] == "/watch") {
+        parse_str($tube["query"], $query);
+        $id = $query["v"];
+    } elseif($tube['host'] == 'http://youtu.be') {
+      $id = $tube['path'];
+     }
+    else {
+        $id = "";   
+    }
+    return $id;
+}
+
+if (!function_exists('is_category_or_sub')) {
+  function is_category_or_sub($cat_id = 0) {
+      foreach (get_the_category() as $cat) {
+        if ($cat_id == $cat->cat_ID || cat_is_ancestor_of($cat_id, $cat)) return true;
+      }
+      return false;
+  }
+}
+
+if (!function_exists('is_page_or_sub')) {
+    function is_page_or_sub($my_page) {
+        global $post, $wpdb;
+  $grand_parent = $wpdb->get_var("SELECT post_parent FROM $wpdb->posts WHERE ID = '".$post->post_parent."' AND post_type = 'page'");
+  // If you pass in a string, get the page ID of $my_page to use below
+  if (is_numeric($my_page)==false) {
+            $my_page = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE post_name = '".$my_page."' AND post_type = 'page'");
+  }
+  // If this is $my_page or the child or grandchild of $my_page return true 
+  if ( is_page($my_page) || $post->post_parent == $my_page || $grand_parent == $my_page ) {
+      return true;
+  } 
+  // Else return false
+        return false;
+    }
+}
+
+function get_topmost_parent($post_id){
+  $parent_id = get_post($post_id)->post_parent;
+  if($parent_id == 0){
+    return $post_id;
+  }else{
+    return get_topmost_parent($parent_id);
+  }
+}
+
+function new_excerpt_more( $more ) {
+  return '';
+}
+
+add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
+ * Devuelve TRUE cuando estamos en alguna parte del sitio que sea responsive
+ */
+function cchl_isresponsive( ) {
+
+  global $post;
+
+  $isfilsa = checkfilsa();
+  $isfilij = checkfilij();
+  $using_feria_template = checkferiatemplate($post->ID);
+  $feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );
+
+  if(
+  
+  //Listado de condiciones para plantillas específicas
+  
+  $isfilsa == true ||
+  $isfilij == true ||
+  checkferia($post->ID, 53771) ||
+  checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ||
+  checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 180) ||
+  checkferia($post->ID, CCHL_FILVINA2016) ||
+  is_page_template('page-feria-principal.php') ||
+  $using_feria_template || 
+  ( is_single() && in_category( $feriasmultimediacats, $post->ID ) )
+
+  ):
+
+    return true;
+
+  else:
+
+    return false;
+
+  endif;
+}
