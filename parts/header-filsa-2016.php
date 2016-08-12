@@ -1,5 +1,5 @@
 <body <?php body_class('responsive');?> id="filsa-2016">
-
+<?php get_template_part( 'parts/fb-sdk');?>
 <?php 
 	
 	$feriaid = CCHL_FILSA2016;

@@ -1,4 +1,5 @@
 <body <?php body_class();?> id="filsa-2015">
+<?php get_template_part( 'parts/fb-sdk');?>
 		<div class="camara-header-filsa">
 			<div class="wrapchf">
 				<a href="<?php echo get_bloginfo('url');?>"><img src="<?php echo get_bloginfo('template_url');?>/img/filsa2014/cchl_filsaheader.png" alt="<?php bloginfo('title');?>" /> CÁMARA CHILENA DEL LIBRO</a>

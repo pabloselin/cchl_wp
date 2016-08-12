@@ -1,4 +1,5 @@
 <body <?php body_class();?> id="feria">
+<?php get_template_part( 'parts/fb-sdk');?>
 	<?php 
 		
 		$ancestors = get_post_ancestors($post->ID);
