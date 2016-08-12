@@ -147,9 +147,10 @@
                 <div class="imagenes">
                     <h2>Videos <a class="ver-mas" href="/categoria/sala-de-prensa/multimedia/" >Ver más Galerías</a></h2>
                     <div>
+                    <?php $i = 1; ?>
                         <div class="coda-slider" id="slider-id2">
                         <?php query_posts("category_name=multimedia&post_type=post&showposts=-1"); while (have_posts()) : the_post(); ?>	
-                        <?php $i = 1; ?>
+                        
                         <?php
                         $miembros = getGroupOrder('galeria_video_video');
                         foreach(array_reverse($miembros) as $miembro){
