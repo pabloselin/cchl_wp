@@ -29,7 +29,7 @@ body#filsa-2016 #sidebar_interior.menu-feria-especial > div.menu-filsa-2016-cont
 	border:1px solid #ccc;
 }
 
-body#filsa-2016 #sidebar_interior.menu-feria-especial div > ul > li:first-of-type > a {
+body#filsa-2016 #sidebar_interior.menu-feria-especial div > ul.menu > li:first-of-type > a {
 	
 	background-image: none;
 	color: black;
@@ -65,26 +65,65 @@ body#filsa-2016 #sidebar_interior.menu-feria-especial div > ul > li:first-of-typ
 
 body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.sub-menu,
 body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.sub-menu li
- {
+{
 	padding:0;
 	margin:0;
 }
 
-body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.sub-menu li a {
-	padding:12px 12px 12px 24px;
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li a {
+	
+	padding:12px 6px 12px 12px;
 	text-transform:uppercase;
 	font-size:14px;
 	font-weight:500;
 	transition:all ease-in .1s;
 	border-bottom:none;
 	color:#000;
+	background-color:#f0f0f0;
+	height:auto;
 	
 	&:hover {
 		background-color:#3C3C3C;
 		color:white;
+		background-image:none;
+		padding-left:16px;
 	}
 }
 
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.current_page_ancestor a,
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.current-menu-item a
+ {
+	background-color:lighten(#3C3C3C, 22%);
+	color:white;
+	background-image:none;
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu li a {
+	font-weight:300;
+	background-color:lighten(#ccc, 6%);
+	color:#333;
+	padding:12px 6px 12px 18px;
+	transition:all ease-in 0.1s;
+	
+	&:hover {
+		background-color:darken(#ccc, 5%);
+		padding-left:22px;
+	}
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.menu-item-has-children > a:after {
+	content: '\f107';
+	font-family: 'FontAwesome';
+	font-size: 16px;
+	display: inline-block;
+	margin-left: 8px;
+	vertical-align: middle;
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu li.current-menu-item a {
+	background-color:darken(#ccc, 25%);
+	color:white;
+}
 
 body#filsa-2016 .wrapredes {
 	top:0;

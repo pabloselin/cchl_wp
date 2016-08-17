@@ -16,11 +16,11 @@ module.exports = function(grunt) {
 		watch: {
 			less: {
 				files: ['less/*.less'],
-				tasks: ['clean','concat', 'less', 'version']
+				tasks: ['less', 'version']
 			},
 			scripts: {
 				files: ['js/src/*.js'],
-				tasks: ['clean', 'less', 'concat', 'version']
+				tasks: ['concat', 'version']
 			}
 
 		},
