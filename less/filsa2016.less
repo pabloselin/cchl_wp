@@ -26,7 +26,9 @@ body#filsa-2016 #content {
 }
 
 body#filsa-2016 #sidebar_interior.menu-feria-especial > div.menu-filsa-2016-container {
-	border:1px solid #ccc;
+	border-width:1px 1px 0 1px;
+	border-style: solid;
+	border-color: #ccc;
 }
 
 body#filsa-2016 #sidebar_interior.menu-feria-especial div > ul.menu > li:first-of-type > a {
@@ -100,15 +102,30 @@ body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.current-men
 
 body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu li a {
 	font-weight:300;
-	background-color:lighten(#ccc, 6%);
+	//background-color:lighten(#ccc, 6%);
 	color:#333;
+	font-size: 15px;
+	border-bottom:none;
 	padding:12px 6px 12px 18px;
 	transition:all ease-in 0.1s;
+	text-transform:none;
 	
 	&:hover {
 		background-color:darken(#ccc, 5%);
 		padding-left:22px;
 	}
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu {
+	border-bottom:1px solid #ccc;
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu > li > a {
+	border-bottom:1px solid #ccc;
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.menu-item-has-children > a {
+	border-bottom:none;
 }
 
 body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.menu-item-has-children > a:after {
