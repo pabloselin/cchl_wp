@@ -14,7 +14,7 @@
                   </div>
             </div>
  -->
-            <div class="sharer" data-url="<?php echo urlencode( get_permalink($post->ID) );?>">
+            <div class="sharer" data-url="<?php echo urlencode( cchl_url( $post->ID ) );?>">
                   <a target="_blank" href="https://facebook.com/sharer.php?u=<?php echo urlencode( get_permalink($post->ID) );?>" class="sharer__facebook"><i class="fa fa-facebook"></i></a>
 
                   <a target="_blank" href="https://twitter.com/home?status=<?php echo urlencode( $post->post_title . ' - '  . wp_get_shortlink($post->ID ) );?>" class="sharer__twitter"><i class="fa fa-twitter"></i></a>

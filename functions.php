@@ -60,6 +60,9 @@ add_image_size( 'slide-home-600', 600, 300, true);
 add_image_size( 'imagen-streaming', 280, 150, true);
 add_image_size( 'afiche', 290, 550, false);
 
+//Return shortlink button
+
+add_filter( 'get_shortlink', function( $shortlink ) {return $shortlink;} );
 
 //Includes 
 

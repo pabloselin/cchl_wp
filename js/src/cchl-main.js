@@ -46,18 +46,15 @@ $('.noticias-filsa').cycle({
 
 //Toma contador Facebook y twitter
         var sharer = $('.sharer');
-        var durl = sharer.data('url');
+        
+        var durl = sharer.data('url');    
+        
         var fbshares = 0;
-        var twts = 0;
 
         $.getJSON('http://graph.facebook.com/?id=' + durl, function(json) {
-            fbshares = +json.shares || 0;
+            console.log(json);
+            fbshares = +json.share.share_count || 0;
             $('.sharer__facebook', sharer).append('<span>' + parseInt(fbshares) + '</span>');
-        });
-
-        $.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url=' + durl + '&callback=?', function(json) {
-            twts = +json.count || 0;
-            $('.sharer__twitter', sharer).append('<span>' + parseInt(twts) + '</span>');
         });
 
 //Tabs generales para multimedia

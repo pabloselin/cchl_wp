@@ -404,3 +404,14 @@ function cchl_isresponsive( ) {
 
   endif;
 }
+
+//URL para usar en los contadores de redes sociales
+function cchl_url($id) {
+    if(get_bloginfo('url') == 'http://camaradellibro.cl') {
+        $devlink =  get_permalink($id);
+    } else {
+        $devlink = get_permalink( $id );
+        $devlink = str_replace(get_bloginfo('url'), 'http://camaradellibro.cl' , $devlink);
+    }
+    return $devlink;
+}

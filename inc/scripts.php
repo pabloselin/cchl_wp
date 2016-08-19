@@ -24,7 +24,7 @@ if(!is_admin()) {
 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
 }
 
-  wp_register_script( 'cchl_scripts', get_bloginfo('template_url') . '/js/cchl-scripts.968239a1.min.js', array('jquery', 'featherlight', 'masonry'));
+  wp_register_script( 'cchl_scripts', get_bloginfo('template_url') . '/js/cchl-scripts.fbaa275a.min.js', array('jquery', 'featherlight', 'masonry'));
   wp_register_script( 'cycle', get_bloginfo('template_url') . '/js/jquery.cycle.all.js', array('jquery'));
   wp_register_script( 'readmore', get_bloginfo('template_url') . '/js/readmore.min.js', array('jquery'));
   wp_register_script( 'imagesloaded', get_bloginfo('template_url') . '/js/imagesloaded.min.js', array('jquery'));
@@ -53,6 +53,7 @@ if(!is_admin()) {
 
   $tiposarr['ajaxurl'] = admin_url('admin-ajax.php');
   $tiposarr['templateurl'] = get_bloginfo('template_url');
+  $tiposarr['siteurl'] = get_bloginfo('url');
 
   wp_localize_script( 'cchl_scripts', 'cchl', $tiposarr );
 }
