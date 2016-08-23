@@ -8,7 +8,7 @@ define( 'CCHL_PAGEFILSA', 54798 );
 define( 'CCHL_FILSAHOME', 108 );
 
 define( 'CCHL_CATSFILSA', '184, 183' );
-define( 'CCHL_CATSFILSA2016', '199' );
+define( 'CCHL_CATSFILSA2016', '199, 209' );
 
 define( 'CCHL_FILSA2016', 60799 );
 define( 'CCHL_FILSA2015', 54646 );

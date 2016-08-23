@@ -36,8 +36,9 @@
                     <div class="feria-galeria imagenes">
                     <?php
                     $miembros = getGroupOrder('galeria_imagen_imagen');
-                    foreach($miembros as $miembro){
-                        $otros = array("h" => 115, "w" => 150, "zc" => 1, "q" =>100);?>
+                    foreach($miembros as $miembro){ ?>
+                        
+                        
                         <?php echo get("galeria_imagen_imagen",$miembro); ?>
 							
                            
