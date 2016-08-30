@@ -2,6 +2,8 @@
 
 jQuery(document).ready(function($) {
 
+var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 
 $("#faq .preg").click(function(){
        if($(this).hasClass("activo")){
@@ -87,7 +89,10 @@ $('div.feria-galeria.imagenes a').featherlight({
 
 $('div.feria-galeria.imagenes a').featherlight({
         type: 'iframe',
-        targetAttr: 'href'
+        targetAttr: 'href',
+        iframeMaxWidth: '90%',
+        iframeWidth: 800,
+        iframeHeight: 600
     });
 
 }); 

@@ -1,0 +1,32 @@
+.fl-media {
+	display:block;
+	border-radius:5px;
+	overflow:hidden;
+	width:150px;
+	height:115px;
+	float:left;
+	position: relative;
+	cursor:pointer;
+	
+	img {
+		margin:0;
+	}
+
+	&:after {
+		display:block;
+		position: absolute;
+		top:30px;
+		left:45px;
+		font-family:'FontAwesome';
+		font-size:58px;
+		color:rgba(255,255,255, 0.6);
+		content: '\f01d';
+		transition:color ease-in 0.1s;
+	}
+
+	&:hover {
+		&:after {
+			color:white;
+		}
+	}
+}

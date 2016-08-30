@@ -18,13 +18,13 @@
           <div class="pastillaNoticias">  
             <div class="foto-noticias-mini">
         <?php 
-        $miembros = getGroupOrder('galeria_video_video');
+        $videos = getGroupOrder('galeria_video_video');
         if(has_post_thumbnail()):?>
 				  <?php the_post_thumbnail('imagen-95'); ?>
-        <?php elseif($miembros):?>
+        <?php elseif($videos):?>
           <?php 
-                    foreach($miembros as $miembro){
-                        $otros = get("galeria_video_video",$miembro); ?>
+                    foreach($videos as $video){
+                        $otros = get("galeria_video_video",$video); ?>
                         
                         <img src="http://img.youtube.com/vi/<?php echo getYoutubeID($otros); ?>/0.jpg" width="95" height="80" />
 

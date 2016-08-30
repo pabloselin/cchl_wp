@@ -25,49 +25,63 @@
 
             <div id="tabs">
                 <ul class="tab-nav">
-                    <li class="active"><a href="#tabs-1">Galería de fotos</a></li>
+                    <?php if(get_post_meta($post->ID, 'galeria_imagen_imagen', true)): ?>
+
+                        <li class="active"><a href="#tabs-1">Galería de fotos</a></li>
+
+                    <?php endif;?> 
+
                     <?php if(get_post_meta($post->ID, 'galeria_video_video', true)): ?>
                         
                         <li><a href="#tabs-2">Videos</a></li>
                         
                     <?php endif;?>
                 </ul>
+                
+                <?php if(get_post_meta($post->ID, 'galeria_imagen_imagen', true)): ?>
+
                 <div class="tab-panel active" id="tabs-1">
                     <div class="feria-galeria imagenes">
                     <?php
-                    $miembros = getGroupOrder('galeria_imagen_imagen');
-                    foreach($miembros as $miembro){ ?>
+                    $galerias = getGroupOrder('galeria_imagen_imagen');
+                    foreach($galerias as $galeria){ ?>
                         
                         
-                        <?php echo get("galeria_imagen_imagen",$miembro); ?>
+                        <?php echo get("galeria_imagen_imagen",$galeria); ?>
 							
                            
                         
                     <?php } ?>
                     </div>
                 </div>
+
+                <?php endif;?>
+
+                <?php if(get_post_meta($post->ID, 'galeria_video_video', true)):?>
                 
                 <div class="tab-panel" id="tabs-2">
                     <div class="feria-galeria videos">
                     <?php
-                    $miembros = getGroupOrder('galeria_video_video');
+                    $videos = getGroupOrder('galeria_video_video');
                     
-                    if(get_post_meta($post->ID, 'galeria_video_video', true)):
 
-                    foreach($miembros as $key=>$miembro){
+                    foreach($videos as $key=>$video){
                         
                         $id = uniqid('yt');
-                        $otros = get("galeria_video_video",$miembro); ?>
+                        $otros = get("galeria_video_video",$video); ?>
+                        
                         <a class="fl-media" data-featherlight="#ytvid-<?php echo $id;?>">
-                        <img src="http://img.youtube.com/vi/<?php echo getYoutubeID($otros); ?>/0.jpg" width="150" height="115" />
+                            <img src="http://img.youtube.com/vi/<?php echo getYoutubeID($otros); ?>/0.jpg" width="150" height="115" />
                         </a>
 
-                        <iframe id="ytvid-<?php echo $id;?>" class="fl-lightbox" width="560" height="315" src="//youtube.com/embed/<?php echo getYoutubeID($otros); ?>" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="560" height="315" id="ytvid-<?php echo $id;?>" class="fl-lightbox" src="//youtube.com/embed/<?php echo getYoutubeID($otros); ?>" frameborder="0" allowfullscreen></iframe>
                     <?php } ?>
 
-                    <?php endif;?>
                     </div>
                 </div>
+
+                <?php endif;?>
+
 			</div>
 		<?php endwhile;endif;wp_reset_query(); ?>
         </div>        
