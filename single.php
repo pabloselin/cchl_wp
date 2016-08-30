@@ -24,23 +24,40 @@
             <div class="the-content"><?php the_content();?></div>
 
             <div id="tabs">
-                <ul class="tab-nav">
-                    <?php if(get_post_meta($post->ID, 'galeria_imagen_imagen', true)): ?>
+                <?php 
+                    $activeimagen = '';
+                    $activevideo  = '';
+                    $metavideo = get_post_meta($post->ID, 'galeria_video_video', true);
+                    $metaimagen = get_post_meta($post->ID, 'galeria_imagen_imagen', true);
 
-                        <li class="active"><a href="#tabs-1">Galería de fotos</a></li>
+                    if( $metaimagen && !$metavideo || $metaimagen && $metavideo):
+                        
+                        $activeimagen = 'active';
+
+                    elseif( !$metaimagen && $metavideo ):
+                        
+                        $activevideo = 'active';
+
+                    endif;
+
+                ?>
+                <ul class="tab-nav">
+                    <?php if($metaimagen): ?>
+
+                        <li class="active <?php echo $activeimagen;?>"><a href="#tabs-1">Galería de fotos</a></li>
 
                     <?php endif;?> 
 
                     <?php if(get_post_meta($post->ID, 'galeria_video_video', true)): ?>
                         
-                        <li><a href="#tabs-2">Videos</a></li>
+                        <li class="videotab <?php echo $activevideo;?>"><a href="#tabs-2">Videos</a></li>
                         
                     <?php endif;?>
                 </ul>
                 
                 <?php if(get_post_meta($post->ID, 'galeria_imagen_imagen', true)): ?>
 
-                <div class="tab-panel active" id="tabs-1">
+                <div class="tab-panel <?php echo $activeimagen;?>" id="tabs-1">
                     <div class="feria-galeria imagenes">
                     <?php
                     $galerias = getGroupOrder('galeria_imagen_imagen');
@@ -59,7 +76,7 @@
 
                 <?php if(get_post_meta($post->ID, 'galeria_video_video', true)):?>
                 
-                <div class="tab-panel" id="tabs-2">
+                <div class="tab-panel <?php echo $activevideo;?>" id="tabs-2">
                     <div class="feria-galeria videos">
                     <?php
                     $videos = getGroupOrder('galeria_video_video');
