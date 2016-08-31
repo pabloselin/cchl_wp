@@ -1,13 +1,11 @@
 
 <?php get_template_part('utilbar-top');?>
 
+<?php 
+  $socios = cchl_checksocios();
+?>
 
-<?php if(!is_home() && (in_category(33)||in_category(32)||in_category(101)||in_category(21)||in_category(68)||is_page(45)||is_page(88)||is_page(144)||is_page(90)) ) :?>
-    <div id="header" class="container_16 cf header-socios">
-    <?php else:?>
-        <div id="header" class="container_16 cf">
-        <?php endif;?>
-
+<div id="header" class="container_16 cf <?php if($socios == true): echo 'header-socios';endif;?>">
         
         <?php get_template_part('parts/buscador');?>
 

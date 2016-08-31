@@ -415,3 +415,20 @@ function cchl_url($id) {
     }
     return $devlink;
 }
+
+function cchl_checksocios() {
+  /**
+   * Devuelve chequeo de si estoy en algo relacionado con socios para mostrar cosas de socios (menú principalmente)
+   */
+  global $post;
+
+  if(!is_home() && (in_category(33)||in_category(32)||in_category(101)||in_category(21)||in_category(68)||is_page(45)||is_page(88)||is_page(144)||is_page(90)) ):
+
+      return true;
+
+  else:
+
+      return false;
+
+  endif;
+}
