@@ -9,7 +9,7 @@
 <?php 
   //Chequea si algún parent está usando un template de feria
   $using_feria_template = checkferiatemplate($post->ID);
-  $special = false;
+  $special = true;
   if($using_feria_template) {
 
     $color_1 = get('color_1', 1, 1, 1, $using_feria_template);
