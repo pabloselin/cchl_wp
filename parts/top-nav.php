@@ -1,5 +1,5 @@
 
-<?php get_template_part('utilbar-top');?>
+<?php get_template_part('parts/utilbar-top');?>
 
 <?php 
   $socios = cchl_checksocios();
