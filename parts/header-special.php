@@ -1,8 +1,6 @@
 <body <?php body_class();?> id="special">
 <?php get_template_part( 'parts/fb-sdk');?>
 
-<?php get_template_part('parts/utilbar-top', 'special');?>
-
 <?php 
 	$socios = cchl_checksocios();
 ?>
@@ -12,6 +10,10 @@
 	<a class="specialplus" href="<?php echo get_permalink(CCHL_FILSA2016);?>" title="Ver más de FILSA 2016">
 		Ver <i class="fa fa-plus"></i>
 	</a>
+</div>
+<?php get_template_part('parts/utilbar-top', 'special');?>
+
+<div class="container_16 cf topmenu-principal-special">
 	<?php get_template_part( 'parts/mainmenu' );?>
 </div>
 
