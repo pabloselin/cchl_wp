@@ -5,17 +5,19 @@
 	$socios = cchl_checksocios();
 ?>
 
-<div id="header" class="header-special <?php if($socios == true): echo 'header-socios';endif;?>">
+<div class="wraptop">
+	<div id="header" class="header-special <?php if($socios == true): echo 'header-socios';endif;?>">
+		
+		<a class="specialbannerplus" href="<?php echo get_permalink(CCHL_FILSA2016);?>" title="Ver más de FILSA 2016">
+			<img src="<?php bloginfo('template_url');?>/img/filsa2016/header_global_filsa2016.png" alt="Filsa 2016">	
+		
 	
-	<a class="specialbannerplus" href="<?php echo get_permalink(CCHL_FILSA2016);?>" title="Ver más de FILSA 2016">
-		<img src="<?php bloginfo('template_url');?>/img/filsa2016/header_global_filsa2016.png" alt="Filsa 2016">	
+		<span class="specialplus">
+			Ver <i class="fa fa-plus"></i>
+		</span>
 	
-
-	<span class="specialplus">
-		Ver <i class="fa fa-plus"></i>
-	</span>
-
-	</a>
+		</a>
+	</div>
 </div>
 <?php get_template_part('parts/utilbar-top', 'special');?>
 
