@@ -64,6 +64,9 @@ add_image_size( 'afiche', 290, 550, false);
 
 add_filter( 'get_shortlink', function( $shortlink ) {return $shortlink;} );
 
+//Admin
+include( TEMPLATEPATH . '/admin/cchl_adminoptions.php');
+
 //Includes 
 
 include( TEMPLATEPATH . '/inc/custom-functions.php');

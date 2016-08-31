@@ -9,7 +9,7 @@ function cchl_styles() {
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' , array(), '0.1', 'screen' );
 
 	//Compiled grunt style
-	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.0b623f16.min.css', array(), '0.2', 'screen' );
+	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.9dbf0eb5.min.css', array(), '0.2', 'screen' );
 
 	wp_enqueue_style('cchlcss');
 	wp_enqueue_style('mailchimp');
