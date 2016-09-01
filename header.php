@@ -9,7 +9,11 @@
 <?php 
   //Chequea si algún parent está usando un template de feria
   $using_feria_template = checkferiatemplate($post->ID);
-  $special = false;
+
+  $cchl_options = get_option( 'cchl_settings' );
+
+  $special = $cchl_options['cchl_checkbox_special'];
+  
   if($using_feria_template) {
 
     $color_1 = get('color_1', 1, 1, 1, $using_feria_template);

@@ -12,50 +12,50 @@ function cchl_add_admin_menu(  ) {
 
 function cchl_settings_init(  ) { 
 
-	register_setting( 'pluginPage', 'cchl_settings' );
+	register_setting( 'cchl_fieldspage', 'cchl_settings' );
 
 	add_settings_section(
-		'cchl_pluginPage_section', 
+		'cchl_cchl_fieldspage_section', 
 		__( 'Configuración cabecera', 'cchl' ), 
 		'cchl_settings_section_callback', 
-		'pluginPage'
+		'cchl_fieldspage'
 	);
 
 	add_settings_field( 
-		'cchl_checkbox_field_0', 
+		'cchl_checkbox_special', 
 		__( 'Activar Banner especial para cabecera', 'cchl' ), 
-		'cchl_checkbox_field_0_render', 
-		'pluginPage', 
-		'cchl_pluginPage_section' 
+		'cchl_checkbox_special_render', 
+		'cchl_fieldspage', 
+		'cchl_cchl_fieldspage_section' 
 	);
 
 	add_settings_field( 
-		'cchl_text_field_1', 
+		'cchl_urlspecial', 
 		__( 'URL para el botón de banner de Cabecera', 'cchl' ), 
-		'cchl_text_field_1_render', 
-		'pluginPage', 
-		'cchl_pluginPage_section' 
+		'cchl_urlspecial_render', 
+		'cchl_fieldspage', 
+		'cchl_cchl_fieldspage_section' 
 	);
 
 
 }
 
 
-function cchl_checkbox_field_0_render(  ) { 
+function cchl_checkbox_special_render(  ) { 
 
 	$options = get_option( 'cchl_settings' );
 	?>
-	<input type='checkbox' name='cchl_settings[cchl_checkbox_field_0]' <?php checked( $options['cchl_checkbox_field_0'], 1 ); ?> value='1'>
+	<input type='checkbox' name='cchl_settings[cchl_checkbox_special]' <?php checked( $options['cchl_checkbox_special'], 1 ); ?> value='1'>
 	<?php
 
 }
 
 
-function cchl_text_field_1_render(  ) { 
+function cchl_urlspecial_render(  ) { 
 
 	$options = get_option( 'cchl_settings' );
 	?>
-	<input type='text' name='cchl_settings[cchl_text_field_1]' value='<?php echo $options['cchl_text_field_1']; ?>'>
+	<input type='text' name='cchl_settings[cchl_urlspecial]' value='<?php echo $options['cchl_urlspecial']; ?>'>
 	<?php
 
 }
@@ -63,7 +63,7 @@ function cchl_text_field_1_render(  ) {
 
 function cchl_settings_section_callback(  ) { 
 
-	echo __( 'This section description', 'cchl' );
+	echo __( 'Ajustes para cabecera Cámara', 'cchl' );
 
 }
 
@@ -76,8 +76,8 @@ function cchl_options_page(  ) {
 		<h2>Opciones del Tema</h2>
 
 		<?php
-		settings_fields( 'pluginPage' );
-		do_settings_sections( 'pluginPage' );
+		settings_fields( 'cchl_fieldspage' );
+		do_settings_sections( 'cchl_fieldspage' );
 		submit_button();
 		?>
 
