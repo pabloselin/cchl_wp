@@ -1,9 +1,13 @@
+<?php 
+    $options = get_option( 'cchl_settings' );
+?>
+
 	<div id="footer" class="cf">
    	    <div class="container_16">
     		<div class="caja-info">
         	<a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url');?>/img/logos/camara-chilena-del-libro.png" alt="<?php bloginfo('name' );?>"></a><br>
-   		    <p>Cámara Chilena del Libro.<br />Asociación Chilena de Editores, Distribuidores y Libreros<br/> Av. Libertador Bernardo O´Higgins 1370, Oficina 502, Santiago de Chile.<br/>
-            Tel: (56 2) 2672 0348<br /><a href="mailto:camaralibrochile@camaradellibro.cl">E-mail: camaralibrochile@camaradellibro.cl</a>
+   		    <p><?php bloginfo('name');?> <br /> <?php echo $options['cchl_linea'];?> <br/> <?php echo $options['cchl_direccion'];?><br/>
+            Tel: <a style="display:inline;" href="tel:<?php echo $options['cchl_fono'];?>"><?php echo $options['cchl_fono'];?></a> <br /><a href="mailto:<?php echo $options['cchl_email'];?>">E-mail: <?php echo $options['cchl_email'];?></a>
             </p>
         </div>
        	    <ul class="ferias">
