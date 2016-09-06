@@ -2,8 +2,8 @@
    	    <div class="container_16">
     		<div class="caja-info">
         	<a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url');?>/img/logos/camara-chilena-del-libro.png" alt="<?php bloginfo('name' );?>"></a><br>
-   		    <p>Cámara Chilena del Libro.<br />Asociación Chilena de Editores, Distribuidores y Libreros<br/> Av. Libertador Bernardo O´Higgins 1370, Oficina 501, Santiago de Chile.<br/>
-            Tel: (56 2) 2672 0348, Fax: (56 2) 2687 4271<br /><a href="mailto:camaralibrochile@camaradellibro.cl">E-mail: camaralibrochile@camaradellibro.cl</a>
+   		    <p>Cámara Chilena del Libro.<br />Asociación Chilena de Editores, Distribuidores y Libreros<br/> Av. Libertador Bernardo O´Higgins 1370, Oficina 502, Santiago de Chile.<br/>
+            Tel: (56 2) 2672 0348<br /><a href="mailto:camaralibrochile@camaradellibro.cl">E-mail: camaralibrochile@camaradellibro.cl</a>
             </p>
         </div>
        	    <ul class="ferias">

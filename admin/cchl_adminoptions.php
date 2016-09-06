@@ -37,6 +37,8 @@ function cchl_settings_init(  ) {
 		'cchl_cchl_fieldspage_section' 
 	);
 
+	add_settings_section( 'cchl_info', 'Configuración Footer', 'cchl_info_section_callback', 'cchl_fieldspage' );
+
 
 }
 
@@ -64,6 +66,12 @@ function cchl_urlspecial_render(  ) {
 function cchl_settings_section_callback(  ) { 
 
 	echo __( 'Ajustes para cabecera Cámara', 'cchl' );
+
+}
+
+function cchl_info_section_callback( ) {
+	
+	echo '<p>Información de contacto sitio</p>';
 
 }
 
