@@ -19,11 +19,9 @@
     </div><!-- fin img mini-->
 
     <div class="info">
-        <?php if($post->post_content):?>
-            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-        <?php else:?>
-            <h3 class="nolink"><?php the_title(); ?></h3>
-        <?php endif;?>
+        
+        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        
         <p class="fecha"><?php echo mysql2date( 'j \\d\\e F \\d\\e Y', $post->post_date, true );?></p>
         <?php custom_excerpt($post->ID, 32);?>
 

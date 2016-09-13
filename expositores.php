@@ -22,7 +22,7 @@
 
                 foreach( $groupexpositores as $expositor ) {
 
-                    $infoexpositores[ get( 'expositor_sector', $expositor ) ][ $expositor ] = array(
+                    $infoexpositores[ get( 'expositor_sector',  $expositor ) ][ $expositor ] = array(
                                                                         'logo' => get_image( 'expositor_logo', $expositor ),
                                                                         'nombre' => get( 'expositor_nombre', $expositor ),
                                                                         'stands' => get( 'expositor_stands', $expositor )
@@ -34,7 +34,14 @@
 
             <?php endwhile; endif; wp_reset_query(); ?>
             
+            
+            <div class="expositores">
+                <?php 
 
+                    $sector_a = $infoexpositores['A'];
+
+                ?>
+            </div>
             
 
     </div>
