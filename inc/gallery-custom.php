@@ -96,7 +96,7 @@ function my_gallery_shortcode($attr) {
 		$thumbimg = wp_get_attachment_image_src( $id, 'thumbnail' );
 		$title = get_the_title($id);
 
-	    $link = '<a href="' . $largeimg[0] . '" title="' . $title . '"><img title="' . $title . '" src="' . $thumbimg[0] . '"></a>';
+	    $link = '<a href="' . $largeimg[0] . '" title="' . $title . '"><img title="' . $title . '" src="' . $thumbimg[0] . '" alt="' . $attachment->post_excerpt . '"></a>';
 
 	    
 	    $output .= "$link";
