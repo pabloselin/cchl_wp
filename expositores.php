@@ -39,6 +39,7 @@
                 <?php 
 
                     $sector_a = $infoexpositores['A'];
+                    $sector_b = 
 
                 ?>
             </div>

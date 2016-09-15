@@ -4,9 +4,9 @@
  * Custom WP gallery
  */
 add_shortcode('gallery', 'my_gallery_shortcode');    
+
 function my_gallery_shortcode($attr) {
    $post = get_post();
-
 	static $instance = 0;
 	$instance++;
 
@@ -17,10 +17,7 @@ function my_gallery_shortcode($attr) {
 	    $attr['include'] = $attr['ids'];
 	}
 
-	// Allow plugins/themes to override the default gallery template.
-	$output = apply_filters('post_gallery', '', $attr);
-	if ( $output != '' )
-	    return $output;
+	
 
 	// We're trusting author input, so let's at least make sure it looks like a valid orderby statement
 	if ( isset( $attr['orderby'] ) ) {
@@ -95,7 +92,10 @@ function my_gallery_shortcode($attr) {
 
 	$i = 0;
 	foreach ( $attachments as $id => $attachment ) {
-	    $link = isset($attr['link']) && 'file' == $attr['link'] ? wp_get_attachment_link($id, $size, false, false) : wp_get_attachment_link($id, $size, true, false);
+		$largeimg = wp_get_attachment_image_src( $id, 'large' );
+		$thumbimg = wp_get_attachment_image_src( $id, 'thumbnail' );
+
+	    $link = '<a href="' . $largeimg[0] . '"><img src="' . $thumbimg[0] . '"></a>';
 
 	    
 	    $output .= "$link";
@@ -107,8 +107,6 @@ function my_gallery_shortcode($attr) {
 	            </{$captiontag}>";
 	    }
 	    
-	    if ( $columns > 0 && ++$i % $columns == 0 )
-	        $output .= '<br style="clear: both" />';
 	}
 
 	$output .= "
