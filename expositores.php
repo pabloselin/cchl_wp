@@ -49,6 +49,7 @@
                     $data = $expositor;
 
                     echo $sectortemplate->render('expositor', $data);
+                    var_dump($data);
 
                 }
 
