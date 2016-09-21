@@ -4,46 +4,66 @@
 <?php get_header(); ?>
 
 <div id="main-page" class="container_16 cf">
-    <div id="content" class=" grid_16">
-         <div id="bread">
-            Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
-        </div>
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <h1><?php the_title(); ?></h1>
-            <?php get_template_part('parts/addthis');?>
-			<div class="cf"></div>
-            <div class="the-content"><?php the_content();?></div>
-            
-             <?php 
-                $sectores = array( 'A', 'B', 'C', 'D');
-                $groupexpositores = getGroupOrder( 'expositor_sector' );
-                
-                $infoexpositores = array();
 
-                foreach( $groupexpositores as $expositor ) {
+<?php get_template_part('parts/clean-sidebar');?>
 
-                    $infoexpositores[ get( 'expositor_sector',  $expositor ) ][ $expositor ] = array(
-                                                                        'logo' => get_image( 'expositor_logo', $expositor ),
-                                                                        'nombre' => get( 'expositor_nombre', $expositor ),
-                                                                        'stands' => get( 'expositor_stands', $expositor )
-                                                                        );
-                    
+    <div id="content" class=" grid_12">
+       <div id="bread">
+        Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
+    </div>
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <h1><?php the_title(); ?></h1>
+        <?php get_template_part('parts/addthis');?>
+        <div class="cf"></div>
+        <div class="the-content"><?php the_content();?></div>
+
+        <?php 
+
+             /**
+              * Array organizado de esta forma:
+              *     SECTOR
+              *         EXPOSITOR
+              *             -logo (URL Completa a imagen logo)
+              *             -nombre
+              *             -stands
+              */
+             $infoexpositores = cchl_sortexhibitors();
+
+
+             ?>
+
+         <?php endwhile; endif; wp_reset_query(); ?>
+
+
+         <div class="expositores">
+            <?php foreach($infoexpositores as $sector => $expositores) {
+
+                echo '<div class="sector">';
+                echo '<h2>Sector ' . $sector . ' </h2>';
+
+                echo '<ul>';
+
+                foreach($expositores as $expositor) {
+
+                    $sectortemplate = mustache_engine(); 
+                    $data = $expositor;
+
+                    echo $sectortemplate->render('expositor', $data);
+
                 }
-                
+
+                echo '</ul>';
+                echo '</div>';
+
+            }
+
+
+
             ?>
 
-            <?php endwhile; endif; wp_reset_query(); ?>
-            
-            
-            <div class="expositores">
-                <?php 
 
-                    $sector_a = $infoexpositores['A'];
-                    $sector_b = 
+        </div>
 
-                ?>
-            </div>
-            
 
     </div>
 </div>

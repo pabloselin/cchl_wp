@@ -43,6 +43,9 @@ register_nav_menus( array(
 	) 
 );
 
+//Composer autoload class
+require_once('vendor/autoload.php');
+
 //Image sizes
 
 add_theme_support( 'post-thumbnails' );
@@ -75,4 +78,6 @@ include( TEMPLATEPATH . '/inc/scripts.php');
 include( TEMPLATEPATH . '/inc/custom-tax.php');
 include( TEMPLATEPATH . '/inc/gallery-custom.php');
 include( TEMPLATEPATH . '/inc/function-ferias.php');
+include( TEMPLATEPATH . '/inc/fields-functions.php');
+include( TEMPLATEPATH . '/inc/mustache-functions.php');
 include( TEMPLATEPATH . '/inc/wphead-includes.php');

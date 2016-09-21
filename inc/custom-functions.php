@@ -188,12 +188,6 @@ function eventos_shortcode($atts) {
   return $output;
 }
 
-function eventos_shortcode_test($atts) {
-  return $atts['start'];
-}
-
-add_shortcode('eventos_feria', 'eventos_shortcode');
-
 function eventos_filij_shortcode($atts) {
   ob_start();
   include( TEMPLATEPATH . '/parts/eventos-filij.php');
