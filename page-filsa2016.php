@@ -97,8 +97,9 @@ Template Name: FILSA 2016
                 }
 
             ?>
-
+        
         </div>
+        <a href="#" class="more-filsa"><i class="fa fa-calendar"></i> Ver todo el programa</a>
 
         <div class="noticias-destacadas">
             
@@ -126,6 +127,10 @@ Template Name: FILSA 2016
 
                                     $ndata['image'] = $imgsrc[0];
 
+                                } else {
+
+                                    $ndata['image'] = false;
+                                    
                                 }
 
                                 $noticiatemplate = mustache_engine();
@@ -136,7 +141,7 @@ Template Name: FILSA 2016
                         }
                     }
             ?>
-
+        <a href="#" class="more-filsa"><i class="fa fa-newspaper-o"></i> Ver más noticias FILSA 2016</a>
         </div>
 
         <div class="redes-filsa">
