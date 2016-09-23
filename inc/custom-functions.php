@@ -496,7 +496,7 @@ function cchl_excerpt($postid, $words) {
 
         $content = get_post_field( 'post_content', $postid );
 
-        return limitar_palabras( $content, $words, '&hellip;' );
+        return limitar_palabras( strip_tags($content), $words, '&hellip;' );
 
     }
 
