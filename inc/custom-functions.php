@@ -426,3 +426,78 @@ function cchl_checksocios() {
 
   endif;
 }
+
+function cchl_getmenus($menu, $submenus = false) {
+  /**
+   * Devuelve solo submenus si se le indica
+   */
+    $menuobject = cchl_getmenuobject($menu);
+    if($menuobject) {
+    //Si tengo un objeto menú me devuelve el objeto y empiezo a recolectar items
+      $items = wp_get_nav_menu_items( $menuobject->term_id );   
+        foreach($items as $item) {
+          if($submenus != true) {
+            if($item->menu_item_parent == 0) {
+              $newitems[] = $item;
+            }
+          } else {
+              $newitems[] = $item;
+          }
+        } 
+      return $newitems;
+    } else {
+      //Si no hay hago un llamado independiente por sección
+      return false;
+    }
+}
+
+function cchl_getmenuobject($location) {
+  if( ( $locations = get_nav_menu_locations() ) && isset($locations[$location]) ){
+    $menu = wp_get_nav_menu_object( $locations[$location] );
+    return $menu;
+  } else {
+    return false;
+  }
+}
+
+function cchl_plainterms( $itemid, $taxonomy, $separator = ', ' ) {
+  /**
+   * Devuelve un listado de términos de taxonomía en texto plano separados por un separador
+   */
+  
+  $terms = get_the_terms( $itemid, $taxonomy );
+  $termnames = array();
+
+  if( $terms ) {
+
+      foreach($terms as $term) {
+        $termnames[] = $term->name;
+      }
+
+      $termstring = implode( $separator , $termnames );
+
+      return $termstring;
+
+  } else {
+
+      return '';
+
+  }
+
+}
+
+function cchl_excerpt($postid, $words) {
+
+    if(has_excerpt( $postid )) {
+
+        return get_post_field( 'post_excerpt', $postid );
+
+    } else {
+
+        $content = get_post_field( 'post_content', $postid );
+
+        return limitar_palabras( $content, $words, '&hellip;' );
+
+    }
+
+}

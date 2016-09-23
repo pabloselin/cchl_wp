@@ -1,5 +1,29 @@
 //Estilos para filsa 2016
 
+@containerwidth: 1200px;
+
+@import 'filsa2016/home-filsa2016.less';
+@import 'eventos-filsa2016.less';
+
+//Debug styles
+
+
+//Width reset
+body#filsa-2016 .filsa-header,
+body#filsa-2016 .container_16,
+body#filsa-2016 .wrapredes-inner
+ {
+	width:@containerwidth;
+}
+
+body#filsa-2016 .container_16 .grid_12 {
+	width:929px;
+}
+
+body#filsa-2016 .filsa-header {
+	margin-bottom:24px;
+}
+
 body#filsa-2016 {
 	background-image:none;
 	font-family: sans-serif;
@@ -15,7 +39,7 @@ body#filsa-2016 #footer
 }
 
 body#filsa-2016 #sidebar_interior {
-	margin-top:35px;
+	margin-top:0;
 	ul li {
 		border-bottom:0;
 	}
@@ -181,24 +205,53 @@ body#feria.page-id-60799 .filsa-header-mobile {
 
 .accesos-rapidos.filsa-2016 {
 
-	margin-top:32px;
+	margin-top:0;
 	
-	ul li a {
+	ul li {
 		background-color: #05D6C9;
-		color: darken(#05D6C9, 30%);
-		font-weight:bold;
-		padding:10px 8px;
-		font-size:13px;
-		width: 150px;
-		border-radius:5px;
-		vertical-align:middle;
-		transition:all ease-in 0.2s;
-		margin:3px;
+		border:1px solid darken(#05D6C9,2%);
+		padding:0;
+		width: 166px;
+		border-radius:5px;	
+		transition:all ease-in 0.1s;
+		margin:0 3px;
+		height:50px;
+		display:inline-block;
+		float:left;
+		position: relative;
+		display:table;
+		
+	&:before {
+		color: darken(#05D6C9, 25%);
+		font-size:18px;
+		position:absolute;
+		left:8px;
+		top:16px;
+		}
+		
+		a {
+			display:block;
+			padding:10px 8px 10px 24px;
+			font-weight:400;
+			font-size:14px;
+			vertical-align:middle;
+			color: darken(#05D6C9, 25%);
+			margin-left:6px;
+			text-transform:uppercase;
+			font-family: sans-serif;
+			width:124px;
+			height:30px;
+			display:table-cell;
+			font-family:'Signika', sans-serif;
+		}
 		
 		&:hover {
 			background-color: #FE3B82;
-			color:white;
-			box-shadow:0 0 4px #333;
+			border:1px solid darken(#FE3B82,4%);
+			box-shadow:0 0 1px #333;
+			a, &:before {
+				color:white;
+			}
 		}
 
 		@media screen and (max-width: @screen-sm ) {
@@ -415,6 +468,17 @@ body#filsa-2016 {
 			}
 		}
 }
+
+//Invitados FILSA
+
+body#filsa-2016 .invitados-filsa p {
+	line-height:1.4em;
+}
+
+body#filsa-2016 .invitados-filsa ul.cf li .info {
+	width:600px;
+}
+
 
 //Invitados FILSA MOVIL
 

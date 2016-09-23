@@ -37,9 +37,13 @@ define('CCHL_FERIAPLAZADEARMAS', 60131);
 define('CCHL_TWITTER', 'CamaradelLibro');
 
 register_nav_menus( array(
-	'accesos-rapidos-filsa-2015' => 'Accesos Rápidos Filsa 2015',
-	'accesos-rapidos-filsa-2016' => 'Accesos Rápidos Filsa 2016',
-	'historico-filsa'			 => 'Históricos Filsa'
+	'historico-filsa'			 	 => 'Históricos Filsa',
+	//Filsa 2015
+	'accesos-rapidos-filsa-2015' 	 => 'Accesos Rápidos Filsa 2015',
+	//Filsa 2016
+	'accesos-rapidos-filsa-2016' 	 => 'Accesos Rápidos Filsa 2016',
+	'noticias-destacadas-filsa-2016' => 'Noticias destacadas Filsa 2016',
+	'eventos-destacados-filsa-2016'  => 'Eventos destacados Filsa 2016'
 	) 
 );
 

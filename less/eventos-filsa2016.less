@@ -1,0 +1,48 @@
+
+.eventos-destacados {
+	clear:both;
+	padding:24px 0;
+	display:flex;
+	justify-content: space-between;
+	
+	@media screen and (max-width:@scrbr) {
+		display:block;
+	}
+}
+
+a.evento-mini {
+	display:block;
+	overflow:hidden;
+	width:300px;
+	float:left;	
+	background-color:white;
+	//margin-right:12px;
+	border:1px solid #FF3B83;
+	color:#333;
+	
+	.twr {
+		padding:12px;
+	}
+	
+	&:hover {
+		border:1px solid #333;
+	}
+
+	@media screen and (max-width:@scrbr) {
+		width:100%;
+		float:none;
+		margin-bottom:12px;
+	}
+}
+
+a.evento-mini h3 {
+	font-size:18px;
+	margin-bottom:12px;
+	font-family:'Signika', sans-serif;
+	color:#FF3B83;
+	margin-bottom:0;
+}
+
+.evento-mini .hora {
+	font-weight:bold;
+}
