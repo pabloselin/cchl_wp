@@ -1,6 +1,8 @@
 <a class="noticia-portada-feria" href="{{ permalink }}">
-		
-	<img src="{{ image }}" alt="{{ title }}">
+	
+	{{ #image }}	
+		<img src="{{ image }}" alt="{{ title }}">
+	{{ /image }}
 
 	<div class="twr">
 		<p class="fecha">{{ date }}</p>
