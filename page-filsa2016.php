@@ -111,13 +111,21 @@ Template Name: FILSA 2016
 
                             if($key < $noticiasportada) {
 
+                                $lastkey = '';
+
                                 //Collect data
+                                if($key == $noticiasportada-1) {
+
+                                    $lastkey = 'last';
+
+                                }
                                 
                                 $ndata = array(
                                             'title'     => $noticia->title,
                                             'permalink' => get_permalink($noticia->object_id),
                                             'excerpt'   => cchl_excerpt($noticia->object_id, 30),
-                                            'date'      => mysql2date( 'l d M', $noticia->post_date )
+                                            'date'      => mysql2date( 'l d M', $noticia->post_date ),
+                                            'lastkey'   => $lastkey
                                         );
 
                                 if(has_post_thumbnail( $noticia->object_id )) {

@@ -21,7 +21,7 @@
             $miembros = getGroupOrder('imagen');
             foreach($miembros as $miembro){
 				echo "<li>";
-				$otros = array("h" => 185, "w" => 150, "zc" => 1, "q" => 100);
+				$otros = array("h" => 285, "w" => 250, "zc" => 1, "q" => 100);
    				echo get_image('imagen',$miembro,1,1,NULL,$otros);
 				echo "<div class='info'>
 				<h3>".get('nombre',$miembro)."</h3>

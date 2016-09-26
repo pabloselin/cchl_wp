@@ -34,6 +34,10 @@
 	margin-bottom:24px;
 	color:#333;
 	
+	&.last {
+		margin-bottom:6px;
+	}
+	
 	h2 {
 		margin-top:0;
 		font-family:'Signika', sans-serif;
@@ -55,16 +59,33 @@
 //botones mas filsa
 a.more-filsa {
 	display: block;
-	padding:6px;
+	padding:8px 12px;
 	clear:both;
-	background-color:#91DC93;
-	border-radius:5px;
+	background-color:#f0f0f0;
+	border-radius:0 0 7px 7px;
 	color:#333;
 	max-width:230px;
 	font-size:12px;
 	text-transform:uppercase;
-	margin:0 0 12px 0;
+	margin:0 0 24px 0;
 	float:right;
+	transition:all linear 0.2s;
+	
+	i {
+		color:#FF4086;
+		font-size:16px;
+		margin-right:6px;
+	}
+
+	&:hover {
+		background-color: #FF4086;
+		color:white;
+		i {
+			color:white;
+		}
+	}
+
+
 }
 
 //cajas Redes 
