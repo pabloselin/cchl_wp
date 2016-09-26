@@ -165,6 +165,14 @@ Template Name: FILSA 2016
             </div>
         </div>
 
+        <div class="redes-filsa-movil">
+            
+            <a href="#" class="movilred mr-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+            <a href="#" class="movilred mr-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+            <a href="#" class="movilred mr-instagram"><i class="fa fa-instagram"></i> Instagram</a>
+
+        </div>
+
         
 
     </div>

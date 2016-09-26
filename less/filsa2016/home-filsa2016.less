@@ -48,11 +48,22 @@
 	img {
 		float:left;
 		margin-right:12px;
+
 	}
 
 	.twr {
 		padding:12px 24px;
 	}
+
+	@media screen and (max-width:@scrbr) {
+		
+		margin-bottom:12px;
+		
+		img {
+				margin-bottom:12px;
+		}
+
+		}
 
 }
 
@@ -99,6 +110,36 @@ a.more-filsa {
 	}
 	@media screen and (max-width:@scrbr) {
 		display:none;
+	}
+}
+
+.redes-filsa-movil {
+	
+	display:none;
+	clear:both;
+	
+	a {
+		display:block;
+		padding:5%;
+		width: 90%;
+		text-align:center;
+		color:white;
+		margin-bottom:6px;
+		font-size:24px;
+		
+		&.mr-facebook {
+			background-color:#3b5998;
+		}
+		&.mr-twitter {
+			background-color:#55acee;
+		}
+		&.mr-instagram {
+			background-color:#bc2a8d;
+		}
+	}
+
+	@media screen and (max-width:@scrbr) {
+		display:block;
 	}
 }
 
