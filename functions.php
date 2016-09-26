@@ -38,6 +38,7 @@ define('CCHL_TWITTER', 'CamaradelLibro');
 
 register_nav_menus( array(
 	'historico-filsa'			 	 => 'Históricos Filsa',
+	'menu-ferias-en-feria'			 => 'Menú Ferias',
 	//Filsa 2015
 	'accesos-rapidos-filsa-2015' 	 => 'Accesos Rápidos Filsa 2015',
 	//Filsa 2016

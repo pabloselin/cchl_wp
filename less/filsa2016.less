@@ -7,6 +7,56 @@
 
 //Debug styles
 
+body#filsa-2016 .feriaslink {
+	position: relative;
+}
+
+body#filsa-2016 .wrapchf {
+	width:@containerwidth;
+}
+
+.camara-header-filsa div.feriaslink a:hover {
+	text-decoration:none;
+}
+
+.camara-header-filsa div.feriaslink .dropdown-masferias {
+	position: absolute;
+	display:none;
+	opacity:0;
+	background-color:#F8F8F8;
+	z-index:10;
+	width:200px;
+	transition:all linear 0.4s;
+	padding-top:1px;
+	li a {
+		color:#333;
+		border-bottom:1px solid #ccc;
+		display:block;
+		padding:12px;
+		line-height:1.2em;
+		text-transform:none;
+		
+		&:hover {
+			background-color:darken(#ccc, 5%);
+			text-decoration:none;
+			
+		}
+	}
+}
+
+.camara-header-filsa div.feriaslink:hover .dropdown-masferias {
+	display:block;
+	top:30px;
+	opacity:1;
+}
+
+.admin-bar .camara-header-filsa div.feriaslink:hover .dropdown-masferias {
+	display:block;
+	top:66px;
+	opacity:1;
+}
+
+
 
 //Width reset
 body#filsa-2016 .filsa-header,
