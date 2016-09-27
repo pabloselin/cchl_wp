@@ -123,7 +123,7 @@ function checkferia($postid = NULL, $motherpage, $cats = NULL, $evterms = NULL )
 
     if($evterms) {
       $event_id = get_queried_object_id();
-      if( is_single() && tribe_event_in_category('filsa-2015', $event_id ) ) {
+      if( is_single() && tribe_event_in_category( $evterms, $event_id ) ) {
         $inferia = true;
       }
     }
