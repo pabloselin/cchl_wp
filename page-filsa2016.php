@@ -149,18 +149,27 @@ Template Name: FILSA 2016
                         }
                     }
             ?>
-        <a href="#" class="more-filsa"><i class="fa fa-newspaper-o"></i> Ver más noticias FILSA 2016</a>
+        <a href="#" class="more-filsa"><i class="fa fa-newspaper-o"></i> + noticias FILSA 2016</a>
         </div>
 
         <div class="redes-filsa">
             <div class="facebook">
+                
+                <h3 class="titulo-facebook"><i class="fa fa-facebook"></i> Facebook</h3>
+
                 <div class="fb-page" data-href="https://www.facebook.com/camarachilenalibro" data-tabs="timeline" data-width="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/camarachilenalibro" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/camarachilenalibro">Cámara Chilena del Libro</a></blockquote></div>
             </div>
             <div class="twitter">
+
+                <h3 class="titulo-twitter"><i class="fa fa-twitter"></i> Twitter</h3>
+
                 <a class="twitter-timeline" data-height="500" data-lang="es" href="https://twitter.com/CamaradelLibro">Tweets by Camaradellibro</a>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div class="instagram">
+
+                <h3 class="titulo-instagram"><i class="fa fa-instagram"></i> Instagram</h3>
+
                 <?php echo get('insercion_instagram');?>
             </div>
         </div>
