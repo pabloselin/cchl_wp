@@ -163,7 +163,7 @@ Template Name: FILSA 2016
 
                 <h3 class="titulo-twitter"><i class="fa fa-twitter"></i> Twitter</h3>
 
-                <a class="twitter-timeline" data-height="500" data-lang="es" href="https://twitter.com/CamaradelLibro">Tweets by Camaradellibro</a>
+                <a class="twitter-timeline" data-height="500" data-lang="es" href="https://twitter.com/FILSA2016">Tweets by FILSA2016</a>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div class="instagram">
