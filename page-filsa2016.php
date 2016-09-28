@@ -99,7 +99,7 @@ Template Name: FILSA 2016
             ?>
         
         </div>
-        <a href="#" class="more-filsa"><i class="fa fa-calendar"></i> Ver todo el programa</a>
+        <!-- <a href="#" class="more-filsa"><i class="fa fa-calendar"></i> Ver todo el programa</a> -->
 
         <div class="noticias-destacadas">
             
@@ -119,12 +119,14 @@ Template Name: FILSA 2016
                                     $lastkey = 'last';
 
                                 }
+
+
                                 
                                 $ndata = array(
                                             'title'     => $noticia->title,
                                             'permalink' => get_permalink($noticia->object_id),
                                             'excerpt'   => cchl_excerpt($noticia->object_id, 30),
-                                            'date'      => mysql2date( 'l d M', $noticia->post_date ),
+                                            'date'      => get_the_time( 'l d M', $noticia->object_id ),
                                             'lastkey'   => $lastkey
                                         );
 
@@ -149,7 +151,7 @@ Template Name: FILSA 2016
                         }
                     }
             ?>
-        <a href="#" class="more-filsa"><i class="fa fa-newspaper-o"></i> + noticias FILSA 2016</a>
+        <a href="<?php echo get_category_link( 199 );?>" class="more-filsa"><i class="fa fa-newspaper-o"></i> + noticias FILSA 2016</a>
         </div>
 
         <div class="redes-filsa">
