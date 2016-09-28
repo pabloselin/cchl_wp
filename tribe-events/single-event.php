@@ -73,6 +73,17 @@ $event_id = get_the_ID();
 		<?php 
 		endif;
 	?>
+
+	<?php if(is_object_in_term( $event_id, 'tribe_events_cat', 208)):?>
+
+		<div class="aviso-evento-modificaciones">
+			<i class="fa fa-pull-left fa-info-circle fa-2x"></i> Las actividades calendarizadas en el Programa Cultural de FILSA 2016, pueden sufrir modificaciones, antes y durante el período de la realización de FILSA. Lo que será informado por este medio y nuestras redes sociales
+		</div>
+
+		<a class="centerprog cchl-button blue" href="<?php echo get_permalink(61251);?>"><i class="fa fa-calendar-o"></i> Ir a Programa FILSA 2016</a>
+
+
+	<?php endif;?>
 		
 	</div>
 	<!-- #tribe-events-footer -->

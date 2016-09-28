@@ -9,8 +9,8 @@
 						echo '<ul class="dropdown-masferias">';	
 							
 							foreach($menumasferias as $menuitem) {
-
-								echo '<li><a href="' . get_permalink($menuitem->object_id) . '">' . $menuitem->title . '</a></li>';
+								
+								echo '<li><a href="' . $menuitem->url . '">' . $menuitem->title . '</a></li>';
 
 							}
 
