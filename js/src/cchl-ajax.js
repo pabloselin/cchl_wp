@@ -2,6 +2,15 @@ jQuery(document).ready(function($) {
 	// Javascript para consultas ajax
 	var dias = $('ul.diasfilsa li a.daysel');
 	var container = $('.eventos-load');
+
+	if( $('span.infoevento') ) {
+
+		var eventcat = $('span.infoevento').data('eventcat');
+	
+	} else {
+
+		var eventcat = 180;
+	}
 	
 	dias.on('click', function() {
 		dias.removeClass('active');
@@ -14,7 +23,7 @@ jQuery(document).ready(function($) {
 			data: {
 				'action': 'cchl_eventdayquery',
 				'day': dia,
-				'eventcat': 180
+				'eventcat': eventcat
 			}
 		}).done(function(data) {
 			container.empty().append(data);
@@ -24,6 +33,8 @@ jQuery(document).ready(function($) {
 
 	var filtroselect = $('select#todos-eventos-tipos-ajax, select#todos-eventos-temas-ajax');
 	var containerfiltro = $('div.evtodos-load');
+
+	//console.log('Event:', eventcat);
 
 	filtroselect.on('change', function() {
 		var tax = $(this).data('filter');
@@ -38,7 +49,7 @@ jQuery(document).ready(function($) {
 				'action': 'cchl_eventfilterquery',
 				'eventtax': tax,
 				'eventterm': term,
-				'eventcat': 180
+				'eventcat': eventcat
 			}
 		}).done(function(data) {
 			containerfiltro.empty().append(data);
