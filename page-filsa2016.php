@@ -99,7 +99,7 @@ Template Name: FILSA 2016
             ?>
         
         </div>
-        <!-- <a href="#" class="more-filsa"><i class="fa fa-calendar"></i> Ver todo el programa</a> -->
+        <a href="<?php echo get_permalink(61251);?>" class="more-filsa"><i class="fa fa-calendar"></i> Ver todo el programa</a>
         <p>&nbsp;</p>
 
         <div class="noticias-destacadas">
