@@ -110,7 +110,7 @@
 	
 		<div class="evtodos-load">
 			<div class="aviso-load">
-				<p><i class="fa fa-hand-pointer-o animated bounce infinite"></i> Escoge un filtro para ver los eventos correspondientes.</p>
+				<p><i class="fa fa-hand-pointer-o animated bounce infinite"></i> Selecciona un filtro para ver los eventos correspondientes.</p>
 			</div>
 		</div>
 	</div>

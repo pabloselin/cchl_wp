@@ -24,7 +24,7 @@ if(!is_admin()) {
 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
 }
 
-  wp_register_script( 'cchl_scripts', get_bloginfo('template_url') . '/js/cchl-scripts.f71fb64a.min.js', array('jquery', 'featherlight', 'masonry'));
+  wp_register_script( 'cchl_scripts', get_bloginfo('template_url') . '/js/cchl-scripts.7f47dd78.min.js', array('jquery', 'featherlight', 'masonry'));
   wp_register_script( 'cycle', get_bloginfo('template_url') . '/js/jquery.cycle.all.js', array('jquery'));
   wp_register_script( 'readmore', get_bloginfo('template_url') . '/js/readmore.min.js', array('jquery'));
   wp_register_script( 'imagesloaded', get_bloginfo('template_url') . '/js/imagesloaded.min.js', array('jquery'));

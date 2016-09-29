@@ -3,6 +3,7 @@ jQuery(document).ready(function($) {
 	var dias = $('ul.diasfilsa li a.daysel');
 	var container = $('.eventos-load');
 
+
 	if( $('span.infoevento') ) {
 
 		var eventcat = $('span.infoevento').data('eventcat');
