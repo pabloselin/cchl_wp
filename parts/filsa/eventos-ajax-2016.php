@@ -67,7 +67,8 @@
 								'taxonomy' => 'cchl_tipoevento',
 								'hide_empty' => true,
 								'orderby' => 'name',
-								'order' => 'ASC'
+								'order' => 'ASC',
+								'exclude' => array(211, 188)
 								)
 							);
 			?>
