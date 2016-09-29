@@ -27,6 +27,8 @@ if(checkfilij($post->ID) || get_page_template_slug( $post->ID) == 'page-filij201
 elseif(checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ):?>
 
 <div id="sidebar_interior" class="grid_4 filsa-2015">
+		
+		<?php get_template_part( 'parts/current-filsa' );?>
 
 		<?php wp_nav_menu( array('menu'=> 178));?>
 	
@@ -100,6 +102,8 @@ elseif($checkferiatemplate):
 elseif( checkferia($post->ID, CCHL_FILSA2013 ) ):?>
 
 <div id="sidebar_interior" class="grid_4 menu-feria-especial">
+	
+	<?php get_template_part( 'parts/current-filsa' );?>
 
 	<?php wp_nav_menu( array('menu'=> 204 ) );?>
 
@@ -112,6 +116,8 @@ elseif( checkferia($post->ID, CCHL_FILSA2013 ) ):?>
 elseif( checkferia($post->ID, CCHL_FILSA2012) ):?>
 
 <div id="sidebar_interior" class="grid_4 menu-feria-especial">
+
+	<?php get_template_part( 'parts/current-filsa' );?>
 
 	<?php wp_nav_menu( array('menu'=> 205 ) );?>
 
