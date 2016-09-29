@@ -42,13 +42,20 @@ $dia = strftime('%A' , $eventday->format('U'));
 $ndia = strftime('%e' , $eventday->format('U'));
 $mes = strftime('%B' , $eventday->format('U'));
 
-$html = '<h2>Eventos para el día ' . $dia . ' ' . $ndia . ' de ' . $mes . '</h2>';
+$html = '<h2 class="animated fadeInDown"><i class="fa fa-caret-right"></i> ' . $dia . ' ' . $ndia . ' de ' . $mes . '</h2>';
 $html .= cchl_event_filter( $eventday->format('U') );
 
 
+if($events) {
+	
+	foreach($events as $event) {
+		$html .= cchl_event_template( $event->ID, $eventday->format('U') );
+	}	
 
-foreach($events as $event) {
-	$html .= cchl_event_template( $event->ID, $eventday->format('U') );
+} else {
+
+	$html .= '<p class="nohayeventos animated fadeIn"><i class="fa fa-frown-o"></i> No se encontraron eventos para el día</p>';
+
 }
 
 
@@ -60,10 +67,11 @@ add_action('wp_ajax_cchl_eventdayquery', 'cchl_eventdayquery');
 add_action('wp_ajax_nopriv_cchl_eventdayquery', 'cchl_eventdayquery');
 
 function cchl_event_filter($day) {
-	$html =	'<div class="filtrowrap">';
+	$html =	'<div class="filtrowrap animated fadeIn">';
 	$html .= '<div class="filtronav">';
-	$html .= '<a href="#" class="active" data-relfilter="portipo">Filtrar eventos <strong>por tipo</strong></a>';
-	$html .= '<a href="#" data-relfilter="portema">Filtrar eventos <strong>por tema</strong></a>';
+	$html .= '<p><i class="fa fa-info-circle"></i> Se muestran todos los eventos para el día. Puedes también filtrar según tu interés por tipo o tema de evento.</p>';
+	$html .= '<a href="#" class="active" data-relfilter="portipo"><strong>Tipos</strong> <span> Inauguración, Exhibición, Charla, etc.</span> </a>';
+	$html .= '<a href="#" data-relfilter="portema"><strong>Temas</strong> <span>Cine, Cuentos, Danza, etc.</span></a>';
 	$html .= '</div>';
 	$html .= '<div class="filtrotab active" data-filter="portipo">';
 	$html .= '<div class="filtro" data-id="' . $day . '">';
@@ -111,11 +119,22 @@ $args = array(
 		);
 $eventos = get_posts($args);
 $tax = get_term($eventterm, $eventtax);
-$html = '<h2>' . $tax->name . '</h2>';
 
-foreach($eventos as $evento) {
-	$html .= cchl_event_template($evento->ID);
+if($eventos) {
+	
+	$html = '<h2>' . $tax->name . '</h2>';
+
+	foreach($eventos as $evento) {
+		$html .= cchl_event_template($evento->ID);
+	}	
+
+} else {
+
+	$html = '<p class="animated fadeIn nohayeventos"><i class="fa fa-frown-o"></i> No se encontraron eventos para ' . $tax->name . '</p>';
+
 }
+
+
 
 echo $html;
 wp_die();
@@ -144,7 +163,7 @@ function cchl_event_template($postid, $dayid = 'any') {
 				$ntevs[] = $tipoev->name;
 				$stevs[] = $tipoev->slug;
 			}
-		$nomtipoevs = implode(', ', $ntevs);
+		$nomtipoevs = implode('</span> &bull; <span class="taxitem">', $ntevs);
 		$datatipoevs = implode(' ', $stevs);
 	endif;
 	
@@ -153,11 +172,11 @@ function cchl_event_template($postid, $dayid = 'any') {
 				$ttevs[] = $temaev->name;
 				$sttevs[] = $temaev->slug;
 			}
-		$nomtemaevs = implode(', ', $ttevs);
+		$nomtemaevs = implode('</span> &bull; <span class="taxitem">', $ttevs);
 		$datatemaevs = implode(' ', $sttevs);
 	endif;
 
-	$html = '<div class="evento" data-top="' . $dayid . '" data-cchl_tipoevento="' . $datatipoevs . '" data-cchl_temaevento="' . $datatemaevs . '">';
+	$html = '<div class="evento animated fadeIn" data-top="' . $dayid . '" data-cchl_tipoevento="' . $datatipoevs . '" data-cchl_temaevento="' . $datatemaevs . '">';
 	$html .= '<h3>' . $event->post_title . '</h3>';
 	
 	if($dayid == 'any') {
@@ -177,16 +196,16 @@ function cchl_event_template($postid, $dayid = 'any') {
 	$html .= '<p><span class="lugar"><i class="fa fa-map-marker fa-fw"></i> Lugar: ' . tribe_get_venue($event->ID) .'</span></p>';
 	
 	if($nomtipoevs):
-		$html .= '<br><p><span class="tipo">TIPO: ' . $nomtipoevs . '</span></p>';
+		$html .= '<br><p class="tax"><span class="labeltax">tema</span> <span class="taxitem">' . $nomtipoevs . '</p>';
 	endif;
 
 	if($nomtemaevs):
-		$html .= '<p><span class="tema">TEMA: ' . $nomtemaevs . '</span></p>';
+		$html .= '<p class="tax"><span class="labeltax">tipo</span> <span class="taxitem">' . $nomtemaevs . '</p>';
 	endif;
 	if(is_object_in_term( $event->ID, 'cchl_tipoevento', 188 )):
 		$html .= '<p class="actgratis"><a href="'. CCHL_LINKGRATIS.'"><i class="fa fa-thumbs-o-up"></i> Actividad gratuita: infórmate como asistir acá</a></p>';
 	endif;
-	$html .= '<p class="evplus"><a href="' . get_permalink($event->ID) . '" class="masinfo"><i class="fa fa-plus"></i> Más información</a> </p>';
+	$html .= '<p class="evplus"><a href="' . get_permalink($event->ID) . '" class="masinfo"><i class="fa fa-plus"></i> info</a> </p>';
 	$html .= '</div>';
 
 	return $html;

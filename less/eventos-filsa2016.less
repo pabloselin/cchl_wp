@@ -1,3 +1,215 @@
+body#filsa-2016 #content #eventos-ajax-2016 {
+
+	@calendaractive: #91DC93;
+	
+	a {
+		border-bottom:0;
+		transition:all linear 0.2s;
+	}
+
+	div.eventos-loading {
+		p {
+			text-align:center;
+			color:#FE3280;
+			padding:12px;
+			font-size:24px;
+		}
+	}
+
+	p.nohayeventos {
+		text-align:center;
+		font-size:24px;
+		color:#FE3280;
+	}
+
+	div.navprincipaleventos a {
+		color:#333;
+		font-family:'Signika', sans-serif;
+		border-bottom:0;
+		padding:12px;
+		margin-right:6px;
+	}
+
+	div.filtrowrap {
+		overflow:hidden;
+		padding:12px;
+	}
+
+	div.filtronav a,
+	div.filtrotab a {
+		color:#333;
+		padding:12px;
+		
+		strong {
+			color:#333;	
+			text-transform:uppercase;
+		}
+
+		span {
+			display:block;
+			font-size:12px;
+		}
+	}
+	
+	div.navprincipaleventos a.active,
+	div.navprincipaleventos a:hover,
+	div.filtronav a.active,
+	div.filtronav a:hover,
+	div.filtro a:hover,
+	div.filtro a.on,
+	div.filtrotema a:hover,
+	div.filtrotema a.on
+	
+	  {
+		color:#333;
+		background-color:@calendaractive;
+	}
+
+	div.filtro a.on,
+	div.filtrotema a.on,
+	div.filtronav a.active
+	 {
+		box-shadow:inset 0 0 3px #555;
+		border-radius:2px;
+	}
+
+	.filtro,
+	.filtrotema {
+		overflow:visible;
+	}
+	
+	ul.diasfilsa li {
+		display:block;
+	}
+
+	ul.diasfilsa li a {
+		color:#333;
+		border:1px solid #ccc;
+		background-color:white;
+		width:82px;
+	}
+
+	ul.diasfilsa li a:hover,
+	ul.diasfilsa li a.active {
+		color:#333;
+		background-color:@calendaractive;
+		border:1px solid #333;	
+	}
+
+	.eventos-load {
+		clear:both;
+		padding-top:24px;
+		h2 {
+			font-weight:normal;
+			color:#FE3280;
+			font-size:32px;
+		}
+	}
+
+	div.evento {
+		padding:12px;
+		border:1px solid #CDC7CA;
+		margin-bottom:12px;
+		
+		p {
+			padding:0;
+			margin:0;
+		}
+
+		p.tax {
+			margin-bottom:12px;
+			
+			span.labeltax {
+				text-transform:lowercase;
+				color:#555;
+			}
+
+			span.taxitem {
+				display:inline-block;
+				color:  #FE3280;
+			}
+
+		}
+		
+		h3 {
+			font-weight:normal;
+			color: #FE3280;
+			font-size:24px;
+		}
+
+		.evplus a {
+			padding:6px;
+			background-color: #f0f0f0;
+			border-radius:3px;
+			display:inline-block;
+			color:#ccc;
+			
+			&:hover {
+				background-color: #FE3280;
+				color:white;
+			}
+		}
+	}
+
+	#todoseventos {
+		border:0;
+		padding-top:0;
+		
+		h2 {
+			font-weight:normal;
+			font-size:32px;
+			color:#FE3280;
+			margin-top:0;
+		}
+
+		.select {
+			position: relative;
+			display:inline-block;
+			margin:24px 0;
+		}
+
+		select {
+			appearance: none;
+			-webkit-appearance:none;
+			-moz-appearance:none;
+			font-size:18px;
+			margin:0;
+			border:1px solid #ccc;
+			padding:6px 24px 6px 6px;
+			display:inline-block;
+			cursor:pointer;
+			outline:0;
+		}
+
+		select::-ms-expand {
+			display:none;
+		}
+
+		select:hover,
+		select:focus {
+			background:#ccc;
+			color:#000;
+		}
+
+		.select__arrow {
+			position: absolute;
+			top: 14px;
+			right: 15px;
+			width: 0;
+			height: 0;
+			pointer-events: none;
+			border-width: 8px 5px 0 5px;
+			border-style: solid;
+			border-color: #7b7b7b transparent transparent transparent;
+		}
+
+		.select select:hover ~ .select__arrow,
+		.select select:focus ~ .select__arrow {
+			border-top-color: #000;
+		}
+	}
+}
+
 
 .eventos-destacados {
 	clear:both;

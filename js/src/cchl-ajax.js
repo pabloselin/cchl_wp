@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
 		dias.removeClass('active');
 		$(this).addClass('active');
 		var dia = $(this).data('day');
-		container.empty().append('<div class="eventos-loading"><p><i class="fa fa-circle-o-notch fa-spin"></i> Cargando eventos ...</p></div>');
+		container.empty().append('<div class="eventos-loading"><p><i class="fa fa-cog fa-spin"></i> buscando eventos ...</p></div>');
 		$.ajax({
 			type: 'POST',
 			url: cchl.ajaxurl,
@@ -41,7 +41,7 @@ jQuery(document).ready(function($) {
 		var selected = $('option:selected', this);
 		var term = selected.attr('value');
 
-		containerfiltro.empty().append('<div class="eventos-loading"><p><i class="fa fa-circle-o-notch fa-spin"></i> Cargando eventos ...</p></div>');
+		containerfiltro.empty().append('<div class="eventos-loading"><p><i class="fa fa-cog fa-spin"></i> buscando eventos ...</p></div>');
 		$.ajax({
 			type: 'POST',
 			url: cchl.ajaxurl,
