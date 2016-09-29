@@ -382,7 +382,7 @@ function cchl_isresponsive( ) {
   $isfilij == true ||
   checkferia($post->ID, 53771) ||
   checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ||
-  checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 180) ||
+  checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 208) ||
   checkferia($post->ID, CCHL_FILVINA2016) ||
   is_page_template('page-feria-principal.php') ||
   $using_feria_template || 
