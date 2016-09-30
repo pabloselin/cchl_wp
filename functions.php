@@ -80,6 +80,7 @@ include( TEMPLATEPATH . '/admin/cchl_adminoptions.php');
 
 include( TEMPLATEPATH . '/inc/custom-functions.php');
 include( TEMPLATEPATH . '/inc/event-functions.php');
+include( TEMPLATEPATH . '/inc/event-invitations.php');
 include( TEMPLATEPATH . '/inc/scripts.php');
 include( TEMPLATEPATH . '/inc/custom-tax.php');
 include( TEMPLATEPATH . '/inc/gallery-custom.php');

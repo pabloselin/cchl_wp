@@ -76,6 +76,31 @@ $event_id = get_the_ID();
 
 	<?php if(is_object_in_term( $event_id, 'tribe_events_cat', 208)):?>
 
+		<?php 
+		//Debug invitacion
+		
+		/**
+	 * Data Sample
+	 */
+	
+		$time_format = get_option( 'time_format', TribeDateUtils::TIMEFORMAT );
+	
+		$data = array(
+			'id'			=> get_the_id(),
+			'title' 		=> get_the_title(),
+			'dia' 			=> tribe_get_start_date(null, false),
+			'hora' 			=> tribe_get_start_date( null, false, $time_format ) . ' - ' . tribe_get_end_date( null, false, $time_format ),
+			'lugar'			=> tribe_get_venue(),
+			'organizador'	=> tribe_get_organizer()
+			);
+
+
+		$imglink = cchl_frontinv($data);
+
+		echo '<a href="' . $imglink . '">Ver invitación</a>';
+
+		?> 
+
 		<div class="aviso-evento-modificaciones">
 			<i class="fa fa-pull-left fa-info-circle fa-2x"></i> Las actividades calendarizadas en el Programa Cultural de FILSA 2016, pueden sufrir modificaciones, antes y durante el período de la realización de FILSA. Lo que será informado por este medio y nuestras redes sociales
 		</div>
