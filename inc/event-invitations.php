@@ -41,7 +41,7 @@ function cchl_makeinv( $refimage, $data, $invfilename ) {
 	$font = TEMPLATEPATH . '/fonts/raleway.ttf';
 
 	$x = 24;
-	$y = 300;
+	$y = 200;
 
 	//Titulo Evento
 	$linetitle = explode('|', wordwrap($data['title'], 36, '|'));
