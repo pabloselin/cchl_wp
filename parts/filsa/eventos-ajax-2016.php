@@ -121,7 +121,7 @@
 		
 		<h2>Buscar eventos</h2>
 		
-		<p><i class="fa fa-info-circle"></i> Aquí puedes buscar en todos los eventos de FILSA 2016 escribiendo una palabra para buscar.</p>
+		<p><i class="fa fa-info-circle"></i> Aquí puedes buscar en todos los eventos de FILSA 2016 escribiendo una palabra clave.</p>
 
 
 		<form role="search" method="POST" id="searchform-eventos" action="<?php bloginfo('url');?>">
