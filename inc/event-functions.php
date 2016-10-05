@@ -192,7 +192,6 @@ function cchl_customeventsearch() {
 
  		 while( $search->have_posts() ): $search->the_post();
 
- 			xdebug_break();
  			$content .= cchl_event_template($post->ID);
 
  		endwhile;
