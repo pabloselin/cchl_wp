@@ -65,13 +65,14 @@ jQuery(document).ready(function($) {
 		var $input = $form.find('input[name="s"]');
 		var query = $input.val();
 		var $content = $('#eventsearchresults');
+		console.log(query);
 
 		$.ajax({
 			type: 'POST',
 			url: cchl.ajaxurl,
 			data: {
-				action: 'cchl_customeventsearch',
-				query: query
+				'action': 'cchl_customeventsearch',
+				'query': query
 			},
 			beforeSend: function() {
 				$input.prop('disabled', true);

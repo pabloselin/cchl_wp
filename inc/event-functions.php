@@ -147,7 +147,8 @@ function cchl_customeventsearch() {
 	/**
  	* Devuelve resultados de un query de búsqueda vía AJAX
  	*/	
- 	$query = $_POST['query'];
+ 	$query = sanitize_text_field($_POST['query']);
+ 	
  	$args = array(
  		'post_type' => 'tribe_events',
  		's' => $query,
