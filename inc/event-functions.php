@@ -148,7 +148,7 @@ function cchl_customeventsearch() {
  	* Devuelve resultados de un query de búsqueda vía AJAX
  	*/	
  	$query = sanitize_text_field($_POST['query']);
- 	
+
  	$args = array(
  		'post_type' => 'tribe_events',
  		's' => $query,
@@ -156,7 +156,7 @@ function cchl_customeventsearch() {
  		'tax_query'=> array(
  			array(
  				'taxonomy' => 'tribe_events_cat',
- 				'terms' => CCHL_FILSA2016_EVENTCAT
+ 				'terms' => 208
  				)
  			)
  		);
