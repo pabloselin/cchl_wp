@@ -57,6 +57,36 @@ jQuery(document).ready(function($) {
 		});
 	});
 
+	var eventsearchform = $('#searchform-eventos');
+
+	eventsearchform.on('submit', function() {
+		
+		var $form = $(this);
+		var $input = $form.find('input[name="s"]');
+		var query = $input.val();
+		var $content = $('#eventsearchresults');
+
+		$.ajax({
+			type: 'POST',
+			url: cchl.ajaxurl,
+			data: {
+				action: 'cchl_customeventsearch',
+				query: query
+			},
+			beforeSend: function() {
+				$input.prop('disabled', true);
+				$content.empty().append('<div class="eventos-loading"><p><i class="fa fa-cog fa-spin"></i> buscando eventos ...</p></div>').addClass('loading');
+			},
+			success: function( response ) {
+				$input.prop('disabled', false);
+				$content.removeClass('loading');
+				$content.empty().html( response );
+			}
+		});
+
+		return false;
+	});
+
 	var ferias = $('.ferias-normales').masonry({
    					 	itemSelector: '.feria-normal',
    						columnWidth: 300,

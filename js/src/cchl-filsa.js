@@ -273,9 +273,11 @@ filtodos.on('change', function(event) {
 var tabdias = $('.tabdias');
 var tabtodos = $('.tabtodos');
 var tabgratis = $('.tabgratis');
+var tabsearch = $('.tabsearch');
 
 tabtodos.hide();
 tabgratis.hide();
+tabsearch.hide();
 
 
 $('.navprincipaleventos a').on('click', function(event) {    

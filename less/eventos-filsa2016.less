@@ -158,7 +158,8 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 		}
 	}
 
-	#todoseventos {
+	#todoseventos,
+	#buscareventos {
 		border:0;
 		padding-top:0;
 		
@@ -303,3 +304,43 @@ body#filsa-2016 {
 	}	
 }
 
+//Resultados y buscador
+
+#searchform-eventos {
+	input {
+		padding:6px;
+		font-size:24px;
+	}
+
+	input#searchsubmit {
+		background-image:none;
+		width:auto;
+		text-indent:none;
+		padding:6px 12px;
+		cursor:pointer;
+		
+		&:hover {
+			background-color:#91DE97;	
+		}
+	}
+}
+
+#eventsearchresults {
+	padding-top:24px;
+}
+
+h2.searchtitle {
+	span {
+		background-color:#A9FA72;
+		color:#333;
+		display:inline-block;
+		padding:3px 6px;
+	}
+}
+
+.aviso-load.no-results span {
+	background-color:#A9FA72;
+	color:#333;
+	display:inline-block;
+	padding:3px 6px;
+}

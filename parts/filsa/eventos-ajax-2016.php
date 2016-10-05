@@ -16,6 +16,7 @@
 	<div class="navprincipaleventos">
 		<a href="#" class="active" data-tab="diaseventos"><i class="fa fa-calendar"></i> Día a día</a>
 		<a href="#" data-tab="todoseventos"><i class="fa fa-calendar-plus-o"></i> Todos los eventos</a>
+		<a href="#" data-tab="buscareventos"><i class="fa fa-search"></i> Buscar eventos</a>
 	</div>
 	
 	<div class="tabdias tabgen active" id="diaseventos">
@@ -114,5 +115,30 @@
 				<p><i class="fa fa-hand-pointer-o animated bounce infinite"></i> Selecciona un filtro para ver los eventos correspondientes.</p>
 			</div>
 		</div>
+	</div>
+
+	<div class="tabsearch tabgen" id="buscareventos">
+		
+		<h2>Buscar eventos</h2>
+		
+		<p><i class="fa fa-info-circle"></i> Aquí puedes buscar en todos los eventos de FILSA 2016 escribiendo una palabra para buscar.</p>
+
+
+		<form role="search" method="get" id="searchform-eventos" action="">
+		<div>
+			<input type="text" value="" name="s" id="s" />
+			<input type="hidden" value="1" name="sentence" />
+			<input type="hidden" value="tribe_events" name="post_type" />
+			<input type="hidden" value="tribe_events_cat" name="filsa-2016" />
+			<input type="submit" id="searchsubmit" value="Buscar" />
+		</div>
+		</form>
+
+		<div id="eventsearchresults">
+			<div class="aviso-load">
+				<p><i class="fa fa-hand-pointer-o animated bounce infinite"></i> Escribe tu búsqueda para obtener resultados</p>
+			</div>
+		</div>
+
 	</div>
 </div>

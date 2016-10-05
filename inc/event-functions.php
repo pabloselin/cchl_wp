@@ -144,6 +144,66 @@ wp_die();
 add_action('wp_ajax_cchl_eventfilterquery', 'cchl_eventfilterquery');
 add_action('wp_ajax_nopriv_cchl_eventfilterquery', 'cchl_eventfilterquery');
 
+function cchl_customeventsearch() {
+	/**
+ 	* Devuelve resultados de un query de búsqueda vía AJAX
+ 	*/	
+ 	$query = $_POST['query'];
+
+ 	$args = array(
+ 		'post_type' => 'tribe_events',
+ 		's' => $query,
+ 		'posts_per_page' => -1,
+ 		'tax_query'=> array(
+ 			array(
+ 				'taxonomy' => 'tribe_events_cat',
+ 				'terms' => CCHL_FILSA2016_EVENTCAT
+ 				)
+ 			)
+ 		);
+
+ 	$search = new WP_Query($args);
+ 	$count = $search->post_count;
+
+ 	if($count > 1) {
+
+ 		$fraseres = 'Se encontraron ' . $count . ' eventos ';
+ 	
+ 	} else {
+
+ 		$fraseres = 'Se encontró ' . $count . ' evento ';
+ 	}
+
+ 	$content = '';
+ 	
+
+ 	if( $search->have_posts() ):
+
+ 		$content .= '<h2 class="searchtitle">' . $fraseres . ' con la palabra <span>' . $query . '</span></h2>';
+
+ 		 while( $search->have_posts() ): $search->the_post();
+
+ 			xdebug_break();
+ 			$content .= cchl_event_template($post->ID);
+
+ 		endwhile;
+
+ 	else:
+
+ 		$content .= '<div class="aviso-load no-results"><p><i class="fa fa-frown-o"></i> No se encontraron eventos con la palabra <span>' . $query . '</span></p></div>';
+
+ 	endif;
+
+ 	echo $content;
+
+ 	die();
+
+
+}
+
+add_action('wp_ajax_cchl_customeventsearch', 'cchl_customeventsearch');
+add_action('wp_ajax_nopriv_cchl_customeventsearch', 'cchl_customeventsearch');
+
 function cchl_event_template($postid, $dayid = 'any') {
 	$event = get_post($postid);
 
