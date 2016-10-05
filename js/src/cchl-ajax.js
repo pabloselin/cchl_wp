@@ -65,7 +65,6 @@ jQuery(document).ready(function($) {
 		var $input = $form.find('input[name="s"]');
 		var query = $input.val();
 		var $content = $('#eventsearchresults');
-		console.log(query);
 
 		$.ajax({
 			type: 'POST',

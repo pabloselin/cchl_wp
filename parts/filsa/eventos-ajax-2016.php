@@ -124,12 +124,12 @@
 		<p><i class="fa fa-info-circle"></i> Aquí puedes buscar en todos los eventos de FILSA 2016 escribiendo una palabra para buscar.</p>
 
 
-		<form role="search" method="get" id="searchform-eventos" action="">
+		<form role="search" method="POST" id="searchform-eventos" action="">
 		<div>
 			<input type="text" value="" name="s" id="s" />
-			<input type="hidden" value="1" name="sentence" />
+			<!-- <input type="hidden" value="1" name="sentence" />
 			<input type="hidden" value="tribe_events" name="post_type" />
-			<input type="hidden" value="tribe_events_cat" name="filsa-2016" />
+			<input type="hidden" value="tribe_events_cat" name="filsa-2016" /> -->
 			<input type="submit" id="searchsubmit" value="Buscar" />
 		</div>
 		</form>
