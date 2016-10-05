@@ -150,6 +150,9 @@ function cchl_debugeventsearch() {
 	wp_die();
 }
 
+add_action('wp_ajax_cchl_debugeventsearch', 'cchl_debugeventsearch');
+add_action('wp_ajax_nopriv_cchl_debugeventsearch', 'cchl_debugeventsearch');
+
 function cchl_customeventsearch() {
 	/**
  	* Devuelve resultados de un query de búsqueda vía AJAX
