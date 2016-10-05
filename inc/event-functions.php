@@ -143,6 +143,13 @@ wp_die();
 add_action('wp_ajax_cchl_eventfilterquery', 'cchl_eventfilterquery');
 add_action('wp_ajax_nopriv_cchl_eventfilterquery', 'cchl_eventfilterquery');
 
+function cchl_debugeventsearch() {
+	$query = sanitize_text_field($_POST['query']);
+
+	echo $query;
+	wp_die();
+}
+
 function cchl_customeventsearch() {
 	/**
  	* Devuelve resultados de un query de búsqueda vía AJAX

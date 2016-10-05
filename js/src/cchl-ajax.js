@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
 			type: 'POST',
 			url: cchl.ajaxurl,
 			data: {
-				'action': 'cchl_customeventsearch',
+				'action': 'cchl_debugeventsearch',
 				'query': query
 			},
 			beforeSend: function() {
