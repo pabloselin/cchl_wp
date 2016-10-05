@@ -41,60 +41,78 @@ function cchl_makeinv( $refimage, $data, $invfilename ) {
 	$font = TEMPLATEPATH . '/fonts/raleway.ttf';
 
 	$x = 24;
-	$y = 200;
+	$y = 600;
+
+	$bigfontsize = 42;
+	$mediumfontsize = 36;
+	$smallfontsize = 24;
+	$titlelinejump = $bigfontsize + $bigfontsize / 2;
+	$textlinejump = $mediumfontsize + $bigfontsize / 2;
+	$paragraphjump = $bigfontsize * 2;
+	$smallpjump = $mediumfontsize * 1.3;
 
 	//Titulo Evento
 	$linetitle = explode('|', wordwrap($data['title'], 36, '|'));
 
 	foreach($linetitle as $line) {
 
-		imagettftext( $imagepng, 14, 0, $x, $y, $color, $font, $line);
+		imagettftext( $imagepng, $bigfontsize, 0, $x, $y, $color, $font, $line);
 
-		$y += 25;
+		$y += $titlelinejump;
 
 	}
 
 	//Salto diferenciador
-	$y += 24;
+	$y += $smallpjump;
 
 	//Fecha
 	
-	imagettftext( $imagepng, 12, 0, $x, $y, $color, $font, 'Día: ' . $data['dia']);
+	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, $data['dia']);
 
-	$y += 17;
+	$y += $textlinejump;
 
 	//Hora
 	
-	imagettftext( $imagepng, 12, 0, $x, $y, $color, $font, 'Hora: ' . $data['hora']);
+	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, $data['hora']);
 
-	$y += 27;
+	$y += $paragraphjump;
 
 	//Lugar label
 	
-	imagettftext( $imagepng, 11, 0, $x, $y, $color, $font, 'Lugar: ');
+	imagettftext( $imagepng, $smallfontsize, 0, $x, $y, $color, $font, 'Lugar: ');
 
-	$y += 17;
+	$y += $textlinejump;
 
-	imagettftext( $imagepng, 12, 0, $x, $y, $color, $font, $data['lugar'] );
+	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, $data['lugar'] );
 
-	$y += 27;
+	$y += $smallpjump;
 
 	//Organizador
 	
-	imagettftext( $imagepng, 11, 0, $x, $y, $color, $font, 'Organizador: ');
+	imagettftext( $imagepng, $smallfontsize, 0, $x, $y, $color, $font, 'Organizador: ');
 
-	$y += 17;
+	$y += $textlinejump;
 
-	imagettftext( $imagepng, 12, 0, $x, $y, $color, $font, $data['organizador'] );
+	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, $data['organizador'] );
 
-	$y += 17;
+	$y += $smallpjump;
 
+	//Descripción
 
+	//Titulo Evento
+	$linedesc = explode('|', wordwrap($data['descripcion'], 80, '|'));
 
+	foreach($linedesc as $linet) {
+
+		imagettftext( $imagepng, $smallfontsize, 0, $x, $y, $color, $font, $linet);
+
+		$y += $textlinejump;
+
+	}
 
 
 	
-	$invitacion = imagettftext( $imagepng, 16, 0, $x, $y, $color, $font, $line1);
+	
 	
 	
 	//Guardo la imagen
@@ -141,7 +159,7 @@ function cchl_frontinv( $data ) {
 	$invfilepath = CCHL_INVPATH . $invfilename;
 	$invfileurl = CCHL_INVURL . $invfilename;
 
-	$imageplaceholder = TEMPLATEPATH . '/img/filsa2016/invitacion_filsaevento.png';
+	$imageplaceholder = TEMPLATEPATH . '/img/filsa2016/invitacion_filsaevento_large.png';
 
 	if( !file_exists( $invfilepath )) {
 
@@ -175,7 +193,8 @@ function cchl_checkeventmod( $post_id ) {
 			'dia' 			=> tribe_get_start_date( $post_id, false ),
 			'hora' 			=> tribe_get_start_date( $post_id , false, $time_format ) . ' - ' . tribe_get_end_date( $post_id, false, $time_format ),
 			'lugar'			=> tribe_get_venue( $post_id ),
-			'organizador'	=> tribe_get_organizer( $post_id )
+			'organizador'	=> tribe_get_organizer( $post_id ),
+			'descripcion'   => get_the_contet( $post_id )
 			);
 
 		cchl_makeinv($imageplaceholder, $data, $invfilename);

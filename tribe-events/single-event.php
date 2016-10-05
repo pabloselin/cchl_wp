@@ -84,18 +84,23 @@ $event_id = get_the_ID();
 	 */
 	
 		$time_format = get_option( 'time_format', TribeDateUtils::TIMEFORMAT );
+		$day_format = 'l j \d\e F';
+		$descripcion = strip_tags( get_the_content( get_the_id() ) );
+
 	
 		$data = array(
 			'id'			=> get_the_id(),
 			'title' 		=> get_the_title(),
-			'dia' 			=> tribe_get_start_date(null, false),
+			'dia' 			=> tribe_get_start_date(null, false, $day_format),
 			'hora' 			=> tribe_get_start_date( null, false, $time_format ) . ' - ' . tribe_get_end_date( null, false, $time_format ),
 			'lugar'			=> tribe_get_venue(),
-			'organizador'	=> tribe_get_organizer()
+			'organizador'	=> tribe_get_organizer(),
+			'descripcion'	=> limitar_palabras( $descripcion, 25)
 			);
 
 
-		 $imglink = cchl_frontinv($data);
+		
+		$imglink = cchl_frontinv($data);
 
 		 echo '<a href="' . $imglink . '">Ver invitación</a>';
 
