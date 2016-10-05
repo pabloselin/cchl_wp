@@ -16,7 +16,9 @@
 	<div class="navprincipaleventos">
 		<a href="#" class="active" data-tab="diaseventos"><i class="fa fa-calendar"></i> Día a día</a>
 		<a href="#" data-tab="todoseventos"><i class="fa fa-calendar-plus-o"></i> Todos los eventos</a>
-		<a href="#" data-tab="buscareventos"><i class="fa fa-search"></i> Buscar eventos</a>
+		<?php if(is_user_logged_in()):?>
+			<a href="#" data-tab="buscareventos"><i class="fa fa-search"></i> Buscar eventos</a>
+		<?php endif;?>
 	</div>
 	
 	<div class="tabdias tabgen active" id="diaseventos">
