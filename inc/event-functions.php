@@ -138,7 +138,6 @@ if($eventos) {
 
 echo $html;
 wp_die();
-
 }
 
 add_action('wp_ajax_cchl_eventfilterquery', 'cchl_eventfilterquery');
@@ -149,7 +148,6 @@ function cchl_customeventsearch() {
  	* Devuelve resultados de un query de búsqueda vía AJAX
  	*/	
  	$query = $_POST['query'];
-
  	$args = array(
  		'post_type' => 'tribe_events',
  		's' => $query,
@@ -196,9 +194,7 @@ function cchl_customeventsearch() {
 
  	echo $content;
 
- 	die();
-
-
+ 	wp_die();
 }
 
 add_action('wp_ajax_cchl_customeventsearch', 'cchl_customeventsearch');

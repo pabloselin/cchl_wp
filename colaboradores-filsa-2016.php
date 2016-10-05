@@ -35,13 +35,14 @@ Template Name: Colaboradores Filsa 2016
                 <?php 
 
                     $grupocolaboradores = array(
-                                        'organiza'      => 'Organiza',
-                                        'produce'       => 'Produce',
-                                        'apoya'         => 'Apoya',
-                                        'participa'     => 'Participa',
-                                        'media_partner' => 'Media Partner',
-                                        'colabora'      => 'Colabora',     
-                                        'patrocina'     => 'Patrocina'
+                                        'organiza'              => 'Organiza',
+                                        'produce'               => 'Produce',
+                                        'apoya'                 => 'Apoya',
+                                        'participa'             => 'Participa',
+                                        'media_partner'         => 'Media Partner',
+                                        'colabora'              => 'Colabora',     
+                                        'patrocina'             => 'Patrocina',
+                                        'participan_programa'   => 'Participan en programa cultural'
                                      );
 
                     foreach($grupocolaboradores as $keyname => $grupocolaborador) {
