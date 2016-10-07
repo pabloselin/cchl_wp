@@ -87,6 +87,10 @@ function cchl_makeinv( $refimage, $data, $invfilename ) {
 
 	$y += $smallpjump;
 
+	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, 'Centro Cultural Estación Mapocho' );
+
+	$y += $smallpjump;
+
 	//Organizador
 	
 	imagettftext( $imagepng, $smallfontsize, 0, $x, $y, $color, $font, 'Organizador: ');

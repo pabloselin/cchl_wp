@@ -1,5 +1,7 @@
 <?php
-/* Template Name: Expositores */
+/* 
+Template Name: Expositores 
+*/
 ?>
 <?php get_header(); ?>
 

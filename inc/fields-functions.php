@@ -8,20 +8,20 @@ function cchl_sortexhibitors( ) {
 	 */
 	
 	$sectores = array( 'A', 'B', 'C', 'D', 'E');
-	$groupexpositores = getGroupOrder( 'expositor_sector' );
+	$groupexpositores = getGroupOrder( 'expositores_sector' );
 
                 //Array principal de expositores
 	$infoexpositores = array();
 
 	foreach( $groupexpositores as $expositor ) {
 
-		$cursect = get( 'expositor_sector',  $expositor);
+		$cursect = get( 'expositores_sector',  $expositor);
 
 		$infoexpositores[$cursect][] = array(
 			'expositor' => array(
-				'logo' => get_image( 'expositor_logo', $expositor ),
-				'nombre' => get( 'expositor_nombre', $expositor ),
-				'stands' => get( 'expositor_stands', $expositor )
+				'logo' => get_image( 'expositores_logo', $expositor ),
+				'nombre' => get( 'expositores_nombre', $expositor ),
+				'stands' => get( 'expositores_stands', $expositor )
 				)
 			);
 }
