@@ -16,7 +16,7 @@ $args = array(
 		'post_type' => 'tribe_events',
 		'orderby' => 'meta_value',
 		'meta_key' => '_EventStartDate',
-		'meta_type' => 'DATE',
+		'meta_type' => 'DATETIME',
 		'order' => 'ASC',
 		'meta_query' => array(
 			array(
@@ -102,7 +102,7 @@ $args = array(
 		'post_type' => 'tribe_events',
 		'orderby' => 'meta_value',
 		'meta_key' => '_EventStartDate',
-		'meta_type' => 'DATE',
+		'meta_type' => 'DATETIME',
 		'order' => 'ASC',
 		'tax_query' => array(
 			array(

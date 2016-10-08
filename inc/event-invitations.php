@@ -198,7 +198,7 @@ function cchl_checkeventmod( $post_id ) {
 			'hora' 			=> tribe_get_start_date( $post_id , false, $time_format ) . ' - ' . tribe_get_end_date( $post_id, false, $time_format ),
 			'lugar'			=> tribe_get_venue( $post_id ),
 			'organizador'	=> tribe_get_organizer( $post_id ),
-			'descripcion'   => get_the_contet( $post_id )
+			'descripcion'   => get_the_content( $post_id )
 			);
 
 		cchl_makeinv($imageplaceholder, $data, $invfilename);

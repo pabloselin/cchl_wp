@@ -7,7 +7,10 @@
 	$finfilsa = new DateTime('2015-11-9');
 	$interval = DateInterval::createFromDateString('1 day');
 	$period = new DatePeriod($iniciofilsa, $interval, $finfilsa);
+	$eventcat = 180;
 ?>
+
+<span class="infoevento" data-eventcat="<?php echo $eventcat;?>"></span>
 
 <div class="navprincipaleventos">
 	<a href="#" class="active" data-tab="diaseventos">Ver los eventos por día</a>
