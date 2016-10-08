@@ -226,8 +226,13 @@ function cchl_event_template($postid, $dayid = 'any') {
 	
 	if($tipoevs):
 		foreach($tipoevs as $tipoev) {
-				$ntevs[] = $tipoev->name;
-				$stevs[] = $tipoev->slug;
+				if($tipoev->term_id != 211) {
+
+					$ntevs[] = $tipoev->name;
+					$stevs[] = $tipoev->slug;	
+					
+				}
+				
 			}
 		$nomtipoevs = implode('</span> &bull; <span class="taxitem">', $ntevs);
 		$datatipoevs = implode(' ', $stevs);
