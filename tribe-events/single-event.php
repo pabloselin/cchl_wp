@@ -74,18 +74,38 @@ $event_id = get_the_ID();
 		endif;
 	?>
 
-	<?php if(is_object_in_term( $event_id, 'tribe_events_cat', 208) && function_exists('cchl_frontinv')):?>
+	<?php if(is_object_in_term( $event_id, 'tribe_events_cat', 208) && function_exists('cchl_frontinv')):
 
-		<?php 
-		//Debug invitacion
-		
+		$organizer_ids = tribe_get_organizer_ids( get_the_id() );
+
+		//Si los organizadores corresponden
+		//
+		if( in_array( 61814, $organizer_ids) || in_array( 9521, $organizer_ids) || in_array(3054, $organizer_ids) ) {
+
 		/**
-	 * Data Sample
-	 */
+		 * Data Sample
+		 */
 	
 		$time_format = get_option( 'time_format', TribeDateUtils::TIMEFORMAT );
 		$day_format = 'l j \d\e F';
 		$descripcion = strip_tags( get_the_content( get_the_id() ) );
+
+		
+		
+		if($organizer_ids) {
+
+			foreach ($organizer_ids as $organizer) {
+
+				$organizers_names[] = get_the_title($organizer);
+
+			}
+
+			$organizers_string = implode(' - ', $organizers_names);
+
+
+		}
+
+
 
 	
 		$data = array(
@@ -94,8 +114,8 @@ $event_id = get_the_ID();
 			'dia' 			=> tribe_get_start_date(null, false, $day_format),
 			'hora' 			=> tribe_get_start_date( null, false, $time_format ) . ' - ' . tribe_get_end_date( null, false, $time_format ),
 			'lugar'			=> tribe_get_venue(),
-			'organizador'	=> tribe_get_organizer(),
-			'descripcion'	=> limitar_palabras( $descripcion, 25)
+			'organizador'	=> $organizers_string,
+			'descripcion'	=> limitar_palabras( $descripcion, 50)
 			);
 
 
@@ -103,6 +123,8 @@ $event_id = get_the_ID();
 		$imglink = cchl_frontinv($data);
 
 		 echo '<a href="' . $imglink . '">Ver invitación</a>';
+
+		 }
 
 		?> 
 

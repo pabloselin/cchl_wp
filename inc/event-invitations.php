@@ -39,26 +39,38 @@ function cchl_makeinv( $refimage, $data, $invfilename ) {
 	$imagepng = imagecreatefrompng( $refimage );
 	$color = imagecolorallocate( $imagepng, 0, 0, 0);
 	$font = TEMPLATEPATH . '/fonts/raleway.ttf';
+	$boldfont = TEMPLATEPATH . '/fonts/raleway_600.ttf';
 
-	$x = 24;
+	$x = 48;
 	$y = 600;
 
-	$bigfontsize = 42;
-	$mediumfontsize = 36;
-	$smallfontsize = 24;
-	$titlelinejump = $bigfontsize + $bigfontsize / 2;
-	$textlinejump = $mediumfontsize + $bigfontsize / 2;
+	$bigfontsize = 36;
+	$mediumfontsize = 24;
+	$smallfontsize = 18;
+	$title_line_jump = $bigfontsize + $bigfontsize / 2;
+	$small_line_jump = $smallfontsize * 1.4;
+	$medium_line_jump = $mediumfontsize * 1.4;
 	$paragraphjump = $bigfontsize * 2;
 	$smallpjump = $mediumfontsize * 1.3;
+
+	//Organizador
+	
+	imagettftext( $imagepng, $smallfontsize, 0, $x, $y, $color, $font, 'Organiza: ');
+
+	$y += $medium_line_jump;
+
+	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, $data['organizador'] );
+
+	$y += $title_line_jump;
 
 	//Titulo Evento
 	$linetitle = explode('|', wordwrap($data['title'], 36, '|'));
 
 	foreach($linetitle as $line) {
 
-		imagettftext( $imagepng, $bigfontsize, 0, $x, $y, $color, $font, $line);
+		imagettftext( $imagepng, $bigfontsize, 0, $x, $y, $color, $boldfont, $line);
 
-		$y += $titlelinejump;
+		$y += $title_line_jump;
 
 	}
 
@@ -69,7 +81,7 @@ function cchl_makeinv( $refimage, $data, $invfilename ) {
 	
 	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, $data['dia']);
 
-	$y += $textlinejump;
+	$y += $medium_line_jump;
 
 	//Hora
 	
@@ -81,7 +93,7 @@ function cchl_makeinv( $refimage, $data, $invfilename ) {
 	
 	imagettftext( $imagepng, $smallfontsize, 0, $x, $y, $color, $font, 'Lugar: ');
 
-	$y += $textlinejump;
+	$y += $medium_line_jump;
 
 	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, $data['lugar'] );
 
@@ -89,28 +101,19 @@ function cchl_makeinv( $refimage, $data, $invfilename ) {
 
 	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, 'Centro Cultural Estación Mapocho' );
 
-	$y += $smallpjump;
+	$y += $title_line_jump;
 
-	//Organizador
-	
-	imagettftext( $imagepng, $smallfontsize, 0, $x, $y, $color, $font, 'Organizador: ');
-
-	$y += $textlinejump;
-
-	imagettftext( $imagepng, $mediumfontsize, 0, $x, $y, $color, $font, $data['organizador'] );
-
-	$y += $smallpjump;
 
 	//Descripción
 
 	//Titulo Evento
-	$linedesc = explode('|', wordwrap($data['descripcion'], 80, '|'));
+	$linedesc = explode('|', wordwrap($data['descripcion'], 70, '|'));
 
 	foreach($linedesc as $linet) {
 
 		imagettftext( $imagepng, $smallfontsize, 0, $x, $y, $color, $font, $linet);
 
-		$y += $textlinejump;
+		$y += $small_line_jump;
 
 	}
 
@@ -151,6 +154,37 @@ function cchl_invnotexists( $path ) {
 	}
 }
 
+function cchl_invtemplate( $event_id ) {
+	/**
+	 * Devuelve el tipo de imagen a usar según el organizador asociado a un evento
+	 */
+	
+	$organizer_ids = tribe_get_organizer_ids( $event_id );
+
+	if( in_array(61814, $organizer_ids) ) {
+
+		//México
+		$invtemplate = TEMPLATEPATH . '/img/filsa2016/invitacion_filsaevento_mexico_large.png';
+
+	} elseif( in_array( 9521, $organizer_ids) || in_array(3054, $organizer_ids) ) {
+
+		//Cámara
+		$invtemplate = TEMPLATEPATH . '/img/filsa2016/invitacion_filsaevento_camara_large.png';
+
+	}
+
+	if($invtemplate) {
+
+		return $invtemplate;
+
+	} else {
+
+		return false;
+
+	}
+
+}
+
 function cchl_frontinv( $data ) {
 	
 	/**
@@ -163,7 +197,8 @@ function cchl_frontinv( $data ) {
 	$invfilepath = CCHL_INVPATH . $invfilename;
 	$invfileurl = CCHL_INVURL . $invfilename;
 
-	$imageplaceholder = TEMPLATEPATH . '/img/filsa2016/invitacion_filsaevento_large.png';
+	$imageplaceholder = cchl_invtemplate( $data['id'] );
+	
 
 	if( !file_exists( $invfilepath )) {
 
@@ -188,7 +223,7 @@ function cchl_checkeventmod( $post_id ) {
 	if( (get_post_type( $post_id ) == 'tribe_events') && is_object_in_term( $post_id, 'tribe_events_cat', 208)) {
 
 		$invfilename = 'invitacion-' . $post_id. '.png';
-		$imageplaceholder = TEMPLATEPATH . '/img/filsa2016/invitacion_filsaevento.png';
+		$imageplaceholder = cchl_invtemplate( $post_id );
 		$time_format = get_option( 'time_format', TribeDateUtils::TIMEFORMAT );
 
 		$data = array(
