@@ -267,22 +267,36 @@ function cchl_event_template($postid, $dayid = 'any') {
 	endif;
 	$html .= '<p><span class="lugar"><i class="fa fa-map-marker fa-fw"></i> Lugar: ' . tribe_get_venue($event->ID) .'</span></p>';
 
-	if($organizers):
+	if( isset( $organizers ) ):
 
 		$html .= '<p><span class="organizers"><i class="fa fa-fw fa-flag"></i> Organiza: ' . $organizers . '</span> </p>';
 
 	endif;
 	
-	if($nomtipoevs):
+	if( isset( $nomtipoevs ) ) :
 		$html .= '<br><p class="tax"><span class="labeltax">Tema</span> <span class="taxitem">' . $nomtipoevs . '</p>';
 	endif;
 
-	if($nomtemaevs):
+	if( isset( $nomtemaevs) ):
 		$html .= '<p class="tax"><span class="labeltax">Tipo</span> <span class="taxitem">' . $nomtemaevs . '</p>';
 	endif;
 	if(is_object_in_term( $event->ID, 'cchl_tipoevento', 188 )):
 		$html .= '<p class="actgratis"><a href="'. CCHL_LINKGRATIS.'"><i class="fa fa-thumbs-o-up"></i> Actividad gratuita: infórmate como asistir acá</a></p>';
 	endif;
+
+	//Si los organizadores corresponden puedo llamar al generador de invitaciones
+	$organizer_ids = tribe_get_organizer_ids( $event->ID );
+
+	if( in_array( 61814, $organizer_ids) || in_array( 9521, $organizer_ids) || in_array(3054, $organizer_ids) ) {
+
+		if(function_exists('cchl_ajaxinvitation')) {
+
+			$html .= cchl_ajaxinvitation( $event->ID );
+
+		}
+		
+	}
+	
 	$html .= '<p class="evplus"><a href="' . get_permalink($event->ID) . '" class="masinfo"><i class="fa fa-plus"></i> info</a> </p>';
 	$html .= '</div>';
 

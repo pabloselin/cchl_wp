@@ -79,7 +79,7 @@ $event_id = get_the_ID();
 		$organizer_ids = tribe_get_organizer_ids( get_the_id() );
 
 		//Si los organizadores corresponden
-		//
+		
 		if( in_array( 61814, $organizer_ids) || in_array( 9521, $organizer_ids) || in_array(3054, $organizer_ids) ) {
 
 		/**
@@ -122,7 +122,7 @@ $event_id = get_the_ID();
 		
 		$imglink = cchl_frontinv($data);
 
-		 echo '<a href="' . $imglink . '">Ver invitación</a>';
+		 echo '<a class="btn-invitacion" href="' . $imglink . '">Descargar Invitación</a>';
 
 		 }
 
