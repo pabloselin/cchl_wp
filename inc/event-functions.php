@@ -273,12 +273,12 @@ function cchl_event_template($postid, $dayid = 'any') {
 
 	endif;
 	
-	if( isset( $nomtipoevs ) ) :
-		$html .= '<br><p class="tax"><span class="labeltax">Tema</span> <span class="taxitem">' . $nomtipoevs . '</p>';
+	if( isset( $nomtemaevs ) ) :
+		$html .= '<br><p class="tax"><span class="labeltax">Tema:</span> <span class="taxitem">' . $nomtemaevs . '</p>';
 	endif;
 
-	if( isset( $nomtemaevs) ):
-		$html .= '<p class="tax"><span class="labeltax">Tipo</span> <span class="taxitem">' . $nomtemaevs . '</p>';
+	if( isset( $nomtipoevs) ):
+		$html .= '<p class="tax"><span class="labeltax">Tipo:</span> <span class="taxitem">' . $nomtipoevs . '</p>';
 	endif;
 	if(is_object_in_term( $event->ID, 'cchl_tipoevento', 188 )):
 		$html .= '<p class="actgratis"><a href="'. CCHL_LINKGRATIS.'"><i class="fa fa-thumbs-o-up"></i> Actividad gratuita: infórmate como asistir acá</a></p>';
@@ -296,7 +296,7 @@ function cchl_event_template($postid, $dayid = 'any') {
 		}
 		
 	}
-	
+
 	$html .= '<p class="evplus"><a href="' . get_permalink($event->ID) . '" class="masinfo"><i class="fa fa-plus"></i> info</a> </p>';
 	$html .= '</div>';
 
