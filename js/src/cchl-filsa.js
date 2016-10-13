@@ -13,7 +13,7 @@ function cchl_enableFilters(element) {
         eventos.each(function() {
             var evs = jQuery(this).data('cchl_tipoevento');
             var tems = jQuery(this).data('cchl_temaevento');
-            if(evs != undefined) {
+            if(typeof evs != 'undefined') {
             evsarr = evs.split(' ');
             //console.log(evsarr);
             for(var i = 0, l = evsarr.length; i < l; i++) {
@@ -23,7 +23,7 @@ function cchl_enableFilters(element) {
                 }
             }
             //Temas
-            if(tems != undefined) {
+            if(typeof tems != 'undefined') {
             temsarr = tems.split(' ');
             //console.log(temsarr);
             for(var i = 0, l = temsarr.length; i < l; i++) {
@@ -46,7 +46,7 @@ function cchl_enableFilters(element) {
         }
         
         for(var i = 0, l = temevs.length; i < l; i++) {
-            if(cchl.evtemas[temevs[i]] != undefined) {
+            if(typeof cchl.evtemas[temevs[i]] != 'undefined') {
                 filtrotema.append('<a class="fltem" href="javascript:void(0);" data-tiposw="'+temevs[i]+'">'+ cchl.evtemas[temevs[i]] + '</a>');    
             }            
         }        
@@ -74,6 +74,9 @@ function cchl_enableFilters(element) {
         //Ajusto altura para elemento
         var lidiaaltura = jQuery(element).height();
         jQuery('ul.calendario-filsa').height(lidiaaltura);
+
+        //Escondo los undefined que queden
+        jQuery('a.fltip:contains("undefined"), a.fltem:contains("undefined")').hide();
 }
 
 jQuery(document).ready(function($) {
@@ -112,7 +115,7 @@ $('ul.calendario-filsa li:first').append(function() {
         eventos.each(function() {
             var evs = $(this).data('cchl_tipoevento');
             var tems = $(this).data('cchl_temaevento');
-            if(evs != undefined) {
+            if(typeof evs != 'undefined') {
             evsarr = evs.split(' ');
             //console.log(evsarr);
             for(var i = 0, l = evsarr.length; i < l; i++) {
@@ -122,7 +125,7 @@ $('ul.calendario-filsa li:first').append(function() {
                 }
             }
             //Temas
-            if(tems != undefined) {
+            if(typeof tems != 'undefined') {
             temsarr = tems.split(' ');
             //console.log(temsarr);
             for(var i = 0, l = temsarr.length; i < l; i++) {
