@@ -12,23 +12,12 @@
     
     <div id="content" class="grid_12">
 
-    <div id="bread">
-            
-            
-            Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
-       
-        </div>
-    
          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    
-         
-   
-            <h1><?php the_title(); ?></h1>
             
-            
-            <div class="cf"></div>
             <h4 class="category_description"><?php echo category_description(); ?></h4>
+            
             <div class="the-content"><?php the_content();?></div> 
+
 		<?php endwhile;endif; ?>
         </div>
     </div>

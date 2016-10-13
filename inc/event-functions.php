@@ -223,6 +223,7 @@ function cchl_event_template($postid, $dayid = 'any') {
 	$temaevs = get_the_terms($event->ID, 'cchl_temaevento');
 	$ntevs = array();
 	$ttevs = array();
+	$organizers = cchl_organizer_names( $event->ID );
 	
 	if($tipoevs):
 		foreach($tipoevs as $tipoev) {
@@ -248,7 +249,7 @@ function cchl_event_template($postid, $dayid = 'any') {
 	endif;
 
 	$html = '<div class="evento animated fadeIn" data-top="' . $dayid . '" data-cchl_tipoevento="' . $datatipoevs . '" data-cchl_temaevento="' . $datatemaevs . '">';
-	$html .= '<h3>' . $event->post_title . '</h3>';
+	$html .= '<h3><a href="' . get_permalink($event->ID) . '">' . $event->post_title . '</a></h3>';
 	
 	if($dayid == 'any') {
 
@@ -265,13 +266,19 @@ function cchl_event_template($postid, $dayid = 'any') {
 		$html .= ' hrs. </p>';
 	endif;
 	$html .= '<p><span class="lugar"><i class="fa fa-map-marker fa-fw"></i> Lugar: ' . tribe_get_venue($event->ID) .'</span></p>';
+
+	if($organizers):
+
+		$html .= '<p><span class="organizers"><i class="fa fa-fw fa-flag"></i> Organiza: ' . $organizers . '</span> </p>';
+
+	endif;
 	
 	if($nomtipoevs):
-		$html .= '<br><p class="tax"><span class="labeltax">tema</span> <span class="taxitem">' . $nomtipoevs . '</p>';
+		$html .= '<br><p class="tax"><span class="labeltax">Tema</span> <span class="taxitem">' . $nomtipoevs . '</p>';
 	endif;
 
 	if($nomtemaevs):
-		$html .= '<p class="tax"><span class="labeltax">tipo</span> <span class="taxitem">' . $nomtemaevs . '</p>';
+		$html .= '<p class="tax"><span class="labeltax">Tipo</span> <span class="taxitem">' . $nomtemaevs . '</p>';
 	endif;
 	if(is_object_in_term( $event->ID, 'cchl_tipoevento', 188 )):
 		$html .= '<p class="actgratis"><a href="'. CCHL_LINKGRATIS.'"><i class="fa fa-thumbs-o-up"></i> Actividad gratuita: infórmate como asistir acá</a></p>';
@@ -283,5 +290,29 @@ function cchl_event_template($postid, $dayid = 'any') {
 }
 
 function cchl_free_events() {
+
+}
+
+function cchl_organizer_names( $event_id ) {
+	/**
+	 * Devuelve un listado de nombres de organizadores separados por un guión.
+	 */
+
+	$organizer_ids = tribe_get_organizer_ids( $event_id );
+
+	if($organizer_ids) {
+
+			foreach ($organizer_ids as $organizer) {
+
+				$organizers_names[] = get_the_title($organizer);
+
+			}
+
+			$organizers_string = implode(' - ', $organizers_names);
+
+
+	}
+
+	return $organizers_string;
 
 }
