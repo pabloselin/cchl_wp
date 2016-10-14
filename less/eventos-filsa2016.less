@@ -1,6 +1,4 @@
 body#filsa-2016 #content #eventos-ajax-2016 {
-
-	@calendaractive: #91DC93;
 	
 	a {
 		border-bottom:0;
@@ -10,7 +8,7 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 	div.eventos-loading {
 		p {
 			text-align:center;
-			color:#FE3280;
+			color:@magenta;
 			padding:12px;
 			font-size:24px;
 		}
@@ -19,7 +17,7 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 	p.nohayeventos {
 		text-align:center;
 		font-size:24px;
-		color:#FE3280;
+		color:@magenta;
 	}
 
 	div.navprincipaleventos a {
@@ -50,6 +48,14 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 			font-size:12px;
 		}
 	}
+
+	div.navprincipaleventos a,
+	div.filtronav a,
+	div.filtro a,
+	div.filtrotema a {
+		background-color:fade(@beige, 20%);
+	}
+
 	
 	div.navprincipaleventos a.active,
 	div.navprincipaleventos a:hover,
@@ -61,8 +67,8 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 	div.filtrotema a.on
 	
 	  {
-		color:#333;
-		background-color:@calendaractive;
+		color:darken(@verde, 35%);
+		background-color:@verde;
 	}
 
 	div.filtro a.on,
@@ -71,6 +77,7 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 	 {
 		box-shadow:inset 0 0 3px #555;
 		border-radius:2px;
+		color:darken(@verde, 35%);
 	}
 
 	.filtro,
@@ -87,13 +94,17 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 		border:1px solid #ccc;
 		background-color:white;
 		width:82px;
+		transition:none;
 	}
 
 	ul.diasfilsa li a:hover,
 	ul.diasfilsa li a.active {
 		color:#333;
-		background-color:@calendaractive;
-		border:1px solid #333;	
+		background: @filsagradient;
+		//background-color:@verde;
+		border:1px solid white;	
+		color:darken(@verde, 35%);
+		color:white;
 	}
 
 	.eventos-load {
@@ -101,14 +112,14 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 		padding-top:24px;
 		h2 {
 			font-weight:normal;
-			color:#FE3280;
+			color:@magenta;
 			font-size:32px;
 		}
 	}
 
 	.aviso-load p {
 		margin-top:24px;
-		color: #FE3280;
+		color: @magenta;
 		font-size:24px;
 		text-align:center;
 	}
@@ -132,32 +143,32 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 
 			span.taxitem {
 				display:inline-block;
-				color:  #FE3280;
+				color:  @magenta;
 			}
 
 		}
 		
 		h3 {
 			font-weight:normal;
-			color: #FE3280;
+			color: @magenta;
 			font-size:24px;
 			a {
-				color: #FE3280;
+				color: @magenta;
 				&:hover {
-					color:darken(#fe3280, 10%);
+					color:darken(@magenta, 10%);
 				}
 			}
 		}
 
 		.evplus a {
 			padding:6px 12px;
-			background-color: #f0f0f0;
+			background-color: fade(@beige, 20%);
 			border-radius:3px;
 			display:inline-block;
 			color:#333;
 			
 			&:hover {
-				background-color: #FE3280;
+				background-color: @magenta;
 				color:white;
 			}
 		}
@@ -171,7 +182,7 @@ body#filsa-2016 #content #eventos-ajax-2016 {
 		h2 {
 			font-weight:normal;
 			font-size:32px;
-			color:#FE3280;
+			color:@magenta;
 			margin-top:0;
 		}
 
@@ -267,7 +278,7 @@ a.evento-mini h3 {
 	font-size:18px;
 	margin-bottom:12px;
 	font-family:'Signika', sans-serif;
-	color:#FF3B83;
+	color:@magenta;
 	margin-bottom:0;
 }
 
@@ -279,7 +290,7 @@ body#filsa-2016 .the-content .tribe-events-single {
 	h2 {
 		font-size:26px;
 		font-weight:normal;
-		color:#FF3B83;
+		color:@magenta;
 	}
 }
 
@@ -326,7 +337,7 @@ body#filsa-2016 {
 		cursor:pointer;
 		
 		&:hover {
-			background-color:#91DE97;	
+			background-color:@verde;	
 		}
 	}
 }
@@ -337,7 +348,7 @@ body#filsa-2016 {
 
 h2.searchtitle {
 	span {
-		background-color:#A9FA72;
+		background-color:@verde;
 		color:#333;
 		display:inline-block;
 		padding:3px 6px;
@@ -345,7 +356,7 @@ h2.searchtitle {
 }
 
 .aviso-load.no-results span {
-	background-color:#A9FA72;
+	background-color:@verde;
 	color:#333;
 	display:inline-block;
 	padding:3px 6px;
@@ -354,13 +365,13 @@ h2.searchtitle {
 body#filsa-2016 .the-content a.btn-invitacion {
 	display:inline-block;
 	padding:6px;
-	background-color:#91DE97;
+	background-color:@verde;
 	color:#333;
 	border-radius:6px;
 	margin-left:6px;
 	
 	&:hover {
-		background-color:#FE3280;
+		background-color:@magenta;
 		color:white;	
 	}
 }

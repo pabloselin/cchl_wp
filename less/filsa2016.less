@@ -6,6 +6,20 @@
 @import 'eventos-filsa2016.less';
 @import 'animatecss.less';
 
+//Paleta colores FILSA
+
+@verde: #b9cf3e;
+@amarillo: #ddb306;
+@cafe: #8d7765;
+@magenta: saturate(#e3636f, 20%);
+@verdeoscuro: lighten(#025753, 10%);
+@beige: #f1e4cb;
+@naranjo: #f3934a;
+@aguamarina: lighten(#009fad, 10%);
+@morado: saturate(#966491, 15%);
+
+@filsagradient: linear-gradient(45deg, #4b559a 0%,#41a2c8 43%,#67b23c 100%);
+
 //Debug styles
 
 body#filsa-2016 .feriaslink {
@@ -179,7 +193,7 @@ body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li a {
 		background-color:#3C3C3C;
 		color:white;
 		background-image:none;
-		padding-left:16px;
+		//padding-left:16px;
 	}
 }
 
@@ -224,7 +238,7 @@ body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.menu-item-h
 	font-family: 'FontAwesome';
 	font-size: 16px;
 	display: inline-block;
-	margin-left: 8px;
+	margin-left: 4px;
 	vertical-align: middle;
 }
 
@@ -240,8 +254,8 @@ body#filsa-2016 .wrapredes {
 body#filsa-2016 .wrapredes div.redes-sociales {
 	background-color:rgba(0, 0, 0, 0.2);
 	width:90px;
-	// float:right;
-	// margin-right:100px;
+	float:right;
+	margin-right:100px;
 }
 
 body#filsa-2016 .wrapredes a {
@@ -249,7 +263,7 @@ body#filsa-2016 .wrapredes a {
 }
 
 body#filsa-2016 .wrapredes a:hover {
-	color:#FE3B82;
+	color:@magenta;
 }
 
 body#feria.page-id-60799 .filsa-header-mobile img {
@@ -268,11 +282,11 @@ body#feria.page-id-60799 .filsa-header-mobile {
 	margin-top:0;
 	
 	ul li {
-		background-color: #05D6C9;
-		border:1px solid darken(#05D6C9,2%);
+		background-color: @verde;
+		border:1px solid darken(@verde,2%);
 		padding:0;
 		width: 166px;
-		border-radius:5px;	
+		border-radius:0;	
 		transition:all ease-in 0.1s;
 		margin:0 3px;
 		height:50px;
@@ -283,7 +297,7 @@ body#feria.page-id-60799 .filsa-header-mobile {
 		float:left;
 		
 	&:before {
-		color: darken(#05D6C9, 25%);
+		color: darken(@verde, 25%);
 		font-size:22px;
 		position:absolute;
 		left:8px;
@@ -297,7 +311,7 @@ body#feria.page-id-60799 .filsa-header-mobile {
 			font-weight:400;
 			font-size:14px;
 			vertical-align:middle;
-			color: darken(#05D6C9, 25%);
+			color: darken(@verde, 45%);
 			margin-left:6px;
 			text-transform:uppercase;
 			font-family: sans-serif;
@@ -305,12 +319,13 @@ body#feria.page-id-60799 .filsa-header-mobile {
 			height:30px;
 			display:table-cell;
 			font-family:'Signika', sans-serif;
+			transition:none;
+			
 		}
 		
 		&:hover {
-			background-color: #FE3B82;
-			border:1px solid darken(#FE3B82,4%);
-			box-shadow:0 0 1px #333;
+			background: @filsagradient;
+			border:1px solid white;
 			a, &:before {
 				color:white;
 			}
@@ -397,7 +412,7 @@ body#filsa-2016 .mobile-menu-filsa .mobile__redes {
 }
 
 body#filsa-2016 .mobile-menu-filsa .mobile__redes a i {
-	color:#FE3B82;
+	color:@magenta;
 }
 
 //Categoría noticias
@@ -467,9 +482,10 @@ body#filsa-2016 {
 body#filsa-2016 {
 	#content {
 		h1 {
-			color:#0175C0;
+			color:@morado;
 			text-transform:uppercase;
 			font-family:'Signika', sans-serif;
+			font-size:32px;
 		}
 	}
 	.the-content {
@@ -479,15 +495,17 @@ body#filsa-2016 {
 			}
 
 			h1 {
-				font-size:23px;
+				font-size:24px;
 				margin-bottom:12px;
 				font-family:'Signika', sans-serif;
 			}
 
 			h2 {
-				font-size:20px;
+				font-size:24px;
 				margin-bottom:16px;
 				font-family:'Signika', sans-serif;
+				color:@morado;
+				font-wieght:600;
 			}
 
 			h3 {
@@ -548,6 +566,15 @@ body#filsa-2016 .invitados-filsa p {
 
 body#filsa-2016 .invitados-filsa ul.cf li .info {
 	width:600px;
+}
+
+body#filsa-2016 #content .invitados-filsa ul.cf li {
+	h3 {
+		font-family:'Signika', sans-serif;
+		font-weight:400;
+		font-size:24px;
+		color:darken(@aguamarina, 10%);
+	}
 }
 
 

@@ -2,11 +2,11 @@
 .aviso-feria {
 	overflow:hidden;
 	padding:12px 12px 12px 48px;
-	border-left:10px solid desaturate(#FF4086, 10%);
+	border-left:10px solid @magenta;
 	background-color:#f0f0f0;
 	font-size:18px;
 	margin:0 0 24px 0;
-	color:desaturate(#FF4086, 10%);
+	color:@magenta;
 	position: relative;
 	min-height:40px;
 	a {
@@ -22,7 +22,7 @@
 		display: block;
 		font-family:'FontAwesome';
 		font-size:32px;
-		color: #FF4086;
+		color: @magenta;
 		content: '\f0a4';
 		left:4px;
 		top:18px;
@@ -45,7 +45,7 @@
 		margin-top:0;
 		font-family:'Signika', sans-serif;
 		line-height:1em;
-		color:#0073BA;
+		color:@verdeoscuro;
 	}
 	
 	img {
@@ -76,7 +76,7 @@ a.more-filsa {
 	display: block;
 	padding:8px 12px;
 	clear:both;
-	background-color:#f0f0f0;
+	background-color:fade(@beige, 20%);
 	border-radius:0 0 7px 7px;
 	color:#333;
 	max-width:230px;
@@ -87,13 +87,13 @@ a.more-filsa {
 	transition:all linear 0.2s;
 	
 	i {
-		color:#0670B9;
+		color:@verdeoscuro;
 		font-size:16px;
 		margin-right:6px;
 	}
 
 	&:hover {
-		background-color: #FF4086;
+		background-color: @magenta;
 		color:white;
 		i {
 			color:white;
