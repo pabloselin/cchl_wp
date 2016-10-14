@@ -158,20 +158,20 @@ Template Name: FILSA 2016
         <div class="redes-filsa">
             <div class="facebook">
                 
-                <h3 class="titulo-facebook"><i class="fa fa-facebook"></i> Facebook</h3>
+                <h3 class="titulo-facebook"><a href="https://www.facebook.com/filsachile" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></h3>
 
                 <div class="fb-page" data-href="https://www.facebook.com/camarachilenalibro" data-tabs="timeline" data-width="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/camarachilenalibro" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/camarachilenalibro">Cámara Chilena del Libro</a></blockquote></div>
             </div>
             <div class="twitter">
 
-                <h3 class="titulo-twitter"><i class="fa fa-twitter"></i> Twitter</h3>
+                <h3 class="titulo-twitter"><a href="https://twitter.com/FILSA2016" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></h3>
 
                 <a class="twitter-timeline" data-height="500" data-lang="es" href="https://twitter.com/FILSA2016">Tweets by FILSA2016</a>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div class="instagram">
 
-                <h3 class="titulo-instagram"><i class="fa fa-instagram"></i> Instagram</h3>
+                <h3 class="titulo-instagram"><a href="http://instagram.com/filsachile"><i class="fa fa-instagram"></i> Instagram</a></h3>
 
                 <?php echo get('insercion_instagram');?>
             </div>
@@ -179,9 +179,9 @@ Template Name: FILSA 2016
 
         <div class="redes-filsa-movil">
             
-            <a href="#" class="movilred mr-facebook"><i class="fa fa-facebook"></i> Facebook</a>
-            <a href="#" class="movilred mr-twitter"><i class="fa fa-twitter"></i> Twitter</a>
-            <a href="#" class="movilred mr-instagram"><i class="fa fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/filsachile" target="_blank" class="movilred mr-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+            <a href="https://twitter.com/FILSA2016" class="movilred mr-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+            <a href="http://instagram.com/filsachile" class="movilred mr-instagram"><i class="fa fa-instagram"></i> Instagram</a>
 
         </div>
 

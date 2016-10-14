@@ -149,7 +149,8 @@ body#filsa-2016 #sidebar_interior.menu-feria-especial div > ul.menu > li:first-o
 	transition: all ease-in 0.1s;
 	
 	&:hover {
-		background-color:#3C3C3C;
+		//background-color:#3C3C3C;
+		background:@filsagradient;
 		color:white;
 		&:before {
 			color:white;
@@ -183,25 +184,32 @@ body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li a {
 	text-transform:uppercase;
 	font-size:14px;
 	font-weight:500;
-	transition:all ease-in .1s;
+	transition:none;
 	border-bottom:none;
 	color:#000;
 	background-color:#f0f0f0;
 	height:auto;
 	
 	&:hover {
-		background-color:#3C3C3C;
+		background: @filsagradient;
+		//background-color:#3C3C3C;
 		color:white;
-		background-image:none;
+		//background-image:none;
 		//padding-left:16px;
 	}
 }
 
-body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.current_page_ancestor a,
-body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.current-menu-item a
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.current_page_ancestor > a,
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li.current-menu-item > a
  {
-	background-color:lighten(#3C3C3C, 22%);
+	//background-color:lighten(#3C3C3C, 22%);
+	background: @filsagradient;
 	color:white;
+	//background-image:none;
+}
+
+body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu ul.sub-menu li.current-menu-item > a {
+	background-color:lighten(#3C3C3C, 33%);
 	background-image:none;
 }
 
@@ -218,6 +226,7 @@ body#filsa-2016 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu
 	&:hover {
 		background-color:darken(#ccc, 5%);
 		padding-left:22px;
+		background-image:none;
 	}
 }
 
