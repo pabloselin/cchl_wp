@@ -9,7 +9,7 @@
 	<div id="header" class="header-special <?php if($socios == true): echo 'header-socios';endif;?>">
 		
 		<a class="specialbannerplus" href="<?php echo get_permalink(CCHL_FILSA2016);?>" title="Ver más de FILSA 2016">
-			<img src="<?php bloginfo('template_url');?>/img/filsa2016/header_global_filsa2016.png" alt="Filsa 2016">	
+			<img src="<?php bloginfo('template_url');?>/img/filsa2016/cabeceras_global_filsa_2016_final_03.jpg" alt="Filsa 2016">	
 		
 	
 		<span class="specialplus">
