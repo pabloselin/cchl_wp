@@ -32,11 +32,12 @@
 #content a.noticia-portada-feria {
 	display:block;
 	width:100%;
-	border:1px solid #ccc;
+	border:1px solid darken(#EEF7F7, 10%);
 	overflow:hidden;
 	margin-bottom:24px;
 	color:#333;
-	background-color:fade(@verdeoscuro, 3%);
+	background-color:fade(@verdeoscuro, 7%);
+	//background-color:#EBF2F2;
 	
 	&.last {
 		margin-bottom:6px;
@@ -104,6 +105,9 @@ a.more-filsa {
 &.more-eventos {
 	i {
 		color:@magenta;
+	}
+	&:hover i {
+		color:white;
 	}
 }
 
