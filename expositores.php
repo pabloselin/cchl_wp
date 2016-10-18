@@ -47,9 +47,8 @@ Template Name: Expositores
 
                 echo '<div class="sector">';
                 echo '<h2>Sector ' . $sector . ' </h2>';
-                echo '<p>&nsbp;</p>';
                 echo '<img src="' . get_bloginfo('template_url') . '/img/filsa2016/mapa/sector_' . strtolower($sector).'.png" alt="Sector ' . $sector . '">';
-
+                echo '<p>&nsbp;</p>';
                 echo '<ul>';
 
                 foreach($expositores as $expositor) {
