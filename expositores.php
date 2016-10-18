@@ -18,6 +18,10 @@ Template Name: Expositores
         <?php get_template_part('parts/addthis');?>
         <div class="cf"></div>
         <div class="the-content"><?php the_content();?></div>
+  
+        <p style="margin-bottom:12px;">
+          <img src="<?php bloginfo('template_url');?>/img/filsa2016/mapa/mapa_preview.png" alt="Mapa FILSA 2016">
+        </p>
 
         <?php 
 
@@ -41,6 +45,7 @@ Template Name: Expositores
             <?php foreach($infoexpositores as $sector => $expositores) {
 
                 echo '<div class="sector">';
+                echo '<img src="' . get_bloginfo('template_url') . '/img/filsa2016/mapa/sector_' . strtolower($sector).'.png" alt="Sector ' . $sector . '">';
                 echo '<h2>Sector ' . $sector . ' </h2>';
 
                 echo '<ul>';
