@@ -20,7 +20,7 @@ Template Name: Expositores
         <div class="the-content"><?php the_content();?></div>
   
         <p style="margin-bottom:12px;">
-          <img src="<?php bloginfo('template_url');?>/img/filsa2016/mapa/mapa_preview.png" alt="Mapa FILSA 2016">
+          <img src="<?php bloginfo('template_url');?>/img/filsa2016/mapa/mapa_preview_01.png" alt="Mapa FILSA 2016">
         </p>
 
         <?php 
