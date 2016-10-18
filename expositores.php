@@ -20,7 +20,7 @@ Template Name: Expositores
         <div class="the-content"><?php the_content();?></div>
   
         <p style="margin-bottom:12px;">
-          <a href="<?php bloginfo('template_url');?>/img/filsa2016/mapa/mapa_full_02.png"><img class="mapa-preview" src="<?php bloginfo('template_url');?>/img/filsa2016/mapa/mapa_preview_02.png" alt="Mapa FILSA 2016"></a>
+          <a href="<?php bloginfo('template_url');?>/img/filsa2016/mapa/mapa_full_02.png"><img class="mapa-preview" src="<?php bloginfo('template_url');?>/img/filsa2016/mapa/mapa_preview_03.png" alt="Mapa FILSA 2016"></a>
           <a class="linkimgmapa" target="_blank" href="<?php bloginfo('template_url');?>/img/filsa2016/mapa/mapa_full_01.png"><i class="fa fa-hand-pointer-o animated bounce infinite"></i> Clic en la imagen para ver el mapa en alta resolución.</a>
         </p>
 
