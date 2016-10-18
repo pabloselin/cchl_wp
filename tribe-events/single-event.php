@@ -122,7 +122,7 @@ $event_id = get_the_ID();
 		
 		$imglink = cchl_frontinv($data);
 
-		 echo '<a class="btn-invitacion" href="' . $imglink . '">Descargar Invitación</a>';
+		 echo '<a class="btn-invitacion" href="' . $imglink . '"><i class="fa fa-download"></i> Descargar Invitación</a>';
 
 		 }
 
