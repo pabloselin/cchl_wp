@@ -1,0 +1,80 @@
+//Buscador
+
+input#cchl_buscalibros {
+	padding:6px;
+	font-size:16px;
+	margin-bottom:12px;
+}
+
+body#filsa-2016 #cchl_bl_hits_container  div.ais-hits--item {
+	margin-bottom:12px;
+	padding:12px;
+	border:1px solid fade(@magenta, 15%);
+	
+	h3 {
+		color:@magenta;
+		margin-top:0;
+	}
+
+	strong {
+		color:@verdeoscuro;
+	}
+
+	p.where {
+		margin-top:6px;
+		color: #6D6E71;
+	}
+
+	span.autor {
+		display:block;
+		text-transform:capitalize;
+	}
+
+	span.stand {
+		display:block;
+	}
+
+	i {
+		font-size:12px;
+		color:@magenta;
+		vertical-align:middle;
+	}
+}
+
+body#filsa-2016 .the-content #cchl_bl_pagination_container {
+	
+	margin:24px 0;
+	padding:0;
+	
+	ul {
+		margin:0;
+		padding:0;
+	}
+
+	ul li.ais-pagination--item {
+		margin:0;
+		padding:0;
+		a {
+			border-bottom:none;
+			padding:12px;
+			border:1px solid fade(@verdeoscuro, 10%);
+			color:@verdeoscuro;
+			&:hover {
+				background-color:@magenta;
+				color:white;
+			}
+		}
+
+		&.ais-pagination--item__active {
+			a {
+				font-weight:bold;
+				color:white;
+				background-color:@verdeoscuro;
+			}
+		}
+	}
+
+	ul li.ais-pagination--item:before {
+		content:'';
+	}
+}
