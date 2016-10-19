@@ -78,3 +78,67 @@ body#filsa-2016 .the-content #cchl_bl_pagination_container {
 		content:'';
 	}
 }
+
+.cchl_bl_left {
+	width:70%;
+	float:left;
+}
+
+.cchl_bl_right {
+	width:30%;
+	float:left;
+}
+
+.cchl_bl_filter {
+	padding:12px 12px 12px 24px;
+	
+	.ais-header {
+		font-size:22px;
+		color:@verdeoscuro;
+		font-family: 'Signika', sans-serif;
+		margin-bottom:16px;
+	}
+
+	.ais-refinement-list--item {
+		
+		margin-bottom:6px;
+		overflow:hidden;
+		display:flex;
+		font-size:13px;
+
+		input {
+			margin-right:6px;
+			
+		}
+
+		.ais-refinement-list--count {
+			font-size:12px;
+			font-weight:bold;
+			color:@magenta;
+		}
+	}
+}
+
+body#filsa-2016 .the-content #cchl_bl_reset {
+	
+	a.ais-clear-all--link {
+		display:block;
+		padding:6px;
+		background-color:@verde;
+		color:white;
+		border-bottom:0;
+		text-align:center;
+		border-radius:6px;
+		transition:all linear 0.3s;
+		&:hover {
+			background-color:@magenta;
+		}	
+	}
+}
+
+#cchl_bl_resultados {
+	font-size:32px;
+	margin:24px 0;
+	color:@verdeoscuro;
+	font-family:'Signika', sans-serif;
+}
