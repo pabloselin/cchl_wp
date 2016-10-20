@@ -111,6 +111,31 @@ body#filsa-2016 .the-content #cchl_bl_pagination_container {
 	float:left;
 }
 
+@media screen and (max-width:@scrbr) {
+	.cchl_bl_left, .cchl_bl_right {
+		float:none;
+		width:100%;
+	}
+
+	.cchl_bl_right {
+		position: fixed;
+		top:72px;
+		left:0;
+		z-index:100;
+		transform:translateX(-100%);
+		overflow: scroll;
+		background-color:white;
+		height:100%;
+		padding:0 0 32px 0;
+		transition:all linear 0.5s;
+		
+		&.active {
+			transform:translateX(0);
+			
+		}
+	}
+}
+
 .cchl_bl_filter {
 	padding:12px 12px 12px 24px;
 	
@@ -156,6 +181,10 @@ body#filsa-2016 .the-content #cchl_bl_reset {
 			background-color:@magenta;
 		}	
 	}
+
+	@media screen and (max-width:@scrbr) {
+		padding-bottom:36px;
+	}
 }
 
 #cchl_bl_resultados {
@@ -163,4 +192,47 @@ body#filsa-2016 .the-content #cchl_bl_reset {
 	margin:24px 0;
 	color:@verdeoscuro;
 	font-family:'Signika', sans-serif;
+}
+
+body#filsa-2016 #content .the-content span.showswitch {
+	display:inline-block;
+	padding:3px;
+	border-radius:5px;
+	background-color:@verde;
+	color:darken(@verde, 25%);
+	cursor:pointer;
+	margin:6px 0;
+	font-size:13px;
+	transition:all linear 0.3s;
+	
+	&:hover {
+		background-color:@magenta;
+	}
+}
+
+body#filsa-2016 #content .the-content span.triggerfilter {
+	display:none;
+	text-align:center;
+	padding:6px;
+	text-transform:uppercase;
+	border-radius:6px;
+	background-color:@verde;
+	color:darken(@verde, 25%);
+	cursor:pointer;
+	transition:all linear 0.3s;
+	margin:12px;
+	font-size:13px;
+	
+	&.onresults {
+		margin-left:0;
+	}
+	
+	&:hover {
+		background-color:@magenta;
+		color:white;
+	}
+
+	@media screen and (max-width:@scrbr) {
+		display:block;
+	}
 }

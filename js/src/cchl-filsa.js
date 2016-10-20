@@ -321,4 +321,10 @@ $('nav.mobile-menu-filsa a').on('click', function() {
     $('nav.mobile-menu-filsa').removeClass('active').addClass('inactive');
 });
 
+$('.triggerfilter').on('click', function() {
+
+    $('.cchl_bl_right').toggleClass('active');
+    
+});
+
 });
