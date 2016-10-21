@@ -37,6 +37,7 @@
 				<a href="https://www.facebook.com/filsachile" target="_blank"><i class="fa fa-facebook-square"></i></a>
 			    <a class="middle" href="http://twitter.com/FILSA2016" target="_blank"><i class="fa fa-twitter"></i></a>
 			    <a href="http://instagram.com/filsachile" target="_blank"><i class="fa fa-instagram"></i></a>
+			    <a class="last" target="_blank" title="Flickr" href="https://www.flickr.com/photos/148374223@N02"><i class="fa fa-flickr"></i></a>
 			</div>
 		</nav>
 	</div>
