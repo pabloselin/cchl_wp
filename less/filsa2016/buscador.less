@@ -4,6 +4,8 @@ input#cchl_buscalibros {
 	padding:6px;
 	font-size:16px;
 	margin-bottom:12px;
+	float:left;
+	margin-right:12px;
 }
 
 body#filsa-2016 #cchl_bl_hits_container  div.ais-hits--item {
@@ -237,5 +239,22 @@ body#filsa-2016 #content .the-content span.triggerfilter {
 
 	@media screen and (max-width:@scrbr) {
 		display:block;
+	}
+}
+
+button#buscador-libros-boton {
+	background-color:@verde;
+	color:darken(@verde, 35%);
+	padding:6px;
+	font-size:14px;
+	border:1px solid darken(@verde, 5%);
+	border-radius:6px;
+	text-transform:uppercase;
+	transition:all linear 0.1s;
+	cursor:pointer;
+	&:hover {
+		background-color:@magenta;
+		color:white;
+		border:1px solid darken(@magenta, 5%);
 	}
 }
