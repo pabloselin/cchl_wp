@@ -68,7 +68,7 @@ Template Name: FILSA 2016
                             //Collect data structure for events
                             $evtitle     = $evento->title;
                             $start_time  = tribe_get_start_date($evento->object_id, true, 'G:i');
-                            $end_time    = ($start_time = tribe_get_end_date($evento->object_id, true, 'G:i')) ? '' : tribe_get_end_date($evento->object_id, true, 'G:i') ;
+                            $end_time    = ($start_time == tribe_get_end_date($evento->object_id, true, 'G:i')) ? '' : tribe_get_end_date($evento->object_id, true, 'G:i') ;
                             $start_date  = tribe_get_start_date($evento->object_id, false, 'l d M');
                             $end_date  = tribe_get_end_date($evento->object_id, false, 'l d M');
                             $lugar       = tribe_get_venue($evento->object_id);
