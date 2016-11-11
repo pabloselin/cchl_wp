@@ -2,7 +2,7 @@
   <div class="container_16 cf"> 
     
     <h1 class="logocchl_mini">
-        <a href="<?php echo get_bloginfo('url');?>"><img src="<?php echo get_bloginfo('template_url');?>/img/filsa2014/cchl_filsaheader.png" alt="<?php bloginfo('title');?>" /> CÁMARA CHILENA DEL LIBRO</a>
+        <a href="<?php echo get_bloginfo('url');?>"><img src="<?php echo get_bloginfo('template_url');?>/img/cchl_logo_libro.svg" width="250" height="19" alt="<?php bloginfo('title');?>" /></a>
     </h1>
 
     <?php get_template_part( 'parts/buscador' );?>
