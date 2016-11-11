@@ -104,7 +104,15 @@ elseif( $special ):
 
 else:
 
-	get_template_part('parts/header', 'standard');
+  if(is_home()):
+	   
+     get_template_part('parts/header', 'standard-new');
+
+  else:
+
+    get_template_part('parts/header', 'standard-new-interior');
+
+  endif;
 
 endif;
 
