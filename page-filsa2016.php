@@ -164,10 +164,10 @@ Template Name: FILSA 2016
             </div>
             <div class="twitter">
 
-                <h3 class="titulo-twitter"><a href="https://twitter.com/FILSA2016" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></h3>
+                <h3 class="titulo-twitter"><a href="https://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></h3>
 
-                <a class="twitter-timeline" data-height="500" data-lang="es" href="https://twitter.com/FILSA2016">Tweets by FILSA2016</a>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a class="twitter-timeline" data-height="500" data-lang="es" href="https://twitter.com/<?php echo CCHL_TWITTER;?>">Tweets by <?php echo CCHL_TWITTER;?></a>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div class="instagram">
 
