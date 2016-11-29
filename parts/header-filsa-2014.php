@@ -7,8 +7,8 @@
 		<div class="wrapredes-inner">
 			<div class="redes-sociales">
 			                    <a href="https://www.facebook.com/filsachile" target="_blank"><i class="fa fa-facebook-square"></i></a>
-			                    <a class="middle" href="http://twitter.com/CamaradelLibro" target="_blank"><i class="fa fa-twitter"></i></a>
-			                    <a href="http://instagram.com/filsachile" target="_blank"><i class="fa fa-instagram"></i></a>
+			                    <a class="middle" href="https://twitter.com/CamaradelLibro" target="_blank"><i class="fa fa-twitter"></i></a>
+			                    <a href="https://instagram.com/filsachile" target="_blank"><i class="fa fa-instagram"></i></a>
 			     </div>
 		</div>
 	</div>

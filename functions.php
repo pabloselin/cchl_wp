@@ -18,7 +18,7 @@ define( 'CCHL_FILSA2012', 24568 );
 
 define( 'CCHL_FILVINA2016', 59355 );
 
-define('CCHL_LINKGRATIS', 'http://camaradellibro.cl/ferias/filsa/filsa-2015/entradas-liberadas-a-filsa-2015/');
+define('CCHL_LINKGRATIS', 'https://camaradellibro.cl/ferias/filsa/filsa-2015/entradas-liberadas-a-filsa-2015/');
 
 //IDS de Ferias
 define('CCHL_FERIASCOMUNALES', 146);

@@ -4,7 +4,7 @@ function cchl_styles() {
 
 	wp_register_style( 'mailchimp', '//cdn-images.mailchimp.com/embedcode/classic-081711.css' , array(), '0.1', 'screen');
 	//gfonts
-	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Signika:400,300,600,700' , array(), '0.1', 'screen' );
+	wp_register_style( 'fonts', 'https://fonts.googleapis.com/css?family=Signika:400,300,600,700' , array(), '0.1', 'screen' );
 	//icons
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' , array(), '0.1', 'screen' );
 

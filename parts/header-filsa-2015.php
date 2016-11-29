@@ -8,7 +8,7 @@
 			<div class="redes-sociales">
 			                    <a href="https://www.facebook.com/filsachile" target="_blank"><i class="fa fa-facebook-square"></i></a>
 			                    <a class="middle" href="https://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank"><i class="fa fa-twitter"></i></a>
-			                    <a href="http://instagram.com/filsachile" target="_blank"><i class="fa fa-instagram"></i></a>
+			                    <a href="https://instagram.com/filsachile" target="_blank"><i class="fa fa-instagram"></i></a>
 			     </div>
 		</div>
 	</div>
@@ -24,8 +24,8 @@
 			<div class="mobile__redes">
 				<span>Síguenos en:</span>
 				<a href="https://www.facebook.com/filsachile" target="_blank"><i class="fa fa-facebook-square"></i></a>
-			    <a class="middle" href="http://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank"><i class="fa fa-twitter"></i></a>
-			    <a href="http://instagram.com/filsachile" target="_blank"><i class="fa fa-instagram"></i></a>
+			    <a class="middle" href="https://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank"><i class="fa fa-twitter"></i></a>
+			    <a href="https://instagram.com/filsachile" target="_blank"><i class="fa fa-instagram"></i></a>
 			</div>
 		</nav>
 	</div>

@@ -25,9 +25,9 @@
     	
     	
     	<ul class="cf redes-sociales-top">
-    	    <li><a href="http://www.facebook.com/camarachilenalibro" target="_blank"><i class="fa fa-facebook"></i></a></li>
-    	    <li><a href="http://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
-    	    <li><a href="http://www.youtube.com/user/FILSACHILE" target="_blank"><i class="fa fa-youtube"></i></a></li>
+    	    <li><a href="https://www.facebook.com/camarachilenalibro" target="_blank"><i class="fa fa-facebook"></i></a></li>
+    	    <li><a href="https://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    	    <li><a href="https://www.youtube.com/user/FILSACHILE" target="_blank"><i class="fa fa-youtube"></i></a></li>
     	</ul>
     </div>
 

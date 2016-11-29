@@ -146,7 +146,7 @@ $filename = 'imagen_banner_feria';
                     foreach($miembros as $miembro){
                         $otros = get("galeria_video_video_informacion",$miembro); ?>
                         <a class="fancybox-media" href="<?php echo get("galeria_video_video_informacion",$miembro); ?>">
-                        <img src="http://img.youtube.com/vi/<?php echo getYoutubeID($otros); ?>/0.jpg" width="150" height="115" />
+                        <img src="https://img.youtube.com/vi/<?php echo getYoutubeID($otros); ?>/0.jpg" width="150" height="115" />
                         </a>
                     <?php } ?>
                     </div>

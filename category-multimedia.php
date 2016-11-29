@@ -26,7 +26,7 @@
                     foreach($videos as $video){
                         $otros = get("galeria_video_video",$video); ?>
                         
-                        <img src="http://img.youtube.com/vi/<?php echo getYoutubeID($otros); ?>/0.jpg" width="95" height="80" />
+                        <img src="https://img.youtube.com/vi/<?php echo getYoutubeID($otros); ?>/0.jpg" width="95" height="80" />
 
                     <?php }?> 
         <?php endif;?>

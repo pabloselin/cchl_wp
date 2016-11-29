@@ -7,9 +7,9 @@
         <li class="mapadelsitio"><a href="<?php bloginfo('url'); ?>/mapa-de-sitio">MAPA del SITIO</a></li>
     </ul>
     <ul class="cf redes-sociales-top">
-        <li class="feisbuk"><a href="http://www.facebook.com/camarachilenalibro" target="_blank" class="facebook">Facebook</a></li>
-        <li class="tuiter"><a href="http://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank" class="twitter">Twitter</a></li>
-        <li class="yutub"><a href="http://www.youtube.com/user/FILSACHILE" target="_blank" class="youtube">Youtube</a></li>
+        <li class="feisbuk"><a href="https://www.facebook.com/camarachilenalibro" target="_blank" class="facebook">Facebook</a></li>
+        <li class="tuiter"><a href="https://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank" class="twitter">Twitter</a></li>
+        <li class="yutub"><a href="https://www.youtube.com/user/FILSACHILE" target="_blank" class="youtube">Youtube</a></li>
     </ul>
 </div>
 </div>

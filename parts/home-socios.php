@@ -161,7 +161,7 @@ Page Template: Home Socios
                  
                  <div id="caja_facebook">
                  <h1>Facebook</h1>
-                 <div class="fb-like-box" data-href="http://www.facebook.com/camarachilenalibro" data-width="280" data-show-faces="true" data-border-color="#F2F2F2" data-stream="false" data-header="false"></div>
+                 <div class="fb-like-box" data-href="https://www.facebook.com/camarachilenalibro" data-width="280" data-show-faces="true" data-border-color="#F2F2F2" data-stream="false" data-header="false"></div>
                 <div style="clear:both;"> </div>
                  <div class="fb-like-box filsa" data-href="https://www.facebook.com/filsachile" data-width="280" data-show-faces="true" data-border-color="#F2F2F2" data-stream="false" data-header="false"></div>
                  

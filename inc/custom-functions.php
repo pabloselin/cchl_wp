@@ -271,9 +271,9 @@ function adjustBrightness($hex, $steps) {
 function cchl_button($atts) {
   /**
    * Devuelve un botón con iconito link y texto
-   * PARAMETROS: [boton url="http://ejemplo.com" text="Clic Aquí" color="blue" icon="fa-angle-double-right" target="_blank"]
+   * PARAMETROS: [boton url="https://ejemplo.com" text="Clic Aquí" color="blue" icon="fa-angle-double-right" target="_blank"]
    * Los Iconos toman la clase de FontAwesome correspondiente
-   * http://fontawesome.io/icons/
+   * https://fontawesome.io/icons/
    */
   $button = shortcode_atts( 
     array(
@@ -312,7 +312,7 @@ function getYoutubeID($url) {
     if ($tube["path"] == "/watch") {
         parse_str($tube["query"], $query);
         $id = $query["v"];
-    } elseif($tube['host'] == 'http://youtu.be') {
+    } elseif($tube['host'] == 'https://youtu.be') {
       $id = $tube['path'];
      }
     else {
@@ -401,11 +401,11 @@ function cchl_isresponsive( ) {
 
 //URL para usar en los contadores de redes sociales
 function cchl_url($id) {
-    if(get_bloginfo('url') == 'http://camaradellibro.cl') {
+    if(get_bloginfo('url') == 'https://camaradellibro.cl') {
         $devlink =  get_permalink($id);
     } else {
         $devlink = get_permalink( $id );
-        $devlink = str_replace(get_bloginfo('url'), 'http://camaradellibro.cl' , $devlink);
+        $devlink = str_replace(get_bloginfo('url'), 'https://camaradellibro.cl' , $devlink);
     }
     return $devlink;
 }

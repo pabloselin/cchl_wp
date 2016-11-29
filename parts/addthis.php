@@ -5,7 +5,7 @@
                   </div>
 
                   <div class="sharer__twitter">
-                        <a href="http://twitter.com/share" class="twitter-share-button" data-text="<?php the_title();?>" data-url="<?php echo get_permalink();?>" data-via="uchileradio" data-lang="es" data-show-screen-name="false" data-show-count="true" rel="nofollow" target="_blank"></a>
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-text="<?php the_title();?>" data-url="<?php echo get_permalink();?>" data-via="uchileradio" data-lang="es" data-show-screen-name="false" data-show-count="true" rel="nofollow" target="_blank"></a>
                   </div>
 
                   <div class="sharer__google">

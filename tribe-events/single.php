@@ -14,7 +14,7 @@ if ( !defined('ABSPATH') ) { die('-1'); }
 	$gmt_offset = (get_option('gmt_offset') >= '0' ) ? ' +' . get_option('gmt_offset') : " " . get_option('gmt_offset');
  	$gmt_offset = str_replace( array( '.25', '.5', '.75' ), array( ':15', ':30', ':45' ), $gmt_offset );
  	if (strtotime( tribe_get_end_date(get_the_ID(), false, 'Y-m-d G:i') . $gmt_offset ) <= time() ) { ?><div class="event-passed"><?php  _e('This event has passed.', 'tribe-events-calendar'); ?></div><?php } ?>
-<div id="tribe-events-event-meta" itemscope itemtype="http://schema.org/Event">
+<div id="tribe-events-event-meta" itemscope itemtype="https://schema.org/Event">
 	<dl class="column">
 		<dt class="event-label event-label-name"><?php _e('Event:', 'tribe-events-calendar'); ?></dt>
 		<dd itemprop="name" class="event-meta event-meta-name"><span class="summary"><?php the_title(); ?></span></dd>
@@ -56,7 +56,7 @@ if ( !defined('ABSPATH') ) { die('-1'); }
          </dd>
 		<?php endif; ?>
 	</dl>
-	<dl class="column" itemprop="location" itemscope itemtype="http://schema.org/Place">
+	<dl class="column" itemprop="location" itemscope itemtype="https://schema.org/Place">
 		<?php if(tribe_get_venue()) : ?>
 		<dt class="event-label event-label-venue"><?php _e('Venue:', 'tribe-events-calendar'); ?></dt> 
 		<dd itemprop="name" class="event-meta event-meta-venue">

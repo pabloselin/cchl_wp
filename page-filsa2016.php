@@ -171,7 +171,7 @@ Template Name: FILSA 2016
             </div>
             <div class="instagram">
 
-                <h3 class="titulo-instagram"><a href="http://instagram.com/filsachile"><i class="fa fa-instagram"></i> Instagram</a></h3>
+                <h3 class="titulo-instagram"><a href="https://instagram.com/filsachile"><i class="fa fa-instagram"></i> Instagram</a></h3>
 
                 <?php echo get('insercion_instagram');?>
             </div>
@@ -181,7 +181,7 @@ Template Name: FILSA 2016
             
             <a href="https://www.facebook.com/filsachile" target="_blank" class="movilred mr-facebook"><i class="fa fa-facebook"></i> Facebook</a>
             <a href="https://twitter.com/FILSA2016" class="movilred mr-twitter"><i class="fa fa-twitter"></i> Twitter</a>
-            <a href="http://instagram.com/filsachile" class="movilred mr-instagram"><i class="fa fa-instagram"></i> Instagram</a>
+            <a href="https://instagram.com/filsachile" class="movilred mr-instagram"><i class="fa fa-instagram"></i> Instagram</a>
             <a href="https://www.flickr.com/photos/148374223@N02" target="_blank" class="movilred mr-flickr"><i class="fa fa-flickr"></i> Flickr</a>
 
         </div>

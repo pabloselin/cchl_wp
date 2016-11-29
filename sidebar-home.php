@@ -34,7 +34,7 @@
                  
                  <div id="caja_facebook">
                  <h1>Facebook</h1>
-                 <div class="fb-page" data-href="http://www.facebook.com/camarachilenalibro" data-width="280" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="http://www.facebook.com/camarachilenalibro"><a href="http://www.facebook.com/camarachilenalibro">Cámara Chilena del Libro</a></blockquote></div></div>
+                 <div class="fb-page" data-href="https://www.facebook.com/camarachilenalibro" data-width="280" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/camarachilenalibro"><a href="https://www.facebook.com/camarachilenalibro">Cámara Chilena del Libro</a></blockquote></div></div>
 
                 <div style="clear:both;"> </div> <br>
                  
