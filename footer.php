@@ -9,6 +9,7 @@
    		    <p><?php bloginfo('name');?> <br /> <?php echo $options['cchl_linea'];?> <br/> <?php echo $options['cchl_direccion'];?><br/>
             Tel: <a style="display:inline;" href="tel:<?php echo $options['cchl_fono'];?>"><?php echo $options['cchl_fono'];?></a> <br /><a href="mailto:<?php echo $options['cchl_email'];?>">E-mail: <?php echo $options['cchl_email'];?></a>
             </p>
+            <p style="font-size:8px;">eur.</p>
         </div>
        	    <ul class="ferias">
         	<li><strong>Ferias</strong></li>
