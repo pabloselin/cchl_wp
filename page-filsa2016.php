@@ -160,13 +160,13 @@ Template Name: FILSA 2016
                 
                 <h3 class="titulo-facebook"><a href="https://www.facebook.com/filsachile" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></h3>
 
-                <div class="fb-page" data-href="https://www.facebook.com/camarachilenalibro" data-tabs="timeline" data-width="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/camarachilenalibro" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/camarachilenalibro">Cámara Chilena del Libro</a></blockquote></div>
+                <div class="fb-page" data-href="<?php echo CCHL_FACEBOOKFILSA;?>" data-tabs="timeline" data-width="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="<?php echo CCHL_FACEBOOKFILSA;?>" class="fb-xfbml-parse-ignore"><a href="<?php echo CCHL_FACEBOOKFILSA;?>">Cámara Chilena del Libro</a></blockquote></div>
             </div>
             <div class="twitter">
 
                 <h3 class="titulo-twitter"><a href="https://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></h3>
 
-                <a class="twitter-timeline" data-height="500" data-lang="es" href="https://twitter.com/<?php echo CCHL_TWITTER;?>">Tweets by <?php echo CCHL_TWITTER;?></a>
+                <a class="twitter-timeline" data-height="500" data-lang="es" href="https://twitter.com/<?php echo CCHL_TWITTER;?>"> Tweets by <?php echo CCHL_TWITTER;?></a>
                 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
             <div class="instagram">
@@ -179,16 +179,18 @@ Template Name: FILSA 2016
 
         <div class="redes-filsa-movil">
             
-            <a href="https://www.facebook.com/camarachilenalibro" target="_blank" class="movilred mr-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+            <a href="<?php echo CCHL_FACEBOOKFILSA;?>" target="_blank" class="movilred mr-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+
             <a href="https://twitter.com/<?php echo CCHL_TWITTER;?>" class="movilred mr-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+
             <a href="https://instagram.com/filsachile" class="movilred mr-instagram"><i class="fa fa-instagram"></i> Instagram</a>
+
             <a href="https://www.flickr.com/photos/148374223@N02" target="_blank" class="movilred mr-flickr"><i class="fa fa-flickr"></i> Flickr</a>
 
-        </div>
-
-        
+        </div>    
 
     </div>
+
 </div>
 </div>
 

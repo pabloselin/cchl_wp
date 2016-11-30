@@ -36,6 +36,7 @@ define('CCHL_PAGEFILIJ2016', 60494);
 define('CCHL_FERIAPLAZADEARMAS', 60131);
 
 define('CCHL_TWITTER', 'CamaradelLibro');
+define('CCHL_FACEBOOKFILSA', 'https://www.facebook.com/filsachile');
 
 register_nav_menus( array(
 	'historico-filsa'			 	 => 'Históricos Filsa',
