@@ -1,0 +1,713 @@
+//Estilos para FIL VIÑA 2017
+
+@containerwidth: 1200px;
+
+// @import 'filsa2016/home-filsa2016.less';
+// @import 'eventos-filsa2016.less';
+// @import 'animatecss.less';
+// @import 'filsa2016/buscador.less';
+
+//Paleta colores FILSA
+
+@verde: #b9cf3e;
+@amarillo: #ddb306;
+@cafe: #8d7765;
+@magenta: saturate(#e3636f, 20%);
+@verdeoscuro: lighten(#025753, 10%);
+@beige: #f1e4cb;
+@naranjo: #f3934a;
+@aguamarina: lighten(#009fad, 10%);
+@morado: saturate(#966491, 15%);
+
+@filsagradient: linear-gradient(45deg, #4b559a 0%,#41a2c8 43%,#67b23c 100%);
+
+@filsagradient_menu: linear-gradient(45deg, #4b559a 0%,#41a2c8 23%,#67b23c 100%);
+
+//Debug styles
+
+body#filvina-2017 .feriaslink {
+	position: relative;
+}
+
+body#filvina-2017 .wrapchf {
+	width:@containerwidth;
+}
+
+.camara-header-filsa div.feriaslink a:hover {
+	text-decoration:none;
+}
+
+.camara-header-filsa div.feriaslink .dropdown-masferias {
+	position: absolute;
+	display:none;
+	opacity:0;
+	background-color:#F8F8F8;
+	z-index:10;
+	width:200px;
+	transition:all linear 0.4s;
+	padding-top:1px;
+	li a {
+		color:#333;
+		border-bottom:1px solid #ccc;
+		display:block;
+		padding:12px;
+		line-height:1.2em;
+		text-transform:none;
+		
+		&:hover {
+			background-color:darken(#ccc, 5%);
+			text-decoration:none;
+			color:white;
+			
+		}
+	}
+}
+
+.camara-header-filsa div.feriaslink:hover .dropdown-masferias {
+	display:block;
+	top:30px;
+	opacity:1;
+}
+
+.admin-bar .camara-header-filsa div.feriaslink:hover .dropdown-masferias {
+	display:block;
+	top:30px;
+	opacity:1;
+}
+
+
+
+//Width reset
+body#filvina-2017 .filsa-header,
+body#filvina-2017 .container_16,
+body#filvina-2017 .wrapredes-inner
+ {
+	width:@containerwidth;
+}
+
+body#filvina-2017 .container_16 .grid_12 {
+	width:929px;
+}
+
+body#filvina-2017 .filsa-header {
+	margin-bottom:24px;
+}
+
+body#filvina-2017 {
+	background-image:none;
+	font-family: sans-serif;
+	#sidebar_interior ul li ul.sub-menu {
+		display:block;
+	}
+}
+
+body#filvina-2017 .camara-header-filsa,
+body#filvina-2017 #footer
+ {
+	font-family:'Signika', sans-serif;
+}
+
+body#filvina-2017 #sidebar_interior {
+	margin-top:0;
+	ul li {
+		border-bottom:0;
+	}
+}
+
+body#filvina-2017 #content .the-content,
+body#filvina-2017 #content .the-content p {
+	font-family:'Arial', 'Helvetica Neue', sans-serif;
+	font-size:16px;
+}
+
+body#filvina-2017 #content {
+	@media screen and (max-width:@scrbr) {
+		padding-top:86px;	
+	}
+}
+
+body.admin-bar#filvina-2017 #content {
+	@media screen and (max-width:@scrbr) {
+		padding-top:86px - 46px;	
+	}	
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial > div.menu-filsa-2016-container {
+	border-width:1px 1px 0 1px;
+	border-style: solid;
+	border-color: #ccc;
+	font-family: 'Signika', sans-serif;
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div > ul.menu > li:first-of-type > a {
+	
+	background-image: none;
+	color: black;
+	font-size: 24px;
+	padding-bottom: 13px;
+	font-weight: 600;
+	padding-left: 16px;
+	background-color:#f0f0f0;
+	border-bottom:1px solid #ccc;
+	transition: all ease-in 0.1s;
+	
+	&:hover {
+		//background-color:#3C3C3C;
+		background:@filsagradient;
+		color:white;
+		&:before {
+			color:white;
+		}
+	}
+
+	&:before {
+		content:'\f015';
+		color: #000;
+		font-family:'FontAwesome';
+		font-size:24px;
+		display:inline-block;					
+		margin-left:-4px;
+		margin-right:4px;
+		vertical-align:-1px;
+		font-weight:normal;
+	}
+	
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.sub-menu,
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.sub-menu li
+{
+	padding:0;
+	margin:0;
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li a {
+	
+	padding:12px 6px 12px 12px;
+	text-transform:uppercase;
+	font-size:14px;
+	font-weight:500;
+	transition:none;
+	border-bottom:none;
+	color:#000;
+	background-color:#f0f0f0;
+	height:auto;
+	
+	&:hover {
+		background: @filsagradient;
+		//background-color:#3C3C3C;
+		color:white;
+		//background-image:none;
+		//padding-left:16px;
+	}
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.current_page_ancestor > a,
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.current-menu-item > a
+ {
+	//background-color:lighten(#3C3C3C, 22%);
+	background: @filsagradient;
+	color:white;
+	//background-image:none;
+	&:before {
+		color:white;
+	}
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu ul.sub-menu li.current-menu-item > a {
+	background-color:lighten(#3C3C3C, 33%);
+	background-image:none;
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu li a {
+	font-weight:300;
+	background-color:#f0f0f0;
+	color:#333;
+	font-size: 15px;
+	border-bottom:none;
+	padding:12px 6px 12px 18px;
+	transition:all ease-in 0.1s;
+	text-transform:none;
+	
+	&:hover {
+		background-color:darken(#ccc, 5%);
+		padding-left:22px;
+		background-image:none;
+	}
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu {
+	border-bottom:1px solid #ccc;
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu > li > a {
+	border-bottom:1px solid #ccc;
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.menu-item-has-children > a {
+	border-bottom:none;
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.menu-item-has-children > a:after {
+	content: '\f107';
+	font-family: 'FontAwesome';
+	font-size: 16px;
+	display: inline-block;
+	margin-left: 4px;
+	vertical-align: middle;
+}
+
+body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu li.current-menu-item a {
+	background-color:darken(#ccc, 25%);
+	color:white;
+}
+
+body#filvina-2017 .wrapredes {
+	top:0;
+}
+
+body#filvina-2017 .wrapredes div.redes-sociales {
+	background-color:rgba(0, 0, 0, 0.2);
+	width:115px;
+	float:right;
+	margin-right:100px;
+}
+
+body#filvina-2017 .wrapredes a {
+	font-size:22px;
+	margin-right:8px;
+}
+
+body#filvina-2017 .wrapredes a.last {
+	margin-right:0;
+}
+
+body#filvina-2017 .wrapredes a:hover {
+	color:@magenta;
+}
+
+body#feria.page-id-60799 .filsa-header-mobile img {
+	bottom:0;
+	top:none;
+}
+
+body#feria.page-id-60799 .filsa-header-mobile {
+	background-color:#3C3C3C;
+	height: 122px;
+	overflow:hidden;
+}
+
+.accesos-rapidos.filsa-2016 {
+
+	margin-top:0;
+	
+	ul li {
+		background-color: @verde;
+		border:1px solid darken(@verde,2%);
+		padding:0;
+		width: 177px;
+		border-radius:0;	
+		transition:all ease-in 0.1s;
+		margin:0 3px 6px;
+		height:50px;
+		display:inline-block;
+		float:left;
+		position: relative;
+		display:table;
+		float:left;
+		
+	&:before {
+		color: darken(@verde, 25%);
+		font-size:22px;
+		position:absolute;
+		left:8px;
+		line-height:50px;
+		vertical-align:middle;
+		}
+		
+		a {
+			display:block;
+			padding:10px 8px 10px 28px;
+			font-weight:400;
+			font-size:14px;
+			vertical-align:middle;
+			color: darken(@verde, 45%);
+			margin-left:6px;
+			text-transform:uppercase;
+			font-family: sans-serif;
+			width:124px;
+			height:30px;
+			display:table-cell;
+			font-family:'Signika', sans-serif;
+			transition:none;
+			
+		}
+		
+		&:hover {
+			background: @filsagradient;
+			border:1px solid white;
+			a, &:before {
+				color:white;
+			}
+		}
+
+		@media screen and (max-width: @screen-sm ) {
+			
+			width:43%;
+			margin:1%;
+			padding:2%;
+
+		}
+	}
+
+
+}
+
+//Cabecera móvil
+
+body#filvina-2017 .mobile-menu-filsa div > ul > li:first-of-type > a {
+	font-size:24px;
+	font-weight:600;
+	&:before {
+		content:'\f015';
+		color: #000;
+		font-family:'FontAwesome';
+		font-size:24px;
+		display:inline-block;					
+		margin-left:-4px;
+		margin-right:4px;
+		vertical-align:-1px;
+		font-weight:normal;
+	}
+}
+
+body#filvina-2017 .filsa-header-mobile {
+	//background-color: #3C3C3C;
+	background:@filsagradient_menu;
+	height:72px;
+}
+
+body#filvina-2017 .filsa-header-mobile img {
+	right:24px;
+	top:16px;
+}
+
+body#filvina-2017 a.triggernav {
+	color:white;
+	left:12px;
+	height:36px;
+	border:1px solid fade(white, 35%);
+	top:14px;
+	border-radius:0;
+}
+
+body#filvina-2017 .mobile-menu-filsa {
+	margin-top:72px;
+	border-top:1px solid @verde;
+}
+
+body#filvina-2017 .mobile-menu-filsa ul li a {
+	background-color:#f0f0f0;
+	border-bottom:1px solid #ccc;
+}
+
+body#filvina-2017 .mobile-menu-filsa div > ul > li > a {
+	text-transform:uppercase;
+	font-weight:600;
+	font-family:'Signika', sans-serif;
+}
+
+body#filvina-2017 .mobile-menu-filsa ul li.menu-item-has-children a {
+	border-bottom:none;
+}
+
+body#filvina-2017 .mobile-menu-filsa ul li.menu-item-has-children > a:after {
+	content: '\f107';
+	font-family: 'FontAwesome';
+	font-size: 16px;
+	display: inline-block;
+	margin-left: 8px;
+	vertical-align: middle;
+}
+
+body#filvina-2017 .mobile-menu-filsa ul li ul.sub-menu {
+	border-bottom:1px solid #ccc;
+}
+
+body#filvina-2017 .mobile-menu-filsa ul li ul.sub-menu li a {
+	padding-left:18px;
+	border-bottom:none;
+}
+
+body#filvina-2017 .mobile-menu-filsa .mobile__redes {
+	background-color: #ccc;
+}
+
+body#filvina-2017 .mobile-menu-filsa .mobile__redes a i {
+	color:@magenta;
+}
+
+//Categoría noticias
+
+body#filvina-2017 {
+	background-image:none;
+	#bread {
+		margin-bottom:0;
+	}
+
+	.paginador {
+		margin:0 auto;
+		max-width:100%;
+	}
+
+	.pastillaNoticias {
+		overflow:hidden;
+		margin-bottom:12px;
+		width:100%;
+		height:auto;
+		
+		.foto-noticias-mini {
+			margin-top:0;
+			margin-right:12px;	
+			
+			img {
+				max-width:320px;
+				height:auto;
+			}
+			
+			@media screen and (max-width:@scrbr) {
+				display:none;
+			}
+		}
+
+		.info {
+			width:570px;
+			h3 {
+				font-size:24px;
+				line-height:1.3em;
+				color:@verdeoscuro;
+				font-family:'Signika', sans-serif;
+				font-weight:400;
+				a {
+
+					color:@verdeoscuro;
+					
+					&:hover {
+						text-decoration:underline;
+					}
+				}
+			}
+
+			@media screen and (max-width:@scrbr) {
+				width:100%;
+				
+				h3 {
+					font-size:18px;
+				}
+			}	
+		}
+		
+		p.fecha {
+			font-size:14px;
+		}	
+
+	}
+}
+
+//Contenido interno
+
+body#filvina-2017 {
+	#content {
+		h1 {
+			color:@verdeoscuro;
+			text-transform:uppercase;
+			font-family:'Signika', sans-serif;
+			font-size:32px;
+		}
+	}
+	.the-content {
+			clear:both;
+			p {
+				font-size:16px;
+			}
+
+			h1 {
+				font-size:24px;
+				margin-bottom:12px;
+				font-family:'Signika', sans-serif;
+				font-weight:400;
+			}
+
+			h2 {
+				font-size:30px;
+				margin-bottom:16px;
+				font-family:'Signika', sans-serif;
+				color:@verdeoscuro;
+				font-weight:400;
+			}
+
+			h3 {
+				font-size:18px;
+				margin-bottom:12px;
+				font-family:'Signika', sans-serif;
+			}
+
+			.wp-caption-text {
+				font-family:sans-serif;
+				font-size:13px;
+				margin-top:6px;
+				color:#555;
+			}
+
+			.wp-caption a {
+				border-bottom:none;
+				&:hover {
+					border-bottom:none;
+				}
+			}
+
+			a {
+				color:#147FDF;
+				border-bottom:1px dotted #147FDF;
+				&:hover {
+					text-decoration:none;
+					border-bottom:1px solid #147FDF;
+				}
+			}
+
+			.sharer a {
+				color:white;
+			}
+
+
+
+			strong {
+				color:#175892;
+			}
+
+			table {
+				tr {
+					td {
+						border-bottom:1px solid #ccc;
+						padding:3px 0 6px 0;
+							}
+				}
+			}
+		}
+}
+
+//Invitados FILSA
+
+body#filvina-2017 .invitados-filsa p {
+	line-height:1.4em;
+}
+
+body#filvina-2017 .invitados-filsa ul.cf li .info {
+	width:600px;
+}
+
+body#filvina-2017 #content .invitados-filsa ul.cf li {
+	h3 {
+		font-family:'Signika', sans-serif;
+		font-weight:400;
+		font-size:24px;
+		color:darken(@aguamarina, 10%);
+	}
+}
+
+
+//Invitados FILSA MOVIL
+
+@media screen and (max-width:@scrbr) {
+	
+	body#filvina-2017 #content {
+
+	div.invitados-filsa ul.cf li {
+		text-align:center;
+	}
+		
+	div.invitados-filsa ul.cf li .info {
+		width:auto;
+		padding:12px;
+		float:none;
+		margin-left:0;
+	}
+
+	div.invitados-filsa ul.cf li img {
+		float:none;
+		padding:12px;
+	}
+
+}
+	
+}
+
+//Colaboradores FILSA 2016
+
+body#filvina-2017 {
+	
+	h3.colabheading {
+		font-size:24px;
+		font-family: 'Signika', sans-serif;
+		color: #0175C0;
+	}
+
+	ul.colab {
+		clear:both;
+		overflow:hidden;
+		margin:24px 0;
+		display:flex;
+		flex-flow: row wrap;
+		justify-content:center;
+		align-items:center;
+		
+		li {
+			width:258px;
+			margin:12px auto;
+			
+			h3 {
+				font-size:16px;
+				margin-bottom:12px;
+				text-transform:uppercase;
+				font-family: 'Signika', sans-serif;
+			}
+		}
+	}
+
+	.colab img {
+		float:left;
+		max-width:100px;
+		margin-right:12px;
+	}
+}
+
+
+//Sala de Prensa
+
+body#filvina-2017 #content .linksInteres {
+	width:400px;
+	padding-bottom:12px;
+	@media screen and (max-width:@scrbr) {
+		width:100%;
+		margin:0 0 24px 0;
+	}
+}
+
+body#filvina-2017 #content .linksInteres h1 {
+	font-size:24px;
+	text-transform:none;
+	line-height:1.3em;
+	margin-bottom:12px;
+	@media screen and (max-width:@scrbr) {
+		font-size:18px;
+	}
+}
+
+//Mapa 
+
+.linkimgmapa {
+	display:block;
+	text-align:center;
+	padding:12px 0;
+}
+

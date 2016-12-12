@@ -94,6 +94,10 @@ elseif( checkferia($post->ID, CCHL_FILVINA2016) ):
 
   get_template_part('parts/header', 'filvina-2016');
 
+elseif( checkferia($post->ID, CCHL_FILVINA2017) ):
+
+  get_template_part('parts/header', 'filvina-2017');  
+
 elseif( is_page_template('page-feria-principal.php') || $using_feria_template || is_single() && in_category( $feriasmultimediacats, $post->ID ) ):
 
   get_template_part('parts/header', 'feria');
