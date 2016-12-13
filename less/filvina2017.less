@@ -13,7 +13,6 @@
 @amarillo: #ddb306;
 @cafe: #8d7765;
 @magenta: saturate(#e3636f, 20%);
-@verdeoscuro: lighten(#025753, 10%);
 @beige: #f1e4cb;
 @naranjo: #f3934a;
 @aguamarina: lighten(#009fad, 10%);
@@ -22,6 +21,8 @@
 @filsagradient: linear-gradient(45deg, #4b559a 0%,#41a2c8 43%,#67b23c 100%);
 
 @filsagradient_menu: linear-gradient(45deg, #4b559a 0%,#41a2c8 23%,#67b23c 100%);
+
+@filvina2017: #B66536;
 
 //Debug styles
 
@@ -91,6 +92,9 @@ body#filvina-2017 .container_16 .grid_12 {
 
 body#filvina-2017 .filsa-header {
 	margin-bottom:24px;
+	img {
+		max-width:100%;
+	}
 }
 
 body#filvina-2017 {
@@ -132,14 +136,14 @@ body.admin-bar#filvina-2017 #content {
 	}	
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial > div.menu-filsa-2016-container {
+body#filvina-2017 #sidebar_interior.filvina-2017 > div.menu-filsa-2016-container {
 	border-width:1px 1px 0 1px;
 	border-style: solid;
 	border-color: #ccc;
 	font-family: 'Signika', sans-serif;
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div > ul.menu > li:first-of-type > a {
+body#filvina-2017 #sidebar_interior.filvina-2017 div > ul.menu > li:first-of-type > a {
 	
 	background-image: none;
 	color: black;
@@ -153,7 +157,7 @@ body#filvina-2017 #sidebar_interior.menu-feria-especial div > ul.menu > li:first
 	
 	&:hover {
 		//background-color:#3C3C3C;
-		background:@filsagradient;
+		background:#3590BF;
 		color:white;
 		&:before {
 			color:white;
@@ -174,14 +178,14 @@ body#filvina-2017 #sidebar_interior.menu-feria-especial div > ul.menu > li:first
 	
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.sub-menu,
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.sub-menu li
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.sub-menu,
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.sub-menu li
 {
 	padding:0;
 	margin:0;
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li a {
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu li a {
 	
 	padding:12px 6px 12px 12px;
 	text-transform:uppercase;
@@ -194,7 +198,7 @@ body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li a {
 	height:auto;
 	
 	&:hover {
-		background: @filsagradient;
+		background: #3590BF;
 		//background-color:#3C3C3C;
 		color:white;
 		//background-image:none;
@@ -202,11 +206,11 @@ body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li a {
 	}
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.current_page_ancestor > a,
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.current-menu-item > a
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu li.current_page_ancestor > a,
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu li.current-menu-item > a
  {
 	//background-color:lighten(#3C3C3C, 22%);
-	background: @filsagradient;
+	background: #3590BF;
 	color:white;
 	//background-image:none;
 	&:before {
@@ -214,12 +218,12 @@ body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.current-m
 	}
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu ul.sub-menu li.current-menu-item > a {
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu ul.sub-menu li.current-menu-item > a {
 	background-color:lighten(#3C3C3C, 33%);
 	background-image:none;
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu li a {
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu li ul.sub-menu li a {
 	font-weight:300;
 	background-color:#f0f0f0;
 	color:#333;
@@ -236,19 +240,19 @@ body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-me
 	}
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu {
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu li ul.sub-menu {
 	border-bottom:1px solid #ccc;
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu > li > a {
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu > li > a {
 	border-bottom:1px solid #ccc;
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.menu-item-has-children > a {
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu li.menu-item-has-children > a {
 	border-bottom:none;
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.menu-item-has-children > a:after {
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu li.menu-item-has-children > a:after {
 	content: '\f107';
 	font-family: 'FontAwesome';
 	font-size: 16px;
@@ -257,7 +261,7 @@ body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li.menu-item
 	vertical-align: middle;
 }
 
-body#filvina-2017 #sidebar_interior.menu-feria-especial div ul.menu li ul.sub-menu li.current-menu-item a {
+body#filvina-2017 #sidebar_interior.filvina-2017 div ul.menu li ul.sub-menu li.current-menu-item a {
 	background-color:darken(#ccc, 25%);
 	color:white;
 }
@@ -268,9 +272,9 @@ body#filvina-2017 .wrapredes {
 
 body#filvina-2017 .wrapredes div.redes-sociales {
 	background-color:rgba(0, 0, 0, 0.2);
-	width:115px;
+	width:60px;
 	float:right;
-	margin-right:100px;
+	margin-right:40px;
 }
 
 body#filvina-2017 .wrapredes a {
@@ -286,82 +290,7 @@ body#filvina-2017 .wrapredes a:hover {
 	color:@magenta;
 }
 
-body#feria.page-id-60799 .filsa-header-mobile img {
-	bottom:0;
-	top:none;
-}
 
-body#feria.page-id-60799 .filsa-header-mobile {
-	background-color:#3C3C3C;
-	height: 122px;
-	overflow:hidden;
-}
-
-.accesos-rapidos.filsa-2016 {
-
-	margin-top:0;
-	
-	ul li {
-		background-color: @verde;
-		border:1px solid darken(@verde,2%);
-		padding:0;
-		width: 177px;
-		border-radius:0;	
-		transition:all ease-in 0.1s;
-		margin:0 3px 6px;
-		height:50px;
-		display:inline-block;
-		float:left;
-		position: relative;
-		display:table;
-		float:left;
-		
-	&:before {
-		color: darken(@verde, 25%);
-		font-size:22px;
-		position:absolute;
-		left:8px;
-		line-height:50px;
-		vertical-align:middle;
-		}
-		
-		a {
-			display:block;
-			padding:10px 8px 10px 28px;
-			font-weight:400;
-			font-size:14px;
-			vertical-align:middle;
-			color: darken(@verde, 45%);
-			margin-left:6px;
-			text-transform:uppercase;
-			font-family: sans-serif;
-			width:124px;
-			height:30px;
-			display:table-cell;
-			font-family:'Signika', sans-serif;
-			transition:none;
-			
-		}
-		
-		&:hover {
-			background: @filsagradient;
-			border:1px solid white;
-			a, &:before {
-				color:white;
-			}
-		}
-
-		@media screen and (max-width: @screen-sm ) {
-			
-			width:43%;
-			margin:1%;
-			padding:2%;
-
-		}
-	}
-
-
-}
 
 //Cabecera móvil
 
@@ -485,12 +414,12 @@ body#filvina-2017 {
 			h3 {
 				font-size:24px;
 				line-height:1.3em;
-				color:@verdeoscuro;
+				color:@filvina2017;
 				font-family:'Signika', sans-serif;
 				font-weight:400;
 				a {
 
-					color:@verdeoscuro;
+					color:@filvina2017;
 					
 					&:hover {
 						text-decoration:underline;
@@ -519,7 +448,7 @@ body#filvina-2017 {
 body#filvina-2017 {
 	#content {
 		h1 {
-			color:@verdeoscuro;
+			color:@filvina2017;
 			text-transform:uppercase;
 			font-family:'Signika', sans-serif;
 			font-size:32px;
@@ -542,7 +471,7 @@ body#filvina-2017 {
 				font-size:30px;
 				margin-bottom:16px;
 				font-family:'Signika', sans-serif;
-				color:@verdeoscuro;
+				color:@filvina2017;
 				font-weight:400;
 			}
 
