@@ -8,8 +8,8 @@
 <div class="wraptop">
 	<div id="header" class="header-special <?php if($socios == true): echo 'header-socios';endif;?>">
 		
-		<a class="specialbannerplus" href="<?php echo get_permalink(CCHL_FILSA2016);?>" title="Ver más de FILSA 2016">
-			<img src="<?php bloginfo('template_url');?>/img/filsa2016/cabeceras_global_filsa_2016_final_03.jpg" alt="Filsa 2016">	
+		<a class="specialbannerplus" href="<?php echo get_permalink(CCHL_FILVINA2017);?>" title="Ver más de FIL VIÑA 2017">
+			<img src="<?php bloginfo('template_url');?>/img/filvina-2017/banner-filvina2017-home.jpg" alt="<?php echo get_the_title(CCHL_FILVINA2017);?>">	
 		
 	
 		<span class="specialplus">
