@@ -27,7 +27,7 @@
 	</header>
 	<div class="filsa-header-mobile">
 	
-		<a href="<?php echo get_permalink(CCHL_FILVINA2017);?>" title="Volver a portada FILSA 2015">	<img src="<?php bloginfo('template_url');?>/img/FILVINA2017/logofilsa2016_movil.svg" alt="FILSA 2016" width="200" height="41">
+		<a href="<?php echo get_permalink(CCHL_FILVINA2017);?>" title="Volver a portada FILSA 2015">
 		<a href="javascript:void(0);" class="triggernav"><i class="fa fa-bars"></i><span>menú</span></a>
 		<nav class="mobile-menu-filsa inactive">
 			<?php wp_nav_menu( array('menu'=> $menu));?>
@@ -37,9 +37,6 @@
 
 				<a href="<?php echo CCHL_FACEBOOK;?>" target="_blank"><i class="fa fa-facebook-square"></i></a>
 			    <a class="middle" href="https://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank"><i class="fa fa-twitter"></i></a>
-			    <a href="https://instagram.com/filsachile" target="_blank"><i class="fa fa-instagram"></i></a>
-			    <a class="last" target="_blank" title="Flickr" href="https://www.flickr.com/photos/148374223@N02"><i class="fa fa-flickr"></i></a>
-
 			</div>
 		</nav>
 	</div>

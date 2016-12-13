@@ -24,6 +24,7 @@
 
 @filvina2017: #B66536;
 
+
 //Debug styles
 
 body#filvina-2017 .feriaslink {
@@ -126,13 +127,13 @@ body#filvina-2017 #content .the-content p {
 
 body#filvina-2017 #content {
 	@media screen and (max-width:@scrbr) {
-		padding-top:86px;	
+		padding-top:96px;	
 	}
 }
 
 body.admin-bar#filvina-2017 #content {
 	@media screen and (max-width:@scrbr) {
-		padding-top:86px - 46px;	
+		padding-top:96px - 46px;	
 	}	
 }
 
@@ -310,10 +311,14 @@ body#filvina-2017 .mobile-menu-filsa div > ul > li:first-of-type > a {
 	}
 }
 
+@mobileheaderheight: 92px;
+
 body#filvina-2017 .filsa-header-mobile {
 	//background-color: #3C3C3C;
-	background:@filsagradient_menu;
-	height:72px;
+	background-color:white;
+	background-image:url(../img/filvina-2017/banner-filvina2017-movil.jpg);
+	height:@mobileheaderheight;
+	background-size:cover;
 }
 
 body#filvina-2017 .filsa-header-mobile img {
@@ -322,17 +327,17 @@ body#filvina-2017 .filsa-header-mobile img {
 }
 
 body#filvina-2017 a.triggernav {
-	color:white;
+	color:#4B94C0;
 	left:12px;
 	height:36px;
-	border:1px solid fade(white, 35%);
-	top:14px;
+	border:1px solid fade(#4B94C0, 35%);
+	top:@mobileheaderheight / 4;
 	border-radius:0;
 }
 
 body#filvina-2017 .mobile-menu-filsa {
-	margin-top:72px;
-	border-top:1px solid @verde;
+	margin-top:@mobileheaderheight;
+	border-top:1px solid #4B94C0;
 }
 
 body#filvina-2017 .mobile-menu-filsa ul li a {

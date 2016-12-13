@@ -384,6 +384,7 @@ function cchl_isresponsive( ) {
   checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ||
   checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 208) ||
   checkferia($post->ID, CCHL_FILVINA2016) ||
+  checkferia($post->ID, CCHL_FILVINA2017) ||
   is_page_template('page-feria-principal.php') ||
   $using_feria_template || 
   ( is_single() && in_category( $feriasmultimediacats, $post->ID ) )
