@@ -23,6 +23,8 @@
 @filsagradient_menu: linear-gradient(45deg, #4b559a 0%,#41a2c8 23%,#67b23c 100%);
 
 @filvina2017: #B66536;
+@filvina2017_celeste: #4B94C0;
+@mobileheaderheight: 92px;
 
 
 //Debug styles
@@ -311,8 +313,6 @@ body#filvina-2017 .mobile-menu-filsa div > ul > li:first-of-type > a {
 	}
 }
 
-@mobileheaderheight: 92px;
-
 body#filvina-2017 .filsa-header-mobile {
 	//background-color: #3C3C3C;
 	background-color:white;
@@ -327,17 +327,17 @@ body#filvina-2017 .filsa-header-mobile img {
 }
 
 body#filvina-2017 a.triggernav {
-	color:#4B94C0;
+	color:@filvina2017_celeste;
 	left:12px;
 	height:36px;
-	border:1px solid fade(#4B94C0, 35%);
+	border:1px solid fade(@filvina2017_celeste, 35%);
 	top:@mobileheaderheight / 4;
 	border-radius:0;
 }
 
 body#filvina-2017 .mobile-menu-filsa {
 	margin-top:@mobileheaderheight;
-	border-top:1px solid #4B94C0;
+	border-top:1px solid @filvina2017_celeste;
 }
 
 body#filvina-2017 .mobile-menu-filsa ul li a {
