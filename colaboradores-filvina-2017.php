@@ -20,110 +20,14 @@ Template Name: Colaboradores Fil Viña 2017
             
             <?php endwhile; endif; ?>
     
-                
-                
-                <?php
+                <?php echo cchl_colaboradores_fields('Organiza', 'organiza_logo', 'organiza_nombre', 'organiza_url' );?>
 
-                $organiza = getGroupOrder('organiza_logo');
-                if($organiza && get('organiza_logo')):?>
-                <h3 class="colabheading">Organiza</h3>
-                    <ul class="colabs invs">
-
-                            <?php 
-                                foreach($organiza as $org): ?>
-                                    
-                                    <li>
-                                        <?php 
-                                        
-                                        echo get_image('organiza_logo', $org, 1, 1, null, $size);?>
-                                        <h3><?php echo get('organiza_nombre', $org);?></h3>
-                                        <?php 
-                                            if(get('organiza_url', $org)):
-                                                echo '<a target="_blank" href="'.get('organiza_url', $org).'"><i class="fa fa-external-link"></i></a>';
-                                            endif;
-                                        ?>
-                                    </li>
-
-                                <?php 
-                                endforeach;
-                            ?>                
-                    </ul>
-                <?php endif;?>
-
-                 <?php 
-                $patrocinadores = getGroupOrder('patrocina_logo');
-                if($patrocinadores && get('patrocina_logo')):
-                ?>
-                <h3 class="colabheading">Patrocina</h3>
-                    <ul class="colabs invs">
-                            <?php 
-                                foreach($patrocinadores as $patrocina): ?>
-                                    
-                                    <li>
-                                        <?php echo get_image('patrocina_logo', $patrocina, 1, 1, null, $size);?>
-                                        <h3><?php echo get('patrocina_nombre', $patrocina);?></h3>
-                                        <?php 
-                                            if(get('patrocina_url', $patrocina)):
-                                                echo '<a target="_blank" href="'.get('patrocina_url', $patrocina).'"><i class="fa fa-external-link"></i></a>';
-                                            endif;
-                                        ?>
-                                    </li>
-
-                                <?php 
-                                endforeach;
-                            ?>                
-                    </ul>
-                <?php endif;?>
-
-                <?php 
-                $colaboradores = getGroupOrder('colabora_logo');
-                if($colaboradores && get('colabora_logo')):
-                ?>
-                <h3 class="colabheading">Colabora</h3>
-                    <ul class="colabs invs">
-                            <?php 
-                                foreach($colaboradores as $colaborador): ?>
-                                    
-                                    <li>
-                                        <?php echo get_image('colabora_logo', $colaborador, 1, 1, null, $size);?>
-                                        <h3><?php echo get('colabora_nombre', $colaborador);?></h3>
-                                        <?php 
-                                            if(get('colabora_url', $colaborador)):
-                                                echo '<a target="_blank" href="'.get('colabora_url', $colaborador).'"><i class="fa fa-external-link"></i></a>';
-                                            endif;
-                                        ?>
-                                    </li>
-
-                                <?php 
-                                endforeach;
-                            ?>                
-                    </ul>
-                <?php endif;?>
+                <?php echo cchl_colaboradores_fields('Patrocina', 'patrocina_logo', 'patrocina_nombre', 'patrocina_url' );?>
                
-                <!-- <?php 
-                $auspicia = getGroupOrder('auspicia_logo_auspicia');
-                if($auspicia && get('auspicia_logo_auspicia')):
-                ?>
-                <h3 class="colabheading">Auspicia</h3>
-                    <ul class="colabs aups">
-                            <?php 
-                                foreach($auspicia as $ausp): ?>
-                                    
-                                    <li>
-                                        <?php echo get_image('auspicia_logo_auspicia', $ausp, 1, 1, null, $size);?>
-                                        <h3><?php echo get('auspicia_nombre_auspicia', $ausp);?></h3>
-                                        <?php 
-                                            if(get('auspicia_url_auspicia', $ausp)):
-                                                echo '<a target="_blank" href="'.get('auspicia_url_auspicia', $ausp).'"><i class="fa fa-external-link"></i></a>';
-                                            endif;
-                                        ?>
-                                    </li>
 
-                                <?php 
-                                endforeach;
-                            ?>                
-                    </ul>
-                <?php endif;?> -->
+                <?php echo cchl_colaboradores_fields('Colabora', 'colabora_logo', 'colabora_nombre', 'colabora_url' );?>
+
+                <?php echo cchl_colaboradores_fields('Participan en Programa Cultural', 'participan_programa_logo', 'participan_programa_nombre', 'participan_programa_url' );?>
             
     </div>
 </div>

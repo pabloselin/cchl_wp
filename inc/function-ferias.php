@@ -126,3 +126,39 @@ function filij2016_programashortcode($atts) {
 }
 
 add_shortcode( 'programa_filij_2016', 'filij2016_programashortcode' );
+
+function cchl_colaboradores_fields( $section_title, $colab_logo, $colab_name, $colab_url ) {
+
+	global $post;
+
+	$fieldgroup = getGroupOrder($colab_logo);
+	$output = '';
+               
+    if($fieldgroup && get($colab_logo)):
+
+    	$output .= '<h3 class="colabheading"></h3>';
+    	$output .= '<ul class="colabs invs">';
+
+    	foreach($fieldgroup as $fielditem) {
+
+    		$output .= '<li>';
+    		$output .= get_image($colab_logo, $fielditem, 1, 1, null, $size);
+    		$output .= '<h3>' . get($colab_name, $fielditem) . '</h3>';
+
+    		if(get($colab_url, $fielditem)):
+
+    			$output .= '<a target="_blank" href="'.get( $colab_url, $fielditem).'"><i class="fa fa-external-link"></i></a>';
+
+    		endif;
+
+    		$output .= '</li>';
+
+    	}
+
+    	$output .= '</ul>';
+
+    endif;
+
+    return $output;
+
+}
