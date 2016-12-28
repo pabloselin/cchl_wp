@@ -24,8 +24,8 @@ Template Name: Colaboradores Fil Viña 2017
                 
                 <?php
 
-                $organiza = getGroupOrder('organiza_logo_organiza');
-                if($organiza && get('organiza_logo_organiza')):?>
+                $organiza = getGroupOrder('organiza_logo');
+                if($organiza && get('organiza_logo')):?>
                 <h3 class="colabheading">Organiza</h3>
                     <ul class="colabs invs">
 
@@ -35,11 +35,11 @@ Template Name: Colaboradores Fil Viña 2017
                                     <li>
                                         <?php 
                                         
-                                        echo get_image('organiza_logo_organiza', $org, 1, 1, null, $size);?>
-                                        <h3><?php echo get('organiza_nombre_organiza', $org);?></h3>
+                                        echo get_image('organiza_logo', $org, 1, 1, null, $size);?>
+                                        <h3><?php echo get('organiza_nombre', $org);?></h3>
                                         <?php 
-                                            if(get('organiza_url_organiza', $org)):
-                                                echo '<a target="_blank" href="'.get('invita_url_invita', $org).'"><i class="fa fa-external-link"></i></a>';
+                                            if(get('organiza_url', $org)):
+                                                echo '<a target="_blank" href="'.get('organiza_url', $org).'"><i class="fa fa-external-link"></i></a>';
                                             endif;
                                         ?>
                                     </li>
@@ -51,8 +51,8 @@ Template Name: Colaboradores Fil Viña 2017
                 <?php endif;?>
 
                  <?php 
-                $patrocinadores = getGroupOrder('auspiciadores_logo_auspiciador');
-                if($patrocinadores && get('auspiciadores_logo_auspiciador')):
+                $patrocinadores = getGroupOrder('patrocina_logo');
+                if($patrocinadores && get('patrocina_logo')):
                 ?>
                 <h3 class="colabheading">Patrocina</h3>
                     <ul class="colabs invs">
@@ -60,11 +60,11 @@ Template Name: Colaboradores Fil Viña 2017
                                 foreach($patrocinadores as $patrocina): ?>
                                     
                                     <li>
-                                        <?php echo get_image('auspiciadores_logo_auspiciador', $patrocina, 1, 1, null, $size);?>
-                                        <h3><?php echo get('auspiciadores_nombre', $patrocina);?></h3>
+                                        <?php echo get_image('patrocina_logo', $patrocina, 1, 1, null, $size);?>
+                                        <h3><?php echo get('patrocina_nombre', $patrocina);?></h3>
                                         <?php 
-                                            if(get('auspiciadores_url_auspiciador', $patrocina)):
-                                                echo '<a target="_blank" href="'.get('auspiciadores_url_auspiciador', $patrocina).'"><i class="fa fa-external-link"></i></a>';
+                                            if(get('patrocina_url', $patrocina)):
+                                                echo '<a target="_blank" href="'.get('patrocina_url', $patrocina).'"><i class="fa fa-external-link"></i></a>';
                                             endif;
                                         ?>
                                     </li>
@@ -76,8 +76,8 @@ Template Name: Colaboradores Fil Viña 2017
                 <?php endif;?>
 
                 <?php 
-                $colaboradores = getGroupOrder('info_socioes_logo_colaborador');
-                if($colaboradores && get('info_socioes_logo_colaborador')):
+                $colaboradores = getGroupOrder('colabora_logo');
+                if($colaboradores && get('colabora_logo')):
                 ?>
                 <h3 class="colabheading">Colabora</h3>
                     <ul class="colabs invs">
@@ -85,11 +85,11 @@ Template Name: Colaboradores Fil Viña 2017
                                 foreach($colaboradores as $colaborador): ?>
                                     
                                     <li>
-                                        <?php echo get_image('info_socioes_logo_colaborador', $colaborador, 1, 1, null, $size);?>
-                                        <h3><?php echo get('info_socioes_nombre', $colaborador);?></h3>
+                                        <?php echo get_image('colabora_logo', $colaborador, 1, 1, null, $size);?>
+                                        <h3><?php echo get('colabora_nombre', $colaborador);?></h3>
                                         <?php 
-                                            if(get('info_socioes_url_colaborador', $colaborador)):
-                                                echo '<a target="_blank" href="'.get('info_socioes_url_colaborador', $colaborador).'"><i class="fa fa-external-link"></i></a>';
+                                            if(get('colabora_url', $colaborador)):
+                                                echo '<a target="_blank" href="'.get('colabora_url', $colaborador).'"><i class="fa fa-external-link"></i></a>';
                                             endif;
                                         ?>
                                     </li>
@@ -100,7 +100,7 @@ Template Name: Colaboradores Fil Viña 2017
                     </ul>
                 <?php endif;?>
                
-                <?php 
+                <!-- <?php 
                 $auspicia = getGroupOrder('auspicia_logo_auspicia');
                 if($auspicia && get('auspicia_logo_auspicia')):
                 ?>
@@ -123,7 +123,7 @@ Template Name: Colaboradores Fil Viña 2017
                                 endforeach;
                             ?>                
                     </ul>
-                <?php endif;?>
+                <?php endif;?> -->
             
     </div>
 </div>
