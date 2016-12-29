@@ -24,6 +24,10 @@
                     <?php get_template_part('parts/eventos-flpa-2016');?>
                 <?php endif;?>
             </div>
+
+            <?php if($post->ID == 65839):
+                    get_template_part( 'parts/eventos-filvina-2017' );
+            endif;?>
           
 		<?php endwhile;
           endif; ?>

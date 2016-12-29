@@ -132,12 +132,24 @@ function cchl_colaboradores_fields( $section_title, $colab_logo, $colab_name, $c
 	global $post;
 
 	$fieldgroup = getGroupOrder($colab_logo);
+
+	$fieldcount = count(get_post_meta($post->ID, $colab_logo, false));
+
 	$output = '';
                
     if($fieldgroup && get($colab_logo)):
 
-    	$output .= '<h3 class="colabheading"></h3>';
-    	$output .= '<ul class="colabs invs">';
+    	$output .= '<h3 class="colabheading">' . $section_title . '</h3>';
+
+    	if($fieldcount > 1) {
+
+    			$output .= '<ul class="colabs">';
+
+    	} else {
+
+    			$output .= '<ul class="colabs invs">';
+
+    	}
 
     	foreach($fieldgroup as $fielditem) {
 
