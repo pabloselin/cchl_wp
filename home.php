@@ -50,7 +50,7 @@
                     $recent = get_post($menuitem->object_id);?>
                     <div class="caja grid_5">
                       <h3><?php echo $recent->post_title;?></h3>
-                      <?php custom_excerpt($recent->ID, 65);?>
+                      
                       <span class="fecha"><?php echo tribe_get_start_date($recent->ID, true, 'l j \d\e F - G:i');?></span>
                       <a href="<?php echo get_permalink( $recent->ID);?>" class="leyendo">Siga Leyendo</a>
                     </div>
