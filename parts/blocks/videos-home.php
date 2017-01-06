@@ -1,11 +1,30 @@
-<?php
+<div class="video-home">
 
-$miembros = getGroupOrder('galeria_video_video');
-foreach(array_reverse($miembros) as $miembro){
-	$otros = get("galeria_video_video",$miembro); ?>
-	<?php if($otros!="" && $i<5){ ?>
-	<div id="vid-<?php echo $post->ID;?>">
-		<iframe width="600" height="300" src="//www.youtube.com/embed/<?php echo getYoutubeID($otros); ?>" frameborder="0" allowfullscreen></iframe>
-	</div>
-	<?php $i++; } 
-	?>
+    <div>
+        <?php $i = 1; ?>
+        <div>
+
+            <?php 
+            $args = array(
+                'category_name' => 'multimedia',
+                'post_type' => 'post',
+                'numberposts' => 1
+                );
+            $videos = get_posts($args);
+
+            foreach($videos as $video) {
+
+                $video_field = get_post_meta($video->ID, 'galeria_video_video', true);
+
+                ?>
+
+                <iframe width="600" height="300" src="//www.youtube.com/embed/<?php echo getYoutubeID($video_field); ?>" frameborder="0" allowfullscreen></iframe>
+
+                <?php
+            }
+
+            ?>
+        </div>
+    </div>
+
+</div>
