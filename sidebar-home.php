@@ -1,6 +1,6 @@
 <div id="sidebar" class="grid_5">
     <?php if(is_page_template('home-socios.php')):?>
-        <ul>
+        <ul class="links-socios-home">
             <li><a href="/observatorio-del-libro-y-la-lectura/" class="observatorio">Observatorio del libro y la lectura</a></li>
             <li><a href="/categoria/socios/beneficios/" class="beneficios">Beneficios socios</a></li>
             
@@ -8,7 +8,7 @@
             
         </ul>
     <?php else:?>
-        <ul>
+        <ul class="links-home">
             <li><a href="/observatorio-del-libro-y-la-lectura/definicion/" class="observatorio">Observatorio del libro y la lectura</a></li>
             <!-- <li><a href="/ranking-de-libros/" class="ranking">Ranking de libros</a></li> -->
                     <!-- <li><a href="/categoria/guia-librerias/" class="guia">Guía de librerías</a></li>

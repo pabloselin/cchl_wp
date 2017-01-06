@@ -87,11 +87,11 @@
       </div>
 
       <div class="tercio">
-        <?php get_template_part('parts/blocks/twitter-block');?>
+          <?php get_template_part('parts/blocks/facebook-block');?>
       </div>
 
       <div class="tercio">
-          <?php get_template_part('parts/blocks/facebook-block');?>
+        <?php get_template_part('parts/blocks/twitter-block');?>
       </div>
 
       <div class="tercio">
