@@ -1,0 +1,4 @@
+			<div id="caja_facebook" class="facebook-box">
+                 <h3><i class="fa fa-facebook"></i> Facebook</h3>
+                 <div class="fb-page" data-href="https://www.facebook.com/camarachilenalibro" data-width="300" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/camarachilenalibro"><a href="https://www.facebook.com/camarachilenalibro">Cámara Chilena del Libro</a></blockquote></div></div>
+            </div>
