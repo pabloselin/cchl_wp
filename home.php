@@ -20,7 +20,7 @@
                 <div class="caja_text">
                   <h2><a title="<?php echo get('slider_titulo',$miembro); ?>" href="<?php echo get('slider_link',$miembro); ?>" class="mx"><?php echo get('slider_titulo',$miembro); ?></a></h2>
                   <div class="text">
-                    <a class="mx" href="<?php echo get('slider_link',$miembro); ?>"> <?php echo get('slider_texto',$miembro);?> </a>
+                    <a class="mx" href="<?php echo get('slider_link',$miembro); ?>"> <?php echo strip_tags(get('slider_texto',$miembro));?> </a>
 
                   </div><!--fin text-->
                 </div><!--fin caja text-->
@@ -30,10 +30,6 @@
           </ul>
         </div><!--fin contenedor slide-->	
         
-        <div class="container_16 cf">
-          <?php get_template_part('parts/blocks/videos-home');?>  
-        </div>
-
             <div id="content-home" class="grid_11">
               <div class="agenda cf">
                 <h2>Agenda <a href="<?php bloginfo('url');?>/eventos/categoria/agenda" class="ver-agenda">ver agenda completa »</a></h2>			 
@@ -86,6 +82,10 @@
 
       </div>
 
+      <div class="container_16 cf">
+          <?php get_template_part('parts/blocks/videos-home');?>  
+        </div>
+    
       <div class="tercio">
           <?php get_template_part('parts/blocks/facebook-block');?>
       </div>
