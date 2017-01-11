@@ -32,7 +32,7 @@
         
             <div id="content-home" class="grid_11">
               <div class="agenda cf">
-                <h2>Agenda <a href="<?php bloginfo('url');?>/eventos/categoria/agenda" class="ver-agenda">ver agenda completa »</a></h2>			 
+                <h2>Agenda</h2>			 
 
                 <ul>
                  <?php
