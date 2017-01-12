@@ -94,7 +94,7 @@ elseif( checkferia($post->ID, CCHL_FILVINA2016) ):
 
   get_template_part('parts/header', 'filvina-2016');
 
-elseif( checkferia($post->ID, CCHL_FILVINA2017) ):
+elseif( checkferia($post->ID, CCHL_FILVINA2017, CCHL_CATSFILVINA2017) ):
 
   get_template_part('parts/header', 'filvina-2017');  
 

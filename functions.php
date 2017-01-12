@@ -18,6 +18,7 @@ define( 'CCHL_FILSA2012', 24568 );
 
 define( 'CCHL_FILVINA2016', 59355 );
 define( 'CCHL_FILVINA2017', 65835 );
+define( 'CCHL_CATSFILVINA2017', '292');
 
 define('CCHL_LINKGRATIS', 'https://camaradellibro.cl/ferias/filsa/filsa-2015/entradas-liberadas-a-filsa-2015/');
 
@@ -82,7 +83,7 @@ include( TEMPLATEPATH . '/admin/cchl_adminoptions.php');
 
 //Includes 
 
-include( TEMPLATEPATH . '/inc/custom-functions.php');
+include( TEMPLATEPATH . '/inc/utils.php');
 include( TEMPLATEPATH . '/inc/event-functions.php');
 //include( TEMPLATEPATH . '/inc/event-invitations.php');
 include( TEMPLATEPATH . '/inc/scripts.php');

@@ -60,7 +60,7 @@ elseif(checkferia($post->ID, CCHL_FILVINA2016)):?>
 
 <?php 
 //para FIL VIÑA 2016
-elseif(checkferia($post->ID, CCHL_FILVINA2017)):?>
+elseif(checkferia($post->ID, CCHL_FILVINA2017, CCHL_CATSFILVINA2017)):?>
 	<div id="sidebar_interior" class="grid_4 filvina-2017">
 			<?php wp_nav_menu( array('menu'=> 290));?>
 	</div>
