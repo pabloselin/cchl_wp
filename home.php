@@ -1,6 +1,8 @@
 <?php
 /* Template Name: Inicio */
-?><?php get_header(); ?>
+?>
+
+<?php get_header(); ?>
 <div id="main-home" class="container_16 cf">
 
 	<div class="tabs2">
