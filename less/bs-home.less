@@ -1,0 +1,65 @@
+//New home
+
+//Variables generales a exportar luego
+
+@gris: #ccc;
+@gris_oscuro: #807F83;
+@cchl_headings_font: 'Signika', sans-serif;
+@azul_menu: #2371BF;
+@max_navbar_width: 1160px;
+
+@import '/bs-home/cchl-bootstrap.less';
+
+
+.top-utils {
+    background-color:white;
+    font-family:'Signika', sans-serif;
+    text-transform: uppercase;
+    border-radius:0;
+    border:0;
+    margin:0 auto;
+    max-width:@max_navbar_width;
+
+    .navbar-header {
+        img {
+            margin:14px 0 0 14px;
+        }
+    }
+}
+
+.special {
+    background-color:@gris;
+    text-align:center;
+    img {
+        margin:0 auto;
+    }
+}
+
+.main-navbar {
+    border-radius:0;
+    background-color:transparent;
+    color:white;
+    font-family:'Signika', sans-serif;
+    text-transform:uppercase;
+    border:0;
+    margin:0 auto;
+    max-width:@max_navbar_width;
+    border:0;
+        .dropdown-menu {
+            background-color:@azul_menu;
+            a {
+                color:white;
+                padding:8px 16px;
+                border-bottom:1px dotted white;
+                text-transform:none;
+                &:hover {
+                    background-color:lighten(@azul_menu, 7%);
+                    color:white;
+                }
+            }
+        }
+}
+
+.main-navbar-background {
+    background-color: @gris_oscuro;
+}

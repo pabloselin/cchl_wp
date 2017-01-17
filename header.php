@@ -102,10 +102,6 @@ elseif( is_page_template('page-feria-principal.php') || $using_feria_template ||
 
   get_template_part('parts/header', 'feria');
 
-elseif( $special ):
-
-  get_template_part('parts/header', 'special');
-
 else:
 
   if(is_home()):

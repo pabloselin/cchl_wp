@@ -50,7 +50,9 @@ register_nav_menus( array(
 	//Filsa 2016
 	'accesos-rapidos-filsa-2016' 	 => 'Accesos Rápidos Filsa 2016',
 	'noticias-destacadas-filsa-2016' => 'Noticias destacadas Filsa 2016',
-	'eventos-destacados-filsa-2016'  => 'Eventos destacados Filsa 2016'
+	'eventos-destacados-filsa-2016'  => 'Eventos destacados Filsa 2016',
+	'noticias-home'					 => 'Noticias Portada',
+	'eventos-destacados-portada'	 => 'Eventos Portada'
 	) 
 );
 
@@ -82,7 +84,7 @@ add_filter( 'get_shortlink', function( $shortlink ) {return $shortlink;} );
 include( TEMPLATEPATH . '/admin/cchl_adminoptions.php');
 
 //Includes 
-
+include( TEMPLATEPATH . '/inc/bootstrap-navwalker.php');
 include( TEMPLATEPATH . '/inc/utils.php');
 include( TEMPLATEPATH . '/inc/event-functions.php');
 //include( TEMPLATEPATH . '/inc/event-invitations.php');

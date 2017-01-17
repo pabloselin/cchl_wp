@@ -1,8 +1,7 @@
 <?php
 function cchl_styles() {
-	if(!is_admin()) {
 
-	wp_register_style( 'mailchimp', '//cdn-images.mailchimp.com/embedcode/classic-081711.css' , array(), '0.1', 'screen');
+  wp_register_style( 'mailchimp', '//cdn-images.mailchimp.com/embedcode/classic-081711.css' , array(), '0.1', 'screen');
 	//gfonts
 	wp_register_style( 'fonts', 'https://fonts.googleapis.com/css?family=Signika:400,300,600,700' , array(), '0.1', 'screen' );
 	//icons
@@ -11,15 +10,26 @@ function cchl_styles() {
 	//Compiled grunt style
 	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.91aec01d.min.css', array(), '0.2', 'screen' );
 
-	wp_enqueue_style('cchlcss');
-	wp_enqueue_style('mailchimp');
-	wp_enqueue_style('fonts');
-	wp_enqueue_style('fontawesome');
+  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.css', array(), '0.1', 'screen' );
 
-	}
+	if(!is_admin() && !is_home()) {
+
+    wp_enqueue_style('cchlcss');
+    wp_enqueue_style('mailchimp');
+    wp_enqueue_style('fonts');
+    wp_enqueue_style('fontawesome');
+
+	} elseif(is_home()){
+
+    wp_enqueue_style('fontawesome');
+    wp_enqueue_style('fonts');
+    wp_enqueue_style( 'home-cchl');
+
+  } 
 }
 
 function cchl_scripts() {
+
 if(!is_admin()) {
 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
 }
@@ -30,6 +40,13 @@ if(!is_admin()) {
   wp_register_script( 'imagesloaded', get_bloginfo('template_url') . '/js/imagesloaded.min.js', array('jquery'));
   wp_register_script( 'masonry', get_bloginfo('template_url') . '/js/masonry.min.js', array('jquery'));
   wp_register_script( 'featherlight', get_bloginfo('template_url') . '/js/featherlight/featherlight.min.js', array('jquery'));
+  wp_register_script( 'cchl_home', get_bloginfo('template_url') . '/js/cchl-home.js', array() );
+
+  //Scripts y estilos home
+  
+
+if(!is_home()) {
+  
   wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'featherlight' );
   wp_enqueue_script( 'cchl_scripts' );
@@ -56,6 +73,13 @@ if(!is_admin()) {
   $tiposarr['siteurl'] = get_bloginfo('url');
 
   wp_localize_script( 'cchl_scripts', 'cchl', $tiposarr );
+
+} else {
+
+  wp_enqueue_script('cchl_home');
+
+}
+  
 }
 
 add_action('wp_enqueue_scripts', 'cchl_scripts');

@@ -9,7 +9,8 @@ module.exports = function(grunt) {
 					compress: true
 				},
 				files: {
-					'css/style-cchl.css':'less/main.less'
+					'css/style-cchl.css':'less/main.less',
+					'css/home-cchl.css':'less/bs-home.less'
 				}
 			}
 		},
@@ -68,6 +69,18 @@ module.exports = function(grunt) {
 				],
 				dest: 'js/cchl-scripts.js'
 			}
+		},
+		concat: {
+			options: {
+				separator: ';'
+			},
+			dist: {
+				src: [
+					'bower_components/bootstrap/js/dropdown.js',
+					'bower_components/bootstrap/js/collapse.js'
+				],
+				dest: 'js/cchl-home.js'
+				}
 		}
 	});
 	//Load tasks plugins
