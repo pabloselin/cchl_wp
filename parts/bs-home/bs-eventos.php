@@ -22,6 +22,11 @@
             endforeach;?>
         
         </div>
+        <div class="row plus-row">
+            <div class="col-md-4 col-md-offset-8">
+                <a href="#" class="btn btn-block btn-info"> <i class="fa fa-plus"></i> Eventos </a>
+            </div>
+        </div>
     </div>
 </section>
 

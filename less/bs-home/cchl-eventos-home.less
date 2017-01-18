@@ -9,14 +9,32 @@ section.eventos {
     justify-content: space-between;
 }
 
+.plus-row {
+    .col-md-4 {
+        padding:12px 6px 0 0;
+    }
+}
+
 .evento-home-mini {
     display:block;
     overflow:hidden;
     border:1px solid @azul_menu;
     margin-right:6px;
     background-color:white;
-    padding-top:12px;
+    padding-top:36px;
     padding-bottom:12px;
+    position: relative;
+
+    p.fechaevento {
+        font-size:14px;
+        color:white;
+        position: absolute;
+        top:0;
+        left:0;
+        padding:4px 12px;
+        text-align:center;
+        background-color:#555;
+    }
 
     h3 {
         margin:0 0 12px 0;

@@ -9,6 +9,10 @@
 @azul_iconos: #46A2F5;
 @max_navbar_width: 1160px;
 
+@facebook: #3B5998;
+@twitter: #1DA1F2;
+@instagram: #D42F8A;
+
 @import '/bs-home/cchl-bootstrap.less';
 @import '/bs-home/cchl-noticias-home.less';
 @import '/bs-home/cchl-eventos-home.less';
@@ -34,6 +38,9 @@
 .special {
     background-color:@gris;
     text-align:center;
+    .container {
+        background-color:white;
+    }
     img {
         margin:0 auto;
     }
@@ -87,13 +94,76 @@
 
 .fotos-flickr {
     padding:0;
+    margin-right:12px;
+
+    h2 {
+        color:#FF1981;
+    }
+
     iframe {
         max-width:100%;
         overflow:hidden;
     }
 }
 
+.videos {
+    padding:0;
+    h2 {
+        color:#E62117;
+    }
+}
+
 .flex-row {
     display:flex;
     justify-content:space-between;
+}
+
+.redes-row {
+    display:flex;
+    justify-content:space-between;
+}
+
+.redes.row > .col-md-3 {
+    padding:0;
+    overflow:hidden;
+    margin-right:6px;
+    iframe {
+        max-width:100%;
+    }
+}
+
+.facebook-box {
+    h3 {
+        background-color:@facebook;
+        color:white;
+        font-size:14px;
+        font-weight:500;
+        text-transform:uppercase;
+        padding:12px 6px;
+        margin-bottom:0;
+    }
+}
+
+.twitter-box {
+    h3 {
+        background-color:@twitter;
+        color:white;
+        font-size:14px;
+        font-weight:500;
+        text-transform:uppercase;
+        padding:12px 6px;
+        margin-bottom:0;
+    }
+}
+
+.instagram-box {
+    h3 {
+        background-color:@instagram;
+        color:white;
+        font-size:14px;
+        font-weight:500;
+        text-transform:uppercase;
+        padding:12px 6px;
+        margin-bottom:0;
+    }
 }

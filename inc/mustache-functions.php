@@ -18,8 +18,8 @@ function render_mustache_event( $itemid, $template = 'evento-mini' ) {
             $evtitle     = get_the_title($itemid);
             $start_time  = tribe_get_start_date($itemid, true, 'G:i');
             $end_time    = ($start_time == tribe_get_end_date($itemid, true, 'G:i')) ? '' : tribe_get_end_date($itemid, true, 'G:i') ;
-            $start_date  = tribe_get_start_date($itemid, false, 'l d M');
-            $end_date  = tribe_get_end_date($itemid, false, 'l d M');
+            $start_date  = tribe_get_start_date($itemid, false, 'l d F');
+            $end_date  = tribe_get_end_date($itemid, false, 'l d F');
             $lugar       = tribe_get_venue($itemid);
             $link        = tribe_get_event_link($itemid);
             $tipoevs     = cchl_plainterms($itemid, 'cchl_tipoevento');

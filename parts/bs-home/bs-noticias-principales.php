@@ -22,6 +22,7 @@
               <?php endif;?>
 
                 <div class="content">
+                  <span class="date"><?php echo get_the_time('j \d\e F', $noticia_principal->object_id);?></span>
                   <h1><?php echo $noticia_principal->title;?></h1>
                 </div>
 
@@ -48,6 +49,7 @@
                         <?php echo get_the_post_thumbnail( $noticia_dos->object_id, 'full');?>
 
                     </a>
+                    <span class="date"><?php echo get_the_time('j \d\e F', $noticia_dos->object_id);?></span>
                   </div>
 
               <?php endif;?>
@@ -78,6 +80,7 @@
                     <a href="<?php echo get_permalink($noticia_tres->object_id);?>">
                         <?php echo get_the_post_thumbnail( $noticia_tres->object_id, 'full');?>
                     </a>
+                    <span class="date"><?php echo get_the_time('j \d\e F', $noticia_tres->object_id);?></span>
                   </div>
 
               <?php endif;?>
