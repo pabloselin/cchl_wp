@@ -33,7 +33,7 @@
       
       <div class="videos col-md-6">
         <h2><i class="fa fa-youtube"></i> Multimedia</h2>
-        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=FILSACHILE" width="100%" height="385 frameBorder="0"></iframe> 
+        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=FILSACHILE" width="100%" height="385" frameBorder="0"></iframe> 
       </div>
     </div>
 
@@ -42,7 +42,21 @@
 </section>
 
   <div class="redes row">
+      <div class="col-md-3">
 
+      </div>
+
+      <div class="col-md-3">
+
+      </div>
+
+      <div class="col-md-3">
+
+      </div>
+      
+      <div class="col-md-3">
+
+      </div>
   </div>
 </div>
 
