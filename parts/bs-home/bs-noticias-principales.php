@@ -88,7 +88,7 @@
               <div class="content">
                 
                 <h2>
-                    <a href="<?php echo get_permalink($noticia_dos->object_id);?>">
+                    <a href="<?php echo get_permalink($noticia_tres->object_id);?>">
                     <?php echo $noticia_tres->title;?>
                     </a>
                 </h2>
