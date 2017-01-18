@@ -6,9 +6,13 @@
 @gris_oscuro: #807F83;
 @cchl_headings_font: 'Signika', sans-serif;
 @azul_menu: #2371BF;
+@azul_iconos: #46A2F5;
 @max_navbar_width: 1160px;
 
 @import '/bs-home/cchl-bootstrap.less';
+@import '/bs-home/cchl-noticias-home.less';
+@import '/bs-home/cchl-eventos-home.less';
+@import '/bs-home/cchl-footer.less';
 
 
 .top-utils {
@@ -62,4 +66,34 @@
 
 .main-navbar-background {
     background-color: @gris_oscuro;
+}
+
+.accesos {
+    margin-top:36px;
+    a {
+        overflow:hidden;
+        i {
+            color:@azul_iconos;
+        }
+        h4 {
+            font-weight:normal;
+            font-size:14px;
+            text-transform: uppercase;
+            color:@gris_oscuro;
+            margin-top:16px;
+        }
+    }
+}
+
+.fotos-flickr {
+    padding:0;
+    iframe {
+        max-width:100%;
+        overflow:hidden;
+    }
+}
+
+.flex-row {
+    display:flex;
+    justify-content:space-between;
 }

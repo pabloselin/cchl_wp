@@ -52,7 +52,8 @@ register_nav_menus( array(
 	'noticias-destacadas-filsa-2016' => 'Noticias destacadas Filsa 2016',
 	'eventos-destacados-filsa-2016'  => 'Eventos destacados Filsa 2016',
 	'noticias-home'					 => 'Noticias Portada',
-	'eventos-destacados-portada'	 => 'Eventos Portada'
+	'eventos-destacados-portada'	 => 'Eventos Portada',
+	'accesos-rapidos-home'			 => 'Accesos rápidos Portada'
 	) 
 );
 

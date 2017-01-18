@@ -2,62 +2,44 @@
 /* Template Name: Inicio */
 ?>
 
-<?php 
-
-  $noticias_home = cchl_getmenus('noticias-home');
-
-?>
-
 <?php get_header(); ?>
 
 <div class="home-responsive container">
-  <div class="row">
-    
-    
+	
+	<div class="main-home row">
+			
+		<?php get_template_part('parts/bs-home/bs-noticias-principales');?>
+				
+		<?php get_template_part('parts/bs-home/bs-accesos-rapidos');?>
 
-        <section class="left-news col-md-8">
+	</div>
 
-          <?php if(array_key_exists(0, $noticias_home) ):
-              $noticia_principal = $noticias_home[0];
-          ?>
+</div>
 
-          <div class="row">
-            <article class="article-news-wide col-md-12">
 
-                <div class="img">
+<?php get_template_part('parts/bs-home/bs-eventos');?>
 
-                </div>
-
-                <div class="content">
-                  <h1><?php echo $noticia_principal->title;?></h1>
-                </div>
-
-            </article>
-          </div>
-
-          <?php endif;?>
-        
-          <div class="row">
-            <article class="article-news-half col-md-6"></article>
-            <article class="article-news-half col-md-6"></article>
-          </div>
-        
-        </section>
-
-    
-    
-    <div class="accesos col-md-4"></div>
-  </div>
-
-  <div class="eventos row">
   
+
+<section class="media">
+  
+  <div class="container">
+    
+    <div class="row">
+      <div class="fotos-flickr col-md-6">
+        <h2><i class="fa fa-flickr"></i> En Imágenes</h2>
+        <a data-flickr-embed="true" data-header="true" data-context="true"  href="https://www.flickr.com/photos/148374223@N02/30216830134/" title="Equipo de trabajo"><img src="https://c1.staticflickr.com/6/5823/30216830134_5e44a47b69_c.jpg" width="100%" height="463" alt="Equipo de trabajo"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+      </div>
+      
+      <div class="videos col-md-6">
+        <h2><i class="fa fa-youtube"></i> Multimedia</h2>
+        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=FILSACHILE" width="100%" height="385 frameBorder="0"></iframe> 
+      </div>
+    </div>
+
   </div>
 
-  <div class="fotos row">
-  </div>
-  
-  <div class="videos row">
-  </div>
+</section>
 
   <div class="redes row">
 
@@ -66,4 +48,4 @@
 
 
 
-<?php get_footer(); ?>
+<?php get_template_part('parts/bs-home/bs-footer'); ?>

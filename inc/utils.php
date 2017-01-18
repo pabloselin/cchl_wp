@@ -242,7 +242,7 @@ function cchl_isresponsive( ) {
   if(
   
   //Listado de condiciones para plantillas específicas
-  
+  is_home() ||
   $isfilsa == true ||
   $isfilij == true ||
   checkferia($post->ID, 53771) ||
