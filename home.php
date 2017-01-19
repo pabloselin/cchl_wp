@@ -1,7 +1,10 @@
 <?php
 /* Template Name: Inicio */
 ?>
-
+<?php
+//Main options
+$cchl_options = get_option( 'cchl_settings' );
+?>
 <?php get_header(); ?>
 
 <div class="home-responsive container">
@@ -28,12 +31,12 @@
     <div class="row flex-row">
       <div class="fotos-flickr col-md-6">
         <h2><i class="fa fa-flickr"></i> En Imágenes</h2>
-        <a data-flickr-embed="true" data-header="true" data-context="true"  href="https://www.flickr.com/photos/148374223@N02/30216830134/" title="Equipo de trabajo"><img src="https://c1.staticflickr.com/6/5823/30216830134_5e44a47b69_c.jpg" width="100%" height="463" alt="Equipo de trabajo"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+        <?php echo $cchl_options['cchl_flickrwidget'];?>
       </div>
       
       <div class="videos col-md-6 pull-right">
         <h2><i class="fa fa-youtube"></i> Multimedia</h2>
-        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=FILSACHILE" width="100%" height="385" frameBorder="0"></iframe> 
+        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<?php echo $cchl_options['cchl_youtubechannel'];?>" width="100%" height="385" frameBorder="0"></iframe> 
       </div>
     </div>
 
