@@ -21,7 +21,7 @@
 
   
 
-<section class="media">
+<section class="media hidden-xs">
   
   <div class="container">
     
@@ -41,7 +41,7 @@
 
 </section>
 
-<section class="redes">
+<section class="redes hidden-xs">
   <div class="container">
     <div class="redes row flex-row">
         <div class="col-md-3">

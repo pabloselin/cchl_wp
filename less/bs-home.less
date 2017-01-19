@@ -29,8 +29,16 @@
     max-width:@max_navbar_width;
 
     .navbar-header {
+        margin-right:24px;
         img {
             margin:14px 0 0 14px;
+        }
+    }
+
+    .buscador-cabecera {
+        .input-group-addon {
+            padding:0;
+            background-color:#C0C0C0;
         }
     }
 }
@@ -43,6 +51,11 @@
     }
     img {
         margin:0 auto;
+        max-width:100%;
+
+        .special {
+            border-bottom:1px solid #ccc;
+        }
     }
 }
 
@@ -166,4 +179,68 @@
         padding:12px 6px;
         margin-bottom:0;
     }
+}
+
+@media screen and (max-width:@grid-float-breakpoint-max) {
+
+    .special {
+        border-bottom:1px solid #ccc;
+    }
+
+    .main-navbar-background {
+        background-color:white;
+        color:#333;
+        border-bottom:1px solid @gris;
+    }
+
+    .main-navbar .navbar-toggle {
+        background-color:white;
+        border:2px solid @azul_menu;
+        border-radius:4px;
+
+        &:hover, &:focus {
+            background-color:white;
+        }
+        
+        .icon-bar {
+        background-color:@azul_menu;
+            }
+
+        }
+
+    .main-navbar .navbar-nav > li > a {
+        color:#333;
+        padding:12px 36px;
+        font-size:18px;
+        border-bottom:1px solid #f0f0f0;
+    }
+
+    .main-navbar .navbar-nav .open .dropdown-menu > li > a {
+        color:#555;
+        padding:12px 36px 12px 48px;
+        font-size:18px;
+        border-bottom:1px solid #f0f0f0;
+    }
+
+    .article-news-wide {
+        margin-top:0;
+    }
+
+    .flex-row, .eventos.row {
+        display:block;
+    }
+
+    .evento-home-mini {
+        margin-bottom:12px;
+    }
+
+    .article-news-half {
+        .content {
+            padding:0 12px;
+        }
+        &.news-left {
+            margin-right:0;
+        }
+    }
+
 }

@@ -17,7 +17,8 @@ $special = $cchl_options['cchl_checkbox_special'];
 			<div class="row">
 				<div class="col-md-12">
 					<a class="specialbannerplus" href="<?php echo get_permalink(CCHL_FILVINA2017);?>" title="Ver más de FIL VIÑA 2017">
-					<img src="<?php bloginfo('template_url');?>/img/filvina-2017/banner-filvina2017-home-2.jpg" alt="<?php echo get_the_title(CCHL_FILVINA2017);?>">	
+					<img class="hidden-xs" src="<?php bloginfo('template_url');?>/img/filvina-2017/banner-filvina2017-home-2.jpg" alt="<?php echo get_the_title(CCHL_FILVINA2017);?>">	
+                    <img src="<?php bloginfo('template_url');?>/img/filvina-2017/banner-filvina2017-movil.jpg" alt="<?php echo get_the_title(CCHL_FILVINA2017);?>" class="visible-xs">
 					</a>
 				</div>
 			</div>
@@ -27,7 +28,7 @@ $special = $cchl_options['cchl_checkbox_special'];
 	<?php
 }?>
 
-<nav class="navbar navbar-default top-utils" role="navigation">
+<nav class="navbar navbar-default top-utils hidden-xs" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
        <a href="<?php echo get_bloginfo('url');?>"><img src="<?php echo get_bloginfo('template_url');?>/img/cchl_logo_libro.svg" alt="<?php bloginfo('title');?>" width="250" height="19"/></a>
@@ -36,12 +37,7 @@ $special = $cchl_options['cchl_checkbox_special'];
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
 		
-		<form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Buscar">
-            </div>
-            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-        </form>
+		<?php get_template_part('parts/bs-home/bs-buscador');?>
 
         <ul class="nav navbar-nav">
             <li class="newsletter"><a href="<?php bloginfo('url'); ?>/suscripcion-al-newsletter">NEWSLETTER</a></li>
@@ -49,11 +45,7 @@ $special = $cchl_options['cchl_checkbox_special'];
 			<li class="mapadelsitio"><a href="<?php bloginfo('url'); ?>/mapa-de-sitio">MAPA del SITIO</a></li>
         </ul>
         
-        <!--<ul class="nav navbar-nav navbar-right">
-            <li><a href="https://www.facebook.com/camarachilenalibro" target="_blank"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="https://twitter.com/<?php echo CCHL_TWITTER;?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="https://www.youtube.com/user/FILSACHILE" target="_blank"><i class="fa fa-youtube"></i></a></li>
-        </ul>-->
+      
     </div><!-- /.navbar-collapse -->
 </nav>
 
