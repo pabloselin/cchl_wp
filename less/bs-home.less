@@ -7,6 +7,7 @@
 @cchl_headings_font: 'Signika', sans-serif;
 @azul_menu: #2371BF;
 @azul_iconos: #46A2F5;
+@cchl_naranjo: #FF8100;
 @max_navbar_width: 1160px;
 
 @facebook: #3B5998;
@@ -33,6 +34,14 @@
         img {
             margin:14px 0 0 14px;
         }
+
+        img.logo-default {
+            margin:14px 0 14px 14px;
+        }
+    }
+
+    .navbar-collapse.top-navbar-default {
+        padding-top:36px;
     }
 
     .buscador-cabecera {
@@ -41,10 +50,18 @@
             background-color:#C0C0C0;
         }
     }
+
+    li.redes {
+        font-size:24px;
+        a {
+            padding:12px;
+        }
+    }
 }
 
+
 .special {
-    background-color:@gris;
+    background-color:white;
     text-align:center;
     .container {
         background-color:white;
@@ -58,6 +75,8 @@
         }
     }
 }
+
+
 
 .main-navbar {
     border-radius:0;
@@ -86,6 +105,14 @@
 
 .main-navbar-background {
     background-color: @gris_oscuro;
+}
+
+h1.home-section-title {
+    margin-top:0;
+    margin-bottom:12px;
+    color:darken(@azul_iconos, 20%);
+    font-size:24px;
+    text-transform:uppercase;
 }
 
 .accesos {

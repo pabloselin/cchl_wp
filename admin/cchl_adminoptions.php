@@ -37,7 +37,32 @@ function cchl_settings_init(  ) {
 		'cchl_cchl_fieldspage_section' 
 	);
 
+
+	//Sección especial
+	add_settings_section( 'cchl_special', 'Especial', 'cchl_special_section_callback', 'cchl_fieldspage' );
+
+	$argsheaderimg = array(
+		'field_id' => 'cchl_special_header',
+		'field_help' => 'Imagen JPG o PNG de 1170 x 300 px.',
+		'field_imgw' => 600,
+		'field_imgh' => 100
+	);
+
+	add_settings_field( 'cchl_special_header', 'Cabecera para Ferias', 'cchl_uploadfieldrender', 'cchl_fieldspage', 'cchl_special', $argsheaderimg);
+
+	$argsheaderimg = array(
+		'field_id' => 'cchl_special_header_mobile',
+		'field_help' => 'Imagen JPG o PNG de 720 x 100 px.',
+		'field_imgw' => 600,
+		'field_imgh' => 100
+	);
+
+	add_settings_field( 'cchl_special_header_mobile', 'Cabecera para Ferias (versión móvil)', 'cchl_uploadfieldrender', 'cchl_fieldspage', 'cchl_special', $argsheaderimg);
+
+	//Sección Footer
+
 	add_settings_section( 'cchl_info', 'Configuración Footer', 'cchl_info_section_callback', 'cchl_fieldspage' );
+
 
 	$argslinea = array(
 		'field_id' => 'cchl_linea'
@@ -120,7 +145,61 @@ function cchl_settings_init(  ) {
 
 	add_settings_field( $args_twitter['field_id'], 'URL página de Twitter Cámara', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_twitter );
 
+	$args_twitter = array(
+		'field_id' => 'cchl_youtube'
+	);
 
+	add_settings_field( $args_twitter['field_id'], 'URL canal de Youtube Cámara', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_twitter );
+
+
+
+}
+
+function cchl_uploadfieldrender( $fieldargs ) {
+
+	$options = get_option( 'cchl_settings' );
+	$field_id = $fieldargs['field_id'];
+
+	$value = (isset( $options[ $field_id] ) ? $options[ $field_id] : '');
+
+	?>
+
+	<p>
+		<img class="<?php echo $field_id;?>" src="<?php echo $value; ?>" height="<?php echo $fieldargs['field_imgh'];?>" width="<?php echo $fieldargs['field_imgw'];?>"/>
+	</p>
+    
+	<input name='cchl_settings[<?php echo $field_id;?>]' class="<?php echo $field_id;?>_url" type="text" name="<?php echo $field_id;?>" size="60" value="<?php echo $value ?>">
+
+	<p><?php echo $fieldargs['field_help'];?></p>
+            
+	<p>
+		<a href="#" class="button <?php echo $field_id;?>_upload">Subir imagen</a>
+	</p>
+
+	<script>
+    jQuery(document).ready(function($) {
+        $('.<?php echo $field_id;?>_upload').click(function(e) {
+            e.preventDefault();
+
+            var custom_uploader = wp.media({
+                title: 'Custom Image',
+                button: {
+                    text: 'Upload Image'
+                },
+                multiple: false  // Set this to true to allow multiple files to be selected
+            })
+            .on('select', function() {
+                var attachment = custom_uploader.state().get('selection').first().toJSON();
+                $('.<?php echo $field_id;?>').attr('src', attachment.url);
+                $('.<?php echo $field_id;?>_url').val(attachment.url);
+
+            })
+            .open();
+        });
+    });
+</script>
+
+	<?php
 
 }
 
@@ -178,6 +257,24 @@ function cchl_urlspecial_render(  ) {
 
 }
 
+
+function cchl_special_section_callback( ) {
+	
+	if(function_exists( 'wp_enqueue_media' )){
+
+    	wp_enqueue_media();
+
+	} else {
+
+		wp_enqueue_style('thickbox');
+		wp_enqueue_script('media-upload');
+		wp_enqueue_script('thickbox');
+
+	}
+
+	echo __('Configuración imágenes cabecera', 'cchl');
+
+}
 
 function cchl_settings_section_callback(  ) { 
 

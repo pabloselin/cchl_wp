@@ -106,11 +106,11 @@ else:
 
   if(is_home()):
 	   
-     get_template_part('parts/header', 'standard-new');
+     get_template_part('parts/bs-home/bs-header');
 
   else:
 
-    get_template_part('parts/header', 'standard-new-interior');
+    get_template_part('parts/header-standard-new-interior');
 
   endif;
 

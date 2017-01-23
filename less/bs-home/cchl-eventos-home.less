@@ -2,6 +2,10 @@ section.eventos {
     background-color:#f0f0f0;
     padding:24px 0;
     margin:24px 0;
+
+    h1.home-section-title {
+        color:@cchl_naranjo;
+    }
 }
 
 .eventos.row {
@@ -18,30 +22,27 @@ section.eventos {
 .evento-home-mini {
     display:block;
     overflow:hidden;
-    border:1px solid @azul_menu;
+    border:1px solid @cchl_naranjo;
     margin-right:6px;
     background-color:white;
-    padding-top:36px;
+    padding-top:12px;
     padding-bottom:12px;
     position: relative;
 
     p.fechaevento {
-        font-size:14px;
-        color:white;
-        position: absolute;
-        top:0;
-        left:0;
-        padding:4px 12px;
-        text-align:center;
-        background-color:#555;
+        font-size:13px;
+        color:darken(@cchl_naranjo, 30%);
+        text-transform:uppercase;
     }
 
     h3 {
         margin:0 0 12px 0;
+        color:@cchl_naranjo;
     }
 
     p {
         margin:0;
+        color:#333;
     }
 
     .interior-evento {
@@ -50,6 +51,8 @@ section.eventos {
 
     &:hover {
         text-decoration:none;
-        background-color:#f0f0f0;
+        h3 {
+            color:darken(@cchl_naranjo, 10%);
+        }
     }
 }

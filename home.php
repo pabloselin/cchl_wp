@@ -13,7 +13,6 @@ $cchl_options = get_option( 'cchl_settings' );
 			
 		<?php get_template_part('parts/bs-home/bs-noticias-principales');?>
 				
-		<?php get_template_part('parts/bs-home/bs-accesos-rapidos');?>
 
 	</div>
 
