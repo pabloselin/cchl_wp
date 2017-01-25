@@ -30,7 +30,7 @@
 
             </a>
 
-            <?php get_template_part('parts/bs-home/bs-accesos-rapidos');?>
+            <div class="hidden-xs"><?php get_template_part('parts/bs-home/bs-accesos-rapidos');?></div>
 
           </div>
 
@@ -148,3 +148,5 @@
           </div>
         </div>
         </section>
+
+        <div class="visible-xs"><?php get_template_part('parts/bs-home/bs-accesos-rapidos');?></div>

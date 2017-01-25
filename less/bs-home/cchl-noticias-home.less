@@ -15,6 +15,10 @@
     height:350px;
     overflow:hidden;
 
+    @media screen and (max-width:@screen-sm) {
+        height:180px;
+    }
+
     &:after {
         content:'';
         display:block;
@@ -39,6 +43,10 @@
         h1 {
             color:lighten(@azul_iconos, 35%);
             margin-top:6px;
+
+            @media screen and (max-width:@screen-sm) {
+                font-size:20px;
+            }
         }
 
         span.date {
@@ -100,6 +108,12 @@
         &:hover {
             color:#555;
             text-decoration:none;
+        }
+    }
+
+    @media screen and (max-width:@screen-sm) {
+        h2 a {
+            font-size:18px;
         }
     }
 }

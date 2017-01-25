@@ -105,7 +105,7 @@ elseif( is_page_template('page-feria-principal.php') || $using_feria_template ||
 else:
 
   if(is_home()):
-	   
+
      get_template_part('parts/bs-home/bs-header');
 
   else:

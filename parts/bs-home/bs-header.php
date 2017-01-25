@@ -33,8 +33,8 @@ $special = $cchl_options['cchl_checkbox_special'];
 	<?php if($special):
 
 		$logo['url'] = get_bloginfo('template_url') . '/img/cchl_logo_libro.svg';
-		$logo['w'] = 250;
-		$logo['h'] = 19;
+		$logo['w'] = 220;
+		$logo['h'] = 16;
 		$logo['class'] = 'special';
 
 	else:
@@ -61,7 +61,7 @@ $special = $cchl_options['cchl_checkbox_special'];
 			<li class="mapadelsitio"><a href="<?php bloginfo('url'); ?>/mapa-de-sitio">MAPA del SITIO</a></li>
 			<li class="redes"><a href="<?php echo $cchl_options['cchl_facebook'];?>"><i class="fa fa-facebook"></i></a> </li>
 			<li class="redes"><a href="<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-twitter"></i></a> </li>
-			<li class="redes"><a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-youtube"></i></a> </li>
+			<li class="redes"><a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-youtube-play"></i></a> </li>
         </ul>
         
       
