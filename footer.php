@@ -5,7 +5,7 @@
 	<div id="footer" class="cf">
    	    <div class="container_16">
     		<div class="caja-info">
-        	<a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url');?>/img/logos/camara-chilena-del-libro.png" alt="<?php bloginfo('name' );?>"></a><br>
+        	<a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url');?>/img/logos/cchl_logo_gris.svg" alt="<?php bloginfo('name' );?>" width="238" height="80"></a><br>
    		    <p><?php bloginfo('name');?> <br /> <?php echo $options['cchl_linea'];?> <br/> <?php echo $options['cchl_direccion'];?><br/>
             Tel: <a style="display:inline;" href="tel:<?php echo $options['cchl_fono'];?>"><?php echo $options['cchl_fono'];?></a> <br /><a href="mailto:<?php echo $options['cchl_email'];?>">E-mail: <?php echo $options['cchl_email'];?></a>
             </p>
