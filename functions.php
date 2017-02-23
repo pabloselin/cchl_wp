@@ -36,6 +36,9 @@ define('CCHL_PAGEFILIJ2016', 60494);
 
 define('CCHL_FERIAPLAZADEARMAS', 60131);
 
+//Otros ids
+define('CCHL_ABUELOS_MEDIADORES', 66093);
+
 //Redes Sociales
 define('CCHL_TWITTER', 'CamaradelLibro');
 define('CCHL_FACEBOOK', 'https://www.facebook.com/camarachilenalibro');
