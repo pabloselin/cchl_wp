@@ -6,6 +6,7 @@
             <li class="redes-footer"><a href="https://facebook.com/<?php echo $cchl_options['cchl_fbcamara'];?>"><i class="fa fa-facebook"></i></a> </li>
 			<li class="redes-footer"><a href="https://twitter.com/<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-twitter"></i></a> </li>
 			<li class="redes-footer"><a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-youtube-play"></i></a> </li>
+            <li class="redes-footer"><a href="https://instagram.com/<?php echo $cchl_options['cchl_instagram'];?>"><i class="fa fa-instagram"></i></a> </li>
         </ul>
     </footer>
 	<footer class="site-footer hidden-sm hidden-xs">

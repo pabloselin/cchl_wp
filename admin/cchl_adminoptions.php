@@ -141,25 +141,31 @@ function cchl_settings_init(  ) {
 		'field_id' => 'cchl_fbcamara'
 	);
 
-	add_settings_field( $args_fbcamara['field_id'], 'URL página de Facebook Cámara', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_fbcamara );
+	add_settings_field( $args_fbcamara['field_id'], 'Nombre Perfil Facebook Cámara', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_fbcamara );
 
 	$args_fbfilsa = array(
 		'field_id' => 'cchl_fbfilsa'
 	);
 
-	add_settings_field( $args_fbfilsa['field_id'], 'URL página de Facebook FILSA', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_fbfilsa );
+	add_settings_field( $args_fbfilsa['field_id'], 'Nombre perfil Facebook FILSA', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_fbfilsa );
 
 	$args_twitter = array(
 		'field_id' => 'cchl_twitter'
 	);
 
-	add_settings_field( $args_twitter['field_id'], 'URL página de Twitter Cámara', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_twitter );
+	add_settings_field( $args_twitter['field_id'], 'Nombre usuario Twitter Cámara', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_twitter );
 
-	$args_twitter = array(
+	$args_instagram = array(
+		'field_id' => 'cchl_instagram'
+	);
+
+	add_settings_field( $args_instagram['field_id'], 'Nombre usuario Instagram Cámara', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_instagram );
+
+	$args_youtube = array(
 		'field_id' => 'cchl_youtube'
 	);
 
-	add_settings_field( $args_twitter['field_id'], 'URL canal de Youtube Cámara', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_twitter );
+	add_settings_field( $args_youtube['field_id'], 'URL canal de Youtube Cámara', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_redes_conf', $args_youtube );
 
 
 

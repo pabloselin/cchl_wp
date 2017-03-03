@@ -62,6 +62,7 @@ $special = $cchl_options['cchl_checkbox_special'];
 			<li class="redes"><a href="https://facebook.com/<?php echo $cchl_options['cchl_fbcamara'];?>"><i class="fa fa-facebook"></i></a> </li>
 			<li class="redes"><a href="https://twitter.com/<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-twitter"></i></a> </li>
 			<li class="redes"><a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-youtube-play"></i></a> </li>
+			<li class="redes"><a href="https://instagram.com/<?php echo $cchl_options['cchl_instagram'];?>"><i class="fa fa-instagram"></i></a> </li>
         </ul>
         
       

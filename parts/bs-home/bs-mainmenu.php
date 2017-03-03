@@ -37,7 +37,7 @@
                     
                     <li class="redes">
                     
-                    <a href="<?php echo $cchl_options['cchl_facebook'];?>"><i class="fa fa-facebook"></i></a> <a href="<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-twitter"></i></a> <a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-youtube-play"></i></a> 
+                    <a href="https://facebook.com/<?php echo $cchl_options['cchl_facebook'];?>"><i class="fa fa-facebook"></i></a> <a href="https://twitter.com/<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-twitter"></i></a> <a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-youtube-play"></i></a> <a href="https://instagram.com/<?php echo $cchl_options['cchl_instagram'];?>"><i class="fa fa-instagram"></i></a>
 
                     </li>
 
