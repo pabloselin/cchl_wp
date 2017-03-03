@@ -1,8 +1,14 @@
 <?php 
     $options = get_option( 'cchl_settings' );
 ?>
-
-	<footer class="site-footer">
+    <footer class="footer-mobile visible-xs visible-sm">
+        <ul>
+            <li class="redes-footer"><a href="https://facebook.com/<?php echo $cchl_options['cchl_fbcamara'];?>"><i class="fa fa-facebook"></i></a> </li>
+			<li class="redes-footer"><a href="https://twitter.com/<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-twitter"></i></a> </li>
+			<li class="redes-footer"><a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-youtube-play"></i></a> </li>
+        </ul>
+    </footer>
+	<footer class="site-footer hidden-sm hidden-xs">
    	    <div class="container">
     	
         <div class="row">

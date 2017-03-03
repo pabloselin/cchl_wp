@@ -63,6 +63,7 @@ function cchl_settings_init(  ) {
 
 	add_settings_section( 'cchl_info', 'Configuración Footer', 'cchl_info_section_callback', 'cchl_fieldspage' );
 
+	
 
 	$argslinea = array(
 		'field_id' => 'cchl_linea'
@@ -89,20 +90,29 @@ function cchl_settings_init(  ) {
 	add_settings_field( 'cchl_email', 'Email', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_info', $argsemail );
 
 	//Sección eventos
+
+	//Sección Eventos
+	add_settings_section( 'cchl_eventos', 'Configuración Sección Eventos', 'cchl_eventos_section_callback', 'cchl_fieldspage' );
 	
-	add_settings_section( 'cchl_events_conf', 'Eventos Home', 'cchl_events_section_callback', 'cchl_fieldspage' );
+	add_settings_field( 
+		'cchl_checkbox_link_eventos', 
+		__( 'Activar link para seccion eventos', 'cchl' ), 
+		'cchl_checkbox_link_eventos_render', 
+		'cchl_fieldspage', 
+		'cchl_eventos' 
+	);
 
 	$args_title_event = array(
 		'field_id' => 'cchl_tituloseccioneventos'
 	);
 
-	add_settings_field( $args_title_event['field_id'], 'Título sección eventos Home', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_events_conf', $args_title_event );
+	add_settings_field( $args_title_event['field_id'], 'Título sección eventos Home', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_eventos', $args_title_event );
 
 	$args_url_event = array(
 		'field_id' => 'cchl_urlseccioneventos'
 	);
 
-	add_settings_field( $args_url_event['field_id'], 'Link sección eventos Home', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_events_conf', $args_url_event );
+	add_settings_field( $args_url_event['field_id'], 'Link sección eventos Home', 'cchl_textfieldrender', 'cchl_fieldspage', 'cchl_eventos', $args_url_event );
 
 
 	//Sección redes
@@ -243,6 +253,15 @@ function cchl_checkbox_special_render(  ) {
 	$options = get_option( 'cchl_settings' );
 	?>
 	<input type='checkbox' name='cchl_settings[cchl_checkbox_special]' <?php checked( $options['cchl_checkbox_special'], 1 ); ?> value='1'>
+	<?php
+
+}
+
+function cchl_checkbox_link_eventos_render(  ) { 
+
+	$options = get_option( 'cchl_settings' );
+	?>
+	<input type='checkbox' name='cchl_settings[cchl_checkbox_eventos]' <?php checked( $options['cchl_checkbox_eventos'], 1 ); ?> value='1'>
 	<?php
 
 }

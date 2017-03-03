@@ -1,24 +1,18 @@
+    <?php 
+      $menurapidos = cchl_getmenus('accesos-rapidos-home');
+    ?>
     <div class="accesos col-md-4">
         <div class="list-group">
-          <a href="#" class="list-group-item">
-            <i class="fa fa-fw fa-3x fa-book pull-left"></i>
-            <h4 class="list-group-item-heading">ISBN</h4>
+
+          <?php foreach($menurapidos as $item_acceso):?>
+
+          <a href="<?php echo $item_acceso->url;?>" class="list-group-item">
+            <i class="fa fa-fw fa-3x <?php echo $item_acceso->classes[0];?> pull-left"></i>
+            <h4 class="list-group-item-heading"><?php echo $item_acceso->title;?></h4>
           </a>
 
-           <a href="#" class="list-group-item">
-            <i class="fa fa-fw fa-3x fa-user-circle-o pull-left"></i>
-            <h4 class="list-group-item-heading">Socios</h4>
-          </a>
+          <?php endforeach;?>
 
-           <a href="#" class="list-group-item">
-            <i class="fa fa-fw fa-3x fa-bookmark pull-left"></i>
-            <h4 class="list-group-item-heading">FILSA</h4>
-          </a>
-
-           <a href="#" class="list-group-item">
-            <i class="fa fa-fw fa-3x fa-gift pull-left"></i>
-            <h4 class="list-group-item-heading">Concursos</h4>
-          </a>
         </div>
 
     </div>

@@ -28,11 +28,13 @@
             endforeach;?>
         
         </div>
+        <?php if($cchl_options['cchl_checkbox_eventos']):?>
         <div class="row plus-row">
             <div class="col-md-4 col-md-offset-4">
-                <a href="<?php echo $cchl_options['cchl_urlseccioneventos'];?>" class="btn btn-block btn-warning"> <i class="fa fa-plus"></i> Eventos </a>
+                <a href="<?php echo $cchl_options['cchl_urlseccioneventos'];?>" class="btn btn-block btn-warning btn-moresection"> <i class="fa fa-plus"></i> Eventos </a>
             </div>
         </div>
+        <?php endif;?>
     </div>
 </section>
 

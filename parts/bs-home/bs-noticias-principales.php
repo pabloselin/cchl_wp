@@ -30,7 +30,7 @@
 
             </a>
 
-            <div class="hidden-xs"><?php get_template_part('parts/bs-home/bs-accesos-rapidos');?></div>
+            <div><?php get_template_part('parts/bs-home/bs-accesos-rapidos');?></div>
 
           </div>
 
@@ -144,9 +144,7 @@
         
         <div class="row">
           <div class="col-md-4 col-md-offset-4">
-            <a href="#" class="btn btn-block btn-warning"> <i class="fa fa-plus"></i> Más Noticias</a>
+            <a href="<?php bloginfo('url');?>/sala-de-prensa/" class="btn btn-block btn-warning btn-moresection"> <i class="fa fa-plus"></i> Noticias</a>
           </div>
         </div>
         </section>
-
-        <div class="visible-xs"><?php get_template_part('parts/bs-home/bs-accesos-rapidos');?></div>

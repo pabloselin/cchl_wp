@@ -18,3 +18,29 @@ footer.site-footer {
         list-style:none;
     }
 }
+
+.footer-mobile ul {
+    display:flex;
+    padding:0;
+}
+
+.redes-footer {
+    list-style:none;
+    display:block;
+    padding:12px;
+    justify-content:space-between;
+    flex-grow:1;
+    text-align:center;
+    i {
+        font-size:32px;
+        &.fa-facebook {
+            color:@facebook;
+        }
+        &.fa-twitter {
+            color:@twitter;
+        }
+        &.fa-youtube-play {
+            color:@youtube;
+        }
+    }
+}
