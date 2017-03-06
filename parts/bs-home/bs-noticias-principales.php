@@ -17,7 +17,7 @@
             <article class="article-news-wide col-md-8">
               <?php if(has_post_thumbnail( $noticia_principal->object_id )):?>
                 <div class="img">
-                    <?php echo get_the_post_thumbnail( $noticia_principal->object_id, 'full' );?>
+                    <?php echo get_the_post_thumbnail( $noticia_principal->object_id, 'noticia-principal' );?>
                 </div>
               <?php endif;?>
 
@@ -48,7 +48,7 @@
                   <div class="img">
                     <a href="<?php echo get_permalink($noticia_dos->object_id);?>">
 
-                        <?php echo get_the_post_thumbnail( $noticia_dos->object_id, 'full');?>
+                        <?php echo get_the_post_thumbnail( $noticia_dos->object_id, 'noticia-secundaria');?>
 
                     </a>
                     <span class="date"><?php echo get_the_time('j \d\e F', $noticia_dos->object_id);?></span>
@@ -80,7 +80,7 @@
 
                   <div class="img">
                     <a href="<?php echo get_permalink($noticia_tres->object_id);?>">
-                        <?php echo get_the_post_thumbnail( $noticia_tres->object_id, 'full');?>
+                        <?php echo get_the_post_thumbnail( $noticia_tres->object_id, 'noticia-secundaria');?>
                     </a>
                     <span class="date"><?php echo get_the_time('j \d\e F', $noticia_tres->object_id);?></span>
                   </div>
@@ -117,7 +117,7 @@
                   <div class="img">
                     <a href="<?php echo get_permalink($noticia_cuatro->object_id);?>">
 
-                        <?php echo get_the_post_thumbnail( $noticia_cuatro->object_id, 'full');?>
+                        <?php echo get_the_post_thumbnail( $noticia_cuatro->object_id, 'noticia-secundaria');?>
 
                     </a>
                     <span class="date"><?php echo get_the_time('j \d\e F', $noticia_cuatro->object_id);?></span>
