@@ -10,7 +10,7 @@ function cchl_styles() {
 	//Compiled grunt style
 	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.98fdef00.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.043f4ad9.min.css', array(), CCHL_VERSION, 'screen' );
 
 	if(!is_admin() && !is_home()) {
 
@@ -40,7 +40,7 @@ if(!is_admin()) {
   wp_register_script( 'imagesloaded', get_bloginfo('template_url') . '/js/imagesloaded.min.js', array('jquery'));
   wp_register_script( 'masonry', get_bloginfo('template_url') . '/js/masonry.min.js', array('jquery'));
   wp_register_script( 'featherlight', get_bloginfo('template_url') . '/js/featherlight/featherlight.min.js', array('jquery'));
-  wp_register_script( 'cchl_home', get_bloginfo('template_url') . '/js/cchl-home.js', array() );
+  wp_register_script( 'cchl_home', get_bloginfo('template_url') . '/js/cchl-home.f5aa5d9d.min.js', array() );
 
   //Scripts y estilos home
   

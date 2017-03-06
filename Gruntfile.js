@@ -45,7 +45,7 @@ module.exports = function(grunt) {
 					rename: true
 				},
 				files: {
-					'inc/scripts.php': ['css/style-cchl.css', 'js/cchl-scripts.js']
+					'inc/scripts.php': ['css/style-cchl.css', 'js/cchl-scripts.js', 'css/home-cchl.css', 'js/cchl-home.js']
 				}
 			}
 		},
