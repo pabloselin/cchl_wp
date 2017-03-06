@@ -71,7 +71,7 @@
 .article-news-half {
     padding:0;
     margin-bottom:24px;
-    border-top:1px solid @azul_menu;
+    border-top:1px solid #333;
 
     &.news-left {
         margin-right:12px;
@@ -85,7 +85,8 @@
     }
 
     div.img {
-        height:180px;
+        height:auto;
+        width:100%;
         overflow:hidden;
         position: relative;
         span.date {
@@ -120,6 +121,7 @@
     @media screen and (max-width:@screen-sm) {
         h2 {
             margin-bottom:22px;
+            margin-top:8px;
         }
 
         h2 a {
