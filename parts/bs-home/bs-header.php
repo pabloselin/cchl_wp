@@ -15,7 +15,7 @@ $special = $cchl_options['cchl_checkbox_special'];
 	<section class="special">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 fmw">
 					<a class="specialbannerplus" href="<?php echo $cchl_options['cchl_urlspecial'];?>" title="Ver más">
 					<img class="hidden-xs" src="<?php echo $cchl_options['cchl_special_header'];?>" alt="<?php echo $cchl_options['cchl_special_title'];?>">	
                     <img src="<?php echo $cchl_options['cchl_special_header_mobile'];?>" alt="<?php echo $cchl_options['cchl_special_title'];?>" class="visible-xs">

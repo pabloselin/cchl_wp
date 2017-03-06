@@ -17,7 +17,7 @@
     overflow:hidden;
 
     @media screen and (max-width:@screen-sm) {
-        height:180px;
+        height:220px;
     }
 
     &:after {
@@ -42,12 +42,12 @@
         text-shadow:1px 1px 1px #333;
 
         h1 {
-            color:lighten(@azul_iconos, 35%);
+            color:white;
             margin-top:6px;
             font-size:44px;
 
             @media screen and (max-width:@screen-sm) {
-                font-size:24px;
+                font-size:26px;
             }
         }
 
@@ -71,6 +71,7 @@
 .article-news-half {
     padding:0;
     margin-bottom:24px;
+    border-top:1px solid @azul_menu;
 
     &.news-left {
         margin-right:12px;
@@ -117,8 +118,12 @@
     }
 
     @media screen and (max-width:@screen-sm) {
+        h2 {
+            margin-bottom:22px;
+        }
+
         h2 a {
-            font-size:18px;
+            font-size:20px;
         }
     }
 }
