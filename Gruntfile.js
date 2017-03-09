@@ -52,33 +52,30 @@ module.exports = function(grunt) {
 		clean: {
 			dist: [
 			'css/style-cchl.*.css',
-			'js/cchl-scripts.*.min.js'
+			'css/home-cchl.*.css',
+			'js/cchl-scripts.*.min.js',
+			'js/cchl-home.*.min.js',
 			]
 		},
 		concat: {
 			options: {
-				separator: ';'
+					separator: ';'
 			},
-			dist: {
+			basic: {
 				src: [
-				'bower_components/galleria/src/galleria.js',
-				'js/galleria-classic-theme/galleria.classic.js',
-				'js/src/cchl-ajax.js',
-				'js/src/cchl-main.js',
-				'js/src/cchl-filsa.js'
-				],
+					'bower_components/galleria/src/galleria.js',
+					'js/galleria-classic-theme/galleria.classic.js',
+					'js/src/cchl-ajax.js',
+					'js/src/cchl-main.js',
+					'js/src/cchl-filsa.js'
+					],
 				dest: 'js/cchl-scripts.js'
-			}
-		},
-		concat: {
-			options: {
-				separator: ';'
-			},
-			dist: {
+				},
+			home: {	
 				src: [
-					'bower_components/bootstrap/js/dropdown.js',
-					'bower_components/bootstrap/js/collapse.js'
-				],
+						'bower_components/bootstrap/js/dropdown.js',
+						'bower_components/bootstrap/js/collapse.js'
+					],
 				dest: 'js/cchl-home.js'
 				}
 		}
