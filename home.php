@@ -46,19 +46,15 @@ $cchl_options = get_option( 'cchl_settings' );
 <section class="redes hidden-xs">
   <div class="container">
     <div class="redes row flex-row">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <?php get_template_part('parts/blocks/facebook-block');?>
         </div>
     
-        <div class="col-md-3">
+        <div class="col-md-4">
           <?php get_template_part('parts/blocks/twitter-block');?>
         </div>
-    
-        <div class="col-md-3">
-          <?php get_template_part('parts/blocks/facebook-filsa-block');?>
-        </div>
         
-        <div class="col-md-3">
+        <div class="col-md-4">
           <?php get_template_part('parts/blocks/instagram-block');?>
         </div>
     </div>
