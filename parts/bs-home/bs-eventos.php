@@ -38,4 +38,11 @@
     </div>
 </section>
 
-<?php endif;?>
+<?php else: ?>
+
+    <section class="eventos">
+    </section>
+
+<?php
+    endif;
+?>
