@@ -1,4 +1,16 @@
 <div id="top" class="special">
+  
+<div class="container_16 cf banner-interior">
+    <?php
+        $cchl_options = get_option( 'cchl_settings' );
+        $special = $cchl_options['cchl_checkbox_special'];
+    ?>
+
+    <a class="specialbannerplus" href="<?php echo $cchl_options['cchl_urlspecial'];?>" title="Ver más">
+					<img class="hidden-xs" src="<?php echo $cchl_options['cchl_special_header'];?>" alt="<?php echo $cchl_options['cchl_special_title'];?>">
+	</a>
+</div>
+
   <div class="container_16 cf"> 
     
     <h1 class="logocchl_mini">
