@@ -51,3 +51,56 @@ function cchl_metaviewport() {
 }
 
 add_action( 'wp_head', 'cchl_metaviewport' );
+
+function cchl_styleferiatemplate() { 
+  //Chequea si algún parent está usando un template de feria
+  global $post;
+  $using_feria_template = checkferiatemplate($post->ID);
+  $cchl_options = get_option( 'cchl_settings' );
+  $special = $cchl_options['cchl_checkbox_special'];
+  
+  if($using_feria_template) {
+    $color_1 = get('color_1', 1, 1, 1, $using_feria_template);
+    $color_2 = get('color_2', 1, 1, 1, $using_feria_template);
+    ?>
+    <style type="text/css">
+        body#feria #sidebar_interior.menu-feria-especial div>ul>li:first-of-type > a {
+          background-color: <?php echo $color_1;?> !important;
+          color:<?php echo $color_2;?> !important;
+        }
+
+        body#feria a.triggernav {
+          color:<?php echo $color_1;?> !important;
+        }
+
+        body#feria .mobile-menu-filsa {
+          border-top:1px solid <?php echo $color_1;?> !important;
+        }
+
+        body#feria .mobile-menu-filsa ul > li > a {
+          background-color:<?php echo $color_1;?> !important;
+          color:white !important;
+          text-transform:uppercase;
+          font-size:22px;
+        }
+
+        body#feria .mobile-menu-filsa ul li ul.sub-menu li a {
+          background-color:<?php echo adjustBrightness($color_1, 190);?> !important;
+          color:<?php echo $color_2;?> !important;
+        }
+
+        body#feria #content #navfilsa.navfil.fil2016variant a.activeSlide.otrodia {
+          background-color:<?php echo $color_1;?> !important;
+          color:<?php echo $color_2;?> !important;  
+        }
+
+        body#feria #content #navfilsa.navfil.fil2016variant a.otrodia {
+          background-color:#f0f0f0;
+        }
+
+    </style>
+    <?php
+  		}
+	}
+
+	add_action('wp_head', 'cchl_styleferiatemplate');

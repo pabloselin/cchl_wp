@@ -1,0 +1,159 @@
+//New home
+//Marzo 2017
+//Variables generales a exportar luego
+
+
+
+@import '../bs-general/bs-init.less';
+@import 'cchl-noticias-home.less';
+@import 'cchl-eventos-home.less';
+
+
+
+
+h1.home-section-title {
+    margin-top:0;
+    margin-bottom:12px;
+    color:darken(@azul_iconos, 20%);
+    font-size:24px;
+    text-transform:uppercase;
+}
+
+.accesos {
+    margin-top:36px;
+    padding:0 0 0 12px;
+    .list-group {
+        @media screen and (max-width:@screen-sm) {
+            margin-right:12px;
+        }
+    }
+    a {
+        overflow:hidden;
+        i {
+            color:@azul_iconos;
+        }
+        h4 {
+            font-weight:normal;
+            font-size:14px;
+            text-transform: uppercase;
+            color:@gris_oscuro;
+            margin-top:16px;
+        }
+    }
+}
+
+.fotos-flickr {
+    padding:0;
+    margin-right:12px;
+
+    h2 {
+        color:#FF1981;
+    }
+
+    iframe {
+        max-width:100%;
+        overflow:hidden;
+    }
+}
+
+.videos {
+    padding:0;
+    h2 {
+        color:#E62117;
+    }
+}
+
+.flex-row {
+    display:flex;
+    justify-content:space-between;
+}
+
+.redes.row {
+    display:flex;
+    justify-content:space-between;
+    padding-top:32px;
+}
+
+.redes.row > .col-md-3 {
+    padding:0;
+    overflow:hidden;
+    margin-right:6px;
+    iframe {
+        max-width:100%;
+    }
+}
+
+.facebook-box {
+    h3 {
+        background-color:@facebook;
+        color:white;
+        font-size:14px;
+        font-weight:500;
+        text-transform:uppercase;
+        padding:12px 6px;
+        margin-bottom:0;
+    }
+}
+
+.twitter-box {
+    h3 {
+        background-color:@twitter;
+        color:white;
+        font-size:14px;
+        font-weight:500;
+        text-transform:uppercase;
+        padding:12px 6px;
+        margin-bottom:0;
+    }
+}
+
+.instagram-box {
+    h3 {
+        background-color:@instagram;
+        color:white;
+        font-size:14px;
+        font-weight:500;
+        text-transform:uppercase;
+        padding:12px 6px;
+        margin-bottom:0;
+    }
+}
+
+.extra-mobile-nav {
+    li.redes {
+        display:flex;
+    }
+    li.redes a {
+        flex-grow:1;
+        display:inline-block;
+        margin:0 6px;
+        border-bottom:0;
+        color:#555;
+        padding:12px;
+        font-size:24px;
+        text-align:center;
+        i {
+            &.fa-facebook {
+            color:@facebook;
+            }
+            &.fa-twitter {
+                color:@twitter;
+            }
+            &.fa-youtube-play {
+                color:@youtube;
+            }
+            &.fa-instagram {
+                color:@instagram;
+            }
+        }
+    }
+}
+
+.btn-moresection {
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+.col-md-12.fmw {
+    padding:0;
+}

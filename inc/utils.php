@@ -221,6 +221,19 @@ function get_topmost_parent($post_id){
   }
 }
 
+function cchl_get_topmost_parent_template($post_id, $page_template_slug) {
+  //Devuelve el ID de la página superior que esté usando la plantilla $page_template_slug(con extensión .php)
+  $ancestors = get_post_ancestors( $post_id );
+    if($ancestors) {
+      foreach($ancestors as $ancestor) {
+        $ancestor_slug = get_page_template_slug( $ancestor );
+        if($ancestor_slug == $page_template_slug) {
+          return $ancestor;
+        }
+      }
+    }
+}
+
 function new_excerpt_more( $more ) {
   return '';
 }
@@ -238,7 +251,7 @@ function cchl_isresponsive( ) {
   $isfilij = checkfilij();
   $using_feria_template = checkferiatemplate($post->ID);
   $feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );
-
+  $ancestor = cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php');
   if(
   
   //Listado de condiciones para plantillas específicas
@@ -251,9 +264,10 @@ function cchl_isresponsive( ) {
   checkferia($post->ID, CCHL_FILVINA2016) ||
   checkferia($post->ID, CCHL_FILVINA2017) ||
   is_page_template('page-feria-principal.php') ||
+  is_page_template('bs-plantilla-feria.php') ||
   $using_feria_template || 
-  ( is_single() && in_category( $feriasmultimediacats, $post->ID ) )
-
+  ( is_single() && in_category( $feriasmultimediacats, $post->ID ) ) ||
+  $ancestor
   ):
 
     return true;

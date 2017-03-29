@@ -10,7 +10,8 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'css/style-cchl.css':'less/main.less',
-					'css/home-cchl.css':'less/bs-home.less'
+					'css/home-cchl.css':'less/bs-home/bs-home.less',
+					'css/interior-cchl.css':'less/bs-interior/bs-interior.less'
 				}
 			}
 		},
@@ -45,7 +46,7 @@ module.exports = function(grunt) {
 					rename: true
 				},
 				files: {
-					'inc/scripts.php': ['css/style-cchl.css', 'js/cchl-scripts.js', 'css/home-cchl.css', 'js/cchl-home.js']
+					'inc/scripts.php': ['css/style-cchl.css', 'js/cchl-scripts.js', 'css/home-cchl.css', 'js/cchl-home.js', 'css/interior-cchl.css']
 				}
 			}
 		},
@@ -53,6 +54,7 @@ module.exports = function(grunt) {
 			dist: [
 			'css/style-cchl.*.css',
 			'css/home-cchl.*.css',
+			'css/interior-cchl.*.css',
 			'js/cchl-scripts.*.min.js',
 			'js/cchl-home.*.min.js',
 			]

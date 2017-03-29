@@ -100,3 +100,4 @@ include( TEMPLATEPATH . '/inc/function-ferias.php');
 include( TEMPLATEPATH . '/inc/fields-functions.php');
 include( TEMPLATEPATH . '/inc/mustache-functions.php');
 include( TEMPLATEPATH . '/inc/wphead-includes.php');
+include( TEMPLATEPATH . '/inc/meta-boxes.php');

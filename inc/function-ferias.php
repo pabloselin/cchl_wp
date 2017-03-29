@@ -186,6 +186,27 @@ function filsa_template($template) {
   return $template;
 }
 
+function cchl_bsferiaredirect($original_template) {
+	global $post;
+	$using_bsferiatemplate= cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php');
+
+	if($using_bsferiatemplate) {
+		return  get_template_directory() .  '/bs-plantilla-feria.php';
+	} else {
+		return $original_template;
+		}
+}
+
+function cchl_current_fields_id($template_to_look) {
+	//devuelve el ID de la página donde se almacenan los datos de la plantilla personalizada para una feria
+	global $post;
+	$usable_id = (get_page_template_slug($post->ID) == $template_to_look)? $post->ID : cchl_get_topmost_parent_template($post->ID, $template_to_look);
+	return $usable_id;
+	
+}
+
+add_action('template_include', 'cchl_bsferiaredirect');
+
 function checkfilsa() {
   global $post;
   $ancestors = get_post_ancestors($post->ID);
@@ -310,4 +331,48 @@ function checkferiatemplate($postid) {
   endif;
 
   return $feriaid;
+}
+
+function cchl_header($postid) {
+	//Cambiador de headers para distintas situaciones
+	$isfilsa = checkfilsa();
+	$isfilij = checkfilij();
+	//Categorías extra para page-ferias
+	$feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );
+
+	if( $isfilsa ):
+		//get_template_part('parts/header', 'filsa-2014' );
+		$template = 'parts/header-filsa-2014';
+	elseif( $isfilij ):
+		//get_template_part('parts/header', 'filij-2014' );
+		$template = 'parts/header-filij-2014';	
+	elseif( checkferia($post->ID, 53771) ):
+		//get_template_part('parts/header', 'fil' );
+		$template = 'parts/header-fil';
+	elseif( checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ):
+		//get_template_part('parts/header', 'filsa-2015' );
+		$template = 'parts/header-filsa-2015';
+	elseif( checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 'filsa-2016') ):
+  		//get_template_part('parts/header', 'filsa-2016');
+		$template = 'parts/header-filsa-2016';
+	elseif( checkferia($post->ID, CCHL_FILVINA2016) ):
+		//get_template_part('parts/header', 'filvina-2016');
+		$template = 'parts/header-filvina-2016';
+	elseif( checkferia($post->ID, CCHL_FILVINA2017, CCHL_CATSFILVINA2017) ):
+		//get_template_part('parts/header', 'filvina-2017');  
+		$template = 'parts/header-filvina-2017';
+	elseif( is_page_template('page-feria-principal.php') || $using_feria_template || is_single() && in_category( $feriasmultimediacats, $post->ID ) ):
+		//get_template_part('parts/header', 'feria');
+		$template = 'parts/header-feria';
+	else:
+  		if(is_home()):
+		  	//get_template_part('parts/bs-home/bs-header');
+		  	$template = 'parts/bs-home/bs-header';
+  	else:
+    	//get_template_part('parts/header-standard-new-interior');
+			$template = 'parts/header-standard-new-interior';
+  endif;
+endif;
+
+	return $template;
 }

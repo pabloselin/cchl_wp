@@ -1,25 +1,3 @@
-//New home
-//Marzo 2017
-//Variables generales a exportar luego
-
-@gris: #ccc;
-@gris_oscuro: #807F83;
-@cchl_headings_font: 'Signika', sans-serif;
-@azul_menu: #2371BF;
-@azul_iconos: #46A2F5;
-@cchl_naranjo: #FF8100;
-@max_navbar_width: 1160px;
-
-@facebook: #3B5998;
-@twitter: #1DA1F2;
-@instagram: #D42F8A;
-@youtube: #E52D27;
-
-@import '/bs-home/cchl-bootstrap.less';
-@import '/bs-home/cchl-noticias-home.less';
-@import '/bs-home/cchl-eventos-home.less';
-@import '/bs-home/cchl-footer.less';
-
 body {
     background-color:white;
 }
@@ -111,112 +89,51 @@ body {
     background-color: @gris_oscuro;
 }
 
-h1.home-section-title {
-    margin-top:0;
-    margin-bottom:12px;
-    color:darken(@azul_iconos, 20%);
-    font-size:24px;
-    text-transform:uppercase;
+.navbar-nomargin {
+    margin:0;
 }
 
-.accesos {
-    margin-top:36px;
-    padding:0 0 0 12px;
-    .list-group {
-        @media screen and (max-width:@screen-sm) {
-            margin-right:12px;
-        }
-    }
+.navbar-bs-ferias {
+    min-height:33px;
     a {
-        overflow:hidden;
-        i {
-            color:@azul_iconos;
+        color:#333;
+        text-transform: uppercase;
+        line-height:33px;
+        text-transform:uppercase;
+        font-family:'Signika', sans-serif;
+        font-weight:300;
+        vertical-align:middle;
+    }
+
+    .brand {
+
+        float:left;
+        
+        img {
+            margin-right:6px;
         }
-        h4 {
-            font-weight:normal;
-            font-size:14px;
-            text-transform: uppercase;
-            color:@gris_oscuro;
-            margin-top:16px;
+
+        a {
+            color:#6c6c6c;
         }
     }
-}
 
-.fotos-flickr {
-    padding:0;
-    margin-right:12px;
-
-    h2 {
-        color:#FF1981;
+    .feriaslink.dropdown ul.dropdown-menu {
+        padding-bottom:0;
     }
 
-    iframe {
-        max-width:100%;
-        overflow:hidden;
+    .feriaslink.dropdown ul li {
+        border-bottom:1px solid #ccc;
+    }
+    .feriaslink.dropdown ul li a {
+        font-weight:300;
     }
 }
 
-.videos {
-    padding:0;
-    h2 {
-        color:#E62117;
-    }
-}
-
-.flex-row {
-    display:flex;
-    justify-content:space-between;
-}
-
-.redes.row {
-    display:flex;
-    justify-content:space-between;
-    padding-top:32px;
-}
-
-.redes.row > .col-md-3 {
-    padding:0;
-    overflow:hidden;
-    margin-right:6px;
-    iframe {
-        max-width:100%;
-    }
-}
-
-.facebook-box {
-    h3 {
-        background-color:@facebook;
-        color:white;
-        font-size:14px;
-        font-weight:500;
-        text-transform:uppercase;
-        padding:12px 6px;
-        margin-bottom:0;
-    }
-}
-
-.twitter-box {
-    h3 {
-        background-color:@twitter;
-        color:white;
-        font-size:14px;
-        font-weight:500;
-        text-transform:uppercase;
-        padding:12px 6px;
-        margin-bottom:0;
-    }
-}
-
-.instagram-box {
-    h3 {
-        background-color:@instagram;
-        color:white;
-        font-size:14px;
-        font-weight:500;
-        text-transform:uppercase;
-        padding:12px 6px;
-        margin-bottom:0;
-    }
+.banner-feria-sm,
+.banner-feria-md
+ {
+    max-width:100%;
 }
 
 @media screen and (max-width:@grid-float-breakpoint-max) {
@@ -281,43 +198,4 @@ h1.home-section-title {
         }
     }
 
-}
-
-.extra-mobile-nav {
-    li.redes {
-        display:flex;
-    }
-    li.redes a {
-        flex-grow:1;
-        display:inline-block;
-        margin:0 6px;
-        border-bottom:0;
-        color:#555;
-        padding:12px;
-        font-size:24px;
-        text-align:center;
-        i {
-            &.fa-facebook {
-            color:@facebook;
-            }
-            &.fa-twitter {
-                color:@twitter;
-            }
-            &.fa-youtube-play {
-                color:@youtube;
-            }
-            &.fa-instagram {
-                color:@instagram;
-            }
-        }
-    }
-}
-
-.btn-moresection {
-    text-transform:uppercase;
-    font-weight:bold;
-}
-
-.col-md-12.fmw {
-    padding:0;
 }

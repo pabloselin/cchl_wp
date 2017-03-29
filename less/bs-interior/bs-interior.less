@@ -1,0 +1,52 @@
+//Interiores
+
+@import '../bs-general/bs-init.less';
+
+.sidebar-menu-feria {
+    margin-top:24px;
+    
+    div > ul > li > a:before {
+                    content: '\f015';
+                    color: white;
+                    font-family: 'FontAwesome';
+                    font-size: 17px;
+                    margin-left: -4px;
+                    margin-right: 4px;
+                    vertical-align: middle;
+                    font-weight: normal;
+                }
+
+    div ul {
+        > li {
+            text-transform:uppercase;
+            font-family:'Signika', sans-serif;
+            font-size:18px;
+            font-weight:300;
+            > a {
+                color:white;
+                background-color:#C36416;
+                &:hover {
+                    background-color:#55431F;
+                }
+            }
+            ul {
+                padding:0;
+                li {
+                    list-style:none;
+                    font-size:16px;
+                    a {
+                        display:block;
+                        padding:12px 12px 12px 24px;
+                        background-color:#EEE5C8;
+                        color:#59461E;
+                        border-bottom:1px solid darken(#EEE5C8, 20%);
+                        &:hover {
+                            text-decoration:none;
+                            background-color:#f0f0f0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

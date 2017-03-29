@@ -1,5 +1,6 @@
 <?php
 function cchl_styles() {
+  global $post;
 
   wp_register_style( 'mailchimp', '//cdn-images.mailchimp.com/embedcode/classic-081711.css' , array(), '0.1', 'screen');
 	//gfonts
@@ -10,14 +11,29 @@ function cchl_styles() {
 	//Compiled grunt style
 	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.acb06783.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.213c2679.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.04f84df8.min.css', array(), CCHL_VERSION, 'screen' );
+
+  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.78b6d611.min.css', array(), CCHL_VERSION, 'screen' );
 
 	if(!is_admin() && !is_home()) {
+    
+    $template_ancestors = cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php');
+    
+    if( $template_ancestors || get_page_template_slug( $post->ID ) == 'bs-plantilla-feria.php') {
 
-    wp_enqueue_style('cchlcss');
-    wp_enqueue_style('mailchimp');
-    wp_enqueue_style('fonts');
-    wp_enqueue_style('fontawesome');
+      wp_enqueue_style('fontawesome');
+      wp_enqueue_style('fonts');
+      wp_enqueue_style( 'interior-cchl');
+
+    } else {
+
+      wp_enqueue_style('cchlcss');
+      wp_enqueue_style('mailchimp');
+      wp_enqueue_style('fonts');
+      wp_enqueue_style('fontawesome');
+
+    }
+    
 
 	} elseif(is_home()){
 
@@ -29,10 +45,11 @@ function cchl_styles() {
 }
 
 function cchl_scripts() {
+global $post;
 
-if(!is_admin()) {
-	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
-}
+  if(!is_admin()) {
+	  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
+  }
 
   wp_register_script( 'cchl_scripts', get_bloginfo('template_url') . '/js/cchl-scripts.fd37eea1.min.js', array('jquery', 'featherlight', 'masonry'));
   wp_register_script( 'cycle', get_bloginfo('template_url') . '/js/jquery.cycle.all.js', array('jquery'));
@@ -46,6 +63,13 @@ if(!is_admin()) {
   
 
 if(!is_home()) {
+
+  $template_ancestors = cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php');
+    if( $template_ancestors || get_page_template_slug( $post->ID ) == 'bs-plantilla-feria.php') {
+
+      wp_enqueue_script('cchl_home');
+
+  } else {
   
   wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'featherlight' );
@@ -73,6 +97,8 @@ if(!is_home()) {
   $tiposarr['siteurl'] = get_bloginfo('url');
 
   wp_localize_script( 'cchl_scripts', 'cchl', $tiposarr );
+
+  }
 
 } else {
 
