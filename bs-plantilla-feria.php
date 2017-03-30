@@ -21,7 +21,7 @@ Template Name: Plantilla Feria BS
 
 <div class="container">
     <div class="row">
-        <div class="sidebar-menu-feria col-md-3">
+        <div class="sidebar-menu-feria col-md-3 hidden-xs hidden-sm">
             <?php wp_nav_menu( $argsmenu );?>
         </div>
         <div class="content-feria col-md-9">
@@ -32,7 +32,7 @@ Template Name: Plantilla Feria BS
 
                 <div class="text-content">
                      
-                     <?php get_template_part('parts/addthis');?>
+                     <?php get_template_part('parts/bs-general/bs-sharer');?>
 
                     <?php the_content();?>
                 </div>

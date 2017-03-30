@@ -4,13 +4,14 @@
 
 .sidebar-menu-feria {
     margin-top:24px;
+    margin-left:-15px;
     
     div > ul > li > a:before {
                     content: '\f015';
                     color: white;
                     font-family: 'FontAwesome';
                     font-size: 17px;
-                    margin-left: -4px;
+                    margin-left: -19px;
                     margin-right: 4px;
                     vertical-align: middle;
                     font-weight: normal;
@@ -25,6 +26,8 @@
             > a {
                 color:white;
                 background-color:#C36416;
+                padding:10px 15px 10px 24px;
+                line-height:20px;
                 &:hover {
                     background-color:#55431F;
                 }
@@ -48,5 +51,32 @@
                 }
             }
         }
+    }
+}
+
+.bs-mobile-menu-ferias > .main-navbar {
+    .navbar-header {
+        background-color:darken(#F4F0DB, 10%);
+    }
+
+    .navbar-toggle {
+        border:2px solid #55431F;
+        .icon-bar {
+            background-color:#55431F;
+        }
+    }
+
+    .navbar-collapse {
+        padding:0;
+    }
+
+    ul.navbar-nav {
+        margin:0;
+    }
+
+    li > a {
+        font-weight:300;
+        background-color:#F4F0DB;
+        border-bottom:1px solid darken(#f4f0db, 10%);
     }
 }

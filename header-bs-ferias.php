@@ -12,6 +12,7 @@
     $postid = cchl_current_fields_id('bs-plantilla-feria.php');
     $header_lg = get_post_meta($postid, 'cchl_bsferiaheader_lg', true);
     $header_sm = get_post_meta($postid, 'cchl_bsferiaheader_sm', true);
+    $menuferia = get_post_meta($postid, 'cchl_bsmenuferia', true);
 ?>
 <body <?php body_class();?>>
 <?php get_template_part( 'parts/fb-sdk');?>
@@ -28,5 +29,7 @@
                </div>
            </div>
        </div>
+
+       <?php get_template_part('parts/bs-general/bs-menu-ferias');?>
 
 </header>
