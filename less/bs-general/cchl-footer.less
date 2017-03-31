@@ -19,6 +19,11 @@ footer.site-footer {
     }
 }
 
+.footer-mobile {
+    background-color:#f0f0f0;
+    border-top:1px solid #ccc;
+}
+
 .footer-mobile ul {
     display:flex;
     padding:0;
@@ -33,6 +38,7 @@ footer.site-footer {
     text-align:center;
     i {
         font-size:32px;
+        opacity:0.5;
         &.fa-facebook {
             color:@facebook;
         }
@@ -46,4 +52,8 @@ footer.site-footer {
             color:@instagram;
         }
     }
+}
+
+.redes-footer:hover i {
+    opacity:1;
 }

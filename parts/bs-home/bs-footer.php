@@ -14,7 +14,7 @@
     	
         <div class="row">
             
-            <div class="caja-info col-md-5">
+            <div class="caja-info col-md-4">
                 <a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url');?>/img/logos/cchl_logo_gris.svg" alt="<?php bloginfo('name' );?>" width="238" height="80"></a><br>
                            <p><?php bloginfo('name');?> <br /> <?php echo $options['cchl_linea'];?> <br/> <?php echo $options['cchl_direccion'];?><br/>
                 Tel: <a style="display:inline;" href="tel:<?php echo $options['cchl_fono'];?>"><?php echo $options['cchl_fono'];?></a> <br /><a href="mailto:<?php echo $options['cchl_email'];?>">E-mail: <?php echo $options['cchl_email'];?></a>
@@ -22,7 +22,7 @@
             </div>
             
                     
-            <ul class="ferias col-md-3">
+            <ul class="ferias col-md-2">
                 <li><strong>Ferias</strong></li>
                 <li><a href="/ferias/historia-de-las-ferias/">Historia de las ferias</a></li>
                 <li><a href="/ferias/filsa/">FILSA</a></li>
@@ -31,6 +31,7 @@
                 <li><a href="/ferias/feria-del-libro-regionales/">Ferias del Libro regionales</a></li>
                 <li><a href="/ferias/ferias-en-el-extranjero/">Ferias en el extranjero</a></li>
             </ul>
+
             
             <ul class="otros col-md-2">
                 <li><strong>Otros</strong></li>
@@ -49,7 +50,15 @@
                 <li><a href="/suscripcion-al-newsletter/">Suscripción a newsletter</a></li>
                 <li><a href="/preguntas-frecuentes/">Preguntas frecuentes</a></li>
                         <li><a href="/contacto/">Contacto</a></li>
-            </ul>        	
+            </ul>    
+
+            <ul class="redes col-md-2">
+                 <li><strong>Redes Sociales</strong></li>
+                <li><a href="https://facebook.com/<?php echo $cchl_options['cchl_fbcamara'];?>"><i class="fa fa-fw fa-facebook"></i> Facebook</a> </li>
+                <li><a href="https://twitter.com/<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-fw fa-twitter"></i> Twitter</a> </li>
+                <li><a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-fw fa-youtube-play"></i> Youtube</a> </li>
+                <li><a href="https://instagram.com/<?php echo $cchl_options['cchl_instagram'];?>"><i class="fa fa-fw fa-instagram"></i> Instagram</a> </li>
+            </ul>    	
         
             </div>
 
