@@ -105,9 +105,6 @@
         }
     }
 
-    div.content {
-        
-    }
 
     img {
         width:100%;
@@ -154,5 +151,30 @@
         background-size:cover;
         background-repeat:no-repeat;
         position:relative;
+    }
+}
+
+@media screen and (max-width:@grid-float-breakpoint-max) {
+      .article-news-wide {
+        margin-top:0;
+    }
+
+    .left-news .flex-row,
+    .flex-row,
+    .eventos.row {
+        display:block;
+    }
+
+    .evento-home-mini {
+        margin-bottom:12px;
+    }
+
+    .article-news-half {
+        .content {
+            padding:0 12px;
+        }
+        &.news-left {
+            margin-right:0;
+        }
     }
 }

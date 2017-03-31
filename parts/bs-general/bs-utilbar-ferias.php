@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-nomargin navbar-bs-ferias">
+<div class="navbar navbar-default navbar-nomargin navbar-bs-ferias hidden-xs hidden-sm">
 			<div class="container">
 				<div class="navbar-header brand">
                     <a href="<?php echo get_bloginfo('url');?>"><img src="<?php echo get_bloginfo('template_url');?>/img/filsa2014/cchl_filsaheader.png" alt="<?php bloginfo('title');?>" /> <span class="hidden-sm hidden-xs">CÁMARA CHILENA DEL LIBRO</span></a>

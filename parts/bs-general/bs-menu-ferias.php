@@ -10,6 +10,10 @@
     <nav class="navbar navbar-inverse main-navbar" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+            <div class="brand">
+                    <a href="<?php echo get_bloginfo('url');?>"><img src="<?php echo get_bloginfo('template_url');?>/img/cchl_logo_mono.svg" alt="<?php bloginfo('title');?>" /></a>
+            </div>
+
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-mainmenu-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
