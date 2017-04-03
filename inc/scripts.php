@@ -13,7 +13,7 @@ function cchl_styles() {
 
   wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.b4a56dcc.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.92e700a1.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.d0edd2a4.min.css', array(), CCHL_VERSION, 'screen' );
 
 	if(!is_admin() && !is_home()) {
     
