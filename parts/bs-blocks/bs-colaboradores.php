@@ -56,7 +56,7 @@ foreach($orgcols as $key=>$orgcol) {
                 
                 <?php if($orgco['cchl_url']) {?>
 
-                    <p><a href="<?php echo $orgco['cchl_url'];?>" target="_blank" class="link-external"><i class="fa fa-external-link"></i> Web</a></p>
+                    <p><a href="<?php echo $orgco['cchl_url'];?>" target="_blank" class="link-external"><i class="fa fa-external-link"></i></a></p>
 
                 <?php }?>
             </div>
