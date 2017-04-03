@@ -207,20 +207,27 @@ function cchl_current_fields_id($template_to_look) {
 
 add_action('template_include', 'cchl_bsferiaredirect');
 
-function checkfilsa() {
+function checkfilsa($postid = NULL) {
   global $post;
-  $ancestors = get_post_ancestors($post->ID);
+
+	if($postid) {
+		$pid = $postid;
+	} else {
+		$pid = $post->ID;
+	}
+
+  $ancestors = get_post_ancestors($pid);
   $param = isset($_GET['ref']) ? $_GET['ref'] : '';
    if(
       //condition 1
-      $post->ID == 31817 ||
+      $pid == 31817 ||
       //condition 2
       in_array(31817, $ancestors) ||
       //condition 3
-      (is_single($post->ID) && in_category(129, $post->ID) ||
+      (is_single($pid) && in_category(129, $pid) ||
       $param == 'filsa2014')
       //condition 4
-      //is_singular( ) && is_object_in_term( $post->ID, 'tribe_events_cat', 128 ) 
+      //is_singular( ) && is_object_in_term( $pid, 'tribe_events_cat', 128 ) 
       ) {
         $isfilsa = true;
       } else {
@@ -279,9 +286,6 @@ function checkferia($postid = NULL, $motherpage, $cats = NULL, $evterms = NULL )
       }
     }
   }
-    
-
-
 
   return $inferia;
 }
@@ -335,11 +339,13 @@ function checkferiatemplate($postid) {
 
 function cchl_header($postid) {
 	//Cambiador de headers para distintas situaciones
-	$isfilsa = checkfilsa();
-	$isfilij = checkfilij();
+	$isfilsa = checkfilsa($postid);
+	$isfilij = checkfilij($postid);
+	$template = 'parts/header-standard-new-interior';
+	$using_feria_template = checkferiatemplate($postid);
+	
 	//Categorías extra para page-ferias
 	$feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );
-
 	if( $isfilsa ):
 		//get_template_part('parts/header', 'filsa-2014' );
 		$template = 'parts/header-filsa-2014';

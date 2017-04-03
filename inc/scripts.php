@@ -9,7 +9,7 @@ function cchl_styles() {
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' , array(), '4.7.0', 'screen' );
 
 	//Compiled grunt style
-	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.acb06783.min.css', array(), CCHL_VERSION, 'screen' );
+	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.66ea54ff.min.css', array(), CCHL_VERSION, 'screen' );
 
   wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.fbf01188.min.css', array(), CCHL_VERSION, 'screen' );
 
