@@ -3,10 +3,10 @@
 ?>
     <footer class="footer-mobile visible-xs visible-sm">
         <ul>
-            <li class="redes-footer"><a href="https://facebook.com/<?php echo $cchl_options['cchl_fbcamara'];?>"><i class="fa fa-facebook"></i></a> </li>
-			<li class="redes-footer"><a href="https://twitter.com/<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-twitter"></i></a> </li>
-			<li class="redes-footer"><a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-youtube-play"></i></a> </li>
-            <li class="redes-footer"><a href="https://instagram.com/<?php echo $cchl_options['cchl_instagram'];?>"><i class="fa fa-instagram"></i></a> </li>
+            <li class="redes-footer"><a href="https://facebook.com/<?php echo $options['cchl_fbcamara'];?>"><i class="fa fa-facebook"></i></a> </li>
+			<li class="redes-footer"><a href="https://twitter.com/<?php echo $options['cchl_twitter'];?>"><i class="fa fa-twitter"></i></a> </li>
+			<li class="redes-footer"><a href="<?php echo $options['cchl_youtube'];?>"><i class="fa fa-youtube-play"></i></a> </li>
+            <li class="redes-footer"><a href="https://instagram.com/<?php echo $options['cchl_instagram'];?>"><i class="fa fa-instagram"></i></a> </li>
         </ul>
     </footer>
 	<footer class="site-footer hidden-sm hidden-xs">
@@ -54,10 +54,10 @@
 
             <ul class="redes col-md-2">
                  <li><strong>Redes Sociales</strong></li>
-                <li><a href="https://facebook.com/<?php echo $cchl_options['cchl_fbcamara'];?>"><i class="fa fa-fw fa-facebook"></i> Facebook</a> </li>
-                <li><a href="https://twitter.com/<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-fw fa-twitter"></i> Twitter</a> </li>
-                <li><a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-fw fa-youtube-play"></i> Youtube</a> </li>
-                <li><a href="https://instagram.com/<?php echo $cchl_options['cchl_instagram'];?>"><i class="fa fa-fw fa-instagram"></i> Instagram</a> </li>
+                <li><a href="https://facebook.com/<?php echo $options['cchl_fbcamara'];?>"><i class="fa fa-fw fa-facebook"></i> Facebook</a> </li>
+                <li><a href="https://twitter.com/<?php echo $options['cchl_twitter'];?>"><i class="fa fa-fw fa-twitter"></i> Twitter</a> </li>
+                <li><a href="<?php echo $options['cchl_youtube'];?>"><i class="fa fa-fw fa-youtube-play"></i> Youtube</a> </li>
+                <li><a href="https://instagram.com/<?php echo $options['cchl_instagram'];?>"><i class="fa fa-fw fa-instagram"></i> Instagram</a> </li>
             </ul>    	
         
             </div>

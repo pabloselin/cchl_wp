@@ -35,6 +35,12 @@ Template Name: Plantilla Feria BS
                      <?php get_template_part('parts/bs-general/bs-sharer');?>
 
                     <?php the_content();?>
+
+                    <?php if(get_post_meta( get_the_ID(), 'colaboradores_group', true )):
+
+                        get_template_part('parts/bs-blocks/bs-colaboradores');
+
+                    endif;?>
                 </div>
 
             <?php endwhile;
