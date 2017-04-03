@@ -188,7 +188,6 @@ add_action('cmb2_admin_init', 'cchl_colaboradores_boxes');
  * @return bool display metabox
  */
 function be_metabox_show_on_slug( $display, $meta_box ) {
-    xdebug_break();
 	if ( ! isset( $meta_box['show_on']['key'], $meta_box['show_on']['value'] ) ) {
 		return $display;
 	}
