@@ -10,7 +10,9 @@ Template Name: Plantilla Feria BS
     $postid = cchl_current_fields_id('bs-plantilla-feria.php');
     $toppost = get_post($postid);
     $menuferia = get_post_meta($postid, 'cchl_bsmenuferia', true);
-    $page_evts = get_post_meta($postid, 'cchl_pageevents', true);
+    $page_evts = get_post_meta($postid, 'cchl_bspageevents', true);
+    $colaboradores = get_post_meta( $postid, 'cchl_bspagecolabs', true );
+    //var_dump($colaboradores);
     $argsmenu = array(
         'menu' => $menuferia,
         'menu_class' => 'nav nav-pills nav-stacked'
@@ -36,18 +38,26 @@ Template Name: Plantilla Feria BS
 
                     <?php the_content();?>
 
-                    <?php if(get_post_meta( get_the_ID(), 'colaboradores_group', true )):
-
+                    <?php if($colaboradores == $post->ID):
                         get_template_part('parts/bs-blocks/bs-colaboradores');
-
                     endif;?>
+                     
                 </div>
 
             <?php endwhile;
                     endif;?>
 
+            <?php if( get_the_ID() == $page_evts) {
+                get_template_part('parts/bs-blocks/bs-eventos');
+            }?>
+
         </div>
     </div>
+
+     
+
+                    
+
 </div>
 
 <?php get_template_part('parts/bs-home/bs-footer'); ?>

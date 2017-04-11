@@ -13,7 +13,7 @@ function cchl_styles() {
 
   wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.b4a56dcc.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.d0edd2a4.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.0a983c82.min.css', array(), CCHL_VERSION, 'screen' );
 
 	if(!is_admin() && !is_home()) {
     
@@ -68,6 +68,9 @@ if(!is_home()) {
     if( $template_ancestors || get_page_template_slug( $post->ID ) == 'bs-plantilla-feria.php') {
 
       wp_enqueue_script('cchl_home');
+      wp_enqueue_script( 'cchl_scripts' );
+      wp_enqueue_script( 'cycle' );
+      wp_enqueue_script( 'jquery' );
 
   } else {
   
@@ -78,6 +81,8 @@ if(!is_home()) {
   wp_enqueue_script( 'masonry' );
   wp_enqueue_script( 'readmore' );
   wp_enqueue_script( 'imagesloaded' );
+
+  }
 
   $args = array(
     'hide_empty' => true
@@ -96,9 +101,7 @@ if(!is_home()) {
   $tiposarr['templateurl'] = get_bloginfo('template_url');
   $tiposarr['siteurl'] = get_bloginfo('url');
 
-  wp_localize_script( 'cchl_scripts', 'cchl', $tiposarr );
-
-  }
+  wp_localize_script( 'cchl_scripts', 'cchl', $tiposarr ); 
 
 } else {
 

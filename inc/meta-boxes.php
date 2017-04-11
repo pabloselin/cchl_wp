@@ -96,6 +96,17 @@ function cchl_bsferiaboxes() {
         )
     );
 
+    $feriabox->add_field(
+        array(
+            'name' => 'Página de colaboradores',
+            'desc' => 'La página donde se encuentran los colaboradores',
+            'id' => $prefix . 'bspagecolabs',
+            'type' => 'select',
+            'show_option_none' => 'Escoja una página',
+            'options' => $eventoptions
+        )
+    );
+
 }
 
 add_action('cmb2_admin_init', 'cchl_bsferiaboxes');
