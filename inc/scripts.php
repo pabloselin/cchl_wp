@@ -11,9 +11,9 @@ function cchl_styles() {
 	//Compiled grunt style
 	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.66ea54ff.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.b4a56dcc.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.9d0c743d.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.0a983c82.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.312c979c.min.css', array(), CCHL_VERSION, 'screen' );
 
 	if(!is_admin() && !is_home()) {
     
