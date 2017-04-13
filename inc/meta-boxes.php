@@ -45,7 +45,7 @@ function cchl_bsferiaboxes() {
     global $post;
     $prefix = 'cchl_';
     $menuoptions = cchl_showselectmenus();
-    $eventoptions = cchl_eventspage();
+    $eventoptions = cchl_eventspage($post->ID);
 
     $feriabox = new_cmb2_box(
         array(
