@@ -48,7 +48,7 @@ Template Name: Plantilla Feria BS
                     endif;?>
 
             <?php if( get_the_ID() == $page_evts) {
-                get_template_part('parts/bs-blocks/bs-eventos');
+                get_template_part('parts/bs-blocks/bs-programa-cultural');
             }?>
 
         </div>
