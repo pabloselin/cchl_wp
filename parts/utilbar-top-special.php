@@ -4,7 +4,6 @@
     <?php
         $cchl_options = get_option( 'cchl_settings' );
         $special = $cchl_options['cchl_checkbox_special'];
-        xdebug_break();
         if($special !== null) {
     ?>
 
