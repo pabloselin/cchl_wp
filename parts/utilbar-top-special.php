@@ -4,11 +4,15 @@
     <?php
         $cchl_options = get_option( 'cchl_settings' );
         $special = $cchl_options['cchl_checkbox_special'];
+        xdebug_break();
+        if($special !== null) {
     ?>
 
     <a class="specialbannerplus" href="<?php echo $cchl_options['cchl_urlspecial'];?>" title="Ver más">
 					<img class="hidden-xs" src="<?php echo $cchl_options['cchl_special_header'];?>" alt="<?php echo $cchl_options['cchl_special_title'];?>">
 	</a>
+
+        <?php }?>
 </div>
 
   <div class="container_16 cf"> 
