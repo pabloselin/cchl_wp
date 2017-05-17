@@ -26,7 +26,7 @@
             <li><a href="/categoria/sala-de-prensa/concursos-literarios/">Concursos literarios</a></li>
             <li><a href="/categoria/sala-de-prensa/">Sala de prensa</a></li>
             <li><a href="/socios">Socios de la Cámara</a></li>
-            <li><a href="/agencia-isbn/que-es/">Agencia ISBN</a></li>
+            <li><a href="/agencia-isbn/">Agencia ISBN</a></li>
         </ul>
             <ul class="informacion">
         	<li><strong>Información</strong></li>
