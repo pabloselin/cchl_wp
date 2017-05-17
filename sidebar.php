@@ -32,8 +32,8 @@ elseif(is_page(48) || get_topmost_parent($post->ID) == 48){
              <li><a href="/agencia-isbn/que-es/">Qué es</a></li>
              <li><a href="/agencia-isbn/como-solicitar/">Cómo solicitar</a></li>
              <li><a href="/agencia-isbn/preguntas-frecuentes/">Preguntas frecuentes</a></li>
-                        <li><a href="https://www.isbnchile.cl/site_isbn/login.php">Registre aquí</a></li>
-  			   <li><a href="https://www.isbnchile.cl/site_isbn/buscador.php">Buscador de títulos</a></li>
+                        <li><a href="http://www.isbnchile.cl/site_isbn/login.php">Registre aquí</a></li>
+  			   <li><a href="http://www.isbnchile.cl/site_isbn/buscador.php">Buscador de títulos</a></li>
   
              <li><a href="/agencia-isbn/estadisticas/">Estadísticas</a></li>
               <li><a href="/agencia-isbn/isbn-contacto/">Contacto</a></li>       
