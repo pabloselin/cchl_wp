@@ -149,7 +149,11 @@ elseif(checkferia($post->ID, CCHL_FERIASCOMUNALES) || checkferia($post->ID, CCHL
 	<div id="sidebar_interior" class="grid_4">
 			<?php get_template_part('parts/automenu-ferias');?>
 	</div>
-<?php else:?>
+<?php elseif($post->post_parent == 48): ?>
+	<div id="sidebar_interior" class="grid_4">
+        <?php get_sidebar();?>
+	</div>	
+ <?php else:?>
 <div id="sidebar_interior" class="grid_4">
         <?php get_sidebar('ugly');?>
 </div>

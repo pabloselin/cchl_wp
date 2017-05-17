@@ -22,7 +22,7 @@ if(is_page(12) || get_topmost_parent($post->ID) ==12){
     
     
 <?php }
-elseif(is_page(48) || get_topmost_parent($post->ID) == 48){
+elseif(is_page(48) || get_topmost_parent($post->ID) == 48 || $post->post_parent == 48) {
 	?>
    
     
