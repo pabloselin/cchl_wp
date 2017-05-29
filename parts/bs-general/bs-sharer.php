@@ -5,5 +5,3 @@
 
                   <a class="visible-sm visible-xs sharer__whatsapp" target="_blank" href="whatsapp://send?text=<?php echo $post->post_title;?> <?php echo get_permalink($post->ID);?>" title="Enviar por WhatsApp"><i class="fa fa-whatsapp"></i></a>
             </div>
-
-            <div class="cf"></div>

@@ -371,7 +371,7 @@ function cchl_header($postid) {
 		//get_template_part('parts/header', 'feria');
 		$template = 'parts/header-feria';
 	else:
-  		if(is_home()):
+  		if(is_home() || is_single() || is_category() || get_page_template_slug( $post->ID) == 'bs-archivo-ferias.php' || get_page_template_slug($post->ID) == 'bs-home-socios.php'):
 		  	//get_template_part('parts/bs-home/bs-header');
 		  	$template = 'parts/bs-home/bs-header';
   	else:

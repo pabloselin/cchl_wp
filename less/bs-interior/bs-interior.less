@@ -3,6 +3,9 @@
 @import '../bs-general/bs-init.less';
 @import '../bs-general/bs-colaboradores.less';
 @import '../bs-general/bs-eventos.less';
+@import 'bs-archive.less';
+@import '../vendors/wpcore.less';
+@import '../button-shortcode.less';
 
 .sidebar-menu-feria {
     margin-top:24px;
@@ -92,11 +95,86 @@
     }
 }
 
+article.post,
+article.page {
+    img.wp-post-image {
+        margin-bottom:12px;
+        width:100%;
+        height:auto;
+    }
+
+    header {
+        margin:24px 0 24px 0;
+        time {
+            font-size:16px;
+            color:@gris_oscuro;
+        }
+        h1 {
+            color:@azul_menu;
+            margin-top:0;
+        }
+    }
+
+    .text-content {
+        font-size:18px;
+        
+        img {
+            max-width:100%;
+            height:auto;
+            margin:0 auto;
+        }
+    }
+}
+
 .text-content {
     font-size:16px;
     
     img {
         max-width:100%;
         height:auto;
+        margin:0 auto;
+    }
+}
+
+.bs-related {
+    @media screen and (min-width:@screen-md) {
+        margin-top:48px;
+    }
+}
+
+.item-mini-noticia {
+    a {
+        display:block;
+        border:1px solid @gris;
+        background-color:white;
+        margin-bottom:12px;
+        &:hover {
+            text-decoration:none;
+            background-color:#f0f0f0;
+        }
+    }
+
+    .txt {
+        padding:12px;
+    }
+    
+    h2 {
+        font-size:22px;
+        margin:0;
+    }
+    img {
+        max-width:100%;
+        height:auto;
+        margin-bottom:12px;
+    }
+}
+
+@media screen and (max-width:@screen-sm) {
+    article.post {
+        header {
+            h1 {
+                font-size:26px;
+            }
+        }
     }
 }

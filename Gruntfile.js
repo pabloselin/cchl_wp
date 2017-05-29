@@ -76,7 +76,8 @@ module.exports = function(grunt) {
 			home: {	
 				src: [
 						'bower_components/bootstrap/js/dropdown.js',
-						'bower_components/bootstrap/js/collapse.js'
+						'bower_components/bootstrap/js/collapse.js',
+						'bower_components/bootstrap/js/masonry.pkgd.js'
 					],
 				dest: 'js/cchl-home.js'
 				}

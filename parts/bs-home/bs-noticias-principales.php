@@ -1,7 +1,6 @@
 <?php 
 
-  $noticias_home = cchl_getmenus('noticias-home');
-
+  $noticias_home = cchl_getmenus($menu_noticias);
 ?>
 
  <section class="left-news col-md-12">

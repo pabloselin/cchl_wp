@@ -97,6 +97,10 @@ jQuery(document).ready(function($) {
 		ferias.masonry('layout');
 	});
 
+	var catitems = $('.category-items').masonry({
+		itemSelector: '.item-mini-noticia',
+	});
+
 
 	var tabContainers = $('div.tabs2 > div');
                 tabContainers.hide().filter(':first').show();

@@ -9,21 +9,22 @@ function cchl_styles() {
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' , array(), '4.7.0', 'screen' );
 
 	//Compiled grunt style
-	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.66ea54ff.min.css', array(), CCHL_VERSION, 'screen' );
+	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.885b73f0.min.css', array(), CCHL_VERSION, 'screen' );
 
   wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.9d0c743d.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.312c979c.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.3d1b5be2.min.css', array(), CCHL_VERSION, 'screen' );
 
-	if(!is_admin() && !is_home()) {
+	if(!is_admin() && !is_home() && !is_single() && !is_category() && get_page_template_slug($post->ID) != 'bs-archivo-ferias.php') {
     
     $template_ancestors = cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php');
     
-    if( $template_ancestors || get_page_template_slug( $post->ID ) == 'bs-plantilla-feria.php') {
+    if( $template_ancestors || get_page_template_slug( $post->ID ) == 'bs-plantilla-feria.php' || get_page_template_slug($post->ID) == 'bs-home-socios.php') {
 
       wp_enqueue_style('fontawesome');
       wp_enqueue_style('fonts');
       wp_enqueue_style( 'interior-cchl');
+      wp_enqueue_style( 'home-cchl');
 
     } else {
 
@@ -35,11 +36,12 @@ function cchl_styles() {
     }
     
 
-	} elseif(is_home()){
+	} elseif(is_home() || is_single() || is_category() || get_page_template_slug($post->ID) == 'bs-archivo-ferias.php' || get_page_template_slug($post->ID) == 'bs-home-socios.php') {
 
     wp_enqueue_style('fontawesome');
     wp_enqueue_style('fonts');
     wp_enqueue_style( 'home-cchl');
+    wp_enqueue_style( 'interior-cchl');
 
   } 
 }
@@ -51,7 +53,7 @@ global $post;
 	  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
   }
 
-  wp_register_script( 'cchl_scripts', get_bloginfo('template_url') . '/js/cchl-scripts.fd37eea1.min.js', array('jquery', 'featherlight', 'masonry'));
+  wp_register_script( 'cchl_scripts', get_bloginfo('template_url') . '/js/cchl-scripts.4e9429ce.min.js', array('jquery', 'featherlight', 'masonry'));
   wp_register_script( 'cycle', get_bloginfo('template_url') . '/js/jquery.cycle.all.js', array('jquery'));
   wp_register_script( 'readmore', get_bloginfo('template_url') . '/js/readmore.min.js', array('jquery'));
   wp_register_script( 'imagesloaded', get_bloginfo('template_url') . '/js/imagesloaded.min.js', array('jquery'));
@@ -82,6 +84,10 @@ if(!is_home()) {
   wp_enqueue_script( 'readmore' );
   wp_enqueue_script( 'imagesloaded' );
 
+  }
+
+  if(is_single() || is_category() || get_page_template_slug( $post->ID ) == 'bs-archivo-ferias.php' || get_page_template_slug( $post->ID ) == 'bs-home-socios.php') {
+    wp_enqueue_script('cchl_home');
   }
 
   $args = array(

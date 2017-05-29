@@ -54,6 +54,7 @@ register_nav_menus( array(
 	'noticias-destacadas-filsa-2016' => 'Noticias destacadas Filsa 2016',
 	'eventos-destacados-filsa-2016'  => 'Eventos destacados Filsa 2016',
 	'noticias-home'					 => 'Noticias Portada',
+	'noticias-socios'			     => 'Noticias Socios',
 	'eventos-destacados-portada'	 => 'Eventos Portada',
 	'accesos-rapidos-home'			 => 'Accesos rápidos Portada'
 	) 
@@ -80,7 +81,6 @@ add_image_size( 'slide-home-600', 600, 300, true);
 add_image_size( 'afiche', 290, 550, false);
 add_image_size( 'noticia-principal', 776, 350, true);
 add_image_size( 'noticia-secundaria', 382, 178, true);
-
 //Return shortlink button
 
 add_filter( 'get_shortlink', function( $shortlink ) {return $shortlink;} );
@@ -101,3 +101,4 @@ include( TEMPLATEPATH . '/inc/fields-functions.php');
 include( TEMPLATEPATH . '/inc/mustache-functions.php');
 include( TEMPLATEPATH . '/inc/wphead-includes.php');
 include( TEMPLATEPATH . '/inc/meta-boxes.php');
+include( TEMPLATEPATH . '/inc/wp_bootstrap_pagination.php');

@@ -1,41 +1,47 @@
-<?php get_header(); ?>
-<div id="main-page" class="container_16 cf">
-    <?php get_template_part( 'parts/clean-sidebar' );?>
-    <div id="content" class="grid_12">
-       <div id="bread">
-        Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
+<?php get_header();?>
+
+<div class="container">
+
+<div class="row">
+
+<header class="category-header col-md-12">
+        <h1><?php single_cat_title();?></h1>
+        <div class="catdesc">
+        <?php echo category_description( );?>
+        </div>
+</header>
+
+<div class="category-items">
+    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <article class="col-md-4 item-mini-noticia in-category-item">
+            <a href="<?php the_permalink();?>">
+            <?php if(has_post_thumbnail( )):
+                    the_post_thumbnail( 'media-kit' );
+                endif;?>
+            <div class="txt">
+            <h2>
+                    <?php the_title();?>
+            </h2>
+            <time><?php the_date();?></time>
+            </div>
+            </a>
+        </article>
+    <?php endwhile;?>
     </div>
-    <h1 class="post-title">
-     <?php single_cat_title(); ?>
- </h1>
-
- <?php get_template_part('parts/addthis');?>
- <div class="cf"></div>
- <h4 class="category_description"><?php echo category_description(); ?></h4>
- <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-  <div class="pastillaNoticias">  
-    <div class="foto-noticias-mini">
-        <?php the_post_thumbnail('imagen-95'); ?>
-    </div><!-- fin img mini-->
-
-    <div class="info">
-        
-        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-        
-        <p class="fecha"><?php echo mysql2date( 'j \\d\\e F \\d\\e Y', $post->post_date, true );?></p>
-        <?php custom_excerpt($post->ID, 32);?>
-
-    </div><!-- fin info-->
-
-</div><!--fin pastilla noticias-->  		 
-<?php endwhile;?> 
-
-<div class="paginador">
-    <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 </div>
 
-<?php endif; ?>
+<div class="row pagenavigation">
+<?php 
+    if ( function_exists('wp_bootstrap_pagination') ) 
+    wp_bootstrap_pagination();
+?>
+</div>
+
+  
+
+<?php endif;//End loop?>
+
 
 </div>
-</div>
-<?php get_footer(); ?>
+
+<?php get_template_part('parts/bs-home/bs-footer'); ?>
