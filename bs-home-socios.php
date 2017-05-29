@@ -10,7 +10,7 @@ set_query_var('menu_noticias', 'noticias-socios');
 <?php get_header(); ?>
 <div class="home-responsive container">
 	<div class="main-home row">
-		<?php get_template_part('parts/bs-home/bs-noticias-principales');?>
+		<?php get_template_part('parts/bs-general/bs-noticias-socios');?>
 	</div>
 </div>
 

@@ -101,6 +101,10 @@ jQuery(document).ready(function($) {
 		itemSelector: '.item-mini-noticia',
 	});
 
+	catitems.imagesLoaded().progress( function() {
+		catitems.masonry('layout');
+	});
+
 
 	var tabContainers = $('div.tabs2 > div');
                 tabContainers.hide().filter(':first').show();

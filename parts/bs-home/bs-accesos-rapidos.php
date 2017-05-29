@@ -1,6 +1,3 @@
-    <?php 
-      $menurapidos = cchl_getmenus('accesos-rapidos-home');
-    ?>
     <div class="accesos col-md-4">
         <div class="list-group">
 

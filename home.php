@@ -4,7 +4,7 @@
 <?php
 //Main options
 $cchl_options = get_option( 'cchl_settings' );
-set_query_var('menu_noticias', 'noticias-home')
+set_query_var('menu_noticias', 'noticias-home');
 ?>
 <?php get_header(); ?>
 
