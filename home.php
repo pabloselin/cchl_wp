@@ -4,6 +4,7 @@
 <?php
 //Main options
 $cchl_options = get_option( 'cchl_settings' );
+set_query_var('cchl_options', get_option('cchl_settings'));
 set_query_var('menu_noticias', 'noticias-home');
 ?>
 <?php get_header(); ?>
@@ -17,7 +18,11 @@ set_query_var('menu_noticias', 'noticias-home');
 </div>
 
 
-<?php get_template_part('parts/bs-home/bs-eventos');?>
+<?php 
+set_query_var('eventos_home', cchl_getmenus('eventos-destacados-portada'));
+set_query_var('eventos_title', $cchl_options['cchl_tituloseccioneventos']);
+get_template_part('parts/bs-home/bs-eventos');
+?>
 
   
 

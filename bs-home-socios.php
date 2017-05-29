@@ -14,11 +14,19 @@ set_query_var('menu_noticias', 'noticias-socios');
 	</div>
 </div>
 
+<?php 
+set_query_var('eventos_home', cchl_getmenus('eventos-socios'));
+set_query_var('eventos_title', 'Eventos Socios');
+get_template_part('parts/bs-home/bs-eventos');
+?>
 
-<?php get_template_part('parts/bs-home/bs-eventos');?>
-<section class="redes hidden-xs">
-  <div class="container">
-  </div>
-</section>
+<div class="home-responsive container">
+	<?php 
+		set_query_var('catblock_title', 'Estudios e Informes del sector');
+		set_query_var('catblock_id', 101);
+		get_template_part('parts/bs-blocks/bs-catblock');
+	?>
+</div>
+
 
 <?php get_template_part('parts/bs-home/bs-footer'); ?>

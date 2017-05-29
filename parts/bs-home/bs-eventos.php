@@ -1,18 +1,11 @@
 <?php 
-
-  $eventos_home = cchl_getmenus('eventos-destacados-portada');
-  $cchl_options = get_option('cchl_settings');
-
+if($eventos_home): 
 ?>
-
-<?php if($eventos_home):?>
-
-
 <section class="eventos">
     <div class="container">
 
         <div class="row">
-            <h1 class="home-section-title"><?php echo $cchl_options['cchl_tituloseccioneventos'];?></h1>
+            <h1 class="home-section-title"><?php echo $eventos_title?></h1>
         </div>
 
         <div class="eventos row">

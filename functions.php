@@ -55,6 +55,7 @@ register_nav_menus( array(
 	'eventos-destacados-filsa-2016'  => 'Eventos destacados Filsa 2016',
 	'noticias-home'					 => 'Noticias Portada',
 	'noticias-socios'			     => 'Noticias Socios',
+	'eventos-socios'				 => 'Eventos Socios',
 	'accesos-rapidos-socios'		 => 'Accesos rápidos socios',
 	'eventos-destacados-portada'	 => 'Eventos Portada',
 	'accesos-rapidos-home'			 => 'Accesos rápidos Portada'
