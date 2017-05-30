@@ -21,8 +21,13 @@ Template Name: Listado Ferias Bootstrap
 <div class="container">
     <div class="row">
 
-        <div class="col-md-3 menu-ferias">
-
+        <div class="col-md-3 hidden-xs">
+            <div class="menu-filsa-archivo">
+                <?php 
+                $menuoption = get_post_meta($post->ID, '_cchl_custompage_menu', true);
+                $menuvalue = ($menuoption)? $menuoption : 'default';
+                wp_nav_menu( array( 'theme_location' => $menuoption) );?>
+            </div>
         </div>
 
         <div class="col-md-9">

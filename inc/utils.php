@@ -266,6 +266,7 @@ function cchl_isresponsive( ) {
   checkferia($post->ID, CCHL_FILVINA2017) ||
   is_page_template('page-feria-principal.php') ||
   is_page_template('bs-plantilla-feria.php') ||
+  is_page_template('bs-archivo-ferias.php') ||
   $using_feria_template || 
   ( is_single() && in_category( $feriasmultimediacats, $post->ID ) ) ||
   $ancestor
