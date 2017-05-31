@@ -267,6 +267,7 @@ function cchl_isresponsive( ) {
   is_page_template('page-feria-principal.php') ||
   is_page_template('bs-plantilla-feria.php') ||
   is_page_template('bs-archivo-ferias.php') ||
+  is_page_template('bs-default-page.php') ||
   $using_feria_template || 
   ( is_single() && in_category( $feriasmultimediacats, $post->ID ) ) ||
   $ancestor
