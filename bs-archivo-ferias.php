@@ -40,6 +40,8 @@ Template Name: Listado Ferias Bootstrap
                 <h1><?php the_title();?></h1>
             </header>
 
+            <?php get_template_part('parts/bs-general/bs-sharer');?>
+
             <div class="article-content text-content">
                 <?php the_content();?>
             </div>
