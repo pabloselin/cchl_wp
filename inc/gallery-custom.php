@@ -6,7 +6,7 @@
 add_shortcode('gallery', 'my_gallery_shortcode');    
 
 function my_gallery_shortcode($attr) {
-   $post = get_post();
+   	$post = get_post();
 	static $instance = 0;
 	$instance++;
 

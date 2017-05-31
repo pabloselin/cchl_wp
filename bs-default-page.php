@@ -1,22 +1,24 @@
+<?php 
+/*
+Template Name: Página por defecto Bootstrap
+*/
+?>
 <?php get_header();?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <div class="container">
         <div class="row">        
-                <div class="col-md-8">
+                <div class="col-md-8 col-md-offset-2">
 
                  <article <?php post_class();?>>
                     <header>
-                        <time><?php the_date();?></time>
                         <h1><?php the_title();?></h1>
                     </header>
 
-                    <?php if(has_post_thumbnail() && !get_post_meta($post->ID, 'galeria_imagen_imagen', true)):
+                    <?php if(has_post_thumbnail()):
                             the_post_thumbnail('large');
                           endif;?>
-
-                    <?php get_template_part('parts/bs-blocks/bs-post-fields');?>
 
                     <?php get_template_part('parts/bs-general/bs-sharer');?>
 
@@ -30,7 +32,6 @@
 
                 </div>
 
-                <?php get_template_part('parts/bs-general/bs-related');?>
     </div>
 </div>
 

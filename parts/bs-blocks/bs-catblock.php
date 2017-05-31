@@ -6,7 +6,6 @@
             'cat' => $catblock_id
         );
         $catitems = get_posts($args);
-        xdebug_break();
         foreach($catitems as $catitem) { ?>
 
         <div class="catitem col-md-4">

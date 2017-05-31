@@ -23,7 +23,6 @@ function cchl_showselectmenus() {
 function cchl_showmenulocations() {
     $locations = get_registered_nav_menus( );
     $locationoptions = [];
-    xdebug_break();
     foreach($locations as $location=>$description) {
         $locationoptions[$location] = $description;
     }
