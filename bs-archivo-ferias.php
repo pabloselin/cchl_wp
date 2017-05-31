@@ -19,6 +19,9 @@ Template Name: Listado Ferias Bootstrap
 ?>
 
 <div class="container">
+
+    <?php get_template_part('parts/bs-blocks/bs-breadcrumb');?>
+    
     <div class="row">
 
         <div class="col-md-3 hidden-xs">

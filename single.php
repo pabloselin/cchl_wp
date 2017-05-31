@@ -3,6 +3,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <div class="container">
+        <?php get_template_part('parts/bs-blocks/bs-breadcrumb');?>
         <div class="row">        
                 <div class="col-md-8">
 
@@ -12,9 +13,9 @@
                         <h1><?php the_title();?></h1>
                     </header>
 
-                    <?php if(has_post_thumbnail() && !get_post_meta($post->ID, 'galeria_imagen_imagen', true)):
-                            the_post_thumbnail('large');
-                          endif;?>
+                    <?php if(has_post_thumbnail() && !get_post_meta($post->ID, 'galeria_imagen_imagen', true)):?>
+                            <div class="ft-img-wrapper"> <?php the_post_thumbnail('large');?> </div>
+                          <?php endif;?>
 
                     <?php get_template_part('parts/bs-blocks/bs-post-fields');?>
 

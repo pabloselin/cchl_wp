@@ -2,14 +2,20 @@
 
 <div class="container">
 
-<div class="row">
+<?php get_template_part('parts/bs-blocks/bs-breadcrumb');?>
 
-<header class="category-header col-md-12">
-        <h1><?php single_cat_title();?></h1>
-        <div class="catdesc">
-        <?php echo category_description( );?>
+<header class="category-header row">
+        <div class="col-md-4">
+            <h1><?php single_cat_title();?></h1>
+        </div>
+        <div class="col-md-8">
+            <div class="catdesc">
+            <?php echo category_description( );?>
+            </div>
         </div>
 </header>
+
+<div class="row">
 
 <div class="category-items">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

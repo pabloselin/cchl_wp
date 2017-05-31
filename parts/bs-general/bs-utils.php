@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default top-utils hidden-xs" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
-	<?php if($special || get_page_template_slug($post->ID) == 'bs-plantilla-feria.php' || cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php')):
+	<?php if(!is_home()):
 
 		$logo['url'] = get_bloginfo('template_url') . '/img/cchl_logo_libro.svg';
-		$logo['w'] = 220;
-		$logo['h'] = 16;
+		$logo['w'] = 250;
+		$logo['h'] = 19;
 		$logo['class'] = 'special';
 
 	else:

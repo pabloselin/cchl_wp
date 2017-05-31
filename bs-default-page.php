@@ -8,6 +8,7 @@ Template Name: Página por defecto Bootstrap
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <div class="container">
+        <?php get_template_part('parts/bs-blocks/bs-breadcrumb');?>
         <div class="row">        
                 <div class="col-md-8 col-md-offset-2">
 
