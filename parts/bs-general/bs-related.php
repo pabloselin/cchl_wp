@@ -1,12 +1,14 @@
 <div class="col-md-4 bs-related">
     <?php $noticias_home = cchl_getmenus('noticias-home');
         global $post;
+        $previds = [];
         if($noticias_home):
         
         echo '<h2>En portada</h2>';
 
         foreach($noticias_home as $noticia_home):
             if($noticia_home->object_id != $post->ID):
+              $previds[] = $post->ID;
               $imgthid = get_post_thumbnail_id( $noticia_home->object_id );
               $imgsrc = wp_get_attachment_image_src( $imgthid, 'noticia-secundaria' );
               ?>
@@ -33,7 +35,7 @@
         echo '<h2>Noticias Socios</h2>';
 
         foreach($noticias_socios as $noticia_socio):
-          if($noticia_socio->object_id != $post->ID):
+          if($noticia_socio->object_id != $post->ID && !in_array($post->ID, $previds)):
                 $imgthid = get_post_thumbnail_id( $noticia_socio->object_id );
                 $imgsrc = wp_get_attachment_image_src( $imgthid, 'noticia-secundaria' );
                 ?>
