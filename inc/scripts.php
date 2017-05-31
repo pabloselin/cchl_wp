@@ -11,9 +11,9 @@ function cchl_styles() {
 	//Compiled grunt style
 	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.885b73f0.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.5ffa3b9b.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.a2997050.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.affa13f0.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.b47b385c.min.css', array(), CCHL_VERSION, 'screen' );
 
 	if(!is_admin() && !is_home() && !is_single() && !is_category() && get_page_template_slug($post->ID) != 'bs-archivo-ferias.php' && get_page_template_slug($post->ID) != 'bs-default-page.php') {
     
