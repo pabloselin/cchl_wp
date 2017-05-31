@@ -24,6 +24,8 @@
                     <div class="article-content text-content">
                         <?php the_content();?>
                     </div>
+
+                    <?php get_template_part('parts/bs-blocks/bs-after-content');?>
                 </article>
 
                 <?php endwhile;

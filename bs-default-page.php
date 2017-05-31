@@ -17,9 +17,9 @@ Template Name: Página por defecto Bootstrap
                         <h1><?php the_title();?></h1>
                     </header>
 
-                    <?php if(has_post_thumbnail()):
-                            the_post_thumbnail('large');
-                          endif;?>
+                    <?php if(has_post_thumbnail()):?>
+                            <div class="ft-img-wrapper"> <?php the_post_thumbnail('large');?> </div>
+                          <?php endif;?>
 
                     <?php get_template_part('parts/bs-general/bs-sharer');?>
 
