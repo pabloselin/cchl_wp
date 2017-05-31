@@ -45,7 +45,13 @@ define('CCHL_FACEBOOK', 'https://www.facebook.com/camarachilenalibro');
 define('CCHL_FACEBOOKFILSA', 'https://www.facebook.com/filsachile');
 
 register_nav_menus( array(
+	//Históricos ferias
 	'historico-filsa'			 	 => 'Históricos Filsa',
+	'historico-filij'				 => 'Histórico FILIJ',
+	'historico-fil'					 => 'Histórico FIL',
+	'historico-flpa'				 => 'Histórico FLPA',
+	'historico-comunales'			 => 'Histórico Ferias Comunales',
+	'historico-extranjero'			 => 'Histórico Ferias en el Extranjero',
 	'menu-ferias-en-feria'			 => 'Menú Ferias',
 	//Filsa 2015
 	'accesos-rapidos-filsa-2015' 	 => 'Accesos Rápidos Filsa 2015',
