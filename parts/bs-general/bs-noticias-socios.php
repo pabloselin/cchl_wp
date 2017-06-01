@@ -31,13 +31,13 @@
         endif;
            
         if(array_key_exists(2, $noticias_home) ):
-              set_query_var('noticia', $noticias_home[1]);
+              set_query_var('noticia', $noticias_home[2]);
               set_query_var('position', 'news-right');
               get_template_part('parts/bs-blocks/article-news-half');
         endif;
 
         if(array_key_exists(3, $noticias_home) ):
-              set_query_var('noticia', $noticias_home[1]);
+              set_query_var('noticia', $noticias_home[3]);
               set_query_var('position', 'news-last');
               get_template_part('parts/bs-blocks/article-news-half');
         endif;
