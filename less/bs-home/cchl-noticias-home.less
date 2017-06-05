@@ -161,8 +161,9 @@ article.article-news-half {
 }
 
 @media screen and (max-width:@grid-float-breakpoint-max) {
-      .article-news-wide {
+      .article-news-wide.col-md-8 {
         margin-top:0;
+        padding:0;
     }
 
     .left-news .flex-row,
@@ -175,7 +176,10 @@ article.article-news-half {
         margin-bottom:12px;
     }
 
-    .article-news-half {  
+    article.article-news-half {  
+        &.news-left {
+            margin-right:0;
+        }
         .content {
             padding:0 12px;
         }

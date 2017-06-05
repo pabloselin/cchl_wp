@@ -1,5 +1,5 @@
 <div class="row catblock">
-	<h2><?php echo $catblock_title;?></h2>
+	<h2 class="catblock-title"><?php echo $catblock_title;?></h2>
     <?php 
         $args = array(
             'post_type' => 'post',
