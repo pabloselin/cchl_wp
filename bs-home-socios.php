@@ -15,9 +15,9 @@ set_query_var('menu_noticias', 'noticias-socios');
 </div>
 
 <?php 
-set_query_var('eventos_home', cchl_getmenus('eventos-socios'));
-set_query_var('eventos_title', 'Eventos Socios');
-get_template_part('parts/bs-home/bs-eventos');
+// set_query_var('eventos_home', cchl_getmenus('eventos-socios'));
+// set_query_var('eventos_title', 'Eventos Socios');
+// get_template_part('parts/bs-home/bs-eventos');
 ?>
 
 <div class="home-responsive container">
