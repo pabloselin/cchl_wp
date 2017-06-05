@@ -256,7 +256,8 @@ function cchl_isresponsive( ) {
   
   //Listado de condiciones para plantillas específicas
   is_home() ||
-  is_single() || 
+  is_single() ||
+  is_category() ||
   $isfilsa == true ||
   $isfilij == true ||
   checkferia($post->ID, 53771) ||
