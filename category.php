@@ -51,7 +51,7 @@
             <h2>
                     <?php the_title();?>
             </h2>
-            <time><?php the_date();?></time>
+            <time><?php the_time('j \d\e F \d\e Y');?></time>
             </div>
             </a>
         </article>
