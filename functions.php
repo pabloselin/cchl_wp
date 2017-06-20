@@ -110,3 +110,4 @@ include( TEMPLATEPATH . '/inc/mustache-functions.php');
 include( TEMPLATEPATH . '/inc/wphead-includes.php');
 include( TEMPLATEPATH . '/inc/meta-boxes.php');
 include( TEMPLATEPATH . '/inc/wp_bootstrap_pagination.php');
+include( TEMPLATEPATH . '/inc/content-filters.php');

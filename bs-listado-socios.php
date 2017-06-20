@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Página por defecto Bootstrap
+Template Name: [NUEVO] Listado de socios
 */
 ?>
 <?php get_header();?>
