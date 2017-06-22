@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: [NUEVO] Memorias
+Template Name: [NUEVO] Memorias y Páginas con Documentos
 */
 ?>
 <?php get_header();?>
@@ -33,25 +33,26 @@ Template Name: [NUEVO] Memorias
                         
                         
                             <?php
-                                $memorias = getGroupOrder('memorias_imagen');
+                                $fieldtouse = (getGroupOrder('memorias_imagen'))? 'memorias' : 'estadisticas'; 
+                                $items = getGroupOrder($fieldtouse . '_imagen');
                                 //$imgattrs = array("h" => 120, "w" => 120, "zc" => 1, "q" => 100);
 
-                                foreach($memorias as $memoria):
-                                    $memoriainfo = array(
-                                        'imagen' => get_image('memorias_imagen', $memoria),
-                                        'titulo' => get('memorias_titulo', $memoria),
-                                        'link'  => get('memorias_descargar', $memoria),
-                                        'desc'   => get('memorias_texto', $memoria)
+                                foreach($items as $item):
+                                    $iteminfo = array(
+                                        'imagen' => get_image( $fieldtouse . '_imagen', $item),
+                                        'titulo' => get( $fieldtouse . '_titulo', $item),
+                                        'link'  => get( $fieldtouse . '_descargar', $item),
+                                        'desc'   => get( $fieldtouse . '_texto', $item)
                                     );?>
 
                                     <div class="document row">
                                         <div class="col-md-2">
-                                            <?php echo $memoriainfo['imagen'];?>
+                                            <?php echo $iteminfo['imagen'];?>
                                         </div>
                                         <div class="col-md-10">
-                                            <h2><?php echo $memoriainfo['titulo'];?></h2>
-                                            <p><?php echo $memoriainfo['desc'];?></p>
-                                            <a href="<?php echo $memoriainfo['link'];?>" class="btn btn-info"><i class="fa fa-download"></i> Descargar (pdf)</a>
+                                            <h2><?php echo $iteminfo['titulo'];?></h2>
+                                            <p><?php echo $iteminfo['desc'];?></p>
+                                            <a href="<?php echo $iteminfo['link'];?>" class="btn btn-info"><i class="fa fa-download"></i> Descargar (pdf)</a>
                                         </div>
                                     </div>
 

@@ -38,11 +38,13 @@ Template Name: [NUEVO] Listado de personas
 
                                 foreach($directorio as $miembro):
                                     $miembroinfo = array(
-                                        'imagen' => get_image('imagen', $miembro, 1, 1, NULL, $imgattrs),
+                                        'imagen' => get_image('imagen', $miembro, 1, 1, $post->ID, $imgattrs),
                                         'nombre' => get('nombre', $miembro),
                                         'cargo'  => get('cargo', $miembro),
                                         'desc'   => get('texto', $miembro)
-                                    );?>
+                                    );
+                                    xdebug_break();
+                                    ?>
 
                                     <div class="person row">
                                         <div class="col-md-2">
