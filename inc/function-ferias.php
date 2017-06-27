@@ -374,6 +374,7 @@ function cchl_header($postid) {
   		if(is_home() ||
 			is_single() ||
 			is_category() ||
+			is_post_type_archive() || 
 			get_page_template_slug($post->ID) == 'bs-archivo-ferias.php' ||
 			get_page_template_slug($post->ID) == 'bs-home-socios.php' ||
 			get_page_template_slug($post->ID) == 'bs-default-page.php'

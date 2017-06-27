@@ -13,9 +13,9 @@ function cchl_styles() {
 
   wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.5dd3b9df.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.e5d9ef2d.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.eea3aa56.min.css', array(), CCHL_VERSION, 'screen' );
 
-	if(!is_admin() && !is_home() && !is_single() && !is_category() && get_page_template_slug($post->ID) != 'bs-archivo-ferias.php' && get_page_template_slug($post->ID) != 'bs-default-page.php') {
+	if(!is_admin() && !is_home() && !is_single() && !is_category() && get_page_template_slug($post->ID) != 'bs-archivo-ferias.php' && get_page_template_slug($post->ID) != 'bs-default-page.php' && !is_post_type_archive() ) {
     
     $template_ancestors = cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php');
     
@@ -40,7 +40,14 @@ function cchl_styles() {
     }
     
 
-	} elseif(is_home() || is_single() || is_category() || get_page_template_slug($post->ID) == 'bs-archivo-ferias.php' || get_page_template_slug($post->ID) == 'bs-home-socios.php' || get_page_template_slug($post->ID) == 'bs-default-page.php') {
+	} elseif(
+      is_home() ||
+      is_single() ||
+      is_category() ||
+      is_post_type_archive() ||
+      get_page_template_slug($post->ID) == 'bs-archivo-ferias.php' ||
+      get_page_template_slug($post->ID) == 'bs-home-socios.php' ||
+      get_page_template_slug($post->ID) == 'bs-default-page.php') {
 
     wp_enqueue_style('fontawesome');
     wp_enqueue_style('fonts');
@@ -90,7 +97,7 @@ if(!is_home()) {
 
   }
 
-  if(is_home() || is_single() || is_category() || get_page_template_slug( $post->ID ) == 'bs-archivo-ferias.php' || get_page_template_slug( $post->ID ) == 'bs-home-socios.php' || get_page_template_slug( $post->ID ) == 'bs-default-page.php') {
+  if(is_home() || is_single() || is_category() || is_post_type_archive() || get_page_template_slug( $post->ID ) == 'bs-archivo-ferias.php' || get_page_template_slug( $post->ID ) == 'bs-home-socios.php' || get_page_template_slug( $post->ID ) == 'bs-default-page.php') {
     wp_enqueue_script('cchl_home');
   }
 
