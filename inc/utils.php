@@ -258,6 +258,7 @@ function cchl_isresponsive( ) {
   is_home() ||
   is_single() ||
   is_category() ||
+  is_post_type_archive() ||
   $isfilsa == true ||
   $isfilij == true ||
   checkferia($post->ID, 53771) ||
