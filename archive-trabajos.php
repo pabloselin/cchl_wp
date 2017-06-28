@@ -31,16 +31,18 @@
 </div>
 
 <div class="row">
-<?php if($permanents):
+
+<div class="category-items">
+    
+    <?php if($permanents):
                 foreach($permanents as $permanent) { 
                 $skipids[] = $permanent->ID;
                 ?>
                     
-                    <article class="col-md-12 item-permanente">
+                    <article class="col-md-4 item-mini-noticia item-permanente">
                         <a href="<?php echo get_permalink($permanent->ID);?>">
                             <div class="txt">
                                 <h2><?php echo $permanent->post_title;?></h2>
-                                <time><?php echo get_the_time('j \d\e F \d\e Y', $permanent->ID);?></time>
                                 <div class="inner-content">
                                     <?php echo apply_filters( 'the_content', $permanent->post_content );?>
                                 </div>
@@ -50,12 +52,7 @@
 
                 <?php }
             endif;?>
-    
-</div>
 
-<div class="row">
-
-<div class="category-items">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     
         <?php if(!in_array($post->ID, $skipids)):?>
