@@ -51,3 +51,31 @@ article.in-category-item.solo-link-item {
 .pagenavigation {
     text-align:center;
 }
+
+.item-permanente {
+    margin-bottom:15px;
+    a {
+        h2 {
+            color:@azul_menu;
+            margin-bottom:0;
+        }
+        display:block;
+        color:#333;
+        border:1px solid #ccc;
+        background-color:fade(@azul_menu, 15%);
+        &:hover {
+            text-decoration:none;
+            background-color:fade(@azul_menu, 10%);
+        }
+
+        time {
+            color:@azul_menu;
+            margin-bottom:12px;
+            display:block;
+        }
+    }
+    .txt {
+        padding:12px;
+        font-size:16px;
+    }
+}
