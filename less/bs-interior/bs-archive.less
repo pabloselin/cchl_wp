@@ -28,11 +28,14 @@ article.in-category-item {
     //border-top:1px solid @gris;
 
     h1 {
-        color:#333;
+        color:@azul_menu;
     }
     .catdesc {
         font-size:16px;
         margin-top:24px;
+        strong {
+            //color:@azul_menu;
+        }
         p {
             margin-bottom:1.8em;
         }
@@ -47,4 +50,16 @@ article.in-category-item.solo-link-item {
 
 .pagenavigation {
     text-align:center;
+}
+
+.item-mini-noticia.item-permanente {
+    a {
+        background-color:fade(@azul_menu, 15%);
+        h2 {
+            margin-bottom:12px;
+        }
+        .inner-content {
+            color:darken(@azul_menu, 20%);
+        }
+    }
 }

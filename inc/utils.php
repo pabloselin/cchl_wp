@@ -244,7 +244,44 @@ add_filter('excerpt_more', 'new_excerpt_more');
  * Devuelve TRUE cuando estamos en alguna parte del sitio que sea responsive
  */
 function cchl_isresponsive( ) {
-  return true;
+  global $post;
+
+  $isfilsa = checkfilsa();
+  $isfilij = checkfilij();
+  $using_feria_template = checkferiatemplate($post->ID);
+  $feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );
+  $ancestor = cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php');
+  if(
+  
+  //Listado de condiciones para plantillas específicas
+  is_home() ||
+  is_single() ||
+  is_category() ||
+  is_post_type_archive() ||
+  $isfilsa == true ||
+  $isfilij == true ||
+  checkferia($post->ID, 53771) ||
+  checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ||
+  checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 208) ||
+  checkferia($post->ID, CCHL_FILVINA2016) ||
+  checkferia($post->ID, CCHL_FILVINA2017) ||
+  is_page_template('page-feria-principal.php') ||
+  is_page_template('bs-plantilla-feria.php') ||
+  is_page_template('bs-archivo-ferias.php') ||
+  is_page_template('bs-default-page.php') ||
+  is_page_template('bs-home-socios.php') ||
+  $using_feria_template || 
+  ( is_single() && in_category( $feriasmultimediacats, $post->ID ) ) ||
+  $ancestor
+  ):
+
+    return true;
+
+  else:
+
+    return false;
+
+  endif;
 }
 
 //URL para usar en los contadores de redes sociales

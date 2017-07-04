@@ -371,6 +371,17 @@ function cchl_header($postid) {
 		//get_template_part('parts/header', 'feria');
 		$template = 'parts/header-feria';
 	else:
+  		if(is_home() ||
+			is_single() ||
+			is_category() ||
+			is_post_type_archive() || 
+			get_page_template_slug($post->ID) == 'bs-archivo-ferias.php' ||
+			get_page_template_slug($post->ID) == 'bs-home-socios.php' ||
+			get_page_template_slug($post->ID) == 'bs-default-page.php'
+			):
+		  	//get_template_part('parts/bs-home/bs-header');
+		  	$template = 'parts/bs-home/bs-header';
+  	else:
     	//get_template_part('parts/header-standard-new-interior');
 			$template = 'parts/bs-general/bs-header';
   endif;

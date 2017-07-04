@@ -33,7 +33,13 @@
 
                 </div>
 
-                <?php get_template_part('parts/bs-general/bs-related');?>
+                <?php 
+                if(get_post_type($post->ID) == 'trabajos'):
+                    get_template_part('parts/bs-general/bs-related-works');
+                else:
+                    get_template_part('parts/bs-general/bs-related');
+                endif;
+                ?>
     </div>
 </div>
 
