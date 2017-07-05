@@ -394,6 +394,9 @@ function cchl_header($postid) {
 function cchl_oldcondition($postid) {
 	$isfilsa = checkfilsa($postid);
 	$isfilij = checkfilij($postid);
+	$using_feria_template = checkferiatemplate($postid);
+	$feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );
+	
 	if( 	$isfilsa ||
 				$isfilij ||
 				checkferia($post->ID, 53771) ||
