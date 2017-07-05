@@ -103,7 +103,11 @@ elseif($checkferiatemplate):
 	<?php wp_nav_menu( array('menu'=> $menu ) );?>
 
 </div>
+<?php elseif(checkfilsa($post->ID)):?>
 
+	<div id="sidebar_interior" class="grid_4 filsa-2014">
+		<?php get_template_part('old/sidebar-filsa2014');?>
+	</div>
 <?php 
 //Para FILSA 2013
 elseif( checkferia($post->ID, CCHL_FILSA2013 ) ):?>
@@ -153,8 +157,10 @@ elseif(checkferia($post->ID, CCHL_FERIASCOMUNALES) || checkferia($post->ID, CCHL
 	<div id="sidebar_interior" class="grid_4">
         <?php get_sidebar();?>
 	</div>	
- <?php else:?>
+<?php else:?>
+
 <div id="sidebar_interior" class="grid_4">
         <?php get_sidebar('ugly');?>
 </div>
+
 <?php endif;?>

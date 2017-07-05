@@ -392,6 +392,8 @@ function cchl_header($postid) {
 }
 
 function cchl_oldcondition($postid) {
+	$isfilsa = checkfilsa($postid);
+	$isfilij = checkfilij($postid);
 	if( 	$isfilsa ||
 				$isfilij ||
 				checkferia($post->ID, 53771) ||
