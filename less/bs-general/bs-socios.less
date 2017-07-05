@@ -7,3 +7,59 @@
         margin-bottom:25px;
     }
 }
+
+.page-template-bs-listado-socios {
+    .listado-socios {
+        display:flex;
+        align-items:center;
+        flex-wrap: wrap;
+    }
+    .item-socio {
+        height:200px;
+        margin-bottom:24px;
+        a {
+            display:block;
+            width:100%;
+            padding:12px;
+            border:1px solid #f0f0f0;
+            height:200px;
+            overflow:hidden;
+            position: relative;
+            box-shadow:0 0 12px #ccc;
+            transition:all ease-in 0.4s;
+            
+            &:hover {
+                box-shadow:0 0 0 #ccc;
+                border:1px solid #333;
+            }
+
+            h3 {
+                font-size:14px;
+                position: absolute;
+                bottom:0;
+                left:0;
+                padding:0 12px;
+                text-transform:uppercase;
+                font-weight:normal;
+                text-align:center;
+                width:100%;
+            }
+                .img-socio {
+                    text-align:center;
+                    display:flex;
+                    align-items: center;
+                    margin:0 auto;
+                    height:150px;
+                    img {
+                        max-width:200px;
+                        max-height:150px;
+                        width:auto;
+                        height:auto;
+                        margin:0 auto;
+                        vertical-align:middle;
+                    }
+                }
+        
+            }
+        }
+    }

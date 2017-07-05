@@ -10,7 +10,7 @@ Template Name: [NUEVO] Listado de socios
 <div class="container">
         <?php get_template_part('parts/bs-blocks/bs-breadcrumb');?>
         <div class="row">        
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-12">
 
                  <article <?php post_class();?>>
                     <header>
@@ -28,6 +28,34 @@ Template Name: [NUEVO] Listado de socios
                         <?php do_action('cchl_beforecontent');?>
 
                         <?php the_content();?>
+
+                        <section class="listado-socios row">
+                            <?php $sociosargs = array(
+                                'post_type' => 'socios',
+                                'numberposts' => -1,
+                                'orderby' => 'name',
+                                'order' => 'ASC'
+                                );
+                                $socios = get_posts($sociosargs);
+                                foreach($socios as $socio) {?>
+
+                                    <div class="item-socio col-md-3">
+                                    <a href="<?php echo get_permalink($socio->ID);?>">
+                                        <div class="img-socio">
+                                            <?php if(has_post_thumbnail( $socio->ID )):
+                                                    echo get_the_post_thumbnail( $socio->ID, 'medium' );
+                                                    endif;
+                                                    ?>
+                                        </div>
+
+                                        <h3><?php echo $socio->post_title;?></h3>
+                                    </a>
+                                    </div>
+
+                                <?php }
+                            ?>
+
+                        </section>
 
                         <?php do_action('cchl_aftercontent');?>
                         

@@ -380,10 +380,46 @@ function cchl_header($postid) {
 			get_page_template_slug($post->ID) == 'bs-default-page.php'
 			):
 		  	//get_template_part('parts/bs-home/bs-header');
-		  	$template = 'parts/bs-home/bs-header';
+		  	$template = 'parts/bs-general/bs-header';
   	else:
     	//get_template_part('parts/header-standard-new-interior');
 			$template = 'parts/bs-general/bs-header';
+		endif;
   endif;
+
+	return $template;
+
+}
+
+function cchl_oldcondition($postid) {
+	if( 	$isfilsa ||
+				$isfilij ||
+				checkferia($post->ID, 53771) ||
+				checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ||
+				checkferia($post->ID, CCHL_FILVINA2016) ||
+			 	checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 'filsa-2016') ||
+				checkferia($post->ID, CCHL_FILVINA2017, CCHL_CATSFILVINA2017) ||
+				is_page_template('page-feria-principal.php') || 
+				$using_feria_template ||
+				is_single() && in_category( $feriasmultimediacats, $post->ID )
+				)
+				{
+					return true;
+				} else {
+					return false;
+				}
+}
+
+function cchl_loadoldpage( $template ) {
+	global $post;
+	$isoldpage = cchl_oldcondition($post->ID);
+	if($isoldpage) {
+		$default_template = locate_template( array( 'page-feria-anterior.php') );
+		if('' != $default_template) {
+			return $default_template;
+		}
+	}
 	return $template;
 }
+
+add_filter('template_include', 'cchl_loadoldpage', 99);
