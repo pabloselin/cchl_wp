@@ -9,7 +9,9 @@
 
                  <article <?php post_class();?>>
                     <header>
-                        <time><?php the_date();?></time>
+                        <?php if(get_post_type() != 'socios'):?>
+                            <time><?php the_date();?></time>
+                        <?php endif;?>
                         <h1><?php the_title();?></h1>
                     </header>
 

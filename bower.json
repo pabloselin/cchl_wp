@@ -20,6 +20,7 @@
     "tests"
   ],
   "devDependencies": {
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "isotope": "^3.0.4"
   }
 }

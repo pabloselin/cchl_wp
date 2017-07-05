@@ -28,7 +28,18 @@ Template Name: [NUEVO] Listado de socios
                         <?php do_action('cchl_beforecontent');?>
 
                         <?php the_content();?>
+                        
+                        <?php 
+                            //$alphabet = 'abcdefghijklmnñopqrstuvwxyz';
+                        ?>
 
+                        <nav class="nav-socios row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="btn-group nav-socios-list">
+                                
+                                </div>
+                            </div>
+                        </nav>
                         <section class="listado-socios row">
                             <?php $sociosargs = array(
                                 'post_type' => 'socios',
@@ -37,9 +48,12 @@ Template Name: [NUEVO] Listado de socios
                                 'order' => 'ASC'
                                 );
                                 $socios = get_posts($sociosargs);
-                                foreach($socios as $socio) {?>
+                                foreach($socios as $socio) {
+                                    $firstletter = strtoupper(substr($socio->post_title, 0, 1));
+                                    $existingletters[] = $firstletter;
+                                ?>
 
-                                    <div class="item-socio col-md-3">
+                                    <div class="item-socio col-md-3" data-letter="<?php echo $firstletter;?>">
                                     <a href="<?php echo get_permalink($socio->ID);?>">
                                         <div class="img-socio">
                                             <?php if(has_post_thumbnail( $socio->ID )):
@@ -53,6 +67,11 @@ Template Name: [NUEVO] Listado de socios
                                     </div>
 
                                 <?php }
+                                $existingletters = array_unique($existingletters);
+                                natcasesort($existingletters);
+                                $existingletters = array_values($existingletters);
+                                $jsonletters = json_encode($existingletters);
+                                echo '<script>var existingletters = ' . $jsonletters . '</script>';
                             ?>
 
                         </section>
