@@ -146,7 +146,7 @@ jQuery(document).ready(function($) {
 
 	
 
-	if(existingletters !== undefined) {
+	if(typeof existingletters !== undefined) {
 		//console.log(existingletters);
 		for(var i = 0; i < existingletters.length; i++) {
 			$('.btn-group.nav-socios-list').append('<button class="btn btn-default">' + existingletters[i] + '</button>');
