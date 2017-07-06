@@ -355,19 +355,19 @@ function cchl_header($postid) {
 	elseif( checkferia($post->ID, 53771) ):
 		//get_template_part('parts/header', 'fil' );
 		$template = 'parts/header-fil';
-	elseif( checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ):
+	elseif( checkferia($post->ID, CCHL_FILSA2015, '', 180) ):
 		//get_template_part('parts/header', 'filsa-2015' );
 		$template = 'parts/header-filsa-2015';
-	elseif( checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 'filsa-2016') ):
+	elseif( checkferia($post->ID, CCHL_FILSA2016, '', 'filsa-2016') ):
   		//get_template_part('parts/header', 'filsa-2016');
 		$template = 'parts/header-filsa-2016';
 	elseif( checkferia($post->ID, CCHL_FILVINA2016) ):
 		//get_template_part('parts/header', 'filvina-2016');
 		$template = 'parts/header-filvina-2016';
-	elseif( checkferia($post->ID, CCHL_FILVINA2017, CCHL_CATSFILVINA2017) ):
+	elseif( checkferia($post->ID, CCHL_FILVINA2017, '') ):
 		//get_template_part('parts/header', 'filvina-2017');  
 		$template = 'parts/header-filvina-2017';
-	elseif( is_page_template('page-feria-principal.php') || $using_feria_template || is_single() && in_category( $feriasmultimediacats, $post->ID ) ):
+	elseif( is_page_template('page-feria-principal.php') || $using_feria_template ):
 		//get_template_part('parts/header', 'feria');
 		$template = 'parts/header-feria';
 	else:
@@ -400,13 +400,13 @@ function cchl_oldcondition($postid) {
 	if( 	$isfilsa ||
 				$isfilij ||
 				checkferia($post->ID, 53771) ||
-				checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ||
+				checkferia($post->ID, CCHL_FILSA2015, '', 180) ||
 				checkferia($post->ID, CCHL_FILVINA2016) ||
-			 	checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 'filsa-2016') ||
-				checkferia($post->ID, CCHL_FILVINA2017, CCHL_CATSFILVINA2017) ||
+			 	checkferia($post->ID, CCHL_FILSA2016, '', 'filsa-2016') ||
+				checkferia($post->ID, CCHL_FILVINA2017, '') ||
 				is_page_template('page-feria-principal.php') || 
-				$using_feria_template ||
-				is_single() && in_category( $feriasmultimediacats, $post->ID )
+				$using_feria_template //||
+				//is_single() && in_category( $feriasmultimediacats, $post->ID )
 				)
 				{
 					return true;
