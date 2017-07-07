@@ -38,6 +38,8 @@
                 <?php 
                 if(get_post_type($post->ID) == 'trabajos'):
                     get_template_part('parts/bs-general/bs-related-works');
+                elseif(get_post_type($post->ID == 'socios')):
+                    get_template_part('parts/bs-blocks/bs-listado-socios');
                 else:
                     get_template_part('parts/bs-general/bs-related');
                 endif;

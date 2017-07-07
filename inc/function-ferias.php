@@ -451,8 +451,8 @@ add_filter('template_include', 'cchl_loadoldpage', 99);
 
 function cchl_oldtemplates() {
 	global $post;
+	if(cchl_isoldfilsa($post->ID)) {
 	if(is_page_template('page-observatorio-integrantes.php') || is_page_template('old/page-observatorio-integrantes.php')):
-		if(cchl_isoldfilsa($post->ID)) {
 			?>
 			 <div class="listado">
         	
@@ -471,11 +471,38 @@ function cchl_oldtemplates() {
 						<div class="textoint"><?php echo apply_filters('the_content', get('texto',$miembro));?></div>
 					</div>
 				</div>
-			<?php }?>
+			<?php };?>
             </div>
 			<?php
-			}
 			endif;
+		if(is_page_template('page-ferias-informacion-auspiciadores.php') || is_page_template('old/page-ferias-informacion-auspiciadores.php')):?>
+
+		<div class="logos">
+            <?php
+            $miembros = getGroupOrder('imagen');
+            foreach($miembros as $miembro){
+				echo "<div class='auspiciador'>";
+				$otros = array("h" => 100, "w" => 100, "zc" => 1, "q" => 100);
+   				echo get_image('imagen',$miembro,1,1,NULL);
+				echo "<div class='info'>
+				<h3>".get('nombre',$miembro)."</h3>
+			
+				<p>".get('texto',$miembro)."</p>
+				</div>
+				</div>";
+			}
+            ?>
+            </ul>
+
+		<?php 
+		endif;
+
+		if(is_page_template('colaboradores-fil-2016.php') || is_page_template('old/colaboradores-fil-2016.php')):
+			get_template_part('parts/bs-blocks/rev-colaboradores-fil-2016');
+		endif;
+
+
+			}
 		}
 
 add_action('cchl_aftercontent', 'cchl_oldtemplates');
