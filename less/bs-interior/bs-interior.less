@@ -1,6 +1,6 @@
 //Interiores
 
-@import '../less/animatecss.less';
+//@import '../less/animatecss.less';
 @import '../bs-general/bs-init.less';
 @import '../bs-general/bs-colaboradores.less';
 @import '../bs-general/bs-eventos.less';
@@ -15,6 +15,7 @@
 @import '../bs-general/bs-listado-personas.less';
 @import '../bs-general/bs-listado-documentos.less';
 @import '../bs-general/bs-desplegable.less';
+@import '../bs-general/bs-menu-lateral.less';
 @import '../bs-general/bs-mailchimp.less';
 
 .sidebar-menu-feria {
@@ -223,5 +224,17 @@
     margin-bottom:24px;
     .gallery {
         min-height:400px;
+    }
+}
+
+.listado {
+    .col-md-3 {
+        text-align:center;
+    }
+    img {
+        margin:12px 0;
+    }
+    .info h3 {
+        margin-top:0;
     }
 }

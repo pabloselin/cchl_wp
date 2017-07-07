@@ -16,6 +16,7 @@ define( 'CCHL_FILSA2016_EVENTCAT', 208);
 define( 'CCHL_FILSA2016', 60799 );
 define( 'CCHL_FILSA2015', 54646 );
 define( 'CCHL_FILSA2013', 24556 );
+define( 'CCHL_FILSA2014', 31817 );
 define( 'CCHL_FILSA2012', 24568 );
 
 define( 'CCHL_FILVINA2016', 59355 );
@@ -53,6 +54,8 @@ register_nav_menus( array(
 	'historico-comunales'			 => 'Histórico Ferias Comunales',
 	'historico-extranjero'			 => 'Histórico Ferias en el Extranjero',
 	'menu-ferias-en-feria'			 => 'Menú Ferias',
+	'menu-filsa-2013'			 	 => 'Menú FILSA 2013',
+	'menu-filsa-2012'			 	 => 'Menú FILSA 2012',
 	//Filsa 2015
 	'accesos-rapidos-filsa-2015' 	 => 'Accesos Rápidos Filsa 2015',
 	//Filsa 2016

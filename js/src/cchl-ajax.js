@@ -145,8 +145,8 @@ jQuery(document).ready(function($) {
     }
 
 	
-
-	if(typeof existingletters !== undefined) {
+	
+	if($('body').hasClass('page-template-bs-listado-socios') || $('body').hasClass('post-type-archive-socios')) {
 		//console.log(existingletters);
 		for(var i = 0; i < existingletters.length; i++) {
 			$('.btn-group.nav-socios-list').append('<button class="btn btn-default">' + existingletters[i] + '</button>');

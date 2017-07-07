@@ -25,12 +25,16 @@ Template Name: Listado Ferias Bootstrap
     <div class="row">
 
         <div class="col-md-3 hidden-xs">
-            <div class="menu-filsa-archivo">
                 <?php 
-                $menuoption = get_post_meta($post->ID, '_cchl_custompage_menu', true);
-                $menuvalue = ($menuoption)? $menuoption : 'default';
-                wp_nav_menu( array( 'theme_location' => $menuoption) );?>
-            </div>
+                if(cchl_isoldfilsa($post->ID)):
+            
+                    get_template_part('parts/bs-blocks/bs-menu-oldfilsa');
+
+                else:
+                
+                    get_template_part('parts/bs-blocks/bs-menu-filsa-archivo');
+
+                endif;?>
         </div>
 
         <div class="col-md-9">
@@ -43,19 +47,29 @@ Template Name: Listado Ferias Bootstrap
             <?php get_template_part('parts/bs-general/bs-sharer');?>
 
             <div class="article-content text-content">
-                <?php the_content();?>
+                    
+                    <?php do_action('cchl_beforecontent');?>
+
+                        <?php the_content();?>
+
+                    <?php do_action('cchl_aftercontent');?>
+
             </div>
         </article>    
     
         </div>
 
          <div class="col-md-3 visible-xs">
-            <div class="menu-filsa-archivo">
-                <?php 
-                $menuoption = get_post_meta($post->ID, '_cchl_custompage_menu', true);
-                $menuvalue = ($menuoption)? $menuoption : 'default';
-                wp_nav_menu( array( 'theme_location' => $menuoption) );?>
-            </div>
+            <?php 
+                if(cchl_isoldfilsa($post->ID)):
+            
+                    get_template_part('parts/bs-blocks/bs-menu-oldfilsa');
+
+                else:
+                
+                    get_template_part('parts/bs-blocks/bs-menu-filsa-archivo');
+
+                endif;?>
         </div>
     </div>
 </div>

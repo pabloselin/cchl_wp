@@ -415,16 +415,67 @@ function cchl_oldcondition($postid) {
 				}
 }
 
+function cchl_isoldfilsa( $postid ) {
+	$ancestors = get_post_ancestors( $postid );
+	if($postid == CCHL_FILSA2013 ||
+		 $postid == CCHL_FILSA2012 ||
+		 in_array( CCHL_FILSA2013, $ancestors) ||
+		 in_array( CCHL_FILSA2012, $ancestors)
+		 ) {
+			return true;
+		}	else {
+			return false;
+		}
+}
+
 function cchl_loadoldpage( $template ) {
 	global $post;
 	$isoldpage = cchl_oldcondition($post->ID);
+	$isoldfilsa = cchl_isoldfilsa($post->ID);
 	if($isoldpage) {
 		$default_template = locate_template( array( 'page-feria-anterior.php') );
 		if('' != $default_template) {
 			return $default_template;
 		}
 	}
+	if($isoldfilsa) {
+		$default_template = locate_template( array( 'bs-archivo-ferias.php') );
+			if('' != $default_template) {
+				return $default_template;
+			}
+	}
 	return $template;
 }
 
 add_filter('template_include', 'cchl_loadoldpage', 99);
+
+function cchl_oldtemplates() {
+	global $post;
+	if(is_page_template('page-observatorio-integrantes.php') || is_page_template('old/page-observatorio-integrantes.php')):
+		if(cchl_isoldfilsa($post->ID)) {
+			?>
+			 <div class="listado">
+        	
+            <?php
+            $miembros = getGroupOrder('imagen');
+            foreach($miembros as $miembro){ 
+				$size = array("h" => 135, "w" => 135, "zc" => 1, "q" => 100);
+				?>	
+				<div class="row">
+					<div class="col-md-3">
+						<?php echo get_image('imagen',$miembro,1,1,NULL,$size);?>
+					</div>
+					<div class="info col-md-8">
+						<h3><?php echo get('nombre',$miembro);?></h3>
+						<span><?php echo get('cargo',$miembro);?></span>
+						<div class="textoint"><?php echo apply_filters('the_content', get('texto',$miembro));?></div>
+					</div>
+				</div>
+			<?php }?>
+            </div>
+			<?php
+			}
+			endif;
+		}
+
+add_action('cchl_aftercontent', 'cchl_oldtemplates');
