@@ -43,7 +43,6 @@ Template Name: [NUEVO] Listado de personas
                                         'cargo'  => get('cargo', $miembro),
                                         'desc'   => get('texto', $miembro)
                                     );
-                                    xdebug_break();
                                     ?>
 
                                     <div class="person row">
