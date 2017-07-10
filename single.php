@@ -15,9 +15,9 @@
                         <h1><?php the_title();?></h1>
                     </header>
 
-                    <?php if(has_post_thumbnail() && !get_post_meta($post->ID, 'galeria_imagen_imagen', true)):?>
+                    <?php if(has_post_thumbnail() && !get_post_meta($post->ID, 'galeria_imagen_imagen', true) && get_post_type() != 'socios'):?>
                             <div class="ft-img-wrapper"> <?php the_post_thumbnail('large');?> </div>
-                          <?php endif;?>
+                    <?php endif;?>
 
                     <?php get_template_part('parts/bs-blocks/bs-post-fields');?>
 
