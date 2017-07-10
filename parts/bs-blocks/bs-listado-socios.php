@@ -1,4 +1,4 @@
-<div class="col-md-4 bs-related">
+<!--<div class="col-md-4 bs-related">
 <h2>Socios <br> Cámara Chilena del Libro</h2>
 <div class="listado-socios-scroll">
     <?php 
@@ -21,4 +21,4 @@
    ?> 
 </div> 
 
-</div>
+</div>-->

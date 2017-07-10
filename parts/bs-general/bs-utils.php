@@ -1,3 +1,8 @@
+<?php 
+$cchl_options = get_option( 'cchl_settings' );
+$special = $cchl_options['cchl_checkbox_special'];
+?>
+
 <nav class="navbar navbar-default top-utils hidden-xs" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
 	<?php if(!is_home()):

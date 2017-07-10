@@ -15,7 +15,7 @@ function cchl_styles() {
 
   wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.6f8f31bd.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.2e2032fd.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.8359b89f.min.css', array(), CCHL_VERSION, 'screen' );
 
   $oldpages = cchl_oldcondition($post->ID);
 	if($oldpages == true ) {
