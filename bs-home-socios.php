@@ -27,7 +27,7 @@ set_query_var('menu_noticias', 'noticias-socios');
 		get_template_part('parts/bs-blocks/bs-catblock');
 
 		set_query_var('menu', 'accesos-info-socios');
-		set_query_var('menublock_title', 'Información útil socios');
+		set_query_var('menublock_title', 'Información útil');
 		get_template_part('parts/bs-blocks/bs-menublock');
 	?>
 </div>

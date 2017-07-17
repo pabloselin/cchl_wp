@@ -51,7 +51,9 @@
             <h2>
                     <?php the_title();?>
             </h2>
-            <time><?php the_time('j \d\e F \d\e Y');?></time>
+            <?php if(!in_category('guia-librerias')):?>
+                <time><?php the_time('j \d\e F \d\e Y');?></time>
+            <?php endif;?>
             </div>
             </a>
         </article>
