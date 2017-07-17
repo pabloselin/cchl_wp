@@ -67,7 +67,9 @@ register_nav_menus( array(
 	'eventos-socios'				 => 'Eventos Socios',
 	'accesos-rapidos-socios'		 => 'Accesos rápidos socios',
 	'eventos-destacados-portada'	 => 'Eventos Portada',
-	'accesos-rapidos-home'			 => 'Accesos rápidos Portada'
+	'accesos-rapidos-home'			 => 'Accesos rápidos Portada',
+	//Socios
+	'accesos-info-socios'			 => 'Accesos informacón útil socios'
 	) 
 );
 

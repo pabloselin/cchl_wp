@@ -25,6 +25,10 @@ set_query_var('menu_noticias', 'noticias-socios');
 		set_query_var('catblock_title', 'Estudios e Informes del sector');
 		set_query_var('catblock_id', 101);
 		get_template_part('parts/bs-blocks/bs-catblock');
+
+		set_query_var('menu', 'accesos-info-socios');
+		set_query_var('menublock_title', 'Información útil socios');
+		get_template_part('parts/bs-blocks/bs-menublock');
 	?>
 </div>
 

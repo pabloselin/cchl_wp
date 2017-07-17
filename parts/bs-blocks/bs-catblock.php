@@ -1,5 +1,5 @@
 <div class="row catblock">
-	<h2 class="catblock-title"><?php echo $catblock_title;?></h2>
+	<h2 class="catblock-title col-md-2"><?php echo $catblock_title;?></h2>
     <?php 
         $args = array(
             'post_type' => 'post',
@@ -8,7 +8,7 @@
         $catitems = get_posts($args);
         foreach($catitems as $catitem) { ?>
 
-        <div class="catitem col-md-4">
+        <div class="catitem col-md-2">
             <a href="<?php echo get_permalink($catitem->ID);?>">
                 <h3><?php echo $catitem->post_title;?></h3>
             </a>
