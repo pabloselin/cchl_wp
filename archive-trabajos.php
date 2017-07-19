@@ -44,7 +44,7 @@
                             <div class="txt">
                                 <h2><?php echo $permanent->post_title;?></h2>
                                 <div class="inner-content">
-                                    <?php echo apply_filters( 'the_content', $permanent->post_content );?>
+                                    <?php echo apply_filters( 'the_excerpt', $permanent->post_content );?>
                                 </div>
                             </div>
                         </a>
@@ -58,14 +58,11 @@
         <?php if(!in_array($post->ID, $skipids)):?>
            <article class="col-md-4 item-mini-noticia in-category-item">
             <a href="<?php echo get_permalink($post->ID);?>">
-            <?php if(has_post_thumbnail( )):
-                    the_post_thumbnail( 'media-kit' );
-                endif;?>
             <div class="txt">
-            <h2>
-                    <?php the_title();?>
-            </h2>
-            <time><?php the_time('j \d\e F \d\e Y');?></time>
+                <h2>
+                        <?php the_title();?>
+                </h2>
+                <time><?php the_time('j \d\e F \d\e Y');?></time>
             </div>
             </a>
         </article>
