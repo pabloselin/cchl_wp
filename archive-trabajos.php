@@ -57,7 +57,7 @@
     
         <?php if(!in_array($post->ID, $skipids)):?>
            <article class="col-md-4 item-mini-noticia in-category-item">
-            <a href="<?php the_permalink();?>">
+            <a href="<?php echo get_permalink($post->ID);?>">
             <?php if(has_post_thumbnail( )):
                     the_post_thumbnail( 'media-kit' );
                 endif;?>
