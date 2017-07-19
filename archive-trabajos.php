@@ -44,7 +44,7 @@
                             <div class="txt">
                                 <h2><?php echo $permanent->post_title;?></h2>
                                 <div class="inner-content">
-                                    <?php echo apply_filters( 'the_excerpt', $permanent->post_content );?>
+                                    <?php echo strip_tags(apply_filters( 'the_excerpt', $permanent->post_content ));?>
                                 </div>
                             </div>
                         </a>
