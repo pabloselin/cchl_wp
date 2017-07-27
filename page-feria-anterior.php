@@ -8,10 +8,41 @@
     <?php get_template_part('parts/clean-sidebar');?>
 
     <div id="content" class="grid_12">
+         <?php if(!is_page(60799) && !is_page(54646)):?>
          <div id="bread">
             Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
         </div>
+        <?php endif;?>
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+
+        <?php 
+        //Filsa 2016
+        if(is_page(60799)):?>
+
+            <div class="accesos-rapidos filsa-2016">
+        
+                <?php 
+                    if(has_nav_menu( 'accesos-rapidos-filsa-2016') ):
+                        wp_nav_menu( array('theme_location'=> 'accesos-rapidos-filsa-2016') );
+                    endif;
+                ?>
+        
+            </div>
+
+            <?php //get_template_part('parts/filsa/filsa-2016-eventos-destacados');?>
+            <?php //get_template_part('parts/filsa/filsa-2016-noticias-destacadas');?>
+            <p style="clear:both;"></p>
+        <?php endif;
+
+        //Filsa 2015
+        if(is_page(54646)):?>
+        
+        <div class="accesos-rapidos">
+            <?php wp_nav_menu( array('theme_location'=> 'accesos-rapidos-filsa-2015') );?>
+        </div>
+
+        <?php endif;?>
+
 
         <h1 class="post-title"><?php the_title(); ?></h1>
            <?php get_template_part('parts/addthis');?>
