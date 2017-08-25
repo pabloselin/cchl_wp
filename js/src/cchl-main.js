@@ -1,5 +1,3 @@
-
-
 jQuery(document).ready(function($) {
 
 var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
@@ -95,6 +93,9 @@ $('div.feria-galeria.imagenes a').featherlight({
         iframeHeight: 600
     });
 
+    console.log('flickr ready');
+    $('.fotos-flickr').addClass('ready');
+    
 }); 
 
 

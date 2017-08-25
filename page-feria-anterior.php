@@ -58,6 +58,10 @@
             if($post->ID == 65839):
                     get_template_part( 'parts/eventos-filvina-2017' );
             endif;
+
+            if(is_page_template('page-filsa-2016-eventos.php')):
+                get_template_part( 'parts/filsa/eventos-ajax-2016' );
+            endif;
             
             if(is_page_template('page-observatorio-integrantes.php') || is_page_template('old/page-observatorio-integrantes.php')): 
                 get_template_part('parts/oldparts/observatorio-integrantes');
