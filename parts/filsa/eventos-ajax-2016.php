@@ -1,8 +1,6 @@
 <div id="eventos-ajax-2016">
 	<?php 
 	//Dias Filsa
-		setlocale(LC_TIME, '');
-		setlocale(LC_TIME, 'es_ES.utf8');
 		$hoy = date('Y-m-d');
 		$iniciofilsa = new DateTime( '2016-10-20');
 		$finfilsa = new DateTime('2016-11-7');

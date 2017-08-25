@@ -36,11 +36,11 @@ $args = array(
 		);
 
 $events = get_posts($args);
-setlocale(LC_TIME, '');
-setlocale(LC_TIME, 'es_ES.utf8');
-$dia = strftime('%A' , $eventday->format('U'));
-$ndia = strftime('%e' , $eventday->format('U'));
-$mes = strftime('%B' , $eventday->format('U'));
+// setlocale(LC_TIME, '');
+// setlocale(LC_TIME, 'es_ES.utf8');
+$dia = date_i18n('l' , $eventday->format('U'));
+$ndia = date_i18n('j' , $eventday->format('U'));
+$mes = date_i18n('F' , $eventday->format('U'));
 
 $html = '<h2 class="animated fadeInDown"><i class="fa fa-caret-right"></i> ' . $dia . ' ' . $ndia . ' de ' . $mes . '</h2>';
 $html .= cchl_event_filter( $eventday->format('U') );
