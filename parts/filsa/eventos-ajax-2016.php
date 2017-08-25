@@ -27,9 +27,9 @@
 						else:
 							$cur = 'normal';
 						endif;
-						$dia = strftime('%A' , $day->format('U'));
-						$ndia = strftime('%e' , $day->format('U'));
-						$mes = strftime('%B' , $day->format('U'));
+						$dia = date_i18n('l' , $day->format('U'));
+						$ndia = date_i18n('j' , $day->format('U'));
+						$mes = date_i18n('F' , $day->format('U'));
 						?>
 						<li>
 							<a class="daysel <?php echo $cur;?>" data-day="<?php echo $day->format('Y-m-d');?>" href="javascript:void(0);">
