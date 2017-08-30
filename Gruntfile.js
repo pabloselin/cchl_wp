@@ -46,7 +46,7 @@ module.exports = function(grunt) {
 					rename: true
 				},
 				files: {
-					'inc/scripts.php': ['css/style-cchl.css', 'js/cchl-scripts.js', 'css/home-cchl.css', 'js/cchl-home.js', 'css/interior-cchl.css']
+					'inc/scripts.php': ['css/style-cchl.css', 'js/cchl-scripts.min.js', 'css/home-cchl.css', 'js/cchl-home.min.js', 'css/interior-cchl.css']
 				}
 			}
 		},
@@ -82,12 +82,24 @@ module.exports = function(grunt) {
 					],
 				dest: 'js/cchl-home.js'
 				}
+		},
+		uglify: {
+			options: {
+				mangle: false
+			},
+			scripts: {
+				files: {
+					'js/cchl-scripts.min.js': ['js/cchl-scripts.js'],
+					'js/cchl-home.min.js': ['js/cchl-home.js']
+				}
+			}
 		}
 	});
 	//Load tasks plugins
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-wp-assets');
 	grunt.loadNpmTasks('grunt-browser-sync');
@@ -95,6 +107,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		'clean',
 		'concat',
+		'uglify',
 		'less',
 		'version'
 		]);
