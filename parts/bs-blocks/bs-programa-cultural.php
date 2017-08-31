@@ -59,7 +59,7 @@
                     foreach($pagsfil as $day) {
                         $page = get_post($day['id']);
                         $hoy = date('j');
-                        //xdebug_break();
+                        
                         if($hoy == $day['ndia']) {
                             $cur = 'hoy';
                         } else {

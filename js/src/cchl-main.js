@@ -31,7 +31,7 @@ $('.noticias-filsa').cycle({
         if(sharer) {
 
             $.getJSON('https://graph.facebook.com/?id=' + durl, function(json) {
-                console.log(json);
+                //console.log(json);
                 fbshares = +json.share.share_count || 0;
                 $('.sharer__facebook', sharer).append('<span>' + parseInt(fbshares) + '</span>');
             });
