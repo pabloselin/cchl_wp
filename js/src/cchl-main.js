@@ -1,8 +1,5 @@
 jQuery(document).ready(function($) {
 
-var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-
 $("#faq .preg").click(function(){
        if($(this).hasClass("activo")){
             $(this).removeClass("activo")
@@ -12,26 +9,6 @@ $("#faq .preg").click(function(){
        $(this).next().slideToggle();
        
    });
-
-
-$('#slide_home').before('<div id="nav-2">').cycle({ 
-    fx:     'fade', 
-    speed:  'slow', 
-    timeout: 7000, 
-    pager:  '#nav-2' 
-});
-$('#slide_home2, #slide_socios2').before('<div id="nav-1">').cycle({ 
-    fx:     'fade', 
-    speed:  'slow', 
-    timeout: 7000, 
-    pager:  '#nav-1' 
-});
-$('#slide').before('<div id="nav">').cycle({ 
-    fx:     'fade', 
-    speed:  'slow', 
-    timeout: 7000, 
-    pager:  '#nav' 
-});
 
 $('.noticias-filsa').cycle({
     fx: 'scrollUp',
@@ -79,22 +56,6 @@ $('.tab-nav li a', tabs).on('click', function(element) {
             
         }
     });
-
-//Featherlight activation
-$('div.feria-galeria.imagenes a').featherlight({
-        type: 'image'
-    });
-
-$('div.feria-galeria.imagenes a').featherlight({
-        type: 'iframe',
-        targetAttr: 'href',
-        iframeMaxWidth: '90%',
-        iframeWidth: 800,
-        iframeHeight: 600
-    });
-
-    console.log('flickr ready');
-    $('.fotos-flickr').addClass('ready');
     
 }); 
 

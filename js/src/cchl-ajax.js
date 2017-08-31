@@ -127,24 +127,6 @@ jQuery(document).ready(function($) {
                     return false;
                 }).filter(':first').click();
 
-	var galleryCont = $('.gallery');
-	console.log(galleryCont);
-
-	Galleria.loadTheme( cchl.templateurl + '/js/galleria-classic-theme/galleria.classic.js');
-
-    if(Galleria && galleryCont.length > 0 ) {
-    	
-
-    	if(galleryCont) {
-
-    		Galleria.run('.gallery');
-
-    	}
-
-    	
-    }
-
-	
 	
 	if($('body').hasClass('page-template-bs-listado-socios') || $('body').hasClass('post-type-archive-socios')) {
 		//console.log(existingletters);

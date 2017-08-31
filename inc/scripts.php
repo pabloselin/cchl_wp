@@ -46,20 +46,20 @@ global $post;
 	  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
   }
   wp_register_script( 'cchl_scripts', get_bloginfo('template_url') . '/js/cchl-scripts.e09b6a05.min.js', array('jquery', 'featherlight', 'masonry'), true);
-  wp_register_script( 'cycle', get_bloginfo('template_url') . '/js/jquery.cycle.all.js', array('jquery'), true);
-  wp_register_script( 'readmore', get_bloginfo('template_url') . '/js/readmore.min.js', array('jquery'), true);
-  wp_register_script( 'imagesloaded', get_bloginfo('template_url') . '/js/imagesloaded.min.js', array('jquery'), true);
-  wp_register_script( 'masonry', get_bloginfo('template_url') . '/js/masonry.min.js', array('jquery'), true);
-  wp_register_script( 'featherlight', get_bloginfo('template_url') . '/js/featherlight/featherlight.min.js', array('jquery'), true);
+  //wp_register_script( 'cycle', get_bloginfo('template_url') . '/js/jquery.cycle.all.js', array('jquery'), true);
+  //wp_register_script( 'readmore', get_bloginfo('template_url') . '/js/readmore.min.js', array('jquery'), true);
+  //wp_register_script( 'imagesloaded', get_bloginfo('template_url') . '/js/imagesloaded.min.js', array('jquery'), true);
+  //wp_register_script( 'masonry', get_bloginfo('template_url') . '/js/masonry.min.js', array('jquery'), true);
+  //wp_register_script( 'featherlight', get_bloginfo('template_url') . '/js/featherlight/featherlight.min.js', array('jquery'), true);
   wp_register_script( 'cchl_home', get_bloginfo('template_url') . '/js/cchl-home.59289e2e.min.js', array(), true );
 
   wp_enqueue_script( 'jquery' );
-  wp_enqueue_script( 'featherlight' );
+  //wp_enqueue_script( 'featherlight' );
   wp_enqueue_script( 'cchl_scripts' );
-  wp_enqueue_script( 'cycle' );
-  wp_enqueue_script( 'masonry' );
-  wp_enqueue_script( 'readmore' );
-  wp_enqueue_script( 'imagesloaded' );
+  //wp_enqueue_script( 'cycle' );
+  //wp_enqueue_script( 'masonry' );
+  //wp_enqueue_script( 'readmore' );
+  //wp_enqueue_script( 'imagesloaded' );
   wp_enqueue_script('cchl_home');
 
 
