@@ -89,6 +89,16 @@ module.exports = function(grunt) {
 					'js/camara.min.js': ['js/camara.js']
 				}
 			}
+		},
+		image: {
+			dynamic: {
+				files: [{
+				  expand: true,
+				  cwd: 'oldimg/',
+				  src: ['**/*.{png,jpg,gif,svg}'],
+				  dest: 'img/'
+				}]
+			  }
 		}
 	});
 	//Load tasks plugins
@@ -99,6 +109,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-wp-assets');
 	grunt.loadNpmTasks('grunt-browser-sync');
+	grunt.loadNpmTasks('grunt-image');
 	//Default Tasks
 	grunt.registerTask('build', [
 		'clean',
