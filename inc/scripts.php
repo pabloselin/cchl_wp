@@ -1,36 +1,40 @@
 <?php
 
 add_action('wp_enqueue_scripts', 'cchl_styles');
+
 function cchl_styles() {
   global $post;
 
   wp_register_style( 'mailchimp', '//cdn-images.mailchimp.com/embedcode/classic-081711.css' , array(), '0.1', 'screen');
-	//gfonts
-	wp_register_style( 'fonts', 'https://fonts.googleapis.com/css?family=Signika:400,300,600,700' , array(), '0.1', 'screen' );
+	
 	//icons
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' , array(), '4.7.0', 'screen' );
 
 	//Compiled grunt style
-	wp_register_style( 'cchlcss', get_bloginfo('template_url') . '/css/style-cchl.91d5a253.min.css', array(), CCHL_VERSION, 'screen' );
+	wp_register_style( 'legacy', get_bloginfo('template_url') . '/css/legacy.91d5a253.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'home-cchl', get_bloginfo('template_url') . '/css/home-cchl.2efd6307.min.css', array(), CCHL_VERSION, 'screen' );
-
-  wp_register_style( 'interior-cchl', get_bloginfo('template_url') . '/css/interior-cchl.2513c429.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.a63fb69c.min.css', array(), CCHL_VERSION, 'screen' );
 
   $oldpages = cchl_oldcondition($post->ID);
 	if($oldpages == true ) {
+
+    //gfonts
+	  wp_register_style( 'fonts', 'https://fonts.googleapis.com/css?family=Signika:400,300,600,700' , array(), '0.1', 'screen' );
     
-    wp_enqueue_style('cchlcss');
+    wp_enqueue_style('legacy');
     wp_enqueue_style('mailchimp');
     wp_enqueue_style('fonts');
     wp_enqueue_style('fontawesome');
+    
 
 	} else {
 
+    //gfonts
+	  wp_register_style( 'fonts', 'https://fonts.googleapis.com/css?family=Signika:400,300,500' , array(), '0.1', 'screen' );
+
     wp_enqueue_style('fontawesome');
     wp_enqueue_style('fonts');
-    wp_enqueue_style( 'home-cchl');
-    wp_enqueue_style( 'interior-cchl');
+    wp_enqueue_style( 'camara');
 
   } 
 }
@@ -45,27 +49,18 @@ global $post;
   if(!is_admin()) {
 	  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
   }
-  wp_register_script( 'cchl_scripts', get_bloginfo('template_url') . '/js/cchl-scripts.e09b6a05.min.js', array('jquery', 'featherlight', 'masonry'), true);
-  //wp_register_script( 'cycle', get_bloginfo('template_url') . '/js/jquery.cycle.all.js', array('jquery'), true);
-  //wp_register_script( 'readmore', get_bloginfo('template_url') . '/js/readmore.min.js', array('jquery'), true);
-  //wp_register_script( 'imagesloaded', get_bloginfo('template_url') . '/js/imagesloaded.min.js', array('jquery'), true);
-  //wp_register_script( 'masonry', get_bloginfo('template_url') . '/js/masonry.min.js', array('jquery'), true);
-  //wp_register_script( 'featherlight', get_bloginfo('template_url') . '/js/featherlight/featherlight.min.js', array('jquery'), true);
-  wp_register_script( 'cchl_home', get_bloginfo('template_url') . '/js/cchl-home.59289e2e.min.js', array(), true );
+  if(WP_ENV != 'development') {
+    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.d5c3f2fe.min.js', array('jquery'), true);
+  } else {
+    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.js', array('jquery'), true);
+  }
+  
 
   wp_enqueue_script( 'jquery' );
-  //wp_enqueue_script( 'featherlight' );
-  wp_enqueue_script( 'cchl_scripts' );
-  //wp_enqueue_script( 'cycle' );
-  //wp_enqueue_script( 'masonry' );
-  //wp_enqueue_script( 'readmore' );
-  //wp_enqueue_script( 'imagesloaded' );
-  wp_enqueue_script('cchl_home');
+  wp_enqueue_script( 'camara' );
+  
 
 
-  if(is_home() || is_single() || is_category() || is_post_type_archive() || get_page_template_slug( $post->ID ) == 'bs-archivo-ferias.php' || get_page_template_slug( $post->ID ) == 'bs-home-socios.php' || get_page_template_slug( $post->ID ) == 'bs-default-page.php') {
-    wp_enqueue_script('cchl_home');
-  }
 
   $args = array(
     'hide_empty' => true
@@ -86,5 +81,5 @@ global $post;
   $tiposarr['templateurl'] = get_bloginfo('template_url');
   $tiposarr['siteurl'] = get_bloginfo('url');
 
-  wp_localize_script( 'cchl_scripts', 'cchl', $tiposarr ); 
+  wp_localize_script( 'camara', 'cchl', $tiposarr ); 
 }

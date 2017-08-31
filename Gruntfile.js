@@ -9,9 +9,10 @@ module.exports = function(grunt) {
 					compress: true
 				},
 				files: {
-					'css/style-cchl.css':'less/main.less',
-					'css/home-cchl.css':'less/bs-home/bs-home.less',
-					'css/interior-cchl.css':'less/bs-interior/bs-interior.less'
+					//'css/style-cchl.css':'less/main.less',
+					'css/camara.css':'less/camara-main.less',
+					'css/legacy.css': 'less/oldless/main.less'
+					//'css/interior-cchl.css':'less/bs-interior/bs-interior.less'
 				}
 			}
 		},
@@ -37,7 +38,7 @@ module.exports = function(grunt) {
 			},
 			options: {
 				watchTask: true,
-				proxy: 'http://cchl.dev'
+				proxy: 'http://camara.dev'
 			}
 		},
 		version: {
@@ -46,17 +47,15 @@ module.exports = function(grunt) {
 					rename: true
 				},
 				files: {
-					'inc/scripts.php': ['css/style-cchl.css', 'js/cchl-scripts.min.js', 'css/home-cchl.css', 'js/cchl-home.min.js', 'css/interior-cchl.css']
+					'inc/scripts.php': ['css/camara.css', 'css/legacy.css', 'js/camara.min.js']
 				}
 			}
 		},
 		clean: {
 			dist: [
-			'css/style-cchl.*.css',
-			'css/home-cchl.*.css',
-			'css/interior-cchl.*.css',
-			'js/cchl-scripts.*.min.js',
-			'js/cchl-home.*.min.js',
+			'css/legacy.*.css',
+			'css/camara.*.css',
+			'js/camara.*.min.js'
 			]
 		},
 		concat: {
@@ -66,22 +65,20 @@ module.exports = function(grunt) {
 			basic: {
 				src: [
 					'bower_components/galleria/src/galleria.js',
-					'js/galleria-classic-theme/galleria.classic.js',
+					'bower_components/bootstrap/js/dropdown.js',
+					'bower_components/bootstrap/js/collapse.js',
+					'bower_components/bootstrap/js/transition.js',
+					'bower_components/bootstrap/js/masonry.pkgd.js',
+					'js/vendor/imagesloaded.min.js',
+					'js/vendor/jquery.cycle2.js',
+					'js/vendor/masonry.min.js',
+					'js/vendor/readmore.min.js',
 					'js/src/cchl-ajax.js',
 					'js/src/cchl-main.js',
 					'js/src/cchl-filsa.js'
 					],
-				dest: 'js/cchl-scripts.js'
+				dest: 'js/camara.js'
 				},
-			home: {	
-				src: [
-						'bower_components/bootstrap/js/dropdown.js',
-						'bower_components/bootstrap/js/collapse.js',
-						'bower_components/bootstrap/js/transition.js',
-						'bower_components/bootstrap/js/masonry.pkgd.js'
-					],
-				dest: 'js/cchl-home.js'
-				}
 		},
 		uglify: {
 			options: {
@@ -89,8 +86,7 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: {
-					'js/cchl-scripts.min.js': ['js/cchl-scripts.js'],
-					'js/cchl-home.min.js': ['js/cchl-home.js']
+					'js/camara.min.js': ['js/camara.js']
 				}
 			}
 		}

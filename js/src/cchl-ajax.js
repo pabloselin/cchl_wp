@@ -1,25 +1,25 @@
 jQuery(document).ready(function($) {
-
+	
 	$.fn.extend({
-    animateCss: function (animationName) {
-        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        this.addClass('animated ' + animationName).one(animationEnd, function() {
-            $(this).removeClass('animated ' + animationName);
-        });
-    }
+		animateCss: function (animationName) {
+			var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+			this.addClass('animated ' + animationName).one(animationEnd, function() {
+				$(this).removeClass('animated ' + animationName);
+			});
+		}
 	});
-
+	
 	// Javascript para consultas ajax
 	var dias = $('ul.diasfilsa li a.daysel');
 	var container = $('.eventos-load');
-
-
-	if( $('span.infoevento') ) {
-
-		var eventcat = $('span.infoevento').data('eventcat');
 	
+	
+	if( $('span.infoevento') ) {
+		
+		var eventcat = $('span.infoevento').data('eventcat');
+		
 	} else {
-
+		
 		var eventcat = 180;
 	}
 	
@@ -41,17 +41,17 @@ jQuery(document).ready(function($) {
 			cchl_enableFilters(container);
 		});
 	});
-
+	
 	var filtroselect = $('select#todos-eventos-tipos-ajax, select#todos-eventos-temas-ajax');
 	var containerfiltro = $('div.evtodos-load');
-
+	
 	//console.log('Event:', eventcat);
-
+	
 	filtroselect.on('change', function() {
 		var tax = $(this).data('filter');
 		var selected = $('option:selected', this);
 		var term = selected.attr('value');
-
+		
 		containerfiltro.empty().append('<div class="eventos-loading"><p><i class="fa fa-cog fa-spin"></i> buscando eventos ...</p></div>');
 		$.ajax({
 			type: 'POST',
@@ -66,16 +66,16 @@ jQuery(document).ready(function($) {
 			containerfiltro.empty().append(data);
 		});
 	});
-
+	
 	var eventsearchform = $('#searchform-eventos');
-
+	
 	eventsearchform.on('submit', function() {
 		
 		var $form = $(this);
 		var $input = $form.find('input[name="s"]');
 		var query = $input.val();
 		var $content = $('#eventsearchresults');
-
+		
 		$.ajax({
 			type: 'POST',
 			url: cchl.ajaxurl,
@@ -93,47 +93,63 @@ jQuery(document).ready(function($) {
 				$content.empty().html( response );
 			}
 		});
-
+		
 		return false;
 	});
-
+	
 	var ferias = $('.ferias-normales').masonry({
-   					 	itemSelector: '.feria-normal',
-   						columnWidth: 300,
-   						gutter: 12
-					});
-
+		itemSelector: '.feria-normal',
+		columnWidth: 300,
+		gutter: 12
+	});
+	
 	ferias.imagesLoaded().progress( function() {
 		ferias.masonry('layout');
 	});
-
+	
 	var catitems = $('.category-items').masonry({
 		itemSelector: '.item-mini-noticia',
 	});
-
+	
 	catitems.imagesLoaded().progress( function() {
 		catitems.masonry('layout');
 	});
-
-
+	
+	
 	var tabContainers = $('div.tabs2 > div');
-                tabContainers.hide().filter(':first').show();
-                
-                $('div.tabs2 ul.tabNavigation a').click(function () {
-                    tabContainers.hide();
-                    tabContainers.filter(this.hash).show();
-                    $('div.tabs2 ul.tabNavigation a').removeClass('selected');
-                    $(this).addClass('selected');
-                    return false;
-                }).filter(':first').click();
-
+	tabContainers.hide().filter(':first').show();
+	
+	$('div.tabs2 ul.tabNavigation a').click(function () {
+		tabContainers.hide();
+		tabContainers.filter(this.hash).show();
+		$('div.tabs2 ul.tabNavigation a').removeClass('selected');
+		$(this).addClass('selected');
+		return false;
+	}).filter(':first').click();
+	
+	
+	var galleryCont = $('.gallery');
+	
+	Galleria.loadTheme( cchl.templateurl + '/js/vendor/galleria.classic.js');
+	
+	if(Galleria && galleryCont.length > 0 ) {
+		
+		
+		if(galleryCont) {
+			
+			Galleria.run('.gallery');
+			
+		}
+		
+		
+	}
 	
 	if($('body').hasClass('page-template-bs-listado-socios') || $('body').hasClass('post-type-archive-socios')) {
 		//console.log(existingletters);
 		for(var i = 0; i < existingletters.length; i++) {
 			$('.btn-group.nav-socios-list').append('<button class="btn btn-default">' + existingletters[i] + '</button>');
 		}
-
+		
 		$('.btn-group.nav-socios-list .btn').on('click', function() {
 			var thisitem = $(this);
 			var thisletter = thisitem.text();
@@ -152,5 +168,5 @@ jQuery(document).ready(function($) {
 			}
 		});
 	}
-
+	
 });
