@@ -266,7 +266,7 @@ function cchl_directorio_boxes() {
 
 }
 
-add_action('cmb2_admin_init', 'cchl_directorio_boxes');
+//add_action('cmb2_admin_init', 'cchl_directorio_boxes');
 
 add_action( 'cmb2_init', 'cchl_custompage_options' );
 
