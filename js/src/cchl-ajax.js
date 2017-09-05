@@ -1,3 +1,4 @@
+//Main ajax functions
 jQuery(document).ready(function($) {
 	
 	$.fn.extend({
@@ -130,7 +131,7 @@ jQuery(document).ready(function($) {
 	
 	var galleryCont = $('.gallery');
 	
-	Galleria.loadTheme( cchl.templateurl + '/js/vendor/galleria.classic.js');
+	Galleria.loadTheme( cchl.templateurl + '/js/extras/galleria.classic.js');
 	
 	if(Galleria && galleryCont.length > 0 ) {
 		
