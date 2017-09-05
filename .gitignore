@@ -2,3 +2,4 @@ bower_components
 .tags
 .tags_sorted_by_file
 sftp-config.json
+/vendor
