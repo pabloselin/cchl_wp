@@ -130,7 +130,7 @@ jQuery(document).ready(function($) {
 	
 	var galleryCont = $('.gallery');
 	
-	Galleria.loadTheme( cchl.templateurl + '/js/vendor/galleria.classic.js');
+	Galleria.loadTheme( cchl.templateurl + '/js/lib/galleria.classic.js');
 	
 	if(Galleria && galleryCont.length > 0 ) {
 		
