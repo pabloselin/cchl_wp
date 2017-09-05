@@ -3,3 +3,5 @@ bower_components
 .tags_sorted_by_file
 sftp-config.json
 /vendor
+/js/camara.js
+/js/cchl-scripts.js

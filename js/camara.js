@@ -7352,7 +7352,8 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   })
 
 }(jQuery);
-;jQuery(document).ready(function($) {
+;//Main ajax functions
+jQuery(document).ready(function($) {
 	
 	$.fn.extend({
 		animateCss: function (animationName) {
