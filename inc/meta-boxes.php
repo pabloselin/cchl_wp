@@ -129,7 +129,7 @@ function cchl_colaboradores_boxes() {
         array(
             'id' => $prefix . 'colaboradores_feria',
             'title' => 'Colaboradores Feria',
-            'object_types' => array('page'),
+            'object_types' => array('page', 'filsa-2017'),
             'show_on_cb' => 'be_metabox_show_on_slug',
             'show_on' => array(
                 'key' => 'slug',

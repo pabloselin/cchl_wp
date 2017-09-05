@@ -31,29 +31,26 @@ Template Name: [NUEVO] Listado de personas
 
                         <?php do_action('cchl_aftercontent');?>
                         
-                        
                             <?php
-                                $directorio = getGroupOrder('imagen');
-                                $imgattrs = array("h" => 120, "w" => 120, "zc" => 1, "q" => 100);
+                                $imagen = get_post_meta($post->ID, 'imagen', false);
+                                $nombres = get_post_meta($post->ID, 'nombre', false);
+                                $cargo = get_post_meta($post->ID, 'cargo', false);
+                                $texto = get_post_meta($post->ID, 'texto', false);
+                                   
+                                //$imgattrs = array("h" => 120, "w" => 120, "zc" => 1, "q" => 100);
 
-                                foreach($directorio as $miembro):
-                                    $miembroinfo = array(
-                                        'imagen' => get_image('imagen', $miembro, 1, 1, $post->ID, $imgattrs),
-                                        'nombre' => get('nombre', $miembro),
-                                        'cargo'  => get('cargo', $miembro),
-                                        'desc'   => get('texto', $miembro)
-                                    );
+                                foreach($nombres as $key=>$nombre):
                                     ?>
 
                                     <div class="person row">
                                         <div class="col-md-2">
-                                            <?php echo $miembroinfo['imagen'];?>
+                                            <img width="120" height="120" src="<?php echo cchl_legacy_image($imagen[$key]);?>" alt="<?php echo $nombres[$key];?>">
                                         </div>
                                         <div class="col-md-10">
-                                            <h2><?php echo $miembroinfo['nombre'];?></h2>
-                                            <span class="cargo"><?php echo $miembroinfo['cargo'];?></span>
+                                            <h2><?php echo $nombres[$key];?></h2>
+                                            <span class="cargo"><?php echo $cargo[$key];?></span>
 
-                                            <p><?php echo $miembroinfo['desc'];?></p>
+                                            <p><?php echo $texto[$key];?></p>
                                         </div>
                                     </div>
 
