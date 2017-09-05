@@ -1,3 +1,4 @@
+//Main ajax funcs
 jQuery(document).ready(function($) {
 	
 	$.fn.extend({
