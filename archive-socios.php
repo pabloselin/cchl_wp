@@ -1,7 +1,5 @@
 <?php get_header();?>
 
-
-
 <div class="container">
         <?php get_template_part('parts/bs-blocks/bs-breadcrumb');?>
         <div class="row">        
