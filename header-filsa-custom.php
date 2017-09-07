@@ -11,5 +11,6 @@
 
 <?php echo filsa2017_run_part('utilbar-filsa-2017');?>
 
-<?php echo filsa2017_run_part('nav-filsa-2017');?>
 <?php echo filsa2017_run_part('header-filsa-2017');?>
+
+<?php echo filsa2017_run_part('nav-filsa-2017');?>
