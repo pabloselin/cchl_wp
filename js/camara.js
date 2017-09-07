@@ -7352,6 +7352,4065 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   })
 
 }(jQuery);
+;/*!
+ * imagesLoaded PACKAGED v4.1.0
+ * JavaScript is all like "You images are done yet or what?"
+ * MIT License
+ */
+
+!function(t,e){"function"==typeof define&&define.amd?define("ev-emitter/ev-emitter",e):"object"==typeof module&&module.exports?module.exports=e():t.EvEmitter=e()}(this,function(){function t(){}var e=t.prototype;return e.on=function(t,e){if(t&&e){var i=this._events=this._events||{},n=i[t]=i[t]||[];return-1==n.indexOf(e)&&n.push(e),this}},e.once=function(t,e){if(t&&e){this.on(t,e);var i=this._onceEvents=this._onceEvents||{},n=i[t]=i[t]||[];return n[e]=!0,this}},e.off=function(t,e){var i=this._events&&this._events[t];if(i&&i.length){var n=i.indexOf(e);return-1!=n&&i.splice(n,1),this}},e.emitEvent=function(t,e){var i=this._events&&this._events[t];if(i&&i.length){var n=0,o=i[n];e=e||[];for(var r=this._onceEvents&&this._onceEvents[t];o;){var s=r&&r[o];s&&(this.off(t,o),delete r[o]),o.apply(this,e),n+=s?0:1,o=i[n]}return this}},t}),function(t,e){"use strict";"function"==typeof define&&define.amd?define(["ev-emitter/ev-emitter"],function(i){return e(t,i)}):"object"==typeof module&&module.exports?module.exports=e(t,require("ev-emitter")):t.imagesLoaded=e(t,t.EvEmitter)}(window,function(t,e){function i(t,e){for(var i in e)t[i]=e[i];return t}function n(t){var e=[];if(Array.isArray(t))e=t;else if("number"==typeof t.length)for(var i=0;i<t.length;i++)e.push(t[i]);else e.push(t);return e}function o(t,e,r){return this instanceof o?("string"==typeof t&&(t=document.querySelectorAll(t)),this.elements=n(t),this.options=i({},this.options),"function"==typeof e?r=e:i(this.options,e),r&&this.on("always",r),this.getImages(),h&&(this.jqDeferred=new h.Deferred),void setTimeout(function(){this.check()}.bind(this))):new o(t,e,r)}function r(t){this.img=t}function s(t,e){this.url=t,this.element=e,this.img=new Image}var h=t.jQuery,a=t.console;o.prototype=Object.create(e.prototype),o.prototype.options={},o.prototype.getImages=function(){this.images=[],this.elements.forEach(this.addElementImages,this)},o.prototype.addElementImages=function(t){"IMG"==t.nodeName&&this.addImage(t),this.options.background===!0&&this.addElementBackgroundImages(t);var e=t.nodeType;if(e&&d[e]){for(var i=t.querySelectorAll("img"),n=0;n<i.length;n++){var o=i[n];this.addImage(o)}if("string"==typeof this.options.background){var r=t.querySelectorAll(this.options.background);for(n=0;n<r.length;n++){var s=r[n];this.addElementBackgroundImages(s)}}}};var d={1:!0,9:!0,11:!0};return o.prototype.addElementBackgroundImages=function(t){var e=getComputedStyle(t);if(e)for(var i=/url\((['"])?(.*?)\1\)/gi,n=i.exec(e.backgroundImage);null!==n;){var o=n&&n[2];o&&this.addBackground(o,t),n=i.exec(e.backgroundImage)}},o.prototype.addImage=function(t){var e=new r(t);this.images.push(e)},o.prototype.addBackground=function(t,e){var i=new s(t,e);this.images.push(i)},o.prototype.check=function(){function t(t,i,n){setTimeout(function(){e.progress(t,i,n)})}var e=this;return this.progressedCount=0,this.hasAnyBroken=!1,this.images.length?void this.images.forEach(function(e){e.once("progress",t),e.check()}):void this.complete()},o.prototype.progress=function(t,e,i){this.progressedCount++,this.hasAnyBroken=this.hasAnyBroken||!t.isLoaded,this.emitEvent("progress",[this,t,e]),this.jqDeferred&&this.jqDeferred.notify&&this.jqDeferred.notify(this,t),this.progressedCount==this.images.length&&this.complete(),this.options.debug&&a&&a.log("progress: "+i,t,e)},o.prototype.complete=function(){var t=this.hasAnyBroken?"fail":"done";if(this.isComplete=!0,this.emitEvent(t,[this]),this.emitEvent("always",[this]),this.jqDeferred){var e=this.hasAnyBroken?"reject":"resolve";this.jqDeferred[e](this)}},r.prototype=Object.create(e.prototype),r.prototype.check=function(){var t=this.getIsImageComplete();return t?void this.confirm(0!==this.img.naturalWidth,"naturalWidth"):(this.proxyImage=new Image,this.proxyImage.addEventListener("load",this),this.proxyImage.addEventListener("error",this),this.img.addEventListener("load",this),this.img.addEventListener("error",this),void(this.proxyImage.src=this.img.src))},r.prototype.getIsImageComplete=function(){return this.img.complete&&void 0!==this.img.naturalWidth},r.prototype.confirm=function(t,e){this.isLoaded=t,this.emitEvent("progress",[this,this.img,e])},r.prototype.handleEvent=function(t){var e="on"+t.type;this[e]&&this[e](t)},r.prototype.onload=function(){this.confirm(!0,"onload"),this.unbindEvents()},r.prototype.onerror=function(){this.confirm(!1,"onerror"),this.unbindEvents()},r.prototype.unbindEvents=function(){this.proxyImage.removeEventListener("load",this),this.proxyImage.removeEventListener("error",this),this.img.removeEventListener("load",this),this.img.removeEventListener("error",this)},s.prototype=Object.create(r.prototype),s.prototype.check=function(){this.img.addEventListener("load",this),this.img.addEventListener("error",this),this.img.src=this.url;var t=this.getIsImageComplete();t&&(this.confirm(0!==this.img.naturalWidth,"naturalWidth"),this.unbindEvents())},s.prototype.unbindEvents=function(){this.img.removeEventListener("load",this),this.img.removeEventListener("error",this)},s.prototype.confirm=function(t,e){this.isLoaded=t,this.emitEvent("progress",[this,this.element,e])},o.makeJQueryPlugin=function(e){e=e||t.jQuery,e&&(h=e,h.fn.imagesLoaded=function(t,e){var i=new o(this,t,e);return i.jqDeferred.promise(h(this))})},o.makeJQueryPlugin(),o});;/*!
+ * Masonry PACKAGED v4.2.0
+ * Cascading grid layout library
+ * http://masonry.desandro.com
+ * MIT License
+ * by David DeSandro
+ */
+
+/**
+ * Bridget makes jQuery widgets
+ * v2.0.1
+ * MIT license
+ */
+
+/* jshint browser: true, strict: true, undef: true, unused: true */
+
+( function( window, factory ) {
+  // universal module definition
+  /*jshint strict: false */ /* globals define, module, require */
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( 'jquery-bridget/jquery-bridget',[ 'jquery' ], function( jQuery ) {
+      return factory( window, jQuery );
+    });
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      window,
+      require('jquery')
+    );
+  } else {
+    // browser global
+    window.jQueryBridget = factory(
+      window,
+      window.jQuery
+    );
+  }
+
+}( window, function factory( window, jQuery ) {
+'use strict';
+
+// ----- utils ----- //
+
+var arraySlice = Array.prototype.slice;
+
+// helper function for logging errors
+// $.error breaks jQuery chaining
+var console = window.console;
+var logError = typeof console == 'undefined' ? function() {} :
+  function( message ) {
+    console.error( message );
+  };
+
+// ----- jQueryBridget ----- //
+
+function jQueryBridget( namespace, PluginClass, $ ) {
+  $ = $ || jQuery || window.jQuery;
+  if ( !$ ) {
+    return;
+  }
+
+  // add option method -> $().plugin('option', {...})
+  if ( !PluginClass.prototype.option ) {
+    // option setter
+    PluginClass.prototype.option = function( opts ) {
+      // bail out if not an object
+      if ( !$.isPlainObject( opts ) ){
+        return;
+      }
+      this.options = $.extend( true, this.options, opts );
+    };
+  }
+
+  // make jQuery plugin
+  $.fn[ namespace ] = function( arg0 /*, arg1 */ ) {
+    if ( typeof arg0 == 'string' ) {
+      // method call $().plugin( 'methodName', { options } )
+      // shift arguments by 1
+      var args = arraySlice.call( arguments, 1 );
+      return methodCall( this, arg0, args );
+    }
+    // just $().plugin({ options })
+    plainCall( this, arg0 );
+    return this;
+  };
+
+  // $().plugin('methodName')
+  function methodCall( $elems, methodName, args ) {
+    var returnValue;
+    var pluginMethodStr = '$().' + namespace + '("' + methodName + '")';
+
+    $elems.each( function( i, elem ) {
+      // get instance
+      var instance = $.data( elem, namespace );
+      if ( !instance ) {
+        logError( namespace + ' not initialized. Cannot call methods, i.e. ' +
+          pluginMethodStr );
+        return;
+      }
+
+      var method = instance[ methodName ];
+      if ( !method || methodName.charAt(0) == '_' ) {
+        logError( pluginMethodStr + ' is not a valid method' );
+        return;
+      }
+
+      // apply method, get return value
+      var value = method.apply( instance, args );
+      // set return value if value is returned, use only first value
+      returnValue = returnValue === undefined ? value : returnValue;
+    });
+
+    return returnValue !== undefined ? returnValue : $elems;
+  }
+
+  function plainCall( $elems, options ) {
+    $elems.each( function( i, elem ) {
+      var instance = $.data( elem, namespace );
+      if ( instance ) {
+        // set options & init
+        instance.option( options );
+        instance._init();
+      } else {
+        // initialize new instance
+        instance = new PluginClass( elem, options );
+        $.data( elem, namespace, instance );
+      }
+    });
+  }
+
+  updateJQuery( $ );
+
+}
+
+// ----- updateJQuery ----- //
+
+// set $.bridget for v1 backwards compatibility
+function updateJQuery( $ ) {
+  if ( !$ || ( $ && $.bridget ) ) {
+    return;
+  }
+  $.bridget = jQueryBridget;
+}
+
+updateJQuery( jQuery || window.jQuery );
+
+// -----  ----- //
+
+return jQueryBridget;
+
+}));
+
+/**
+ * EvEmitter v1.0.3
+ * Lil' event emitter
+ * MIT License
+ */
+
+/* jshint unused: true, undef: true, strict: true */
+
+( function( global, factory ) {
+  // universal module definition
+  /* jshint strict: false */ /* globals define, module, window */
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD - RequireJS
+    define( 'ev-emitter/ev-emitter',factory );
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS - Browserify, Webpack
+    module.exports = factory();
+  } else {
+    // Browser globals
+    global.EvEmitter = factory();
+  }
+
+}( typeof window != 'undefined' ? window : this, function() {
+
+
+
+function EvEmitter() {}
+
+var proto = EvEmitter.prototype;
+
+proto.on = function( eventName, listener ) {
+  if ( !eventName || !listener ) {
+    return;
+  }
+  // set events hash
+  var events = this._events = this._events || {};
+  // set listeners array
+  var listeners = events[ eventName ] = events[ eventName ] || [];
+  // only add once
+  if ( listeners.indexOf( listener ) == -1 ) {
+    listeners.push( listener );
+  }
+
+  return this;
+};
+
+proto.once = function( eventName, listener ) {
+  if ( !eventName || !listener ) {
+    return;
+  }
+  // add event
+  this.on( eventName, listener );
+  // set once flag
+  // set onceEvents hash
+  var onceEvents = this._onceEvents = this._onceEvents || {};
+  // set onceListeners object
+  var onceListeners = onceEvents[ eventName ] = onceEvents[ eventName ] || {};
+  // set flag
+  onceListeners[ listener ] = true;
+
+  return this;
+};
+
+proto.off = function( eventName, listener ) {
+  var listeners = this._events && this._events[ eventName ];
+  if ( !listeners || !listeners.length ) {
+    return;
+  }
+  var index = listeners.indexOf( listener );
+  if ( index != -1 ) {
+    listeners.splice( index, 1 );
+  }
+
+  return this;
+};
+
+proto.emitEvent = function( eventName, args ) {
+  var listeners = this._events && this._events[ eventName ];
+  if ( !listeners || !listeners.length ) {
+    return;
+  }
+  var i = 0;
+  var listener = listeners[i];
+  args = args || [];
+  // once stuff
+  var onceListeners = this._onceEvents && this._onceEvents[ eventName ];
+
+  while ( listener ) {
+    var isOnce = onceListeners && onceListeners[ listener ];
+    if ( isOnce ) {
+      // remove listener
+      // remove before trigger to prevent recursion
+      this.off( eventName, listener );
+      // unset once flag
+      delete onceListeners[ listener ];
+    }
+    // trigger listener
+    listener.apply( this, args );
+    // get next listener
+    i += isOnce ? 0 : 1;
+    listener = listeners[i];
+  }
+
+  return this;
+};
+
+return EvEmitter;
+
+}));
+
+/*!
+ * getSize v2.0.2
+ * measure size of elements
+ * MIT license
+ */
+
+/*jshint browser: true, strict: true, undef: true, unused: true */
+/*global define: false, module: false, console: false */
+
+( function( window, factory ) {
+  'use strict';
+
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( 'get-size/get-size',[],function() {
+      return factory();
+    });
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory();
+  } else {
+    // browser global
+    window.getSize = factory();
+  }
+
+})( window, function factory() {
+'use strict';
+
+// -------------------------- helpers -------------------------- //
+
+// get a number from a string, not a percentage
+function getStyleSize( value ) {
+  var num = parseFloat( value );
+  // not a percent like '100%', and a number
+  var isValid = value.indexOf('%') == -1 && !isNaN( num );
+  return isValid && num;
+}
+
+function noop() {}
+
+var logError = typeof console == 'undefined' ? noop :
+  function( message ) {
+    console.error( message );
+  };
+
+// -------------------------- measurements -------------------------- //
+
+var measurements = [
+  'paddingLeft',
+  'paddingRight',
+  'paddingTop',
+  'paddingBottom',
+  'marginLeft',
+  'marginRight',
+  'marginTop',
+  'marginBottom',
+  'borderLeftWidth',
+  'borderRightWidth',
+  'borderTopWidth',
+  'borderBottomWidth'
+];
+
+var measurementsLength = measurements.length;
+
+function getZeroSize() {
+  var size = {
+    width: 0,
+    height: 0,
+    innerWidth: 0,
+    innerHeight: 0,
+    outerWidth: 0,
+    outerHeight: 0
+  };
+  for ( var i=0; i < measurementsLength; i++ ) {
+    var measurement = measurements[i];
+    size[ measurement ] = 0;
+  }
+  return size;
+}
+
+// -------------------------- getStyle -------------------------- //
+
+/**
+ * getStyle, get style of element, check for Firefox bug
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=548397
+ */
+function getStyle( elem ) {
+  var style = getComputedStyle( elem );
+  if ( !style ) {
+    logError( 'Style returned ' + style +
+      '. Are you running this code in a hidden iframe on Firefox? ' +
+      'See http://bit.ly/getsizebug1' );
+  }
+  return style;
+}
+
+// -------------------------- setup -------------------------- //
+
+var isSetup = false;
+
+var isBoxSizeOuter;
+
+/**
+ * setup
+ * check isBoxSizerOuter
+ * do on first getSize() rather than on page load for Firefox bug
+ */
+function setup() {
+  // setup once
+  if ( isSetup ) {
+    return;
+  }
+  isSetup = true;
+
+  // -------------------------- box sizing -------------------------- //
+
+  /**
+   * WebKit measures the outer-width on style.width on border-box elems
+   * IE & Firefox<29 measures the inner-width
+   */
+  var div = document.createElement('div');
+  div.style.width = '200px';
+  div.style.padding = '1px 2px 3px 4px';
+  div.style.borderStyle = 'solid';
+  div.style.borderWidth = '1px 2px 3px 4px';
+  div.style.boxSizing = 'border-box';
+
+  var body = document.body || document.documentElement;
+  body.appendChild( div );
+  var style = getStyle( div );
+
+  getSize.isBoxSizeOuter = isBoxSizeOuter = getStyleSize( style.width ) == 200;
+  body.removeChild( div );
+
+}
+
+// -------------------------- getSize -------------------------- //
+
+function getSize( elem ) {
+  setup();
+
+  // use querySeletor if elem is string
+  if ( typeof elem == 'string' ) {
+    elem = document.querySelector( elem );
+  }
+
+  // do not proceed on non-objects
+  if ( !elem || typeof elem != 'object' || !elem.nodeType ) {
+    return;
+  }
+
+  var style = getStyle( elem );
+
+  // if hidden, everything is 0
+  if ( style.display == 'none' ) {
+    return getZeroSize();
+  }
+
+  var size = {};
+  size.width = elem.offsetWidth;
+  size.height = elem.offsetHeight;
+
+  var isBorderBox = size.isBorderBox = style.boxSizing == 'border-box';
+
+  // get all measurements
+  for ( var i=0; i < measurementsLength; i++ ) {
+    var measurement = measurements[i];
+    var value = style[ measurement ];
+    var num = parseFloat( value );
+    // any 'auto', 'medium' value will be 0
+    size[ measurement ] = !isNaN( num ) ? num : 0;
+  }
+
+  var paddingWidth = size.paddingLeft + size.paddingRight;
+  var paddingHeight = size.paddingTop + size.paddingBottom;
+  var marginWidth = size.marginLeft + size.marginRight;
+  var marginHeight = size.marginTop + size.marginBottom;
+  var borderWidth = size.borderLeftWidth + size.borderRightWidth;
+  var borderHeight = size.borderTopWidth + size.borderBottomWidth;
+
+  var isBorderBoxSizeOuter = isBorderBox && isBoxSizeOuter;
+
+  // overwrite width and height if we can get it from style
+  var styleWidth = getStyleSize( style.width );
+  if ( styleWidth !== false ) {
+    size.width = styleWidth +
+      // add padding and border unless it's already including it
+      ( isBorderBoxSizeOuter ? 0 : paddingWidth + borderWidth );
+  }
+
+  var styleHeight = getStyleSize( style.height );
+  if ( styleHeight !== false ) {
+    size.height = styleHeight +
+      // add padding and border unless it's already including it
+      ( isBorderBoxSizeOuter ? 0 : paddingHeight + borderHeight );
+  }
+
+  size.innerWidth = size.width - ( paddingWidth + borderWidth );
+  size.innerHeight = size.height - ( paddingHeight + borderHeight );
+
+  size.outerWidth = size.width + marginWidth;
+  size.outerHeight = size.height + marginHeight;
+
+  return size;
+}
+
+return getSize;
+
+});
+
+/**
+ * matchesSelector v2.0.2
+ * matchesSelector( element, '.selector' )
+ * MIT license
+ */
+
+/*jshint browser: true, strict: true, undef: true, unused: true */
+
+( function( window, factory ) {
+  /*global define: false, module: false */
+  'use strict';
+  // universal module definition
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( 'desandro-matches-selector/matches-selector',factory );
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory();
+  } else {
+    // browser global
+    window.matchesSelector = factory();
+  }
+
+}( window, function factory() {
+  'use strict';
+
+  var matchesMethod = ( function() {
+    var ElemProto = window.Element.prototype;
+    // check for the standard method name first
+    if ( ElemProto.matches ) {
+      return 'matches';
+    }
+    // check un-prefixed
+    if ( ElemProto.matchesSelector ) {
+      return 'matchesSelector';
+    }
+    // check vendor prefixes
+    var prefixes = [ 'webkit', 'moz', 'ms', 'o' ];
+
+    for ( var i=0; i < prefixes.length; i++ ) {
+      var prefix = prefixes[i];
+      var method = prefix + 'MatchesSelector';
+      if ( ElemProto[ method ] ) {
+        return method;
+      }
+    }
+  })();
+
+  return function matchesSelector( elem, selector ) {
+    return elem[ matchesMethod ]( selector );
+  };
+
+}));
+
+/**
+ * Fizzy UI utils v2.0.4
+ * MIT license
+ */
+
+/*jshint browser: true, undef: true, unused: true, strict: true */
+
+( function( window, factory ) {
+  // universal module definition
+  /*jshint strict: false */ /*globals define, module, require */
+
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( 'fizzy-ui-utils/utils',[
+      'desandro-matches-selector/matches-selector'
+    ], function( matchesSelector ) {
+      return factory( window, matchesSelector );
+    });
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      window,
+      require('desandro-matches-selector')
+    );
+  } else {
+    // browser global
+    window.fizzyUIUtils = factory(
+      window,
+      window.matchesSelector
+    );
+  }
+
+}( window, function factory( window, matchesSelector ) {
+
+
+
+var utils = {};
+
+// ----- extend ----- //
+
+// extends objects
+utils.extend = function( a, b ) {
+  for ( var prop in b ) {
+    a[ prop ] = b[ prop ];
+  }
+  return a;
+};
+
+// ----- modulo ----- //
+
+utils.modulo = function( num, div ) {
+  return ( ( num % div ) + div ) % div;
+};
+
+// ----- makeArray ----- //
+
+// turn element or nodeList into an array
+utils.makeArray = function( obj ) {
+  var ary = [];
+  if ( Array.isArray( obj ) ) {
+    // use object if already an array
+    ary = obj;
+  } else if ( obj && typeof obj == 'object' &&
+    typeof obj.length == 'number' ) {
+    // convert nodeList to array
+    for ( var i=0; i < obj.length; i++ ) {
+      ary.push( obj[i] );
+    }
+  } else {
+    // array of single index
+    ary.push( obj );
+  }
+  return ary;
+};
+
+// ----- removeFrom ----- //
+
+utils.removeFrom = function( ary, obj ) {
+  var index = ary.indexOf( obj );
+  if ( index != -1 ) {
+    ary.splice( index, 1 );
+  }
+};
+
+// ----- getParent ----- //
+
+utils.getParent = function( elem, selector ) {
+  while ( elem != document.body ) {
+    elem = elem.parentNode;
+    if ( matchesSelector( elem, selector ) ) {
+      return elem;
+    }
+  }
+};
+
+// ----- getQueryElement ----- //
+
+// use element as selector string
+utils.getQueryElement = function( elem ) {
+  if ( typeof elem == 'string' ) {
+    return document.querySelector( elem );
+  }
+  return elem;
+};
+
+// ----- handleEvent ----- //
+
+// enable .ontype to trigger from .addEventListener( elem, 'type' )
+utils.handleEvent = function( event ) {
+  var method = 'on' + event.type;
+  if ( this[ method ] ) {
+    this[ method ]( event );
+  }
+};
+
+// ----- filterFindElements ----- //
+
+utils.filterFindElements = function( elems, selector ) {
+  // make array of elems
+  elems = utils.makeArray( elems );
+  var ffElems = [];
+
+  elems.forEach( function( elem ) {
+    // check that elem is an actual element
+    if ( !( elem instanceof HTMLElement ) ) {
+      return;
+    }
+    // add elem if no selector
+    if ( !selector ) {
+      ffElems.push( elem );
+      return;
+    }
+    // filter & find items if we have a selector
+    // filter
+    if ( matchesSelector( elem, selector ) ) {
+      ffElems.push( elem );
+    }
+    // find children
+    var childElems = elem.querySelectorAll( selector );
+    // concat childElems to filterFound array
+    for ( var i=0; i < childElems.length; i++ ) {
+      ffElems.push( childElems[i] );
+    }
+  });
+
+  return ffElems;
+};
+
+// ----- debounceMethod ----- //
+
+utils.debounceMethod = function( _class, methodName, threshold ) {
+  // original method
+  var method = _class.prototype[ methodName ];
+  var timeoutName = methodName + 'Timeout';
+
+  _class.prototype[ methodName ] = function() {
+    var timeout = this[ timeoutName ];
+    if ( timeout ) {
+      clearTimeout( timeout );
+    }
+    var args = arguments;
+
+    var _this = this;
+    this[ timeoutName ] = setTimeout( function() {
+      method.apply( _this, args );
+      delete _this[ timeoutName ];
+    }, threshold || 100 );
+  };
+};
+
+// ----- docReady ----- //
+
+utils.docReady = function( callback ) {
+  var readyState = document.readyState;
+  if ( readyState == 'complete' || readyState == 'interactive' ) {
+    // do async to allow for other scripts to run. metafizzy/flickity#441
+    setTimeout( callback );
+  } else {
+    document.addEventListener( 'DOMContentLoaded', callback );
+  }
+};
+
+// ----- htmlInit ----- //
+
+// http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
+utils.toDashed = function( str ) {
+  return str.replace( /(.)([A-Z])/g, function( match, $1, $2 ) {
+    return $1 + '-' + $2;
+  }).toLowerCase();
+};
+
+var console = window.console;
+/**
+ * allow user to initialize classes via [data-namespace] or .js-namespace class
+ * htmlInit( Widget, 'widgetName' )
+ * options are parsed from data-namespace-options
+ */
+utils.htmlInit = function( WidgetClass, namespace ) {
+  utils.docReady( function() {
+    var dashedNamespace = utils.toDashed( namespace );
+    var dataAttr = 'data-' + dashedNamespace;
+    var dataAttrElems = document.querySelectorAll( '[' + dataAttr + ']' );
+    var jsDashElems = document.querySelectorAll( '.js-' + dashedNamespace );
+    var elems = utils.makeArray( dataAttrElems )
+      .concat( utils.makeArray( jsDashElems ) );
+    var dataOptionsAttr = dataAttr + '-options';
+    var jQuery = window.jQuery;
+
+    elems.forEach( function( elem ) {
+      var attr = elem.getAttribute( dataAttr ) ||
+        elem.getAttribute( dataOptionsAttr );
+      var options;
+      try {
+        options = attr && JSON.parse( attr );
+      } catch ( error ) {
+        // log error, do not initialize
+        if ( console ) {
+          console.error( 'Error parsing ' + dataAttr + ' on ' + elem.className +
+          ': ' + error );
+        }
+        return;
+      }
+      // initialize
+      var instance = new WidgetClass( elem, options );
+      // make available via $().data('namespace')
+      if ( jQuery ) {
+        jQuery.data( elem, namespace, instance );
+      }
+    });
+
+  });
+};
+
+// -----  ----- //
+
+return utils;
+
+}));
+
+/**
+ * Outlayer Item
+ */
+
+( function( window, factory ) {
+  // universal module definition
+  /* jshint strict: false */ /* globals define, module, require */
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD - RequireJS
+    define( 'outlayer/item',[
+        'ev-emitter/ev-emitter',
+        'get-size/get-size'
+      ],
+      factory
+    );
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS - Browserify, Webpack
+    module.exports = factory(
+      require('ev-emitter'),
+      require('get-size')
+    );
+  } else {
+    // browser global
+    window.Outlayer = {};
+    window.Outlayer.Item = factory(
+      window.EvEmitter,
+      window.getSize
+    );
+  }
+
+}( window, function factory( EvEmitter, getSize ) {
+'use strict';
+
+// ----- helpers ----- //
+
+function isEmptyObj( obj ) {
+  for ( var prop in obj ) {
+    return false;
+  }
+  prop = null;
+  return true;
+}
+
+// -------------------------- CSS3 support -------------------------- //
+
+
+var docElemStyle = document.documentElement.style;
+
+var transitionProperty = typeof docElemStyle.transition == 'string' ?
+  'transition' : 'WebkitTransition';
+var transformProperty = typeof docElemStyle.transform == 'string' ?
+  'transform' : 'WebkitTransform';
+
+var transitionEndEvent = {
+  WebkitTransition: 'webkitTransitionEnd',
+  transition: 'transitionend'
+}[ transitionProperty ];
+
+// cache all vendor properties that could have vendor prefix
+var vendorProperties = {
+  transform: transformProperty,
+  transition: transitionProperty,
+  transitionDuration: transitionProperty + 'Duration',
+  transitionProperty: transitionProperty + 'Property',
+  transitionDelay: transitionProperty + 'Delay'
+};
+
+// -------------------------- Item -------------------------- //
+
+function Item( element, layout ) {
+  if ( !element ) {
+    return;
+  }
+
+  this.element = element;
+  // parent layout class, i.e. Masonry, Isotope, or Packery
+  this.layout = layout;
+  this.position = {
+    x: 0,
+    y: 0
+  };
+
+  this._create();
+}
+
+// inherit EvEmitter
+var proto = Item.prototype = Object.create( EvEmitter.prototype );
+proto.constructor = Item;
+
+proto._create = function() {
+  // transition objects
+  this._transn = {
+    ingProperties: {},
+    clean: {},
+    onEnd: {}
+  };
+
+  this.css({
+    position: 'absolute'
+  });
+};
+
+// trigger specified handler for event type
+proto.handleEvent = function( event ) {
+  var method = 'on' + event.type;
+  if ( this[ method ] ) {
+    this[ method ]( event );
+  }
+};
+
+proto.getSize = function() {
+  this.size = getSize( this.element );
+};
+
+/**
+ * apply CSS styles to element
+ * @param {Object} style
+ */
+proto.css = function( style ) {
+  var elemStyle = this.element.style;
+
+  for ( var prop in style ) {
+    // use vendor property if available
+    var supportedProp = vendorProperties[ prop ] || prop;
+    elemStyle[ supportedProp ] = style[ prop ];
+  }
+};
+
+ // measure position, and sets it
+proto.getPosition = function() {
+  var style = getComputedStyle( this.element );
+  var isOriginLeft = this.layout._getOption('originLeft');
+  var isOriginTop = this.layout._getOption('originTop');
+  var xValue = style[ isOriginLeft ? 'left' : 'right' ];
+  var yValue = style[ isOriginTop ? 'top' : 'bottom' ];
+  // convert percent to pixels
+  var layoutSize = this.layout.size;
+  var x = xValue.indexOf('%') != -1 ?
+    ( parseFloat( xValue ) / 100 ) * layoutSize.width : parseInt( xValue, 10 );
+  var y = yValue.indexOf('%') != -1 ?
+    ( parseFloat( yValue ) / 100 ) * layoutSize.height : parseInt( yValue, 10 );
+
+  // clean up 'auto' or other non-integer values
+  x = isNaN( x ) ? 0 : x;
+  y = isNaN( y ) ? 0 : y;
+  // remove padding from measurement
+  x -= isOriginLeft ? layoutSize.paddingLeft : layoutSize.paddingRight;
+  y -= isOriginTop ? layoutSize.paddingTop : layoutSize.paddingBottom;
+
+  this.position.x = x;
+  this.position.y = y;
+};
+
+// set settled position, apply padding
+proto.layoutPosition = function() {
+  var layoutSize = this.layout.size;
+  var style = {};
+  var isOriginLeft = this.layout._getOption('originLeft');
+  var isOriginTop = this.layout._getOption('originTop');
+
+  // x
+  var xPadding = isOriginLeft ? 'paddingLeft' : 'paddingRight';
+  var xProperty = isOriginLeft ? 'left' : 'right';
+  var xResetProperty = isOriginLeft ? 'right' : 'left';
+
+  var x = this.position.x + layoutSize[ xPadding ];
+  // set in percentage or pixels
+  style[ xProperty ] = this.getXValue( x );
+  // reset other property
+  style[ xResetProperty ] = '';
+
+  // y
+  var yPadding = isOriginTop ? 'paddingTop' : 'paddingBottom';
+  var yProperty = isOriginTop ? 'top' : 'bottom';
+  var yResetProperty = isOriginTop ? 'bottom' : 'top';
+
+  var y = this.position.y + layoutSize[ yPadding ];
+  // set in percentage or pixels
+  style[ yProperty ] = this.getYValue( y );
+  // reset other property
+  style[ yResetProperty ] = '';
+
+  this.css( style );
+  this.emitEvent( 'layout', [ this ] );
+};
+
+proto.getXValue = function( x ) {
+  var isHorizontal = this.layout._getOption('horizontal');
+  return this.layout.options.percentPosition && !isHorizontal ?
+    ( ( x / this.layout.size.width ) * 100 ) + '%' : x + 'px';
+};
+
+proto.getYValue = function( y ) {
+  var isHorizontal = this.layout._getOption('horizontal');
+  return this.layout.options.percentPosition && isHorizontal ?
+    ( ( y / this.layout.size.height ) * 100 ) + '%' : y + 'px';
+};
+
+proto._transitionTo = function( x, y ) {
+  this.getPosition();
+  // get current x & y from top/left
+  var curX = this.position.x;
+  var curY = this.position.y;
+
+  var compareX = parseInt( x, 10 );
+  var compareY = parseInt( y, 10 );
+  var didNotMove = compareX === this.position.x && compareY === this.position.y;
+
+  // save end position
+  this.setPosition( x, y );
+
+  // if did not move and not transitioning, just go to layout
+  if ( didNotMove && !this.isTransitioning ) {
+    this.layoutPosition();
+    return;
+  }
+
+  var transX = x - curX;
+  var transY = y - curY;
+  var transitionStyle = {};
+  transitionStyle.transform = this.getTranslate( transX, transY );
+
+  this.transition({
+    to: transitionStyle,
+    onTransitionEnd: {
+      transform: this.layoutPosition
+    },
+    isCleaning: true
+  });
+};
+
+proto.getTranslate = function( x, y ) {
+  // flip cooridinates if origin on right or bottom
+  var isOriginLeft = this.layout._getOption('originLeft');
+  var isOriginTop = this.layout._getOption('originTop');
+  x = isOriginLeft ? x : -x;
+  y = isOriginTop ? y : -y;
+  return 'translate3d(' + x + 'px, ' + y + 'px, 0)';
+};
+
+// non transition + transform support
+proto.goTo = function( x, y ) {
+  this.setPosition( x, y );
+  this.layoutPosition();
+};
+
+proto.moveTo = proto._transitionTo;
+
+proto.setPosition = function( x, y ) {
+  this.position.x = parseInt( x, 10 );
+  this.position.y = parseInt( y, 10 );
+};
+
+// ----- transition ----- //
+
+/**
+ * @param {Object} style - CSS
+ * @param {Function} onTransitionEnd
+ */
+
+// non transition, just trigger callback
+proto._nonTransition = function( args ) {
+  this.css( args.to );
+  if ( args.isCleaning ) {
+    this._removeStyles( args.to );
+  }
+  for ( var prop in args.onTransitionEnd ) {
+    args.onTransitionEnd[ prop ].call( this );
+  }
+};
+
+/**
+ * proper transition
+ * @param {Object} args - arguments
+ *   @param {Object} to - style to transition to
+ *   @param {Object} from - style to start transition from
+ *   @param {Boolean} isCleaning - removes transition styles after transition
+ *   @param {Function} onTransitionEnd - callback
+ */
+proto.transition = function( args ) {
+  // redirect to nonTransition if no transition duration
+  if ( !parseFloat( this.layout.options.transitionDuration ) ) {
+    this._nonTransition( args );
+    return;
+  }
+
+  var _transition = this._transn;
+  // keep track of onTransitionEnd callback by css property
+  for ( var prop in args.onTransitionEnd ) {
+    _transition.onEnd[ prop ] = args.onTransitionEnd[ prop ];
+  }
+  // keep track of properties that are transitioning
+  for ( prop in args.to ) {
+    _transition.ingProperties[ prop ] = true;
+    // keep track of properties to clean up when transition is done
+    if ( args.isCleaning ) {
+      _transition.clean[ prop ] = true;
+    }
+  }
+
+  // set from styles
+  if ( args.from ) {
+    this.css( args.from );
+    // force redraw. http://blog.alexmaccaw.com/css-transitions
+    var h = this.element.offsetHeight;
+    // hack for JSHint to hush about unused var
+    h = null;
+  }
+  // enable transition
+  this.enableTransition( args.to );
+  // set styles that are transitioning
+  this.css( args.to );
+
+  this.isTransitioning = true;
+
+};
+
+// dash before all cap letters, including first for
+// WebkitTransform => -webkit-transform
+function toDashedAll( str ) {
+  return str.replace( /([A-Z])/g, function( $1 ) {
+    return '-' + $1.toLowerCase();
+  });
+}
+
+var transitionProps = 'opacity,' + toDashedAll( transformProperty );
+
+proto.enableTransition = function(/* style */) {
+  // HACK changing transitionProperty during a transition
+  // will cause transition to jump
+  if ( this.isTransitioning ) {
+    return;
+  }
+
+  // make `transition: foo, bar, baz` from style object
+  // HACK un-comment this when enableTransition can work
+  // while a transition is happening
+  // var transitionValues = [];
+  // for ( var prop in style ) {
+  //   // dash-ify camelCased properties like WebkitTransition
+  //   prop = vendorProperties[ prop ] || prop;
+  //   transitionValues.push( toDashedAll( prop ) );
+  // }
+  // munge number to millisecond, to match stagger
+  var duration = this.layout.options.transitionDuration;
+  duration = typeof duration == 'number' ? duration + 'ms' : duration;
+  // enable transition styles
+  this.css({
+    transitionProperty: transitionProps,
+    transitionDuration: duration,
+    transitionDelay: this.staggerDelay || 0
+  });
+  // listen for transition end event
+  this.element.addEventListener( transitionEndEvent, this, false );
+};
+
+// ----- events ----- //
+
+proto.onwebkitTransitionEnd = function( event ) {
+  this.ontransitionend( event );
+};
+
+proto.onotransitionend = function( event ) {
+  this.ontransitionend( event );
+};
+
+// properties that I munge to make my life easier
+var dashedVendorProperties = {
+  '-webkit-transform': 'transform'
+};
+
+proto.ontransitionend = function( event ) {
+  // disregard bubbled events from children
+  if ( event.target !== this.element ) {
+    return;
+  }
+  var _transition = this._transn;
+  // get property name of transitioned property, convert to prefix-free
+  var propertyName = dashedVendorProperties[ event.propertyName ] || event.propertyName;
+
+  // remove property that has completed transitioning
+  delete _transition.ingProperties[ propertyName ];
+  // check if any properties are still transitioning
+  if ( isEmptyObj( _transition.ingProperties ) ) {
+    // all properties have completed transitioning
+    this.disableTransition();
+  }
+  // clean style
+  if ( propertyName in _transition.clean ) {
+    // clean up style
+    this.element.style[ event.propertyName ] = '';
+    delete _transition.clean[ propertyName ];
+  }
+  // trigger onTransitionEnd callback
+  if ( propertyName in _transition.onEnd ) {
+    var onTransitionEnd = _transition.onEnd[ propertyName ];
+    onTransitionEnd.call( this );
+    delete _transition.onEnd[ propertyName ];
+  }
+
+  this.emitEvent( 'transitionEnd', [ this ] );
+};
+
+proto.disableTransition = function() {
+  this.removeTransitionStyles();
+  this.element.removeEventListener( transitionEndEvent, this, false );
+  this.isTransitioning = false;
+};
+
+/**
+ * removes style property from element
+ * @param {Object} style
+**/
+proto._removeStyles = function( style ) {
+  // clean up transition styles
+  var cleanStyle = {};
+  for ( var prop in style ) {
+    cleanStyle[ prop ] = '';
+  }
+  this.css( cleanStyle );
+};
+
+var cleanTransitionStyle = {
+  transitionProperty: '',
+  transitionDuration: '',
+  transitionDelay: ''
+};
+
+proto.removeTransitionStyles = function() {
+  // remove transition
+  this.css( cleanTransitionStyle );
+};
+
+// ----- stagger ----- //
+
+proto.stagger = function( delay ) {
+  delay = isNaN( delay ) ? 0 : delay;
+  this.staggerDelay = delay + 'ms';
+};
+
+// ----- show/hide/remove ----- //
+
+// remove element from DOM
+proto.removeElem = function() {
+  this.element.parentNode.removeChild( this.element );
+  // remove display: none
+  this.css({ display: '' });
+  this.emitEvent( 'remove', [ this ] );
+};
+
+proto.remove = function() {
+  // just remove element if no transition support or no transition
+  if ( !transitionProperty || !parseFloat( this.layout.options.transitionDuration ) ) {
+    this.removeElem();
+    return;
+  }
+
+  // start transition
+  this.once( 'transitionEnd', function() {
+    this.removeElem();
+  });
+  this.hide();
+};
+
+proto.reveal = function() {
+  delete this.isHidden;
+  // remove display: none
+  this.css({ display: '' });
+
+  var options = this.layout.options;
+
+  var onTransitionEnd = {};
+  var transitionEndProperty = this.getHideRevealTransitionEndProperty('visibleStyle');
+  onTransitionEnd[ transitionEndProperty ] = this.onRevealTransitionEnd;
+
+  this.transition({
+    from: options.hiddenStyle,
+    to: options.visibleStyle,
+    isCleaning: true,
+    onTransitionEnd: onTransitionEnd
+  });
+};
+
+proto.onRevealTransitionEnd = function() {
+  // check if still visible
+  // during transition, item may have been hidden
+  if ( !this.isHidden ) {
+    this.emitEvent('reveal');
+  }
+};
+
+/**
+ * get style property use for hide/reveal transition end
+ * @param {String} styleProperty - hiddenStyle/visibleStyle
+ * @returns {String}
+ */
+proto.getHideRevealTransitionEndProperty = function( styleProperty ) {
+  var optionStyle = this.layout.options[ styleProperty ];
+  // use opacity
+  if ( optionStyle.opacity ) {
+    return 'opacity';
+  }
+  // get first property
+  for ( var prop in optionStyle ) {
+    return prop;
+  }
+};
+
+proto.hide = function() {
+  // set flag
+  this.isHidden = true;
+  // remove display: none
+  this.css({ display: '' });
+
+  var options = this.layout.options;
+
+  var onTransitionEnd = {};
+  var transitionEndProperty = this.getHideRevealTransitionEndProperty('hiddenStyle');
+  onTransitionEnd[ transitionEndProperty ] = this.onHideTransitionEnd;
+
+  this.transition({
+    from: options.visibleStyle,
+    to: options.hiddenStyle,
+    // keep hidden stuff hidden
+    isCleaning: true,
+    onTransitionEnd: onTransitionEnd
+  });
+};
+
+proto.onHideTransitionEnd = function() {
+  // check if still hidden
+  // during transition, item may have been un-hidden
+  if ( this.isHidden ) {
+    this.css({ display: 'none' });
+    this.emitEvent('hide');
+  }
+};
+
+proto.destroy = function() {
+  this.css({
+    position: '',
+    left: '',
+    right: '',
+    top: '',
+    bottom: '',
+    transition: '',
+    transform: ''
+  });
+};
+
+return Item;
+
+}));
+
+/*!
+ * Outlayer v2.1.0
+ * the brains and guts of a layout library
+ * MIT license
+ */
+
+( function( window, factory ) {
+  'use strict';
+  // universal module definition
+  /* jshint strict: false */ /* globals define, module, require */
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD - RequireJS
+    define( 'outlayer/outlayer',[
+        'ev-emitter/ev-emitter',
+        'get-size/get-size',
+        'fizzy-ui-utils/utils',
+        './item'
+      ],
+      function( EvEmitter, getSize, utils, Item ) {
+        return factory( window, EvEmitter, getSize, utils, Item);
+      }
+    );
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS - Browserify, Webpack
+    module.exports = factory(
+      window,
+      require('ev-emitter'),
+      require('get-size'),
+      require('fizzy-ui-utils'),
+      require('./item')
+    );
+  } else {
+    // browser global
+    window.Outlayer = factory(
+      window,
+      window.EvEmitter,
+      window.getSize,
+      window.fizzyUIUtils,
+      window.Outlayer.Item
+    );
+  }
+
+}( window, function factory( window, EvEmitter, getSize, utils, Item ) {
+'use strict';
+
+// ----- vars ----- //
+
+var console = window.console;
+var jQuery = window.jQuery;
+var noop = function() {};
+
+// -------------------------- Outlayer -------------------------- //
+
+// globally unique identifiers
+var GUID = 0;
+// internal store of all Outlayer intances
+var instances = {};
+
+
+/**
+ * @param {Element, String} element
+ * @param {Object} options
+ * @constructor
+ */
+function Outlayer( element, options ) {
+  var queryElement = utils.getQueryElement( element );
+  if ( !queryElement ) {
+    if ( console ) {
+      console.error( 'Bad element for ' + this.constructor.namespace +
+        ': ' + ( queryElement || element ) );
+    }
+    return;
+  }
+  this.element = queryElement;
+  // add jQuery
+  if ( jQuery ) {
+    this.$element = jQuery( this.element );
+  }
+
+  // options
+  this.options = utils.extend( {}, this.constructor.defaults );
+  this.option( options );
+
+  // add id for Outlayer.getFromElement
+  var id = ++GUID;
+  this.element.outlayerGUID = id; // expando
+  instances[ id ] = this; // associate via id
+
+  // kick it off
+  this._create();
+
+  var isInitLayout = this._getOption('initLayout');
+  if ( isInitLayout ) {
+    this.layout();
+  }
+}
+
+// settings are for internal use only
+Outlayer.namespace = 'outlayer';
+Outlayer.Item = Item;
+
+// default options
+Outlayer.defaults = {
+  containerStyle: {
+    position: 'relative'
+  },
+  initLayout: true,
+  originLeft: true,
+  originTop: true,
+  resize: true,
+  resizeContainer: true,
+  // item options
+  transitionDuration: '0.4s',
+  hiddenStyle: {
+    opacity: 0,
+    transform: 'scale(0.001)'
+  },
+  visibleStyle: {
+    opacity: 1,
+    transform: 'scale(1)'
+  }
+};
+
+var proto = Outlayer.prototype;
+// inherit EvEmitter
+utils.extend( proto, EvEmitter.prototype );
+
+/**
+ * set options
+ * @param {Object} opts
+ */
+proto.option = function( opts ) {
+  utils.extend( this.options, opts );
+};
+
+/**
+ * get backwards compatible option value, check old name
+ */
+proto._getOption = function( option ) {
+  var oldOption = this.constructor.compatOptions[ option ];
+  return oldOption && this.options[ oldOption ] !== undefined ?
+    this.options[ oldOption ] : this.options[ option ];
+};
+
+Outlayer.compatOptions = {
+  // currentName: oldName
+  initLayout: 'isInitLayout',
+  horizontal: 'isHorizontal',
+  layoutInstant: 'isLayoutInstant',
+  originLeft: 'isOriginLeft',
+  originTop: 'isOriginTop',
+  resize: 'isResizeBound',
+  resizeContainer: 'isResizingContainer'
+};
+
+proto._create = function() {
+  // get items from children
+  this.reloadItems();
+  // elements that affect layout, but are not laid out
+  this.stamps = [];
+  this.stamp( this.options.stamp );
+  // set container style
+  utils.extend( this.element.style, this.options.containerStyle );
+
+  // bind resize method
+  var canBindResize = this._getOption('resize');
+  if ( canBindResize ) {
+    this.bindResize();
+  }
+};
+
+// goes through all children again and gets bricks in proper order
+proto.reloadItems = function() {
+  // collection of item elements
+  this.items = this._itemize( this.element.children );
+};
+
+
+/**
+ * turn elements into Outlayer.Items to be used in layout
+ * @param {Array or NodeList or HTMLElement} elems
+ * @returns {Array} items - collection of new Outlayer Items
+ */
+proto._itemize = function( elems ) {
+
+  var itemElems = this._filterFindItemElements( elems );
+  var Item = this.constructor.Item;
+
+  // create new Outlayer Items for collection
+  var items = [];
+  for ( var i=0; i < itemElems.length; i++ ) {
+    var elem = itemElems[i];
+    var item = new Item( elem, this );
+    items.push( item );
+  }
+
+  return items;
+};
+
+/**
+ * get item elements to be used in layout
+ * @param {Array or NodeList or HTMLElement} elems
+ * @returns {Array} items - item elements
+ */
+proto._filterFindItemElements = function( elems ) {
+  return utils.filterFindElements( elems, this.options.itemSelector );
+};
+
+/**
+ * getter method for getting item elements
+ * @returns {Array} elems - collection of item elements
+ */
+proto.getItemElements = function() {
+  return this.items.map( function( item ) {
+    return item.element;
+  });
+};
+
+// ----- init & layout ----- //
+
+/**
+ * lays out all items
+ */
+proto.layout = function() {
+  this._resetLayout();
+  this._manageStamps();
+
+  // don't animate first layout
+  var layoutInstant = this._getOption('layoutInstant');
+  var isInstant = layoutInstant !== undefined ?
+    layoutInstant : !this._isLayoutInited;
+  this.layoutItems( this.items, isInstant );
+
+  // flag for initalized
+  this._isLayoutInited = true;
+};
+
+// _init is alias for layout
+proto._init = proto.layout;
+
+/**
+ * logic before any new layout
+ */
+proto._resetLayout = function() {
+  this.getSize();
+};
+
+
+proto.getSize = function() {
+  this.size = getSize( this.element );
+};
+
+/**
+ * get measurement from option, for columnWidth, rowHeight, gutter
+ * if option is String -> get element from selector string, & get size of element
+ * if option is Element -> get size of element
+ * else use option as a number
+ *
+ * @param {String} measurement
+ * @param {String} size - width or height
+ * @private
+ */
+proto._getMeasurement = function( measurement, size ) {
+  var option = this.options[ measurement ];
+  var elem;
+  if ( !option ) {
+    // default to 0
+    this[ measurement ] = 0;
+  } else {
+    // use option as an element
+    if ( typeof option == 'string' ) {
+      elem = this.element.querySelector( option );
+    } else if ( option instanceof HTMLElement ) {
+      elem = option;
+    }
+    // use size of element, if element
+    this[ measurement ] = elem ? getSize( elem )[ size ] : option;
+  }
+};
+
+/**
+ * layout a collection of item elements
+ * @api public
+ */
+proto.layoutItems = function( items, isInstant ) {
+  items = this._getItemsForLayout( items );
+
+  this._layoutItems( items, isInstant );
+
+  this._postLayout();
+};
+
+/**
+ * get the items to be laid out
+ * you may want to skip over some items
+ * @param {Array} items
+ * @returns {Array} items
+ */
+proto._getItemsForLayout = function( items ) {
+  return items.filter( function( item ) {
+    return !item.isIgnored;
+  });
+};
+
+/**
+ * layout items
+ * @param {Array} items
+ * @param {Boolean} isInstant
+ */
+proto._layoutItems = function( items, isInstant ) {
+  this._emitCompleteOnItems( 'layout', items );
+
+  if ( !items || !items.length ) {
+    // no items, emit event with empty array
+    return;
+  }
+
+  var queue = [];
+
+  items.forEach( function( item ) {
+    // get x/y object from method
+    var position = this._getItemLayoutPosition( item );
+    // enqueue
+    position.item = item;
+    position.isInstant = isInstant || item.isLayoutInstant;
+    queue.push( position );
+  }, this );
+
+  this._processLayoutQueue( queue );
+};
+
+/**
+ * get item layout position
+ * @param {Outlayer.Item} item
+ * @returns {Object} x and y position
+ */
+proto._getItemLayoutPosition = function( /* item */ ) {
+  return {
+    x: 0,
+    y: 0
+  };
+};
+
+/**
+ * iterate over array and position each item
+ * Reason being - separating this logic prevents 'layout invalidation'
+ * thx @paul_irish
+ * @param {Array} queue
+ */
+proto._processLayoutQueue = function( queue ) {
+  this.updateStagger();
+  queue.forEach( function( obj, i ) {
+    this._positionItem( obj.item, obj.x, obj.y, obj.isInstant, i );
+  }, this );
+};
+
+// set stagger from option in milliseconds number
+proto.updateStagger = function() {
+  var stagger = this.options.stagger;
+  if ( stagger === null || stagger === undefined ) {
+    this.stagger = 0;
+    return;
+  }
+  this.stagger = getMilliseconds( stagger );
+  return this.stagger;
+};
+
+/**
+ * Sets position of item in DOM
+ * @param {Outlayer.Item} item
+ * @param {Number} x - horizontal position
+ * @param {Number} y - vertical position
+ * @param {Boolean} isInstant - disables transitions
+ */
+proto._positionItem = function( item, x, y, isInstant, i ) {
+  if ( isInstant ) {
+    // if not transition, just set CSS
+    item.goTo( x, y );
+  } else {
+    item.stagger( i * this.stagger );
+    item.moveTo( x, y );
+  }
+};
+
+/**
+ * Any logic you want to do after each layout,
+ * i.e. size the container
+ */
+proto._postLayout = function() {
+  this.resizeContainer();
+};
+
+proto.resizeContainer = function() {
+  var isResizingContainer = this._getOption('resizeContainer');
+  if ( !isResizingContainer ) {
+    return;
+  }
+  var size = this._getContainerSize();
+  if ( size ) {
+    this._setContainerMeasure( size.width, true );
+    this._setContainerMeasure( size.height, false );
+  }
+};
+
+/**
+ * Sets width or height of container if returned
+ * @returns {Object} size
+ *   @param {Number} width
+ *   @param {Number} height
+ */
+proto._getContainerSize = noop;
+
+/**
+ * @param {Number} measure - size of width or height
+ * @param {Boolean} isWidth
+ */
+proto._setContainerMeasure = function( measure, isWidth ) {
+  if ( measure === undefined ) {
+    return;
+  }
+
+  var elemSize = this.size;
+  // add padding and border width if border box
+  if ( elemSize.isBorderBox ) {
+    measure += isWidth ? elemSize.paddingLeft + elemSize.paddingRight +
+      elemSize.borderLeftWidth + elemSize.borderRightWidth :
+      elemSize.paddingBottom + elemSize.paddingTop +
+      elemSize.borderTopWidth + elemSize.borderBottomWidth;
+  }
+
+  measure = Math.max( measure, 0 );
+  this.element.style[ isWidth ? 'width' : 'height' ] = measure + 'px';
+};
+
+/**
+ * emit eventComplete on a collection of items events
+ * @param {String} eventName
+ * @param {Array} items - Outlayer.Items
+ */
+proto._emitCompleteOnItems = function( eventName, items ) {
+  var _this = this;
+  function onComplete() {
+    _this.dispatchEvent( eventName + 'Complete', null, [ items ] );
+  }
+
+  var count = items.length;
+  if ( !items || !count ) {
+    onComplete();
+    return;
+  }
+
+  var doneCount = 0;
+  function tick() {
+    doneCount++;
+    if ( doneCount == count ) {
+      onComplete();
+    }
+  }
+
+  // bind callback
+  items.forEach( function( item ) {
+    item.once( eventName, tick );
+  });
+};
+
+/**
+ * emits events via EvEmitter and jQuery events
+ * @param {String} type - name of event
+ * @param {Event} event - original event
+ * @param {Array} args - extra arguments
+ */
+proto.dispatchEvent = function( type, event, args ) {
+  // add original event to arguments
+  var emitArgs = event ? [ event ].concat( args ) : args;
+  this.emitEvent( type, emitArgs );
+
+  if ( jQuery ) {
+    // set this.$element
+    this.$element = this.$element || jQuery( this.element );
+    if ( event ) {
+      // create jQuery event
+      var $event = jQuery.Event( event );
+      $event.type = type;
+      this.$element.trigger( $event, args );
+    } else {
+      // just trigger with type if no event available
+      this.$element.trigger( type, args );
+    }
+  }
+};
+
+// -------------------------- ignore & stamps -------------------------- //
+
+
+/**
+ * keep item in collection, but do not lay it out
+ * ignored items do not get skipped in layout
+ * @param {Element} elem
+ */
+proto.ignore = function( elem ) {
+  var item = this.getItem( elem );
+  if ( item ) {
+    item.isIgnored = true;
+  }
+};
+
+/**
+ * return item to layout collection
+ * @param {Element} elem
+ */
+proto.unignore = function( elem ) {
+  var item = this.getItem( elem );
+  if ( item ) {
+    delete item.isIgnored;
+  }
+};
+
+/**
+ * adds elements to stamps
+ * @param {NodeList, Array, Element, or String} elems
+ */
+proto.stamp = function( elems ) {
+  elems = this._find( elems );
+  if ( !elems ) {
+    return;
+  }
+
+  this.stamps = this.stamps.concat( elems );
+  // ignore
+  elems.forEach( this.ignore, this );
+};
+
+/**
+ * removes elements to stamps
+ * @param {NodeList, Array, or Element} elems
+ */
+proto.unstamp = function( elems ) {
+  elems = this._find( elems );
+  if ( !elems ){
+    return;
+  }
+
+  elems.forEach( function( elem ) {
+    // filter out removed stamp elements
+    utils.removeFrom( this.stamps, elem );
+    this.unignore( elem );
+  }, this );
+};
+
+/**
+ * finds child elements
+ * @param {NodeList, Array, Element, or String} elems
+ * @returns {Array} elems
+ */
+proto._find = function( elems ) {
+  if ( !elems ) {
+    return;
+  }
+  // if string, use argument as selector string
+  if ( typeof elems == 'string' ) {
+    elems = this.element.querySelectorAll( elems );
+  }
+  elems = utils.makeArray( elems );
+  return elems;
+};
+
+proto._manageStamps = function() {
+  if ( !this.stamps || !this.stamps.length ) {
+    return;
+  }
+
+  this._getBoundingRect();
+
+  this.stamps.forEach( this._manageStamp, this );
+};
+
+// update boundingLeft / Top
+proto._getBoundingRect = function() {
+  // get bounding rect for container element
+  var boundingRect = this.element.getBoundingClientRect();
+  var size = this.size;
+  this._boundingRect = {
+    left: boundingRect.left + size.paddingLeft + size.borderLeftWidth,
+    top: boundingRect.top + size.paddingTop + size.borderTopWidth,
+    right: boundingRect.right - ( size.paddingRight + size.borderRightWidth ),
+    bottom: boundingRect.bottom - ( size.paddingBottom + size.borderBottomWidth )
+  };
+};
+
+/**
+ * @param {Element} stamp
+**/
+proto._manageStamp = noop;
+
+/**
+ * get x/y position of element relative to container element
+ * @param {Element} elem
+ * @returns {Object} offset - has left, top, right, bottom
+ */
+proto._getElementOffset = function( elem ) {
+  var boundingRect = elem.getBoundingClientRect();
+  var thisRect = this._boundingRect;
+  var size = getSize( elem );
+  var offset = {
+    left: boundingRect.left - thisRect.left - size.marginLeft,
+    top: boundingRect.top - thisRect.top - size.marginTop,
+    right: thisRect.right - boundingRect.right - size.marginRight,
+    bottom: thisRect.bottom - boundingRect.bottom - size.marginBottom
+  };
+  return offset;
+};
+
+// -------------------------- resize -------------------------- //
+
+// enable event handlers for listeners
+// i.e. resize -> onresize
+proto.handleEvent = utils.handleEvent;
+
+/**
+ * Bind layout to window resizing
+ */
+proto.bindResize = function() {
+  window.addEventListener( 'resize', this );
+  this.isResizeBound = true;
+};
+
+/**
+ * Unbind layout to window resizing
+ */
+proto.unbindResize = function() {
+  window.removeEventListener( 'resize', this );
+  this.isResizeBound = false;
+};
+
+proto.onresize = function() {
+  this.resize();
+};
+
+utils.debounceMethod( Outlayer, 'onresize', 100 );
+
+proto.resize = function() {
+  // don't trigger if size did not change
+  // or if resize was unbound. See #9
+  if ( !this.isResizeBound || !this.needsResizeLayout() ) {
+    return;
+  }
+
+  this.layout();
+};
+
+/**
+ * check if layout is needed post layout
+ * @returns Boolean
+ */
+proto.needsResizeLayout = function() {
+  var size = getSize( this.element );
+  // check that this.size and size are there
+  // IE8 triggers resize on body size change, so they might not be
+  var hasSizes = this.size && size;
+  return hasSizes && size.innerWidth !== this.size.innerWidth;
+};
+
+// -------------------------- methods -------------------------- //
+
+/**
+ * add items to Outlayer instance
+ * @param {Array or NodeList or Element} elems
+ * @returns {Array} items - Outlayer.Items
+**/
+proto.addItems = function( elems ) {
+  var items = this._itemize( elems );
+  // add items to collection
+  if ( items.length ) {
+    this.items = this.items.concat( items );
+  }
+  return items;
+};
+
+/**
+ * Layout newly-appended item elements
+ * @param {Array or NodeList or Element} elems
+ */
+proto.appended = function( elems ) {
+  var items = this.addItems( elems );
+  if ( !items.length ) {
+    return;
+  }
+  // layout and reveal just the new items
+  this.layoutItems( items, true );
+  this.reveal( items );
+};
+
+/**
+ * Layout prepended elements
+ * @param {Array or NodeList or Element} elems
+ */
+proto.prepended = function( elems ) {
+  var items = this._itemize( elems );
+  if ( !items.length ) {
+    return;
+  }
+  // add items to beginning of collection
+  var previousItems = this.items.slice(0);
+  this.items = items.concat( previousItems );
+  // start new layout
+  this._resetLayout();
+  this._manageStamps();
+  // layout new stuff without transition
+  this.layoutItems( items, true );
+  this.reveal( items );
+  // layout previous items
+  this.layoutItems( previousItems );
+};
+
+/**
+ * reveal a collection of items
+ * @param {Array of Outlayer.Items} items
+ */
+proto.reveal = function( items ) {
+  this._emitCompleteOnItems( 'reveal', items );
+  if ( !items || !items.length ) {
+    return;
+  }
+  var stagger = this.updateStagger();
+  items.forEach( function( item, i ) {
+    item.stagger( i * stagger );
+    item.reveal();
+  });
+};
+
+/**
+ * hide a collection of items
+ * @param {Array of Outlayer.Items} items
+ */
+proto.hide = function( items ) {
+  this._emitCompleteOnItems( 'hide', items );
+  if ( !items || !items.length ) {
+    return;
+  }
+  var stagger = this.updateStagger();
+  items.forEach( function( item, i ) {
+    item.stagger( i * stagger );
+    item.hide();
+  });
+};
+
+/**
+ * reveal item elements
+ * @param {Array}, {Element}, {NodeList} items
+ */
+proto.revealItemElements = function( elems ) {
+  var items = this.getItems( elems );
+  this.reveal( items );
+};
+
+/**
+ * hide item elements
+ * @param {Array}, {Element}, {NodeList} items
+ */
+proto.hideItemElements = function( elems ) {
+  var items = this.getItems( elems );
+  this.hide( items );
+};
+
+/**
+ * get Outlayer.Item, given an Element
+ * @param {Element} elem
+ * @param {Function} callback
+ * @returns {Outlayer.Item} item
+ */
+proto.getItem = function( elem ) {
+  // loop through items to get the one that matches
+  for ( var i=0; i < this.items.length; i++ ) {
+    var item = this.items[i];
+    if ( item.element == elem ) {
+      // return item
+      return item;
+    }
+  }
+};
+
+/**
+ * get collection of Outlayer.Items, given Elements
+ * @param {Array} elems
+ * @returns {Array} items - Outlayer.Items
+ */
+proto.getItems = function( elems ) {
+  elems = utils.makeArray( elems );
+  var items = [];
+  elems.forEach( function( elem ) {
+    var item = this.getItem( elem );
+    if ( item ) {
+      items.push( item );
+    }
+  }, this );
+
+  return items;
+};
+
+/**
+ * remove element(s) from instance and DOM
+ * @param {Array or NodeList or Element} elems
+ */
+proto.remove = function( elems ) {
+  var removeItems = this.getItems( elems );
+
+  this._emitCompleteOnItems( 'remove', removeItems );
+
+  // bail if no items to remove
+  if ( !removeItems || !removeItems.length ) {
+    return;
+  }
+
+  removeItems.forEach( function( item ) {
+    item.remove();
+    // remove item from collection
+    utils.removeFrom( this.items, item );
+  }, this );
+};
+
+// ----- destroy ----- //
+
+// remove and disable Outlayer instance
+proto.destroy = function() {
+  // clean up dynamic styles
+  var style = this.element.style;
+  style.height = '';
+  style.position = '';
+  style.width = '';
+  // destroy items
+  this.items.forEach( function( item ) {
+    item.destroy();
+  });
+
+  this.unbindResize();
+
+  var id = this.element.outlayerGUID;
+  delete instances[ id ]; // remove reference to instance by id
+  delete this.element.outlayerGUID;
+  // remove data for jQuery
+  if ( jQuery ) {
+    jQuery.removeData( this.element, this.constructor.namespace );
+  }
+
+};
+
+// -------------------------- data -------------------------- //
+
+/**
+ * get Outlayer instance from element
+ * @param {Element} elem
+ * @returns {Outlayer}
+ */
+Outlayer.data = function( elem ) {
+  elem = utils.getQueryElement( elem );
+  var id = elem && elem.outlayerGUID;
+  return id && instances[ id ];
+};
+
+
+// -------------------------- create Outlayer class -------------------------- //
+
+/**
+ * create a layout class
+ * @param {String} namespace
+ */
+Outlayer.create = function( namespace, options ) {
+  // sub-class Outlayer
+  var Layout = subclass( Outlayer );
+  // apply new options and compatOptions
+  Layout.defaults = utils.extend( {}, Outlayer.defaults );
+  utils.extend( Layout.defaults, options );
+  Layout.compatOptions = utils.extend( {}, Outlayer.compatOptions  );
+
+  Layout.namespace = namespace;
+
+  Layout.data = Outlayer.data;
+
+  // sub-class Item
+  Layout.Item = subclass( Item );
+
+  // -------------------------- declarative -------------------------- //
+
+  utils.htmlInit( Layout, namespace );
+
+  // -------------------------- jQuery bridge -------------------------- //
+
+  // make into jQuery plugin
+  if ( jQuery && jQuery.bridget ) {
+    jQuery.bridget( namespace, Layout );
+  }
+
+  return Layout;
+};
+
+function subclass( Parent ) {
+  function SubClass() {
+    Parent.apply( this, arguments );
+  }
+
+  SubClass.prototype = Object.create( Parent.prototype );
+  SubClass.prototype.constructor = SubClass;
+
+  return SubClass;
+}
+
+// ----- helpers ----- //
+
+// how many milliseconds are in each unit
+var msUnits = {
+  ms: 1,
+  s: 1000
+};
+
+// munge time-like parameter into millisecond number
+// '0.4s' -> 40
+function getMilliseconds( time ) {
+  if ( typeof time == 'number' ) {
+    return time;
+  }
+  var matches = time.match( /(^\d*\.?\d*)(\w*)/ );
+  var num = matches && matches[1];
+  var unit = matches && matches[2];
+  if ( !num.length ) {
+    return 0;
+  }
+  num = parseFloat( num );
+  var mult = msUnits[ unit ] || 1;
+  return num * mult;
+}
+
+// ----- fin ----- //
+
+// back in global
+Outlayer.Item = Item;
+
+return Outlayer;
+
+}));
+
+/*!
+ * Masonry v4.2.0
+ * Cascading grid layout library
+ * http://masonry.desandro.com
+ * MIT License
+ * by David DeSandro
+ */
+
+( function( window, factory ) {
+  // universal module definition
+  /* jshint strict: false */ /*globals define, module, require */
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( [
+        'outlayer/outlayer',
+        'get-size/get-size'
+      ],
+      factory );
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      require('outlayer'),
+      require('get-size')
+    );
+  } else {
+    // browser global
+    window.Masonry = factory(
+      window.Outlayer,
+      window.getSize
+    );
+  }
+
+}( window, function factory( Outlayer, getSize ) {
+
+
+
+// -------------------------- masonryDefinition -------------------------- //
+
+  // create an Outlayer layout class
+  var Masonry = Outlayer.create('masonry');
+  // isFitWidth -> fitWidth
+  Masonry.compatOptions.fitWidth = 'isFitWidth';
+
+  var proto = Masonry.prototype;
+
+  proto._resetLayout = function() {
+    this.getSize();
+    this._getMeasurement( 'columnWidth', 'outerWidth' );
+    this._getMeasurement( 'gutter', 'outerWidth' );
+    this.measureColumns();
+
+    // reset column Y
+    this.colYs = [];
+    for ( var i=0; i < this.cols; i++ ) {
+      this.colYs.push( 0 );
+    }
+
+    this.maxY = 0;
+    this.horizontalColIndex = 0;
+  };
+
+  proto.measureColumns = function() {
+    this.getContainerWidth();
+    // if columnWidth is 0, default to outerWidth of first item
+    if ( !this.columnWidth ) {
+      var firstItem = this.items[0];
+      var firstItemElem = firstItem && firstItem.element;
+      // columnWidth fall back to item of first element
+      this.columnWidth = firstItemElem && getSize( firstItemElem ).outerWidth ||
+        // if first elem has no width, default to size of container
+        this.containerWidth;
+    }
+
+    var columnWidth = this.columnWidth += this.gutter;
+
+    // calculate columns
+    var containerWidth = this.containerWidth + this.gutter;
+    var cols = containerWidth / columnWidth;
+    // fix rounding errors, typically with gutters
+    var excess = columnWidth - containerWidth % columnWidth;
+    // if overshoot is less than a pixel, round up, otherwise floor it
+    var mathMethod = excess && excess < 1 ? 'round' : 'floor';
+    cols = Math[ mathMethod ]( cols );
+    this.cols = Math.max( cols, 1 );
+  };
+
+  proto.getContainerWidth = function() {
+    // container is parent if fit width
+    var isFitWidth = this._getOption('fitWidth');
+    var container = isFitWidth ? this.element.parentNode : this.element;
+    // check that this.size and size are there
+    // IE8 triggers resize on body size change, so they might not be
+    var size = getSize( container );
+    this.containerWidth = size && size.innerWidth;
+  };
+
+  proto._getItemLayoutPosition = function( item ) {
+    item.getSize();
+    // how many columns does this brick span
+    var remainder = item.size.outerWidth % this.columnWidth;
+    var mathMethod = remainder && remainder < 1 ? 'round' : 'ceil';
+    // round if off by 1 pixel, otherwise use ceil
+    var colSpan = Math[ mathMethod ]( item.size.outerWidth / this.columnWidth );
+    colSpan = Math.min( colSpan, this.cols );
+    // use horizontal or top column position
+    var colPosMethod = this.options.horizontalOrder ?
+      '_getHorizontalColPosition' : '_getTopColPosition';
+    var colPosition = this[ colPosMethod ]( colSpan, item );
+    // position the brick
+    var position = {
+      x: this.columnWidth * colPosition.col,
+      y: colPosition.y
+    };
+    // apply setHeight to necessary columns
+    var setHeight = colPosition.y + item.size.outerHeight;
+    var setMax = colSpan + colPosition.col;
+    for ( var i = colPosition.col; i < setMax; i++ ) {
+      this.colYs[i] = setHeight;
+    }
+
+    return position;
+  };
+
+  proto._getTopColPosition = function( colSpan ) {
+    var colGroup = this._getTopColGroup( colSpan );
+    // get the minimum Y value from the columns
+    var minimumY = Math.min.apply( Math, colGroup );
+
+    return {
+      col: colGroup.indexOf( minimumY ),
+      y: minimumY,
+    };
+  };
+
+  /**
+   * @param {Number} colSpan - number of columns the element spans
+   * @returns {Array} colGroup
+   */
+  proto._getTopColGroup = function( colSpan ) {
+    if ( colSpan < 2 ) {
+      // if brick spans only one column, use all the column Ys
+      return this.colYs;
+    }
+
+    var colGroup = [];
+    // how many different places could this brick fit horizontally
+    var groupCount = this.cols + 1 - colSpan;
+    // for each group potential horizontal position
+    for ( var i = 0; i < groupCount; i++ ) {
+      colGroup[i] = this._getColGroupY( i, colSpan );
+    }
+    return colGroup;
+  };
+
+  proto._getColGroupY = function( col, colSpan ) {
+    if ( colSpan < 2 ) {
+      return this.colYs[ col ];
+    }
+    // make an array of colY values for that one group
+    var groupColYs = this.colYs.slice( col, col + colSpan );
+    // and get the max value of the array
+    return Math.max.apply( Math, groupColYs );
+  };
+
+  // get column position based on horizontal index. #873
+  proto._getHorizontalColPosition = function( colSpan, item ) {
+    var col = this.horizontalColIndex % this.cols;
+    var isOver = colSpan > 1 && col + colSpan > this.cols;
+    // shift to next row if item can't fit on current row
+    col = isOver ? 0 : col;
+    // don't let zero-size items take up space
+    var hasSize = item.size.outerWidth && item.size.outerHeight;
+    this.horizontalColIndex = hasSize ? col + colSpan : this.horizontalColIndex;
+
+    return {
+      col: col,
+      y: this._getColGroupY( col, colSpan ),
+    };
+  };
+
+  proto._manageStamp = function( stamp ) {
+    var stampSize = getSize( stamp );
+    var offset = this._getElementOffset( stamp );
+    // get the columns that this stamp affects
+    var isOriginLeft = this._getOption('originLeft');
+    var firstX = isOriginLeft ? offset.left : offset.right;
+    var lastX = firstX + stampSize.outerWidth;
+    var firstCol = Math.floor( firstX / this.columnWidth );
+    firstCol = Math.max( 0, firstCol );
+    var lastCol = Math.floor( lastX / this.columnWidth );
+    // lastCol should not go over if multiple of columnWidth #425
+    lastCol -= lastX % this.columnWidth ? 0 : 1;
+    lastCol = Math.min( this.cols - 1, lastCol );
+    // set colYs to bottom of the stamp
+
+    var isOriginTop = this._getOption('originTop');
+    var stampMaxY = ( isOriginTop ? offset.top : offset.bottom ) +
+      stampSize.outerHeight;
+    for ( var i = firstCol; i <= lastCol; i++ ) {
+      this.colYs[i] = Math.max( stampMaxY, this.colYs[i] );
+    }
+  };
+
+  proto._getContainerSize = function() {
+    this.maxY = Math.max.apply( Math, this.colYs );
+    var size = {
+      height: this.maxY
+    };
+
+    if ( this._getOption('fitWidth') ) {
+      size.width = this._getContainerFitWidth();
+    }
+
+    return size;
+  };
+
+  proto._getContainerFitWidth = function() {
+    var unusedCols = 0;
+    // count unused columns
+    var i = this.cols;
+    while ( --i ) {
+      if ( this.colYs[i] !== 0 ) {
+        break;
+      }
+      unusedCols++;
+    }
+    // fit container to columns that have been used
+    return ( this.cols - unusedCols ) * this.columnWidth - this.gutter;
+  };
+
+  proto.needsResizeLayout = function() {
+    var previousWidth = this.containerWidth;
+    this.getContainerWidth();
+    return previousWidth != this.containerWidth;
+  };
+
+  return Masonry;
+
+}));
+
+;/*!
+* jQuery Cycle2; version: 2.1.6 build: 20141007
+* http://jquery.malsup.com/cycle2/
+* Copyright (c) 2014 M. Alsup; Dual licensed: MIT/GPL
+*/
+
+/* Cycle2 core engine */
+;(function($) {
+"use strict";
+
+var version = '2.1.6';
+
+$.fn.cycle = function( options ) {
+    // fix mistakes with the ready state
+    var o;
+    if ( this.length === 0 && !$.isReady ) {
+        o = { s: this.selector, c: this.context };
+        $.fn.cycle.log('requeuing slideshow (dom not ready)');
+        $(function() {
+            $( o.s, o.c ).cycle(options);
+        });
+        return this;
+    }
+
+    return this.each(function() {
+        var data, opts, shortName, val;
+        var container = $(this);
+        var log = $.fn.cycle.log;
+
+        if ( container.data('cycle.opts') )
+            return; // already initialized
+
+        if ( container.data('cycle-log') === false || 
+            ( options && options.log === false ) ||
+            ( opts && opts.log === false) ) {
+            log = $.noop;
+        }
+
+        log('--c2 init--');
+        data = container.data();
+        for (var p in data) {
+            // allow props to be accessed sans 'cycle' prefix and log the overrides
+            if (data.hasOwnProperty(p) && /^cycle[A-Z]+/.test(p) ) {
+                val = data[p];
+                shortName = p.match(/^cycle(.*)/)[1].replace(/^[A-Z]/, lowerCase);
+                log(shortName+':', val, '('+typeof val +')');
+                data[shortName] = val;
+            }
+        }
+
+        opts = $.extend( {}, $.fn.cycle.defaults, data, options || {});
+
+        opts.timeoutId = 0;
+        opts.paused = opts.paused || false; // #57
+        opts.container = container;
+        opts._maxZ = opts.maxZ;
+
+        opts.API = $.extend ( { _container: container }, $.fn.cycle.API );
+        opts.API.log = log;
+        opts.API.trigger = function( eventName, args ) {
+            opts.container.trigger( eventName, args );
+            return opts.API;
+        };
+
+        container.data( 'cycle.opts', opts );
+        container.data( 'cycle.API', opts.API );
+
+        // opportunity for plugins to modify opts and API
+        opts.API.trigger('cycle-bootstrap', [ opts, opts.API ]);
+
+        opts.API.addInitialSlides();
+        opts.API.preInitSlideshow();
+
+        if ( opts.slides.length )
+            opts.API.initSlideshow();
+    });
+};
+
+$.fn.cycle.API = {
+    opts: function() {
+        return this._container.data( 'cycle.opts' );
+    },
+    addInitialSlides: function() {
+        var opts = this.opts();
+        var slides = opts.slides;
+        opts.slideCount = 0;
+        opts.slides = $(); // empty set
+        
+        // add slides that already exist
+        slides = slides.jquery ? slides : opts.container.find( slides );
+
+        if ( opts.random ) {
+            slides.sort(function() {return Math.random() - 0.5;});
+        }
+
+        opts.API.add( slides );
+    },
+
+    preInitSlideshow: function() {
+        var opts = this.opts();
+        opts.API.trigger('cycle-pre-initialize', [ opts ]);
+        var tx = $.fn.cycle.transitions[opts.fx];
+        if (tx && $.isFunction(tx.preInit))
+            tx.preInit( opts );
+        opts._preInitialized = true;
+    },
+
+    postInitSlideshow: function() {
+        var opts = this.opts();
+        opts.API.trigger('cycle-post-initialize', [ opts ]);
+        var tx = $.fn.cycle.transitions[opts.fx];
+        if (tx && $.isFunction(tx.postInit))
+            tx.postInit( opts );
+    },
+
+    initSlideshow: function() {
+        var opts = this.opts();
+        var pauseObj = opts.container;
+        var slideOpts;
+        opts.API.calcFirstSlide();
+
+        if ( opts.container.css('position') == 'static' )
+            opts.container.css('position', 'relative');
+
+        $(opts.slides[opts.currSlide]).css({
+            opacity: 1,
+            display: 'block',
+            visibility: 'visible'
+        });
+        opts.API.stackSlides( opts.slides[opts.currSlide], opts.slides[opts.nextSlide], !opts.reverse );
+
+        if ( opts.pauseOnHover ) {
+            // allow pauseOnHover to specify an element
+            if ( opts.pauseOnHover !== true )
+                pauseObj = $( opts.pauseOnHover );
+
+            pauseObj.hover(
+                function(){ opts.API.pause( true ); }, 
+                function(){ opts.API.resume( true ); }
+            );
+        }
+
+        // stage initial transition
+        if ( opts.timeout ) {
+            slideOpts = opts.API.getSlideOpts( opts.currSlide );
+            opts.API.queueTransition( slideOpts, slideOpts.timeout + opts.delay );
+        }
+
+        opts._initialized = true;
+        opts.API.updateView( true );
+        opts.API.trigger('cycle-initialized', [ opts ]);
+        opts.API.postInitSlideshow();
+    },
+
+    pause: function( hover ) {
+        var opts = this.opts(),
+            slideOpts = opts.API.getSlideOpts(),
+            alreadyPaused = opts.hoverPaused || opts.paused;
+
+        if ( hover )
+            opts.hoverPaused = true; 
+        else
+            opts.paused = true;
+
+        if ( ! alreadyPaused ) {
+            opts.container.addClass('cycle-paused');
+            opts.API.trigger('cycle-paused', [ opts ]).log('cycle-paused');
+
+            if ( slideOpts.timeout ) {
+                clearTimeout( opts.timeoutId );
+                opts.timeoutId = 0;
+                
+                // determine how much time is left for the current slide
+                opts._remainingTimeout -= ( $.now() - opts._lastQueue );
+                if ( opts._remainingTimeout < 0 || isNaN(opts._remainingTimeout) )
+                    opts._remainingTimeout = undefined;
+            }
+        }
+    },
+
+    resume: function( hover ) {
+        var opts = this.opts(),
+            alreadyResumed = !opts.hoverPaused && !opts.paused,
+            remaining;
+
+        if ( hover )
+            opts.hoverPaused = false; 
+        else
+            opts.paused = false;
+
+    
+        if ( ! alreadyResumed ) {
+            opts.container.removeClass('cycle-paused');
+            // #gh-230; if an animation is in progress then don't queue a new transition; it will
+            // happen naturally
+            if ( opts.slides.filter(':animated').length === 0 )
+                opts.API.queueTransition( opts.API.getSlideOpts(), opts._remainingTimeout );
+            opts.API.trigger('cycle-resumed', [ opts, opts._remainingTimeout ] ).log('cycle-resumed');
+        }
+    },
+
+    add: function( slides, prepend ) {
+        var opts = this.opts();
+        var oldSlideCount = opts.slideCount;
+        var startSlideshow = false;
+        var len;
+
+        if ( $.type(slides) == 'string')
+            slides = $.trim( slides );
+
+        $( slides ).each(function(i) {
+            var slideOpts;
+            var slide = $(this);
+
+            if ( prepend )
+                opts.container.prepend( slide );
+            else
+                opts.container.append( slide );
+
+            opts.slideCount++;
+            slideOpts = opts.API.buildSlideOpts( slide );
+
+            if ( prepend )
+                opts.slides = $( slide ).add( opts.slides );
+            else
+                opts.slides = opts.slides.add( slide );
+
+            opts.API.initSlide( slideOpts, slide, --opts._maxZ );
+
+            slide.data('cycle.opts', slideOpts);
+            opts.API.trigger('cycle-slide-added', [ opts, slideOpts, slide ]);
+        });
+
+        opts.API.updateView( true );
+
+        startSlideshow = opts._preInitialized && (oldSlideCount < 2 && opts.slideCount >= 1);
+        if ( startSlideshow ) {
+            if ( !opts._initialized )
+                opts.API.initSlideshow();
+            else if ( opts.timeout ) {
+                len = opts.slides.length;
+                opts.nextSlide = opts.reverse ? len - 1 : 1;
+                if ( !opts.timeoutId ) {
+                    opts.API.queueTransition( opts );
+                }
+            }
+        }
+    },
+
+    calcFirstSlide: function() {
+        var opts = this.opts();
+        var firstSlideIndex;
+        firstSlideIndex = parseInt( opts.startingSlide || 0, 10 );
+        if (firstSlideIndex >= opts.slides.length || firstSlideIndex < 0)
+            firstSlideIndex = 0;
+
+        opts.currSlide = firstSlideIndex;
+        if ( opts.reverse ) {
+            opts.nextSlide = firstSlideIndex - 1;
+            if (opts.nextSlide < 0)
+                opts.nextSlide = opts.slides.length - 1;
+        }
+        else {
+            opts.nextSlide = firstSlideIndex + 1;
+            if (opts.nextSlide == opts.slides.length)
+                opts.nextSlide = 0;
+        }
+    },
+
+    calcNextSlide: function() {
+        var opts = this.opts();
+        var roll;
+        if ( opts.reverse ) {
+            roll = (opts.nextSlide - 1) < 0;
+            opts.nextSlide = roll ? opts.slideCount - 1 : opts.nextSlide-1;
+            opts.currSlide = roll ? 0 : opts.nextSlide+1;
+        }
+        else {
+            roll = (opts.nextSlide + 1) == opts.slides.length;
+            opts.nextSlide = roll ? 0 : opts.nextSlide+1;
+            opts.currSlide = roll ? opts.slides.length-1 : opts.nextSlide-1;
+        }
+    },
+
+    calcTx: function( slideOpts, manual ) {
+        var opts = slideOpts;
+        var tx;
+
+        if ( opts._tempFx )
+            tx = $.fn.cycle.transitions[opts._tempFx];
+        else if ( manual && opts.manualFx )
+            tx = $.fn.cycle.transitions[opts.manualFx];
+
+        if ( !tx )
+            tx = $.fn.cycle.transitions[opts.fx];
+
+        opts._tempFx = null;
+        this.opts()._tempFx = null;
+
+        if (!tx) {
+            tx = $.fn.cycle.transitions.fade;
+            opts.API.log('Transition "' + opts.fx + '" not found.  Using fade.');
+        }
+        return tx;
+    },
+
+    prepareTx: function( manual, fwd ) {
+        var opts = this.opts();
+        var after, curr, next, slideOpts, tx;
+
+        if ( opts.slideCount < 2 ) {
+            opts.timeoutId = 0;
+            return;
+        }
+        if ( manual && ( !opts.busy || opts.manualTrump ) ) {
+            opts.API.stopTransition();
+            opts.busy = false;
+            clearTimeout(opts.timeoutId);
+            opts.timeoutId = 0;
+        }
+        if ( opts.busy )
+            return;
+        if ( opts.timeoutId === 0 && !manual )
+            return;
+
+        curr = opts.slides[opts.currSlide];
+        next = opts.slides[opts.nextSlide];
+        slideOpts = opts.API.getSlideOpts( opts.nextSlide );
+        tx = opts.API.calcTx( slideOpts, manual );
+
+        opts._tx = tx;
+
+        if ( manual && slideOpts.manualSpeed !== undefined )
+            slideOpts.speed = slideOpts.manualSpeed;
+
+        // if ( opts.nextSlide === opts.currSlide )
+        //     opts.API.calcNextSlide();
+
+        // ensure that:
+        //      1. advancing to a different slide
+        //      2. this is either a manual event (prev/next, pager, cmd) or 
+        //              a timer event and slideshow is not paused
+        if ( opts.nextSlide != opts.currSlide && 
+            (manual || (!opts.paused && !opts.hoverPaused && opts.timeout) )) { // #62
+
+            opts.API.trigger('cycle-before', [ slideOpts, curr, next, fwd ]);
+            if ( tx.before )
+                tx.before( slideOpts, curr, next, fwd );
+
+            after = function() {
+                opts.busy = false;
+                // #76; bail if slideshow has been destroyed
+                if (! opts.container.data( 'cycle.opts' ) )
+                    return;
+
+                if (tx.after)
+                    tx.after( slideOpts, curr, next, fwd );
+                opts.API.trigger('cycle-after', [ slideOpts, curr, next, fwd ]);
+                opts.API.queueTransition( slideOpts);
+                opts.API.updateView( true );
+            };
+
+            opts.busy = true;
+            if (tx.transition)
+                tx.transition(slideOpts, curr, next, fwd, after);
+            else
+                opts.API.doTransition( slideOpts, curr, next, fwd, after);
+
+            opts.API.calcNextSlide();
+            opts.API.updateView();
+        } else {
+            opts.API.queueTransition( slideOpts );
+        }
+    },
+
+    // perform the actual animation
+    doTransition: function( slideOpts, currEl, nextEl, fwd, callback) {
+        var opts = slideOpts;
+        var curr = $(currEl), next = $(nextEl);
+        var fn = function() {
+            // make sure animIn has something so that callback doesn't trigger immediately
+            next.animate(opts.animIn || { opacity: 1}, opts.speed, opts.easeIn || opts.easing, callback);
+        };
+
+        next.css(opts.cssBefore || {});
+        curr.animate(opts.animOut || {}, opts.speed, opts.easeOut || opts.easing, function() {
+            curr.css(opts.cssAfter || {});
+            if (!opts.sync) {
+                fn();
+            }
+        });
+        if (opts.sync) {
+            fn();
+        }
+    },
+
+    queueTransition: function( slideOpts, specificTimeout ) {
+        var opts = this.opts();
+        var timeout = specificTimeout !== undefined ? specificTimeout : slideOpts.timeout;
+        if (opts.nextSlide === 0 && --opts.loop === 0) {
+            opts.API.log('terminating; loop=0');
+            opts.timeout = 0;
+            if ( timeout ) {
+                setTimeout(function() {
+                    opts.API.trigger('cycle-finished', [ opts ]);
+                }, timeout);
+            }
+            else {
+                opts.API.trigger('cycle-finished', [ opts ]);
+            }
+            // reset nextSlide
+            opts.nextSlide = opts.currSlide;
+            return;
+        }
+        if ( opts.continueAuto !== undefined ) {
+            if ( opts.continueAuto === false || 
+                ($.isFunction(opts.continueAuto) && opts.continueAuto() === false )) {
+                opts.API.log('terminating automatic transitions');
+                opts.timeout = 0;
+                if ( opts.timeoutId )
+                    clearTimeout(opts.timeoutId);
+                return;
+            }
+        }
+        if ( timeout ) {
+            opts._lastQueue = $.now();
+            if ( specificTimeout === undefined )
+                opts._remainingTimeout = slideOpts.timeout;
+
+            if ( !opts.paused && ! opts.hoverPaused ) {
+                opts.timeoutId = setTimeout(function() { 
+                    opts.API.prepareTx( false, !opts.reverse ); 
+                }, timeout );
+            }
+        }
+    },
+
+    stopTransition: function() {
+        var opts = this.opts();
+        if ( opts.slides.filter(':animated').length ) {
+            opts.slides.stop(false, true);
+            opts.API.trigger('cycle-transition-stopped', [ opts ]);
+        }
+
+        if ( opts._tx && opts._tx.stopTransition )
+            opts._tx.stopTransition( opts );
+    },
+
+    // advance slide forward or back
+    advanceSlide: function( val ) {
+        var opts = this.opts();
+        clearTimeout(opts.timeoutId);
+        opts.timeoutId = 0;
+        opts.nextSlide = opts.currSlide + val;
+        
+        if (opts.nextSlide < 0)
+            opts.nextSlide = opts.slides.length - 1;
+        else if (opts.nextSlide >= opts.slides.length)
+            opts.nextSlide = 0;
+
+        opts.API.prepareTx( true,  val >= 0 );
+        return false;
+    },
+
+    buildSlideOpts: function( slide ) {
+        var opts = this.opts();
+        var val, shortName;
+        var slideOpts = slide.data() || {};
+        for (var p in slideOpts) {
+            // allow props to be accessed sans 'cycle' prefix and log the overrides
+            if (slideOpts.hasOwnProperty(p) && /^cycle[A-Z]+/.test(p) ) {
+                val = slideOpts[p];
+                shortName = p.match(/^cycle(.*)/)[1].replace(/^[A-Z]/, lowerCase);
+                opts.API.log('['+(opts.slideCount-1)+']', shortName+':', val, '('+typeof val +')');
+                slideOpts[shortName] = val;
+            }
+        }
+
+        slideOpts = $.extend( {}, $.fn.cycle.defaults, opts, slideOpts );
+        slideOpts.slideNum = opts.slideCount;
+
+        try {
+            // these props should always be read from the master state object
+            delete slideOpts.API;
+            delete slideOpts.slideCount;
+            delete slideOpts.currSlide;
+            delete slideOpts.nextSlide;
+            delete slideOpts.slides;
+        } catch(e) {
+            // no op
+        }
+        return slideOpts;
+    },
+
+    getSlideOpts: function( index ) {
+        var opts = this.opts();
+        if ( index === undefined )
+            index = opts.currSlide;
+
+        var slide = opts.slides[index];
+        var slideOpts = $(slide).data('cycle.opts');
+        return $.extend( {}, opts, slideOpts );
+    },
+    
+    initSlide: function( slideOpts, slide, suggestedZindex ) {
+        var opts = this.opts();
+        slide.css( slideOpts.slideCss || {} );
+        if ( suggestedZindex > 0 )
+            slide.css( 'zIndex', suggestedZindex );
+
+        // ensure that speed settings are sane
+        if ( isNaN( slideOpts.speed ) )
+            slideOpts.speed = $.fx.speeds[slideOpts.speed] || $.fx.speeds._default;
+        if ( !slideOpts.sync )
+            slideOpts.speed = slideOpts.speed / 2;
+
+        slide.addClass( opts.slideClass );
+    },
+
+    updateView: function( isAfter, isDuring, forceEvent ) {
+        var opts = this.opts();
+        if ( !opts._initialized )
+            return;
+        var slideOpts = opts.API.getSlideOpts();
+        var currSlide = opts.slides[ opts.currSlide ];
+
+        if ( ! isAfter && isDuring !== true ) {
+            opts.API.trigger('cycle-update-view-before', [ opts, slideOpts, currSlide ]);
+            if ( opts.updateView < 0 )
+                return;
+        }
+
+        if ( opts.slideActiveClass ) {
+            opts.slides.removeClass( opts.slideActiveClass )
+                .eq( opts.currSlide ).addClass( opts.slideActiveClass );
+        }
+
+        if ( isAfter && opts.hideNonActive )
+            opts.slides.filter( ':not(.' + opts.slideActiveClass + ')' ).css('visibility', 'hidden');
+
+        if ( opts.updateView === 0 ) {
+            setTimeout(function() {
+                opts.API.trigger('cycle-update-view', [ opts, slideOpts, currSlide, isAfter ]);
+            }, slideOpts.speed / (opts.sync ? 2 : 1) );
+        }
+
+        if ( opts.updateView !== 0 )
+            opts.API.trigger('cycle-update-view', [ opts, slideOpts, currSlide, isAfter ]);
+        
+        if ( isAfter )
+            opts.API.trigger('cycle-update-view-after', [ opts, slideOpts, currSlide ]);
+    },
+
+    getComponent: function( name ) {
+        var opts = this.opts();
+        var selector = opts[name];
+        if (typeof selector === 'string') {
+            // if selector is a child, sibling combinator, adjancent selector then use find, otherwise query full dom
+            return (/^\s*[\>|\+|~]/).test( selector ) ? opts.container.find( selector ) : $( selector );
+        }
+        if (selector.jquery)
+            return selector;
+        
+        return $(selector);
+    },
+
+    stackSlides: function( curr, next, fwd ) {
+        var opts = this.opts();
+        if ( !curr ) {
+            curr = opts.slides[opts.currSlide];
+            next = opts.slides[opts.nextSlide];
+            fwd = !opts.reverse;
+        }
+
+        // reset the zIndex for the common case:
+        // curr slide on top,  next slide beneath, and the rest in order to be shown
+        $(curr).css('zIndex', opts.maxZ);
+
+        var i;
+        var z = opts.maxZ - 2;
+        var len = opts.slideCount;
+        if (fwd) {
+            for ( i = opts.currSlide + 1; i < len; i++ )
+                $( opts.slides[i] ).css( 'zIndex', z-- );
+            for ( i = 0; i < opts.currSlide; i++ )
+                $( opts.slides[i] ).css( 'zIndex', z-- );
+        }
+        else {
+            for ( i = opts.currSlide - 1; i >= 0; i-- )
+                $( opts.slides[i] ).css( 'zIndex', z-- );
+            for ( i = len - 1; i > opts.currSlide; i-- )
+                $( opts.slides[i] ).css( 'zIndex', z-- );
+        }
+
+        $(next).css('zIndex', opts.maxZ - 1);
+    },
+
+    getSlideIndex: function( el ) {
+        return this.opts().slides.index( el );
+    }
+
+}; // API
+
+// default logger
+$.fn.cycle.log = function log() {
+    /*global console:true */
+    if (window.console && console.log)
+        console.log('[cycle2] ' + Array.prototype.join.call(arguments, ' ') );
+};
+
+$.fn.cycle.version = function() { return 'Cycle2: ' + version; };
+
+// helper functions
+
+function lowerCase(s) {
+    return (s || '').toLowerCase();
+}
+
+// expose transition object
+$.fn.cycle.transitions = {
+    custom: {
+    },
+    none: {
+        before: function( opts, curr, next, fwd ) {
+            opts.API.stackSlides( next, curr, fwd );
+            opts.cssBefore = { opacity: 1, visibility: 'visible', display: 'block' };
+        }
+    },
+    fade: {
+        before: function( opts, curr, next, fwd ) {
+            var css = opts.API.getSlideOpts( opts.nextSlide ).slideCss || {};
+            opts.API.stackSlides( curr, next, fwd );
+            opts.cssBefore = $.extend(css, { opacity: 0, visibility: 'visible', display: 'block' });
+            opts.animIn = { opacity: 1 };
+            opts.animOut = { opacity: 0 };
+        }
+    },
+    fadeout: {
+        before: function( opts , curr, next, fwd ) {
+            var css = opts.API.getSlideOpts( opts.nextSlide ).slideCss || {};
+            opts.API.stackSlides( curr, next, fwd );
+            opts.cssBefore = $.extend(css, { opacity: 1, visibility: 'visible', display: 'block' });
+            opts.animOut = { opacity: 0 };
+        }
+    },
+    scrollHorz: {
+        before: function( opts, curr, next, fwd ) {
+            opts.API.stackSlides( curr, next, fwd );
+            var w = opts.container.css('overflow','hidden').width();
+            opts.cssBefore = { left: fwd ? w : - w, top: 0, opacity: 1, visibility: 'visible', display: 'block' };
+            opts.cssAfter = { zIndex: opts._maxZ - 2, left: 0 };
+            opts.animIn = { left: 0 };
+            opts.animOut = { left: fwd ? -w : w };
+        }
+    }
+};
+
+// @see: http://jquery.malsup.com/cycle2/api
+$.fn.cycle.defaults = {
+    allowWrap:        true,
+    autoSelector:     '.cycle-slideshow[data-cycle-auto-init!=false]',
+    delay:            0,
+    easing:           null,
+    fx:              'fade',
+    hideNonActive:    true,
+    loop:             0,
+    manualFx:         undefined,
+    manualSpeed:      undefined,
+    manualTrump:      true,
+    maxZ:             100,
+    pauseOnHover:     false,
+    reverse:          false,
+    slideActiveClass: 'cycle-slide-active',
+    slideClass:       'cycle-slide',
+    slideCss:         { position: 'absolute', top: 0, left: 0 },
+    slides:          '> img',
+    speed:            500,
+    startingSlide:    0,
+    sync:             true,
+    timeout:          4000,
+    updateView:       0
+};
+
+// automatically find and run slideshows
+$(document).ready(function() {
+    $( $.fn.cycle.defaults.autoSelector ).cycle();
+});
+
+})(jQuery);
+
+/*! Cycle2 autoheight plugin; Copyright (c) M.Alsup, 2012; version: 20130913 */
+(function($) {
+"use strict";
+
+$.extend($.fn.cycle.defaults, {
+    autoHeight: 0, // setting this option to false disables autoHeight logic
+    autoHeightSpeed: 250,
+    autoHeightEasing: null
+});    
+
+$(document).on( 'cycle-initialized', function( e, opts ) {
+    var autoHeight = opts.autoHeight;
+    var t = $.type( autoHeight );
+    var resizeThrottle = null;
+    var ratio;
+
+    if ( t !== 'string' && t !== 'number' )
+        return;
+
+    // bind events
+    opts.container.on( 'cycle-slide-added cycle-slide-removed', initAutoHeight );
+    opts.container.on( 'cycle-destroyed', onDestroy );
+
+    if ( autoHeight == 'container' ) {
+        opts.container.on( 'cycle-before', onBefore );
+    }
+    else if ( t === 'string' && /\d+\:\d+/.test( autoHeight ) ) { 
+        // use ratio
+        ratio = autoHeight.match(/(\d+)\:(\d+)/);
+        ratio = ratio[1] / ratio[2];
+        opts._autoHeightRatio = ratio;
+    }
+
+    // if autoHeight is a number then we don't need to recalculate the sentinel
+    // index on resize
+    if ( t !== 'number' ) {
+        // bind unique resize handler per slideshow (so it can be 'off-ed' in onDestroy)
+        opts._autoHeightOnResize = function () {
+            clearTimeout( resizeThrottle );
+            resizeThrottle = setTimeout( onResize, 50 );
+        };
+
+        $(window).on( 'resize orientationchange', opts._autoHeightOnResize );
+    }
+
+    setTimeout( onResize, 30 );
+
+    function onResize() {
+        initAutoHeight( e, opts );
+    }
+});
+
+function initAutoHeight( e, opts ) {
+    var clone, height, sentinelIndex;
+    var autoHeight = opts.autoHeight;
+
+    if ( autoHeight == 'container' ) {
+        height = $( opts.slides[ opts.currSlide ] ).outerHeight();
+        opts.container.height( height );
+    }
+    else if ( opts._autoHeightRatio ) { 
+        opts.container.height( opts.container.width() / opts._autoHeightRatio );
+    }
+    else if ( autoHeight === 'calc' || ( $.type( autoHeight ) == 'number' && autoHeight >= 0 ) ) {
+        if ( autoHeight === 'calc' )
+            sentinelIndex = calcSentinelIndex( e, opts );
+        else if ( autoHeight >= opts.slides.length )
+            sentinelIndex = 0;
+        else 
+            sentinelIndex = autoHeight;
+
+        // only recreate sentinel if index is different
+        if ( sentinelIndex == opts._sentinelIndex )
+            return;
+
+        opts._sentinelIndex = sentinelIndex;
+        if ( opts._sentinel )
+            opts._sentinel.remove();
+
+        // clone existing slide as sentinel
+        clone = $( opts.slides[ sentinelIndex ].cloneNode(true) );
+        
+        // #50; remove special attributes from cloned content
+        clone.removeAttr( 'id name rel' ).find( '[id],[name],[rel]' ).removeAttr( 'id name rel' );
+
+        clone.css({
+            position: 'static',
+            visibility: 'hidden',
+            display: 'block'
+        }).prependTo( opts.container ).addClass('cycle-sentinel cycle-slide').removeClass('cycle-slide-active');
+        clone.find( '*' ).css( 'visibility', 'hidden' );
+
+        opts._sentinel = clone;
+    }
+}    
+
+function calcSentinelIndex( e, opts ) {
+    var index = 0, max = -1;
+
+    // calculate tallest slide index
+    opts.slides.each(function(i) {
+        var h = $(this).height();
+        if ( h > max ) {
+            max = h;
+            index = i;
+        }
+    });
+    return index;
+}
+
+function onBefore( e, opts, outgoing, incoming, forward ) {
+    var h = $(incoming).outerHeight();
+    opts.container.animate( { height: h }, opts.autoHeightSpeed, opts.autoHeightEasing );
+}
+
+function onDestroy( e, opts ) {
+    if ( opts._autoHeightOnResize ) {
+        $(window).off( 'resize orientationchange', opts._autoHeightOnResize );
+        opts._autoHeightOnResize = null;
+    }
+    opts.container.off( 'cycle-slide-added cycle-slide-removed', initAutoHeight );
+    opts.container.off( 'cycle-destroyed', onDestroy );
+    opts.container.off( 'cycle-before', onBefore );
+
+    if ( opts._sentinel ) {
+        opts._sentinel.remove();
+        opts._sentinel = null;
+    }
+}
+
+})(jQuery);
+
+/*! caption plugin for Cycle2;  version: 20130306 */
+(function($) {
+"use strict";
+
+$.extend($.fn.cycle.defaults, {
+    caption:          '> .cycle-caption',
+    captionTemplate:  '{{slideNum}} / {{slideCount}}',
+    overlay:          '> .cycle-overlay',
+    overlayTemplate:  '<div>{{title}}</div><div>{{desc}}</div>',
+    captionModule:    'caption'
+});    
+
+$(document).on( 'cycle-update-view', function( e, opts, slideOpts, currSlide ) {
+    if ( opts.captionModule !== 'caption' )
+        return;
+    var el;
+    $.each(['caption','overlay'], function() {
+        var name = this; 
+        var template = slideOpts[name+'Template'];
+        var el = opts.API.getComponent( name );
+        if( el.length && template ) {
+            el.html( opts.API.tmpl( template, slideOpts, opts, currSlide ) );
+            el.show();
+        }
+        else {
+            el.hide();
+        }
+    });
+});
+
+$(document).on( 'cycle-destroyed', function( e, opts ) {
+    var el;
+    $.each(['caption','overlay'], function() {
+        var name = this, template = opts[name+'Template'];
+        if ( opts[name] && template ) {
+            el = opts.API.getComponent( 'caption' );
+            el.empty();
+        }
+    });
+});
+
+})(jQuery);
+
+/*! command plugin for Cycle2;  version: 20140415 */
+(function($) {
+"use strict";
+
+var c2 = $.fn.cycle;
+
+$.fn.cycle = function( options ) {
+    var cmd, cmdFn, opts;
+    var args = $.makeArray( arguments );
+
+    if ( $.type( options ) == 'number' ) {
+        return this.cycle( 'goto', options );
+    }
+
+    if ( $.type( options ) == 'string' ) {
+        return this.each(function() {
+            var cmdArgs;
+            cmd = options;
+            opts = $(this).data('cycle.opts');
+
+            if ( opts === undefined ) {
+                c2.log('slideshow must be initialized before sending commands; "' + cmd + '" ignored');
+                return;
+            }
+            else {
+                cmd = cmd == 'goto' ? 'jump' : cmd; // issue #3; change 'goto' to 'jump' internally
+                cmdFn = opts.API[ cmd ];
+                if ( $.isFunction( cmdFn )) {
+                    cmdArgs = $.makeArray( args );
+                    cmdArgs.shift();
+                    return cmdFn.apply( opts.API, cmdArgs );
+                }
+                else {
+                    c2.log( 'unknown command: ', cmd );
+                }
+            }
+        });
+    }
+    else {
+        return c2.apply( this, arguments );
+    }
+};
+
+// copy props
+$.extend( $.fn.cycle, c2 );
+
+$.extend( c2.API, {
+    next: function() {
+        var opts = this.opts();
+        if ( opts.busy && ! opts.manualTrump )
+            return;
+
+        var count = opts.reverse ? -1 : 1;
+        if ( opts.allowWrap === false && ( opts.currSlide + count ) >= opts.slideCount )
+            return;
+
+        opts.API.advanceSlide( count );
+        opts.API.trigger('cycle-next', [ opts ]).log('cycle-next');
+    },
+
+    prev: function() {
+        var opts = this.opts();
+        if ( opts.busy && ! opts.manualTrump )
+            return;
+        var count = opts.reverse ? 1 : -1;
+        if ( opts.allowWrap === false && ( opts.currSlide + count ) < 0 )
+            return;
+
+        opts.API.advanceSlide( count );
+        opts.API.trigger('cycle-prev', [ opts ]).log('cycle-prev');
+    },
+
+    destroy: function() {
+        this.stop(); //#204
+
+        var opts = this.opts();
+        var clean = $.isFunction( $._data ) ? $._data : $.noop;  // hack for #184 and #201
+        clearTimeout(opts.timeoutId);
+        opts.timeoutId = 0;
+        opts.API.stop();
+        opts.API.trigger( 'cycle-destroyed', [ opts ] ).log('cycle-destroyed');
+        opts.container.removeData();
+        clean( opts.container[0], 'parsedAttrs', false );
+
+        // #75; remove inline styles
+        if ( ! opts.retainStylesOnDestroy ) {
+            opts.container.removeAttr( 'style' );
+            opts.slides.removeAttr( 'style' );
+            opts.slides.removeClass( opts.slideActiveClass );
+        }
+        opts.slides.each(function() {
+            var slide = $(this);
+            slide.removeData();
+            slide.removeClass( opts.slideClass );
+            clean( this, 'parsedAttrs', false );
+        });
+    },
+
+    jump: function( index, fx ) {
+        // go to the requested slide
+        var fwd;
+        var opts = this.opts();
+        if ( opts.busy && ! opts.manualTrump )
+            return;
+        var num = parseInt( index, 10 );
+        if (isNaN(num) || num < 0 || num >= opts.slides.length) {
+            opts.API.log('goto: invalid slide index: ' + num);
+            return;
+        }
+        if (num == opts.currSlide) {
+            opts.API.log('goto: skipping, already on slide', num);
+            return;
+        }
+        opts.nextSlide = num;
+        clearTimeout(opts.timeoutId);
+        opts.timeoutId = 0;
+        opts.API.log('goto: ', num, ' (zero-index)');
+        fwd = opts.currSlide < opts.nextSlide;
+        opts._tempFx = fx;
+        opts.API.prepareTx( true, fwd );
+    },
+
+    stop: function() {
+        var opts = this.opts();
+        var pauseObj = opts.container;
+        clearTimeout(opts.timeoutId);
+        opts.timeoutId = 0;
+        opts.API.stopTransition();
+        if ( opts.pauseOnHover ) {
+            if ( opts.pauseOnHover !== true )
+                pauseObj = $( opts.pauseOnHover );
+            pauseObj.off('mouseenter mouseleave');
+        }
+        opts.API.trigger('cycle-stopped', [ opts ]).log('cycle-stopped');
+    },
+
+    reinit: function() {
+        var opts = this.opts();
+        opts.API.destroy();
+        opts.container.cycle();
+    },
+
+    remove: function( index ) {
+        var opts = this.opts();
+        var slide, slideToRemove, slides = [], slideNum = 1;
+        for ( var i=0; i < opts.slides.length; i++ ) {
+            slide = opts.slides[i];
+            if ( i == index ) {
+                slideToRemove = slide;
+            }
+            else {
+                slides.push( slide );
+                $( slide ).data('cycle.opts').slideNum = slideNum;
+                slideNum++;
+            }
+        }
+        if ( slideToRemove ) {
+            opts.slides = $( slides );
+            opts.slideCount--;
+            $( slideToRemove ).remove();
+            if (index == opts.currSlide)
+                opts.API.advanceSlide( 1 );
+            else if ( index < opts.currSlide )
+                opts.currSlide--;
+            else
+                opts.currSlide++;
+
+            opts.API.trigger('cycle-slide-removed', [ opts, index, slideToRemove ]).log('cycle-slide-removed');
+            opts.API.updateView();
+        }
+    }
+
+});
+
+// listen for clicks on elements with data-cycle-cmd attribute
+$(document).on('click.cycle', '[data-cycle-cmd]', function(e) {
+    // issue cycle command
+    e.preventDefault();
+    var el = $(this);
+    var command = el.data('cycle-cmd');
+    var context = el.data('cycle-context') || '.cycle-slideshow';
+    $(context).cycle(command, el.data('cycle-arg'));
+});
+
+
+})(jQuery);
+
+/*! hash plugin for Cycle2;  version: 20130905 */
+(function($) {
+"use strict";
+
+$(document).on( 'cycle-pre-initialize', function( e, opts ) {
+    onHashChange( opts, true );
+
+    opts._onHashChange = function() {
+        onHashChange( opts, false );
+    };
+
+    $( window ).on( 'hashchange', opts._onHashChange);
+});
+
+$(document).on( 'cycle-update-view', function( e, opts, slideOpts ) {
+    if ( slideOpts.hash && ( '#' + slideOpts.hash ) != window.location.hash ) {
+        opts._hashFence = true;
+        window.location.hash = slideOpts.hash;
+    }
+});
+
+$(document).on( 'cycle-destroyed', function( e, opts) {
+    if ( opts._onHashChange ) {
+        $( window ).off( 'hashchange', opts._onHashChange );
+    }
+});
+
+function onHashChange( opts, setStartingSlide ) {
+    var hash;
+    if ( opts._hashFence ) {
+        opts._hashFence = false;
+        return;
+    }
+    
+    hash = window.location.hash.substring(1);
+
+    opts.slides.each(function(i) {
+        if ( $(this).data( 'cycle-hash' ) == hash ) {
+            if ( setStartingSlide === true ) {
+                opts.startingSlide = i;
+            }
+            else {
+                var fwd = opts.currSlide < i;
+                opts.nextSlide = i;
+                opts.API.prepareTx( true, fwd );
+            }
+            return false;
+        }
+    });
+}
+
+})(jQuery);
+
+/*! loader plugin for Cycle2;  version: 20131121 */
+(function($) {
+"use strict";
+
+$.extend($.fn.cycle.defaults, {
+    loader: false
+});
+
+$(document).on( 'cycle-bootstrap', function( e, opts ) {
+    var addFn;
+
+    if ( !opts.loader )
+        return;
+
+    // override API.add for this slideshow
+    addFn = opts.API.add;
+    opts.API.add = add;
+
+    function add( slides, prepend ) {
+        var slideArr = [];
+        if ( $.type( slides ) == 'string' )
+            slides = $.trim( slides );
+        else if ( $.type( slides) === 'array' ) {
+            for (var i=0; i < slides.length; i++ )
+                slides[i] = $(slides[i])[0];
+        }
+
+        slides = $( slides );
+        var slideCount = slides.length;
+
+        if ( ! slideCount )
+            return;
+
+        slides.css('visibility','hidden').appendTo('body').each(function(i) { // appendTo fixes #56
+            var count = 0;
+            var slide = $(this);
+            var images = slide.is('img') ? slide : slide.find('img');
+            slide.data('index', i);
+            // allow some images to be marked as unimportant (and filter out images w/o src value)
+            images = images.filter(':not(.cycle-loader-ignore)').filter(':not([src=""])');
+            if ( ! images.length ) {
+                --slideCount;
+                slideArr.push( slide );
+                return;
+            }
+
+            count = images.length;
+            images.each(function() {
+                // add images that are already loaded
+                if ( this.complete ) {
+                    imageLoaded();
+                }
+                else {
+                    $(this).load(function() {
+                        imageLoaded();
+                    }).on("error", function() {
+                        if ( --count === 0 ) {
+                            // ignore this slide
+                            opts.API.log('slide skipped; img not loaded:', this.src);
+                            if ( --slideCount === 0 && opts.loader == 'wait') {
+                                addFn.apply( opts.API, [ slideArr, prepend ] );
+                            }
+                        }
+                    });
+                }
+            });
+
+            function imageLoaded() {
+                if ( --count === 0 ) {
+                    --slideCount;
+                    addSlide( slide );
+                }
+            }
+        });
+
+        if ( slideCount )
+            opts.container.addClass('cycle-loading');
+        
+
+        function addSlide( slide ) {
+            var curr;
+            if ( opts.loader == 'wait' ) {
+                slideArr.push( slide );
+                if ( slideCount === 0 ) {
+                    // #59; sort slides into original markup order
+                    slideArr.sort( sorter );
+                    addFn.apply( opts.API, [ slideArr, prepend ] );
+                    opts.container.removeClass('cycle-loading');
+                }
+            }
+            else {
+                curr = $(opts.slides[opts.currSlide]);
+                addFn.apply( opts.API, [ slide, prepend ] );
+                curr.show();
+                opts.container.removeClass('cycle-loading');
+            }
+        }
+
+        function sorter(a, b) {
+            return a.data('index') - b.data('index');
+        }
+    }
+});
+
+})(jQuery);
+
+/*! pager plugin for Cycle2;  version: 20140415 */
+(function($) {
+"use strict";
+
+$.extend($.fn.cycle.defaults, {
+    pager:            '> .cycle-pager',
+    pagerActiveClass: 'cycle-pager-active',
+    pagerEvent:       'click.cycle',
+    pagerEventBubble: undefined,
+    pagerTemplate:    '<span>&bull;</span>'
+});
+
+$(document).on( 'cycle-bootstrap', function( e, opts, API ) {
+    // add method to API
+    API.buildPagerLink = buildPagerLink;
+});
+
+$(document).on( 'cycle-slide-added', function( e, opts, slideOpts, slideAdded ) {
+    if ( opts.pager ) {
+        opts.API.buildPagerLink ( opts, slideOpts, slideAdded );
+        opts.API.page = page;
+    }
+});
+
+$(document).on( 'cycle-slide-removed', function( e, opts, index, slideRemoved ) {
+    if ( opts.pager ) {
+        var pagers = opts.API.getComponent( 'pager' );
+        pagers.each(function() {
+            var pager = $(this);
+            $( pager.children()[index] ).remove();
+        });
+    }
+});
+
+$(document).on( 'cycle-update-view', function( e, opts, slideOpts ) {
+    var pagers;
+
+    if ( opts.pager ) {
+        pagers = opts.API.getComponent( 'pager' );
+        pagers.each(function() {
+           $(this).children().removeClass( opts.pagerActiveClass )
+            .eq( opts.currSlide ).addClass( opts.pagerActiveClass );
+        });
+    }
+});
+
+$(document).on( 'cycle-destroyed', function( e, opts ) {
+    var pager = opts.API.getComponent( 'pager' );
+
+    if ( pager ) {
+        pager.children().off( opts.pagerEvent ); // #202
+        if ( opts.pagerTemplate )
+            pager.empty();
+    }
+});
+
+function buildPagerLink( opts, slideOpts, slide ) {
+    var pagerLink;
+    var pagers = opts.API.getComponent( 'pager' );
+    pagers.each(function() {
+        var pager = $(this);
+        if ( slideOpts.pagerTemplate ) {
+            var markup = opts.API.tmpl( slideOpts.pagerTemplate, slideOpts, opts, slide[0] );
+            pagerLink = $( markup ).appendTo( pager );
+        }
+        else {
+            pagerLink = pager.children().eq( opts.slideCount - 1 );
+        }
+        pagerLink.on( opts.pagerEvent, function(e) {
+            if ( ! opts.pagerEventBubble )
+                e.preventDefault();
+            opts.API.page( pager, e.currentTarget);
+        });
+    });
+}
+
+function page( pager, target ) {
+    /*jshint validthis:true */
+    var opts = this.opts();
+    if ( opts.busy && ! opts.manualTrump )
+        return;
+
+    var index = pager.children().index( target );
+    var nextSlide = index;
+    var fwd = opts.currSlide < nextSlide;
+    if (opts.currSlide == nextSlide) {
+        return; // no op, clicked pager for the currently displayed slide
+    }
+    opts.nextSlide = nextSlide;
+    opts._tempFx = opts.pagerFx;
+    opts.API.prepareTx( true, fwd );
+    opts.API.trigger('cycle-pager-activated', [opts, pager, target ]);
+}
+
+})(jQuery);
+
+/*! prevnext plugin for Cycle2;  version: 20140408 */
+(function($) {
+"use strict";
+
+$.extend($.fn.cycle.defaults, {
+    next:           '> .cycle-next',
+    nextEvent:      'click.cycle',
+    disabledClass:  'disabled',
+    prev:           '> .cycle-prev',
+    prevEvent:      'click.cycle',
+    swipe:          false
+});
+
+$(document).on( 'cycle-initialized', function( e, opts ) {
+    opts.API.getComponent( 'next' ).on( opts.nextEvent, function(e) {
+        e.preventDefault();
+        opts.API.next();
+    });
+
+    opts.API.getComponent( 'prev' ).on( opts.prevEvent, function(e) {
+        e.preventDefault();
+        opts.API.prev();
+    });
+
+    if ( opts.swipe ) {
+        var nextEvent = opts.swipeVert ? 'swipeUp.cycle' : 'swipeLeft.cycle swipeleft.cycle';
+        var prevEvent = opts.swipeVert ? 'swipeDown.cycle' : 'swipeRight.cycle swiperight.cycle';
+        opts.container.on( nextEvent, function(e) {
+            opts._tempFx = opts.swipeFx;
+            opts.API.next();
+        });
+        opts.container.on( prevEvent, function() {
+            opts._tempFx = opts.swipeFx;
+            opts.API.prev();
+        });
+    }
+});
+
+$(document).on( 'cycle-update-view', function( e, opts, slideOpts, currSlide ) {
+    if ( opts.allowWrap )
+        return;
+
+    var cls = opts.disabledClass;
+    var next = opts.API.getComponent( 'next' );
+    var prev = opts.API.getComponent( 'prev' );
+    var prevBoundry = opts._prevBoundry || 0;
+    var nextBoundry = (opts._nextBoundry !== undefined)?opts._nextBoundry:opts.slideCount - 1;
+
+    if ( opts.currSlide == nextBoundry )
+        next.addClass( cls ).prop( 'disabled', true );
+    else
+        next.removeClass( cls ).prop( 'disabled', false );
+
+    if ( opts.currSlide === prevBoundry )
+        prev.addClass( cls ).prop( 'disabled', true );
+    else
+        prev.removeClass( cls ).prop( 'disabled', false );
+});
+
+
+$(document).on( 'cycle-destroyed', function( e, opts ) {
+    opts.API.getComponent( 'prev' ).off( opts.nextEvent );
+    opts.API.getComponent( 'next' ).off( opts.prevEvent );
+    opts.container.off( 'swipeleft.cycle swiperight.cycle swipeLeft.cycle swipeRight.cycle swipeUp.cycle swipeDown.cycle' );
+});
+
+})(jQuery);
+
+/*! progressive loader plugin for Cycle2;  version: 20130315 */
+(function($) {
+"use strict";
+
+$.extend($.fn.cycle.defaults, {
+    progressive: false
+});
+
+$(document).on( 'cycle-pre-initialize', function( e, opts ) {
+    if ( !opts.progressive )
+        return;
+
+    var API = opts.API;
+    var nextFn = API.next;
+    var prevFn = API.prev;
+    var prepareTxFn = API.prepareTx;
+    var type = $.type( opts.progressive );
+    var slides, scriptEl;
+
+    if ( type == 'array' ) {
+        slides = opts.progressive;
+    }
+    else if ($.isFunction( opts.progressive ) ) {
+        slides = opts.progressive( opts );
+    }
+    else if ( type == 'string' ) {
+        scriptEl = $( opts.progressive );
+        slides = $.trim( scriptEl.html() );
+        if ( !slides )
+            return;
+        // is it json array?
+        if ( /^(\[)/.test( slides ) ) {
+            try {
+                slides = $.parseJSON( slides );
+            }
+            catch(err) {
+                API.log( 'error parsing progressive slides', err );
+                return;
+            }
+        }
+        else {
+            // plain text, split on delimeter
+            slides = slides.split( new RegExp( scriptEl.data('cycle-split') || '\n') );
+            
+            // #95; look for empty slide
+            if ( ! slides[ slides.length - 1 ] )
+                slides.pop();
+        }
+    }
+
+
+
+    if ( prepareTxFn ) {
+        API.prepareTx = function( manual, fwd ) {
+            var index, slide;
+
+            if ( manual || slides.length === 0 ) {
+                prepareTxFn.apply( opts.API, [ manual, fwd ] );
+                return;
+            }
+
+            if ( fwd && opts.currSlide == ( opts.slideCount-1) ) {
+                slide = slides[ 0 ];
+                slides = slides.slice( 1 );
+                opts.container.one('cycle-slide-added', function(e, opts ) {
+                    setTimeout(function() {
+                        opts.API.advanceSlide( 1 );
+                    },50);
+                });
+                opts.API.add( slide );
+            }
+            else if ( !fwd && opts.currSlide === 0 ) {
+                index = slides.length-1;
+                slide = slides[ index ];
+                slides = slides.slice( 0, index );
+                opts.container.one('cycle-slide-added', function(e, opts ) {
+                    setTimeout(function() {
+                        opts.currSlide = 1;
+                        opts.API.advanceSlide( -1 );
+                    },50);
+                });
+                opts.API.add( slide, true );
+            }
+            else {
+                prepareTxFn.apply( opts.API, [ manual, fwd ] );
+            }
+        };
+    }
+
+    if ( nextFn ) {
+        API.next = function() {
+            var opts = this.opts();
+            if ( slides.length && opts.currSlide == ( opts.slideCount - 1 ) ) {
+                var slide = slides[ 0 ];
+                slides = slides.slice( 1 );
+                opts.container.one('cycle-slide-added', function(e, opts ) {
+                    nextFn.apply( opts.API );
+                    opts.container.removeClass('cycle-loading');
+                });
+                opts.container.addClass('cycle-loading');
+                opts.API.add( slide );
+            }
+            else {
+                nextFn.apply( opts.API );    
+            }
+        };
+    }
+    
+    if ( prevFn ) {
+        API.prev = function() {
+            var opts = this.opts();
+            if ( slides.length && opts.currSlide === 0 ) {
+                var index = slides.length-1;
+                var slide = slides[ index ];
+                slides = slides.slice( 0, index );
+                opts.container.one('cycle-slide-added', function(e, opts ) {
+                    opts.currSlide = 1;
+                    opts.API.advanceSlide( -1 );
+                    opts.container.removeClass('cycle-loading');
+                });
+                opts.container.addClass('cycle-loading');
+                opts.API.add( slide, true );
+            }
+            else {
+                prevFn.apply( opts.API );
+            }
+        };
+    }
+});
+
+})(jQuery);
+
+/*! tmpl plugin for Cycle2;  version: 20121227 */
+(function($) {
+"use strict";
+
+$.extend($.fn.cycle.defaults, {
+    tmplRegex: '{{((.)?.*?)}}'
+});
+
+$.extend($.fn.cycle.API, {
+    tmpl: function( str, opts /*, ... */) {
+        var regex = new RegExp( opts.tmplRegex || $.fn.cycle.defaults.tmplRegex, 'g' );
+        var args = $.makeArray( arguments );
+        args.shift();
+        return str.replace(regex, function(_, str) {
+            var i, j, obj, prop, names = str.split('.');
+            for (i=0; i < args.length; i++) {
+                obj = args[i];
+                if ( ! obj )
+                    continue;
+                if (names.length > 1) {
+                    prop = obj;
+                    for (j=0; j < names.length; j++) {
+                        obj = prop;
+                        prop = prop[ names[j] ] || str;
+                    }
+                } else {
+                    prop = obj[str];
+                }
+
+                if ($.isFunction(prop))
+                    return prop.apply(obj, args);
+                if (prop !== undefined && prop !== null && prop != str)
+                    return prop;
+            }
+            return str;
+        });
+    }
+});    
+
+})(jQuery);
+;(function(c){function g(b,a){this.element=b;this.options=c.extend({},h,a);c(this.element).data("max-height",this.options.maxHeight);c(this.element).data("height-margin",this.options.heightMargin);delete this.options.maxHeight;if(this.options.embedCSS&&!k){var d=".readmore-js-toggle, .readmore-js-section { "+this.options.sectionCSS+" } .readmore-js-section { overflow: hidden; }",e=document.createElement("style");e.type="text/css";e.styleSheet?e.styleSheet.cssText=d:e.appendChild(document.createTextNode(d));
+document.getElementsByTagName("head")[0].appendChild(e);k=!0}this._defaults=h;this._name=f;this.init()}var f="readmore",h={speed:100,maxHeight:200,heightMargin:16,moreLink:'<a href="#">Read More</a>',lessLink:'<a href="#">Close</a>',embedCSS:!0,sectionCSS:"display: block; width: 100%;",startOpen:!1,expandedClass:"readmore-js-expanded",collapsedClass:"readmore-js-collapsed",beforeToggle:function(){},afterToggle:function(){}},k=!1;g.prototype={init:function(){var b=this;c(this.element).each(function(){var a=
+c(this),d=a.css("max-height").replace(/[^-\d\.]/g,"")>a.data("max-height")?a.css("max-height").replace(/[^-\d\.]/g,""):a.data("max-height"),e=a.data("height-margin");"none"!=a.css("max-height")&&a.css("max-height","none");b.setBoxHeight(a);if(a.outerHeight(!0)<=d+e)return!0;a.addClass("readmore-js-section "+b.options.collapsedClass).data("collapsedHeight",d);a.after(c(b.options.startOpen?b.options.lessLink:b.options.moreLink).on("click",function(c){b.toggleSlider(this,a,c)}).addClass("readmore-js-toggle"));
+b.options.startOpen||a.css({height:d})});c(window).on("resize",function(a){b.resizeBoxes()})},toggleSlider:function(b,a,d){d.preventDefault();var e=this;d=newLink=sectionClass="";var f=!1;d=c(a).data("collapsedHeight");c(a).height()<=d?(d=c(a).data("expandedHeight")+"px",newLink="lessLink",f=!0,sectionClass=e.options.expandedClass):(newLink="moreLink",sectionClass=e.options.collapsedClass);e.options.beforeToggle(b,a,f);c(a).animate({height:d},{duration:e.options.speed,complete:function(){e.options.afterToggle(b,
+a,f);c(b).replaceWith(c(e.options[newLink]).on("click",function(b){e.toggleSlider(this,a,b)}).addClass("readmore-js-toggle"));c(this).removeClass(e.options.collapsedClass+" "+e.options.expandedClass).addClass(sectionClass)}})},setBoxHeight:function(b){var a=b.clone().css({height:"auto",width:b.width(),overflow:"hidden"}).insertAfter(b),c=a.outerHeight(!0);a.remove();b.data("expandedHeight",c)},resizeBoxes:function(){var b=this;c(".readmore-js-section").each(function(){var a=c(this);b.setBoxHeight(a);
+(a.height()>a.data("expandedHeight")||a.hasClass(b.options.expandedClass)&&a.height()<a.data("expandedHeight"))&&a.css("height",a.data("expandedHeight"))})},destroy:function(){var b=this;c(this.element).each(function(){var a=c(this);a.removeClass("readmore-js-section "+b.options.collapsedClass+" "+b.options.expandedClass).css({"max-height":"",height:"auto"}).next(".readmore-js-toggle").remove();a.removeData()})}};c.fn[f]=function(b){var a=arguments;if(void 0===b||"object"===typeof b)return this.each(function(){if(c.data(this,
+"plugin_"+f)){var a=c.data(this,"plugin_"+f);a.destroy.apply(a)}c.data(this,"plugin_"+f,new g(this,b))});if("string"===typeof b&&"_"!==b[0]&&"init"!==b)return this.each(function(){var d=c.data(this,"plugin_"+f);d instanceof g&&"function"===typeof d[b]&&d[b].apply(d,Array.prototype.slice.call(a,1))})}})(jQuery);
 ;//Main ajax functions
 jQuery(document).ready(function($) {
 	
