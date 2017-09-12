@@ -21,7 +21,7 @@ $('.noticias-filsa').cycle({
     }
 });
 
-//Toma contador Facebook y twitter
+        //Toma contador Facebook y twitter
         var sharer = $('.sharer');
         
         var durl = sharer.data('url');    

@@ -1,1 +1,1 @@
-<a href="<?php echo get_permalink(CCHL_FILSA2016);?>" class="boton-filsa-2016 animated swing"><i class="fa fa-hand-o-right"></i> Ir a FILSA 2016</a>
+<a href="<?php echo get_post_type_archive_link('filsa-2017');?>" class="boton-filsa-2016 animated swing"><i class="fa fa-hand-o-right"></i> Ir a FILSA 2017</a>

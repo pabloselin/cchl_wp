@@ -79,6 +79,7 @@ require_once('vendor/autoload.php');
 //Image sizes
 
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'title-tag' );
 
 //add_image_size( 'imagen-slide', 689, 300, true);
 //add_image_size( 'imagen-slide_home', 940, 300, true);
