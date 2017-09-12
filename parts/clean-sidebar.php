@@ -41,7 +41,9 @@ elseif(checkferia($post->ID, CCHL_FILSA2015, CCHL_CATSFILSA, 180) ):?>
 elseif(checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 'filsa-2016')):?>
 
 <div id="sidebar_interior" class="grid_4 menu-feria-especial">
-	
+
+		<?php get_template_part( 'parts/current-filsa' );?>
+
 		<?php 
 		$menu = get('id_menu', 1, 1, 1, CCHL_FILSA2016);
 		wp_nav_menu( array('menu'=> $menu));?>
