@@ -1,19 +1,20 @@
-<?php 
+
+        <?php 
 
                     $grupocolaboradores = array(
-                                        'organiza'              => 'Organiza',
-                                        'produce'               => 'Produce',
-                                        'apoya'                 => 'Apoya',
-                                        'participa'             => 'Participa',
-                                        'media_partner'         => 'Media Partner',
-                                        'colabora'              => 'Colabora',     
-                                        'patrocina'             => 'Patrocina',
-                                        'participan_programa'   => 'Participan en programa cultural'
+                                        '_cchl_organiza'              => 'Organiza',
+                                        '_cchl_produce'               => 'Produce',
+                                        '_cchl_apoya'                 => 'Apoya',
+                                        '_cchl_participa'             => 'Participa',
+                                        '_cchl_media_partner'         => 'Media Partner',
+                                        '_cchl_colabora'              => 'Colabora',     
+                                        '_cchl_patrocina'             => 'Patrocina',
+                                        '_cchl_participan_programa'   => 'Participan en programa cultural'
                                      );
 
                     foreach($grupocolaboradores as $keyname => $grupocolaborador) {
                         $idx = 0;
-                        $itemsgrupo = getGroupOrder( $keyname . '_logo' );
+                        $itemsgrupo = get_post_meta($post->ID, $keyname, true );
                         
                         echo '<h3 class="colabheading">' . $grupocolaborador . '</h3>';
                         
@@ -26,13 +27,13 @@
                             
                                 <li class="colab-<?php echo $idx++;?>">
 
-                                    <?php echo get_image( $keyname . '_logo', $item );?>
+                                    <img src="<?php echo cchl_legacy_image($item['logo']);?>" alt="<?php echo $item['nombre'];?>">
 
-                                    <h3><?php echo get( $keyname . '_nombre', $item );?></h3>
+                                    <h3><?php echo $item['nombre'];?></h3>
 
-                                    <?php if(get( $keyname . '_url', $item )):?>
+                                    <?php if($item['url']):?>
 
-                                        <a target="_blank" href="<?php echo get( $keyname . '_url', $item );?>"><i class="fa fa-external-link"></i></a>
+                                        <a target="_blank" href="<?php echo $item['url'];?>"><i class="fa fa-external-link"></i></a>
 
                                     <?php endif;?>
 
@@ -43,8 +44,9 @@
                             
                         }
 
-                        echo '</ul>';
+                        echo "</ul>";
 
                     }
                 
                 ?>
+                

@@ -49,7 +49,7 @@
             <?php the_post_thumbnail('imagen_single'); ?>
             <div class="the-content">
                 <?php the_content();?>
-
+                        
             <?php
             if($post->ID == 60136):
                     get_template_part('parts/eventos-flpa-2016');                    
@@ -89,6 +89,10 @@
 
             if(is_page_template('colaboradores-fil-2016.php') || is_page_template('old/colaboradores-fil-2016.php')):
                 get_page_template('parts/oldparts/colaboradores-fil-2016');
+            endif;
+
+            if(is_page_template('colaboradores-filvina-2017.php')):
+                get_page_template('parts/oldparts/colaboradores-filvina-2017');
             endif;
             
             endwhile;

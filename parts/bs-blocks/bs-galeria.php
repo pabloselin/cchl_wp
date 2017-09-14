@@ -1,7 +1,7 @@
 <div class="galeria-imagenes">
     <?php
-    $galerias = getGroupOrder('galeria_imagen_imagen');
+    $galerias = get_post_meta($post->ID, '_cchl_multimedia', true);
         foreach($galerias as $galeria){ 
-            echo get("galeria_imagen_imagen",$galeria);
+            echo do_shortcode($galeria['galeria']);
 		    }?>
 </div>

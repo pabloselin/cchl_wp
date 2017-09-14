@@ -1,7 +1,9 @@
 <?php
 
-$kitprensa = getGroupOrder('kit_de_prensa_archivo');
-$enlosmedios = getGroupOrder('link_link');
+// $kitprensa = getGroupOrder('kit_de_prensa_archivo');
+// $enlosmedios = getGroupOrder('link_link');
+$kitprensa = get_post_meta($post->ID, 'kit_de_prensa_archivo', true);
+$enlosmedios = get_post_meta($post->ID, '_cchl_link', true);
 
 if($kitprensa):
         set_query_var('kitprensa', $kitprensa);

@@ -1,7 +1,7 @@
 <?php if(is_page(32963)):?>
                 <div id="colabs-filsa">
                  <?php 
-                    $invita = getGroupOrder('invita_logo_invita');
+                    $invita = get_post_meta($post->ID, '_cchl_invita', true);
                     if($invita):?>
                      <h3>Invita</h3>
                             <ul class="colabs invita">
@@ -10,15 +10,15 @@
                            
                                    
                                             
-                                            <li>
-                                                <?php echo get_image('invita_logo_invita', $inv);?>
-                                                <h3><?php echo get('invita_nombre', $inv);?></h3>
-                                                <?php 
-                                                    if(get('invita_url_invita', $inv)):
-                                                        echo '<a target="_blank" href="'.get('invita_url_invita', $inv).'">Web</a>';
-                                                    endif;
-                                                ?>
-                                            </li>
+                           <li>
+                           <img src="<?php echo cchl_legacy_image($inv['logo']);?>" alt="<?php echo $inv['nombre'];?>">
+                           <h3><?php echo $inv['nombre'];?></h3>
+                           <?php 
+                               if($inv['url']):
+                                   echo '<a target="_blank" href="'. $inv['url'] .'"><i class="fa fa-external-link"></i></a>';
+                               endif;
+                           ?>
+                           </li>
 
                                         <?php 
                                         endforeach;
@@ -26,24 +26,24 @@
                                     ?>                
                             </ul>
                 <?php 
-                    $auspicia = getGroupOrder('auspicia_logo_auspicia');
+                    $auspicia = get_post_meta($post->ID, '_cchl_auspicia', true);
                     if($auspicia):?>
                      <h3>Auspicia</h3>
                             <ul class="colabs auspicia invita">
                     <?php 
-                        foreach($auspicia as $auspi): ?>
+                        foreach($auspicia as $ausp): ?>
                            
                                    
                                             
-                                            <li>
-                                                <?php echo get_image('auspicia_logo_auspicia', $auspi);?>
-                                                <h3><?php echo get('auspicia_nombre_auspicia', $auspi);?></h3>
-                                                <?php 
-                                                    if(get('auspicia_url_auspicia', $auspi)):
-                                                        echo '<a target="_blank" href="'.get('auspicia_url_auspicia', $auspi).'">Web</a>';
-                                                    endif;
-                                                ?>
-                                            </li>
+                           <li>
+                           <img src="<?php echo cchl_legacy_image($ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
+                           <h3><?php echo $ausp['nombre'];?></h3>
+                           <?php 
+                               if($ausp['url']):
+                                   echo '<a target="_blank" href="'. $ausp['url'] .'"><i class="fa fa-external-link"></i></a>';
+                               endif;
+                           ?>
+                           </li>
 
                                         <?php 
                                         endforeach;
@@ -51,7 +51,7 @@
                                     ?>                
                             </ul>
                 <?php 
-                  $mediaps = getGroupOrder('mediapartners_logo_mediapartner');
+                  $mediaps = get_post_meta($post->ID, '_cchl_media_partner', true);
                   if($mediaps):?>
                   <h3>Mediapartners</h3>
                     <ul class="colabs">
@@ -61,16 +61,15 @@
                     
                             
                                     
-                                    <li>
-                                        <?php echo get_image('mediapartners_logo_mediapartner', $mediap);?>
-                                        <h3><?php echo get('mediapartners_nombre_mediapartner', $mediap);?></h3>
-                                        <?php 
-                                            if(get('mediapartners_url_mediapartner', $mediap)):
-                                                echo '<a target="_blank" href="'.get('mediapartners_url_mediapartner', $mediap).'">Web</a>';
-                                            endif;
-                                        ?>
-                                    </li>
-
+<li>
+<img src="<?php echo cchl_legacy_image($mediap['logo']);?>" alt="<?php echo $mediap['nombre'];?>">
+<h3><?php echo $mediap['nombre'];?></h3>
+<?php 
+    if($mediap['url']):
+        echo '<a target="_blank" href="'. $mediap['url'] .'"><i class="fa fa-external-link"></i></a>';
+    endif;
+?>
+</li>
                                 <?php 
                                 endforeach;?>
                                 </ul>
@@ -79,7 +78,7 @@
                             ?>                
                     
                     <?php 
-                 $ausps = getGroupOrder('auspiciadores_logo_auspiciador');
+                 $ausps = get_post_meta($post->ID, '_cchl_patrocina', true);
                     if($ausps):?>
                     <h3>Patrocinadores</h3>
                                 <ul class="colabs">
@@ -88,15 +87,15 @@
                             
                                         
                                                 
-                                                <li>
-                                                    <?php echo get_image('auspiciadores_logo_auspiciador', $ausp);?>
-                                                    <h3><?php echo get('auspiciadores_nombre', $ausp);?></h3>
-                                                    <?php 
-                                                        if(get('auspiciadores_url_auspiciador', $ausp)):
-                                                            echo '<a target="_blank" href="'.get('auspiciadores_url_auspiciador', $ausp).'">Web</a>';
-                                                        endif;
-                                                    ?>
-                                                </li>
+                            <li>
+                            <img src="<?php echo cchl_legacy_image($ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
+                            <h3><?php echo $ausp['nombre'];?></h3>
+                            <?php 
+                                if($ausp['url']):
+                                    echo '<a target="_blank" href="'. $ausp['url'] .'"><i class="fa fa-external-link"></i></a>';
+                                endif;
+                            ?>
+                            </li>
 
                                             <?php 
                                             
@@ -108,22 +107,22 @@
                                 
                                 
                 <?php 
-                $colabs = getGroupOrder('info_socioes_logo_colaborador');
+                $colabs = get_post_meta($post->ID, '_cchl_colabora', true);
                 if($colabs):?>
                 <h3>Colaboradores</h3>
                 <ul class="colabs">
                 <?php
                 foreach($colabs as $colab): ?>
                     
-                                    <li>
-                                        <?php echo get_image('info_socioes_logo_colaborador', $colab);?>
-                                        <h3><?php echo get('info_socioes_nombre', $colab);?></h3>
-                                        <?php 
-                                            if(get('info_socioes_url_colaborador', $colab)):
-                                                echo '<a target="_blank" href="'.get('info_socioes_url_colaborador', $colab).'">Web</a>';
-                                            endif;
-                                        ?>
-                                    </li>
+                    <li>
+                    <img src="<?php echo cchl_legacy_image($colab['logo']);?>" alt="<?php echo $colab['nombre'];?>">
+                    <h3><?php echo $colab['nombre'];?></h3>
+                    <?php 
+                        if($colab['url']):
+                            echo '<a target="_blank" href="'. $colab['url'] .'"><i class="fa fa-external-link"></i></a>';
+                        endif;
+                    ?>
+                    </li>
 
                                 <?php 
                                 endforeach;?>

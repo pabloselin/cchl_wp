@@ -3,25 +3,26 @@
 //Funciones para campos personalizados
 
 function cchl_sortexhibitors( ) {
+	global $post;
 	/**
 	 * Ordena los campos personalizados en un array en el que el KEY es la letra del sector en mayúsculas A-B-C-D-E
 	 */
 	
 	$sectores = array( 'A', 'B', 'C', 'D', 'E');
-	$groupexpositores = getGroupOrder( 'expositores_sector' );
+	$groupexpositores = get_post_meta($post->ID, '_cchl_expositores', true);
 
-                //Array principal de expositores
+	//Array principal de expositores
 	$infoexpositores = array();
 
 	foreach( $groupexpositores as $expositor ) {
 
-		$cursect = get( 'expositores_sector',  $expositor);
+		$cursect = $expositor['expositores_sector'];
 
 		$infoexpositores[$cursect][] = array(
 			'expositor' => array(
-				'logo' => get_image( 'expositores_logo', $expositor ),
-				'nombre' => get( 'expositores_nombre', $expositor ),
-				'stands' => get( 'expositores_stands', $expositor )
+				'logo' => cchl_legacy_image($expositor['expositores_logo']),
+				'nombre' => $expositor['expositores_nombre'],
+				'stands' => $expositor['expositores_stands']
 				)
 			);
 }

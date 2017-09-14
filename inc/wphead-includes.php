@@ -60,8 +60,8 @@ function cchl_styleferiatemplate() {
   $special = $cchl_options['cchl_checkbox_special'];
   
   if($using_feria_template) {
-    $color_1 = get('color_1', 1, 1, 1, $using_feria_template);
-    $color_2 = get('color_2', 1, 1, 1, $using_feria_template);
+    $color_1 = get_post_meta($using_feria_template, 'color_1', true);
+    $color_2 = get_post_meta($using_feria_template, 'color_2', true);
     ?>
     <style type="text/css">
         body#feria #sidebar_interior.menu-feria-especial div>ul>li:first-of-type > a {

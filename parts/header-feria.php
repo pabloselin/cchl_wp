@@ -30,9 +30,9 @@
 		endif;
 
 		//Variables para cada tema
-		$desktopheader = get('cabecera_escritorio', 1, 1, 1, $feriaid);
-		$mobileheader = get('cabecera_movil', 1, 1, 1, $feriaid);
-		$menu = get('id_menu', 1, 1, 1, $feriaid);
+		$desktopheader = cchl_legacy_image(get_post_meta($feriaid, 'cabecera_escritorio', true));
+		$mobileheader = cchl_legacy_image(get_post_meta($feriaid, 'cabecera_movil', true));
+		$menu = get_post_meta($feriaid, 'id_menu', true);
 	?>
 
 		<?php get_template_part('parts/camara-header-filsa');?>

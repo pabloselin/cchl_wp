@@ -1,4 +1,27 @@
-<?php 
+<?php
+/* 
+Template Name: Colaboradores Fil 2015
+ */
+?>
+<?php get_header(); ?>
+
+<div id="main-page" class="container_16 cf">
+    <?php get_template_part('parts/clean-sidebar');?>
+    <div id="content" class=" grid_12">
+         <div id="bread">
+            Estás en: <?php if(function_exists("bcn_display")) { bcn_display(); } ?>
+        </div>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <h1 class="post-title"><?php the_title(); ?></h1>
+            <?php get_template_part('parts/addthis');?>
+            <div class="cf"></div>
+            <div class="the-content"><?php the_content();?></div>
+            
+            
+            <?php endwhile; endif; ?>
+    
+                <?php 
+
                 $invita = get_post_meta($post->ID, '_cchl_invita', true);
                 
                 if($invita):
@@ -16,7 +39,7 @@
                                             echo '<a target="_blank" href="'. $inv['url'] .'"><i class="fa fa-external-link"></i></a>';
                                         endif;
                                     ?>
-                                </li>
+                                    </li>
 
                                 <?php 
                                 endforeach;
@@ -39,10 +62,10 @@
                                     <h3><?php echo $org['nombre'];?></h3>
                                     <?php 
                                         if($org['url']):
-                                            echo '<a target="_blank" href="'. $inv['url'] .'"><i class="fa fa-external-link"></i></a>';
+                                            echo '<a target="_blank" href="'. $org['url'] .'"><i class="fa fa-external-link"></i></a>';
                                         endif;
                                     ?>
-                                </li>
+                                    </li>
 
                                 <?php 
                                 endforeach;
@@ -67,7 +90,7 @@
                                             echo '<a target="_blank" href="'. $ausp['url'] .'"><i class="fa fa-external-link"></i></a>';
                                         endif;
                                     ?>
-                                </li>
+                                    </li>
 
                                 <?php 
                                 endforeach;
@@ -92,7 +115,7 @@
                                             echo '<a target="_blank" href="'. $patrocina['url'] .'"><i class="fa fa-external-link"></i></a>';
                                         endif;
                                     ?>
-                                </li>
+                                    </li>
 
                                 <?php 
                                 endforeach;
@@ -109,6 +132,7 @@
                             <?php 
                                 foreach($colaboradores as $colaborador): ?>
                                     
+                                    
                                     <li>
                                     <img src="<?php echo cchl_legacy_image($colaborador['logo']);?>" alt="<?php echo $colaborador['nombre'];?>">
                                     <h3><?php echo $colaborador['nombre'];?></h3>
@@ -117,7 +141,7 @@
                                             echo '<a target="_blank" href="'. $colaborador['url'] .'"><i class="fa fa-external-link"></i></a>';
                                         endif;
                                     ?>
-                                </li>
+                                    </li>
 
                                 <?php 
                                 endforeach;
@@ -136,6 +160,7 @@
                                 
                                 foreach($mediaps as $key=>$mediap): ?>
                                     
+                                    
                                     <li>
                                     <img src="<?php echo cchl_legacy_image($mediap['logo']);?>" alt="<?php echo $mediap['nombre'];?>">
                                     <h3><?php echo $mediap['nombre'];?></h3>
@@ -144,10 +169,16 @@
                                             echo '<a target="_blank" href="'. $mediap['url'] .'"><i class="fa fa-external-link"></i></a>';
                                         endif;
                                     ?>
-                                </li>
+                                    </li>
 
                                 <?php 
                                 endforeach;
                             ?>                
                     </ul>
                     <?php endif;?>
+                </div>
+            
+    </div>
+</div>
+
+<?php get_footer(); ?>

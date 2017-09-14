@@ -45,7 +45,7 @@ elseif(checkferia($post->ID, CCHL_FILSA2016, CCHL_CATSFILSA2016, 'filsa-2016')):
 		<?php get_template_part( 'parts/current-filsa' );?>
 
 		<?php 
-		$menu = get('id_menu', 1, 1, 1, CCHL_FILSA2016);
+		$menu = get_post_meta(CCHL_FILSA2016, 'id_menu', true);
 		wp_nav_menu( array('menu'=> $menu));?>
 	
 		<?php get_template_part('parts/botonportadafilsa');?>
@@ -72,7 +72,7 @@ elseif(checkferia($post->ID, CCHL_FILVINA2017, CCHL_CATSFILVINA2017)):?>
 // Para plantilla de Ferias automática
 elseif($checkferiatemplate):
 	
-		$menu = get('id_menu', 1, 1, 1, $checkferiatemplate);?>
+		$menu = get_post_meta($checkferiatemplate, 'id_menu', true);?>
 
 	<div id="sidebar_interior" class="grid_4 menu-feria-especial">
 
@@ -97,7 +97,7 @@ elseif($checkferiatemplate):
 
 		endif;
 
-		$menu = get('id_menu', 1, 1, 1, $feriaid);
+		$menu = get_post_meta($feriaid, 'id_menu', true);
 ?>
 
 <div id="sidebar_interior" class="grid_4 menu-feria-especial">

@@ -26,7 +26,7 @@ Template Name: Página por defecto Bootstrap
                     <div class="article-content text-content">
                         
                         <?php do_action('cchl_beforecontent');?>
-
+                        
                         <?php the_content();?>
 
                         <?php do_action('cchl_aftercontent');?>

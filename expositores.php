@@ -35,8 +35,6 @@ Template Name: Expositores
               *             -stands
               */
              $infoexpositores = cchl_sortexhibitors();
-
-
              ?>
 
          <?php endwhile; endif; wp_reset_query(); ?>

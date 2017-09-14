@@ -127,17 +127,16 @@ function filij2016_programashortcode($atts) {
 
 add_shortcode( 'programa_filij_2016', 'filij2016_programashortcode' );
 
-function cchl_colaboradores_fields( $section_title, $colab_logo, $colab_name, $colab_url ) {
+function cchl_colaboradores_fields( $section_title, $field_group ) {
 
 	global $post;
 
-	$fieldgroup = getGroupOrder($colab_logo);
-
+	$field_group = get_post_meta($post->ID, $field_group, true);
 	$fieldcount = count(get_post_meta($post->ID, $colab_logo, false));
 
 	$output = '';
                
-    if($fieldgroup && get($colab_logo)):
+    if($field_group):
 
     	$output .= '<h3 class="colabheading">' . $section_title . '</h3>';
 
@@ -154,12 +153,12 @@ function cchl_colaboradores_fields( $section_title, $colab_logo, $colab_name, $c
     	foreach($fieldgroup as $fielditem) {
 
     		$output .= '<li>';
-    		$output .= get_image($colab_logo, $fielditem, 1, 1, null, $size);
-    		$output .= '<h3>' . get($colab_name, $fielditem) . '</h3>';
+    		$output .= '<img src="' . cchl_legacy_image($fielditem['image']) . '">';
+    		$output .= '<h3>' . $fielditem['nombre'] . '</h3>';
 
-    		if(get($colab_url, $fielditem)):
+    		if($fielditem['url']):
 
-    			$output .= '<a target="_blank" href="'.get( $colab_url, $fielditem).'"><i class="fa fa-external-link"></i></a>';
+    			$output .= '<a target="_blank" href="'.$fielditem['url'].'"><i class="fa fa-external-link"></i></a>';
 
     		endif;
 
@@ -457,18 +456,17 @@ function cchl_oldtemplates() {
 			 <div class="listado">
         	
             <?php
-            $miembros = getGroupOrder('imagen');
+            $miembros = get_post_meta($post->ID, '_cchl_listadopersonas', true);
             foreach($miembros as $miembro){ 
-				$size = array("h" => 135, "w" => 135, "zc" => 1, "q" => 100);
 				?>	
 				<div class="row">
 					<div class="col-md-3">
-						<?php echo get_image('imagen',$miembro,1,1,NULL,$size);?>
+						<img src="<?php echo cchl_legacy_image($miembro['imagen']);?>" alt="<?php echo $miembro['nombre'];?>">
 					</div>
 					<div class="info col-md-8">
-						<h3><?php echo get('nombre',$miembro);?></h3>
-						<span><?php echo get('cargo',$miembro);?></span>
-						<div class="textoint"><?php echo apply_filters('the_content', get('texto',$miembro));?></div>
+						<h3><?php $miembro['nombre'];?></h3>
+						<span><?php echo $miembro['cargo'];?></span>
+						<div class="textoint"><?php echo apply_filters('the_content', $miembro['texto']);?></div>
 					</div>
 				</div>
 			<?php };?>
@@ -479,15 +477,14 @@ function cchl_oldtemplates() {
 
 		<div class="logos">
             <?php
-            $miembros = getGroupOrder('imagen');
+            $miembros = get_post_meta($post->ID, '_cchl_auspicia', true);
             foreach($miembros as $miembro){
 				echo "<div class='auspiciador'>";
-				$otros = array("h" => 100, "w" => 100, "zc" => 1, "q" => 100);
-   				echo get_image('imagen',$miembro,1,1,NULL);
+   				echo cchl_legacy_image($miembro['imagen']);
 				echo "<div class='info'>
-				<h3>".get('nombre',$miembro)."</h3>
+				<h3>".$miembro['nombre']."</h3>
 			
-				<p>".get('texto',$miembro)."</p>
+				<p>".$miembro['texto']."</p>
 				</div>
 				</div>";
 			}
