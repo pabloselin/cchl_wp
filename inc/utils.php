@@ -253,6 +253,16 @@ function cchl_isresponsive( ) {
   }
 }
 
+function cchl_showmenulocations() {
+  $locations = get_registered_nav_menus( );
+  $locationoptions = [];
+  foreach($locations as $location=>$description) {
+      $locationoptions[$location] = $description;
+  }
+
+  return $locationoptions;
+}
+
 //URL para usar en los contadores de redes sociales
 function cchl_url($id) {
     if(get_bloginfo('url') == 'https://camaradellibro.cl') {

@@ -33,26 +33,17 @@ Template Name: [NUEVO] Memorias y Páginas con Documentos
                         
                         
                             <?php
-                                $fieldtouse = (getGroupOrder('memorias_imagen'))? 'memorias' : 'estadisticas'; 
-                                $items = getGroupOrder($fieldtouse . '_imagen');
-                                //$imgattrs = array("h" => 120, "w" => 120, "zc" => 1, "q" => 100);
-
-                                foreach($items as $item):
-                                    $iteminfo = array(
-                                        'imagen' => get_image( $fieldtouse . '_imagen', $item),
-                                        'titulo' => get( $fieldtouse . '_titulo', $item),
-                                        'link'  => get( $fieldtouse . '_descargar', $item),
-                                        'desc'   => get( $fieldtouse . '_texto', $item)
-                                    );?>
+                                $memorias = get_post_meta($post->ID, '_cchl_listadocs', true);
+                                foreach($memorias as $memoria): ?>
 
                                     <div class="document row">
                                         <div class="col-md-2">
-                                            <?php echo $iteminfo['imagen'];?>
+                                            <img src="<?php echo cchl_legacy_image($memoria['docportada']);?>">
                                         </div>
                                         <div class="col-md-10">
-                                            <h2><?php echo $iteminfo['titulo'];?></h2>
-                                            <p><?php echo $iteminfo['desc'];?></p>
-                                            <a href="<?php echo $iteminfo['link'];?>" class="btn btn-info"><i class="fa fa-download"></i> Descargar (pdf)</a>
+                                            <h2><?php echo $memoria['doctitulo'];?></h2>
+                                            <p><?php echo $memoria['doctexto'];?></p>
+                                            <a href="<?php echo cchl_legacy_file($memoria['docdownload']);?>" class="btn btn-info"><i class="fa fa-download"></i> Descargar (pdf)</a>
                                         </div>
                                     </div>
 

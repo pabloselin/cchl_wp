@@ -33,27 +33,20 @@ Template Name: [NUEVO] Página con funcionalidad desplegable
                             <div class="col-md-12">
                             <div class="panel-group" id="faq" role="tablist" aria-multiselectable="true">
                                 <?php
-                                    if(getGroupOrder('pregunta')):
-                                        $items = getGroupOrder('pregunta');
-                                        $preguntafield = 'pregunta';
-                                        $respuestafield = 'respuesta';
-                                    else:
-                                        $items = getGroupOrder('pregunta-respuesta_pregunta');
-                                        $preguntafield = 'pregunta-respuesta_pregunta';
-                                        $respuestafield = 'pregunta-respuesta_respuesta';
-                                    endif;
+                                    $faqs = get_post_meta($post->ID, '_cchl_desplegable', true);
                                     
-                                    foreach($items as $key=>$item):?>
+                                    
+                                    foreach($faqs as $key=>$faq):?>
 
                                     <div class="panel panel-default">
                                         <div class="panel-heading" role="tab" id="panelheading-<?php echo $key;?>">
                                             <h4 class="panel-title"><a href="#panelcontent-<?php echo $key;?>" role="button" data-toggle="collapse" data-parent="#faq" aria-expanded="false" aria-controls="#panelcontent-<?php echo $key;?>">
-                                            <?php echo get($preguntafield, $item);?>
+                                            <?php echo $faq['titulo'];?>
                                             </a></h4>
                                         </div>
                                         <div id="panelcontent-<?php echo $key;?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="panelheading-<?php echo $key;?>">
                                             <div class="panel-body">
-                                                <?php echo get($respuestafield, $item);?>
+                                                <?php echo $faq['contenido'];?>
                                             </div>
                                         </div>
                                     </div>

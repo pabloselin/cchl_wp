@@ -32,25 +32,23 @@ Template Name: [NUEVO] Listado de personas
                         <?php do_action('cchl_aftercontent');?>
                         
                             <?php
-                                $imagen = get_post_meta($post->ID, 'imagen', false);
-                                $nombres = get_post_meta($post->ID, 'nombre', false);
-                                $cargo = get_post_meta($post->ID, 'cargo', false);
-                                $texto = get_post_meta($post->ID, 'texto', false);
+                                $personas = get_post_meta($post->ID, '_cchl_listadopersonas', true);
+                                
                                    
                                 //$imgattrs = array("h" => 120, "w" => 120, "zc" => 1, "q" => 100);
 
-                                foreach($nombres as $key=>$nombre):
+                                foreach($personas as $persona):
                                     ?>
 
                                     <div class="person row">
                                         <div class="col-md-2">
-                                            <img width="120" height="120" src="<?php echo cchl_legacy_image($imagen[$key]);?>" alt="<?php echo $nombres[$key];?>">
+                                            <img width="120" height="120" src="<?php echo cchl_legacy_image($persona['imagen']);?>" alt="<?php echo $persona['nombre'];?>">
                                         </div>
                                         <div class="col-md-10">
-                                            <h2><?php echo $nombres[$key];?></h2>
-                                            <span class="cargo"><?php echo $cargo[$key];?></span>
+                                            <h2><?php echo $persona['nombre'];?></h2>
+                                            <span class="cargo"><?php echo $persona['cargo'];?></span>
 
-                                            <p><?php echo $texto[$key];?></p>
+                                            <p><?php echo apply_filters('the_content', $persona['texto']);?></p>
                                         </div>
                                     </div>
 

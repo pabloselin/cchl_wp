@@ -35,3 +35,7 @@ return $infoexpositores;
 function cchl_legacy_image($image) {
 	return content_url() . '/files_mf/' . $image;
 }
+
+function cchl_legacy_file($file) {
+	return cchl_legacy_image($file);
+}
