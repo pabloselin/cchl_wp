@@ -108,7 +108,7 @@ elseif($checkferiatemplate):
 <?php elseif(checkfilsa($post->ID)):?>
 
 	<div id="sidebar_interior" class="grid_4 filsa-2014">
-		<?php get_template_part('old/sidebar-filsa2014');?>
+		<?php get_template_part('parts/oldparts/sidebar-filsa2014');?>
 	</div>
 <?php 
 //Para FILSA 2013
