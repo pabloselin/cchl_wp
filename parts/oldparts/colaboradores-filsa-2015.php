@@ -9,7 +9,7 @@
                                 foreach($invita as $inv): ?>
                                     
                                     <li>
-                                    <img src="<?php echo cchl_legacy_image($ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
+                                    <img src="<?php echo cchl_legacy_image($post->ID, $ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
                                     <h3><?php echo $ausp['nombre'];?></h3>
                                     <?php 
                                         if($ausp['url']):
@@ -33,7 +33,7 @@
                                 foreach($auspicia as $ausp): ?>
                                     
                                     <li>
-                                        <img src="<?php echo cchl_legacy_image($ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
+                                        <img src="<?php echo cchl_legacy_image($post->ID, $ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
                                         <h3><?php echo $ausp['nombre'];?></h3>
                                         <?php 
                                             if($ausp['url']):
@@ -55,7 +55,7 @@
                                     if($key == 0):?>
                                         <ul class="colabs aups">
                                         <li>
-                                            <img src="<?php echo cchl_legacy_image($colab['logo']);?>" alt="<?php echo $colab['nombre'];?>">
+                                            <img src="<?php echo cchl_legacy_image($post->ID, $colab['logo']);?>" alt="<?php echo $colab['nombre'];?>">
                                             <h3><?php echo $colab['nombre'];?></h3>
                                             <?php 
                                                 if($colab['url']):
@@ -70,7 +70,7 @@
                                         ?>
                                                     
                                                     <li>
-                                                    <img src="<?php echo cchl_legacy_image($colab['logo']);?>" alt="<?php echo $colab['nombre'];?>">
+                                                    <img src="<?php echo cchl_legacy_image($post->ID, $colab['logo']);?>" alt="<?php echo $colab['nombre'];?>">
                                                     <h3><?php echo $colab['nombre'];?></h3>
                                                     <?php 
                                                         if($colab['url']):

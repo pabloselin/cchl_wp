@@ -3,8 +3,8 @@
 <?php 
 	
 	$feriaid = CCHL_FILSA2016;
-	$desktopheader = cchl_legacy_image(get_post_meta($feriaid, 'cabecera_escritorio', true));
-	$mobileheader = cchl_legacy_image(get_post_meta($feriaid, 'cabecera_movil', true));
+	$desktopheader = cchl_legacy_image($post->ID, get_post_meta($feriaid, 'cabecera_escritorio', true), 'full');
+	$mobileheader = cchl_legacy_image($post->ID, get_post_meta($feriaid, 'cabecera_movil', true), 'full');
 	$menu = get_post_meta($feriaid, 'id_menu', true);
 
 ?>

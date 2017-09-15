@@ -42,7 +42,7 @@ Template Name: [NUEVO] Listado de personas
 
                                     <div class="person row">
                                         <div class="col-md-2">
-                                            <img width="120" height="120" src="<?php echo cchl_legacy_image($persona['imagen']);?>" alt="<?php echo $persona['nombre'];?>">
+                                            <img width="120" height="120" src="<?php echo cchl_legacy_image($post->ID, $persona['imagen']);?>" alt="<?php echo $persona['nombre'];?>">
                                         </div>
                                         <div class="col-md-10">
                                             <h2><?php echo $persona['nombre'];?></h2>

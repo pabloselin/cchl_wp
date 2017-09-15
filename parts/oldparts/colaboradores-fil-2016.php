@@ -32,7 +32,7 @@ Template Name: Colaboradores Fil 2015
                                 foreach($invita as $inv): ?>
                                     
                                     <li>
-                                    <img src="<?php echo cchl_legacy_image($inv['logo']);?>" alt="<?php echo $inv['nombre'];?>">
+                                    <img src="<?php echo cchl_legacy_image($post->ID, $inv['logo']);?>" alt="<?php echo $inv['nombre'];?>">
                                     <h3><?php echo $inv['nombre'];?></h3>
                                     <?php 
                                         if($inv['url']):
@@ -58,7 +58,7 @@ Template Name: Colaboradores Fil 2015
                                 foreach($organiza as $org): ?>
                                     
                                     <li>
-                                    <img src="<?php echo cchl_legacy_image($org['logo']);?>" alt="<?php echo $org['nombre'];?>">
+                                    <img src="<?php echo cchl_legacy_image($post->ID, $org['logo']);?>" alt="<?php echo $org['nombre'];?>">
                                     <h3><?php echo $org['nombre'];?></h3>
                                     <?php 
                                         if($org['url']):
@@ -83,7 +83,7 @@ Template Name: Colaboradores Fil 2015
                                 foreach($auspicia as $ausp): ?>
                                     
                                     <li>
-                                    <img src="<?php echo cchl_legacy_image($ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
+                                    <img src="<?php echo cchl_legacy_image($post->ID, $ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
                                     <h3><?php echo $ausp['nombre'];?></h3>
                                     <?php 
                                         if($ausp['url']):
@@ -108,7 +108,7 @@ Template Name: Colaboradores Fil 2015
                                 foreach($patrocinadores as $patrocina): ?>
                                     
                                     <li>
-                                    <img src="<?php echo cchl_legacy_image($patrocina['logo']);?>" alt="<?php echo $patrocina['nombre'];?>">
+                                    <img src="<?php echo cchl_legacy_image($post->ID, $patrocina['logo']);?>" alt="<?php echo $patrocina['nombre'];?>">
                                     <h3><?php echo $patrocina['nombre'];?></h3>
                                     <?php 
                                         if($patrocina['url']):
@@ -134,7 +134,7 @@ Template Name: Colaboradores Fil 2015
                                     
                                     
                                     <li>
-                                    <img src="<?php echo cchl_legacy_image($colaborador['logo']);?>" alt="<?php echo $colaborador['nombre'];?>">
+                                    <img src="<?php echo cchl_legacy_image($post->ID, $colaborador['logo']);?>" alt="<?php echo $colaborador['nombre'];?>">
                                     <h3><?php echo $colaborador['nombre'];?></h3>
                                     <?php 
                                         if($colaborador['url']):
@@ -162,7 +162,7 @@ Template Name: Colaboradores Fil 2015
                                     
                                     
                                     <li>
-                                    <img src="<?php echo cchl_legacy_image($mediap['logo']);?>" alt="<?php echo $mediap['nombre'];?>">
+                                    <img src="<?php echo cchl_legacy_image($post->ID, $mediap['logo']);?>" alt="<?php echo $mediap['nombre'];?>">
                                     <h3><?php echo $mediap['nombre'];?></h3>
                                     <?php 
                                         if($mediap['url']):

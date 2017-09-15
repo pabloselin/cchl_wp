@@ -153,7 +153,7 @@ function cchl_colaboradores_fields( $section_title, $field_group ) {
     	foreach($fieldgroup as $fielditem) {
 
     		$output .= '<li>';
-    		$output .= '<img src="' . cchl_legacy_image($fielditem['image']) . '">';
+    		$output .= '<img src="' . cchl_legacy_image($post->ID, $fielditem['image']) . '">';
     		$output .= '<h3>' . $fielditem['nombre'] . '</h3>';
 
     		if($fielditem['url']):
@@ -461,7 +461,7 @@ function cchl_oldtemplates() {
 				?>	
 				<div class="row">
 					<div class="col-md-3">
-						<img src="<?php echo cchl_legacy_image($miembro['imagen']);?>" alt="<?php echo $miembro['nombre'];?>">
+						<img src="<?php echo cchl_legacy_image($post->ID,$miembro['imagen']);?>" alt="<?php echo $miembro['nombre'];?>">
 					</div>
 					<div class="info col-md-8">
 						<h3><?php $miembro['nombre'];?></h3>
@@ -480,7 +480,7 @@ function cchl_oldtemplates() {
             $miembros = get_post_meta($post->ID, '_cchl_auspicia', true);
             foreach($miembros as $miembro){
 				echo "<div class='auspiciador'>";
-   				echo cchl_legacy_image($miembro['imagen']);
+   				echo cchl_legacy_image($post->ID, $miembro['imagen']);
 				echo "<div class='info'>
 				<h3>".$miembro['nombre']."</h3>
 			

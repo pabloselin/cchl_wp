@@ -27,7 +27,7 @@
                             
                                 <li class="colab-<?php echo $idx++;?>">
 
-                                    <img src="<?php echo cchl_legacy_image($item['logo']);?>" alt="<?php echo $item['nombre'];?>">
+                                    <img src="<?php echo cchl_legacy_image($post->ID, $item['logo']);?>" alt="<?php echo $item['nombre'];?>">
 
                                     <h3><?php echo $item['nombre'];?></h3>
 

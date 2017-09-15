@@ -30,8 +30,8 @@
 		endif;
 
 		//Variables para cada tema
-		$desktopheader = cchl_legacy_image(get_post_meta($feriaid, 'cabecera_escritorio', true));
-		$mobileheader = cchl_legacy_image(get_post_meta($feriaid, 'cabecera_movil', true));
+		$desktopheader = cchl_legacy_image($post->ID, get_post_meta($feriaid, 'cabecera_escritorio', true));
+		$mobileheader = cchl_legacy_image($post->ID, get_post_meta($feriaid, 'cabecera_movil', true));
 		$menu = get_post_meta($feriaid, 'id_menu', true);
 	?>
 

@@ -11,7 +11,7 @@
                                    
                                             
                            <li>
-                           <img src="<?php echo cchl_legacy_image($inv['logo']);?>" alt="<?php echo $inv['nombre'];?>">
+                           <img src="<?php echo cchl_legacy_image($post->ID, $inv['logo']);?>" alt="<?php echo $inv['nombre'];?>">
                            <h3><?php echo $inv['nombre'];?></h3>
                            <?php 
                                if($inv['url']):
@@ -36,7 +36,7 @@
                                    
                                             
                            <li>
-                           <img src="<?php echo cchl_legacy_image($ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
+                           <img src="<?php echo cchl_legacy_image($post->ID, $ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
                            <h3><?php echo $ausp['nombre'];?></h3>
                            <?php 
                                if($ausp['url']):
@@ -62,7 +62,7 @@
                             
                                     
 <li>
-<img src="<?php echo cchl_legacy_image($mediap['logo']);?>" alt="<?php echo $mediap['nombre'];?>">
+<img src="<?php echo cchl_legacy_image($post->ID, $mediap['logo']);?>" alt="<?php echo $mediap['nombre'];?>">
 <h3><?php echo $mediap['nombre'];?></h3>
 <?php 
     if($mediap['url']):
@@ -88,7 +88,7 @@
                                         
                                                 
                             <li>
-                            <img src="<?php echo cchl_legacy_image($ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
+                            <img src="<?php echo cchl_legacy_image($post->ID, $ausp['logo']);?>" alt="<?php echo $ausp['nombre'];?>">
                             <h3><?php echo $ausp['nombre'];?></h3>
                             <?php 
                                 if($ausp['url']):
@@ -115,7 +115,7 @@
                 foreach($colabs as $colab): ?>
                     
                     <li>
-                    <img src="<?php echo cchl_legacy_image($colab['logo']);?>" alt="<?php echo $colab['nombre'];?>">
+                    <img src="<?php echo cchl_legacy_image($post->ID, $colab['logo']);?>" alt="<?php echo $colab['nombre'];?>">
                     <h3><?php echo $colab['nombre'];?></h3>
                     <?php 
                         if($colab['url']):
