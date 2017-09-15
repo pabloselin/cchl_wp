@@ -1,5 +1,7 @@
 <body <?php body_class('responsive');?> id="filsa-2016">
+
 <?php get_template_part( 'parts/fb-sdk');?>
+
 <?php 
 	
 	$feriaid = CCHL_FILSA2016;
@@ -9,7 +11,7 @@
 
 ?>
 
-		<?php get_template_part('parts/camara-header-filsa');?>
+<?php get_template_part('parts/camara-header-filsa');?>
 
 	<header class="filsa-header">
 		
