@@ -43,26 +43,36 @@ function cchl_legacy_image($postid, $image, $size = 'medium') {
 			return $imgsrc[0];
 		};
 	else:
-		return 'https://camaradellibro.cl/wp-content/themes/cchl/img/cchl_logo.svg';
+		$oldurl = content_url() . '/files_mf/' .$image;
+		if(file_exists('wp-content/files_mf/' . $image)) {
+			return $oldurl;
+		} else {
+			return 'https://camaradellibro.cl/wp-content/themes/cchl/img/cchl_logo.svg';	
+		}
 	endif;
 }
 
-function camfields_storefileid($postid, $image, $update = true, $size) {
+function camfields_storefileid($postid, $image, $update = true, $size = 'medium') {
 	$newid = camfields_handlefile($postid, $image);
+	$fileids = get_post_meta($postid, '_cchl_fileids', true);
+	$filedata = array();
 	if($newid) {
 		$filedata = array(
 			'srckey' => sanitize_file_name($image),
 			'srcid'  => $newid
 		);
-		if($update == true) {
-			$fileids = get_post_meta($postid, '_cchl_fileids', true);
-			$fileids[] = $filedata;
-			update_post_meta($postid, '_cchl_fileids', $fileids, false);
-		} else {
-			add_post_meta($postid, '_cchl_fileids', $filedata, false);
-		}
-		$imgsrc = wp_get_attachment_image_src( $newid, $size );
-		return $imgsrc[0];
+		
+	if($fileids):
+		$fileids[] = $filedata;
+		update_post_meta($postid, '_cchl_fileids', $fileids, false);
+	else:
+		$fileids = array();
+		$fileids[0] = $filedata;
+		add_post_meta($postid, '_cchl_fileids', $fileids, false);
+	endif;
+	
+	$imgsrc = wp_get_attachment_image_src( $newid, $size );
+	return $imgsrc[0];
 	}
 }
 
