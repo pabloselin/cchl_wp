@@ -300,14 +300,6 @@ function cchl_event_template($postid, $dayid = 'any') {
 		
 	}
 
-	if($cursosev) {
-		foreach($cursosev as $curso) {
-			$cursostring[] = $curso->name;
-		}
-		$cursostring = implode(', ', $cursostring);
-		$html .= '<p class="tax"><span class="labeltax">Cursos:</span> <span class="taxitem">' . $cursostring . '</span>';
-	}
-
 	$html .= '<p class="evplus"><a href="' . get_permalink($event->ID) . '" class="masinfo"><i class="fa fa-plus"></i> info</a> </p>';
 	$html .= '</div>';
 
