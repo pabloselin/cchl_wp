@@ -11,7 +11,7 @@ function cchl_styles() {
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' , array(), '4.7.0', 'screen' );
 
 	//Compiled grunt style
-	wp_register_style( 'legacy', get_bloginfo('template_url') . '/css/legacy.91d5a253.min.css', array(), CCHL_VERSION, 'screen' );
+	wp_register_style( 'legacy', get_bloginfo('template_url') . '/css/legacy.9e3e3f6a.min.css', array(), CCHL_VERSION, 'screen' );
 
   wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.f645c9ef.min.css', array(), CCHL_VERSION, 'screen' );
 
