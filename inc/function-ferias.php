@@ -391,18 +391,21 @@ function cchl_header($postid) {
 }
 
 function cchl_oldcondition($postid) {
+	if(!$postid) {
+		global $post;
+		$postid = $post->ID;
+	}
 	$isfilsa = checkfilsa($postid);
 	$isfilij = checkfilij($postid);
 	$using_feria_template = checkferiatemplate($postid);
 	$feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );
-	
-	if( 	$isfilsa ||
+	if( 		$isfilsa ||
 				$isfilij ||
-				checkferia($post->ID, 53771) ||
-				checkferia($post->ID, CCHL_FILSA2015, '', 180) ||
-				checkferia($post->ID, CCHL_FILVINA2016) ||
-			 	checkferia($post->ID, CCHL_FILSA2016, '', 'filsa-2016') ||
-				checkferia($post->ID, CCHL_FILVINA2017, '') ||
+				checkferia($postid, 53771) ||
+				checkferia($postid, CCHL_FILSA2015, '', 180) ||
+				checkferia($postid, CCHL_FILVINA2016) ||
+			 	checkferia($postid, CCHL_FILSA2016, '', 'filsa-2016') ||
+				checkferia($postid, CCHL_FILVINA2017, '') ||
 				is_page_template('page-feria-principal.php') || 
 				$using_feria_template //||
 				//is_single() && in_category( $feriasmultimediacats, $post->ID )

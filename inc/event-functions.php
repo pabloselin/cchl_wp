@@ -221,6 +221,7 @@ function cchl_event_template($postid, $dayid = 'any') {
 	endif;
 	$tipoevs = get_the_terms($event->ID, 'cchl_tipoevento');
 	$temaevs = get_the_terms($event->ID, 'cchl_temaevento');
+	$cursosev = get_the_terms($event->ID, 'cursos');
 	$ntevs = array();
 	$ttevs = array();
 	$organizers = cchl_organizer_names( $event->ID );
@@ -280,6 +281,8 @@ function cchl_event_template($postid, $dayid = 'any') {
 	if( isset( $nomtipoevs) ):
 		$html .= '<p class="tax"><span class="labeltax">Tipo:</span> <span class="taxitem">' . $nomtipoevs . '</p>';
 	endif;
+
+	
 	if(is_object_in_term( $event->ID, 'cchl_tipoevento', 188 )):
 		$html .= '<p class="actgratis"><a href="'. CCHL_LINKGRATIS.'"><i class="fa fa-thumbs-o-up"></i> Actividad gratuita: infórmate como asistir acá</a></p>';
 	endif;
@@ -295,6 +298,14 @@ function cchl_event_template($postid, $dayid = 'any') {
 
 		}
 		
+	}
+
+	if($cursosev) {
+		foreach($cursosev as $curso) {
+			$cursostring[] = $curso->name;
+		}
+		$cursostring = implode(', ', $cursostring);
+		$html .= '<p class="tax"><span class="labeltax">Cursos:</span> <span class="taxitem">' . $cursostring . '</span>';
 	}
 
 	$html .= '<p class="evplus"><a href="' . get_permalink($event->ID) . '" class="masinfo"><i class="fa fa-plus"></i> info</a> </p>';
