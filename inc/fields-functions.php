@@ -34,18 +34,16 @@ return $infoexpositores;
 }
 
 function cchl_legacy_image($postid, $image, $size = 'medium') {
-	$fileids = get_post_meta($postid, '_cchl_fileids', false);
+	$fileids = get_post_meta($postid, '_cchl_fileids', true);
 	$img = sanitize_file_name( $image );
 	if($fileids):
-		$imgid = array_search($image, array_column($fileids, 'srckey'));
+		$imgid = array_search($img, array_column($fileids, 'srckey'));
 		if($imgid) {
 			$imgsrc = wp_get_attachment_image_src( $fileids[$imgid]['srcid'], $size );
 			return $imgsrc[0];
-		} else {
-			return camfields_storefileid($postid, $image, true, $size);
-		}
+		};
 	else:
-		return camfields_storefileid($postid, $image, false, $size);
+		return 'https://camaradellibro.cl/wp-content/themes/cchl/img/cchl_logo.svg';
 	endif;
 }
 
@@ -68,6 +66,10 @@ function camfields_storefileid($postid, $image, $update = true, $size) {
 	}
 }
 
+function camfields_returnfilesrc($postid, $image) {
+
+}
+
 function cchl_legacy_file($postid, $file) {
 	return cchl_legacy_image($postid, $file);
 }
@@ -83,7 +85,7 @@ function camfields_handlefile($post_id, $image) {
 	$url = get_bloginfo('url') . '/wp-content/files_mf/' . $image ;
 	$tmp = download_url( $url );
 	if( is_wp_error( $tmp ) ){
-		// download failed, handle error
+		return false;
     }
     
 	$desc = get_the_title( $post_id );
