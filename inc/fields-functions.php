@@ -42,14 +42,14 @@ function cchl_legacy_image($postid, $image, $size = 'medium') {
 			$imgsrc = wp_get_attachment_image_src( $fileids[$imgid]['srcid'], $size );
 			return $imgsrc[0];
 		} else {
-			return camfields_storefileid($postid, $image, true);
+			return camfields_storefileid($postid, $image, true, $size);
 		}
 	else:
-		return camfields_storefileid($postid, $image, false);
+		return camfields_storefileid($postid, $image, false, $size);
 	endif;
 }
 
-function camfields_storefileid($postid, $image, $update = true) {
+function camfields_storefileid($postid, $image, $update = true, $size) {
 	$newid = camfields_handlefile($postid, $image);
 	if($newid) {
 		$filedata = array(
