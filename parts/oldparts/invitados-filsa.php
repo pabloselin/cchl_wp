@@ -2,7 +2,6 @@
                     <ul class="cf listado">
                         <?php
                         $miembros = get_post_meta($post->ID, '_cchl_listadopersonas', true);
-                        var_dump($miembros);
                         foreach($miembros as $miembro){
                             echo "<li>";
                             echo '<img src="' . cchl_legacy_image($post->ID, $miembro['imagen']) . '" alt="' . $miembro['nombre'] . '">';
