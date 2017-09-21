@@ -38,7 +38,6 @@ function cchl_legacy_image($postid, $image, $size = 'medium') {
 	$img = sanitize_file_name( $image );
 	$haskey = false;
 	if($fileids):
-		xdebug_break();
 		foreach($fileids as $key=>$fileid) {
 			if($img == $fileid['filename']):
 				$imgkey = $key;
