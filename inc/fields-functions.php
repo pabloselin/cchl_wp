@@ -36,10 +36,18 @@ return $infoexpositores;
 function cchl_legacy_image($postid, $image, $size = 'medium') {
 	$fileids = get_post_meta($postid, '_cchl_fileassoc', true);
 	$img = sanitize_file_name( $image );
+	$haskey = false;
 	if($fileids):
-		$imgid = array_search($img, array_column($fileids, 'filename'));
-		if($imgid) {
-			$imgsrc = wp_get_attachment_image_src( $fileids[$imgid]['fileid'], $size );
+		xdebug_break();
+		foreach($fileids as $key=>$fileid) {
+			if($img == $fileid['filename']):
+				$imgkey = $key;
+				$haskey = true;
+			endif;
+		}
+		//$imgid = array_search($img, array_column($fileids, 'filename'));
+		if($haskey) {
+			$imgsrc = wp_get_attachment_image_src( $fileids[$imgkey]['fileid'], $size );
 			return $imgsrc[0];
 		};
 	else:
