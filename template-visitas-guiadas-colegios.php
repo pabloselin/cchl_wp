@@ -34,13 +34,15 @@ Template Post Type: filsa-2017
 
         </header>
 
-        <div class="text-content row">
+        <div class="row">
             
             <div class="col-md-9 col-md-offset-1">
 
                 <?php get_template_part('parts/bs-general/bs-sharer');?>
-
+				
+				<div class="text-content">
                 <?php the_content();?>
+                </div>
 
                 <?php echo filsa2017_run_part('visitas-guiadas-colegios');?>
 
