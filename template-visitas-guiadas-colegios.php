@@ -38,9 +38,8 @@ Template Post Type: filsa-2017
             
             <div class="col-md-9 col-md-offset-1">
 
-                <?php get_template_part('parts/bs-general/bs-sharer');?>
-				
 				<div class="text-content">
+				<?php get_template_part('parts/bs-general/bs-sharer');?>
                 <?php the_content();?>
                 </div>
 
