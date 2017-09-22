@@ -4,7 +4,7 @@
 add_post_type_support('page', 'excerpt');
 
 //CONSTANTS FILSA
-define( 'CCHL_VERSION', '1.18');
+define( 'CCHL_VERSION', '0.2.2');
 
 define( 'CCHL_PAGEFILSA', 54798 );
 define( 'CCHL_FILSAHOME', 108 );
