@@ -9,4 +9,4 @@ Template Post Type: filsa-2017
 
 <?php echo filsa2017_run_part('content-filsa-2017', 'visitas-guiadas-colegios');?>
 
-<?php wp_footer('filsa-custom');?>
+<?php get_footer('filsa-custom');?>

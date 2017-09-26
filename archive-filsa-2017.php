@@ -5,4 +5,4 @@
 </div>
 
 
-<?php wp_footer('filsa-custom');?>
+<?php get_footer('filsa-custom');?>

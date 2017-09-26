@@ -4,4 +4,4 @@
     <?php echo filsa2017_run_part('content-filsa-2017');?>
 </div>
 
-<?php wp_footer('filsa-custom');?>
+<?php get_footer('filsa-custom');?>
