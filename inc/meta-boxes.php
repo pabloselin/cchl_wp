@@ -50,6 +50,7 @@ include( TEMPLATEPATH . '/inc/meta-boxes/meta-boxes-custom-page.php');
 include( TEMPLATEPATH . '/inc/meta-boxes/meta-boxes-invitados.php');
 include( TEMPLATEPATH . '/inc/meta-boxes/meta-boxes-desplegable.php');
 include( TEMPLATEPATH . '/inc/meta-boxes/meta-boxes-links.php');
+include( TEMPLATEPATH . '/inc/meta-boxes/meta-boxes-organizador.php');
 
 /**
  * Metabox for Page Slug

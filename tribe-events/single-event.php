@@ -24,6 +24,8 @@ $event_id = get_the_ID();
 
 	<!-- Notices -->
 	<?php tribe_events_the_notices() ?>
+	
+	<span class="tipoevento"><?php echo cchl_plainterms($post->ID, 'cchl_tipoevento', ' - ');?></span>
 
 	<?php the_title( '<h2 class="tribe-events-single-event-title summary entry-title">', '</h2>' ); ?>
 	
@@ -36,7 +38,7 @@ $event_id = get_the_ID();
 			<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
 			
 			<!-- Event meta -->
-			<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
+			<?php //do_action( 'tribe_events_single_event_before_the_meta' ) ?>
 			<?php
 			/**
 			 * The tribe_events_single_event_meta() function has been deprecated and has been

@@ -1,7 +1,7 @@
 <div class="video-single">
 
 <?php
-    xdebug_break();
+    //xdebug_break();
     foreach($video as $key=>$viditem){
 	
 	$id = uniqid('yt');
