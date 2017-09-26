@@ -1,14 +1,14 @@
 <?php 
 /*
-Template Name: Listado de personas
+Template Name: Listado de invitados
+Template Post Type: filsa-2017
 */
 ?>
-<?php get_header();?>
+<?php get_header('filsa-custom');?>
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<div class="container">
-        <?php get_template_part('parts/bs-blocks/bs-breadcrumb');?>
+<div class="container filsa-2017-invitados">
         <div class="row">        
                 <div class="col-md-8 col-md-offset-2">
 
@@ -38,17 +38,20 @@ Template Name: Listado de personas
                                 //$imgattrs = array("h" => 120, "w" => 120, "zc" => 1, "q" => 100);
 
                                 foreach($personas as $persona):
+                                    $imgsrc = wp_get_attachment_image_src($persona['imagen_new_id'], 'medium');
                                     ?>
 
                                     <div class="person row">
-                                        <div class="col-md-2">
-                                            <img width="120" height="120" src="<?php echo cchl_legacy_image($post->ID, $persona['imagen']);?>" alt="<?php echo $persona['nombre'];?>">
+                                        <div class="col-md-4">
+                                            <img src="<?php echo $imgsrc[0];?>" alt="<?php echo $persona['nombre'];?>">
                                         </div>
-                                        <div class="col-md-10">
+                                        <div class="col-md-6">
                                             <h2><?php echo $persona['nombre'];?></h2>
-                                            <span class="cargo"><?php echo $persona['cargo'];?></span>
+                                            <?php if($persona['cargo']):?>
+                                                <span class="cargo"><?php echo $persona['cargo'];?></span>
+                                            <?php endif;?>
 
-                                            <p><?php echo apply_filters('the_content', $persona['texto']);?></p>
+                                            <div class="person-content"><?php echo apply_filters('the_content', $persona['texto']);?></div>
                                         </div>
                                     </div>
 
@@ -68,4 +71,4 @@ Template Name: Listado de personas
     </div>
 </div>
 
-<?php get_template_part('parts/bs-home/bs-footer'); ?>
+<?php get_footer('filsa-custom'); ?>

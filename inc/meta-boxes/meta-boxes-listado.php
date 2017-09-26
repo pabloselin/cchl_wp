@@ -5,13 +5,9 @@ function cchl_directorio_boxes() {
     $directoriobox = new_cmb2_box(
         array(
             'id' => '_cchl_listadopersonasbox',
-            'title' => 'Miembros/as',
-            'object_types' => array('page'),
-            'show_on_cb' => 'be_metabox_show_on_slug',
-            'show_on' => array(
-                'key' => 'slug',
-                'value' => array('directorio', 'prolibro-s-a')
-            ),
+            'title' => 'Personas',
+            'object_types' => array('page', 'filsa-2017'),
+            'show_on' => array('key' => 'page-template', 'value' => array('bs-listado-personas.php', 'template-filsa-2017-invitados.php'))
         )
     );
 
@@ -19,12 +15,12 @@ function cchl_directorio_boxes() {
         array(
             'id' => '_cchl_listadopersonas',
             'type'        => 'group',
-            'description' => 'Información Miembro/a',
+            'description' => 'Información Persona',
             'repeatable'  => true, // use false if you want non-repeatable group
             'options'     => array(
-                'group_title'   => 'Miembro/a', // since version 1.1.4, {#} gets replaced by row number
-                'add_button'    => 'Añadir otro miembro/a',
-                'remove_button' => 'Eliminar miembro/a',
+                'group_title'   => 'Persona', // since version 1.1.4, {#} gets replaced by row number
+                'add_button'    => 'Añadir otra persona',
+                'remove_button' => 'Borrar persona',
                 'sortable'      => true, // beta
                 // 'closed'     => true, // true to have the groups closed by default
             )
@@ -33,7 +29,7 @@ function cchl_directorio_boxes() {
 
    $directoriobox->add_group_field($directoriobox_id, 
         array(
-            'name' => 'Nombre Miembro/a',
+            'name' => 'Nombre Persona',
             'id' => 'nombre',
             'type' => 'text'
         )
@@ -41,7 +37,7 @@ function cchl_directorio_boxes() {
 
    $directoriobox->add_group_field($directoriobox_id, 
         array(
-            'name' => 'Cargo Miembro/a',
+            'name' => 'Cargo Persona',
             'id' => 'cargo',
             'type' => 'text'
         )
@@ -51,24 +47,28 @@ function cchl_directorio_boxes() {
         array(
             'name' => 'Descripción',
             'id' => 'texto',
-            'type' => 'textarea'
+            'type' => 'wysiwyg'
         )
     );
 
-   $directoriobox->add_group_field($directoriobox_id, 
-        array(
-            'name' => 'Fotografía miembro/a (anterior)',
-            'id' => 'imagen',
-            'type' => 'text',
-            'options' => array(
-                'url' => false
+   if(get_post_meta($post->ID, 'imagen', true)):
+    //Legacy support
+       $directoriobox->add_group_field($directoriobox_id, 
+            array(
+                'name' => 'Fotografía persona',
+                'id' => 'imagen',
+                'type' => 'text',
+                'options' => array(
+                    'url' => false
+                )
             )
-        )
-    );
+        );
+
+    endif;
 
     $directoriobox->add_group_field($directoriobox_id, 
     array(
-        'name' => 'Fotografía miembro/a',
+        'name' => 'Fotografía persona',
         'id' => 'imagen_new',
         'type' => 'file',
         'options' => array(
