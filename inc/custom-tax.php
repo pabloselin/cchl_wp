@@ -121,3 +121,49 @@ function cchl_publico_evento() {
 
 // Hook into the 'init' action
 add_action( 'init', 'cchl_publico_evento', 0 );
+
+// Register Custom Taxonomy
+function cchl_tipo_lugar() {
+
+	$labels = array(
+		'name'                       => _x( 'Tipos de Lugar', 'Taxonomy General Name', 'cchl' ),
+		'singular_name'              => _x( 'Tipo de Lugar', 'Taxonomy Singular Name', 'cchl' ),
+		'menu_name'                  => __( 'Tipos de Lugar', 'cchl' ),
+		'all_items'                  => __( 'Todos', 'cchl' ),
+		'parent_item'                => __( 'Tipo superior', 'cchl' ),
+		'parent_item_colon'          => __( 'Tipo superior:', 'cchl' ),
+		'new_item_name'              => __( 'Nuevo Tipo de Lugar', 'cchl' ),
+		'add_new_item'               => __( 'Añadir nuevo Tipo de Lugar', 'cchl' ),
+		'edit_item'                  => __( 'Editar Item', 'cchl' ),
+		'update_item'                => __( 'Actualizar Item', 'cchl' ),
+		'view_item'                  => __( 'Ver Item', 'cchl' ),
+		'separate_items_with_commas' => __( 'Separar items con comas', 'cchl' ),
+		'add_or_remove_items'        => __( 'Añadir o eliminar items', 'cchl' ),
+		'choose_from_most_used'      => __( 'Elegir entre los más usados', 'cchl' ),
+		'popular_items'              => __( 'Items más usados', 'cchl' ),
+		'search_items'               => __( 'Buscar Items', 'cchl' ),
+		'not_found'                  => __( 'No encontrado', 'cchl' ),
+		'no_terms'                   => __( 'No hay Items', 'cchl' ),
+		'items_list'                 => __( 'Lista de Items', 'cchl' ),
+		'items_list_navigation'      => __( 'Navegación de lista de Items', 'cchl' ),
+	);
+	$rewrite = array(
+		'slug'                       => 'lugares',
+		'with_front'                 => true,
+		'hierarchical'               => false,
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'rewrite'                    => $rewrite,
+		'show_in_rest'               => true,
+	);
+	register_taxonomy( 'cchl_tipolugar', array( 'tribe_venue' ), $args );
+}
+add_action( 'init', 'cchl_tipo_lugar', 0 );
+

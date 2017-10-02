@@ -38,7 +38,7 @@ Template Post Type: filsa-2017
                                 //$imgattrs = array("h" => 120, "w" => 120, "zc" => 1, "q" => 100);
 
                                 foreach($personas as $persona):
-                                    $imgsrc = wp_get_attachment_image_src($persona['imagen_new_id'], 'medium');
+                                    $imgsrc = wp_get_attachment_image_src($persona['imagen_new_id'], 'filsa-portrait');
                                     ?>
 
                                     <div class="person row">
