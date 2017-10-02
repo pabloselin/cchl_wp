@@ -30,7 +30,8 @@ Template Post Type: filsa-2017
                         <?php the_content();?>
 
                         <?php do_action('cchl_aftercontent');?>
-                        
+                            
+                            <div class="personas">
                             <?php
                                 $personas = get_post_meta($post->ID, '_cchl_listadopersonas', true);
                                 
@@ -42,23 +43,26 @@ Template Post Type: filsa-2017
                                     ?>
 
                                     <div class="person row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 img-person">
                                             <img src="<?php echo $imgsrc[0];?>" alt="<?php echo $persona['nombre'];?>">
                                         </div>
-                                        <div class="col-md-6">
-                                            <h2><?php echo $persona['nombre'];?></h2>
-                                            <?php if($persona['cargo']):?>
-                                                <span class="cargo"><?php echo $persona['cargo'];?></span>
-                                            <?php endif;?>
-
-                                            <div class="person-content"><?php echo apply_filters('the_content', $persona['texto']);?></div>
+                                        <div class="col-md-8 info-person">
+                                            <div class="inner-padding">
+                                                <h2><?php echo $persona['nombre'];?></h2>
+                                                <?php if($persona['cargo']):?>
+                                                    <span class="cargo"><?php echo $persona['cargo'];?></span>
+                                                <?php endif;?>
+                                                
+                                                <div class="person-content"><?php echo apply_filters('the_content', $persona['texto']);?></div>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <?php
                                     endforeach;
                                     ?>
-                        
+                            
+                            </div>
 
                     </div>
                 </article>
