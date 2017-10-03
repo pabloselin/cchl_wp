@@ -10,12 +10,12 @@
 ?>
 
 <div class="tribe-events-meta-group tribe-events-meta-group-details">
-	<h3 class="tribe-events-single-section-title"> <?php _e( 'Datos del evento', 'tribe-events-calendar' ) ?> </h3>
+	<!-- <h3 class="tribe-events-single-section-title"> <?php _e( 'Datos del evento', 'tribe-events-calendar' ) ?> </h3> -->
 	<dl>
 
 		<?php
 		do_action( 'tribe_events_single_meta_details_section_start' );
-
+		$event_id = get_the_ID();
 		$time_format = get_option( 'time_format', TribeDateUtils::TIMEFORMAT );
 		$time_range_separator = tribe_get_option( 'timeRangeSeparator', ' - ' );
 
@@ -95,7 +95,7 @@
 			?>
 			<dt> <?php _e( 'Valor:', 'tribe-events-calendar' ) ?> </dt>
 			<dd class="tribe-events-event-cost"> <?php esc_html_e( tribe_get_formatted_cost() ) ?> 
-				<?php if(is_object_in_term( $post->ID, 'cchl_tipoevento', '188' )):?> 
+				<?php if(is_object_in_term( $event_id, 'cchl_tipoevento', '188' )):?> 
 				<p>
 					<a class="linkgratis" href="<?php echo CCHL_LINKGRATIS;?>">Infórmate acá como asistir</a>
 				</p>
@@ -116,4 +116,16 @@
 
 		<?php do_action( 'tribe_events_single_meta_details_section_end' ) ?>
 	</dl>
+
+	<?php if(function_exists('filsa2017_cuposinfo') && filsa2017_cuposinfo($event_id)):?>
+		<dl>
+			<dt>Cupos:</dt> 
+
+			<dd><?php echo filsa2017_cuposinfo($event_id);?></dd>
+		</dl>
+
+		<dl>
+			<dd><?php echo filsa2017_cursosev($event_id);?></dd>
+		</dl>
+	<?php endif;?>
 </div>

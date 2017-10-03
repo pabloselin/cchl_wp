@@ -69,12 +69,7 @@ $event_id = get_the_ID();
 
 	<!-- Event footer -->
 	<div id="tribe-events-footer">
-	<?php 
-		if(is_object_in_term( $event_id, 'tribe_events_cat', 180 )):?>
-			<a class="centerprog" href="<?php echo get_permalink(57212);?>"><i class="fa fa-calendar-o"></i> Ir a Programa FILSA 2015</a>
-		<?php 
-		endif;
-	?>
+	
 
 	<?php if(is_object_in_term( $event_id, 'tribe_events_cat', 208) && function_exists('cchl_frontinv')):
 
@@ -132,15 +127,13 @@ $event_id = get_the_ID();
 
 	<?php endif;?>
 
-	<?php if(is_object_in_term( $event_id, 'tribe_events_cat', 208)):?>
+	<?php if(function_exists('filsa2017_cuposboton')):
 
-		<div class="aviso-evento-modificaciones">
-			<i class="fa fa-pull-left fa-info-circle fa-2x"></i> Las actividades calendarizadas en el Programa Cultural de FILSA 2016, pueden sufrir modificaciones, antes y durante el período de la realización de FILSA. Lo que será informado por este medio y nuestras redes sociales
-		</div>
+			if( is_object_in_term( $event_id, 'cchl_tipoevento', filsa2017_get_option('filsa2017_taxfilsavisitas') )):
+					echo '<p>' . filsa2017_cuposboton($event_id) . '</p>';
+			endif;
 
-		<a class="centerprog cchl-button blue" href="<?php echo get_permalink(61251);?>"><i class="fa fa-calendar-o"></i> Ir a Programa FILSA 2016</a>
-
-	<?php endif;?>
+	endif;?>
 		
 	</div>
 	<!-- #tribe-events-footer -->
