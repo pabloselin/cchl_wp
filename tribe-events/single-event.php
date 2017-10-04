@@ -27,7 +27,7 @@ $event_id = get_the_ID();
 	
 	<span class="tipoevento"><?php echo cchl_plainterms($post->ID, 'cchl_tipoevento', ' - ');?></span>
 
-	<?php the_title( '<h2 class="tribe-events-single-event-title summary entry-title">', '</h2>' ); ?>
+	<?php the_title( '<h1 class="tribe-events-single-event-title summary entry-title">', '</h1>' ); ?>
 	
 	<?php while ( have_posts() ) :  the_post(); ?>
 

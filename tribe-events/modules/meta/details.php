@@ -33,12 +33,12 @@
 		if ( tribe_event_is_all_day() && tribe_event_is_multiday() ) :
 			?>
 
-			<dt> <?php _e( 'Inicio:', 'tribe-events-calendar' ) ?> </dt>
+			<dt> <i class="fa fa-fw fa-calendar"></i> <?php _e( 'Inicio:', 'tribe-events-calendar' ) ?> </dt>
 			<dd>
 				<abbr class="tribe-events-abbr updated published dtstart" title="<?php esc_attr_e( $start_ts ) ?>"> <?php esc_html_e( $start_date ) ?> </abbr>
 			</dd>
 
-			<dt> <?php _e( 'Fin:', 'tribe-events-calendar' ) ?> </dt>
+			<dt> <i class="fa fa-fw fa-calendar"></i> <?php _e( 'Fin:', 'tribe-events-calendar' ) ?> </dt>
 			<dd>
 				<abbr class="tribe-events-abbr dtend" title="<?php esc_attr_e( $end_ts ) ?>"> <?php esc_html_e( $end_date ) ?> </abbr>
 			</dd>
