@@ -58,6 +58,15 @@ $event_id = get_the_ID();
 			<div class="tribe-events-single-event-description tribe-events-content entry-content description">
 				<?php the_content(); ?>
 			</div>
+
+			<?php if(function_exists('filsa2017_cuposboton')):
+
+				if( is_object_in_term( $event_id, 'cchl_tipoevento', filsa2017_get_option('filsa2017_taxfilsavisitas') )):
+						echo '<p>' . filsa2017_cuposboton($event_id) . '</p>';
+				endif;
+
+			endif;?>
+			
 			<!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
 
@@ -70,70 +79,6 @@ $event_id = get_the_ID();
 	<!-- Event footer -->
 	<div id="tribe-events-footer">
 	
-
-	<?php if(is_object_in_term( $event_id, 'tribe_events_cat', 208) && function_exists('cchl_frontinv')):
-
-		$organizer_ids = tribe_get_organizer_ids( get_the_id() );
-
-		//Si los organizadores corresponden
-		
-		if( in_array( 61814, $organizer_ids) || in_array( 9521, $organizer_ids) || in_array(3054, $organizer_ids) ) {
-
-		/**
-		 * Data Sample
-		 */
-	
-		$time_format = get_option( 'time_format', TribeDateUtils::TIMEFORMAT );
-		$day_format = 'l j \d\e F';
-		$descripcion = strip_tags( get_the_content( get_the_id() ) );
-
-		
-		
-		if($organizer_ids) {
-
-			foreach ($organizer_ids as $organizer) {
-
-				$organizers_names[] = get_the_title($organizer);
-
-			}
-
-			$organizers_string = implode(' - ', $organizers_names);
-
-
-		}
-
-
-
-	
-		$data = array(
-			'id'			=> get_the_id(),
-			'title' 		=> get_the_title(),
-			'dia' 			=> tribe_get_start_date(null, false, $day_format),
-			'hora' 			=> tribe_get_start_date( null, false, $time_format ) . ' - ' . tribe_get_end_date( null, false, $time_format ),
-			'lugar'			=> tribe_get_venue(),
-			'organizador'	=> $organizers_string,
-			'descripcion'	=> limitar_palabras( $descripcion, 50)
-			);
-
-
-		
-		$imglink = cchl_frontinv($data);
-
-		 echo '<a class="btn-invitacion" href="' . $imglink . '"><i class="fa fa-download"></i> Descargar Invitación</a>';
-
-		 }
-
-		?> 
-
-	<?php endif;?>
-
-	<?php if(function_exists('filsa2017_cuposboton')):
-
-			if( is_object_in_term( $event_id, 'cchl_tipoevento', filsa2017_get_option('filsa2017_taxfilsavisitas') )):
-					echo '<p>' . filsa2017_cuposboton($event_id) . '</p>';
-			endif;
-
-	endif;?>
 		
 	</div>
 	<!-- #tribe-events-footer -->
