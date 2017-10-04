@@ -48,7 +48,7 @@
 		elseif ( tribe_event_is_all_day() ):
 			?>
 
-			<dt> <?php _e( 'Fecha:', 'tribe-events-calendar' ) ?> </dt>
+			<dt> <i class="fa fa-calendar fa-fw"></i> <?php _e( 'Fecha:', 'tribe-events-calendar' ) ?> </dt>
 			<dd>
 				<abbr class="tribe-events-abbr updated published dtstart" title="<?php esc_attr_e( $start_ts ) ?>"> <?php esc_html_e( $start_date ) ?> </abbr>
 			</dd>
@@ -73,12 +73,12 @@
 		else :
 			?>
 
-			<dt> <?php _e( 'Fecha:', 'tribe-events-calendar' ) ?> </dt>
+			<dt> <i class="fa fa-calendar fa-fw"></i> <?php _e( 'Fecha:', 'tribe-events-calendar' ) ?> </dt>
 			<dd>
 				<abbr class="tribe-events-abbr updated published dtstart" title="<?php esc_attr_e( $start_ts ) ?>"> <?php esc_html_e( $start_date ) ?> </abbr>
 			</dd>
 
-			<dt> <?php _e( 'Hora:', 'tribe-events-calendar' ) ?> </dt>
+			<dt> <i class="fa fa-clock-o fa-fw"></i> <?php _e( 'Hora:', 'tribe-events-calendar' ) ?> </dt>
 			<dd><abbr class="tribe-events-abbr updated published dtstart" title="<?php esc_attr_e( $end_ts ) ?>">
 					<?php if ( $start_time == $end_time ) {
 						esc_html_e( $start_time );
@@ -119,7 +119,7 @@
 
 	<?php if(function_exists('filsa2017_cuposinfo') && filsa2017_cuposinfo($event_id)):?>
 		<dl>
-			<dt>Cupos:</dt> 
+			<dt><i class="fa fa-list-ul fa-fw"></i> Cupos:</dt> 
 
 			<dd><?php echo filsa2017_cuposinfo($event_id);?></dd>
 		</dl>

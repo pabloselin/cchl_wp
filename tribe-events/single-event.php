@@ -31,7 +31,7 @@ $event_id = get_the_ID();
 	
 	<?php while ( have_posts() ) :  the_post(); ?>
 
-		<?php get_template_part('parts/addthis');?>
+		<?php get_template_part('parts/bs-general/bs-sharer');?>
 		
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<!-- Event featured image, but exclude link -->
