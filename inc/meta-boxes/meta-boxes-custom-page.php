@@ -12,7 +12,7 @@ function cchl_custompage_options() {
 		'id'           => $prefix . 'custom_page',
 		'title'        => __( 'Página personalizada', 'cchl' ),
 		'object_types' => array( 'page' ),
-        'show_on' => array('key' => 'page-template', 'value' => 'bs-archivo-ferias.php'),
+        'show_on' => array('key' => 'page-template', 'value' => 'templates/bs-archivo-ferias.php'),
 		'context'      => 'side',
 		'priority'     => 'core',
 	) );

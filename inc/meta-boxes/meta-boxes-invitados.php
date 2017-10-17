@@ -10,7 +10,7 @@ function camfields_invitados() {
 		'id'           => 'box_invitados',
 		'title'        => __( 'Invitados', 'cchl' ),
         'object_types' => array( 'page' ),
-        'show_on' => array('key'=> 'page-template', 'value' => 'bs-invitados.php'),
+        'show_on' => array('key'=> 'page-template', 'value' => 'templates/bs-invitados.php'),
 		'context'      => 'normal',
 		'priority'     => 'high',
     ) );

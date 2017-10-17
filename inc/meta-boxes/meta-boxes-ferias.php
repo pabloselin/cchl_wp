@@ -12,7 +12,7 @@ function cchl_bsferiaboxes() {
             'id' => $prefix . 'infoferia',
             'title' => 'Información de la Feria',
             'object_types' => array('page'),
-            'show_on' => array('key' => 'page-template', 'value' => 'bs-plantilla-feria.php')
+            'show_on' => array('key' => 'page-template', 'value' => 'templates/bs-plantilla-feria.php')
         )
     );
 

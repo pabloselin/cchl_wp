@@ -7,7 +7,7 @@ function cchl_faq_boxes() {
             'id' => '_cchl_desplegablebox',
             'title' => 'Sección desplegable',
             'object_types' => array('page'),
-            'show_on' => array('key'=>'page-template', 'value'=>'bs-pagina-desplegable.php')
+            'show_on' => array('key'=>'page-template', 'value'=>'templates/bs-pagina-desplegable.php')
         )
     );
 

@@ -7,7 +7,7 @@ function cchl_directorio_boxes() {
             'id' => '_cchl_listadopersonasbox',
             'title' => 'Personas',
             'object_types' => array('page', 'filsa-2017'),
-            'show_on' => array('key' => 'page-template', 'value' => array('bs-listado-personas.php', 'template-filsa-2017-invitados.php'))
+            'show_on' => array('key' => 'page-template', 'value' => array('templates/bs-listado-personas.php', 'templates/template-filsa-2017-invitados.php'))
         )
     );
 
