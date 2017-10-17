@@ -38,11 +38,12 @@ Template Name: Listado de personas
                                 //$imgattrs = array("h" => 120, "w" => 120, "zc" => 1, "q" => 100);
 
                                 foreach($personas as $persona):
+                                    $imagen = wp_get_attachment_image_src( $persona['imagen_new_id'], 'medium' );
                                     ?>
 
                                     <div class="person row">
                                         <div class="col-md-2">
-                                            <img width="120" height="120" src="<?php echo $persona['imagen'];?>" alt="<?php echo $persona['nombre'];?>">
+                                            <img src="<?php echo $imagen[0];?>" alt="<?php echo $persona['nombre'];?>">
                                         </div>
                                         <div class="col-md-10">
                                             <h2><?php echo $persona['nombre'];?></h2>
