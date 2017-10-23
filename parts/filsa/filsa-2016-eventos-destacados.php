@@ -2,7 +2,7 @@
             
             <?php 
                 
-                $eventos = cchl_getmenus( 'eventos-destacados-filsa-2016' );
+                $eventos = cchl_getmenus( filsa2017_get_option('filsa2017_menueventos') );
 
                 if($eventos) {
 
