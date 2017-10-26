@@ -71,7 +71,11 @@ $event_id = get_the_ID();
 				echo filsa2017_linktickets();
 			}?>
 
+			<?php if(is_object_in_term( $event_id, 'ferias', filsa2017_get_option('filsa2017_taxfilsa') )) { ?> 
+
 			<a href="<?php echo filsa2017_get_option('filsa2017_programapage');?>" class="filsa2017_button verde"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Ir a programa FILSA 2017</a>
+
+			<?php }?>
 			
 			
 			<!-- .tribe-events-single-event-description -->
