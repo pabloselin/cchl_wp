@@ -70,6 +70,8 @@ $event_id = get_the_ID();
 			<?php if(filsa2017_checkorg($event_id)) {
 				echo filsa2017_linktickets();
 			}?>
+
+			<a href="<?php echo filsa2017_get_option('filsa2017_programapage');?>" class="filsa2017_button verde"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Ir a programa FILSA 2017</a>
 			
 			
 			<!-- .tribe-events-single-event-description -->
