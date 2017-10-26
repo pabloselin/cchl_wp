@@ -15,6 +15,7 @@ $multiple = count( $organizer_ids ) > 1;
 $phone = tribe_get_organizer_phone();
 $email = tribe_get_organizer_email();
 $website = tribe_get_organizer_website_link();
+$event_id = get_the_ID();
 ?>
 
 <div class="tribe-events-meta-group tribe-events-meta-group-organizer">
@@ -33,8 +34,9 @@ $website = tribe_get_organizer_website_link();
 			<dd class="tribe-organizer">
 				<?php echo tribe_get_organizer_link( $organizer ) ?>
 			</dd>
+	
 			<?php
-		}
+		};
 
 		if ( ! $multiple ) { // only show organizer details if there is one
 			if ( ! empty( $phone ) ) {
@@ -73,5 +75,9 @@ $website = tribe_get_organizer_website_link();
 
 		do_action( 'tribe_events_single_meta_organizer_section_end' );
 		?>
+		<?php if(is_object_in_term( $event_id, 'cchl_tipoevento', filsa2017_get_option('filsa2017_taxfirmas') )){
+					echo filsa2017_prevsortlocation($organizer, $event_id);
+				};?>
 	</dl>
+
 </div>
