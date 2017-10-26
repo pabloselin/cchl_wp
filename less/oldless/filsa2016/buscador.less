@@ -1,260 +1,256 @@
 //Buscador
 
 input#cchl_buscalibros {
-	padding:6px;
-	font-size:16px;
-	margin-bottom:12px;
-	float:left;
-	margin-right:12px;
+	padding: 6px;
+	font-size: 16px;
+	margin-bottom: 12px;
+	float: left;
+	margin-right: 12px;
 }
 
-body#filsa-2016 #cchl_bl_hits_container  div.ais-hits--item {
-	margin-bottom:12px;
-	padding:12px;
-	border:1px solid fade(@magenta, 15%);
-	
+body#filsa-2016 #cchl_bl_hits_container div.ais-hits--item {
+	margin-bottom: 12px;
+	padding: 12px;
+	border: 1px solid fade(@magenta, 15%);
+
 	h3 {
-		color:@magenta;
-		margin-top:0;
-		margin-bottom:0;
+		color: @magenta;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 
 	em {
-		font-style:normal;
-		background-color:fade(@aguamarina, 20%);
+		font-style: normal;
+		background-color: fade(@aguamarina, 20%);
 	}
 
 	strong {
-		color:@verdeoscuro;
+		color: @verdeoscuro;
 	}
 
 	p.where {
-		margin-top:6px;
-		color: #6D6E71;
+		margin-top: 6px;
+		color: #6d6e71;
 	}
 
 	span.editorial {
-		display:block;
-		font-size:12px;
-		margin-bottom:12px;
+		display: block;
+		font-size: 12px;
+		margin-bottom: 12px;
 	}
 
 	span.autor {
-		display:block;
-		text-transform:capitalize;
+		display: block;
+		text-transform: capitalize;
 	}
 
 	span.expositor {
-		font-weight:bold;
-		color:@verdeoscuro;
+		font-weight: bold;
+		color: @verdeoscuro;
 	}
 
 	span.stand {
-		font-weight:bold;
-		color:@verdeoscuro;
+		font-weight: bold;
+		color: @verdeoscuro;
 	}
 
 	span.isbn {
-		font-size:12px;
+		font-size: 12px;
 	}
 
 	i {
-		font-size:12px;
-		color:@magenta;
-		vertical-align:middle;
+		font-size: 12px;
+		color: @magenta;
+		vertical-align: middle;
 	}
 }
 
 body#filsa-2016 .the-content #cchl_bl_pagination_container {
-	
-	margin:24px 0;
-	padding:0;
-	
+	margin: 24px 0;
+	padding: 0;
+
 	ul {
-		margin:0;
-		padding:0;
+		margin: 0;
+		padding: 0;
 	}
 
 	ul li.ais-pagination--item {
-		margin:0;
-		padding:0;
+		margin: 0;
+		padding: 0;
 		a {
-			border-bottom:none;
-			padding:12px;
-			border:1px solid fade(@verdeoscuro, 10%);
-			color:@verdeoscuro;
+			border-bottom: none;
+			padding: 12px;
+			border: 1px solid fade(@verdeoscuro, 10%);
+			color: @verdeoscuro;
 			&:hover {
-				background-color:@magenta;
-				color:white;
+				background-color: @magenta;
+				color: white;
 			}
 		}
 
 		&.ais-pagination--item__active {
 			a {
-				font-weight:bold;
-				color:white;
-				background-color:@verdeoscuro;
+				font-weight: bold;
+				color: white;
+				background-color: @verdeoscuro;
 			}
 		}
 	}
 
 	ul li.ais-pagination--item:before {
-		content:'';
+		content: '';
 	}
 }
 
 .cchl_bl_left {
-	width:70%;
-	float:left;
+	width: 70%;
+	float: left;
 }
 
 .cchl_bl_right {
-	width:30%;
-	float:left;
+	width: 30%;
+	float: left;
 }
 
-@media screen and (max-width:@scrbr) {
-	.cchl_bl_left, .cchl_bl_right {
-		float:none;
-		width:100%;
+@media screen and (max-width: @scrbr) {
+	.cchl_bl_left,
+	.cchl_bl_right {
+		float: none;
+		width: 100%;
 	}
 
 	.cchl_bl_right {
 		position: fixed;
-		top:72px;
-		left:0;
-		z-index:100;
-		transform:translateX(-100%);
-		-webkit-transform:translateX(-100%);
+		top: 0;
+		left: 0;
+		z-index: 100;
+		transform: translateX(-100%);
+		-webkit-transform: translateX(-100%);
 		overflow: scroll;
-		background-color:white;
-		height:100%;
-		padding:0 0 32px 0;
-		transition:all linear 0.5s;
-		
+		background-color: white;
+		height: 100%;
+		padding: 24px;
+		transition: all linear 0.5s;
+
 		&.active {
-			transform:translateX(0);
-			-webkit-transform:translateX(0);
-			
+			transform: translateX(0);
+			-webkit-transform: translateX(0);
 		}
 	}
 }
 
 .cchl_bl_filter {
-	padding:12px 12px 12px 24px;
-	
+	padding: 12px 12px 12px 24px;
+
 	.ais-header {
-		font-size:22px;
-		color:@verdeoscuro;
+		font-size: 22px;
+		color: @verdeoscuro;
 		font-family: 'Signika', sans-serif;
-		margin-bottom:16px;
+		margin-bottom: 16px;
 	}
 
 	.ais-refinement-list--item {
-		
-		margin-bottom:6px;
-		overflow:hidden;
-		display:flex;
-		font-size:13px;
+		margin-bottom: 6px;
+		overflow: hidden;
+		display: flex;
+		font-size: 13px;
 
 		input {
-			margin-right:6px;
-			
+			margin-right: 6px;
 		}
 
 		.ais-refinement-list--count {
-			font-size:12px;
-			font-weight:bold;
-			color:@magenta;
+			font-size: 12px;
+			font-weight: bold;
+			color: @magenta;
 		}
 	}
 }
 
 body#filsa-2016 .the-content #cchl_bl_reset {
-	
 	a.ais-clear-all--link {
-		display:block;
-		padding:6px;
-		background-color:@verde;
-		color:white;
-		border-bottom:0;
-		text-align:center;
-		border-radius:6px;
-		transition:all linear 0.3s;
+		display: block;
+		padding: 6px;
+		background-color: @verde;
+		color: white;
+		border-bottom: 0;
+		text-align: center;
+		border-radius: 6px;
+		transition: all linear 0.3s;
 		&:hover {
-			background-color:@magenta;
-			color:white;
-		}	
+			background-color: @magenta;
+			color: white;
+		}
 	}
 
-	@media screen and (max-width:@scrbr) {
-		padding-bottom:36px;
+	@media screen and (max-width: @scrbr) {
+		padding-bottom: 36px;
 	}
 }
 
 #cchl_bl_resultados {
-	font-size:32px;
-	margin:24px 0;
-	color:@verdeoscuro;
-	font-family:'Signika', sans-serif;
+	font-size: 32px;
+	margin: 24px 0;
+	color: @verdeoscuro;
+	font-family: 'Signika', sans-serif;
 }
 
 body#filsa-2016 #content .the-content span.showswitch {
-	display:inline-block;
-	padding:3px;
-	border-radius:5px;
-	background-color:@verde;
-	color:darken(@verde, 25%);
-	cursor:pointer;
-	margin:6px 0;
-	font-size:13px;
-	transition:all linear 0.3s;
-	
+	display: inline-block;
+	padding: 3px;
+	border-radius: 5px;
+	background-color: @verde;
+	color: darken(@verde, 25%);
+	cursor: pointer;
+	margin: 6px 0;
+	font-size: 13px;
+	transition: all linear 0.3s;
+
 	&:hover {
-		background-color:@magenta;
+		background-color: @magenta;
 	}
 }
 
 body#filsa-2016 #content .the-content span.triggerfilter {
-	display:none;
-	text-align:center;
-	padding:6px;
-	text-transform:uppercase;
-	border-radius:6px;
-	background-color:@verde;
-	color:darken(@verde, 25%);
-	cursor:pointer;
-	transition:all linear 0.3s;
-	margin:12px;
-	font-size:13px;
-	
+	display: none;
+	text-align: center;
+	padding: 6px;
+	text-transform: uppercase;
+	border-radius: 6px;
+	background-color: @verde;
+	color: darken(@verde, 25%);
+	cursor: pointer;
+	transition: all linear 0.3s;
+	margin: 12px;
+	font-size: 13px;
+
 	&.onresults {
-		margin-left:0;
-	}
-	
-	&:hover {
-		background-color:@magenta;
-		color:white;
+		margin-left: 0;
 	}
 
-	@media screen and (max-width:@scrbr) {
-		display:block;
+	&:hover {
+		background-color: @magenta;
+		color: white;
+	}
+
+	@media screen and (max-width: @scrbr) {
+		display: block;
 	}
 }
 
 button#buscador-libros-boton {
-	background-color:@verde;
-	color:darken(@verde, 35%);
-	padding:6px;
-	font-size:14px;
-	border:1px solid darken(@verde, 5%);
-	border-radius:6px;
-	text-transform:uppercase;
-	transition:all linear 0.1s;
-	cursor:pointer;
+	background-color: @verde;
+	color: darken(@verde, 35%);
+	padding: 6px;
+	font-size: 14px;
+	border: 1px solid darken(@verde, 5%);
+	border-radius: 6px;
+	text-transform: uppercase;
+	transition: all linear 0.1s;
+	cursor: pointer;
 	&:hover {
-		background-color:@magenta;
-		color:white;
-		border:1px solid darken(@magenta, 5%);
+		background-color: @magenta;
+		color: white;
+		border: 1px solid darken(@magenta, 5%);
 	}
 }

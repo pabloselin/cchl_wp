@@ -66,6 +66,11 @@ $event_id = get_the_ID();
 				endif;
 
 			endif;?>
+
+			<?php if(filsa2017_checkorg($event_id)) {
+				echo filsa2017_linktickets();
+			}?>
+			
 			
 			<!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
