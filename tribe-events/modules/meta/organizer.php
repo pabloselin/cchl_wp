@@ -18,13 +18,13 @@ $website = tribe_get_organizer_website_link();
 $event_id = get_the_ID();
 ?>
 
-<div class="tribe-events-meta-group tribe-events-meta-group-organizer">
+<div class="tribe-events-meta-group tribe-events-meta-group-organizer <?php if($multiple): echo 'multiple'; endif;?> ">
 	<dl>
 		<dt><i class="fa fa-dot-circle-o fa-fw"></i> <?php echo tribe_get_organizer_label( ! $multiple ); ?>: </dt>
 		<?php
 		do_action( 'tribe_events_single_meta_organizer_section_start' );
 
-		foreach ( $organizer_ids as $organizer ) {
+		foreach ( $organizer_ids as $key=>$organizer ) {
 			if ( ! $organizer ) {
 				continue;
 			}
@@ -32,9 +32,11 @@ $event_id = get_the_ID();
 			?>
 			<dt style="display:none;"><?php // This element is just to make sure we have a valid HTML ?></dt>
 			<dd class="tribe-organizer">
-				<?php echo tribe_get_organizer_link( $organizer ) ?>
-			</dd>
-	
+				<?php echo tribe_get_organizer( $organizer ) ?>
+				<?php if(count($organizer_ids) != $key+1) {
+				echo ' - ';
+			}?>
+			</dd>	
 			<?php
 		};
 
