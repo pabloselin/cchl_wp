@@ -1,13 +1,13 @@
 <?php
 /*
-Template Name: Plantilla Feria BS 
+Template Name: Plantilla Feria 2018 
 */
 ?>
 
 <?php get_header('bs-ferias'); ?>
 <?php 
     // Custom Fields
-    $postid = cchl_current_fields_id('bs-plantilla-feria.php')? cchl_current_fields_id('bs-plantilla-feria.php') : cchl_current_fields_id('templates/bs-plantilla-feria.php');
+    $postid = cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
     $toppost = get_post($postid);
     $menuferia = get_post_meta($postid, 'cchl_bsmenuferia', true);
     $page_evts = get_post_meta($postid, 'cchl_bspageevents', true);
@@ -48,7 +48,7 @@ Template Name: Plantilla Feria BS
                     endif;?>
 
             <?php if( get_the_ID() == $page_evts) {
-                get_template_part('parts/bs-blocks/bs-programa-cultural');
+                get_template_part('parts/bs-blocks/bs-nuevo-programa-cultural');
             }?>
 
         </div>

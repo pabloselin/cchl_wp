@@ -12,7 +12,7 @@ function cchl_bsferiaboxes() {
             'id' => $prefix . 'infoferia',
             'title' => 'Información de la Feria',
             'object_types' => array('page'),
-            'show_on' => array('key' => 'page-template', 'value' => 'templates/bs-plantilla-feria.php')
+            'show_on' => array('key' => 'page-template', 'value' => array('templates/bs-plantilla-feria.php', 'templates/bs-nueva-plantilla-feria.php'))
         )
     );
 
@@ -65,6 +65,15 @@ function cchl_bsferiaboxes() {
             'show_option_none' => 'Escoja una página',
             'options' => $eventoptions
         )
+    );
+
+    $feriabox->add_field(
+      array(
+          'name' => 'Clase CSS para la feria',
+          'desc' => 'Clase que se usará para diferenciar estilos en la Feria',
+          'id' => $prefix . 'bsclass',
+          'type' => 'text'
+      )
     );
 
 }
