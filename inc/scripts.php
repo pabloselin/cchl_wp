@@ -50,7 +50,7 @@ global $post;
 	  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
   }
   if(WP_ENV != 'development') {
-    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.667fe8f6.min.js', array('jquery'), CCHL_VERSION, true);
+    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.29cec3ec.min.js', array('jquery'), CCHL_VERSION, true);
   } else {
     wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.js', array('jquery'), CCHL_VERSION, true);
   }
