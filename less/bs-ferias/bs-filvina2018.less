@@ -12,9 +12,27 @@ body.filvina2018 {
     background-color:@rojofilvina2018;
     border-top:0;
     border-bottom:0;
+    ul li.home a {
+      font-size:0;
+      &:before {
+          content: '\f015';
+          font-family: 'FontAwesome';
+          font-size: 18px;
+          color: white;
+          font-style: normal;
+          font-weight: normal;
+          line-height: 20px;
+          vertical-align: top;
+      }
+    }
+    ul li {
+      display:table;
+    }
     ul li a {
       text-transform:uppercase;
-      font-family:serif;
+      font-family:'Signika', sans-serif;
+      font-size:18px;
+      display:table-cell;
       &:hover {
         background-color:@azulfilvina2018;
       }
@@ -31,7 +49,6 @@ body.filvina2018 {
 
 body.filvina2018 {
   h1.post-title {
-    font-family:serif;
     color: @azulfilvina2018;
     text-transform:none;
   }
