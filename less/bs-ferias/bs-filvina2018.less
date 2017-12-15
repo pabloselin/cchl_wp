@@ -44,6 +44,55 @@ body.filvina2018 {
   }
 }
 
+//Menu móvil
+body.filvina2018 {
+      .mobile-home {
+        display:none;
+      }
+  @media screen and (max-width:@screen-sm) {
+      .mobile-home {
+        position: absolute;
+        color:white;
+        font-size:24px;
+        top:10px;
+        left:10px;
+        display:block;
+        &:hover {
+          color:lighten(@rojofilvina2018,20%);
+        }
+      }
+   }
+  .navbar-toggle {
+    border-color:white;
+    margin-right:26px;
+    border-radius:5px;
+    &:focus, &:hover {
+      background-color:@azulfilvina2018;
+    }
+    .labelmenu {
+      display:none;
+    }
+  }
+  .container.feria-mobile-nav {
+    padding:0;
+  }
+  .navbar-mobile .navbar-collapse {
+    border-top:0;
+    padding:0;
+    ul.navbar-nav {
+      margin:0;
+    }
+    ul li {
+      display:block;
+    }
+    ul li.home {
+      display:none;
+    }
+    ul li a {
+      display:block;
+    }
+  }
+}
 
 //Contenido
 

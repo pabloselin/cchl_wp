@@ -19,9 +19,22 @@
 <?php get_template_part( 'parts/fb-sdk');?>
 
 
+<div class="camara-header-filsa">
+			<div class="container animated fadeInDown">
+                <span class="hidden-xs">
+                    <a href="<?php echo get_bloginfo('url');?>"><img src="<?php echo get_bloginfo('template_url');?>/img/filsa2014/cchl_filsaheader.png" alt="<?php bloginfo('title');?>" /> CÁMARA CHILENA DEL LIBRO</a>
+                </span>
+                
+                <div class="redes">
+                    <a href="<?php echo filsa2017_get_option('filsa2017_facebook');?>"><i class="fa fa-fw fa-facebook-square"></i></a>
+                    <a href="<?php echo filsa2017_get_option('filsa2017_twitter');?>"><i class="fa fa-fw fa-twitter"></i></a>
+                    <a href="<?php echo filsa2017_get_option('filsa2017_instagram');?>"><i class="fa fa-fw fa-instagram"></i></a>
+                    <a href="<?php echo filsa2017_get_option('filsa2017_flickr');?>"><i class="fa fa-fw fa-flickr"></i></a>
+                </div>
+			</div>
+</div>
 <header class="site-header">
 
-        <?php get_template_part('parts/bs-general/bs-utilbar-ferias');?>
 
        <div class="container nopad">
             <div class="row">
@@ -37,6 +50,7 @@
   <div class="container feria-mobile-nav">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
+      <a href="<?php echo get_permalink($postid);?>" class="mobile-home" ><i class="fa fa-home"></i></a>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-feria-mobile">
         <span class="labelmenu">menú</span>
         <span class="sr-only">Toggle navigation</span>
