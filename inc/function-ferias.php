@@ -188,13 +188,17 @@ function filsa_template($template) {
 function cchl_bsferiaredirect($original_template) {
 	global $post;
 	$using_bsferiatemplate= cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php');
-
+  $using_newbsferiatemplate = cchl_get_topmost_parent_template($post->ID, 'templates/bs-nueva-plantilla-feria.php');
 	if($using_bsferiatemplate) {
 		return  get_template_directory() .  '/bs-plantilla-feria.php';
-	} else {
+  } elseif($using_newbsferiatemplate) {
+    return get_template_directory() . '/templates/bs-nueva-plantilla-feria.php';
+  } else {
 		return $original_template;
 		}
 }
+
+add_action('template_include', 'cchl_bsferiaredirect');
 
 function cchl_current_fields_id($template_to_look) {
 	//devuelve el ID de la página donde se almacenan los datos de la plantilla personalizada para una feria
@@ -204,7 +208,6 @@ function cchl_current_fields_id($template_to_look) {
 	
 }
 
-add_action('template_include', 'cchl_bsferiaredirect');
 
 function checkfilsa($postid = NULL) {
   global $post;

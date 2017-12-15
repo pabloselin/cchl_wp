@@ -94,6 +94,16 @@ function cchl_bsferiaboxes() {
       )
     );
 
+    $feriabox->add_field( array(
+          'name'           => 'Taxonomía Feria',
+          'desc'           => 'Término de taxonomía para eventos, noticias, etc.',
+          'id'             => $prefix . 'bstax',
+          'taxonomy'       => 'ferias', //Enter Taxonomy Slug
+          'type'           => 'taxonomy_select',
+          'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
+      )  
+    );
+
 }
 
 add_action('cmb2_admin_init', 'cchl_bsferiaboxes');
