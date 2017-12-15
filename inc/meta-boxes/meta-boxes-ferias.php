@@ -68,6 +68,24 @@ function cchl_bsferiaboxes() {
     );
 
     $feriabox->add_field(
+        array(
+          'name' => 'Fecha inicio Feria',
+          'desc' => 'Día de inicio de la Feria (para eventos)',
+          'id' => $prefix . 'bsinicioferia',
+          'type' => 'text_date'
+        )
+    );
+
+    $feriabox->add_field(
+        array(
+           'name' => 'Fecha fin Feria',
+           'desc' => 'Día finalización de la Feria (para eventos)',
+           'id' => $prefix . 'bsfinferia',
+           'type' => 'text_date'
+          )
+    );
+
+    $feriabox->add_field(
       array(
           'name' => 'Clase CSS para la feria',
           'desc' => 'Clase que se usará para diferenciar estilos en la Feria',
