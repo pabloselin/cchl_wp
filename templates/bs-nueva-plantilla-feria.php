@@ -23,7 +23,7 @@ Template Name: Plantilla Feria 2018
 
 <div class="container">
     <div class="row">
-        <div class="content-feria col-md-12">
+        <div class="content-feria col-md-10 col-md-offset-1">
 
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
 
@@ -57,4 +57,4 @@ Template Name: Plantilla Feria 2018
 
 </div>
 
-<?php get_template_part('parts/bs-home/bs-footer'); ?>
+<?php get_template_part('parts/bs-footer-ferias-nuevo'); ?>

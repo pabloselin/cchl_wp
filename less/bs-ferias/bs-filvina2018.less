@@ -1,15 +1,15 @@
 @rojofilvina2018: #C3361B;
 @azulfilvina2018: #3E61A0;
-
+@botonerafilvina2018: #1B9BD6;
 body.filvina2018 {
   .sidebar-menu-feria div ul > li > a {
     background-color:@rojofilvina2018;
   }
   .bs-mobile-menu-ferias > .main-navbar .navbar-header {
-    background-color:@rojofilvina2018;
+    background-color:@botonerafilvina2018;
   }
   .feria-navbar {
-    background-color:@rojofilvina2018;
+    background-color:@botonerafilvina2018;
     border-top:0;
     border-bottom:0;
     ul li.home a {
@@ -50,6 +50,10 @@ body.filvina2018 {
         display:none;
       }
   @media screen and (max-width:@screen-sm) {
+      header.site-header {
+        max-width:100%;
+        overflow:hidden;
+      }
       .mobile-home {
         position: absolute;
         color:white;
@@ -102,3 +106,5 @@ body.filvina2018 {
     text-transform:none;
   }
 }
+
+@import 'bs-footer-ferias.less';
