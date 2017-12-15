@@ -23,7 +23,7 @@ Template Name: Plantilla Feria 2018
 
 <div class="container">
     <div class="row">
-        <div class="content-feria col-md-9">
+        <div class="content-feria col-md-12">
 
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
 
