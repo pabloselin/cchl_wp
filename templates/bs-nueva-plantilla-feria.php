@@ -12,6 +12,7 @@ Template Name: Plantilla Feria 2018
     $menuferia = get_post_meta($postid, 'cchl_bsmenuferia', true);
     $page_evts = get_post_meta($postid, 'cchl_bspageevents', true);
     $colaboradores = get_post_meta( $postid, 'cchl_bspagecolabs', true );
+    $noticias = get_post_meta( $postid, 'cchl_bspagenews', true);
     //var_dump($colaboradores);
     $argsmenu = array(
         'menu' => $menuferia,
@@ -46,7 +47,11 @@ Template Name: Plantilla Feria 2018
 
             <?php if( get_the_ID() == $page_evts) {
                 get_template_part('parts/bs-blocks/bs-nuevo-programa-cultural');
-            }?>
+                    }?>
+
+            <?php if(get_the_ID() == $noticias) {
+                  get_template_part('parts/bs-blocks/bs-nuevas-noticias-ferias');
+                };?>
 
         </div>
     </div>

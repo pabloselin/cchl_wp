@@ -56,6 +56,18 @@ function cchl_bsferiaboxes() {
         )
     );
 
+        
+    $feriabox->add_field(
+        array(
+          'name' => 'Página de Noticias',
+          'desc' => 'La página donde se encuentran las noticias de esta feria (tiene que ser subpágina de esta)',
+          'id'   => $prefix . 'bspagenews',
+          'type' => 'select',
+          'show_option_none' => 'Escoja una página',
+          'options' => $eventoptions
+          )
+        );
+
     $feriabox->add_field(
         array(
             'name' => 'Página de colaboradores',
