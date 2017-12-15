@@ -1,13 +1,15 @@
 <?php 
     $options = get_option( 'cchl_settings' );
 ?>
-
-<ul id="redes-moviles" class="redes-movil visible-xs nav navbar-nav">
-                    <li class="menu-item"><a href="<?php echo filsa2017_get_option('filsa2017_facebook');?>"><i class="fa fa-fw fa-facebook-square"></i> </a></li>
-                    <li class="menu-item"><a href="<?php echo filsa2017_get_option('filsa2017_twitter');?>"><i class="fa fa-fw fa-twitter"></i> </a> </li>
-                    <li class="menu-item"><a href="<?php echo filsa2017_get_option('filsa2017_instagram');?>"><i class="fa fa-fw fa-instagram"></i> </a> </li>
-                    <li class="menu-item"><a href="<?php echo filsa2017_get_option('filsa2017_flickr');?>"><i class="fa fa-fw fa-flickr"></i> </a></li>
-</ul>
+    <footer class="footer-mobile visible-xs visible-sm">
+        <ul>
+            <li class="redes-footer"><a href="https://facebook.com/<?php echo $options['cchl_fbcamara'];?>"><i class="fa fa-facebook"></i></a> </li>
+			<li class="redes-footer"><a href="https://twitter.com/<?php echo $options['cchl_twitter'];?>"><i class="fa fa-twitter"></i></a> </li>
+			<li class="redes-footer"><a href="<?php echo $options['cchl_youtube'];?>"><i class="fa fa-youtube-play"></i></a> </li>
+            <li class="redes-footer"><a href="https://instagram.com/<?php echo $options['cchl_instagram'];?>"><i class="fa fa-instagram"></i></a> </li>
+        </ul>
+    </footer>
+	
 
 <footer class="footer-ferias">
     <div class="container">
