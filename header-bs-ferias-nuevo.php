@@ -26,10 +26,10 @@
                 </span>
                 
                 <div class="redes">
-                    <a href="<?php echo filsa2017_get_option('filsa2017_facebook');?>"><i class="fa fa-fw fa-facebook-square"></i></a>
-                    <a href="<?php echo filsa2017_get_option('filsa2017_twitter');?>"><i class="fa fa-fw fa-twitter"></i></a>
-                    <a href="<?php echo filsa2017_get_option('filsa2017_instagram');?>"><i class="fa fa-fw fa-instagram"></i></a>
-                    <a href="<?php echo filsa2017_get_option('filsa2017_flickr');?>"><i class="fa fa-fw fa-flickr"></i></a>
+                    <a href="https://facebook.com/<?php echo $cchl_options['cchl_fbcamara'];?>"><i class="fa fa-fw fa-facebook-square"></i></a> 
+                    <a href="https://twitter.com/<?php echo $cchl_options['cchl_twitter'];?>"><i class="fa fa-fw fa-twitter"></i></a> 
+                    <a href="<?php echo $cchl_options['cchl_youtube'];?>"><i class="fa fa-fw fa-youtube-play"></i></a> 
+                    <a href="https://instagram.com/<?php echo $cchl_options['cchl_instagram'];?>"><i class="fa fa-fw fa-instagram"></i></a> 
                 </div>
 			</div>
 </div>
