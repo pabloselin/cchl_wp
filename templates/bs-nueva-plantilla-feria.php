@@ -4,7 +4,7 @@ Template Name: Plantilla Feria 2018
 */
 ?>
 
-<?php get_header('bs-ferias'); ?>
+<?php get_header('bs-ferias-nuevo'); ?>
 <?php 
     // Custom Fields
     $postid = cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
@@ -15,7 +15,7 @@ Template Name: Plantilla Feria 2018
     //var_dump($colaboradores);
     $argsmenu = array(
         'menu' => $menuferia,
-        'menu_class' => 'nav nav-pills nav-stacked'
+        'menu_class' => 'nav'
     );
 
     $cchl_options = get_option( 'cchl_settings' );
@@ -23,9 +23,6 @@ Template Name: Plantilla Feria 2018
 
 <div class="container">
     <div class="row">
-        <div class="sidebar-menu-feria col-md-3 hidden-xs hidden-sm">
-            <?php wp_nav_menu( $argsmenu );?>
-        </div>
         <div class="content-feria col-md-9">
 
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>

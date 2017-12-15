@@ -1,4 +1,5 @@
 @rojofilvina2018: #C3361B;
+@azulfilvina2018: #3E61A0;
 
 body.filvina2018 {
   .sidebar-menu-feria div ul > li > a {
@@ -6,5 +7,32 @@ body.filvina2018 {
   }
   .bs-mobile-menu-ferias > .main-navbar .navbar-header {
     background-color:@rojofilvina2018;
+  }
+  .feria-navbar {
+    background-color:@rojofilvina2018;
+    border-top:0;
+    border-bottom:0;
+    ul li a {
+      text-transform:uppercase;
+      font-family:serif;
+      &:hover {
+        background-color:@azulfilvina2018;
+      }
+    }
+  }
+  footer.site-footer {
+    background-image:none;
+    background-color: #fff;
+  }
+}
+
+
+//Contenido
+
+body.filvina2018 {
+  h1.post-title {
+    font-family:serif;
+    color: @azulfilvina2018;
+    text-transform:none;
   }
 }
