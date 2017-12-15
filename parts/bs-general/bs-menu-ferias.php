@@ -1,5 +1,5 @@
 <?php 
-    $postid = cchl_current_fields_id('bs-plantilla-feria.php');
+    $postid = cchl_current_fields_id('bs-plantilla-feria.php') ? cchl_current_fields_id('bs-plantilla-feria.php') : cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
     $header_lg = get_post_meta($postid, 'cchl_bsferiaheader_lg', true);
     $header_sm = get_post_meta($postid, 'cchl_bsferiaheader_sm', true);
     $menuferia = get_post_meta($postid, 'cchl_bsmenuferia', true);
@@ -11,7 +11,7 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <div class="brand">
-                    <a href="<?php echo get_bloginfo('url');?>"><img src="<?php echo get_bloginfo('template_url');?>/img/cchl_logo_mono.svg" alt="<?php bloginfo('title');?>" /></a>
+                    <a href="<?php echo get_bloginfo('url');?>"><img src="<?php echo get_bloginfo('template_url');?>/img/cchl_logo_blanco.svg" alt="<?php bloginfo('title');?>" /></a>
             </div>
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-mainmenu-collapse">
