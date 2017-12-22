@@ -33,27 +33,35 @@ $events = get_posts($args);
 
 ?>
 
+<div class="bs-calendario">
 <ul class="dias-ferias">
 <?php 
+$hoy = date('j');
+
 foreach($events as $event){
   //un día por evento
-	$startday = tribe_get_start_date( $event->ID, false, 'l');
-  $daystring = $startday;
-  var_dump($daystring);
-  ?>
-    <li class="dia" data-id="<?php echo $event->ID;?>"><?php echo $daystring;?></li>
-  <?php  
- 
+	$day = tribe_get_start_date( $event->ID, false, 'l');
+	$dayno = tribe_get_start_date( $event->ID, false, 'j');
+	$month = tribe_get_start_date( $event->ID, false, 'F');
+  $daystring = '<i>' . $day . '</i><i class="dn">' . $dayno . '</i><i>' . $month . '</i>'; 
+  $eshoy = ($dayno == $hoy)? 'hoy' : '';
+?>
+  <li class="dia <?php echo $eshoy;?>" data-id="<?php echo $event->ID;?>"><?php echo $daystring;?></li>
+<?php  
+
 }
 endif;
 ?>
 </ul>
-<div class="dias-ferias-contenido">
+  <div class="dias-ferias-contenido">
   <?php foreach($events as $event){
-      ?>
-      <div class="dia-feria" data-id="<?php echo $event->ID;?>">
-            <?php echo apply_filters('the_content', $event->post_content);?>
-      </div>
-      <?php 
-  }?>
+  ?>
+        <div class="dia-feria" data-id="<?php echo $event->ID;?>">
+        <h4><a href="<?php echo get_permalink($event->ID);?>"><?php echo $event->post_title;?></a></h4>
+        <?php echo apply_filters('the_content', $event->post_content);?>
+        </div>
+<?php 
+}?>
+</div>
+
 </div>

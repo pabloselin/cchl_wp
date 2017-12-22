@@ -46,7 +46,7 @@ Template Name: Plantilla Feria 2018
                     endif;?>
 
             <?php if( get_the_ID() == $page_evts) {
-                get_template_part('parts/bs-blocks/bs-nuevo-programa-cultural');
+                get_template_part('parts/blocks/bs-nuevo-programa-cultural-ferias');
                     }?>
 
             <?php if(get_the_ID() == $noticias) {

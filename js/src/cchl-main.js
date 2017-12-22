@@ -63,6 +63,24 @@ $('.tab-nav li a', tabs).on('click', function(element) {
     
 }); 
 
+//Funcionalidad programa para FILVIÑA 2018 y otras ferias que vengan
+var diabsferia = $('.bs-calendario .dias-ferias-contenido .dia-feria');
+diabsferia.hide();
 
+$('ul.dias-ferias li.dia').on('click', function() {
+    var dataid = $(this).attr('data-id');
+    var dias = $('ul.dias-ferias li.dia');
+    diabsferia.hide();
+    $('.bs-calendario .dias-ferias-contenido').find('[data-id="' + dataid + '"]').fadeIn();
+    dias.removeClass('active');
+    $(this).addClass('active');
+});
 	  
-	  
+if($('ul.dias-ferias').find('.hoy').length) {
+  $('ul.dias-ferias li.hoy').trigger('click');
+}	else {
+  $('ul.dias-ferias li').first().trigger('click');
+  console.log('first-element');
+}
+
+
