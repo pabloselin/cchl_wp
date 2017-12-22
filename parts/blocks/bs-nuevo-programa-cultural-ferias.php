@@ -4,9 +4,6 @@
  */
 ?>
 
-<div class="bs-eventos">
-    <h2 class="programa-header">Programación</h2>
-</div>
 <?php 
 $postid = cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
 $evterm = get_post_meta($postid, 'cchl_bstax', true);
