@@ -10,6 +10,9 @@
 <?php 
     $cchl_options = get_option( 'cchl_settings' );
     $postid = cchl_current_fields_id('bs-plantilla-feria.php')? cchl_current_fields_id('bs-plantilla-feria.php') : cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
+    if(!$postid) {
+      $postid = 74397;
+    }
     $header_lg = get_post_meta($postid, 'cchl_bsferiaheader_lg', true);
     $header_sm = get_post_meta($postid, 'cchl_bsferiaheader_sm', true);
     $menuferia = get_post_meta($postid, 'cchl_bsmenuferia', true);

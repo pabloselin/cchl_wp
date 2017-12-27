@@ -189,9 +189,10 @@ function cchl_bsferiaredirect($original_template) {
 	global $post;
 	$using_bsferiatemplate= cchl_get_topmost_parent_template($post->ID, 'bs-plantilla-feria.php');
   $using_newbsferiatemplate = cchl_get_topmost_parent_template($post->ID, 'templates/bs-nueva-plantilla-feria.php');
+  $incategoryfil = is_object_in_term($post->ID, 'ferias', 'fil-vina-2018');
 	if($using_bsferiatemplate) {
 		return  get_template_directory() .  '/bs-plantilla-feria.php';
-  } elseif($using_newbsferiatemplate) {
+  } elseif($using_newbsferiatemplate || $incategoryfil ) {
     return get_template_directory() . '/templates/bs-nueva-plantilla-feria.php';
   } else {
 		return $original_template;
