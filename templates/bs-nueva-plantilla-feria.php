@@ -14,7 +14,6 @@ $page_evts = get_post_meta($postid, 'cchl_bspageevents', true);
 $colaboradores = get_post_meta( $postid, 'cchl_bspagecolabs', true );
 $noticias = get_post_meta( $postid, 'cchl_bspagenews', true);
 $expositores = get_post_meta( $postid, 'cchl_bspageexpositores', true);
-
 //var_dump($colaboradores);
 $argsmenu = array(
   'menu' => $menuferia,
