@@ -1,6 +1,6 @@
 {
   "name": "cchl",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "author": "Pablo Selín <pablo@apie.cl>",
   "homepage": "http://apie.cl",
   "devDependencies": {
@@ -16,5 +16,22 @@
     "grunt-image": "^2.5.0",
     "grunt-version": "^1.1.1",
     "grunt-wp-assets": "^0.2.6"
+  },
+  "description": "WordPress Theme for CCHL",
+  "main": "functions.php",
+  "dependencies": {},
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabloselin/cchl_wp.git"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pabloselin/cchl_wp/issues"
   }
 }

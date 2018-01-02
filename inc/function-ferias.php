@@ -193,7 +193,11 @@ function cchl_bsferiaredirect($original_template) {
 	if($using_bsferiatemplate) {
 		return  get_template_directory() .  '/bs-plantilla-feria.php';
   } elseif($using_newbsferiatemplate || $incategoryfil ) {
-    return get_template_directory() . '/templates/bs-nueva-plantilla-feria.php';
+    if(!is_home()):
+      return get_template_directory() . '/templates/bs-nueva-plantilla-feria.php';
+    else:
+      return $original_template;
+    endif;
   } else {
 		return $original_template;
 		}

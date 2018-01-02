@@ -88,6 +88,17 @@ function cchl_bsferiaboxes() {
             'options' => $eventoptions
         )
     );
+    
+    $feriabox->add_field(
+        array(
+            'name' => 'Página de expositores',
+            'desc' => 'La página donde se encuentran los expositores',
+            'id' => $prefix . 'bspageexpositores',
+            'type' => 'select',
+            'show_option_none' => 'Escoja una página',
+            'options' => $eventoptions
+        )
+    );
 
     $feriabox->add_field(
         array(

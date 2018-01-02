@@ -13,6 +13,8 @@ $menuferia = get_post_meta($postid, 'cchl_bsmenuferia', true);
 $page_evts = get_post_meta($postid, 'cchl_bspageevents', true);
 $colaboradores = get_post_meta( $postid, 'cchl_bspagecolabs', true );
 $noticias = get_post_meta( $postid, 'cchl_bspagenews', true);
+$expositores = get_post_meta( $postid, 'cchl_bspageexpositores', true);
+
 //var_dump($colaboradores);
 $argsmenu = array(
   'menu' => $menuferia,
@@ -60,6 +62,10 @@ get_template_part('parts/blocks/bs-nuevo-programa-cultural-ferias');
 
 <?php if(get_the_ID() == $noticias) {
 get_template_part('parts/bs-blocks/bs-nuevas-noticias-ferias');
+};?>
+
+<?php if(get_the_ID() == $expositores) {
+get_template_part('parts/bs-blocks/bs-expositores');
 };?>
 
         </div>
