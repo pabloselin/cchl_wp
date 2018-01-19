@@ -1,4 +1,3 @@
-<div class="container">
 <div class="row">
 <?php 
 $postid = cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
@@ -35,5 +34,4 @@ $imgsrc = wp_get_attachment_image_src( $imgthid, 'noticia-secundaria' );
 endforeach;
 ?>
 
-</div>
 </div>

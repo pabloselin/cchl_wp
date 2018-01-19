@@ -23,12 +23,12 @@ $isnews = (get_post_type() == 'post')? true : false;
 if($isnews):
   $colwidth = 'col-md-8 single-noticia-feria';
 else:
-$colwidth = 'col-md-10 col-md-offset-1';
+  $colwidth = 'col-md-10 col-md-offset-1';
 endif;
+
 $cchl_options = get_option( 'cchl_settings' );
 ?>
-
-<div class="container">
+<div class="container main-container">
     <div class="row">
     <div class="content-feria <?php echo $colwidth;?>">
 
@@ -50,7 +50,8 @@ $cchl_options = get_option( 'cchl_settings' );
   get_template_part('parts/bs-blocks/bs-colaboradores');
 endif;?>
 
-                </div>
+                </div><!--/text-content-->
+
 
 <?php endwhile;
 endif;?>
@@ -67,7 +68,7 @@ get_template_part('parts/bs-blocks/bs-nuevas-noticias-ferias');
 get_template_part('parts/bs-blocks/bs-expositores');
 };?>
 
-        </div>
+        </div><!--/content-feria-->
       <?php if($isnews):?>
           <div class="aside-feria-extras col-md-4">
 <?php 
@@ -110,14 +111,11 @@ endif;//duplicated post id
 endforeach;
 endif;//if noticias home
 ?>
-          </div>
+         </div><!--/aside ferias extras-->
       <?php endif;?>
-    </div>
+    </div><!--/row-->
+</div><!--/main-container-->
 
 
-
-
-
-</div>
 
 <?php get_template_part('parts/bs-footer-ferias-nuevo'); ?>
