@@ -1,65 +1,81 @@
 article.post,
 article.page,
 article.trabajos,
-article.socios
- {
-
+article.socios {
     .ft-img-wrapper {
-        max-height:350px;
-        overflow:hidden;
-        margin-bottom:24px;
+        max-height: 350px;
+        overflow: hidden;
+        margin-bottom: 24px;
     }
 
     img.wp-post-image {
-        width:100%;
-        height:auto;
+        width: 100%;
+        height: auto;
     }
 
     header {
-        margin:24px 0 24px 0;
+        margin: 24px 0 24px 0;
         time {
-            font-size:16px;
-            color:@gris_oscuro;
+            font-size: 16px;
+            color: @gris_oscuro;
         }
         h1 {
-            color:@azul_menu;
-            margin-top:0;
+            color: @azul_menu;
+            margin-top: 0;
         }
 
-        @media screen and (max-width:@screen-sm) {
-            margin-top:0;
+        @media screen and (max-width: @screen-sm) {
+            margin-top: 0;
         }
     }
 }
 
-    .text-content {
-        font-size:18px;
-        line-height:1.6em;
-        p {
-            margin-bottom:1.3em;
-        }
+.text-content {
+    font-size: 18px;
+    line-height: 1.6em;
 
-        strong {
-            color: #00549e;
-        }
-        
-        img {
-            max-width:100%;
-            height:auto;
-            margin:0 auto;
-        }
-
-        h1 {
-            font-size:24px;
-            color:#555;
-        }
-
-        h2, h3, h4 {
-            font-size:22px;
-            color:#555;
-        }
+    a:link,
+    a:visited,
+    a:hover {
+        color: #0000ee;
     }
 
+    p {
+        margin-bottom: 1.3em;
+    }
+
+    strong {
+        color: #555;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 26px;
+        color: #555;
+    }
+
+    h2 {
+        font-size: 24px;
+        color: #555;
+        font-weight: normal !important;
+    }
+
+    h3 {
+        font-size: 22px;
+        color: #555;
+        font-weight: normal !important;
+    }
+
+    table td {
+        padding: 6px;
+    }
+}
+
 .link_prensa {
-    font-size:18px;
+    font-size: 18px;
 }
