@@ -1,7 +1,7 @@
 <div class="bs-eventos">
     <h2 class="programa-header">Programación</h2>
         <?php 
-                $postid = cchl_current_fields_id('bs-plantilla-feria.php');
+                $postid = cchl_current_fields_id('templates/bs-plantilla-feria.php');
                 $page_evts = get_post_meta($postid, 'cchl_bspageevents', true);
                 $meses = array(
                     'enero' => 1,
