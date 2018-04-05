@@ -1,71 +1,71 @@
-.sharer
- {
-	height:36px;
-	margin-bottom:12px;
-	clear:both;
-	margin-top:0;
-		a {
-			float:left;
-			margin:0 6px 12px 0;
-			width:60px;
-			display: block;
-			border-radius:5px;
-			border:0;
-			color:white;
-			padding:6px;
-			height:32px;
-			-webkit-transition:background ease-in 0.3s;
-			transition:background ease-in 0.3s;
-      line-height:22px;
-			
-			span {
-				vertical-align:middle;
-				line-height:18px;	
-				font-size:13px;
-				font-weight:bold;
-			}
+.sharer,
+.text-content .sharer   {
+	height: 36px;
+	margin-bottom: 12px;
+	clear: both;
+	margin-top: 0;
+	a:link {
+		float: left;
+		margin: 0 6px 12px 0;
+		width: 60px;
+		display: block;
+		border-radius: 5px;
+		border: 0;
+		color: white;
+		padding: 6px;
+		height: 32px;
+		-webkit-transition: background ease-in 0.3s;
+		transition: background ease-in 0.3s;
+		line-height: 22px;
 
-			i {
-				font-size:18px;
-				margin-right:3px;
-				line-height:18px;
-				vertical-align:middle;
-			}
+		span {
+			vertical-align: middle;
+			line-height: 18px;
+			font-size: 13px;
+			font-weight: bold;
+		}
 
+		i {
+			font-size: 18px;
+			margin-right: 3px;
+			line-height: 18px;
+			vertical-align: middle;
+		}
+
+		&:hover {
+			border: 0;
+		}
+
+		&.sharer__facebook {
+			background-color: #3b5998;
 			&:hover {
-				border:0;
-			}
-
-			&.sharer__facebook {
-				background-color:#3b5998;
-				&:hover {
-					background-color:lighten(#3b5998, 10%);
-				}
-			}
-
-			&.sharer__twitter {
-				background-color:#00aced;
-				&:hover {
-					background-color:lighten(#00aced, 10%);
-				}
-			}
-
-			&.sharer__gplus {
-				background-color:#B34234;
-				&:hover {
-					background-color:lighten(#B34234, 10%);
-				}	
-			}
-
-			&.sharer__whatsapp {
-				background-color:@whatsapp;
-				i {
-					font-size:22px;
-					margin-top:-2px;
-				}
-				&:hover {
-					background-color:lighten(@whatsapp, 10%);
-				}	
+				background-color: lighten(#3b5998, 10%);
 			}
 		}
+
+		&.sharer__twitter {
+			background-color: #00aced;
+			&:hover {
+				background-color: lighten(#00aced, 10%);
+			}
+		}
+
+		&.sharer__gplus {
+			background-color: #b34234;
+			&:hover {
+				background-color: lighten(#b34234, 10%);
+			}
+		}
+
+		&.sharer__whatsapp {
+			background-color: @whatsapp;
+			i {
+				font-size: 22px;
+				margin-top: -2px;
+			}
+			&:hover {
+				background-color: lighten(@whatsapp, 10%);
+			}
+		}
+	}
 }
