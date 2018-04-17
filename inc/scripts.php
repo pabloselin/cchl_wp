@@ -13,7 +13,7 @@ function cchl_styles() {
 	//Compiled grunt style
 	wp_register_style( 'legacy', get_bloginfo('template_url') . '/css/legacy.3f46b1a0.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.dc745e1e.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.24271da8.min.css', array(), CCHL_VERSION, 'screen' );
 
   $oldpages = cchl_oldcondition($post->ID);
 	if($oldpages == true ) {
@@ -49,7 +49,7 @@ global $post;
 	  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
   }
   if(WP_ENV != 'development') {
-    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.789198aa.min.js', array('jquery'), CCHL_VERSION, true);
+    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.4086899e.min.js', array('jquery'), CCHL_VERSION, true);
   } else {
     wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.js', array('jquery'), CCHL_VERSION, true);
   }

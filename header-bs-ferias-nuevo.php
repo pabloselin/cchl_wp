@@ -42,8 +42,12 @@
        <div class="container nopad">
             <div class="row">
                <div class="col-md-12">
+                   <a href="<?php echo get_permalink($postid);?>">
                    <img class="banner-feria-md hidden-sm hidden-xs" src="<?php echo $header_lg;?>" alt="<?php echo get_the_title($postid);?>">
+                  </a>
+                  <a href="<?php echo get_permalink($postid);?>">
                    <img class="banner-feria-sm visible-sm visible-xs" src="<?php echo $header_sm;?>" alt="<?php echo get_the_title($postid);?>">
+               </a>
                </div>
            </div>
        </div>
