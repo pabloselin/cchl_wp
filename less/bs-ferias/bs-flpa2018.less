@@ -108,6 +108,24 @@ body.flpa-2018 {
 //Contenido
 
 body.flpa-2018 {
+  .dias-ferias-contenido {
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+    font-size: 16px;
+    h4 {
+      font-size: 22px;
+      color: @azulflpa-2018;
+    }
+    h3 {
+      font-size: 20;
+      color: @azulflpa-2018;
+    }
+    a {
+      color: @azulflpa-2018;
+    }
+  }
+
   h1.post-title {
     color: @azulflpa-2018;
     text-transform: none;
@@ -124,7 +142,8 @@ body.flpa-2018 {
       list-style: none;
       display: block;
       padding: 12px;
-      border: 1px solid #ccc;
+      color: @azulflpa-2018;
+      border: 1px solid @azulflpa-2018;
       width: 89px;
       margin: 0 5px 5px 0;
       text-transform: uppercase;
@@ -143,8 +162,8 @@ body.flpa-2018 {
       }
       &:hover,
       &.active {
-        border-color: #1b9bd6;
-        color: #1b9bd6;
+        border-color: @rojoflpa-2018;
+        color: @rojoflpa-2018;
         cursor: pointer;
       }
       @media screen and (max-width: @screen-sm) {
@@ -155,11 +174,6 @@ body.flpa-2018 {
         }
       }
     }
-  }
-  .dias-ferias-contenido {
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-bottom: 12px;
   }
 }
 
@@ -189,7 +203,7 @@ body.flpa-2018 {
 
 body.flpa-2018 .expositor-item {
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid @azulflpa-2018;
   border-radius: 4px;
   margin-bottom: 12px;
   min-height: 120px;
