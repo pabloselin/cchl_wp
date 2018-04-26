@@ -31,6 +31,16 @@ Template Name: [NUEVO] Memorias y Páginas con Documentos
 
                         <?php do_action('cchl_aftercontent');?>
                         
+                        <?php if($post->ID == 2425):?>
+                            <div class="document row">
+                                <div class="col-md-2"><img src="https://camaradellibro.cl/wp-content/themes/cchl_wp/img/auxi/isbn_2017.png"></div>
+                                <div class="col-md-10">
+                                    <h2>Informe estadístico 2017</h2>
+                                    <p>Informe estadístico 2017. Agencia Chilena ISBN.</p>
+                                    <a href="https://camaradellibro.cl/wp-content/themes/cchl_wp/img/auxi/isbn_2017.pdf" class="btn btn-info"><i class="fa fa-download"></i> Descargar (pdf)</a>
+                                </div>
+                            </div>
+                        <?php endif;?>
 
                             <?php
                                 $memorias = get_post_meta($post->ID, '_cchl_listadocs', true);
