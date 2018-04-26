@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/pablo/Documentos/code/containers/cchl/phpdocker"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "/home/pablo/Documentos/code/containers/cchl/public/wp-content/plugins/fields-converter"
+		}
+	],
+	"settings":
+	{
+		"xdebug":
+		{
+			"url": "http://camara.local"
+		}
+	}
+}
