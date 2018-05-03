@@ -33,7 +33,10 @@ Template Name: [NUEVO] Memorias y Páginas con Documentos
 
                             <?php
                                 $memorias = get_post_meta($post->ID, '_cchl_listadocs', true);
-                                foreach($memorias as $memoria):?>
+
+                                $revmemorias = array_reverse($memorias);
+
+                                foreach($revmemorias as $memoria):?>
             
                                     <div class="document row">
                                         <div class="col-md-2">
