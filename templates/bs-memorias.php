@@ -44,7 +44,6 @@ Template Name: [NUEVO] Memorias y Páginas con Documentos
 
                             <?php
                                 $memorias = get_post_meta($post->ID, '_cchl_listadocs', true);
-                                var_dump($memorias);
                                 foreach($memorias as $memoria):?>
             
                                     <div class="document row">
