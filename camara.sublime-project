@@ -2,20 +2,17 @@
 	"folders":
 	[
 		{
-			"path": "/home/pablo/Documentos/code/containers/cchl/phpdocker"
-		},
-		{
 			"path": "."
 		},
 		{
-			"path": "/home/pablo/Documentos/code/containers/cchl/public/wp-content/plugins/fields-converter"
+			"path": "/home/pablo/Documentos/code/server/cchl/wp-content/plugins/fields-converter"
 		}
 	],
 	"settings":
 	{
 		"xdebug":
 		{
-			"url": "http://camara.local"
+			"url": "http://outpost.local/cchl/"
 		}
 	}
 }

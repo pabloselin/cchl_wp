@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"me",
+				"memorias2"
+			],
+			[
 				"adm_settings_vaca",
 				"adm_settings_vacantes_init"
 			],
@@ -412,11 +416,63 @@
 	"buffers":
 	[
 		{
-			"file": "/home/pablo/Documentos/code/containers/cchl/phpdocker/php-fpm/php-ini-overrides.ini",
+			"file": "templates/bs-memorias.php",
 			"settings":
 			{
-				"buffer_size": 293,
+				"buffer_size": 3219,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/etc/php/7.0/fpm/php.ini",
+			"settings":
+			{
+				"buffer_size": 70969,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/fields-functions.php",
+			"settings":
+			{
+				"buffer_size": 1827,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pablo/Documentos/code/server/cchl/wp-content/plugins/filsa-2017/meta-boxes.php",
+			"settings":
+			{
+				"buffer_size": 8011,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pablo/Documentos/code/server/cchl/wp-settings.php",
+			"settings":
+			{
+				"buffer_size": 16200,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pablo/Documentos/code/server/cchl/wp-includes/post.php",
+			"settings":
+			{
+				"buffer_size": 211919,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/pablo/Documentos/code/server/cchl/wp-includes/meta.php",
+			"settings":
+			{
+				"buffer_size": 37423,
 				"line_ending": "Unix"
 			}
 		}
@@ -428,10 +484,54 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 269.0,
-		"last_filter": "insta",
+		"height": 236.0,
+		"last_filter": "comme",
 		"selected_items":
 		[
+			[
+				"comme",
+				"Toggle Comment"
+			],
+			[
+				"xdeb",
+				"Xdebug: Restore Layout"
+			],
+			[
+				"xdse",
+				"Xdebug: Session - Status"
+			],
+			[
+				"xde",
+				"Xdebug: Start Debugging"
+			],
+			[
+				"prefe",
+				"Preferences: Xdebug Settings – User"
+			],
+			[
+				"xdebug ru",
+				"Xdebug: Breakpoint - Run"
+			],
+			[
+				"xdebug ",
+				"Xdebug: Restore Layout"
+			],
+			[
+				"prefexd",
+				"Preferences: Xdebug Settings – User"
+			],
+			[
+				"brea",
+				"Xdebug: Add/Remove Breakpoint"
+			],
+			[
+				"xe",
+				"Xdebug: Start Debugging"
+			],
+			[
+				"XDE",
+				"Xdebug: Restore Layout"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -541,7 +641,7 @@
 				"Install Package Control"
 			]
 		],
-		"width": 497.0
+		"width": 461.0
 	},
 	"console":
 	{
@@ -561,10 +661,30 @@
 	},
 	"expanded_folders":
 	[
-		"/home/pablo/Documentos/code/containers/cchl/phpdocker"
+		"/home/pablo/Documentos/code/server/cchl/wp-content/plugins/fields-converter"
 	],
 	"file_history":
 	[
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/meta-boxes/meta-boxes-documentos.php",
+		"/home/pablo/Escritorio/trjmama.txt",
+		"/home/pablo/Documentos/code/server/cchl/wp-config.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-settings.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/plugins/filsa-2017/meta-boxes.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/header.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/wphead-includes.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/utils.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/scripts.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/plugins/filsa-2017/main.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/parts/bs-home/bs-mainmenu.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/parts/bs-general/bs-header.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/function-ferias.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/camara.sublime-project",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/templates/bs-memorias.php",
+		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/home.php",
+		"/home/pablo/.config/sublime-text-3/Packages/User/Xdebug.sublime-settings",
+		"/home/pablo/Documentos/code/server/xdebug_playground/index.php",
+		"/etc/php/7.0/mods-available/xdebug.ini",
+		"/home/pablo/Documentos/code/containers/cchl/phpdocker/php-fpm/php-ini-overrides.ini",
 		"/home/pablo/Documentos/code/containers/csd/csd_web/public/wp-content/themes/universe_theme/image.php",
 		"/home/pablo/Documentos/code/containers/cchl/public/wp-content/themes/cchl_wp/inc/meta-boxes/meta-boxes-ferias.php",
 		"/home/pablo/Documentos/code/containers/cchl/public/wp-content/plugins/fields-converter/fields-converter.php",
@@ -672,31 +792,11 @@
 		"/home/pablo/Documentos/code/js/test/cadem_datacampfire/src/components/LineBars.js",
 		"/home/pablo/Documentos/code/js/test/cadem_datacampfire/node_modules/react-scripts/package.json",
 		"/home/pablo/Documentos/code/js/criscadem/package.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/public/index.html",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/App.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/index.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/build/index.html",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/kpi/KpiProgreso.css",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/Pie.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/parts/Main.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/kpi/KpiSemiCirculo.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/kpi/KpiBarra.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/kpi/KpiLinea.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/kpi/KpiProgreso.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/Lines.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/Scatter.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/kpi/KPI_linea.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/layouts/Dashboard.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/Stacked.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/themes/cadem_theme.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/GroupedBars.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/components/LineBars.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/layouts/TopMenu.js",
-		"/home/pablo/Documentos/code/js/testcadem/src/layouts/SideMenu.js"
+		"/home/pablo/Documentos/code/js/cadem_datacampfire/public/index.html"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -710,6 +810,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"error_reporting",
+			"error"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -727,24 +829,54 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/pablo/Documentos/code/containers/cchl/phpdocker/php-fpm/php-ini-overrides.ini",
+					"file": "templates/bs-memorias.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 293,
+						"buffer_size": 3219,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								150,
-								150
+								2680,
+								2680
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/etc/php/7.0/fpm/php.ini",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 70969,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18596,
+								18596
 							]
 						],
 						"settings":
@@ -752,10 +884,154 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 7148.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "inc/fields-functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1653,
+								1653
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 520.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/pablo/Documentos/code/server/cchl/wp-content/plugins/filsa-2017/meta-boxes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8011,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5650,
+								5650
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 187.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/pablo/Documentos/code/server/cchl/wp-settings.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16200,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2654,
+								2654
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 259.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/pablo/Documentos/code/server/cchl/wp-includes/post.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 211919,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								70677,
+								70677
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 32419.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/pablo/Documentos/code/server/cchl/wp-includes/meta.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37423,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15636,
+								15636
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7926.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -804,6 +1080,10 @@
 	{
 		"height": 0.0
 	},
+	"output.xdebug":
+	{
+		"height": 114.0
+	},
 	"pinned_build_system": "",
 	"project": "camara.sublime-project",
 	"replace":
@@ -817,6 +1097,30 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"field-f",
+				"cchl_wp/inc/fields-functions.php"
+			],
+			[
+				"meta",
+				"inc/meta-boxes/meta-boxes-documentos.php"
+			],
+			[
+				"bs-mem",
+				"cchl_wp/templates/bs-memorias.php"
+			],
+			[
+				"bs-memo",
+				"cchl_wp/templates/bs-memorias.php"
+			],
+			[
+				"hom",
+				"cchl_wp/home.php"
+			],
+			[
+				"bs-me",
+				"cchl_wp/templates/bs-memorias.php"
+			],
 			[
 				"index",
 				"index.php"
@@ -842,10 +1146,6 @@
 				"image.php"
 			],
 			[
-				"bs-memo",
-				"templates/bs-memorias.php"
-			],
-			[
 				"meta-boxes-doc",
 				"inc/meta-boxes/meta-boxes-documentos.php"
 			],
@@ -860,10 +1160,6 @@
 			[
 				"meta-bo",
 				"inc/meta-boxes.php"
-			],
-			[
-				"bs-mem",
-				"templates/bs-memorias.php"
 			],
 			[
 				"gulp",
@@ -1312,22 +1608,6 @@
 			[
 				"groupd",
 				"src/components/twelve/GroupedBarsTwelve.js"
-			],
-			[
-				"singlebarstw",
-				"src/components/twelve/SingleBarsTwelve.js"
-			],
-			[
-				"singlebarf",
-				"src/components/four/SingleBarsFour.js"
-			],
-			[
-				"singleb",
-				"src/components/six/SingleBarsSix.js"
-			],
-			[
-				"pie",
-				"src/components/six/PieSix.js"
 			]
 		],
 		"width": 0.0
@@ -1355,7 +1635,97 @@
 	{
 		"xdebug":
 		{
-			"hide_conflict": false
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"40":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"41":
+				{
+					"group": 0,
+					"index": 1
+				},
+				"42":
+				{
+					"group": 0,
+					"index": 2
+				},
+				"43":
+				{
+					"group": 0,
+					"index": 3
+				},
+				"44":
+				{
+					"group": 0,
+					"index": 4
+				},
+				"45":
+				{
+					"group": 0,
+					"index": 5
+				},
+				"46":
+				{
+					"group": 0,
+					"index": 8
+				},
+				"47":
+				{
+					"group": 0,
+					"index": 9
+				},
+				"48":
+				{
+					"group": 0,
+					"index": 6
+				},
+				"49":
+				{
+					"group": 0,
+					"index": 7
+				},
+				"50":
+				{
+					"group": 0,
+					"index": 10
+				},
+				"51":
+				{
+					"group": 0,
+					"index": 11
+				},
+				"52":
+				{
+					"group": 0,
+					"index": 12
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
 		}
 	},
 	"show_minimap": true,

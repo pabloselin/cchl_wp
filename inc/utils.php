@@ -246,7 +246,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 function cchl_isresponsive( ) {
   global $post;
   $ancestors = get_ancestors( $post->ID );
-  if(is_page(CCHL_FILSA2014) || in_array($post->ID, $ancestor)) {
+  if(is_page(CCHL_FILSA2014) || in_array($post->ID, $ancestors)) {
     return false;
   } else {
     return true;

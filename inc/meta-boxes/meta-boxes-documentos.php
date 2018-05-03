@@ -38,7 +38,7 @@ function camfields_documentos() {
 	$documentos->add_group_field( $documentosgroup, array(
 		'name' => __( 'Portada', 'cchl' ),
 		'id' => 'docportada',
-		'type' => 'text',
+		'type' => 'file',
 	) );
 
 	$documentos->add_group_field( $documentosgroup, array(
@@ -50,7 +50,7 @@ function camfields_documentos() {
 	$documentos->add_group_field( $documentosgroup, array(
 		'name' => __( 'Archivo', 'cchl' ),
 		'id' => 'docdownload',
-		'type' => 'text',
+		'type' => 'file',
 	) );
 
 }

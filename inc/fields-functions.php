@@ -51,11 +51,25 @@ function cchl_legacy_image($postid, $image, $size = 'medium') {
 		};
 	else:
 		$oldurl = content_url() . '/files_mf/' .$image;
-		// if(file_exists( $oldurl )) {
-		// 	return $oldurl;
-		// } else {
-		// 	return 'https://camaradellibro.cl/wp-content/themes/cchl_wp/img/cchl_logo.svg';	
-		// }
+		if(file_exists( $oldurl )) {
+			return $oldurl;
+		} else {
+			return 'https://camaradellibro.cl/wp-content/themes/cchl_wp/img/cchl_logo.svg';	
+		}
 		return $oldurl;
 	endif;
+}
+
+function cchl_oldfilesmf($file, $id) {
+	if(strlen($id) > 0) {
+		return $file;
+	} else {
+		$oldurl = content_url() . '/files_mf/' . cchl_striphttp($file);
+		
+		return $oldurl;
+	}
+}
+
+function cchl_striphttp( $string ) {
+	return str_replace('http://', '', $string);
 }
