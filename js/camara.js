@@ -11538,13 +11538,13 @@ jQuery(document).ready(function($) {
 	}).filter(':first').click();
 	
 	
-	var galleryCont = $('.gallery');
+	var galleryCont = $('body.filsa .gallery');
 	
-	Galleria.loadTheme( cchl.templateurl + '/js/extras/galleria.classic.js');
+	
 	
 	if(Galleria && galleryCont.length > 0 ) {
 		
-		
+		Galleria.loadTheme( cchl.templateurl + '/js/extras/galleria.classic.js');
 		if(galleryCont) {
 			
 			Galleria.run('.gallery');

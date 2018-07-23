@@ -104,7 +104,7 @@ include( TEMPLATEPATH . '/inc/event-functions.php');
 //include( TEMPLATEPATH . '/inc/event-invitations.php');
 include( TEMPLATEPATH . '/inc/scripts.php');
 include( TEMPLATEPATH . '/inc/custom-tax.php');
-include( TEMPLATEPATH . '/inc/gallery-custom.php');
+//include( TEMPLATEPATH . '/inc/gallery-custom.php');
 include( TEMPLATEPATH . '/inc/function-ferias.php');
 include( TEMPLATEPATH . '/inc/fields-functions.php');
 include( TEMPLATEPATH . '/inc/mustache-functions.php');
