@@ -11,9 +11,9 @@ function cchl_styles() {
 	wp_register_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' , array(), '4.7.0', 'screen' );
 
 	//Compiled grunt style
-	wp_register_style( 'legacy', get_bloginfo('template_url') . '/css/legacy.3f46b1a0.min.css', array(), CCHL_VERSION, 'screen' );
+	wp_register_style( 'legacy', get_bloginfo('template_url') . '/css/legacy.44a51334.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.71b6a483.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.1ffab4eb.min.css', array(), CCHL_VERSION, 'screen' );
 
   $oldpages = cchl_oldcondition($post->ID);
 	if($oldpages == true ) {

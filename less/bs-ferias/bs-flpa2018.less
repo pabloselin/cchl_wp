@@ -1,0 +1,235 @@
+@rojoflpa-2018: #e65b1b;
+@azulflpa-2018: #00b0cf;
+@botoneraflpa-2018: #1F7A8A;
+body.flpa-2018 {
+  .sidebar-menu-feria div ul > li > a {
+    background-color: @rojoflpa-2018;
+  }
+
+  #menu-feria-desktop,
+  .feria-desktop-nav {
+    padding: 0;
+  }
+
+  .bs-mobile-menu-ferias > .main-navbar .navbar-header {
+    background-color: @botoneraflpa-2018;
+  }
+
+  .navbar-inverse .navbar-nav > .active > a,
+  .navbar-inverse .navbar-nav > .active > a:hover,
+  .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: @rojoflpa-2018;
+  }
+  .feria-navbar {
+    background-color: @botoneraflpa-2018;
+    border-top: 0;
+    border-bottom: 0;
+    ul li.home a {
+      font-size: 0;
+      &:before {
+        content: "\f015";
+        font-family: "FontAwesome";
+        font-size: 18px;
+        color: white;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 20px;
+        vertical-align: top;
+      }
+    }
+    ul li {
+      display: table;
+    }
+    ul li a {
+      text-transform: uppercase;
+      font-family: "Signika", sans-serif;
+      font-size: 18px;
+      display: table-cell;
+      &:hover {
+        background-color: @azulflpa-2018;
+      }
+    }
+  }
+  footer.site-footer {
+    background-image: none;
+    background-color: #fff;
+  }
+}
+
+//Menu móvil
+body.flpa-2018 {
+  .mobile-home {
+    display: none;
+  }
+  @media screen and (max-width: @screen-sm) {
+    header.site-header {
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .mobile-home {
+      position: absolute;
+      color: white;
+      font-size: 24px;
+      top: 10px;
+      left: 10px;
+      display: block;
+      &:hover {
+        color: lighten(@rojoflpa-2018, 20%);
+      }
+    }
+  }
+  .navbar-toggle {
+    border-color: white;
+    margin-right: 26px;
+    border-radius: 5px;
+    &:focus,
+    &:hover {
+      background-color: @azulflpa-2018;
+    }
+    .labelmenu {
+      display: none;
+    }
+  }
+  .container.feria-mobile-nav {
+    padding: 0;
+  }
+  .navbar-mobile .navbar-collapse {
+    border-top: 0;
+    padding: 0;
+    ul.navbar-nav {
+      margin: 0;
+    }
+    ul li {
+      display: block;
+    }
+    ul li.home {
+      display: none;
+    }
+    ul li a {
+      display: block;
+    }
+  }
+}
+
+//Contenido
+
+body.flpa-2018 {
+  .text-content {
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: @azulflpa-2018;
+    }
+    a:link,
+    a:hover,
+    a:visited {
+      color: @rojoflpa-2018;
+    }
+  }
+
+  .dias-ferias-contenido {
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+    font-size: 16px;
+    h4 {
+      font-size: 22px;
+      color: @azulflpa-2018;
+    }
+    h3 {
+      font-size: 20;
+      color: @azulflpa-2018;
+    }
+    a {
+      color: @azulflpa-2018;
+    }
+  }
+
+  h1.post-title {
+    color: @azulflpa-2018;
+    text-transform: none;
+  }
+}
+.bs-calendario {
+  ul.dias-ferias {
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: flex;
+    flex-flow: wrap;
+    li.dia {
+      padding: 0;
+      list-style: none;
+      display: block;
+      padding: 12px;
+      color: @azulflpa-2018;
+      border: 1px solid @azulflpa-2018;
+      width: 89px;
+      margin: 0 5px 5px 0;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-style: normal;
+      text-align: center;
+      i {
+        font-style: normal;
+        display: block;
+        line-height: 12px;
+      }
+      i.dn {
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 36px;
+      }
+      &:hover,
+      &.active {
+        border-color: @rojoflpa-2018;
+        color: @rojoflpa-2018;
+        cursor: pointer;
+      }
+      @media screen and (max-width: @screen-sm) {
+        padding: 6px;
+        i.dn {
+          font-size: 22px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+body.flpa-2018 {
+  .single-noticia-feria {
+    h1.post-title {
+      margin-top: 0;
+      @media screen and (max-width: @screen-sm) {
+        font-size: 22px;
+      }
+    }
+    .ft-img-wrapper {
+      img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .aside-feria-extras {
+    @media screen and (min-width: @screen-md) {
+      margin-top: 82px;
+    }
+  }
+}
+
+body.flpa-2018 .expositor-item {
+  padding: 12px;
+  border: 1px solid @azulflpa-2018;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  min-height: 120px;
+  span.label {
+    font-size: 15px;
+  }
+}
+
+@import "bs-footer-ferias.less";

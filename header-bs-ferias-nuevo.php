@@ -10,6 +10,9 @@
 <?php 
     $cchl_options = get_option( 'cchl_settings' );
     $postid = cchl_current_fields_id('bs-plantilla-feria.php')? cchl_current_fields_id('bs-plantilla-feria.php') : cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
+    if(!$postid) {
+      $postid = 74397;
+    }
     $header_lg = get_post_meta($postid, 'cchl_bsferiaheader_lg', true);
     $header_sm = get_post_meta($postid, 'cchl_bsferiaheader_sm', true);
     $menuferia = get_post_meta($postid, 'cchl_bsmenuferia', true);
@@ -39,8 +42,12 @@
        <div class="container nopad">
             <div class="row">
                <div class="col-md-12">
+                   <a href="<?php echo get_permalink($postid);?>">
                    <img class="banner-feria-md hidden-sm hidden-xs" src="<?php echo $header_lg;?>" alt="<?php echo get_the_title($postid);?>">
+                  </a>
+                  <a href="<?php echo get_permalink($postid);?>">
                    <img class="banner-feria-sm visible-sm visible-xs" src="<?php echo $header_sm;?>" alt="<?php echo get_the_title($postid);?>">
+               </a>
                </div>
            </div>
        </div>

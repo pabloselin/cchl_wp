@@ -1,9 +1,11 @@
-<div class="container">
 <div class="row">
 <?php 
-$postid = cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
-// $tax = get_post_meta($postid, 'cchl_bstax', true); 
-// var_dump($postid);
+$postid = cchl_current_fields_id('bs-plantilla-feria.php')? cchl_current_fields_id('bs-plantilla-feria.php') : cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
+    if(!$postid) {
+      $postid = 74397;
+    }
+
+$tax = get_post_meta($postid, 'cchl_bstax', true);
 $args = array(
   'numberposts' => 10,
   'post_type' => 'post',
@@ -11,7 +13,7 @@ $args = array(
     array(
       'taxonomy' => 'ferias',
       'field' => 'slug',
-      'terms' => 'fil-vina-2018' 
+      'terms' => $tax 
     )
   )
 );
@@ -35,5 +37,4 @@ $imgsrc = wp_get_attachment_image_src( $imgthid, 'noticia-secundaria' );
 endforeach;
 ?>
 
-</div>
 </div>

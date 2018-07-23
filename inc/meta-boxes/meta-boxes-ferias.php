@@ -6,6 +6,16 @@ function cchl_bsferiaboxes() {
     $prefix = 'cchl_';
     $menuoptions = cchl_showselectmenus();
     $eventoptions = cchl_eventspage($post->ID);
+    
+
+    $taxvalues = get_terms(array(
+      'taxonomy' => 'ferias'
+      )
+    );
+    $terms = [];
+    foreach($taxvalues as $taxvalue):
+        $terms[$taxvalue->slug] = $taxvalue->name;
+    endforeach;
 
     $feriabox = new_cmb2_box(
         array(
@@ -78,6 +88,17 @@ function cchl_bsferiaboxes() {
             'options' => $eventoptions
         )
     );
+    
+    $feriabox->add_field(
+        array(
+            'name' => 'Página de expositores',
+            'desc' => 'La página donde se encuentran los expositores',
+            'id' => $prefix . 'bspageexpositores',
+            'type' => 'select',
+            'show_option_none' => 'Escoja una página',
+            'options' => $eventoptions
+        )
+    );
 
     $feriabox->add_field(
         array(
@@ -110,12 +131,80 @@ function cchl_bsferiaboxes() {
           'name'           => 'Taxonomía Feria',
           'desc'           => 'Término de taxonomía para eventos, noticias, etc.',
           'id'             => $prefix . 'bstax',
-          'taxonomy'       => 'ferias', //Enter Taxonomy Slug
-          'type'           => 'taxonomy_select',
-          'remove_default' => 'true' // Removes the default metabox provided by WP core. Pending release as of Aug-10-16
-      )  
-    );
+          'type'           => 'select',
+          'options'        => $terms
+        )
+      );
 
 }
 
 add_action('cmb2_admin_init', 'cchl_bsferiaboxes');
+
+function cchl_organizer_boxes() {
+    
+    $prefix = 'cchl_';
+    $orgbox = new_cmb2_box(
+        array(
+            'id' => $prefix . 'infoorgferia',
+            'title' => 'Información del expositor',
+            'object_types' => array('tribe_organizer'),
+            'show_on_cb' => 'be_taxonomy_show_on_filter',
+            'show_on_terms' => array(
+              'ferias' => 'fil-vina-2018'
+            )
+        )
+    );
+
+    $orgbox->add_field(
+        array(
+            'name' => 'Ubicación',
+            'desc' => 'Ubicación del expositor',
+            'id' => $prefix . 'location',
+            'type' => 'text'
+        )
+    );
+
+
+}
+
+add_action('cmb2_admin_init', 'cchl_organizer_boxes');
+
+/**
+ *  * Taxonomy show_on filter
+ *   * @author Bill Erickson
+ *    * @param  object $cmb CMB2 object
+ *     * @return bool        True/false whether to show the metabox
+ *      */
+function cchl_be_taxonomy_show_on_filter( $cmb ) {
+  $tax_terms_to_show_on = $cmb->prop( 'show_on_terms', array() );
+  if ( empty( $tax_terms_to_show_on ) || ! $cmb->object_id() ) {
+    return false;
+  }
+
+  $post_id = $cmb->object_id();
+  $post = get_post( $post_id );
+
+  foreach( (array) $tax_terms_to_show_on as $taxonomy => $slugs ) {
+    if ( ! is_array( $slugs ) ) {
+      $slugs = array( $slugs );
+    }
+
+    $terms = $post
+      ? get_the_terms( $post, $taxonomy )
+      : wp_get_object_terms( $post_id, $taxonomy );
+
+    if ( ! empty( $terms ) ) {
+      foreach( $terms as $term ) {
+        if ( in_array( $term->slug, $slugs, true ) ) {
+          wp_die( '<xmp>: '. print_r( 'show it', true ) .'</xmp>' );
+          // Ok, show this metabox
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
+}
+
+

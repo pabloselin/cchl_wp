@@ -30,20 +30,22 @@ Template Name: [NUEVO] Memorias y Páginas con Documentos
                         <?php the_content();?>
 
                         <?php do_action('cchl_aftercontent');?>
-                        
-                        
+
                             <?php
                                 $memorias = get_post_meta($post->ID, '_cchl_listadocs', true);
-                                foreach($memorias as $memoria): ?>
 
+                                $revmemorias = array_reverse($memorias);
+
+                                foreach($revmemorias as $memoria):?>
+            
                                     <div class="document row">
                                         <div class="col-md-2">
-                                            <img src="<?php echo cchl_legacy_image($post->ID, $memoria['docportada']);?>">
+                                            <img src="<?php echo cchl_oldfilesmf($memoria['docportada'], $memoria['docportada_id']);?>">
                                         </div>
                                         <div class="col-md-10">
                                             <h2><?php echo $memoria['doctitulo'];?></h2>
                                             <p><?php echo $memoria['doctexto'];?></p>
-                                            <a href="<?php echo cchl_legacy_file($post->ID, $memoria['docdownload']);?>" class="btn btn-info"><i class="fa fa-download"></i> Descargar (pdf)</a>
+                                            <a href="<?php echo cchl_oldfilesmf($memoria['docdownload'], $memoria['docdownload_id']);?>" class="btn btn-info"><i class="fa fa-download"></i> Descargar (pdf)</a>
                                         </div>
                                     </div>
 

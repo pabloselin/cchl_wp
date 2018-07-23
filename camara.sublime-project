@@ -1,0 +1,18 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "/home/pablo/Documentos/code/server/cchl/wp-content/plugins/fields-converter"
+		}
+	],
+	"settings":
+	{
+		"xdebug":
+		{
+			"url": "http://outpost.local/cchl/"
+		}
+	}
+}
