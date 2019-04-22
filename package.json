@@ -21,7 +21,8 @@
   "main": "functions.php",
   "dependencies": {},
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",

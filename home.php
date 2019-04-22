@@ -25,6 +25,15 @@ get_template_part('parts/bs-home/bs-eventos');
 ?>
 
   
+<section class="diavideos" style="background-color: #000; padding: 12px 0;">
+  <div class="container">
+    <div class="row flex-row">
+      <div class="col-md-12">
+        <?php echo do_shortcode('[yourchannel user="Cámara Chilena del Libro"]');?>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="media hidden-xs">
   
@@ -38,8 +47,7 @@ get_template_part('parts/bs-home/bs-eventos');
       
       <div class="videos col-md-6 pull-right">
         <h2><i class="fa fa-youtube-play"></i> Multimedia</h2>
-        <iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=<?php echo $cchl_options['cchl_youtubechannel'];?>" width="100%" height="381"></iframe>
-        <!-- <iframe src="<?php echo $cchl_options['cchl_youtubechannel'];?>" width="100%" height="381" frameBorder="0"></iframe>  -->
+       <?php echo $cchl_options['cchl_youtubechannel'];?> 
       </div>
     </div>
 
