@@ -13,7 +13,7 @@ function cchl_styles() {
 	//Compiled grunt style
 	wp_register_style( 'legacy', get_bloginfo('template_url') . '/css/legacy.44a51334.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.1ffab4eb.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.77c2c807.min.css', array(), CCHL_VERSION, 'screen' );
 
   $oldpages = cchl_oldcondition($post->ID);
 	if($oldpages == true ) {
