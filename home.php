@@ -29,7 +29,7 @@ get_template_part('parts/bs-home/bs-eventos');
   <div class="container">
     <div class="row flex-row">
       <div class="col-md-12">
-        <h1 style="text-align:center; font-size: 48px; color: white; margin: 0;">VIDEOS:  #YoTeInvitoaLeer</h1>
+        <h1 style="text-align:center; font-size: 48px; color: white; margin: 0 0 24px 0;">VIDEOS:  #YoTeInvitoaLeer</h1>
         <?php echo do_shortcode('[yourchannel user="Cámara Chilena del Libro"]');?>
       </div>
     </div>

@@ -92,3 +92,5 @@ if ($("ul.dias-ferias").find(".hoy").length) {
         .trigger("click");
     console.log("first-element");
 }
+
+$(".yrc-load-more-button").text("Más videos");

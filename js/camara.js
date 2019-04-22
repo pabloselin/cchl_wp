@@ -11674,6 +11674,8 @@ if ($("ul.dias-ferias").find(".hoy").length) {
         .trigger("click");
     console.log("first-element");
 }
+
+$(".yrc-load-more-button").text("Más videos");
 ;function cchl_enableFilters(element) {
     /* Activa los filtros para los eventos que se muestran */
     var eventos = jQuery("div.evento", element);
