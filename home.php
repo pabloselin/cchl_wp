@@ -38,7 +38,7 @@ get_template_part('parts/bs-home/bs-eventos');
       
       <div class="videos col-md-6 pull-right">
         <h2><i class="fa fa-youtube-play"></i> Multimedia</h2>
-        <iframe src="http://www.youtube.com/embed/?listType=user_uploads&list=<?php echo $cchl_options['cchl_youtubechannel'];?>" width="100%" height="381"></iframe>
+        <iframe src="https://www.youtube.com/embed/?listType=user_uploads&list=<?php echo $cchl_options['cchl_youtubechannel'];?>" width="100%" height="381"></iframe>
         <!-- <iframe src="<?php echo $cchl_options['cchl_youtubechannel'];?>" width="100%" height="381" frameBorder="0"></iframe>  -->
       </div>
     </div>
