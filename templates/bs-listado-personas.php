@@ -50,7 +50,7 @@ Template Name: Listado de personas
                                         
                                         <?php endif;?>
                                         
-                                        <div class="<?php if($imagen) echo 'col-md-10'; else: echo 'col-md-12'; endif;?>">
+                                        <div class="<?php if($imagen): echo 'col-md-10'; else: echo 'col-md-12'; endif;?>">
                                             <h2><?php echo $persona['nombre'];?></h2>
                                             <span class="cargo"><?php echo $persona['cargo'];?></span>
 
