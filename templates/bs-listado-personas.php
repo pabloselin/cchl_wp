@@ -42,10 +42,15 @@ Template Name: Listado de personas
                                     ?>
 
                                     <div class="person row">
+                                        <?php if($imagen):?>
+                                        
                                         <div class="col-md-2">
                                             <img src="<?php echo $imagen[0];?>" alt="<?php echo $persona['nombre'];?>">
                                         </div>
-                                        <div class="col-md-10">
+                                        
+                                        <?php endif;?>
+                                        
+                                        <div class="<?php if($imagen) echo 'col-md-10'; else: echo 'col-md-12'; endif;?>">
                                             <h2><?php echo $persona['nombre'];?></h2>
                                             <span class="cargo"><?php echo $persona['cargo'];?></span>
 
