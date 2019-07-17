@@ -4,473 +4,509 @@
 		"selected_items":
 		[
 			[
-				"str_re",
-				"str_replace"
+				"wp_reset",
+				"wp_reset_postdata"
 			],
 			[
-				"me",
-				"memorias2"
+				"embed",
+				"embed_code"
 			],
 			[
-				"adm_settings_vaca",
-				"adm_settings_vacantes_init"
+				"wp_get_nav_men",
+				"wp_get_nav_menu_object"
 			],
 			[
-				"activbe",
-				"activeBarFontSize"
+				"get_post_type",
+				"get_post_type"
 			],
 			[
-				"semaforo",
-				"semaforocolors"
+				"wp_enqueue_scrip",
+				"wp_enqueue_script"
 			],
 			[
-				"sema",
-				"semaforo"
+				"var",
+				"var_dump"
 			],
 			[
-				"lege",
-				"legendDataStyle"
+				"get_template_di",
+				"get_template_directory_uri"
 			],
 			[
-				"legen",
-				"legendLabelStyle"
+				"scla",
+				"scale3d()\ttransform"
 			],
 			[
-				"event",
-				"eventStyles"
+				"word",
+				"word-wrap\tproperty"
 			],
 			[
-				"toolti",
-				"tooltipLabelStyle"
+				"documento",
+				"documento_id"
 			],
 			[
-				"label",
-				"labelDisplay"
+				"wp_get_attach",
+				"wp_get_attachment_url"
 			],
 			[
-				"legend",
-				"legendLabelSize"
+				"backgro",
+				"background-repeat\tproperty"
 			],
 			[
-				"active",
-				"activeColor"
+				"transp",
+				"transparentize(color, amount)\tbackground-color"
 			],
 			[
-				"bar",
-				"barNames"
+				"get_template_",
+				"get_template_directory_uri"
 			],
 			[
-				"semaf",
-				"activeSemaforoLegend"
+				"cedetgore",
+				"cedetgore_styles"
 			],
 			[
-				"clci",
-				"clickedKeys"
+				"wp_enqueue_st",
+				"wp_enqueue_scripts"
 			],
 			[
-				"linea",
-				"lineas_dos"
+				"get_templat",
+				"get_template_directory_uri"
 			],
 			[
-				"actibe",
-				"activeBarFontSize"
+				"has_post",
+				"has_post_thumbnail"
 			],
 			[
-				"axi",
-				"axisLabelStyle"
+				"get_templ",
+				"get_template_directory"
 			],
 			[
-				"axisl",
-				"axisLabelStyle"
+				"contributo",
+				"contributors_array"
 			],
 			[
-				"get",
-				"getStatusFill"
+				"toolset",
+				"toolsetWrap"
 			],
 			[
-				"acti",
-				"activeColor"
+				"curre",
+				"currentAssoc"
 			],
 			[
-				"barras_sin",
-				"barras_single_doce"
+				"activetype",
+				"activateType"
 			],
 			[
 				"activ",
-				"activeBarFontSize"
+				"activateType"
 			],
 			[
-				"Grouped",
-				"GroupedBarsSix"
+				"Scroll",
+				"ScrollElement"
 			],
 			[
-				"activeb",
-				"activeBarFontSize"
+				"active",
+				"activeMedia"
 			],
 			[
-				"axis",
-				"axisLabelSize"
+				"activa",
+				"activateMedia"
 			],
 			[
-				"getStro",
-				"getStrokeWidthState"
+				"switc",
+				"switchLayout"
 			],
 			[
-				"activeBar",
-				"activeBarFontSize"
-			],
-			[
-				"activeB",
-				"activeBarFontSize"
-			],
-			[
-				"group",
-				"groupbar_4"
-			],
-			[
-				"az",
-				"escala_azules"
-			],
-			[
-				"coo",
-				"colors_b"
-			],
-			[
-				"clicke",
-				"clickedBar"
-			],
-			[
-				"click",
-				"clickedthing"
-			],
-			[
-				"Victor",
-				"VictoryChart"
-			],
-			[
-				"kpi",
-				"kpi_lineas_data"
-			],
-			[
-				"json2",
-				"json2csvparser"
-			],
-			[
-				"Dashboard",
-				"dashboard_sample"
-			],
-			[
-				"stack",
-				"stacked_data"
-			],
-			[
-				"Victory",
-				"VictorySharedEvents"
-			],
-			[
-				"Vic",
-				"VictorySharedEvents"
-			],
-			[
-				"Victo",
-				"VictorySharedEvents"
-			],
-			[
-				"legedn",
-				"legendDataStyle"
-			],
-			[
-				"clicked",
-				"clickedKeys"
-			],
-			[
-				"VictorySa",
-				"VictorySharedEvents"
-			],
-			[
-				"normal",
-				"normalStyle"
-			],
-			[
-				"norma",
-				"normalStyle"
-			],
-			[
-				"act",
-				"activeStyle"
-			],
-			[
-				"clickd",
-				"clickedKeys"
-			],
-			[
-				"ref",
-				"refKey"
-			],
-			[
-				"svg",
-				"svgrefs"
-			],
-			[
-				"scatter",
-				"scatter_data"
-			],
-			[
-				"libe",
-				"linebars_data"
-			],
-			[
-				"x",
-				"xLabels"
-			],
-			[
-				"evnt",
-				"eventKey"
-			],
-			[
-				"dom",
-				"domainLength"
-			],
-			[
-				"even",
-				"eventKey"
-			],
-			[
-				"scatt",
-				"scatter_data"
-			],
-			[
-				"singl",
-				"singlebar_data"
-			],
-			[
-				"grou",
-				"groupbar_data"
-			],
-			[
-				"lines",
-				"lines_data"
-			],
-			[
-				"color",
-				"colorscale"
-			],
-			[
-				"percent",
-				"percentstyle"
-			],
-			[
-				"get_page_templa",
-				"get_page_template_slug"
-			],
-			[
-				"colorsc",
-				"colorscale"
-			],
-			[
-				"domain",
-				"domainPadding"
-			],
-			[
-				"line",
-				"line-bars"
-			],
-			[
-				"Victy",
-				"VictorySharedEvents"
-			],
-			[
-				"Vi",
-				"VictoryGroup"
-			],
-			[
-				"jso",
-				"jsondata"
-			],
-			[
-				"percen",
-				"percentPortal"
-			],
-			[
-				"down",
-				"downloadIcon"
-			],
-			[
-				"save",
-				"saveSvgAsPng"
-			],
-			[
-				"downl",
-				"downloadChart"
-			],
-			[
-				"actvi",
-				"activeColor"
-			],
-			[
-				"ace",
-				"activeKey"
-			],
-			[
-				"ke",
-				"activeKey"
-			],
-			[
-				"Line",
-				"LineFlyOut"
-			],
-			[
-				"stroke",
-				"strokeLinecap"
-			],
-			[
-				"scatrt",
-				"scatters"
-			],
-			[
-				"adm_settings_vacan",
-				"adm_settings_vacantes_updated_render"
-			],
-			[
-				"on",
-				"onMouseOver"
-			],
-			[
-				"ev",
-				"eventHandlers"
-			],
-			[
-				"g",
-				"getData"
-			],
-			[
-				"list",
-				"list-style"
-			],
-			[
-				"get_attachment_img",
-				"wp_get_attachment_image_src"
-			],
-			[
-				"current",
-				"currentyear_vacantes"
-			],
-			[
-				"nex",
-				"nextyear_lista"
-			],
-			[
-				"nextyear",
-				"nextyear_lista"
-			],
-			[
-				"curren",
-				"currentyear_lista"
-			],
-			[
-				"selected",
-				"selectedCourse"
-			],
-			[
-				"perce",
-				"percentPortal"
-			],
-			[
-				"max",
-				"max-width"
-			],
-			[
-				"adm_text_pk",
-				"adm_text_pk_m_"
+				"swit",
+				"switchLayout"
 			],
 			[
 				"next",
-				"nextyear_vacantes"
+				"nextAction"
 			],
 			[
-				"adm_text_k_m",
-				"adm_text_k_m_nextyear"
+				"Audio",
+				"AudioSpectrum"
 			],
 			[
-				"adm_text_pk_m",
-				"adm_text_pk_m_nextyear"
+				"hover",
+				"hoverAction"
 			],
 			[
-				"wp_regist",
-				"wp_register_script"
+				"prev",
+				"prevAction"
+			],
+			[
+				"pre",
+				"prevAction"
+			],
+			[
+				"current",
+				"currentAction"
+			],
+			[
+				"Inst",
+				"InstagramEmbed"
+			],
+			[
+				"instagram",
+				"instagrampost"
+			],
+			[
+				"pto",
+				"ptomorrowstr"
+			],
+			[
+				"ptomor",
+				"ptomorrowstr"
+			],
+			[
+				"ptomo",
+				"ptomorrow"
+			],
+			[
+				"Exposit",
+				"ExpositoresHeader"
+			],
+			[
+				"Home",
+				"HomeEventos"
+			],
+			[
+				"tomorrow",
+				"tomorrowstr"
+			],
+			[
+				"sea",
+				"searchState"
+			],
+			[
+				"han",
+				"handleLabelColor"
+			],
+			[
+				"high",
+				"highlightResult"
+			],
+			[
+				"Searc",
+				"SearchEvents"
+			],
+			[
+				"organizer",
+				"organizer_ids"
+			],
+			[
+				"in_",
+				"in_array"
+			],
+			[
+				"Respons",
+				"ResponsiveHelp"
+			],
+			[
+				"Resposni",
+				"ResponsiveHelp"
+			],
+			[
+				"is",
+				"isContentLoaded"
+			],
+			[
+				"FastLink",
+				"FastLinksWrapper"
+			],
+			[
+				"Fastr",
+				"FastLinksWrapper"
+			],
+			[
+				"FastM",
+				"FastMenuItem"
+			],
+			[
+				"Popup",
+				"PopupContext"
+			],
+			[
+				"Pp",
+				"PopupContext"
+			],
+			[
+				"first",
+				"firstNoticia"
+			],
+			[
+				"Contain",
+				"ContainerFastLinks"
+			],
+			[
+				"fir",
+				"firstNoticia"
+			],
+			[
+				"Na",
+				"NavMenuItem"
+			],
+			[
+				"escape",
+				"escapeRegExp"
+			],
+			[
+				"Link",
+				"Link"
+			],
+			[
+				"strip",
+				"strip_tags"
+			],
+			[
+				"search",
+				"searchfield"
+			],
+			[
+				"Styled",
+				"StyledDimmable"
+			],
+			[
+				"breakpo",
+				"breakpointColumnsObj"
+			],
+			[
+				"dias",
+				"diasvisitasguiadas"
+			],
+			[
+				"showEvent",
+				"showEventsTitle"
+			],
+			[
+				"show",
+				"showEvents"
+			],
+			[
+				"filsa2018_tran",
+				"filsa2018_tipostransients"
+			],
+			[
+				"add_rewi",
+				"add_rewrite_endpoint"
+			],
+			[
+				"option",
+				"optionalComponent"
+			],
+			[
+				"mobil",
+				"mobileimg"
+			],
+			[
+				"wp_get_attachmentimg",
+				"wp_get_attachment_image_src"
+			],
+			[
+				"args",
+				"args_filsa2018_content"
+			],
+			[
+				"Menu",
+				"MenuBuilder"
+			],
+			[
+				"only",
+				"onlyComputer"
+			],
+			[
+				"mat",
+				"matchParent"
+			],
+			[
+				"wp_get_attachment_image",
+				"wp_get_attachment_image_src"
+			],
+			[
+				"is_post_typ",
+				"is_post_type_archive"
+			],
+			[
+				"params",
+				"params_content"
+			],
+			[
+				"is_sig",
+				"is_single"
+			],
+			[
+				"refine",
+				"refineSlugFromQuery"
+			],
+			[
+				"query",
+				"queryString"
+			],
+			[
+				"is_object",
+				"is_object_in_term"
+			],
+			[
+				"base",
+				"base_url"
+			],
+			[
+				"React",
+				"ReactHtmlParser"
+			],
+			[
+				"menu_",
+				"menu_noticias"
+			],
+			[
+				"filsa2018",
+				"filsa2018_menu"
+			],
+			[
+				"menu",
+				"menu_principal"
+			],
+			[
+				"with",
+				"withTrackerMounted"
+			],
+			[
+				"Reac",
+				"ReactGA"
+			],
+			[
+				"init",
+				"initReactGa"
+			],
+			[
+				"menumobil",
+				"menumobileitems"
+			],
+			[
+				"wp_get_nav_mne",
+				"wp_get_nav_menu_object"
+			],
+			[
+				"WP_REST_",
+				"WP_REST_Request"
+			],
+			[
+				"wp_dequeu",
+				"wp_dequeue_script"
+			],
+			[
+				"wp_enqueue",
+				"wp_enqueue_scripts"
+			],
+			[
+				"get_regist",
+				"get_registered_nav_menus"
+			],
+			[
+				"Galler",
+				"GalleryNavNext"
+			],
+			[
+				"Gallery",
+				"GalleryNavPrev"
 			],
 			[
 				"cur",
-				"curHotspots"
+				"curImage"
 			],
 			[
-				"hotp",
-				"hotspotsComponent"
+				"get",
+				"getCurVidTitle"
 			],
 			[
-				"switch",
-				"switchTo"
+				"Marzip",
+				"MarzipanoBrand"
+			],
+			[
+				"a",
+				"activeMenu"
+			],
+			[
+				"hots",
+				"hotspotType"
+			],
+			[
+				"acti",
+				"activeKey"
+			],
+			[
+				"firs",
+				"firstRun"
+			],
+			[
+				"toggle",
+				"toggleHelpWindow"
+			],
+			[
+				"act",
+				"activeKey"
+			],
+			[
+				"text",
+				"renderTextWindow"
 			],
 			[
 				"scene",
-				"sceneSwitcher"
+				"sceneTextContent"
+			],
+			[
+				"find",
+				"findScene"
+			],
+			[
+				"Po",
+				"PointText"
+			],
+			[
+				"hotspot",
+				"hotspotCircle"
+			],
+			[
+				"hotspotD",
+				"hotspotData"
+			],
+			[
+				"Hostpo",
+				"HotspotType"
+			],
+			[
+				"device",
+				"deviceControl"
+			],
+			[
+				"deviceO",
+				"deviceOrientationControlMethod"
+			],
+			[
+				"fontaw",
+				"fontawesome-free-solid"
+			],
+			[
+				"Deci",
+				"DeviceOrientationControlMethod"
+			],
+			[
+				"Device",
+				"DeviceOrientationControlMethod"
+			],
+			[
+				"buil",
+				"buildImageTitle"
+			],
+			[
+				"is-accordion",
+				"is-accordion-submenu-parent"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "templates/bs-memorias.php",
-			"settings":
-			{
-				"buffer_size": 3285,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "inc/fields-functions.php",
-			"settings":
-			{
-				"buffer_size": 1827,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pablo/Documentos/code/server/cchl/wp-content/plugins/filsa-2017/meta-boxes.php",
-			"settings":
-			{
-				"buffer_size": 8011,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pablo/Documentos/code/server/cchl/wp-settings.php",
-			"settings":
-			{
-				"buffer_size": 16200,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pablo/Documentos/code/server/cchl/wp-includes/post.php",
-			"settings":
-			{
-				"buffer_size": 211919,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/pablo/Documentos/code/server/cchl/wp-includes/meta.php",
-			"settings":
-			{
-				"buffer_size": 37423,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -479,168 +515,192 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 236.0,
-		"last_filter": "comme",
+		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
-				"comme",
-				"Toggle Comment"
-			],
-			[
-				"xdeb",
-				"Xdebug: Restore Layout"
-			],
-			[
-				"xdse",
-				"Xdebug: Session - Status"
-			],
-			[
-				"xde",
-				"Xdebug: Start Debugging"
-			],
-			[
-				"prefe",
-				"Preferences: Xdebug Settings – User"
-			],
-			[
-				"xdebug ru",
-				"Xdebug: Breakpoint - Run"
-			],
-			[
-				"xdebug ",
-				"Xdebug: Restore Layout"
-			],
-			[
-				"prefexd",
-				"Preferences: Xdebug Settings – User"
-			],
-			[
-				"brea",
-				"Xdebug: Add/Remove Breakpoint"
-			],
-			[
-				"xe",
-				"Xdebug: Start Debugging"
-			],
-			[
-				"XDE",
-				"Xdebug: Restore Layout"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
-				"inst",
-				"Package Control: Install Package"
-			],
-			[
-				"remove p",
-				"Package Control: Remove Package"
-			],
-			[
-				"react",
-				"ReactIDE: Switch between component and stylesheet"
-			],
-			[
-				"com",
-				"Toggle Comment"
-			],
-			[
-				"wrap",
-				"Emmet: Wrap With Abbreviation"
-			],
-			[
-				"syntjs",
-				"Set Syntax: JavaScript (Babel)"
-			],
-			[
-				"ww",
-				"Word Wrap: Toggle"
+				"rein",
+				"Indentation: Reindent Lines"
 			],
 			[
 				"comm",
 				"Toggle Comment"
 			],
 			[
-				"menu",
-				"View: Toggle Menu"
+				"com",
+				"Toggle Comment"
 			],
 			[
-				"togglm",
-				"View: Toggle Menu"
+				"rena",
+				"Rename File"
 			],
 			[
-				"synle",
-				"Set Syntax: Less"
+				"wra",
+				"Emmet: Wrap With Abbreviation"
 			],
 			[
-				"instap",
-				"Package Control: Install Package"
-			],
-			[
-				"rein",
-				"Indentation: Reindent Lines"
+				"ww",
+				"Word Wrap: Toggle"
 			],
 			[
 				"prett",
-				"JsPrettier: Format Code"
-			],
-			[
-				"prettier",
-				"JsPrettier: Format Code"
-			],
-			[
-				"remove",
-				"Package Control: Remove Package"
+				"Preferences: JsPrettier Settings - User"
 			],
 			[
 				"pretti",
 				"JsPrettier: Format Code"
 			],
 			[
+				"wrap",
+				"Emmet: Wrap With Abbreviation"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"ren",
+				"Rename File"
+			],
+			[
+				"syntaxjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"package bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"save proj",
+				"Project: Save As"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"syjs",
+				"Set Syntax: JavaScript"
+			],
+			[
 				"pret",
-				"Preferences: JsPrettier Settings - User"
+				"JsPrettier: Format Code"
+			],
+			[
+				"les",
+				"Set Syntax: Less"
+			],
+			[
+				"le",
+				"Set Syntax: Less"
+			],
+			[
+				"less",
+				"Set Syntax: Less"
+			],
+			[
+				"syntjs",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"syntles",
+				"Set Syntax: Less"
 			],
 			[
 				"pre",
 				"JsPrettier: Format Code"
 			],
 			[
-				"eslin",
-				"ESLint"
+				"user",
+				"Preferences: Babel – User"
 			],
 			[
-				"sublimelinter",
-				"SublimeLinter: Lint This View"
+				"syntax less",
+				"Set Syntax: Less"
 			],
 			[
-				"esli",
-				"ESLint"
+				"renam",
+				"Rename File"
 			],
 			[
-				"ins",
-				"Package Control: Install Package"
+				"js",
+				"Set Syntax: JavaScript (Babel)"
 			],
 			[
-				"toggl",
+				"babe",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"pr",
+				"JsPrettier: Format Code"
+			],
+			[
+				"babl",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"toggle",
 				"Toggle Comment"
 			],
 			[
-				"Package Control: remove",
-				"Package Control: Remove Package"
+				"color",
+				"UI: Select Color Scheme"
 			],
 			[
-				"instal",
-				"Install Package Control"
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"prefere",
+				"Preferences: Settings"
+			],
+			[
+				"prettie",
+				"Preferences: JsPrettier Settings - User"
+			],
+			[
+				"save",
+				"File: Save All"
+			],
+			[
+				"prefe",
+				"Preferences: Settings"
+			],
+			[
+				"PRETT",
+				"JsPrettier: Format Code"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"tood",
+				"Set Syntax: ToDone"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
 			]
 		],
-		"width": 461.0
+		"width": 0.0
 	},
 	"console":
 	{
-		"height": 256.0,
+		"height": 573.0,
 		"history":
 		[
 		]
@@ -656,146 +716,146 @@
 	},
 	"expanded_folders":
 	[
-		"/home/pablo/Documentos/code/server/cchl/wp-content/plugins/fields-converter"
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp"
 	],
 	"file_history":
 	[
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/meta-boxes/meta-boxes-documentos.php",
-		"/home/pablo/Escritorio/trjmama.txt",
-		"/home/pablo/Documentos/code/server/cchl/wp-config.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-settings.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/plugins/filsa-2017/meta-boxes.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/header.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/wphead-includes.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/utils.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/scripts.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/plugins/filsa-2017/main.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/parts/bs-home/bs-mainmenu.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/parts/bs-general/bs-header.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/inc/function-ferias.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/camara.sublime-project",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/templates/bs-memorias.php",
-		"/home/pablo/Documentos/code/server/cchl/wp-content/themes/cchl_wp/home.php",
-		"/home/pablo/.config/sublime-text-3/Packages/User/Xdebug.sublime-settings",
-		"/home/pablo/Documentos/code/server/xdebug_playground/index.php",
-		"/etc/php/7.0/mods-available/xdebug.ini",
-		"/home/pablo/Documentos/code/containers/cchl/phpdocker/php-fpm/php-ini-overrides.ini",
-		"/home/pablo/Documentos/code/containers/csd/csd_web/public/wp-content/themes/universe_theme/image.php",
-		"/home/pablo/Documentos/code/containers/cchl/public/wp-content/themes/cchl_wp/inc/meta-boxes/meta-boxes-ferias.php",
-		"/home/pablo/Documentos/code/containers/cchl/public/wp-content/plugins/fields-converter/fields-converter.php",
-		"/home/pablo/Documentos/code/containers/cchl/public/wp-content/themes/cchl_wp/inc/meta-boxes/meta-boxes-documentos.php",
-		"/home/pablo/Documentos/code/containers/cchl/public/wp-content/themes/cchl_wp/inc/meta-boxes.php",
-		"/home/pablo/Documentos/code/containers/cchl/public/wp-content/plugins/fields-converter/handle-files.php",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/functions.php",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/_settings.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/dploy.yaml",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/gulpfile.babel.js",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/template-parts/item-novedad-front.php",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/templates/_front.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/components/_item-novedad-front.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/modules/_navigation.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/modules/_content.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/modules/_sidebar.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/components/_metadata.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/modules/_footer.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/global/_colors.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/single.php",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/FoundationPress/src/assets/js/app.js",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/FoundationPress/gulpfile.babel.js",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/header.php",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/package.json",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/utils/curl.scss",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/js/app.js",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/src/assets/scss/app.scss",
-		"/home/pablo/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/pablo/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/six/LinesSix.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/four/LinesFour.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/package.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/mini/LineFlyOut.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/twelve/LinesTwelve.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/stacked_cuatro.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/four/StackedFour.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/six/StackedSix.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/twelve/StackedTwelve.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/twelve/LineBarsTwelve.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/four/LineBarsFour.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/layouts/TopMenu.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/mini/MiniLabel.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/six/LineBarsSix.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/twelve/GroupedBarsTwelve.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/parts/Main.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/mini/CustomPoint.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/six/GroupedBarsSix.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/four/GroupedBarsFour.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/twelve/ScatterTwelve.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/mini/DownloadButton.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/themes/cadem_theme.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/four/ScatterFour.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/six/ScatterSix.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/kpi_lineas.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/lineas_dos.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/kpi/KpiLinea.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/lineas_corto.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/four/SingleBarsFour.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/six/SingleBarsSix.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/twelve/SingleBarsTwelve.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/four/PieFour.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/six/PieSix.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/kpi/KpiSemiCirculo.js",
-		"/home/pablo/Documentos/code/containers/cm/cma/cma_dev/public/wp-content/themes/cma-fp-child/.babelrc",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/notes.txt",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/README.md",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/linebars_alerta.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/kpi_semicirculo.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/layouts/SideMenu.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/assets/estilo-dashboard.css",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/lineas.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/.git/MERGE_MSG",
-		"/home/pablo/Documentos/code/js/cadem_dashboard/src/components/four/GroupedBarsFour.js",
-		"/home/pablo/Documentos/code/js/cadem_dashboard/src/components/four/LineBarsFour.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/mini/Header.js",
-		"/home/pablo/Documentos/code/js/cadem_dashboard/src/layouts/Dashboard.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/kpi/KpiProgreso.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/layouts/Dashboard.js",
-		"/home/pablo/Documentos/code/js/cadem_dashboard/src/layouts/TopMenu.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/layouts/Dashboard.css",
-		"/home/pablo/Documentos/code/js/trolley_nextjs/data/dummy.json",
-		"/home/pablo/Documentos/code/js/trolley_nextjs/notas.md",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/App.css",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/cols/GroupedBarsCols.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/assets/semantic-ui/components/accordion.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/mini/Title.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/twelve/PieTwelve.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/linebars_cuatro.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/tmp/oldtitlelabel.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/barras_doce.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/barras_single_doce.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/scatter.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/Stacked.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/LineBars.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/GroupedBars.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/SingleBars.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/linebars.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/scatter_cuatro.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/stacked.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/Scatter.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/data/barras_cuatro.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/Lines.js",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/src/components/cols/LegendGroupedBars.js",
-		"/home/pablo/Documentos/code/js/test/cadem_datacampfire/src/components/Scatter.js",
-		"/home/pablo/Documentos/code/js/test/cadem_datacampfire/src/components/LineBars.js",
-		"/home/pablo/Documentos/code/js/test/cadem_datacampfire/node_modules/react-scripts/package.json",
-		"/home/pablo/Documentos/code/js/criscadem/package.json",
-		"/home/pablo/Documentos/code/js/cadem_datacampfire/public/index.html"
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/home-logged-in.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/mini-item-aside-post.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/carrusel-destacados.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/inc/user-functions.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/js/cedet-ui.js",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/layout/_single.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/cedet_bootstrap.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/header.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/single.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/inc/template-functions.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content-archive-noticias.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/page-template-noticias.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/elements/_archive.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/inc/template-tags.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/home-not-logged-in.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/banners-subdere.php",
+		"/home/donhilo/Desktop/datos_conductor.txt",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/layout/_header.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/elements/_home.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/videos-destacados.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/video-aside.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/dploy.yaml",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/functions.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/slider-section.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content-entrevistas.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/inc/custom-fields.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content-archivo_prensa.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content-archive.php",
+		"/home/donhilo/Code/games/godot/courses/loonylips/StoryBook.json",
+		"/tmp/fz3temp-2/.htaccess",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/elements/_user.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content-biblioteca.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/footer.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content-eventos.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/variables-site/_colors.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/navigation/_links.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/elements/_mini-item.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content-archive-biblioteca.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/variables-site/_bootstrap-variables.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/style.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/inc/admin-panel.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/variables-site/_gutenberg.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/slider-item.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/elements/_slider-item.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/style.css",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content-contacto.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content-page.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/page-template-contacto.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/page.php",
+		"/home/donhilo/Code/php/plataformacedet/phpdocker/php-fpm/Dockerfile",
+		"/home/donhilo/Code/php/plataformacedet/phpdocker/php-fpm/php-ini-overrides.ini",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/docs-list.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/archive.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/mini-item-eventos.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/mini-item-post.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/home.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/page-template-contenidos.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/facebook-invite-zone.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/reunion_1106.txt",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/archive-eventos.php",
+		"/home/donhilo/Code/php/plataformacedet/docker-compose.yml",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/content.php",
+		"/tmp/fz3temp-2/www-error.log",
+		"/tmp/fz3temp-2/fpm.log",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/plugins/theme-my-login/includes/class-theme-my-login-widget.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sidebar.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/elements/_info.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/package.json",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/mini-item-biblioteca.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/navigation/_menus.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/js/bootstrap.bundle.min.js",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/elements/_elements.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/terms_and_conditions.txt",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/single-biblioteca.php",
+		"/tmp/fz3temp-2/wp-config.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/fonts/stylesheet.css",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/fonts/_gobcl.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/index.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-config.php",
+		"/tmp/fz3temp-2/index.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/site/_site.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/site/primary/_posts-and-pages.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/typography/_typography.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/typography/_copy.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/typography/_headings.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/forms/_buttons.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/elements/_embeds.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/search.php",
+		"/home/donhilo/Code/webassets/cedet_2019/reunion_24_05.txt",
+		"/home/donhilo/.config/sublime-text-3/Packages/User/JsPrettier.sublime-settings",
+		"/home/donhilo/Code/php/plataformacedet/Programa_Nacional_de_Formaci__n_para_Gobiernos_Regionales_2019_05_23__07bc624_wpdb.sql",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/vendor/js/jquery.rut.min.js",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/navigation/_navigation.scss",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/sass/variables-site/_variables-site.scss",
+		"/home/donhilo/Code/webassets/cedet_2019/reunion_10_05.txt",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/plugins/theme-my-login/includes/forms.php",
+		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/comments.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/inc/template-functions.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/archive-comics.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-comic-item-grid.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/inc/custom-content.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/elements/_single.scss",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/archive.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/home.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/content-functions/home-content-functions.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/functions.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/js/cw-ui.js",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/site/_home.scss",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/elements/_archive.scss",
+		"/home/donhilo/Code/php/cw/public/wp-config.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/header.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/inc/admin-options.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/archive-contributors.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/index.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/single.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-archive-post.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-archive.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/tasks.todo",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-archive-contributors.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sidebar.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/layout/_sidebar-content.scss",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/search.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-search.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/inc/template-tags.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/style.scss",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/variables-site/_colors.scss",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/page.php",
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content.php"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
-		"height": 149.0,
+		"height": 176.0,
 		"where_history":
 		[
 		]
@@ -822,193 +882,18 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "templates/bs-memorias.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3285,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2596,
-								2596
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 408.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "inc/fields-functions.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1827,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1719,
-								1719
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 520.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/pablo/Documentos/code/server/cchl/wp-content/plugins/filsa-2017/meta-boxes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8011,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5650,
-								5650
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 187.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/pablo/Documentos/code/server/cchl/wp-settings.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16200,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2654,
-								2654
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 259.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/pablo/Documentos/code/server/cchl/wp-includes/post.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 211919,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								70677,
-								70677
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 32419.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/home/pablo/Documentos/code/server/cchl/wp-includes/meta.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37423,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15636,
-								15636
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 7926.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 25.0
+		"height": 26.0
 	},
 	"input":
 	{
-		"height": 55.0
+		"height": 54.0
 	},
 	"layout":
 	{
@@ -1033,27 +918,15 @@
 		]
 	},
 	"menu_visible": true,
-	"output.SublimeLinter":
-	{
-		"height": 0.0
-	},
-	"output.exec":
-	{
-		"height": 415.0
-	},
 	"output.find_results":
 	{
 		"height": 0.0
-	},
-	"output.xdebug":
-	{
-		"height": 114.0
 	},
 	"pinned_build_system": "",
 	"project": "camara.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1063,528 +936,636 @@
 		"selected_items":
 		[
 			[
-				"field-f",
-				"cchl_wp/inc/fields-functions.php"
-			],
-			[
-				"meta",
-				"inc/meta-boxes/meta-boxes-documentos.php"
-			],
-			[
-				"bs-mem",
-				"cchl_wp/templates/bs-memorias.php"
-			],
-			[
-				"bs-memo",
-				"cchl_wp/templates/bs-memorias.php"
+				"cut",
+				"cedetgore/inc/custom-fields.php"
 			],
 			[
 				"hom",
-				"cchl_wp/home.php"
+				"cedetgore/sass/elements/_home.scss"
 			],
 			[
-				"bs-me",
-				"cchl_wp/templates/bs-memorias.php"
+				"ui",
+				"cedetgore/js/cedet-ui.js"
 			],
 			[
-				"index",
-				"index.php"
+				"carru",
+				"cedetgore/template-parts/carrusel-destacados.php"
 			],
 			[
-				"foot",
-				"footer.php"
+				"log",
+				"cedetgore/template-parts/home-logged-in.php"
 			],
 			[
-				"404",
-				"404.php"
+				"mini-item",
+				"cedetgore/template-parts/mini-item-aside-post.php"
 			],
 			[
-				"sing",
-				"single.php"
-			],
-			[
-				"attac",
-				"attachment.php"
-			],
-			[
-				"imag",
-				"image.php"
-			],
-			[
-				"meta-boxes-doc",
-				"inc/meta-boxes/meta-boxes-documentos.php"
-			],
-			[
-				"meta-boxes-org",
-				"inc/meta-boxes/meta-boxes-organizador.php"
-			],
-			[
-				"meta-boxes-fe",
-				"inc/meta-boxes/meta-boxes-ferias.php"
-			],
-			[
-				"meta-bo",
-				"inc/meta-boxes.php"
-			],
-			[
-				"gulp",
-				"gulpfile.js"
-			],
-			[
-				"singl",
-				"single.php"
-			],
-			[
-				"func",
-				"functions.php"
-			],
-			[
-				"vacant",
-				"admin/admin_vacantes.php"
-			],
-			[
-				"nav",
-				"css/src/nav.scss"
-			],
-			[
-				"main-n",
-				"parts/main-nav.php"
-			],
-			[
-				"head",
-				"header.php"
-			],
-			[
-				"sideba",
-				"src/assets/scss/modules/_sidebar.scss"
-			],
-			[
-				"",
-				"src/assets/scss/modules/_content.scss"
-			],
-			[
-				"cont",
-				"src/assets/scss/modules/_content.scss"
-			],
-			[
-				"metada",
-				"src/assets/scss/components/_metadata.scss"
-			],
-			[
-				"navi",
-				"src/assets/scss/modules/_navigation.scss"
-			],
-			[
-				"item-nove",
-				"src/assets/scss/components/_item-novedad-front.scss"
-			],
-			[
-				"front",
-				"src/assets/scss/templates/_front.scss"
-			],
-			[
-				"navig",
-				"src/assets/scss/modules/_navigation.scss"
-			],
-			[
-				"setting",
-				"src/assets/scss/_settings.scss"
-			],
-			[
-				"conten",
-				"src/assets/scss/modules/_content.scss"
-			],
-			[
-				"setti",
-				"src/assets/scss/_settings.scss"
-			],
-			[
-				"item-nno",
-				"src/assets/scss/components/_item-novedad-front.scss"
-			],
-			[
-				"fron",
-				"src/assets/scss/templates/_front.scss"
-			],
-			[
-				"item-",
-				"template-parts/item-novedad-front.php"
-			],
-			[
-				"dpl",
-				"dploy.yaml"
-			],
-			[
-				"conte",
-				"src/assets/scss/modules/_content.scss"
-			],
-			[
-				"sett",
-				"src/assets/scss/_settings.scss"
-			],
-			[
-				"nai",
-				"src/assets/scss/modules/_navigation.scss"
-			],
-			[
-				"colo",
-				"src/assets/scss/global/_colors.scss"
-			],
-			[
-				"footer",
-				"src/assets/scss/modules/_footer.scss"
-			],
-			[
-				"item-nov",
-				"src/assets/scss/components/_item-novedad-front.scss"
-			],
-			[
-				"foote",
-				"src/assets/scss/modules/_footer.scss"
-			],
-			[
-				"naviga",
-				"src/assets/scss/modules/_navigation.scss"
+				"home",
+				"cedetgore/template-parts/home-logged-in.php"
 			],
 			[
 				"fun",
-				"functions.php"
+				"cedetgore/functions.php"
 			],
 			[
-				"app.j",
-				"src/assets/js/app.js"
+				"contnotii",
+				"cedetgore/template-parts/content-archive-noticias.php"
 			],
 			[
-				"app",
-				"src/assets/scss/app.scss"
+				"func",
+				"cedetgore/functions.php"
 			],
 			[
-				"gulpf",
-				"gulpfile.babel.js"
+				"templ",
+				"cedetgore/inc/template-tags.php"
 			],
 			[
-				"package",
-				"package.json"
+				"page",
+				"cedetgore/page-template-noticias.php"
 			],
 			[
-				"pack",
-				"package.json"
+				"",
+				"cedetgore/template-parts/content-archive-noticias.php"
 			],
 			[
-				"color",
-				"src/assets/scss/global/_colors.scss"
+				"asi",
+				"cedetgore/template-parts/mini-item-aside-post.php"
 			],
 			[
-				"item-no",
-				"src/assets/scss/components/_item-novedad-front.scss"
+				"archi",
+				"cedetgore/sass/elements/_archive.scss"
 			],
 			[
-				"linefl",
-				"src/components/mini/LineFlyOut.js"
+				"template",
+				"cedetgore/inc/template-tags.php"
 			],
 			[
-				"linestw",
-				"src/components/twelve/LinesTwelve.js"
+				"content-arc",
+				"cedetgore/template-parts/content-archive.php"
 			],
 			[
-				"linesf",
-				"src/components/four/LinesFour.js"
+				"content-ar",
+				"cedetgore/template-parts/content-archivo_prensa.php"
 			],
 			[
-				"pac",
-				"package.json"
+				"slide",
+				"cedetgore/template-parts/slider-section.php"
 			],
 			[
-				"linessi",
-				"src/components/six/LinesSix.js"
+				"content-entr",
+				"cedetgore/template-parts/content-entrevistas.php"
 			],
 			[
-				"stackedt",
-				"src/components/twelve/StackedTwelve.js"
+				"singl",
+				"cedetgore/single.php"
 			],
 			[
-				"stackeds",
-				"src/components/six/StackedSix.js"
+				"entre",
+				"cedetgore/template-parts/content-entrevistas.php"
 			],
 			[
-				"stacked",
-				"src/components/four/StackedFour.js"
+				"customf-",
+				"cedetgore/inc/custom-fields.php"
 			],
 			[
-				"scattert",
-				"src/components/twelve/ScatterTwelve.js"
+				"head",
+				"cedetgore/header.php"
 			],
 			[
-				"liness",
-				"src/components/six/LinesSix.js"
+				"aside",
+				"cedetgore/template-parts/video-aside.php"
 			],
 			[
-				"linebarss",
-				"src/components/six/LineBarsSix.js"
+				"video",
+				"cedetgore/template-parts/video-aside.php"
 			],
 			[
-				"custompo",
-				"src/components/mini/CustomPoint.js"
+				"vide",
+				"cedetgore/template-parts/videos-destacados.php"
 			],
 			[
-				"main.j",
-				"src/components/parts/Main.js"
+				"dpl",
+				"cedetgore/dploy.yaml"
 			],
 			[
-				"groupedbarst",
-				"src/components/twelve/GroupedBarsTwelve.js"
+				"carrus",
+				"cedetgore/template-parts/carrusel-destacados.php"
 			],
 			[
-				"linebarssi",
-				"src/components/six/LineBarsSix.js"
+				"home-",
+				"cedetgore/template-parts/home-logged-in.php"
 			],
 			[
-				"linebarst",
-				"src/components/twelve/LineBarsTwelve.js"
+				"boot",
+				"cedetgore/sass/cedet_bootstrap.scss"
 			],
 			[
-				"groupedbarsf",
-				"src/components/four/GroupedBarsFour.js"
+				"home-l",
+				"cedetgore/template-parts/home-logged-in.php"
 			],
 			[
-				"groupedbar",
-				"src/components/six/GroupedBarsSix.js"
+				"us",
+				"cedetgore/inc/user-functions.php"
 			],
 			[
-				"minila",
-				"src/components/mini/MiniLabel.js"
+				"hea",
+				"cedetgore/sass/layout/_header.scss"
 			],
 			[
-				"topme",
-				"src/layouts/TopMenu.js"
+				"heda",
+				"cedetgore/header.php"
 			],
 			[
-				"linebarsf",
-				"src/components/four/LineBarsFour.js"
+				"user",
+				"cedetgore/sass/elements/_user.scss"
 			],
 			[
-				"cadem_t",
-				"src/themes/cadem_theme.js"
+				"tem",
+				"cedetgore/inc/template-functions.php"
 			],
 			[
-				"main",
-				"src/components/parts/Main.js"
+				"honme",
+				"cedetgore/template-parts/home-not-logged-in.php"
 			],
 			[
-				"mini",
-				"src/components/mini/MiniLabel.js"
-			],
-			[
-				"lineba",
-				"src/components/four/LineBarsFour.js"
-			],
-			[
-				"stackedtw",
-				"src/components/twelve/StackedTwelve.js"
-			],
-			[
-				"stackedsi",
-				"src/components/six/StackedSix.js"
-			],
-			[
-				"grop",
-				"src/components/six/GroupedBarsSix.js"
-			],
-			[
-				"scattersi",
-				"src/components/six/ScatterSix.js"
-			],
-			[
-				"cadem_th",
-				"src/themes/cadem_theme.js"
-			],
-			[
-				"scatter",
-				"src/components/four/ScatterFour.js"
-			],
-			[
-				"kpi",
-				"src/components/kpi/KpiLinea.js"
-			],
-			[
-				"lineas",
-				"src/data/lineas_dos.json"
-			],
-			[
-				"lines",
-				"src/components/twelve/LinesTwelve.js"
-			],
-			[
-				"cademth",
-				"src/themes/cadem_theme.js"
-			],
-			[
-				"minil",
-				"src/components/mini/MiniLabel.js"
-			],
-			[
-				"cadem",
-				"src/themes/cadem_theme.js"
-			],
-			[
-				"lineb",
-				"src/components/four/LineBarsFour.js"
-			],
-			[
-				"scatters",
-				"src/components/six/ScatterSix.js"
-			],
-			[
-				"scatte",
-				"src/components/four/ScatterFour.js"
-			],
-			[
-				"stackedf",
-				"src/components/four/StackedFour.js"
-			],
-			[
-				"piesix",
-				"src/components/six/PieSix.js"
-			],
-			[
-				"pief",
-				"src/components/four/PieFour.js"
-			],
-			[
-				"singlebarst",
-				"src/components/twelve/SingleBarsTwelve.js"
-			],
-			[
-				"singlebar",
-				"src/components/six/SingleBarsSix.js"
-			],
-			[
-				"cade",
-				"src/themes/cadem_theme.js"
-			],
-			[
-				"kpisem",
-				"src/components/kpi/KpiSemiCirculo.js"
-			],
-			[
-				"groupe",
-				"src/components/twelve/GroupedBarsTwelve.js"
-			],
-			[
-				"groupedba",
-				"src/components/six/GroupedBarsSix.js"
-			],
-			[
-				"colors",
-				"src/assets/scss/global/_colors.scss"
-			],
-			[
-				"not",
-				"notes.txt"
-			],
-			[
-				"group",
-				"src/components/six/GroupedBarsSix.js"
-			],
-			[
-				"readme.md",
-				"README.md"
-			],
-			[
-				"line",
-				"src/data/lineas_dos.json"
-			],
-			[
-				"single",
-				"src/components/four/SingleBarsFour.js"
-			],
-			[
-				"lin",
-				"src/data/lineas_dos.json"
-			],
-			[
-				"linest",
-				"src/components/twelve/LinesTwelve.js"
-			],
-			[
-				"linebar",
-				"src/components/twelve/LineBarsTwelve.js"
-			],
-			[
-				"linebrast",
-				"src/components/twelve/LineBarsTwelve.js"
-			],
-			[
-				"stack",
-				"src/components/four/StackedFour.js"
-			],
-			[
-				"sin",
-				"src/components/four/SingleBarsFour.js"
-			],
-			[
-				"cda",
-				"src/themes/cadem_theme.js"
-			],
-			[
-				"grouped",
-				"src/components/twelve/GroupedBarsTwelve.js"
-			],
-			[
-				"groupedbarss",
-				"src/components/six/GroupedBarsSix.js"
-			],
-			[
-				"groupbar",
-				"src/components/four/GroupedBarsFour.js"
-			],
-			[
-				"sidem",
-				"src/layouts/SideMenu.js"
-			],
-			[
-				"estilo",
-				"src/assets/estilo-dashboard.css"
-			],
-			[
-				"scattersix",
-				"src/components/six/ScatterSix.js"
-			],
-			[
-				"scatt",
-				"src/components/four/ScatterFour.js"
-			],
-			[
-				"cadem_the",
-				"src/themes/cadem_theme.js"
-			],
-			[
-				"linebars",
-				"src/components/four/LineBarsFour.js"
+				"use",
+				"cedetgore/inc/user-functions.php"
 			],
 			[
 				"he",
-				"src/components/mini/Header.js"
+				"cedetgore/header.php"
 			],
 			[
-				"kpipr",
-				"src/components/kpi/KpiProgreso.js"
+				"docs",
+				"cedetgore/template-parts/docs-list.php"
 			],
 			[
-				"groupd",
-				"src/components/twelve/GroupedBarsTwelve.js"
+				"home-no",
+				"cedetgore/template-parts/home-not-logged-in.php"
+			],
+			[
+				"home-lo",
+				"cedetgore/template-parts/home-not-logged-in.php"
+			],
+			[
+				"face",
+				"cedetgore/template-parts/facebook-invite-zone.php"
+			],
+			[
+				"fab",
+				"cedetgore/template-parts/facebook-invite-zone.php"
+			],
+			[
+				"mini",
+				"cedetgore/sass/elements/_mini-item.scss"
+			],
+			[
+				"ho",
+				"cedetgore/sass/elements/_home.scss"
+			],
+			[
+				"sing",
+				"cedetgore/sass/layout/_single.scss"
+			],
+			[
+				"content-pag",
+				"cedetgore/template-parts/content-page.php"
+			],
+			[
+				"pag",
+				"cedetgore/page.php"
+			],
+			[
+				"homes",
+				"cedetgore/sass/elements/_home.scss"
+			],
+			[
+				"home-not",
+				"cedetgore/template-parts/home-not-logged-in.php"
+			],
+			[
+				"doc",
+				"cedetgore/template-parts/docs-list.php"
+			],
+			[
+				"min",
+				"cedetgore/sass/elements/_mini-item.scss"
+			],
+			[
+				"mini-",
+				"cedetgore/sass/elements/_mini-item.scss"
+			],
+			[
+				"home-logg",
+				"cedetgore/template-parts/home-logged-in.php"
+			],
+			[
+				"slid",
+				"cedetgore/template-parts/slider-section.php"
+			],
+			[
+				"slider",
+				"cedetgore/template-parts/slider-item.php"
+			],
+			[
+				"content",
+				"cedetgore/template-parts/content-page.php"
+			],
+			[
+				"dock",
+				"~/Code/php/plataformacedet/docker-compose.yml"
+			],
+			[
+				"archive",
+				"cedetgore/archive-eventos.php"
+			],
+			[
+				"arch",
+				"cedetgore/archive.php"
+			],
+			[
+				"archiv",
+				"cedetgore/archive-eventos.php"
+			],
+			[
+				"content-p",
+				"cedetgore/template-parts/content-page.php"
+			],
+			[
+				"conten",
+				"cedetgore/template-parts/content-page.php"
+			],
+			[
+				"content-pa",
+				"cedetgore/template-parts/content-page.php"
+			],
+			[
+				"arc",
+				"cedetgore/sass/elements/_archive.scss"
+			],
+			[
+				"content-archi",
+				"cedetgore/template-parts/content-archive-biblioteca.php"
+			],
+			[
+				"content-ite",
+				"cedetgore/template-parts/content-archive-biblioteca.php"
+			],
+			[
+				"home-n",
+				"cedetgore/template-parts/home-not-logged-in.php"
+			],
+			[
+				"hm",
+				"cedetgore/template-parts/home-logged-in.php"
+			],
+			[
+				"var",
+				"cedetgore/sass/variables-site/_bootstrap-variables.scss"
+			],
+			[
+				"contac",
+				"cedetgore/template-parts/content-contacto.php"
+			],
+			[
+				"custom-fi",
+				"cedetgore/inc/custom-fields.php"
+			],
+			[
+				"col",
+				"cedetgore/sass/variables-site/_colors.scss"
+			],
+			[
+				"link",
+				"cedetgore/sass/navigation/_links.scss"
+			],
+			[
+				"slide-i",
+				"cedetgore/sass/elements/_slider-item.scss"
+			],
+			[
+				"links",
+				"cedetgore/sass/navigation/_links.scss"
+			],
+			[
+				"styl",
+				"cedetgore/sass/style.scss"
+			],
+			[
+				"varia",
+				"cedetgore/sass/variables-site/_bootstrap-variables.scss"
+			],
+			[
+				"gut",
+				"cedetgore/sass/variables-site/_gutenberg.scss"
+			],
+			[
+				"sin",
+				"cedetgore/sass/layout/_single.scss"
+			],
+			[
+				"docs-",
+				"cedetgore/template-parts/docs-list.php"
+			],
+			[
+				"admin",
+				"cedetgore/inc/admin-panel.php"
+			],
+			[
+				"a",
+				"cedetgore/archive-eventos.php"
+			],
+			[
+				"even",
+				"cedetgore/archive-eventos.php"
+			],
+			[
+				"cede",
+				"cedetgore/js/cedet-ui.js"
+			],
+			[
+				"foot",
+				"cedetgore/footer.php"
+			],
+			[
+				"cedet",
+				"cedetgore/js/cedet-ui.js"
+			],
+			[
+				"archive-",
+				"cedetgore/archive-eventos.php"
+			],
+			[
+				"bibl",
+				"cedetgore/template-parts/content-biblioteca.php"
+			],
+			[
+				"sideb",
+				"cedetgore/sidebar.php"
+			],
+			[
+				"widg",
+				"theme-my-login/includes/class-theme-my-login-widget.php"
+			],
+			[
+				"content-bi",
+				"cedetgore/template-parts/content-biblioteca.php"
+			],
+			[
+				"custom",
+				"cedetgore/inc/custom-fields.php"
+			],
+			[
+				"content-",
+				"cedetgore/template-parts/content-archivo_prensa.php"
+			],
+			[
+				"home-log",
+				"cedetgore/template-parts/home-logged-in.php"
+			],
+			[
+				"content-ev",
+				"cedetgore/template-parts/content-eventos.php"
+			],
+			[
+				"fu",
+				"cedetgore/functions.php"
+			],
+			[
+				"archive-eve",
+				"cedetgore/archive-eventos.php"
+			],
+			[
+				"style",
+				"cedetgore/sass/style.scss"
+			],
+			[
+				"customf",
+				"cedetgore/inc/custom-fields.php"
+			],
+			[
+				"eve",
+				"cedetgore/archive-eventos.php"
+			],
+			[
+				"slider-",
+				"cedetgore/template-parts/slider-section.php"
+			],
+			[
+				"content-en",
+				"cedetgore/template-parts/content-entrevistas.php"
+			],
+			[
+				"inf",
+				"cedetgore/sass/elements/_info.scss"
+			],
+			[
+				"contet",
+				"cedetgore/template-parts/content-biblioteca.php"
+			],
+			[
+				"custo",
+				"cedetgore/inc/custom-fields.php"
+			],
+			[
+				"te",
+				"cedetgore/inc/template-functions.php"
+			],
+			[
+				"entrevi",
+				"cedetgore/template-parts/content-entrevistas.php"
+			],
+			[
+				"custom-fie",
+				"cedetgore/inc/custom-fields.php"
+			],
+			[
+				"slider-ite",
+				"cedetgore/template-parts/slider-item.php"
+			],
+			[
+				"slider-se",
+				"cedetgore/template-parts/slider-section.php"
+			],
+			[
+				"logged",
+				"cedetgore/template-parts/home-logged-in.php"
+			],
+			[
+				"boots",
+				"cedetgore/sass/variables-site/_bootstrap-variables.scss"
+			],
+			[
+				"slider-it",
+				"cedetgore/template-parts/slider-item.php"
+			],
+			[
+				"slider-item",
+				"cedetgore/template-parts/slider-item.php"
+			],
+			[
+				"mini-ite",
+				"cedetgore/sass/elements/_mini-item.scss"
+			],
+			[
+				"mini-t",
+				"cedetgore/template-parts/mini-item-post.php"
+			],
+			[
+				"menu",
+				"cedetgore/sass/navigation/_menus.scss"
+			],
+			[
+				"item-b",
+				"cedetgore/template-parts/mini-item-biblioteca.php"
+			],
+			[
+				"vari",
+				"cedetgore/sass/variables-site/_bootstrap-variables.scss"
+			],
+			[
+				"pack",
+				"cedetgore/package.json"
+			],
+			[
+				"sty",
+				"cedetgore/sass/style.scss"
+			],
+			[
+				"term",
+				"cedetgore/terms_and_conditions.txt"
+			],
+			[
+				"mini-it",
+				"cedetgore/sass/elements/_mini-item.scss"
+			],
+			[
+				"rchi",
+				"cedetgore/sass/elements/_archive.scss"
+			],
+			[
+				"content-bib",
+				"cedetgore/template-parts/content-biblioteca.php"
 			]
 		],
 		"width": 0.0
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"cede",
+				"~/Code/cedetgore.sublime-project"
+			],
+			[
+				"trol",
+				"~/Code/trolley.sublime-project"
+			],
+			[
+				"incl",
+				"~/Code/php/inclab/public/wp-content/themes/inclab/inclusionlab.sublime-project"
+			],
+			[
+				"in",
+				"~/Code/php/inclab/public/wp-content/themes/inclab/inclusionlab.sublime-project"
+			],
+			[
+				"",
+				"~/Code/php/inclab/public/wp-content/themes/inclab/inclusionlab.sublime-project"
+			],
+			[
+				"inc",
+				"~/Code/php/inclab/public/wp-content/themes/inclab/inclusionlab.sublime-project"
+			],
+			[
+				"incla",
+				"~/Code/php/inclab/public/wp-content/themes/inclab/inclusionlab.sublime-project"
+			],
+			[
+				"pr",
+				"~/Code/prompt.sublime-project"
+			],
+			[
+				"cw",
+				"~/Code/php/cw/public/wp-content/themes/cw/cw2019.sublime-project"
+			],
+			[
+				"prom",
+				"~/Code/prompt.sublime-project"
+			],
+			[
+				"aura",
+				"~/Documentos/code/projects/aura_austral.sublime-project"
+			],
+			[
+				"pos",
+				"~/Documentos/code/php/csd/csd_adm/public/wp-content/plugins/postulacion/postulacion.sublime-project"
+			],
+			[
+				"csd",
+				"~/Documentos/code/containers/cm/cms/cms_adm/cmsadm.sublime-workspace"
+			],
+			[
+				"csda",
+				"~/Documentos/code/containers/cm/cms/cms_adm/cmsadm.sublime-workspace"
+			],
+			[
+				"au",
+				"~/Documentos/code/projects/aura_austral.sublime-project"
+			],
+			[
+				"aurt",
+				"~/Documentos/code/projects/aura_austral.sublime-project"
+			],
+			[
+				"aur",
+				"~/Documentos/code/projects/aura_austral.sublime-project"
+			],
+			[
+				"land",
+				"~/Documentos/code/php/culturapopular/public/wp-content/plugins/landing_culturapopular/landing_culturapopular.sublime-project"
+			],
+			[
+				"tro",
+				"~/Documentos/code/js/trolley_nextjs/trolley.sublime-project"
+			],
+			[
+				"to",
+				"~/Documentos/code/js/trolley_nextjs/trolley.sublime-project"
+			],
+			[
+				"troll",
+				"~/Documentos/code/js/trolley_nextjs/trolley.sublime-project"
+			],
+			[
+				"csds",
+				"~/Documentos/code/php/csd/csd_web_mailhog/public/wp-content/themes/universe_theme/csdweb.sublime-project"
+			],
+			[
+				"cs",
+				"~/Documentos/code/php/csd/csd_web/public/wp-content/themes/universe_theme/csdweb.sublime-project"
+			],
+			[
+				"conv",
+				"~/Documentos/code/php/csd/csd_web/public/wp-content/themes/universe_theme/csdweb.sublime-project"
+			],
+			[
+				"go",
+				"~/Documentos/code/php/ga/public/wp-content/themes/gonzalo-aguirre/gonzaloaguirre.sublime-project"
+			],
+			[
+				"gon",
+				"~/Documentos/code/php/ga/public/wp-content/themes/gonzalo-aguirre/gonzaloaguirre.sublime-project"
+			],
+			[
+				"pablosel.",
+				"~/Documentos/code/statics/pabloselin.github.io/pabloselin.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
@@ -1598,106 +1579,12 @@
 	"selected_group": 0,
 	"settings":
 	{
-		"xdebug":
-		{
-			"hide_conflict": false,
-			"restore_index":
-			{
-				"40":
-				{
-					"group": 0,
-					"index": 0
-				},
-				"41":
-				{
-					"group": 0,
-					"index": 1
-				},
-				"42":
-				{
-					"group": 0,
-					"index": 2
-				},
-				"43":
-				{
-					"group": 0,
-					"index": 3
-				},
-				"44":
-				{
-					"group": 0,
-					"index": 4
-				},
-				"45":
-				{
-					"group": 0,
-					"index": 5
-				},
-				"46":
-				{
-					"group": 0,
-					"index": 8
-				},
-				"47":
-				{
-					"group": 0,
-					"index": 9
-				},
-				"48":
-				{
-					"group": 0,
-					"index": 6
-				},
-				"49":
-				{
-					"group": 0,
-					"index": 7
-				},
-				"50":
-				{
-					"group": 0,
-					"index": 10
-				},
-				"51":
-				{
-					"group": 0,
-					"index": 11
-				},
-				"52":
-				{
-					"group": 0,
-					"index": 12
-				}
-			},
-			"restore_layout":
-			{
-				"cells":
-				[
-					[
-						0,
-						0,
-						1,
-						1
-					]
-				],
-				"cols":
-				[
-					0.0,
-					1.0
-				],
-				"rows":
-				[
-					0.0,
-					1.0
-				]
-			}
-		}
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 293.0,
+	"side_bar_width": 301.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
