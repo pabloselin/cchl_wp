@@ -14,7 +14,9 @@ $page_evts = get_post_meta($postid, 'cchl_bspageevents', true);
 $colaboradores = get_post_meta( $postid, 'cchl_bspagecolabs', true );
 $noticias = get_post_meta( $postid, 'cchl_bspagenews', true);
 $expositores = get_post_meta( $postid, 'cchl_bspageexpositores', true);
-//var_dump($colaboradores);
+$visitas_guiadas = get_post_meta( $postid, 'cchl_bsvgevents', true);
+$eventos_plugin = get_post_meta( $postid, 'cchl_bspagepluginevents', true);
+
 $argsmenu = array(
   'menu' => $menuferia,
   'menu_class' => 'nav'
@@ -58,6 +60,10 @@ endif;?>
 
 <?php if( get_the_ID() == $page_evts) {
 get_template_part('parts/blocks/bs-nuevo-programa-cultural-ferias');
+}?>
+
+<?php if( get_the_ID() == $visitas_guiadas) {
+get_template_part('parts/blocks/bs-visitas-guiadas-programa');
 }?>
 
 <?php if(get_the_ID() == $noticias) {

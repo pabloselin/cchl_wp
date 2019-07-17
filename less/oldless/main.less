@@ -76,77 +76,70 @@
 
 //responsive base para sitios con clase "responsive" en el body
 body.responsive {
-	@import "responsive.less";	
+	@import "responsive.less";
 }
-
 
 //Gallery galleria
 //@import "galleria.classic.less";
 
 .gallery {
 	width: 656px;
-	height: 400px; 
-	background: #000 
+	height: 400px;
+	background: #000;
 }
 
 .galleria-theme-classic .galleria-info {
-	width:90%;
-	margin-left:10%;
-	bottom:60px;
+	width: 90%;
+	margin-left: 10%;
+	bottom: 60px;
 	top: auto;
-	
+
 	.galleria-info-text {
-		
-		background-color: fade( #000 , 60%);
-		
+		background-color: fade(#000, 60%);
 	}
 }
 
 .fl-lightbox {
-	display:none;
+	display: none;
 }
-
 
 #header h2#ferias,
 #header h2#ferias a,
-#sidebar div.programa
- {
-	display:none;
+#sidebar div.programa {
+	display: none;
 }
 
 .botonportadafilsa a {
-	display:block;
-	padding:12px 24px;
-	background-color:white;
-	color:#444;
-	border:2px solid #999;
-	border-radius:3px;
-	font-weight:400;
-	text-transform:uppercase;
-	font-size:16px;
-	margin:12px 0;
-	transition:all ease-in 0.2s;
-	
+	display: block;
+	padding: 12px 24px;
+	background-color: white;
+	color: #444;
+	border: 2px solid #999;
+	border-radius: 3px;
+	font-weight: 400;
+	text-transform: uppercase;
+	font-size: 16px;
+	margin: 12px 0;
+	transition: all ease-in 0.2s;
+
 	i {
-		margin-right:12px;	
+		margin-right: 12px;
 	}
 
 	&:hover {
-		background-color:#444;
-		color:white;
-		border-color:#444;
+		background-color: #444;
+		color: white;
+		border-color: #444;
 	}
 }
 
-
 #sidebar_interior .menu-historico-filsa-container {
-	
 	border: 2px solid #999;
 	border-radius: 3px;
 
 	li {
-		border-bottom: 2px solid #999
-	} 
+		border-bottom: 2px solid #999;
+	}
 
 	li:last-child {
 		border-bottom: 0;
@@ -154,48 +147,43 @@ body.responsive {
 
 	li a {
 		color: #444;
-		font-weight:400;
-		font-size:16px;
-		
+		font-weight: 400;
+		font-size: 16px;
+
 		&:before {
-			content:'\f097';
-			font-family: 'FontAwesome';
+			content: "\f097";
+			font-family: "FontAwesome";
 			font-size: 16px;
 			margin-right: 12px;
 		}
-		
+
 		&:hover {
-			background-image:none;
+			background-image: none;
 			background-color: #444;
-			color:white;
+			color: white;
 		}
 	}
 }
 
 #sidebar_interior .menu-filsa-2013-container,
-#sidebar_interior .menu-filsa-2012-container
- {
-	
+#sidebar_interior .menu-filsa-2012-container {
 	ul li ul.sub-menu li ul.sub-menu,
-	ul li.current-menu-item ul.sub-menu li ul.sub-menu
-	 {
-		
-		display:block;
+	ul li.current-menu-item ul.sub-menu li ul.sub-menu {
+		display: block;
 		a {
 			&:before {
-				content: '-';
+				content: "-";
 			}
 		}
-		
-	}	
+	}
 }
 
 #content div.invitados-filsa ul.cf li img {
-	max-width:200px;
-	height:auto;
+	max-width: 200px;
+	height: auto;
 }
 
 body#filsa-2015 .invitados-filsa .cf.listado li img {
-	max-width:140px;
-	height:auto;
+	max-width: 140px;
+	height: auto;
 }

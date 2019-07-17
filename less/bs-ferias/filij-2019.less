@@ -1,0 +1,26 @@
+@morado: #960073;
+
+body#filij-2019 {
+	.navbar-inverse,
+	.navbar {
+		background-color: @morado;
+		border: 0;
+	}
+
+	.mobile-home {
+		@media screen and (min-width: @screen-lg) {
+			display: none;
+		}
+	}
+
+	.navbar-inverse .navbar-nav > .active > a,
+	.navbar-inverse .navbar-nav > .active > a:hover,
+	.navbar-inverse .navbar-nav > .active > a:focus {
+		background-color: lighten(@morado, 10%);
+		font-weight: bold;
+	}
+
+	.navbar-inverse .navbar-nav a:hover {
+		background-color: lighten(@morado, 5%);
+	}
+}

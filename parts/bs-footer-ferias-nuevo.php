@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-6 logo">
                 <p><a href="<?php echo get_bloginfo('url');?>"><img src="<?php bloginfo('template_url');?>/img/logos/cchl_logo_blanco.svg" alt="<?php bloginfo('name' );?>"></a></p>
-                <p><em>67 años trabajando por el libro y la lectura</em></p>
+                <p><em><?php bloginfo('description');?></em></p>
             </div>
             
             <div class="caja-info col-md-6">

@@ -10,6 +10,8 @@
 <?php 
     $cchl_options = get_option( 'cchl_settings' );
     $postid = cchl_current_fields_id('bs-plantilla-feria.php')? cchl_current_fields_id('bs-plantilla-feria.php') : cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
+    $itemferia = get_post($postid);
+    $postslug = $itemferia->post_name;
     if(!$postid) {
       $postid = 74397;
     }
@@ -18,7 +20,7 @@
     $menuferia = get_post_meta($postid, 'cchl_bsmenuferia', true);
     $cssclass = get_post_meta($postid, 'cchl_bsclass', true);
 ?>
-<body <?php body_class($cssclass);?>>
+<body <?php body_class($cssclass);?> id="<?php echo $postslug;?>">
 <?php get_template_part( 'parts/fb-sdk');?>
 
 
@@ -60,7 +62,7 @@
       <a href="<?php echo get_permalink($postid);?>" class="mobile-home" ><i class="fa fa-home"></i></a>
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-feria-mobile">
         <span class="labelmenu">menú</span>
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">Ver menú</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

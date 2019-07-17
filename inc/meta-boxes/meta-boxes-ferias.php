@@ -17,6 +17,15 @@ function cchl_bsferiaboxes() {
         $terms[$taxvalue->slug] = $taxvalue->name;
     endforeach;
 
+    $taxtipos = get_terms(array(
+      'taxonomy' => 'cchl_tipoevento'
+      )
+    );
+    $cchl_tipoevento = [];
+    foreach($taxtipos as $taxtipo):
+        $cchl_tipoevento[$taxtipo->slug] = $taxtipo->name;
+    endforeach;
+
     $feriabox = new_cmb2_box(
         array(
             'id' => $prefix . 'infoferia',
@@ -60,6 +69,17 @@ function cchl_bsferiaboxes() {
             'name' => 'Página de Eventos',
             'desc' => 'La página superior donde se encuentran los eventos de esta feria (tiene que ser a su vez subpágina de esta)',
             'id' => $prefix . 'bspageevents',
+            'type' => 'select',
+            'show_option_none' => 'Escoja una página',
+            'options' => $eventoptions
+        )
+    );
+
+    $feriabox->add_field(
+        array(
+            'name' => 'Página de Visitas Guiadas para colegios',
+            'desc' => 'La página superior donde se encuentran las visitas guiadas para colegios)',
+            'id' => $prefix . 'bsvgevents',
             'type' => 'select',
             'show_option_none' => 'Escoja una página',
             'options' => $eventoptions
@@ -133,6 +153,15 @@ function cchl_bsferiaboxes() {
           'id'             => $prefix . 'bstax',
           'type'           => 'select',
           'options'        => $terms
+        )
+      );
+
+    $feriabox->add_field( array(
+          'name'           => 'Taxonomía Visitas Guiadas',
+          'desc'           => 'Término de taxonomía para visitas guiadas de colegios.',
+          'id'             => $prefix . 'vgtax',
+          'type'           => 'select',
+          'options'        => $cchl_tipoevento
         )
       );
 
