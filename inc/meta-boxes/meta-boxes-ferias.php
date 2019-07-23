@@ -68,7 +68,7 @@ function cchl_bsferiaboxes() {
         array(
             'name' => 'Página de Eventos',
             'desc' => 'La página superior donde se encuentran los eventos de esta feria (tiene que ser a su vez subpágina de esta)',
-            'id' => $prefix . 'bspageevents',
+            'id' => $prefix . 'bspageevents_unitary',
             'type' => 'select',
             'show_option_none' => 'Escoja una página',
             'options' => $eventoptions
@@ -144,6 +144,15 @@ function cchl_bsferiaboxes() {
           'desc' => 'Clase que se usará para diferenciar estilos en la Feria',
           'id' => $prefix . 'bsclass',
           'type' => 'text'
+      )
+    );
+
+    $feriabox->add_field(
+      array(
+          'name' => 'Enlace para inscripciones de visitas de colegios',
+          'desc' => 'URL',
+          'id' => $prefix . 'bsvgurl',
+          'type' => 'text_url'
       )
     );
 

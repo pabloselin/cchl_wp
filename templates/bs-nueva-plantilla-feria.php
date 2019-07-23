@@ -4,8 +4,10 @@ Template Name: Plantilla Feria 2018
  */
 ?>
 
-<?php get_header('bs-ferias-nuevo'); ?>
 <?php 
+
+get_header('bs-ferias-nuevo');
+
 // Custom Fields
 $postid = cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
 $toppost = get_post($postid);
@@ -14,22 +16,30 @@ $page_evts = get_post_meta($postid, 'cchl_bspageevents', true);
 $colaboradores = get_post_meta( $postid, 'cchl_bspagecolabs', true );
 $noticias = get_post_meta( $postid, 'cchl_bspagenews', true);
 $expositores = get_post_meta( $postid, 'cchl_bspageexpositores', true);
-$visitas_guiadas = get_post_meta( $postid, 'cchl_bsvgevents', true);
-$eventos_plugin = get_post_meta( $postid, 'cchl_bspagepluginevents', true);
+$visitas_de_colegios = get_post_meta( $postid, 'cchl_bsvgevents', true);
+$eventos_plugin = get_post_meta( $postid, 'cchl_bspageevents_unitary', true);
+$inicioferia = get_post_meta($postid, 'cchl_bsinicioferia', true);
+$finferia = get_post_meta($postid, 'cchl_bsfinferia', true);
+$visitas_tax = get_post_meta($postid, 'cchl_vgtax', true);
+$enlace_inscripciones = get_post_meta($postid, 'cchl_bsvgurl', true);
 
 $argsmenu = array(
   'menu' => $menuferia,
   'menu_class' => 'nav'
 );
+
 $isnews = (get_post_type() == 'post')? true : false;
-if($isnews):
-  $colwidth = 'col-md-8 single-noticia-feria';
-else:
-  $colwidth = 'col-md-10 col-md-offset-1';
-endif;
+
+  if($isnews):
+    $colwidth = 'col-md-8 single-noticia-feria';
+  else:
+    $colwidth = 'col-md-10 col-md-offset-1';
+  endif;
 
 $cchl_options = get_option( 'cchl_settings' );
+
 ?>
+
 <div class="container main-container">
     <div class="row">
     <div class="content-feria <?php echo $colwidth;?>">
@@ -55,40 +65,55 @@ endif;?>
                 </div><!--/text-content-->
 
 
-<?php endwhile;
-endif;?>
+<?php   
+        endwhile;
+      endif;?>
 
-<?php if( get_the_ID() == $page_evts) {
-get_template_part('parts/blocks/bs-nuevo-programa-cultural-ferias');
-}?>
+<?php 
+  
+  if( get_the_ID() == $eventos_plugin) {
+    $funcion =  'eventos-feria';
+    include(locate_template( 'parts/blocks/eventos-unitarios-feria.php'));
+  }
 
-<?php if( get_the_ID() == $visitas_guiadas) {
-get_template_part('parts/blocks/bs-visitas-guiadas-programa');
-}?>
+  if( get_the_ID() == $page_evts) {
+    get_template_part('parts/blocks/bs-nuevo-programa-cultural-ferias');
+  }
+  
+  if( get_the_ID() == $visitas_de_colegios) {
+    $funcion = 'visitas-de-colegios';
+    include(locate_template( 'parts/blocks/eventos-unitarios-feria.php'));
+  }
 
-<?php if(get_the_ID() == $noticias) {
-get_template_part('parts/bs-blocks/bs-nuevas-noticias-ferias');
-};?>
+  if(get_the_ID() == $noticias) {
+    get_template_part('parts/bs-blocks/bs-nuevas-noticias-ferias');
+  };
 
-<?php if(get_the_ID() == $expositores) {
-get_template_part('parts/bs-blocks/bs-expositores');
-};?>
+  if(get_the_ID() == $expositores) {
+    get_template_part('parts/bs-blocks/bs-expositores');
+  };
+
+?>
 
         </div><!--/content-feria-->
       <?php if($isnews):?>
-          <div class="aside-feria-extras col-md-4">
+
+<div class="aside-feria-extras col-md-4">
+
 <?php 
-$args = array(
-  'numberposts' => 4,
-  'post_type' => 'post',
-  'tax_query' => array(
-    array(
-      'taxonomy' => 'ferias',
-      'field' => 'slug',
-      'terms' => 'fil-vina-2018' 
+
+  $args = array(
+    'numberposts' => 4,
+    'post_type' => 'post',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'ferias',
+        'field' => 'slug',
+        'terms' => 'fil-vina-2018' 
+      )
     )
-  )
-);
+  );
+
 $noticias_home = get_posts($args);
 
 global $post;

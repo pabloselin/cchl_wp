@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"cchl",
+				"cchl_tipoevento"
+			],
+			[
+				"tipo",
+				"taxtipos"
+			],
+			[
 				"wp_reset",
 				"wp_reset_postdata"
 			],
@@ -507,6 +515,104 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "header-bs-ferias-nuevo.php",
+			"settings":
+			{
+				"buffer_size": 6351,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "parts/bs-blocks/bs-programa-cultural.php",
+			"settings":
+			{
+				"buffer_size": 3299,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/function-ferias.php",
+			"settings":
+			{
+				"buffer_size": 13526,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "parts/blocks/bs-nuevo-programa-cultural-ferias.php",
+			"settings":
+			{
+				"buffer_size": 1505,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "parts/blocks/bs-visitas-guiadas-programa.php",
+			"settings":
+			{
+				"buffer_size": 1663,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/donhilo/Code/php/camara/public/wp-content/plugins/filsa2018/dploy.yaml",
+			"settings":
+			{
+				"buffer_size": 561,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/donhilo/Code/games/godot/godot-demo-projects/2d/sprite_shaders/sprite_shaders.tscn",
+			"settings":
+			{
+				"buffer_size": 8348,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/donhilo/Code/gameassets/abya_yala/shaders/drop_shadow.gd",
+			"settings":
+			{
+				"buffer_size": 759,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "shader_type canvas_item;"
+			}
+		},
+		{
+			"file": "templates/bs-nueva-plantilla-feria.php",
+			"settings":
+			{
+				"buffer_size": 3749,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/meta-boxes/meta-boxes-ferias.php",
+			"settings":
+			{
+				"buffer_size": 6854,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "less/bs-ferias/filij-2019.less",
+			"settings":
+			{
+				"buffer_size": 499,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -519,6 +625,22 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"gds",
+				"Set Syntax: GDScript (Godot Engine)"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"less",
+				"Set Syntax: Less"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
 			[
 				"rein",
 				"Indentation: Reindent Lines"
@@ -580,10 +702,6 @@
 				"Project: Save As"
 			],
 			[
-				"instal",
-				"Package Control: Install Package"
-			],
-			[
 				"bab",
 				"Set Syntax: JavaScript (Babel)"
 			],
@@ -601,10 +719,6 @@
 			],
 			[
 				"le",
-				"Set Syntax: Less"
-			],
-			[
-				"less",
 				"Set Syntax: Less"
 			],
 			[
@@ -716,10 +830,32 @@
 	},
 	"expanded_folders":
 	[
-		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp"
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/css",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/oldless"
 	],
 	"file_history":
 	[
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/inc/meta-boxes.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/oldless/ferias.less",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/templates/bs-nueva-plantilla-feria.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/header-bs-ferias-nuevo.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/package.json",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/Gruntfile.js",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/oldless/main.less",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/camara-main.less",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/functions.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/inc/scripts.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/bs-ferias/filij-2019.less",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/bs-footer-ferias-nuevo.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/blocks/bs-nuevo-programa-cultural-ferias.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/header-bs-ferias.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/footer.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/bs-home/bs-footer.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/templates/template-visitas-guiadas-colegios.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/bs-home/bs-home.less",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/bs-interior/bs-interior.less",
 		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/home-logged-in.php",
 		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/mini-item-aside-post.php",
 		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/template-parts/carrusel-destacados.php",
@@ -828,36 +964,18 @@
 		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/functions.php",
 		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/js/cw-ui.js",
 		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/site/_home.scss",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/elements/_archive.scss",
-		"/home/donhilo/Code/php/cw/public/wp-config.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/header.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/inc/admin-options.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/archive-contributors.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/index.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/single.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-archive-post.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-archive.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/tasks.todo",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-archive-contributors.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sidebar.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/layout/_sidebar-content.scss",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/search.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-search.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/inc/template-tags.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/style.scss",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/variables-site/_colors.scss",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/page.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content.php"
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/elements/_archive.scss"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
 		"height": 176.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -865,6 +983,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"function cchl_current_fields_id",
+			";\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -882,8 +1002,331 @@
 	"groups":
 	[
 		{
+			"selected": 7,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "header-bs-ferias-nuevo.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6351,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1352,
+								1352
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "parts/bs-blocks/bs-programa-cultural.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "inc/function-ferias.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13526,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9649,
+								9649
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 6110.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "parts/blocks/bs-nuevo-programa-cultural-ferias.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8,
+								8
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 17.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "parts/blocks/bs-visitas-guiadas-programa.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								812,
+								812
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 422.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/donhilo/Code/php/camara/public/wp-content/plugins/filsa2018/dploy.yaml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 561,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/donhilo/Code/games/godot/godot-demo-projects/2d/sprite_shaders/sprite_shaders.tscn",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								801,
+								801
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GDScript (Godot Engine)/GDScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 23.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/donhilo/Code/gameassets/abya_yala/shaders/drop_shadow.gd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 759,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								759,
+								759
+							]
+						],
+						"settings":
+						{
+							"auto_name": "shader_type canvas_item;",
+							"syntax": "Packages/GDScript (Godot Engine)/GDScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "templates/bs-nueva-plantilla-feria.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3749,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2128,
+								2128
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 479.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "inc/meta-boxes/meta-boxes-ferias.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6854,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5187,
+								5187
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2211.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "less/bs-ferias/filij-2019.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 499,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								499,
+								499
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/Syntaxes/LESS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -936,6 +1379,110 @@
 		"selected_items":
 		[
 			[
+				"filij",
+				"less/bs-ferias/filij-2019.less"
+			],
+			[
+				"meta-boxes-fer",
+				"inc/meta-boxes/meta-boxes-ferias.php"
+			],
+			[
+				"metab",
+				"inc/meta-boxes.php"
+			],
+			[
+				"plantilla",
+				"templates/bs-nueva-plantilla-feria.php"
+			],
+			[
+				"nuevop",
+				"parts/blocks/bs-nuevo-programa-cultural-ferias.php"
+			],
+			[
+				"programa",
+				"parts/bs-blocks/bs-programa-cultural.php"
+			],
+			[
+				"functio",
+				"inc/function-ferias.php"
+			],
+			[
+				"ferias he",
+				"header-bs-ferias-nuevo.php"
+			],
+			[
+				"head",
+				"header-bs-ferias.php"
+			],
+			[
+				"foot",
+				"parts/bs-footer-ferias-nuevo.php"
+			],
+			[
+				"bs-foo",
+				"parts/bs-home/bs-footer.php"
+			],
+			[
+				"foo",
+				"footer.php"
+			],
+			[
+				"visit",
+				"templates/template-visitas-guiadas-colegios.php"
+			],
+			[
+				"progra",
+				"parts/blocks/bs-nuevo-programa-cultural-ferias.php"
+			],
+			[
+				"2019",
+				"less/bs-ferias/filij-2019.less"
+			],
+			[
+				"bs-",
+				"header-bs-ferias-nuevo.php"
+			],
+			[
+				"script",
+				"inc/scripts.php"
+			],
+			[
+				"func",
+				"functions.php"
+			],
+			[
+				"bs-int",
+				"less/bs-interior/bs-interior.less"
+			],
+			[
+				"bs-hom",
+				"less/bs-home/bs-home.less"
+			],
+			[
+				"bs-feri",
+				"header-bs-ferias-nuevo.php"
+			],
+			[
+				"ferias.le",
+				"less/oldless/ferias.less"
+			],
+			[
+				"main.l",
+				"less/oldless/main.less"
+			],
+			[
+				"grun",
+				"Gruntfile.js"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"nueva",
+				"templates/bs-nueva-plantilla-feria.php"
+			],
+			[
 				"cut",
 				"cedetgore/inc/custom-fields.php"
 			],
@@ -970,10 +1517,6 @@
 			[
 				"contnotii",
 				"cedetgore/template-parts/content-archive-noticias.php"
-			],
-			[
-				"func",
-				"cedetgore/functions.php"
 			],
 			[
 				"templ",
@@ -1026,10 +1569,6 @@
 			[
 				"customf-",
 				"cedetgore/inc/custom-fields.php"
-			],
-			[
-				"head",
-				"cedetgore/header.php"
 			],
 			[
 				"aside",
@@ -1284,10 +1823,6 @@
 				"cedetgore/js/cedet-ui.js"
 			],
 			[
-				"foot",
-				"cedetgore/footer.php"
-			],
-			[
 				"cedet",
 				"cedetgore/js/cedet-ui.js"
 			],
@@ -1354,98 +1889,6 @@
 			[
 				"content-en",
 				"cedetgore/template-parts/content-entrevistas.php"
-			],
-			[
-				"inf",
-				"cedetgore/sass/elements/_info.scss"
-			],
-			[
-				"contet",
-				"cedetgore/template-parts/content-biblioteca.php"
-			],
-			[
-				"custo",
-				"cedetgore/inc/custom-fields.php"
-			],
-			[
-				"te",
-				"cedetgore/inc/template-functions.php"
-			],
-			[
-				"entrevi",
-				"cedetgore/template-parts/content-entrevistas.php"
-			],
-			[
-				"custom-fie",
-				"cedetgore/inc/custom-fields.php"
-			],
-			[
-				"slider-ite",
-				"cedetgore/template-parts/slider-item.php"
-			],
-			[
-				"slider-se",
-				"cedetgore/template-parts/slider-section.php"
-			],
-			[
-				"logged",
-				"cedetgore/template-parts/home-logged-in.php"
-			],
-			[
-				"boots",
-				"cedetgore/sass/variables-site/_bootstrap-variables.scss"
-			],
-			[
-				"slider-it",
-				"cedetgore/template-parts/slider-item.php"
-			],
-			[
-				"slider-item",
-				"cedetgore/template-parts/slider-item.php"
-			],
-			[
-				"mini-ite",
-				"cedetgore/sass/elements/_mini-item.scss"
-			],
-			[
-				"mini-t",
-				"cedetgore/template-parts/mini-item-post.php"
-			],
-			[
-				"menu",
-				"cedetgore/sass/navigation/_menus.scss"
-			],
-			[
-				"item-b",
-				"cedetgore/template-parts/mini-item-biblioteca.php"
-			],
-			[
-				"vari",
-				"cedetgore/sass/variables-site/_bootstrap-variables.scss"
-			],
-			[
-				"pack",
-				"cedetgore/package.json"
-			],
-			[
-				"sty",
-				"cedetgore/sass/style.scss"
-			],
-			[
-				"term",
-				"cedetgore/terms_and_conditions.txt"
-			],
-			[
-				"mini-it",
-				"cedetgore/sass/elements/_mini-item.scss"
-			],
-			[
-				"rchi",
-				"cedetgore/sass/elements/_archive.scss"
-			],
-			[
-				"content-bib",
-				"cedetgore/template-parts/content-biblioteca.php"
 			]
 		],
 		"width": 0.0
@@ -1453,7 +1896,7 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "",
+		"last_filter": "cede",
 		"selected_items":
 		[
 			[

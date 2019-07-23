@@ -1,6 +1,6 @@
-function cchl_enableFilters(element) {
+function cchl_enableFiltersFeria(element) {
     /* Activa los filtros para los eventos que se muestran */
-    var eventos = jQuery("div.evento", element);
+    var eventos = jQuery("div.evento-unitario", element);
     //reseteo las ocultaciones previas
     eventos.show();
 
@@ -84,8 +84,8 @@ function cchl_enableFilters(element) {
         jQuery(this).addClass("active");
     });
     //Ajusto altura para elemento
-    //var lidiaaltura = jQuery(element).height();
-    //jQuery("ul.calendario-filsa").height(lidiaaltura);
+    var lidiaaltura = jQuery(element).height();
+    jQuery("ul.calendario-feria").height(lidiaaltura);
 
     //Escondo los undefined que queden
     jQuery(
@@ -94,11 +94,11 @@ function cchl_enableFilters(element) {
 }
 
 jQuery(document).ready(function($) {
-    $(".calendario-filsa").cycle({
+    $(".calendario-feria").cycle({
         fx: "fade",
         speed: "fast",
         timeout: 0,
-        pager: "#navfilsa",
+        pager: "#navferia",
         width: "100%",
         cleartypeNoBg: true,
         pagerAnchorBuilder: function(index, element) {
@@ -110,7 +110,7 @@ jQuery(document).ready(function($) {
                 hoy = "hoy";
             }
             return (
-                '<a href="#" class="' +
+                '<li><a href="#" class="daybox ' +
                 hoy +
                 '"><span class="dia">' +
                 dia +
@@ -118,17 +118,17 @@ jQuery(document).ready(function($) {
                 ndia +
                 '</span><span class="mes"> ' +
                 mes +
-                " </span></a>"
+                " </span></a></li>"
             );
         },
         onPagerEvent: function(index, element) {
-            cchl_enableFilters(element);
+            cchl_enableFiltersFeria(element);
         }
     });
 
     //Agregar filtro al primer día
-    $("ul.calendario-filsa li:first").append(function() {
-        var eventos = $("div.evento", this);
+    $("ul.calendario-feria li:first").append(function() {
+        var eventos = $("div.evento-unitario", this);
         eventos.show();
 
         var avevs = [];
@@ -161,7 +161,7 @@ jQuery(document).ready(function($) {
             }
         });
         //Construyo menu de navegación
-        var filtro = $("ul.calendario-filsa li:first div.filtro");
+        var filtro = $("ul.calendario-feria li:first div.filtro");
         var filtrotema = $("div.filtrotema");
 
         //ordeno por nombre
@@ -193,7 +193,7 @@ jQuery(document).ready(function($) {
         $("div.filtrotab.active", this).show();
         //Ajusto altura para elemento
         var lidiaaltura = $(this).height();
-        $("ul.calendario-filsa").height(lidiaaltura);
+        $("ul.calendario-feria").height(lidiaaltura);
     });
 
     $("div.filtro, .eventos-load").on("click", "a.fltip", function(event) {
@@ -206,10 +206,10 @@ jQuery(document).ready(function($) {
             .parent()
             .data("id");
         var parentdiv = $('div.filtro[data-id="' + parentdata + '"]');
-        var all = $('div.evento[data-top="' + parentdata + '"]');
+        var all = $('div.evento-unitario[data-top="' + parentdata + '"]');
         var thistipo = $(this).data("tiposw");
         var selected = $(
-            'div.evento[data-cchl_tipoevento~="' + thistipo + '"]'
+            'div.evento-unitario[data-cchl_tipoevento~="' + thistipo + '"]'
         );
         all.hide();
         selected.show();
@@ -225,10 +225,10 @@ jQuery(document).ready(function($) {
             .parent()
             .data("id");
         var parentdiv = $('div.filtrotema[data-id="' + parentdata + '"]');
-        var all = $('div.evento[data-top="' + parentdata + '"]');
+        var all = $('div.evento-unitario[data-top="' + parentdata + '"]');
         var thistipo = $(this).data("tiposw");
         var selected = $(
-            'div.evento[data-cchl_temaevento~="' + thistipo + '"]'
+            'div.evento-unitario[data-cchl_temaevento~="' + thistipo + '"]'
         );
         all.hide();
         selected.show();
@@ -236,9 +236,9 @@ jQuery(document).ready(function($) {
     });
 
     //Tabs filtro
-    var firstel = $("ul.calendario-filsa li:first");
+    var firstel = $("ul.calendario-feria li:first");
     $(".filtronav a", firstel).on("click", function(event) {
-        var eventos = $("div.evento", this);
+        var eventos = $("div.evento-unitario", this);
         event.preventDefault();
         //Reseteo el filtro
         eventos.show();
@@ -258,7 +258,10 @@ jQuery(document).ready(function($) {
     //Hago un filtro para todos los eventos.
     var tipos = cchl.evtipos;
     var temas = cchl.evtemas;
-    var filtodos = $("select#todos-eventos-tipos, select#todos-eventos-temas");
+    var cursos = cchl.cursos;
+    var filtodos = $(
+        "select#todos-eventos-tipos, select#todos-eventos-temas, select#todos-eventos-cursos"
+    );
 
     for (var i in tipos) {
         if (tipos.hasOwnProperty(i)) {
@@ -273,6 +276,14 @@ jQuery(document).ready(function($) {
             $(
                 'select#todos-eventos-temas[data-filter="cchl_temaevento"]'
             ).append('<option value="' + i + '">' + temas[i] + "</option>");
+        }
+    }
+
+    for (var i in cursos) {
+        if (cursos.hasOwnProperty(i)) {
+            $('select#todos-eventos-cursos[data-filter="cursos"]').append(
+                '<option value="' + i + '">' + cursos[i] + "</option>"
+            );
         }
     }
 
@@ -296,7 +307,7 @@ jQuery(document).ready(function($) {
             .addClass("active");
         $(this).addClass("active");
         //Reseteo los filtros
-        $(".wraptodos ul.calendario-filsa li").empty();
+        $(".wraptodos ul.calendario-feria li").empty();
         $(".selectwrap select").val(0);
     });
 
@@ -305,13 +316,13 @@ jQuery(document).ready(function($) {
         var filtertype = $(this).data("filter");
         var sumheight = 0;
         console.log(filtertype);
-        var calappend = $("ul.calendario-filsa li", wraptodos);
+        var calappend = $("ul.calendario-feria li", wraptodos);
         var selected = $("option:selected", this);
         $("h2", wraptodos).empty();
         $("h2", wraptodos).append(selected.text());
         //Le meto todos los bichos correspondientes
         var selectedevents = $(
-            "div.evento[data-" +
+            "div.evento-unitario[data-" +
                 filtertype +
                 '~="' +
                 selected.attr("value") +
@@ -322,14 +333,13 @@ jQuery(document).ready(function($) {
             .clone()
             .appendTo(calappend)
             .show();
-        $("ul.calendario-filsa li div.evento", wraptodos).each(function(
-            index,
-            element
-        ) {
-            var elemh = $(element).outerHeight();
-            sumheight = sumheight + elemh + 6;
-        });
-        $("ul.calendario-filsa").height(sumheight);
+        $("ul.calendario-feria li div.evento-unitario", wraptodos).each(
+            function(index, element) {
+                var elemh = $(element).outerHeight();
+                sumheight = sumheight + elemh + 6;
+            }
+        );
+        $("ul.calendario-feria").height(sumheight);
     });
 
     //Tabs general y filtro
@@ -358,37 +368,11 @@ jQuery(document).ready(function($) {
                 .show()
                 .addClass("active");
             //Reseteo los filtros
-            $(".wraptodos ul.calendario-filsa li").empty();
+            $(".wraptodos ul.calendario-feria li").empty();
             $(".selectwrap select").val(0);
         }
     });
 
     //Activo el calendario para el día de hoy
-    $("#navfilsa a.hoy, #diaseventos ul li a.hoy").trigger("click");
-    $("#navfilsa a.hoy, #diaseventos ul li a.hoy").trigger("click");
-
-    $("body.page-id-108 #menu-item-54759").addClass(
-        "current_page_item current-menu-item"
-    );
-
-    //Menú móvil FILSA 2015
-    $(".filsa-header-mobile a.triggernav").on("click", function() {
-        var nav = $("nav.mobile-menu-filsa");
-        if (nav.hasClass("inactive")) {
-            nav.removeClass("inactive").addClass("active");
-        } else {
-            nav.removeClass("active").addClass("inactive");
-        }
-    });
-
-    $("nav.mobile-menu-filsa a").on("click", function() {
-        console.log("inclick");
-        $("nav.mobile-menu-filsa")
-            .removeClass("active")
-            .addClass("inactive");
-    });
-
-    $(".triggerfilter").on("click", function() {
-        $(".cchl_bl_right").toggleClass("active");
-    });
+    $("#navferia a.hoy, #diaseventos ul li a.hoy").trigger("click");
 });

@@ -13,7 +13,7 @@ function cchl_styles() {
 	//Compiled grunt style
 	wp_register_style( 'legacy', get_bloginfo('template_url') . '/css/legacy.b8d5da40.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.ecef94d5.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.01fb89a6.min.css', array(), CCHL_VERSION, 'screen' );
 
   $oldpages = cchl_oldcondition($post->ID);
 	if($oldpages == true ) {
@@ -49,7 +49,7 @@ global $post;
 	  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
   }
   if(WP_ENV != 'development') {
-    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.df9dbd2d.min.js', array('jquery'), CCHL_VERSION, true);
+    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.2828f2e5.min.js', array('jquery'), CCHL_VERSION, true);
   } else {
     wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.js', array('jquery'), CCHL_VERSION, true);
   }
@@ -67,6 +67,7 @@ global $post;
 
   $tipos = get_terms( 'cchl_tipoevento', $args );
   $temas = get_terms( 'cchl_temaevento', $args );
+  $cursos = get_terms( 'cursos', $args );
   $tiposarr = array();
 
   foreach($tipos as $tipo) {
@@ -74,6 +75,10 @@ global $post;
   }
   foreach($temas as $tema) {
     $tiposarr['evtemas'][$tema->slug] = $tema->name;
+  }
+
+  foreach($cursos as $curso) {
+    $tiposarr['cursos'][$curso->slug] = $curso->name;
   }
 
   $tiposarr['ajaxurl'] = admin_url('admin-ajax.php');

@@ -76,7 +76,8 @@ module.exports = function(grunt) {
 					"js/src/lib/readmore.min.js",
 					"js/src/cchl-ajax.js",
 					"js/src/cchl-main.js",
-					"js/src/cchl-filsa.js"
+					"js/src/cchl-filsa.js",
+					"js/src/cchl-feria.js"
 				],
 				dest: "js/camara.js"
 			}

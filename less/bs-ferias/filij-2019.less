@@ -1,4 +1,5 @@
 @morado: #960073;
+@rojo: #E1004A;
 
 body#filij-2019 {
 	.navbar-inverse,
@@ -22,5 +23,104 @@ body#filij-2019 {
 
 	.navbar-inverse .navbar-nav a:hover {
 		background-color: lighten(@morado, 5%);
+	}
+
+	.eventos-unitarios-feria {
+		overflow: hidden;
+	}
+
+	ul#navferia {
+		margin: 0;
+		padding: 12px 0;
+		overflow: hidden;
+		li {
+			list-style: none;
+			display: block;
+			float: left;
+			width: 82px;
+			&.activeSlide a,
+			a:hover {
+				text-decoration: none;
+				background-color: @morado;
+				color: white;
+			}
+		}
+	}
+
+	ul.calendario-feria {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+
+		li {
+			width: 95%;
+			list-style: none;
+		}
+	}
+
+	a.daybox {
+		display: block;
+		border: 1px solid #ccc;
+		margin: 3px;
+		padding: 6px;
+		text-align: center;
+		text-transform: uppercase;
+		overflow: hidden;
+		color: #333;
+
+		span {
+			display: block;
+			font-size: 11px;
+		}
+
+		span.ndia {
+			font-size: 32px;
+			font-weight: bold;
+			line-height: 32px;
+		}
+	}
+}
+
+.evento-unitario {
+	padding: 12px;
+	border: 1px solid #ccc;
+	margin: 12px 0;
+
+	.labeltipo {
+		color: fade(@morado, 70%);
+		text-transform: uppercase;
+	}
+
+	i {
+		color: @rojo;
+	}
+
+	h3 {
+		margin-top: 0;
+	}
+
+	a {
+		color: #009b3b;
+	}
+
+	a.btn,
+	a.btn i {
+		color: white;
+	}
+}
+
+body#filij-2019 {
+	.navprincipaleventos {
+		li a {
+			border-radius: 5px 5px 0 0;
+			margin-right: 6px;
+			border: 0;
+		}
+
+		li a.active,
+		li a:hover {
+			background-color: @morado;
+			color: white;
+		}
 	}
 }
