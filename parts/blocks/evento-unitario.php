@@ -38,7 +38,7 @@
 			<?php echo $event->post_title;?>
 		</a>
 	</h3>
-	<span class="dia"><i class="fa fa-calendar-o fa-fw"></i> <?php echo strftime('%A %e de %B' , $day->format('U'));?></span><br>
+	<span class="dia"><i class="fa fa-calendar-o fa-fw"></i> <?php echo date_i18n('l j \d\e F' , $day->format('U'));?></span><br>
 	<span class="hora"><i class="fa fa-clock-o fa-fw"></i>
 		<?php 
 		$startdate = tribe_get_start_date($event->ID, false, 'G:i');
@@ -65,7 +65,13 @@
 
 			<?php endif;?>
 				
-				<a href="<?php echo tribe_event_link($event->ID);?>" class="btn btn-xs btn-info"><i class="fa fa-plus"></i> Más información</a>
+				<a data-toggle="collapse" href="#info-evento-<?php echo $event->ID;?>" class="btn btn-xs btn-info"><i class="fa fa-plus"></i> Más información</a>
 
 		</p>
+
+		<div class="collapse" id="info-evento-<?php echo $event->ID;?>">
+			<div class="card card-body">
+				<?php echo apply_filters('the_content', $event->post_content);?>
+			</div>
+		</div>
 	</div>

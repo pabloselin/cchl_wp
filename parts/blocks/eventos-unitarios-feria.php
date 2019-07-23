@@ -110,13 +110,15 @@
 				else:
 					$cur = 'normal';
 				endif;
-				$dia = strftime('%A' , $day->format('U'));
-				$ndia = strftime('%e' , $day->format('U'));
-				$mes = strftime('%B' , $day->format('U'));
+				
+				$dia = date_i18n('l' , $day->format('U'));
+				$ndia = date_i18n('j' , $day->format('U'));
+				$mes = date_i18n('F' , $day->format('U'));
+				
 				if($newevents):
 					?>
 					<li class="dia coneventos <?php echo $cur;?>" data-dia="<?php echo $dia;?>" data-ndia="<?php echo $ndia;?>" data-mes="<?php echo $mes;?>">
-						<h2><?php echo strftime('%A %e de %B' , $day->format('U'));?></h2>
+						<h2><?php echo date_i18n('l j \d\e F' , $day->format('U'));?></h2>
 
 						<?php 
 						foreach($newevents as $event):
@@ -130,7 +132,7 @@
 					<?php 
 					else:?>
 						<li class="dia sineventos" data-dia="<?php echo $dia;?>" data-ndia="<?php echo $ndia;?>" data-mes="<?php echo $mes;?>">
-							<h2><?php echo strftime('%A %e de %B' , $day->format('U'));?></h2>
+							<h2><?php echo date_i18n('l j \d\e F' , $day->format('U'));?></h2>
 							<p>No hay eventos para este día</p>
 						</li>
 					<?php endif;
