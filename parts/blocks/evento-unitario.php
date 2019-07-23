@@ -55,8 +55,6 @@
 
 		<?php endif;?>
 
-		<p class="tema event-label-info"><?php if($nomtemaevs):?> <?php echo '<strong>Tema:</strong> ' . $nomtemaevs;?> <?php endif;?></p>
-
 		<p class="evplus">
 
 			<?php if($funcion == 'visitas-de-colegios'):?>
