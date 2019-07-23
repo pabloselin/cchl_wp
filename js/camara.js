@@ -11871,7 +11871,7 @@ jQuery(document).ready(function($) {
         $("div.filtrotab.active", this).show();
         //Ajusto altura para elemento
         var lidiaaltura = $(this).height();
-        $("ul.calendario-filsa").height(lidiaaltura);
+        $("ul.calendario-feria").height(lidiaaltura);
     });
 
     $("div.filtro, .eventos-load").on("click", "a.fltip", function(event) {
@@ -12446,5 +12446,7 @@ jQuery(document).ready(function($) {
     });
 
     //Activo el calendario para el día de hoy
-    $("#navferia a.hoy, #diaseventos ul li a.hoy").trigger("click");
+    $("#navferia a.hoy, #diaseventos ul li a.hoy, li.activeSlide a").trigger(
+        "click"
+    );
 });

@@ -193,7 +193,7 @@ jQuery(document).ready(function($) {
         $("div.filtrotab.active", this).show();
         //Ajusto altura para elemento
         var lidiaaltura = $(this).height();
-        $("ul.calendario-filsa").height(lidiaaltura);
+        $("ul.calendario-feria").height(lidiaaltura);
     });
 
     $("div.filtro, .eventos-load").on("click", "a.fltip", function(event) {

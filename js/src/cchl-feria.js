@@ -374,5 +374,7 @@ jQuery(document).ready(function($) {
     });
 
     //Activo el calendario para el día de hoy
-    $("#navferia a.hoy, #diaseventos ul li a.hoy").trigger("click");
+    $("#navferia a.hoy, #diaseventos ul li a.hoy, li.activeSlide a").trigger(
+        "click"
+    );
 });
