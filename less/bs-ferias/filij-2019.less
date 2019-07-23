@@ -2,6 +2,11 @@
 @rojo: #E1004A;
 
 body#filij-2019 {
+	@media screen and (max-width: @screen-sm) {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
+
 	.navbar-inverse,
 	.navbar {
 		background-color: @morado;
@@ -12,6 +17,11 @@ body#filij-2019 {
 		@media screen and (min-width: @screen-lg) {
 			display: none;
 		}
+	}
+
+	.container.feria-desktop-nav,
+	#menu-feria-desktop {
+		padding: 0;
 	}
 
 	.navbar-inverse .navbar-nav > .active > a,
@@ -87,7 +97,8 @@ body#filij-2019 {
 	margin: 12px 0;
 
 	.labeltipo {
-		color: fade(@morado, 70%);
+		color: #555;
+		font-size: 13px;
 		text-transform: uppercase;
 	}
 
@@ -100,7 +111,7 @@ body#filij-2019 {
 	}
 
 	a {
-		color: #009b3b;
+		color: @morado;
 	}
 
 	a.btn,
@@ -121,6 +132,58 @@ body#filij-2019 {
 		li a:hover {
 			background-color: @morado;
 			color: white;
+		}
+	}
+}
+
+body#filij-2019 {
+	.navbar-toggle {
+		padding: 6px;
+		color: white;
+		text-align: center;
+		border: none;
+		background-color: fade(white, 30%);
+		border-radius: 6px;
+		margin: 0 6px 0 0;
+
+		.icon-bar {
+			width: 100%;
+		}
+	}
+
+	.nav.navbar-nav {
+		li.home a:before {
+			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			font-family: "FontAwesome";
+			content: "\f015";
+			margin-right: 6px;
+		}
+	}
+
+	@media screen and (max-width: @screen-sm) {
+		.feria-mobile-nav {
+			padding: 8px 15px 8px 15px;
+		}
+
+		.navbar-collapse {
+			border-top: 0;
+		}
+
+		.nav.navbar-nav {
+			li a {
+				text-transform: uppercase;
+				font-size: 16px;
+			}
+		}
+
+		a.mobile-home {
+			color: white;
+			font-size: 36px;
+			margin: 12px;
 		}
 	}
 }

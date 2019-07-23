@@ -3,6 +3,7 @@
 	$tipoevs = get_the_terms($event->ID, 'cchl_tipoevento');
 	$temaevs = get_the_terms($event->ID, 'cchl_temaevento');
 	$cursevs = get_the_terms($event->ID, 'cursos');
+	$cupos = get_post_meta($event->ID, '_cmb_cupos', true);
 	$ntevs = array();
 	$ttevs = array();
 	$ctevs = array();
@@ -45,15 +46,16 @@
 		?>
 		<?php echo $startdate;?> <?php if($startdate != $enddate): echo ' - ' . $enddate; endif; ?> hrs. </span><br>
 
-		<span class="lugar"><i class="fa fa-map-marker fa-fw"></i> Lugar: <?php echo tribe_get_venue($event->ID);?></span><br><br>
+		<span class="lugar event-label-info"><i class="fa fa-map-marker fa-fw"></i> <strong>Lugar:</strong> <?php echo tribe_get_venue($event->ID);?></span><br><br>
 
 		<?php if($funcion == 'visitas-de-colegios'):?>
 		
-			<p class="cursos"><i class="fa fa-user"></i> Cursos: <?php echo $nomcursevs;?></p>
+			<p class="cursos event-label-info"><i class="fa fa-fw fa-user"></i> <strong>Cursos:</strong> <?php echo $nomcursevs;?></p>
+			<p class="cupos event-label-info"><i class="fa fa-fw fa-ticket"></i> <strong>Cupos:</strong> <?php echo $cupos;?></p>
 
 		<?php endif;?>
 
-		<p class="tema"><?php if($nomtemaevs):?> <?php echo 'TEMA: ' . $nomtemaevs;?> <?php endif;?></p>
+		<p class="tema event-label-info"><?php if($nomtemaevs):?> <?php echo '<strong>Tema:</strong> ' . $nomtemaevs;?> <?php endif;?></p>
 
 		<p class="evplus">
 
