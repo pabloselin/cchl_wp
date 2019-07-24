@@ -110,7 +110,9 @@ jQuery(document).ready(function($) {
                 hoy = "hoy";
             }
             return (
-                '<li><a href="#" class="daybox ' +
+                '<li class="slideDia-' +
+                index +
+                '"><a href="#" class="daybox ' +
                 hoy +
                 '"><span class="dia">' +
                 dia +

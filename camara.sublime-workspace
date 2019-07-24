@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"date",
+				"date_i18n"
+			],
+			[
+				"label",
+				"label_event"
+			],
+			[
+				"inicio",
+				"inicioferia"
+			],
+			[
 				"cchl",
 				"cchl_tipoevento"
 			],
@@ -502,60 +514,70 @@
 			[
 				"Device",
 				"DeviceOrientationControlMethod"
-			],
-			[
-				"buil",
-				"buildImageTitle"
-			],
-			[
-				"is-accordion",
-				"is-accordion-submenu-parent"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "header-bs-ferias-nuevo.php",
+			"file": "parts/filsa/eventos.php",
 			"settings":
 			{
-				"buffer_size": 6351,
+				"buffer_size": 5306,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "parts/bs-blocks/bs-programa-cultural.php",
+			"file": "parts/blocks/eventos-unitarios-feria.php",
 			"settings":
 			{
-				"buffer_size": 3299,
+				"buffer_size": 3510,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "inc/function-ferias.php",
+			"file": "templates/bs-nueva-plantilla-feria.php",
 			"settings":
 			{
-				"buffer_size": 13526,
+				"buffer_size": 4272,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "parts/blocks/bs-nuevo-programa-cultural-ferias.php",
+			"file": "parts/blocks/evento-unitario.php",
 			"settings":
 			{
-				"buffer_size": 1505,
+				"buffer_size": 2580,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "parts/blocks/bs-visitas-guiadas-programa.php",
+			"file": "/home/donhilo/Code/php/camara/public/wp-content/plugins/filsa-2017/parts/visitas-guiadas-colegios.php",
 			"settings":
 			{
-				"buffer_size": 1663,
+				"buffer_size": 4463,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "inc/meta-boxes/meta-boxes-ferias.php",
+			"settings":
+			{
+				"buffer_size": 7086,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "less/bs-ferias/filij-2019.less",
+			"settings":
+			{
+				"buffer_size": 2735,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -569,46 +591,85 @@
 			}
 		},
 		{
-			"file": "/home/donhilo/Code/games/godot/godot-demo-projects/2d/sprite_shaders/sprite_shaders.tscn",
+			"file": "js/src/cchl-filsa.js",
 			"settings":
 			{
-				"buffer_size": 8348,
+				"buffer_size": 13330,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/donhilo/Code/gameassets/abya_yala/shaders/drop_shadow.gd",
+			"file": "js/src/cchl-feria.js",
 			"settings":
 			{
-				"buffer_size": 759,
+				"buffer_size": 12957,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "header-bs-ferias-nuevo.php",
+			"settings":
+			{
+				"buffer_size": 6317,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 4000,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php \n\nfunction cchl_tablaprogramaferia($pags, $titulo) {\n\t/**\n\t * Genera calendario de feria basado en IDS de páginas con relación día\n\t */\n\t$output = '<div class=\"eventos-feria-shortcode\">';\n\t$output .= '<h2 style=\"font-weight:normal;\">' . $titulo . '</h2>';\n\t$output .= '<div class=\"tabdias tabgen active\" id=\"diaseventos\">';\n\t$output .= '<ul id=\"navfilsa\" class=\"navfil fil2016variant\"></ul>';\n\t$output .= '<ul class=\"calendario-filsa fil2016variant\">';\n\n\tforeach($pags as $day) {\n\t\t\n\t\t$page = get_post($day['id']);\n\t\t$hoy = date('Y-m-j');\n\t\tif($hoy == $day['dcode'] . '-' . $day['ndia']) {\n\t\t\t$cur = 'hoy';\n\t\t} else {\n\t\t\t$cur = 'normal';\t\n\t\t}\n\t\t$dia = $day['dia'];\n\t\t$ndia = $day['ndia'];\n\t\t$mes = $day['mes'];\n\n\t\t$output .= '<li class=\"dia coneventos ' . $cur . '\" data-dia=\"' . $dia . '\" data-ndia=\"' . $ndia . '\" data-mes=\"'. $mes . '\">';\n\t\t$output .= '<div class=\"filij-day-content\">';\n\t\t$output .= '<h3>' . $page->post_title . '</h3>';\n\t\t$output .= apply_filters( 'the_content', $page->post_content );\n\t\t$output .= '</div></li>';\n\t}\n\n\t$output .= '</ul></div></div>';\n\n\treturn $output;\n}\n\nfunction filij2016_programashortcode($atts) {\n\t$info = shortcode_atts(\n\t\tarray(\n\t\t\t'titulo' => 'Programa Cultural'\n\t\t), $atts\n\t);\n\n\t$pagsfilij2016 = array(\n\t\tarray(\n\t\t\t'id' => 60531,\n\t\t\t'ndia' => 26,\n\t\t\t'mes' => 'Mayo',\n\t\t\t'dia' => 'Jueves',\n\t\t\t'dcode' => '2016-05'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60535,\n\t\t\t'ndia' => 27,\n\t\t\t'mes' => 'Mayo',\n\t\t\t'dia' => 'Viernes',\n\t\t\t'dcode' => '2016-05'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60537,\n\t\t\t'ndia' => 28,\n\t\t\t'mes' => 'Mayo',\n\t\t\t'dia' => 'Sábado',\n\t\t\t'dcode' => '2016-05'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60539,\n\t\t\t'ndia' => 29,\n\t\t\t'mes' => 'Mayo',\n\t\t\t'dia' => 'Domingo',\n\t\t\t'dcode' => '2016-05'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60541,\n\t\t\t'ndia' => 30,\n\t\t\t'mes' => 'Mayo',\n\t\t\t'dia' => 'Lunes',\n\t\t\t'dcode' => '2016-05'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60563,\n\t\t\t'ndia' => 31,\n\t\t\t'mes' => 'Mayo',\n\t\t\t'dia' => 'Martes',\n\t\t\t'dcode' => '2016-05'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60543,\n\t\t\t'ndia' => 1,\n\t\t\t'mes' => 'Junio',\n\t\t\t'dia' => 'Miércoles',\n\t\t\t'dcode' => '2016-06'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60545,\n\t\t\t'ndia' => 2,\n\t\t\t'mes' => 'Junio',\n\t\t\t'dia' => 'Jueves',\n\t\t\t'dcode' => '2016-06'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60547,\n\t\t\t'ndia' => 3,\n\t\t\t'mes' => 'Junio',\n\t\t\t'dia' => 'Viernes',\n\t\t\t'dcode' => '2016-06'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60549,\n\t\t\t'ndia' => 4,\n\t\t\t'mes' => 'Junio',\n\t\t\t'dia' => 'Sábado',\n\t\t\t'dcode' => '2016-06'\n\t\t),\n\t\tarray(\n\t\t\t'id' => 60551,\n\t\t\t'ndia' => 5,\n\t\t\t'mes' => 'Junio',\n\t\t\t'dia' => 'Domingo',\n\t\t\t'dcode' => '2016-06'\n\t\t)\t\t\t\t\t\n\t);\n\n\treturn cchl_tablaprogramaferia($pagsfilij2016, $info['titulo']);\n}\n\nadd_shortcode( 'programa_filij_2016', 'filij2016_programashortcode' );\n\nfunction cchl_colaboradores_fields( $section_title, $field_group ) {\n\n\tglobal $post;\n\n\t$field_group = get_post_meta($post->ID, $field_group, true);\n\t$fieldcount = count(get_post_meta($post->ID, $colab_logo, false));\n\n\t$output = '';\n\n\tif($field_group):\n\n\t\t$output .= '<h3 class=\"colabheading\">' . $section_title . '</h3>';\n\n\t\tif($fieldcount > 1) {\n\n\t\t\t$output .= '<ul class=\"colabs\">';\n\n\t\t} else {\n\n\t\t\t$output .= '<ul class=\"colabs invs\">';\n\n\t\t}\n\n\t\tforeach($fieldgroup as $fielditem) {\n\n\t\t\t$output .= '<li>';\n\t\t\t$output .= '<img src=\"' . cchl_legacy_image($post->ID, $fielditem['image']) . '\">';\n\t\t\t$output .= '<h3>' . $fielditem['nombre'] . '</h3>';\n\n\t\t\tif($fielditem['url']):\n\n\t\t\t\t$output .= '<a target=\"_blank\" href=\"'.$fielditem['url'].'\"><i class=\"fa fa-external-link\"></i></a>';\n\n\t\t\tendif;\n\n\t\t\t$output .= '</li>';\n\n\t\t}\n\n\t\t$output .= '</ul>';\n\n\tendif;\n\n\treturn $output;\n\n}\n\nfunction filsa_template($template) {\n\t$isfilsa = checkfilsa();\n\tif($isfilsa) {\n\t\t$new_template = locate_template(array( 'page-filsa2014.php' ) );\n\t\tif( '' != $new_template) {\n\t\t\treturn $new_template;\n\t\t}\n\t}\n\treturn $template;\n}\n\nfunction cchl_bsferiaredirect($original_template) {\n\tglobal $post;\n\t$using_bsferiatemplate= cchl_get_topmost_parent_template($post->ID, 'templates/bs-plantilla-feria.php');\n\t$using_newbsferiatemplate = cchl_get_topmost_parent_template($post->ID, 'templates/bs-nueva-plantilla-feria.php');\n\n\t$incategoryfil = is_object_in_term($post->ID, 'ferias', 'fil-vina-2018');\n\t\n\tif($using_bsferiatemplate) {\n\t\treturn  get_template_directory() .  '/templates/bs-plantilla-feria.php';\n\t} elseif($using_newbsferiatemplate || $incategoryfil ) {\n\t\tif(!is_home() && !is_404()):\n\t\t\treturn get_template_directory() . '/templates/bs-nueva-plantilla-feria.php';\n\telse:\n\t\treturn $original_template;\n\tendif;\n} else {\n\treturn $original_template;\n}\n}\n\nadd_action('template_include', 'cchl_bsferiaredirect');\n\nfunction cchl_bsferiatitle($title, $sep) {\n\tglobal $post, $paged, $page;\n\n\n\t\n\treturn $title;\n}\n\nadd_filter('wp_title', 'cchl_bsferiatitle', 10, 2);\n\n\nfunction cchl_current_fields_id($template_to_look) {\n\t//devuelve el ID de la página donde se almacenan los datos de la plantilla personalizada para una feria\n\tglobal $post;\n\t$usable_id = (get_page_template_slug($post->ID) == $template_to_look)? $post->ID : cchl_get_topmost_parent_template($post->ID, $template_to_look);\n\treturn $usable_id;\n\t\n}\n\n\nfunction checkfilsa($postid = NULL) {\n\tglobal $post;\n\n\tif($postid) {\n\t\t$pid = $postid;\n\t} else {\n\t\t$pid = $post->ID;\n\t}\n\n\t$ancestors = get_post_ancestors($pid);\n\t$param = isset($_GET['ref']) ? $_GET['ref'] : '';\n\tif(\n      //condition 1\n\t\t$pid == 31817 ||\n      //condition 2\n\t\tin_array(31817, $ancestors) ||\n      //condition 3\n\t\t(is_single($pid) && in_category(129, $pid) ||\n\t\t\t$param == 'filsa2014')\n      //condition 4\n      //is_singular( ) && is_object_in_term( $pid, 'tribe_events_cat', 128 ) \n\t) {\n\t\t$isfilsa = true;\n\t} else {\n\t\t$isfilsa = false;\n\t}\n\treturn $isfilsa;\n}\n\nfunction checkfilij($postid = NULL) {\n\tglobal $post;\n\tif($postid) {\n\t\t$pid = $postid;\n\t} else {\n\t\t$pid = $post->ID;\n\t}\n\t$ancestors = get_post_ancestors($pid);\n\t$pagfilij = 33775;\n\tif($pid == $pagfilij || in_array($pagfilij, $ancestors)) {\n\t\treturn true;\n\t} else {\n\t\treturn false;\n\t}\n}\n\nfunction checkferia($postid = NULL, $motherpage, $cats = NULL, $evterms = NULL ) {\n\tglobal $post, $wp_query;\n\n\t$inferia = false;\n\t$arrcats = explode(', ', $cats);\n\n\tif(!is_front_page()) {\n\n\t\tif($postid) {\n\t\t\t$pid = $postid;\n\t\t} else {\n\t\t\t$pid = $post->ID;\n\t\t}\n\n\t\t$ancestors = get_post_ancestors($pid);\n\t\t$pagfilij = $motherpage;\n\n\t\tif($pid == $pagfilij || in_array($pagfilij, $ancestors)) {\n\t\t\t$inferia =  true;\n\t\t} else {\n\t\t\t$inferia = false;\n\t\t}\n\n\t\tif(is_category($arrcats, $pid) || is_single() && in_category($arrcats, $pid) ) {\n\t\t\t$inferia = true;\n\t\t}\n\n\t\tif($evterms) {\n\t\t\t$event_id = get_queried_object_id();\n\t\t\tif( is_single() && tribe_event_in_category( $evterms, $event_id ) ) {\n\t\t\t\t$inferia = true;\n\t\t\t}\n\t\t}\n\t}\n\n\treturn $inferia;\n}\n\n\nfunction checkferiatemplate($postid) {\n\n  /**\n   * chequea si un pariente está usando la plantilla de temas personalizados para ferias y devuelve el ID de la Feria\n   */\n  \n  $ancestors = get_post_ancestors( $postid );\n  $using_feria_template = false;\n  $feriaid = null;\n  if($ancestors) {\n  \tforeach($ancestors as $ancestor):\n  \t\tif(get_page_template_slug( $ancestor ) == 'page-feria-principal.php' || get_page_template_slug( $ancestor ) == 'page-filsa2016.php' ):\n\n  \t\t\t$feriaid = $ancestor;\n\n  \tendif;\n  endforeach;\n}\n\nif( get_page_template_slug( $postid ) == 'page-feria-principal.php' || \n\tget_page_template_slug( $postid ) == 'page-filsa2016.php' ):\n\n\t$using_feria_template = true;\n$feriaid = $postid;\n\nendif;\n\n  //añadidos chungos para categorías de ferias específicas\n\nif(is_single($postid) && in_category( CCHL_FLPA2016, $postid )):\n\n\t$using_feria_template = true;\n$feriaid = CCHL_PAGEFLPA2016;\n\nendif;\n\nif(is_single($postid) && in_category( CCHL_FILIJ2016, $postid)):\n\n\t$using_feria_template = true;\n$feriaid = CCHL_PAGEFILIJ2016;\n\nendif;\n\nreturn $feriaid;\n}\n\nfunction cchl_header($postid) {\n\t//Cambiador de headers para distintas situaciones\n\t$isfilsa = checkfilsa($postid);\n\t$isfilij = checkfilij($postid);\n\t$template = 'parts/header-standard-new-interior';\n\t$using_feria_template = checkferiatemplate($postid);\n\t\n\t//Categorías extra para page-ferias\n\t$feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );\n\tif( $isfilsa ):\n\t\t//get_template_part('parts/header', 'filsa-2014' );\n\t\t$template = 'parts/header-filsa-2014';\n\telseif( $isfilij ):\n\t\t//get_template_part('parts/header', 'filij-2014' );\n\t\t$template = 'parts/header-filij-2014';\t\n\telseif( checkferia($post->ID, 53771) ):\n\t\t//get_template_part('parts/header', 'fil' );\n\t\t$template = 'parts/header-fil';\n\telseif( checkferia($post->ID, CCHL_FILSA2015, '', 180) ):\n\t\t//get_template_part('parts/header', 'filsa-2015' );\n\t\t$template = 'parts/header-filsa-2015';\n\telseif( checkferia($post->ID, CCHL_FILSA2016, '', 'filsa-2016') ):\n  \t\t//get_template_part('parts/header', 'filsa-2016');\n\t\t$template = 'parts/header-filsa-2016';\n\telseif( checkferia($post->ID, CCHL_FILVINA2016) ):\n\t\t//get_template_part('parts/header', 'filvina-2016');\n\t\t$template = 'parts/header-filvina-2016';\n\telseif( checkferia($post->ID, CCHL_FILVINA2017, '') ):\n\t\t//get_template_part('parts/header', 'filvina-2017');  \n\t\t$template = 'parts/header-filvina-2017';\n\telseif( is_page_template('page-feria-principal.php') || $using_feria_template ):\n\t\t//get_template_part('parts/header', 'feria');\n\t\t$template = 'parts/header-feria';\n\telse:\n\t\tif(is_home() ||\n\t\t\tis_single() ||\n\t\t\tis_category() ||\n\t\t\tis_post_type_archive() || \n\t\t\tget_page_template_slug($post->ID) == 'bs-archivo-ferias.php' ||\n\t\t\tget_page_template_slug($post->ID) == 'bs-home-socios.php' ||\n\t\t\tget_page_template_slug($post->ID) == 'bs-default-page.php'\n\t\t):\n\t\t  \t//get_template_part('parts/bs-home/bs-header');\n\t\t\t$template = 'parts/bs-general/bs-header';\n\telse:\n    \t//get_template_part('parts/header-standard-new-interior');\n\t\t$template = 'parts/bs-general/bs-header';\n\tendif;\nendif;\n\nreturn $template;\n\n}\n\nfunction cchl_oldcondition($postid) {\n\tif(!$postid) {\n\t\tglobal $post;\n\t\t$postid = $post->ID;\n\t}\n\t$isfilsa = checkfilsa($postid);\n\t$isfilij = checkfilij($postid);\n\t$using_feria_template = checkferiatemplate($postid);\n\t$feriasmultimediacats = array( CCHL_FLPA2016, CCHL_FILIJ2016 );\n\tif( \t\t$isfilsa ||\n\t\t$isfilij ||\n\t\tcheckferia($postid, 53771) ||\n\t\tcheckferia($postid, CCHL_FILSA2015, '', 180) ||\n\t\tcheckferia($postid, CCHL_FILVINA2016) ||\n\t\tcheckferia($postid, CCHL_FILSA2016, '', 'filsa-2016') ||\n\t\tcheckferia($postid, CCHL_FILVINA2017, '') ||\n\t\tis_page_template('page-feria-principal.php') || \n\t\t\t\t$using_feria_template //||\n\t\t\t\t//is_single() && in_category( $feriasmultimediacats, $post->ID )\n\t\t\t)\n\t{\n\t\treturn true;\n\t} else {\n\t\treturn false;\n\t}\n}\n\nfunction cchl_isoldfilsa( $postid ) {\n\t$ancestors = get_post_ancestors( $postid );\n\tif($postid == CCHL_FILSA2013 ||\n\t\t$postid == CCHL_FILSA2012 ||\n\t\tin_array( CCHL_FILSA2013, $ancestors) ||\n\t\tin_array( CCHL_FILSA2012, $ancestors)\n\t) {\n\t\treturn true;\n\t}\telse {\n\t\treturn false;\n\t}\n}\n\nfunction cchl_loadoldpage( $template ) {\n\tglobal $post;\n\t$isoldpage = cchl_oldcondition($post->ID);\n\t$isoldfilsa = cchl_isoldfilsa($post->ID);\n\tif($isoldpage) {\n\t\t$default_template = locate_template( array( 'page-feria-anterior.php') );\n\t\tif('' != $default_template) {\n\t\t\treturn $default_template;\n\t\t}\n\t}\n\tif($isoldfilsa) {\n\t\t$default_template = locate_template( array( 'bs-archivo-ferias.php') );\n\t\tif('' != $default_template) {\n\t\t\treturn $default_template;\n\t\t}\n\t}\n\treturn $template;\n}\n\nadd_filter('template_include', 'cchl_loadoldpage', 99);\n\nfunction cchl_oldtemplates() {\n\tglobal $post;\n\tif(cchl_isoldfilsa($post->ID)) {\n\t\tif(is_page_template('page-observatorio-integrantes.php') || is_page_template('old/page-observatorio-integrantes.php')):\n\t\t\t?>\n\t\t<div class=\"listado\">\n\n\t\t\t<?php\n\t\t\t$miembros = get_post_meta($post->ID, '_cchl_listadopersonas', true);\n\t\t\tforeach($miembros as $miembro){ \n\t\t\t\t?>\t\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-md-3\">\n\t\t\t\t\t\t<img src=\"<?php echo cchl_legacy_image($post->ID,$miembro['imagen']);?>\" alt=\"<?php echo $miembro['nombre'];?>\">\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"info col-md-8\">\n\t\t\t\t\t\t<h3><?php $miembro['nombre'];?></h3>\n\t\t\t\t\t\t<span><?php echo $miembro['cargo'];?></span>\n\t\t\t\t\t\t<div class=\"textoint\"><?php echo apply_filters('the_content', $miembro['texto']);?></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t<?php };?>\n\t\t</div>\n\t\t<?php\n\tendif;\n\tif(is_page_template('page-ferias-informacion-auspiciadores.php') || is_page_template('old/page-ferias-informacion-auspiciadores.php')):?>\n\n\t\t<div class=\"logos\">\n\t\t\t<?php\n\t\t\t$miembros = get_post_meta($post->ID, '_cchl_auspicia', true);\n\t\t\tforeach($miembros as $miembro){\n\t\t\t\techo \"<div class='auspiciador'>\";\n\t\t\t\techo cchl_legacy_image($post->ID, $miembro['imagen']);\n\t\t\t\techo \"<div class='info'>\n\t\t\t\t<h3>\".$miembro['nombre'].\"</h3>\n\n\t\t\t\t<p>\".$miembro['texto'].\"</p>\n\t\t\t\t</div>\n\t\t\t\t</div>\";\n\t\t\t}\n\t\t\t?>\n\t\t</ul>\n\n\t\t<?php \n\tendif;\n\n\tif(is_page_template('colaboradores-fil-2016.php') || is_page_template('old/colaboradores-fil-2016.php')):\n\t\tget_template_part('parts/bs-blocks/rev-colaboradores-fil-2016');\nendif;\n\n\n}\n}\n\nadd_action('cchl_aftercontent', 'cchl_oldtemplates');\n",
+			"file": "inc/function-ferias.php",
+			"file_size": 12819,
+			"file_write_time": 132083936572389096,
+			"settings":
+			{
+				"buffer_size": 12956,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 280 files for \"wp_title\"\n\n/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/header-bs-ferias.php:\n    3  <head>\n    4  <meta charset=\"<?php bloginfo( 'charset' ); ?>\" />\n    5: <title><?php wp_title();?></title>\n    6  <link rel=\"profile\" href=\"https://gmpg.org/xfn/11\" />\n    7  <link rel=\"pingback\" href=\"<?php bloginfo( 'pingback_url' ); ?>\" />\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 390,
 				"line_ending": "Unix",
-				"name": "shader_type canvas_item;"
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
-			"file": "templates/bs-nueva-plantilla-feria.php",
+			"file": "inc/scripts.php",
 			"settings":
 			{
-				"buffer_size": 3749,
+				"buffer_size": 2562,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/donhilo/Code/php/camara/public/wp-config.php",
+			"settings":
+			{
+				"buffer_size": 3122,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "inc/meta-boxes/meta-boxes-ferias.php",
+			"file": "Gruntfile.js",
 			"settings":
 			{
-				"buffer_size": 6854,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "less/bs-ferias/filij-2019.less",
-			"settings":
-			{
-				"buffer_size": 499,
+				"buffer_size": 2624,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -626,6 +687,10 @@
 		"selected_items":
 		[
 			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
 				"gds",
 				"Set Syntax: GDScript (Godot Engine)"
 			],
@@ -640,10 +705,6 @@
 			[
 				"ins",
 				"Package Control: Install Package"
-			],
-			[
-				"rein",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"comm",
@@ -832,24 +893,37 @@
 	[
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/css",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/js",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/js/src",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less",
-		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/oldless"
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/bs-home",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/blocks"
 	],
 	"file_history":
 	[
-		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/inc/meta-boxes.php",
-		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/oldless/ferias.less",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/page.php",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/templates/bs-nueva-plantilla-feria.php",
-		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/header-bs-ferias-nuevo.php",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/package.json",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/inc/scripts.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/templates/template-filsa-2017-programa.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/inc/function-ferias.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/inc/meta-boxes.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/inc/meta-boxes/meta-boxes-ferias.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/bs-blocks/bs-programa-cultural.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/header-bs-ferias-nuevo.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/blocks/bs-nuevo-programa-cultural-ferias.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/blocks/bs-visitas-guiadas-programa.php",
+		"/home/donhilo/Code/php/camara/public/wp-content/plugins/filsa2018/dploy.yaml",
+		"/home/donhilo/Code/games/godot/godot-demo-projects/2d/sprite_shaders/sprite_shaders.tscn",
+		"/home/donhilo/Code/gameassets/abya_yala/shaders/drop_shadow.gd",
+		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/oldless/ferias.less",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/Gruntfile.js",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/oldless/main.less",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/camara-main.less",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/functions.php",
-		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/inc/scripts.php",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/less/bs-ferias/filij-2019.less",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/bs-footer-ferias-nuevo.php",
-		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/blocks/bs-nuevo-programa-cultural-ferias.php",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/header-bs-ferias.php",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/footer.php",
 		"/home/donhilo/Code/php/camara/public/wp-content/themes/cchl_wp/parts/bs-home/bs-footer.php",
@@ -955,16 +1029,7 @@
 		"/home/donhilo/Code/php/plataformacedet/public/wp-content/themes/cedetgore/comments.php",
 		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/inc/template-functions.php",
 		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/archive-comics.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-comic-item-grid.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/inc/custom-content.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/elements/_single.scss",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/archive.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/home.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/content-functions/home-content-functions.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/functions.php",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/js/cw-ui.js",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/site/_home.scss",
-		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/sass/elements/_archive.scss"
+		"/home/donhilo/Code/php/cw/public/wp-content/themes/cw/template-parts/content-comic-item-grid.php"
 	],
 	"find":
 	{
@@ -975,6 +1040,7 @@
 		"height": 176.0,
 		"where_history":
 		[
+			"*.php",
 			""
 		]
 	},
@@ -983,6 +1049,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"wp_title",
+			"title",
+			"wp_title",
+			"title",
+			"click",
+			"calendario",
+			"filsa",
+			"height",
+			"time",
+			"date",
+			"evtipos",
+			"data-filter",
+			"first-element",
+			"div.evento",
+			"evento",
+			"tipoevento",
+			"function filsa2017_run_part",
+			"filsa",
+			"todos",
+			"$visitas_guiadas",
+			"visitas_guiadas",
 			"function cchl_current_fields_id",
 			";\n"
 		],
@@ -992,6 +1079,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"feria"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1002,92 +1090,92 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 12,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "header-bs-ferias-nuevo.php",
+					"file": "parts/filsa/eventos.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6351,
+						"buffer_size": 5306,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1352,
-								1352
+								5306,
+								5306
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 13.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "parts/blocks/eventos-unitarios-feria.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3510,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3401,
+								3401
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1593.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "parts/bs-blocks/bs-programa-cultural.php",
+					"buffer": 2,
+					"file": "templates/bs-nueva-plantilla-feria.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3299,
+						"buffer_size": 4272,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								955,
+								955
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "inc/function-ferias.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13526,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9649,
-								9649
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 6110.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 8,
@@ -1095,62 +1183,123 @@
 				},
 				{
 					"buffer": 3,
-					"file": "parts/blocks/bs-nuevo-programa-cultural-ferias.php",
+					"file": "parts/blocks/evento-unitario.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1505,
+						"buffer_size": 2580,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8,
-								8
+								1275,
+								1275
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 17.0,
+						"translation.y": 474.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "parts/blocks/bs-visitas-guiadas-programa.php",
+					"file": "/home/donhilo/Code/php/camara/public/wp-content/plugins/filsa-2017/parts/visitas-guiadas-colegios.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1663,
+						"buffer_size": 4463,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								812,
-								812
+								1556,
+								1556
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 422.0,
+						"translation.y": 585.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
+					"file": "inc/meta-boxes/meta-boxes-ferias.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4661,
+								4661
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "less/bs-ferias/filij-2019.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2735,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1048,
+								1048
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/Syntaxes/LESS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 610.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "/home/donhilo/Code/php/camara/public/wp-content/plugins/filsa2018/dploy.yaml",
 					"semi_transient": false,
 					"settings":
@@ -1162,8 +1311,8 @@
 						"selection":
 						[
 							[
-								187,
-								187
+								561,
+								561
 							]
 						],
 						"settings":
@@ -1176,155 +1325,287 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/home/donhilo/Code/games/godot/godot-demo-projects/2d/sprite_shaders/sprite_shaders.tscn",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8348,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								801,
-								801
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/GDScript (Godot Engine)/GDScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 23.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/home/donhilo/Code/gameassets/abya_yala/shaders/drop_shadow.gd",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 759,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								759,
-								759
-							]
-						],
-						"settings":
-						{
-							"auto_name": "shader_type canvas_item;",
-							"syntax": "Packages/GDScript (Godot Engine)/GDScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "templates/bs-nueva-plantilla-feria.php",
+					"file": "js/src/cchl-filsa.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3749,
+						"buffer_size": 13330,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2128,
-								2128
+								6493,
+								6493
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 479.0,
+						"translation.y": 2926.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 9,
-					"file": "inc/meta-boxes/meta-boxes-ferias.php",
+					"file": "js/src/cchl-feria.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6854,
+						"buffer_size": 12957,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5187,
-								5187
+								12851,
+								12851
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5578.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "header-bs-ferias-nuevo.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1994,
+								1994
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2211.0,
+						"translation.y": 3.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4000,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1110,
+								1110
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1157.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "less/bs-ferias/filij-2019.less",
+					"buffer": 12,
+					"file": "inc/function-ferias.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 499,
+						"buffer_size": 12956,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								499,
-								499
+								4641,
+								4641
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/Syntaxes/LESS.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2966.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 390,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										213,
+										221
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "inc/scripts.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2562,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2559,
+								2559
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 857.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/home/donhilo/Code/php/camara/public/wp-config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3122,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2701,
+								2701
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 768.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1741,
+								1741
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 621.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
 					"type": "text"
 				}
 			]
@@ -1369,7 +1650,7 @@
 	"project": "camara.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 70.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1378,6 +1659,110 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"func",
+				"inc/function-ferias.php"
+			],
+			[
+				"evento",
+				"parts/blocks/evento-unitario.php"
+			],
+			[
+				"header-",
+				"header-bs-ferias-nuevo.php"
+			],
+			[
+				"",
+				"header-bs-ferias-nuevo.php"
+			],
+			[
+				"functi",
+				"inc/function-ferias.php"
+			],
+			[
+				"pag",
+				"page.php"
+			],
+			[
+				"header",
+				"header-bs-ferias-nuevo.php"
+			],
+			[
+				"cchl-feri",
+				"js/src/cchl-feria.js"
+			],
+			[
+				"nuev",
+				"templates/bs-nueva-plantilla-feria.php"
+			],
+			[
+				"meta-bi",
+				"inc/meta-boxes/meta-boxes-ferias.php"
+			],
+			[
+				"scrip",
+				"inc/scripts.php"
+			],
+			[
+				"fili",
+				"less/bs-ferias/filij-2019.less"
+			],
+			[
+				"evento-u",
+				"parts/blocks/evento-unitario.php"
+			],
+			[
+				"scrp",
+				"inc/scripts.php"
+			],
+			[
+				"cchl-fer",
+				"js/src/cchl-feria.js"
+			],
+			[
+				"met",
+				"inc/meta-boxes/meta-boxes-ferias.php"
+			],
+			[
+				"programa",
+				"templates/template-filsa-2017-programa.php"
+			],
+			[
+				"filsa 2017",
+				"templates/template-filsa-2017-programa.php"
+			],
+			[
+				"grun",
+				"Gruntfile.js"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"nueva",
+				"templates/bs-nueva-plantilla-feria.php"
+			],
+			[
+				"feria",
+				"templates/bs-nueva-plantilla-feria.php"
+			],
+			[
+				"meta-box",
+				"inc/meta-boxes/meta-boxes-ferias.php"
+			],
+			[
+				"meta",
+				"inc/meta-boxes.php"
+			],
+			[
+				"eventos",
+				"parts/filsa/eventos.php"
+			],
+			[
+				"progr",
+				"parts/bs-blocks/bs-programa-cultural.php"
+			],
 			[
 				"filij",
 				"less/bs-ferias/filij-2019.less"
@@ -1397,10 +1782,6 @@
 			[
 				"nuevop",
 				"parts/blocks/bs-nuevo-programa-cultural-ferias.php"
-			],
-			[
-				"programa",
-				"parts/bs-blocks/bs-programa-cultural.php"
 			],
 			[
 				"functio",
@@ -1447,10 +1828,6 @@
 				"inc/scripts.php"
 			],
 			[
-				"func",
-				"functions.php"
-			],
-			[
 				"bs-int",
 				"less/bs-interior/bs-interior.less"
 			],
@@ -1469,18 +1846,6 @@
 			[
 				"main.l",
 				"less/oldless/main.less"
-			],
-			[
-				"grun",
-				"Gruntfile.js"
-			],
-			[
-				"packa",
-				"package.json"
-			],
-			[
-				"nueva",
-				"templates/bs-nueva-plantilla-feria.php"
 			],
 			[
 				"cut",
@@ -1525,10 +1890,6 @@
 			[
 				"page",
 				"cedetgore/page-template-noticias.php"
-			],
-			[
-				"",
-				"cedetgore/template-parts/content-archive-noticias.php"
 			],
 			[
 				"asi",
@@ -1671,10 +2032,6 @@
 				"cedetgore/template-parts/content-page.php"
 			],
 			[
-				"pag",
-				"cedetgore/page.php"
-			],
-			[
 				"homes",
 				"cedetgore/sass/elements/_home.scss"
 			],
@@ -1813,82 +2170,6 @@
 			[
 				"a",
 				"cedetgore/archive-eventos.php"
-			],
-			[
-				"even",
-				"cedetgore/archive-eventos.php"
-			],
-			[
-				"cede",
-				"cedetgore/js/cedet-ui.js"
-			],
-			[
-				"cedet",
-				"cedetgore/js/cedet-ui.js"
-			],
-			[
-				"archive-",
-				"cedetgore/archive-eventos.php"
-			],
-			[
-				"bibl",
-				"cedetgore/template-parts/content-biblioteca.php"
-			],
-			[
-				"sideb",
-				"cedetgore/sidebar.php"
-			],
-			[
-				"widg",
-				"theme-my-login/includes/class-theme-my-login-widget.php"
-			],
-			[
-				"content-bi",
-				"cedetgore/template-parts/content-biblioteca.php"
-			],
-			[
-				"custom",
-				"cedetgore/inc/custom-fields.php"
-			],
-			[
-				"content-",
-				"cedetgore/template-parts/content-archivo_prensa.php"
-			],
-			[
-				"home-log",
-				"cedetgore/template-parts/home-logged-in.php"
-			],
-			[
-				"content-ev",
-				"cedetgore/template-parts/content-eventos.php"
-			],
-			[
-				"fu",
-				"cedetgore/functions.php"
-			],
-			[
-				"archive-eve",
-				"cedetgore/archive-eventos.php"
-			],
-			[
-				"style",
-				"cedetgore/sass/style.scss"
-			],
-			[
-				"customf",
-				"cedetgore/inc/custom-fields.php"
-			],
-			[
-				"eve",
-				"cedetgore/archive-eventos.php"
-			],
-			[
-				"slider-",
-				"cedetgore/template-parts/slider-section.php"
-			],
-			[
-				"content-en",
-				"cedetgore/template-parts/content-entrevistas.php"
 			]
 		],
 		"width": 0.0
@@ -1896,9 +2177,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "cede",
+		"last_filter": "pro",
 		"selected_items":
 		[
+			[
+				"pro",
+				"~/Code/cedetgore.sublime-project"
+			],
 			[
 				"cede",
 				"~/Code/cedetgore.sublime-project"

@@ -34,9 +34,7 @@
 		<?php echo $nomtipoevs;?>
 	</span>
 	<h3>
-		<a href="<?php echo tribe_event_link($event->ID);?>">
 			<?php echo $event->post_title;?>
-		</a>
 	</h3>
 	<span class="dia"><i class="fa fa-calendar-o fa-fw"></i> <?php echo date_i18n('l j \d\e F' , $day->format('U'));?></span><br>
 	<span class="hora"><i class="fa fa-clock-o fa-fw"></i>
@@ -46,7 +44,8 @@
 		?>
 		<?php echo $startdate;?> <?php if($startdate != $enddate): echo ' - ' . $enddate; endif; ?> hrs. </span><br>
 
-		<span class="lugar event-label-info"><i class="fa fa-map-marker fa-fw"></i> <strong>Lugar:</strong> <?php echo tribe_get_venue($event->ID);?></span><br><br>
+		<span class="lugar event-label-info"><i class="fa fa-map-marker fa-fw"></i> <strong>Lugar:</strong> <?php echo tribe_get_venue($event->ID);?></span><br>
+		<span class="organiza event-label-info"><i class="fa fa-flag fa-fw"></i> <strong>Organiza:</strong> <?php echo tribe_get_organizer($event->ID);?></span><br><br>
 
 		<?php if($funcion == 'visitas-de-colegios'):?>
 		
