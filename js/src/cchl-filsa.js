@@ -263,7 +263,7 @@ jQuery(document).ready(function($) {
     for (var i in tipos) {
         if (tipos.hasOwnProperty(i)) {
             $(
-                'select#todos-eventos-tipos[data-filter="cchl_tipoevento"]'
+                'body#filsa-2017 select#todos-eventos-tipos[data-filter="cchl_tipoevento"]'
             ).append('<option value="' + i + '">' + tipos[i] + "</option>");
         }
     }
@@ -271,7 +271,7 @@ jQuery(document).ready(function($) {
     for (var i in temas) {
         if (temas.hasOwnProperty(i)) {
             $(
-                'select#todos-eventos-temas[data-filter="cchl_temaevento"]'
+                'body#filsa-2017 select#todos-eventos-temas[data-filter="cchl_temaevento"]'
             ).append('<option value="' + i + '">' + temas[i] + "</option>");
         }
     }

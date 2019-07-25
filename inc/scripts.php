@@ -13,7 +13,7 @@ function cchl_styles() {
 	//Compiled grunt style
 	wp_register_style( 'legacy', get_bloginfo('template_url') . '/css/legacy.b8d5da40.min.css', array(), CCHL_VERSION, 'screen' );
 
-  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.cc5c5813.min.css', array(), CCHL_VERSION, 'screen' );
+  wp_register_style( 'camara', get_bloginfo('template_url') . '/css/camara.2c4a6052.min.css', array(), CCHL_VERSION, 'screen' );
 
   $oldpages = cchl_oldcondition($post->ID);
 	if($oldpages == true ) {
@@ -49,7 +49,7 @@ global $post;
 	  wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array() );
   }
   if(WP_ENV != 'development') {
-    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.48d2febd.min.js', array('jquery'), CCHL_VERSION, true);
+    wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.0e85db08.min.js', array('jquery'), CCHL_VERSION, true);
   } else {
     wp_register_script( 'camara', get_bloginfo('template_url') . '/js/camara.js', array('jquery'), CCHL_VERSION, true);
   }
@@ -65,8 +65,15 @@ global $post;
     'hide_empty' => true
     );
 
+  $args_vc = array(
+    'slug' => array(
+        'juego', 'charla', 'presentacion-de-libros', 'cuentacuentos', 'taller'
+    )
+  );
+
   $tipos = get_terms( 'cchl_tipoevento', $args );
   $temas = get_terms( 'cchl_temaevento', $args );
+  $vctipos = get_terms( 'cchl_tipoevento', $args_vc);
   $cursos = get_terms( 'cursos', $args );
   $tiposarr = array();
 
@@ -75,6 +82,14 @@ global $post;
   }
   foreach($temas as $tema) {
     $tiposarr['evtemas'][$tema->slug] = $tema->name;
+  }
+
+  foreach($temas as $tema) {
+    $tiposarr['evtemas'][$tema->slug] = $tema->name;
+  }
+
+  foreach($vctipos as $vctipo) {
+    $tiposarr['vctipos'][$vctipo->slug] = $vctipo->name;
   }
 
   foreach($cursos as $curso) {

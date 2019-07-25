@@ -11941,7 +11941,7 @@ jQuery(document).ready(function($) {
     for (var i in tipos) {
         if (tipos.hasOwnProperty(i)) {
             $(
-                'select#todos-eventos-tipos[data-filter="cchl_tipoevento"]'
+                'body#filsa-2017 select#todos-eventos-tipos[data-filter="cchl_tipoevento"]'
             ).append('<option value="' + i + '">' + tipos[i] + "</option>");
         }
     }
@@ -11949,7 +11949,7 @@ jQuery(document).ready(function($) {
     for (var i in temas) {
         if (temas.hasOwnProperty(i)) {
             $(
-                'select#todos-eventos-temas[data-filter="cchl_temaevento"]'
+                'body#filsa-2017 select#todos-eventos-temas[data-filter="cchl_temaevento"]'
             ).append('<option value="' + i + '">' + temas[i] + "</option>");
         }
     }
@@ -12118,7 +12118,7 @@ jQuery(document).ready(function($) {
             '<a class="fltip" href="javascript:void(0);" data-tiposw="' +
                 avevs[i] +
                 '">' +
-                cchl.evtipos[avevs[i]] +
+                cchl.vctipos[avevs[i]] +
                 "</a>"
         );
     }
@@ -12247,7 +12247,7 @@ jQuery(document).ready(function($) {
                 '<a href="#" data-tiposw="' +
                     avevs[i] +
                     '">' +
-                    cchl.evtipos[avevs[i]] +
+                    cchl.vctipos[avevs[i]] +
                     "</a>"
             );
         }
@@ -12330,7 +12330,7 @@ jQuery(document).ready(function($) {
     });
 
     //Hago un filtro para todos los eventos.
-    var tipos = cchl.evtipos;
+    var tipos = cchl.vctipos;
     var temas = cchl.evtemas;
     var cursos = cchl.cursos;
     var filtodos = $(

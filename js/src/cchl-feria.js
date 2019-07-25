@@ -46,7 +46,7 @@ function cchl_enableFiltersFeria(element) {
             '<a class="fltip" href="javascript:void(0);" data-tiposw="' +
                 avevs[i] +
                 '">' +
-                cchl.evtipos[avevs[i]] +
+                cchl.vctipos[avevs[i]] +
                 "</a>"
         );
     }
@@ -175,7 +175,7 @@ jQuery(document).ready(function($) {
                 '<a href="#" data-tiposw="' +
                     avevs[i] +
                     '">' +
-                    cchl.evtipos[avevs[i]] +
+                    cchl.vctipos[avevs[i]] +
                     "</a>"
             );
         }
@@ -258,7 +258,7 @@ jQuery(document).ready(function($) {
     });
 
     //Hago un filtro para todos los eventos.
-    var tipos = cchl.evtipos;
+    var tipos = cchl.vctipos;
     var temas = cchl.evtemas;
     var cursos = cchl.cursos;
     var filtodos = $(
