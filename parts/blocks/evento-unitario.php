@@ -56,9 +56,13 @@
 
 		<p class="evplus">
 
-			<?php if($funcion == 'visitas-de-colegios'):?>
+			<?php if($funcion == 'visitas-de-colegios' && $cupos != 0):?>
 			
 				<a href="<?php echo $enlace_inscripciones;?>" class="btn btn-xs btn-info"><i class="fa fa-file-o"></i> Inscripciones</a>
+			
+			<?php elseif($cupos == 0):?>
+				
+				<button class="btn btn-x btn-disabled btn-danger"><i class="fa-file-o"></i> Incripciones cerradas</button>
 
 			<?php endif;?>
 				
