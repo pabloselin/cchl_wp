@@ -62,7 +62,7 @@
 			
 			<?php elseif($cupos == 0):?>
 				
-				<button class="btn btn-x btn-disabled btn-danger"><i class="fa-file-o"></i> Incripciones cerradas</button>
+				<button class="btn btn-xs btn-disabled btn-danger"><i class="fa fa-file-o"></i> Inscripciones cerradas</button>
 
 			<?php endif;?>
 				
