@@ -77,7 +77,7 @@ endif;?>
   }
 
   if( get_the_ID() == $page_evts) {
-    get_template_part('parts/blocks/bs-nuevo-programa-cultural-ferias');
+    get_template_part('parts/blocks/bs-paginas-programa-cultural-ferias');
   }
   
   if( get_the_ID() == $visitas_de_colegios) {
