@@ -1,3 +1,13 @@
+<?php 
+  $postid = cchl_current_fields_id('templates/bs-nueva-plantilla-feria.php');
+  $evterm = get_post_meta($postid, 'cchl_bstax', true);
+  if($evterm):
+    $evterm = get_post_meta($postid, 'cchl_bstax', true);
+  else:
+    $evterm = 'fil-vina-2018';
+  endif;
+?>
+
 <div class="expositores-feria-std row">
 <?php 
   $args = array(
@@ -9,7 +19,7 @@
       array(
         'taxonomy' => 'ferias',
         'field' => 'slug',
-        'terms' => 'fil-vina-2018'
+        'terms' => $evterm
       )
     )
   );
