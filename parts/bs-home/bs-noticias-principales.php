@@ -49,7 +49,7 @@
         
         <div class="row masnoticias-boton">
           <div class="col-md-4 col-md-offset-4">
-            <a href="<?php bloginfo('url');?>/sala-de-prensa/" class="btn btn-block btn-warning btn-moresection"> <i class="fa fa-plus"></i> Noticias</a>
+            <a href="<?php bloginfo('url');?>/categoria/sala-de-prensa/" class="btn btn-block btn-warning btn-moresection"> <i class="fa fa-plus"></i> Noticias</a>
           </div>
         </div>
         </section>
