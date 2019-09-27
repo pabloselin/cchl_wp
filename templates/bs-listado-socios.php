@@ -48,7 +48,7 @@ Template Name: [NUEVO] Listado de socios
                                         <h3><?php echo get_the_title($socio->object_id);?></h3>
                                     </a>
                                     </div>
-
+                            <?php
                                 }                               
                             ?>
 
