@@ -34,7 +34,7 @@ Template Name: [NUEVO] Listado de socios
                             <?php 
 
                             $menuid = 394;
-                            $menuitems = wp_get_nav_menu_items( 394 )
+                            $menuitems = wp_get_nav_menu_items( 394 );
                             foreach($menuitems as $socio) {       
                                 ?>
 
