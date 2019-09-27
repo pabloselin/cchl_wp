@@ -51,7 +51,7 @@ Template Name: [NUEVO] Listado de socios
                                     </a>
                                     </div>
 
-                               
+                                }                               
                             ?>
 
                         </section>
