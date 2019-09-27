@@ -32,12 +32,10 @@ Template Name: [NUEVO] Listado de socios
                        
                         <section class="listado-socios row">
                             <?php 
-
                             $menuid = 394;
                             $menuitems = wp_get_nav_menu_items( 394 );
                             foreach($menuitems as $socio) {       
                                 ?>
-
                                     <div class="item-socio col-md-3">
                                     <a href="<?php echo get_permalink($socio->object_id);?>">
                                         <div class="img-socio">
@@ -47,7 +45,7 @@ Template Name: [NUEVO] Listado de socios
                                                     ?>
                                         </div>
 
-                                        <h3><?php echo $socio->post_title;?></h3>
+                                        <h3><?php echo get_the_title($socio->object_id);?></h3>
                                     </a>
                                     </div>
 
