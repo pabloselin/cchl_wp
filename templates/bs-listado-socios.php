@@ -29,35 +29,20 @@ Template Name: [NUEVO] Listado de socios
 
                         <?php the_content();?>
                         
-                        <?php 
-                            //$alphabet = 'abcdefghijklmnñopqrstuvwxyz';
-                        ?>
-
-                        <nav class="nav-socios row">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="btn-group nav-socios-list">
-                                
-                                </div>
-                            </div>
-                        </nav>
+                       
                         <section class="listado-socios row">
-                            <?php $sociosargs = array(
-                                'post_type' => 'socios',
-                                'numberposts' => -1,
-                                'orderby' => 'name',
-                                'order' => 'ASC'
-                                );
-                                $socios = get_posts($sociosargs);
-                                foreach($socios as $socio) {
-                                    $firstletter = strtoupper(substr($socio->post_title, 0, 1));
-                                    $existingletters[] = $firstletter;
+                            <?php 
+
+                            $menuid = 394;
+                            $menuitems = wp_get_nav_menu_items( 394 )
+                            foreach($menuitems as $socio) {       
                                 ?>
 
-                                    <div class="item-socio col-md-3" data-letter="<?php echo $firstletter;?>">
-                                    <a href="<?php echo get_permalink($socio->ID);?>">
+                                    <div class="item-socio col-md-3">
+                                    <a href="<?php echo get_permalink($socio->object_id);?>">
                                         <div class="img-socio">
-                                            <?php if(has_post_thumbnail( $socio->ID )):
-                                                    echo get_the_post_thumbnail( $socio->ID, 'medium' );
+                                            <?php if(has_post_thumbnail( $socio->object_id )):
+                                                    echo get_the_post_thumbnail( $socio->object_id, 'medium' );
                                                     endif;
                                                     ?>
                                         </div>
@@ -66,12 +51,7 @@ Template Name: [NUEVO] Listado de socios
                                     </a>
                                     </div>
 
-                                <?php }
-                                $existingletters = array_unique($existingletters);
-                                natcasesort($existingletters);
-                                $existingletters = array_values($existingletters);
-                                $jsonletters = json_encode($existingletters);
-                                echo '<script>var existingletters = ' . $jsonletters . '</script>';
+                               
                             ?>
 
                         </section>
